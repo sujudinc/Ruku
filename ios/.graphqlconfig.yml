@@ -1,0 +1,15 @@
+projects:
+  RukuAPI:
+    schemaPath: amplify/backend/api/RukuAPI/build/schema.graphql
+    includes:
+      - graphql/**/*.graphql
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: swift
+        generatedFileName: graphql/Api.swift
+        docsFilePath: graphql
+        region: ca-central-1
+        apiId: null
+        maxDepth: 3

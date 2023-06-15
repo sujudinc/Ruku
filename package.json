@@ -1,0 +1,13 @@
+{
+  "name": "ruku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pull": "sh ./scripts/workflows/amplify-pull.sh",
+    "copy": "sh ./scripts/workflows/copy-models.sh"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

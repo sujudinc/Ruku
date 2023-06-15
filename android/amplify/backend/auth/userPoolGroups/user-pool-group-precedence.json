@@ -1,0 +1,18 @@
+[
+  {
+    "groupName": "Jamaah",
+    "precedence": 1
+  },
+  {
+    "groupName": "Moderators",
+    "precedence": 2
+  },
+  {
+    "groupName": "Admins",
+    "precedence": 3
+  },
+  {
+    "groupName": "SuperAdmins",
+    "precedence": 4
+  }
+]

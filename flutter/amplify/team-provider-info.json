@@ -1,0 +1,67 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-ruku-dev-153647-authRole",
+      "UnauthRoleArn": "arn:aws:iam::507226272806:role/amplify-ruku-dev-153647-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::507226272806:role/amplify-ruku-dev-153647-authRole",
+      "Region": "ca-central-1",
+      "DeploymentBucketName": "amplify-ruku-dev-153647-deployment",
+      "UnauthRoleName": "amplify-ruku-dev-153647-unauthRole",
+      "StackName": "amplify-ruku-dev-153647",
+      "StackId": "arn:aws:cloudformation:ca-central-1:507226272806:stack/amplify-ruku-dev-153647/1114eb00-0b8a-11ee-83d5-0e88f22712be",
+      "AmplifyAppId": "d1zvmyg2wi68ez",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-ruku-dev-153647-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "RukuAuth": {
+          "googleClientId": "368964634228-71a2307vgvgs867ue3rt54pppa8c0f70.apps.googleusercontent.com"
+        },
+        "userPoolGroups": {}
+      },
+      "function": {
+        "RukuAuthCustomMessage": {
+          "REDIRECTURL": "https://sujud.app",
+          "EMAILSUBJECT": "Confirm your account",
+          "EMAILMESSAGE": "Tap, or copy, the link to continue",
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/RukuAuthCustomMessage-476f456334444a442b75-build.zip"
+        },
+        "RukuAuthPostAuthentication": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/RukuAuthPostAuthentication-326777706f63786c574e-build.zip"
+        },
+        "RukuAuthPostConfirmation": {
+          "GROUP": "Jamaah",
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/RukuAuthPostConfirmation-6b616d734c5270414357-build.zip"
+        },
+        "RukuAuthPreAuthentication": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/RukuAuthPreAuthentication-6d47567a7433664f4d73-build.zip"
+        },
+        "RukuAuthPreSignup": {
+          "DOMAINALLOWLIST": "sujud.app, mohd.ca, gmail.com",
+          "DOMAINDENYLIST": "yahoo.com",
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/RukuAuthPreSignup-7541485a542f57763347-build.zip"
+        },
+        "AdminQueries611bd805": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/AdminQueries611bd805-4b71683245756332742f-build.zip"
+        },
+        "S3Triggerbef974b5": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/S3Triggerbef974b5-69434b63684a76374c6b-build.zip"
+        }
+      },
+      "api": {
+        "AdminQueries": {},
+        "RukuAPI": {}
+      },
+      "storage": {
+        "RukuStorage": {}
+      }
+    }
+  }
+}

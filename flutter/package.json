@@ -1,0 +1,25 @@
+{
+    "name": "Ruku",
+    "version": "1.0.0",
+    "description": "The backend for the Sujud app",
+    "keywords": [],
+    "author": "Sujud Inc.",
+    "license": "ISC",
+    "homepage": "https://github.com/sujudinc/Ruku",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/sujudinc/Ruku.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sujudinc/Ruku/issues"
+    },
+    "scripts": {
+        "amplify:AdminQueries611bd805": "cd amplify/backend/function/AdminQueries611bd805/src && yarn install && yarn build && cd -",
+        "amplify:RukuCustomMessage": "cd amplify/backend/function/RukuCustomMessage/src && yarn install && yarn build && cd -",
+        "amplify:RukuPostAuthentication": "cd amplify/backend/function/RukuPostAuthentication/src && yarn install && yarn build && cd -",
+        "amplify:RukuPostConfirmation": "cd amplify/backend/function/RukuPostConfirmation/src && yarn install && yarn build && cd -",
+        "amplify:RukuPreAuthentication": "cd amplify/backend/function/RukuPreAuthentication/src && yarn install && yarn build && cd -",
+        "amplify:RukuAuthPreSignup": "cd amplify/backend/function/RukuAuthPreSignup/src && yarn install && yarn build && cd -",
+        "amplify:S3Triggerbef974b5": "cd amplify/backend/function/S3Triggerbef974b5/src && yarn install && yarn build && cd -"
+    }
+}

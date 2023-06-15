@@ -1,0 +1,32 @@
+{
+  "version": "1",
+  "region": "ca-central-1",
+  "userPoolId": "ca-central-1_xbHQ8ebi3",
+  "userName": "ee304874-8393-4701-a4ac-01785985e7a3",
+  "callerContext": {
+    "awsSdkVersion": "aws-sdk-unknown-unknown",
+    "clientId": "4dhanlfjf4bb1e9mf5q4e0ipcm"
+  },
+  "triggerSource": "CustomMessage_SignUp",
+  "request": {
+    "userAttributes": {
+      "cognito:user_status": "CONFIRMED",
+      "cognito:email_alias": "mohd@mohd.ca",
+      "custom:userType": "ADMIN",
+      "email": "mohd@mohd.ca",
+      "email_verified": "true",
+      "family_name": "Mohamed",
+      "given_name": "Mohamed",
+      "name": "Mohamed Mohamed",
+      "sub": "fd8bed41-06ae-43fb-ad5d-e145b94b0a65"
+    },
+    "codeParameter": "{####}",
+    "linkParameter": "{##Click Here##}",
+    "usernameParameter": null
+  },
+  "response": {
+    "smsMessage": "Your verification code",
+    "emailMessage": "Tap on the link to confirm your account",
+    "emailSubject": "Confirm your account"
+  }
+}

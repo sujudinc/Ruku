@@ -29,12 +29,14 @@ import {
   signUserOut,
 } from "./cognito-actions";
 
+
+const allowedGroup = process.env.GROUP;
+
 const app = express();
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(awsServerlessExpressMiddleware.eventContext());
-
-// Enable CORS for all methods
 app.use((req: Request, res: Response, next: NextFunction) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -43,9 +45,6 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   );
   next();
 });
-
-// Only perform tasks if the user is in a specific group
-const allowedGroup = process.env.GROUP;
 
 const checkGroup = function (req: Request, res: Response, next: NextFunction) {
   if (req.path == "/signUserOut") {
@@ -56,7 +55,6 @@ const checkGroup = function (req: Request, res: Response, next: NextFunction) {
     return next();
   }
 
-  // Fail if group enforcement is being used
   if (
     req.apiGateway!.event!.requestContext!.authorizer!.claims["cognito:groups"]
   ) {
@@ -332,10 +330,9 @@ app.post(
   }
 );
 
-// Error middleware must be defined last
 app.use((err: any, req: Request, res: Response, next: NextFunction) => {
   console.error(err.message);
-  if (!err.statusCode) err.statusCode = 500; // If err has no specified error code, set error code to 'Internal Server Error (500)'
+  if (!err.statusCode) err.statusCode = 500;
   res.status(err.statusCode).json({ message: err.message }).end();
 });
 

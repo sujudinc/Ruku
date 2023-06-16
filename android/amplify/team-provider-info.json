@@ -25,34 +25,34 @@
           "EMAILSUBJECT": "Confirm your account",
           "REDIRECTURL": "https://sujud.app",
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthCustomMessage-476f456334444a442b75-build.zip"
+          "s3Key": "amplify-builds/RukuAuthCustomMessage-2b356e6c5443494d4766-build.zip"
         },
         "RukuAuthPostConfirmation": {
           "GROUP": "Jamaah",
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthPostConfirmation-6b616d734c5270414357-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPostConfirmation-567570796c5a6d524465-build.zip"
         },
         "RukuAuthPreSignup": {
           "DOMAINALLOWLIST": "sujud.app, mohd.ca, gmail.com",
           "DOMAINDENYLIST": "yahoo.com",
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthPreSignup-7541485a542f57763347-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPreSignup-7a626762655250496153-build.zip"
         },
         "AdminQueries611bd805": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/AdminQueries611bd805-4b71683245756332742f-build.zip"
+          "s3Key": "amplify-builds/AdminQueries611bd805-355843573446336d4478-build.zip"
         },
         "RukuAuthPostAuthentication": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthPostAuthentication-326777706f63786c574e-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPostAuthentication-5639574857336f543345-build.zip"
         },
         "RukuAuthPreAuthentication": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthPreAuthentication-6d47567a7433664f4d73-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPreAuthentication-4f50616b7071746e6e43-build.zip"
         },
         "S3Triggerbef974b5": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/S3Triggerbef974b5-69434b63684a76374c6b-build.zip"
+          "s3Key": "amplify-builds/S3Triggerbef974b5-48314b65392b4f753434-build.zip"
         }
       },
       "storage": {

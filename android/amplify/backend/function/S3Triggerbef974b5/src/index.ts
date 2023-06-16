@@ -14,7 +14,6 @@ export const handler = async (
   return event;
 };
 
-
 async function _doSomething(event: Event) {
   console.log('Received S3 event:', JSON.stringify(event, null, 2));
   const bucket = event.Records[0].s3.bucket.name;

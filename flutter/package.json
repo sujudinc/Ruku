@@ -15,11 +15,11 @@
     },
     "scripts": {
         "amplify:AdminQueries611bd805": "cd amplify/backend/function/AdminQueries611bd805/src && yarn install && yarn build && cd -",
-        "amplify:RukuCustomMessage": "cd amplify/backend/function/RukuCustomMessage/src && yarn install && yarn build && cd -",
-        "amplify:RukuPostAuthentication": "cd amplify/backend/function/RukuPostAuthentication/src && yarn install && yarn build && cd -",
-        "amplify:RukuPostConfirmation": "cd amplify/backend/function/RukuPostConfirmation/src && yarn install && yarn build && cd -",
-        "amplify:RukuPreAuthentication": "cd amplify/backend/function/RukuPreAuthentication/src && yarn install && yarn build && cd -",
-        "amplify:RukuAuthPreSignup": "cd amplify/backend/function/RukuAuthPreSignup/src && yarn install && yarn build && cd -",
+        "amplify:RukuAuthCustomMessage": "cd amplify/backend/function/RukuAuthCustomMessage/src && yarn install && yarn build && cd -",
+        "amplify:RukuAuthPostAuthentication": "cd amplify/backend/function/RukuAuthPostAuthentication/src && yarn install && yarn build && cd -",
+        "amplify:RukuAuthPostConfirmation": "cd amplify/backend/function/RukuAuthPostConfirmation/src && yarn install && yarn build && cd -",
+        "amplify:RukuAuthPreAuthentication": "cd amplify/backend/function/RukuAuthPreAuthentication/src && yarn install && yarn build && cd -",
+        "amplify:RukuAuthAuthPreSignup": "cd amplify/backend/function/RukuAuthAuthPreSignup/src && yarn install && yarn build && cd -",
         "amplify:S3Triggerbef974b5": "cd amplify/backend/function/S3Triggerbef974b5/src && yarn install && yarn build && cd -"
     }
 }

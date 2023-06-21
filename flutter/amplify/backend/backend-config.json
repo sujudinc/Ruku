@@ -170,6 +170,36 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "InitiateMultipartUpload": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "rukuCommonLayerTs"
+        },
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "RukuAPI"
+        },
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "RukuStorage"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "RukuAuthCustomMessage": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -199,6 +229,16 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "rukuCommonLayerPy": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    },
+    "rukuCommonLayerTs": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
     }
   },
   "parameters": {
@@ -223,6 +263,22 @@
         {
           "category": "function",
           "resourceName": "AdminQueries611bd805"
+        }
+      ]
+    },
+    "AMPLIFY_function_InitiateMultipartUpload_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "InitiateMultipartUpload"
+        }
+      ]
+    },
+    "AMPLIFY_function_InitiateMultipartUpload_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "InitiateMultipartUpload"
         }
       ]
     },
@@ -367,6 +423,38 @@
         {
           "category": "function",
           "resourceName": "S3Triggerbef974b5"
+        }
+      ]
+    },
+    "AMPLIFY_function_rukuCommonLayerPy_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rukuCommonLayerPy"
+        }
+      ]
+    },
+    "AMPLIFY_function_rukuCommonLayerPy_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rukuCommonLayerPy"
+        }
+      ]
+    },
+    "AMPLIFY_function_rukuCommonLayerTs_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rukuCommonLayerTs"
+        }
+      ]
+    },
+    "AMPLIFY_function_rukuCommonLayerTs_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rukuCommonLayerTs"
         }
       ]
     }

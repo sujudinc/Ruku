@@ -2,17 +2,17 @@
 
 # cd to android and run amplify pull
 cd android
-amplify pull
+amplify pull -y
 amplify codegen
 cd ..
 
 cd ios
-amplify pull
+amplify pull -y
 amplify codegen
 cd ..
 
 cd react
-amplify pull
+amplify pull -y
 amplify codegen
 cd ..
 

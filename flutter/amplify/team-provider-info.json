@@ -25,34 +25,46 @@
           "EMAILSUBJECT": "Confirm your account",
           "EMAILMESSAGE": "Tap, or copy, the link to continue",
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthCustomMessage-2b356e6c5443494d4766-build.zip"
+          "s3Key": "amplify-builds/RukuAuthCustomMessage-76397377416d77734831-build.zip"
         },
         "RukuAuthPostAuthentication": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthPostAuthentication-5639574857336f543345-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPostAuthentication-457064522f6a37744639-build.zip"
         },
         "RukuAuthPostConfirmation": {
           "GROUP": "Jamaah",
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthPostConfirmation-567570796c5a6d524465-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPostConfirmation-56556c62504d6f437138-build.zip"
         },
         "RukuAuthPreAuthentication": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthPreAuthentication-4f50616b7071746e6e43-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPreAuthentication-342f787441702f6b6d6e-build.zip"
         },
         "RukuAuthPreSignup": {
           "DOMAINALLOWLIST": "sujud.app, mohd.ca, gmail.com",
           "DOMAINDENYLIST": "yahoo.com",
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/RukuAuthPreSignup-7a626762655250496153-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPreSignup-37775963524246617a56-build.zip"
         },
         "AdminQueries611bd805": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/AdminQueries611bd805-355843573446336d4478-build.zip"
+          "s3Key": "amplify-builds/AdminQueries611bd805-43524933727969724451-build.zip"
         },
         "S3Triggerbef974b5": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/S3Triggerbef974b5-48314b65392b4f753434-build.zip"
+          "s3Key": "amplify-builds/S3Triggerbef974b5-692f493559767844645a-build.zip"
+        },
+        "InitiateMultipartUpload": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/InitiateMultipartUpload-62737a6c70356930466c-build.zip"
+        },
+        "rukuCommonLayerPy": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/rukuCommonLayerPy-LambdaLayerVersion03cb96f1-build.zip"
+        },
+        "rukuCommonLayerTs": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/rukuCommonLayerTs-LambdaLayerVersion097d47e8-build.zip"
         }
       },
       "api": {

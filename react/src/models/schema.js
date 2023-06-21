@@ -116,13 +116,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -192,28 +198,6 @@ export const schema = {
                     "attributes": [],
                     "isArrayNullable": true
                 },
-                "instructorId": {
-                    "name": "instructorId",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "instructor": {
-                    "name": "instructor",
-                    "isArray": false,
-                    "type": {
-                        "model": "User"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetNames": [
-                            "instructorId"
-                        ]
-                    }
-                },
                 "creatorId": {
                     "name": "creatorId",
                     "isArray": false,
@@ -233,6 +217,28 @@ export const schema = {
                         "connectionType": "BELONGS_TO",
                         "targetNames": [
                             "creatorId"
+                        ]
+                    }
+                },
+                "instructorId": {
+                    "name": "instructorId",
+                    "isArray": false,
+                    "type": "ID",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "instructor": {
+                    "name": "instructor",
+                    "isArray": false,
+                    "type": {
+                        "model": "User"
+                    },
+                    "isRequired": false,
+                    "attributes": [],
+                    "association": {
+                        "connectionType": "BELONGS_TO",
+                        "targetNames": [
+                            "instructorId"
                         ]
                     }
                 },
@@ -285,18 +291,18 @@ export const schema = {
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byInstructor",
+                        "name": "byCreator",
                         "fields": [
-                            "instructorId"
+                            "creatorId"
                         ]
                     }
                 },
                 {
                     "type": "key",
                     "properties": {
-                        "name": "byCreator",
+                        "name": "byInstructor",
                         "fields": [
-                            "creatorId"
+                            "instructorId"
                         ]
                     }
                 },
@@ -315,13 +321,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -468,13 +480,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -653,13 +671,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -797,13 +821,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "donorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -994,13 +1024,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -1302,13 +1338,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -1449,13 +1491,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -1602,13 +1650,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -1749,13 +1803,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -2123,6 +2183,12 @@ export const schema = {
                                 ]
                             },
                             {
+                                "allow": "private",
+                                "operations": [
+                                    "read"
+                                ]
+                            },
+                            {
                                 "allow": "public",
                                 "operations": [
                                     "read"
@@ -2279,13 +2345,19 @@ export const schema = {
                         "rules": [
                             {
                                 "provider": "userPools",
-                                "ownerField": "owner",
+                                "ownerField": "creatorId",
                                 "allow": "owner",
                                 "identityClaim": "cognito:username",
                                 "operations": [
                                     "create",
                                     "update",
                                     "delete",
+                                    "read"
+                                ]
+                            },
+                            {
+                                "allow": "private",
+                                "operations": [
                                     "read"
                                 ]
                             },
@@ -2781,6 +2853,158 @@ export const schema = {
         }
     },
     "nonModels": {
+        "AbortMultipartUploadOutput": {
+            "name": "AbortMultipartUploadOutput",
+            "fields": {
+                "success": {
+                    "name": "success",
+                    "isArray": false,
+                    "type": "Boolean",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "CompleteMultipartUploadOutput": {
+            "name": "CompleteMultipartUploadOutput",
+            "fields": {
+                "location": {
+                    "name": "location",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "InitiateMultipartUploadOutput": {
+            "name": "InitiateMultipartUploadOutput",
+            "fields": {
+                "uploadId": {
+                    "name": "uploadId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "GenerateMultipartUploadUrlsOutput": {
+            "name": "GenerateMultipartUploadUrlsOutput",
+            "fields": {
+                "items": {
+                    "name": "items",
+                    "isArray": true,
+                    "type": {
+                        "nonModel": "GenerateMultipartUploadUrlOutput"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "isArrayNullable": false
+                }
+            }
+        },
+        "GenerateMultipartUploadUrlOutput": {
+            "name": "GenerateMultipartUploadUrlOutput",
+            "fields": {
+                "partNumber": {
+                    "name": "partNumber",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "url": {
+                    "name": "url",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "ListInProcessMultipartUploadsOutput": {
+            "name": "ListInProcessMultipartUploadsOutput",
+            "fields": {
+                "items": {
+                    "name": "items",
+                    "isArray": true,
+                    "type": {
+                        "nonModel": "InProcessUpload"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "isArrayNullable": false
+                }
+            }
+        },
+        "InProcessUpload": {
+            "name": "InProcessUpload",
+            "fields": {
+                "uploadId": {
+                    "name": "uploadId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "fileName": {
+                    "name": "fileName",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "contentType": {
+                    "name": "contentType",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "createdAt": {
+                    "name": "createdAt",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "ListCompletedMultipartUploadsOutput": {
+            "name": "ListCompletedMultipartUploadsOutput",
+            "fields": {
+                "items": {
+                    "name": "items",
+                    "isArray": true,
+                    "type": {
+                        "nonModel": "UploadedPart"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "isArrayNullable": false
+                }
+            }
+        },
+        "UploadedPart": {
+            "name": "UploadedPart",
+            "fields": {
+                "partNumber": {
+                    "name": "partNumber",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "eTag": {
+                    "name": "eTag",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
         "ContactInfo": {
             "name": "ContactInfo",
             "fields": {
@@ -3044,5 +3268,5 @@ export const schema = {
         }
     },
     "codegenVersion": "3.4.4",
-    "version": "bd3b2c67b64bb48fbc9f1fa8ef25143b"
+    "version": "06bd990018fda14aa60c90361b94d4da"
 };

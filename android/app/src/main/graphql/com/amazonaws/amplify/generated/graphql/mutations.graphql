@@ -1,5 +1,39 @@
 # this is an auto generated file. This will be overwritten
 
+mutation InitiateMultipartUpload($input: InitiateMultipartUploadInput!) {
+  initiateMultipartUpload(input: $input) {
+    uploadId
+    __typename
+  }
+}
+
+mutation GenerateMultipartUploadUrls(
+  $input: GenerateMultipartUploadUrlsInput!
+) {
+  generateMultipartUploadUrls(input: $input) {
+    items {
+      partNumber
+      url
+      __typename
+    }
+    __typename
+  }
+}
+
+mutation CompleteMultipartUpload($input: CompleteMultipartUploadInput!) {
+  completeMultipartUpload(input: $input) {
+    location
+    __typename
+  }
+}
+
+mutation AbortMultipartUpload($input: AbortMultipartUploadInput!) {
+  abortMultipartUpload(input: $input) {
+    success
+    __typename
+  }
+}
+
 mutation CreateAnnouncement(
   $input: CreateAnnouncementInput!
   $condition: ModelAnnouncementConditionInput
@@ -204,7 +238,6 @@ mutation CreateAnnouncement(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -212,7 +245,6 @@ mutation CreateAnnouncement(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -421,7 +453,6 @@ mutation UpdateAnnouncement(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -429,7 +460,6 @@ mutation UpdateAnnouncement(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -638,7 +668,6 @@ mutation DeleteAnnouncement(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -646,7 +675,6 @@ mutation DeleteAnnouncement(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -663,8 +691,8 @@ mutation CreateClass(
     endDateTime
     recurring
     daysOfWeek
-    instructorId
-    instructor {
+    creatorId
+    creator {
       id
       selfie
       firstName
@@ -760,8 +788,8 @@ mutation CreateClass(
       owner
       __typename
     }
-    creatorId
-    creator {
+    instructorId
+    instructor {
       id
       selfie
       firstName
@@ -956,7 +984,6 @@ mutation CreateClass(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -964,7 +991,6 @@ mutation CreateClass(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -981,8 +1007,8 @@ mutation UpdateClass(
     endDateTime
     recurring
     daysOfWeek
-    instructorId
-    instructor {
+    creatorId
+    creator {
       id
       selfie
       firstName
@@ -1078,8 +1104,8 @@ mutation UpdateClass(
       owner
       __typename
     }
-    creatorId
-    creator {
+    instructorId
+    instructor {
       id
       selfie
       firstName
@@ -1274,7 +1300,6 @@ mutation UpdateClass(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -1282,7 +1307,6 @@ mutation UpdateClass(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -1299,8 +1323,8 @@ mutation DeleteClass(
     endDateTime
     recurring
     daysOfWeek
-    instructorId
-    instructor {
+    creatorId
+    creator {
       id
       selfie
       firstName
@@ -1396,8 +1420,8 @@ mutation DeleteClass(
       owner
       __typename
     }
-    creatorId
-    creator {
+    instructorId
+    instructor {
       id
       selfie
       firstName
@@ -1592,7 +1616,6 @@ mutation DeleteClass(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -1600,7 +1623,6 @@ mutation DeleteClass(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -1809,7 +1831,6 @@ mutation CreateCommittee(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     members {
@@ -1822,6 +1843,7 @@ mutation CreateCommittee(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -1834,7 +1856,6 @@ mutation CreateCommittee(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -2043,7 +2064,6 @@ mutation UpdateCommittee(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     members {
@@ -2056,6 +2076,7 @@ mutation UpdateCommittee(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -2068,7 +2089,6 @@ mutation UpdateCommittee(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -2277,7 +2297,6 @@ mutation DeleteCommittee(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     members {
@@ -2290,6 +2309,7 @@ mutation DeleteCommittee(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -2302,7 +2322,6 @@ mutation DeleteCommittee(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -2525,7 +2544,6 @@ mutation CreateGathering(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     attendees {
@@ -2538,6 +2556,7 @@ mutation CreateGathering(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -2550,7 +2569,6 @@ mutation CreateGathering(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -2773,7 +2791,6 @@ mutation UpdateGathering(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     attendees {
@@ -2786,6 +2803,7 @@ mutation UpdateGathering(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -2798,7 +2816,6 @@ mutation UpdateGathering(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -3021,7 +3038,6 @@ mutation DeleteGathering(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     attendees {
@@ -3034,6 +3050,7 @@ mutation DeleteGathering(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -3046,7 +3063,6 @@ mutation DeleteGathering(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -3198,7 +3214,6 @@ mutation CreateDonation(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3211,7 +3226,6 @@ mutation CreateDonation(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -3219,7 +3233,6 @@ mutation CreateDonation(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -3371,7 +3384,6 @@ mutation UpdateDonation(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3384,7 +3396,6 @@ mutation UpdateDonation(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -3392,7 +3403,6 @@ mutation UpdateDonation(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -3544,7 +3554,6 @@ mutation DeleteDonation(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3557,7 +3566,6 @@ mutation DeleteDonation(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -3565,7 +3573,6 @@ mutation DeleteDonation(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -3780,7 +3787,6 @@ mutation CreateFundraisingCampaign(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     donations {
@@ -3796,7 +3802,6 @@ mutation CreateFundraisingCampaign(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3808,7 +3813,6 @@ mutation CreateFundraisingCampaign(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -4023,7 +4027,6 @@ mutation UpdateFundraisingCampaign(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     donations {
@@ -4039,7 +4042,6 @@ mutation UpdateFundraisingCampaign(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4051,7 +4053,6 @@ mutation UpdateFundraisingCampaign(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -4266,7 +4267,6 @@ mutation DeleteFundraisingCampaign(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     donations {
@@ -4282,7 +4282,6 @@ mutation DeleteFundraisingCampaign(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4294,7 +4293,6 @@ mutation DeleteFundraisingCampaign(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -4470,6 +4468,7 @@ mutation CreateMosque(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -4489,7 +4488,6 @@ mutation CreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4505,15 +4503,14 @@ mutation CreateMosque(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4532,7 +4529,6 @@ mutation CreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4554,7 +4550,6 @@ mutation CreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4579,7 +4574,6 @@ mutation CreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4598,7 +4592,6 @@ mutation CreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4619,7 +4612,6 @@ mutation CreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4639,7 +4631,6 @@ mutation CreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4660,7 +4651,6 @@ mutation CreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4672,7 +4662,6 @@ mutation CreateMosque(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -4848,6 +4837,7 @@ mutation UpdateMosque(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -4867,7 +4857,6 @@ mutation UpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4883,15 +4872,14 @@ mutation UpdateMosque(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4910,7 +4898,6 @@ mutation UpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4932,7 +4919,6 @@ mutation UpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4957,7 +4943,6 @@ mutation UpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4976,7 +4961,6 @@ mutation UpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4997,7 +4981,6 @@ mutation UpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5017,7 +5000,6 @@ mutation UpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5038,7 +5020,6 @@ mutation UpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5050,7 +5031,6 @@ mutation UpdateMosque(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -5226,6 +5206,7 @@ mutation DeleteMosque(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -5245,7 +5226,6 @@ mutation DeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5261,15 +5241,14 @@ mutation DeleteMosque(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5288,7 +5267,6 @@ mutation DeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5310,7 +5288,6 @@ mutation DeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5335,7 +5312,6 @@ mutation DeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5354,7 +5330,6 @@ mutation DeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5375,7 +5350,6 @@ mutation DeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5395,7 +5369,6 @@ mutation DeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5416,7 +5389,6 @@ mutation DeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5428,7 +5400,6 @@ mutation DeleteMosque(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -5643,7 +5614,6 @@ mutation CreateMonthlyPrayerSchedule(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -5651,7 +5621,6 @@ mutation CreateMonthlyPrayerSchedule(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -5866,7 +5835,6 @@ mutation UpdateMonthlyPrayerSchedule(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -5874,7 +5842,6 @@ mutation UpdateMonthlyPrayerSchedule(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -6089,7 +6056,6 @@ mutation DeleteMonthlyPrayerSchedule(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6097,7 +6063,6 @@ mutation DeleteMonthlyPrayerSchedule(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -6308,7 +6273,6 @@ mutation CreateResource(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6316,7 +6280,6 @@ mutation CreateResource(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -6527,7 +6490,6 @@ mutation UpdateResource(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6535,7 +6497,6 @@ mutation UpdateResource(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -6746,7 +6707,6 @@ mutation DeleteResource(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6754,7 +6714,6 @@ mutation DeleteResource(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -6964,7 +6923,6 @@ mutation CreateService(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6972,7 +6930,6 @@ mutation CreateService(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -7182,7 +7139,6 @@ mutation UpdateService(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -7190,7 +7146,6 @@ mutation UpdateService(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -7400,7 +7355,6 @@ mutation DeleteService(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -7408,7 +7362,6 @@ mutation DeleteService(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -7437,7 +7390,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7453,15 +7405,14 @@ mutation CreateUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7480,7 +7431,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7502,7 +7452,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7527,7 +7476,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7546,7 +7494,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7566,7 +7513,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7587,7 +7533,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7607,7 +7552,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7628,7 +7572,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7644,15 +7587,14 @@ mutation CreateUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7672,7 +7614,6 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7689,6 +7630,7 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -7706,6 +7648,7 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -7723,6 +7666,7 @@ mutation CreateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -7741,6 +7685,7 @@ mutation CreateUser(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -7781,7 +7726,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7797,15 +7741,14 @@ mutation UpdateUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7824,7 +7767,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7846,7 +7788,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7871,7 +7812,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7890,7 +7830,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7910,7 +7849,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7931,7 +7869,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7951,7 +7888,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7972,7 +7908,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7988,15 +7923,14 @@ mutation UpdateUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8016,7 +7950,6 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8033,6 +7966,7 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8050,6 +7984,7 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8067,6 +8002,7 @@ mutation UpdateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8085,6 +8021,7 @@ mutation UpdateUser(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -8125,7 +8062,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8141,15 +8077,14 @@ mutation DeleteUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8168,7 +8103,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8190,7 +8124,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8215,7 +8148,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8234,7 +8166,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8254,7 +8185,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8275,7 +8205,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8295,7 +8224,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8316,7 +8244,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8332,15 +8259,14 @@ mutation DeleteUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8360,7 +8286,6 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8377,6 +8302,7 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8394,6 +8320,7 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8411,6 +8338,7 @@ mutation DeleteUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8429,6 +8357,7 @@ mutation DeleteUser(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -8651,7 +8580,6 @@ mutation CreateVolunteerTask(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     volunteers {
@@ -8665,6 +8593,7 @@ mutation CreateVolunteerTask(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -8676,7 +8605,6 @@ mutation CreateVolunteerTask(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -8887,7 +8815,6 @@ mutation UpdateVolunteerTask(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     volunteers {
@@ -8901,6 +8828,7 @@ mutation UpdateVolunteerTask(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -8912,7 +8840,6 @@ mutation UpdateVolunteerTask(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -9123,7 +9050,6 @@ mutation DeleteVolunteerTask(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     volunteers {
@@ -9137,6 +9063,7 @@ mutation DeleteVolunteerTask(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -9148,7 +9075,6 @@ mutation DeleteVolunteerTask(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -9195,7 +9121,6 @@ mutation CreateCommitteeMembers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -9208,7 +9133,6 @@ mutation CreateCommitteeMembers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9312,6 +9236,7 @@ mutation CreateCommitteeMembers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -9359,7 +9284,6 @@ mutation UpdateCommitteeMembers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -9372,7 +9296,6 @@ mutation UpdateCommitteeMembers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9476,6 +9399,7 @@ mutation UpdateCommitteeMembers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -9523,7 +9447,6 @@ mutation DeleteCommitteeMembers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -9536,7 +9459,6 @@ mutation DeleteCommitteeMembers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9640,6 +9562,7 @@ mutation DeleteCommitteeMembers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -9701,7 +9624,6 @@ mutation CreateGatheringAttendees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -9714,7 +9636,6 @@ mutation CreateGatheringAttendees(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9818,6 +9739,7 @@ mutation CreateGatheringAttendees(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -9879,7 +9801,6 @@ mutation UpdateGatheringAttendees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -9892,7 +9813,6 @@ mutation UpdateGatheringAttendees(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9996,6 +9916,7 @@ mutation UpdateGatheringAttendees(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10057,7 +9978,6 @@ mutation DeleteGatheringAttendees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -10070,7 +9990,6 @@ mutation DeleteGatheringAttendees(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -10174,6 +10093,7 @@ mutation DeleteGatheringAttendees(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10285,7 +10205,6 @@ mutation CreateMosqueFollowers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -10389,6 +10308,7 @@ mutation CreateMosqueFollowers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10500,7 +10420,6 @@ mutation UpdateMosqueFollowers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -10604,6 +10523,7 @@ mutation UpdateMosqueFollowers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10715,7 +10635,6 @@ mutation DeleteMosqueFollowers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -10819,6 +10738,7 @@ mutation DeleteMosqueFollowers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10964,7 +10884,6 @@ mutation CreateVolunteerTaskUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -10977,7 +10896,6 @@ mutation CreateVolunteerTaskUser(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -10986,6 +10904,7 @@ mutation CreateVolunteerTaskUser(
     _deleted
     _lastChangedAt
     owner
+    creatorId
     __typename
   }
 }
@@ -11130,7 +11049,6 @@ mutation UpdateVolunteerTaskUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -11143,7 +11061,6 @@ mutation UpdateVolunteerTaskUser(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -11152,6 +11069,7 @@ mutation UpdateVolunteerTaskUser(
     _deleted
     _lastChangedAt
     owner
+    creatorId
     __typename
   }
 }
@@ -11296,7 +11214,6 @@ mutation DeleteVolunteerTaskUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -11309,7 +11226,6 @@ mutation DeleteVolunteerTaskUser(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -11318,6 +11234,7 @@ mutation DeleteVolunteerTaskUser(
     _deleted
     _lastChangedAt
     owner
+    creatorId
     __typename
   }
 }

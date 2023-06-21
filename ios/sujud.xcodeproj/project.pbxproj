@@ -8,20 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		037BA69D20A94115E6A4F051 /* Hours+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CF032FE5388697744E8B5A /* Hours+Schema.swift */; };
+		055313D3BBAB6D3177FCC3AC /* InitiateMultipartUploadOutput+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACCBE40BA4877352D97FD3F /* InitiateMultipartUploadOutput+Schema.swift */; };
 		05CD3CE444E2B21F2F941541 /* Committee+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142255DC0782C520BB575671 /* Committee+Schema.swift */; };
 		0E1230C41383EA1BB1C66E50 /* MosqueFollowers+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCD5AC76A1C6CDA5A948AE71 /* MosqueFollowers+Schema.swift */; };
+		11D0AC268446834A83AC6A6E /* AbortMultipartUploadOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1E2EB044E1CAE25F861A1D /* AbortMultipartUploadOutput.swift */; };
+		14C1C592C7DD131DC4D6422D /* InProcessUpload+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2907DA2DC3428FE5650E0852 /* InProcessUpload+Schema.swift */; };
 		1CA7EA27F1651E25C2F044FE /* CommitteeMembers+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B949B3B31129089777318DA /* CommitteeMembers+Schema.swift */; };
+		1EFE2CD664D0DC3C4371E8AE /* ListUploadedPartsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B22A5D9114654EF82908426 /* ListUploadedPartsOutput.swift */; };
 		20B4662F26C5D5ED15390D4D /* amplifyconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = 7209A1F0E6A1521B0878AC4F /* amplifyconfiguration.json */; };
 		248C972E7A186745719F4D87 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29002AB93790FD2B71E0D7DF /* User.swift */; };
+		2579C13C4F780FE31FE3DA79 /* AbortMultipartUploadOutput+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFACBC915D62B1FC76864B07 /* AbortMultipartUploadOutput+Schema.swift */; };
 		2E76BD153C916496A4044529 /* VolunteerTask+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49919E1346503C6DD9F4A92E /* VolunteerTask+Schema.swift */; };
 		31FA1464E59AAF73C61543C0 /* Donation+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0398E11770D46B61EBA9C940 /* Donation+Schema.swift */; };
 		32EA11802C38C92B30D059C7 /* User+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4548962AE73324BB348C007 /* User+Schema.swift */; };
 		3A90053DE17B46652575911F /* PrayerTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB7AF182A33CB179F820A27 /* PrayerTime.swift */; };
 		3AD47106021D3D0137675E88 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = B377B8CDD4B65B48468517CA /* Service.swift */; };
+		3BAC7B1DF3B57106ECB449EF /* CompleteMultipartUploadOutput+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 810EFC0D06C247C37BE6ACF3 /* CompleteMultipartUploadOutput+Schema.swift */; };
+		3D277A104476587F0A584040 /* ListInProcessUploadsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12075280361608D3412676C0 /* ListInProcessUploadsOutput.swift */; };
 		43A52FCE09408BC9FB48D702 /* CommitteeMembers.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7CBD91BB2C7F5B505D40055 /* CommitteeMembers.swift */; };
 		489268C851B88172E30D6BC8 /* Committee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A34F5E54C1B52B166EBFE07 /* Committee.swift */; };
 		4A623E044CC65D6918380C54 /* GatheringType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB9742D61128B2031C49FE4 /* GatheringType.swift */; };
 		4B7EB5E28B0205819D34F876 /* Mosque+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3BC2F89A5575224FCB4B272 /* Mosque+Schema.swift */; };
+		505295910CE617D67A1B60EF /* CompleteMultipartUploadOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45C85BB1BF835FC8079FE89 /* CompleteMultipartUploadOutput.swift */; };
 		50DD7B322A3BB7CB00FCFFAB /* sujudApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD7B312A3BB7CB00FCFFAB /* sujudApp.swift */; };
 		50DD7B342A3BB7CB00FCFFAB /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD7B332A3BB7CB00FCFFAB /* Persistence.swift */; };
 		50DD7B372A3BB7CB00FCFFAB /* sujud.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 50DD7B352A3BB7CB00FCFFAB /* sujud.xcdatamodeld */; };
@@ -34,10 +42,13 @@
 		519C354EF969517D31D98B7C /* VolunteerTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C03B83A4C9D0026C8CCADFF /* VolunteerTask.swift */; };
 		51C66A27949D8FAA1ABF1B52 /* Announcement+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 055F55CE15503F4C12839A59 /* Announcement+Schema.swift */; };
 		53E2434FF5DED969AC218FCC /* SocialMedia+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3F9BE17A9761EDD8F45F7B /* SocialMedia+Schema.swift */; };
+		5416433A87A44413403A1EA6 /* InProcessUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC0FC66FFC4DE5C0BE79CC7 /* InProcessUpload.swift */; };
 		5511C622540FB012F240D452 /* Gathering+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903B6FCB1E6D0A4E76865905 /* Gathering+Schema.swift */; };
 		57F7924D442604935C4AE61F /* FundraisingCampaign+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F77C4E4957965F585F276AB /* FundraisingCampaign+Schema.swift */; };
 		5A3AFB0F8384E990BC6125FA /* MonthlyPrayerSchedule.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84115DB30A7435920979592 /* MonthlyPrayerSchedule.swift */; };
+		5B988C22D42E34966F6EDFBF /* InitiateMultipartUploadOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD5DF746F09BC3396B8D86F3 /* InitiateMultipartUploadOutput.swift */; };
 		5D422CD9B0686330E8FF7CAF /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 314FB3315611AD9E6D44E490 /* Class.swift */; };
+		6024D33EA2972FE326779590 /* GenerateMultipartUploadUrlsOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1DF4C9070C3567C0E4AEF92 /* GenerateMultipartUploadUrlsOutput.swift */; };
 		6418C07411C21739EDB41F61 /* ServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72BE2D800856E84D82C63E2 /* ServiceType.swift */; };
 		6922CDE82D52B6173875E608 /* MosqueFollowers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 128F9E4F6C41F2BEA158F01E /* MosqueFollowers.swift */; };
 		6B641603941FEE03F45A770F /* PrayerTime+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8F45EC83C2ED6F3FC5B05A3 /* PrayerTime+Schema.swift */; };
@@ -50,12 +61,15 @@
 		883FE53CFEE364359CAB0308 /* Gathering.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41B1E3E9155E179C9CDC7FF8 /* Gathering.swift */; };
 		8B2D5609E9E725E00E11907E /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A414A5C1DBB2475CB6C801 /* Day.swift */; };
 		8D644619774DE325385F333C /* Resource+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE2A743A2422740799B3618 /* Resource+Schema.swift */; };
+		90B0808539D2A32A19AD73DA /* GenerateMultipartUploadUrlsOutput+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69639703D48C241910991DB /* GenerateMultipartUploadUrlsOutput+Schema.swift */; };
 		9B043E17F1602CA8E4024812 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CEAB4349281DA952F7A7FDA /* Location.swift */; };
 		9CB6E04E059EC5F36A8FF4CB /* Service+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = B819E3EBBA3ED5B839B5FB78 /* Service+Schema.swift */; };
+		9E8E4528D6E53D7133FA8BC9 /* ListUploadedPartsOutput+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE7760BBA1F6A0C9DC2CAA7 /* ListUploadedPartsOutput+Schema.swift */; };
 		A06A2BF3D89E50733618CED2 /* FundraisingCampaignType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D53C0E77F54B9735D7E9E26 /* FundraisingCampaignType.swift */; };
 		A34EA30A15B7C6DBA532D061 /* ContactInfo+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE6EDEEDCB5533EFCD95FFF /* ContactInfo+Schema.swift */; };
 		AA77EFCF423A3FBD800A8DCD /* VolunteerTaskUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D537C96B2B7BC3310FEE0755 /* VolunteerTaskUser.swift */; };
 		AA8F245FE50C4F11F179CAC9 /* OperatingHours.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AC75FBE08C87F004A200A2 /* OperatingHours.swift */; };
+		AAF48303946098C51C32C39A /* GenerateMultipartUploadUrlOutput+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8887B88F740148F2D40BAA3D /* GenerateMultipartUploadUrlOutput+Schema.swift */; };
 		B87DFEA277BE18CBF447274B /* DayType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EFC35A19DCFFDFFF573FA8 /* DayType.swift */; };
 		BBB8F829B2B46487D5A56C0E /* Mosque.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541D46611AB8822A1B560625 /* Mosque.swift */; };
 		BDD27F0572B42BF89FCCB551 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0452B2E9C04255098BD0E0B2 /* Resource.swift */; };
@@ -64,9 +78,13 @@
 		C41624D0855FF7481308512E /* GatheringAttendees+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008873A4646DE6B1C6647C51 /* GatheringAttendees+Schema.swift */; };
 		C6ADF12BDDA3477D7AAD7CB2 /* Announcement.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7260D540AE1A2B141F69B1A /* Announcement.swift */; };
 		CF4580C7C923E7A6CA96FB01 /* ResourceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F28B2190BB99C7AE8E2653 /* ResourceType.swift */; };
+		D1FCEB7466A684BA7ACF49E2 /* GenerateMultipartUploadUrlOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1E9B61BE2C779729B526F2 /* GenerateMultipartUploadUrlOutput.swift */; };
+		E6D0945C677580CD8D7680C8 /* ListInProcessUploadsOutput+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = A973D9FDE3DE6E2B193417C0 /* ListInProcessUploadsOutput+Schema.swift */; };
 		E924DC871719C2C62B1D3FCF /* PrayerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20DB715D3A402D5B6156FC46 /* PrayerType.swift */; };
 		E9749D946C34C7189C2BD0D6 /* Location+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A9AB8525D37BC123B3DF51 /* Location+Schema.swift */; };
+		EC4979255E3107C006542BCC /* UploadedPart+Schema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D9C2CA63B7805BBB6659A09 /* UploadedPart+Schema.swift */; };
 		EFF3C18FAA0ECDC91771C7E8 /* Donation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21B2C8F00E14DCB90E0CD5CA /* Donation.swift */; };
+		F2BBD024F6A7FBD24DBAF0A1 /* UploadedPart.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD7361C6EE520FA96C149FD3 /* UploadedPart.swift */; };
 		F3FBEF1751E8D10286B3C3D0 /* AmplifyModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EE39687D6704A7A8BCAF84E /* AmplifyModels.swift */; };
 		F5334580C0075679BDA06441 /* UserStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4288BAFA0CE8ADDA556AC7BF /* UserStatus.swift */; };
 		F5727A6B8CC1D92C0BCF1FB0 /* SocialMedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51EDAE6A72F13CDCE357DB83 /* SocialMedia.swift */; };
@@ -100,14 +118,17 @@
 		0C47B340B362AD39A4AAC7AE /* UserType.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = UserType.swift; path = amplify/generated/models/UserType.swift; sourceTree = "<group>"; };
 		0EE2A743A2422740799B3618 /* Resource+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Resource+Schema.swift"; path = "amplify/generated/models/Resource+Schema.swift"; sourceTree = "<group>"; };
 		11A9AB8525D37BC123B3DF51 /* Location+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Location+Schema.swift"; path = "amplify/generated/models/Location+Schema.swift"; sourceTree = "<group>"; };
+		12075280361608D3412676C0 /* ListInProcessUploadsOutput.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = ListInProcessUploadsOutput.swift; path = amplify/generated/models/ListInProcessUploadsOutput.swift; sourceTree = "<group>"; };
 		128F9E4F6C41F2BEA158F01E /* MosqueFollowers.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = MosqueFollowers.swift; path = amplify/generated/models/MosqueFollowers.swift; sourceTree = "<group>"; };
 		142255DC0782C520BB575671 /* Committee+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Committee+Schema.swift"; path = "amplify/generated/models/Committee+Schema.swift"; sourceTree = "<group>"; };
 		19CF032FE5388697744E8B5A /* Hours+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Hours+Schema.swift"; path = "amplify/generated/models/Hours+Schema.swift"; sourceTree = "<group>"; };
+		1A1E2EB044E1CAE25F861A1D /* AbortMultipartUploadOutput.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = AbortMultipartUploadOutput.swift; path = amplify/generated/models/AbortMultipartUploadOutput.swift; sourceTree = "<group>"; };
 		1C03B83A4C9D0026C8CCADFF /* VolunteerTask.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = VolunteerTask.swift; path = amplify/generated/models/VolunteerTask.swift; sourceTree = "<group>"; };
 		1EE39687D6704A7A8BCAF84E /* AmplifyModels.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = AmplifyModels.swift; path = amplify/generated/models/AmplifyModels.swift; sourceTree = "<group>"; };
 		20DB715D3A402D5B6156FC46 /* PrayerType.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = PrayerType.swift; path = amplify/generated/models/PrayerType.swift; sourceTree = "<group>"; };
 		21B2C8F00E14DCB90E0CD5CA /* Donation.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Donation.swift; path = amplify/generated/models/Donation.swift; sourceTree = "<group>"; };
 		29002AB93790FD2B71E0D7DF /* User.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = User.swift; path = amplify/generated/models/User.swift; sourceTree = "<group>"; };
+		2907DA2DC3428FE5650E0852 /* InProcessUpload+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "InProcessUpload+Schema.swift"; path = "amplify/generated/models/InProcessUpload+Schema.swift"; sourceTree = "<group>"; };
 		29EFC35A19DCFFDFFF573FA8 /* DayType.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = DayType.swift; path = amplify/generated/models/DayType.swift; sourceTree = "<group>"; };
 		2A34F5E54C1B52B166EBFE07 /* Committee.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Committee.swift; path = amplify/generated/models/Committee.swift; sourceTree = "<group>"; };
 		2F77C4E4957965F585F276AB /* FundraisingCampaign+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "FundraisingCampaign+Schema.swift"; path = "amplify/generated/models/FundraisingCampaign+Schema.swift"; sourceTree = "<group>"; };
@@ -115,6 +136,7 @@
 		3664D3929CCE90B94CE3BBA5 /* Class+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Class+Schema.swift"; path = "amplify/generated/models/Class+Schema.swift"; sourceTree = "<group>"; };
 		38F28B2190BB99C7AE8E2653 /* ResourceType.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = ResourceType.swift; path = amplify/generated/models/ResourceType.swift; sourceTree = "<group>"; };
 		3B949B3B31129089777318DA /* CommitteeMembers+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "CommitteeMembers+Schema.swift"; path = "amplify/generated/models/CommitteeMembers+Schema.swift"; sourceTree = "<group>"; };
+		3D9C2CA63B7805BBB6659A09 /* UploadedPart+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "UploadedPart+Schema.swift"; path = "amplify/generated/models/UploadedPart+Schema.swift"; sourceTree = "<group>"; };
 		41B1E3E9155E179C9CDC7FF8 /* Gathering.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Gathering.swift; path = amplify/generated/models/Gathering.swift; sourceTree = "<group>"; };
 		4288BAFA0CE8ADDA556AC7BF /* UserStatus.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = UserStatus.swift; path = amplify/generated/models/UserStatus.swift; sourceTree = "<group>"; };
 		475FCC490284087586BDD54F /* MonthlyPrayerSchedule+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "MonthlyPrayerSchedule+Schema.swift"; path = "amplify/generated/models/MonthlyPrayerSchedule+Schema.swift"; sourceTree = "<group>"; };
@@ -137,16 +159,24 @@
 		51EDAE6A72F13CDCE357DB83 /* SocialMedia.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = SocialMedia.swift; path = amplify/generated/models/SocialMedia.swift; sourceTree = "<group>"; };
 		541D46611AB8822A1B560625 /* Mosque.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Mosque.swift; path = amplify/generated/models/Mosque.swift; sourceTree = "<group>"; };
 		5AB887232002A9E100B7BD23 /* VolunteerTaskUser+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "VolunteerTaskUser+Schema.swift"; path = "amplify/generated/models/VolunteerTaskUser+Schema.swift"; sourceTree = "<group>"; };
+		5B22A5D9114654EF82908426 /* ListUploadedPartsOutput.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = ListUploadedPartsOutput.swift; path = amplify/generated/models/ListUploadedPartsOutput.swift; sourceTree = "<group>"; };
 		5D3F9BE17A9761EDD8F45F7B /* SocialMedia+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "SocialMedia+Schema.swift"; path = "amplify/generated/models/SocialMedia+Schema.swift"; sourceTree = "<group>"; };
 		5D6CCD4DA005B90F5E8A4BF8 /* FundraisingCampaign.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = FundraisingCampaign.swift; path = amplify/generated/models/FundraisingCampaign.swift; sourceTree = "<group>"; };
+		6AC0FC66FFC4DE5C0BE79CC7 /* InProcessUpload.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = InProcessUpload.swift; path = amplify/generated/models/InProcessUpload.swift; sourceTree = "<group>"; };
+		6C1E9B61BE2C779729B526F2 /* GenerateMultipartUploadUrlOutput.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = GenerateMultipartUploadUrlOutput.swift; path = amplify/generated/models/GenerateMultipartUploadUrlOutput.swift; sourceTree = "<group>"; };
 		6D53C0E77F54B9735D7E9E26 /* FundraisingCampaignType.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = FundraisingCampaignType.swift; path = amplify/generated/models/FundraisingCampaignType.swift; sourceTree = "<group>"; };
 		7209A1F0E6A1521B0878AC4F /* amplifyconfiguration.json */ = {isa = PBXFileReference; explicitFileType = text.json; lastKnownFileType = text.json; name = amplifyconfiguration.json; path = amplifyconfiguration.json; sourceTree = "<group>"; };
+		810EFC0D06C247C37BE6ACF3 /* CompleteMultipartUploadOutput+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "CompleteMultipartUploadOutput+Schema.swift"; path = "amplify/generated/models/CompleteMultipartUploadOutput+Schema.swift"; sourceTree = "<group>"; };
+		8887B88F740148F2D40BAA3D /* GenerateMultipartUploadUrlOutput+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "GenerateMultipartUploadUrlOutput+Schema.swift"; path = "amplify/generated/models/GenerateMultipartUploadUrlOutput+Schema.swift"; sourceTree = "<group>"; };
 		8CA965FDB252FC7DD51BD720 /* ContactInfo.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = ContactInfo.swift; path = amplify/generated/models/ContactInfo.swift; sourceTree = "<group>"; };
 		8CEAB4349281DA952F7A7FDA /* Location.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Location.swift; path = amplify/generated/models/Location.swift; sourceTree = "<group>"; };
 		903B6FCB1E6D0A4E76865905 /* Gathering+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Gathering+Schema.swift"; path = "amplify/generated/models/Gathering+Schema.swift"; sourceTree = "<group>"; };
 		A3BC2F89A5575224FCB4B272 /* Mosque+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Mosque+Schema.swift"; path = "amplify/generated/models/Mosque+Schema.swift"; sourceTree = "<group>"; };
+		A69639703D48C241910991DB /* GenerateMultipartUploadUrlsOutput+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "GenerateMultipartUploadUrlsOutput+Schema.swift"; path = "amplify/generated/models/GenerateMultipartUploadUrlsOutput+Schema.swift"; sourceTree = "<group>"; };
 		A7AC75FBE08C87F004A200A2 /* OperatingHours.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = OperatingHours.swift; path = amplify/generated/models/OperatingHours.swift; sourceTree = "<group>"; };
 		A8F45EC83C2ED6F3FC5B05A3 /* PrayerTime+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "PrayerTime+Schema.swift"; path = "amplify/generated/models/PrayerTime+Schema.swift"; sourceTree = "<group>"; };
+		A973D9FDE3DE6E2B193417C0 /* ListInProcessUploadsOutput+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "ListInProcessUploadsOutput+Schema.swift"; path = "amplify/generated/models/ListInProcessUploadsOutput+Schema.swift"; sourceTree = "<group>"; };
+		AFACBC915D62B1FC76864B07 /* AbortMultipartUploadOutput+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "AbortMultipartUploadOutput+Schema.swift"; path = "amplify/generated/models/AbortMultipartUploadOutput+Schema.swift"; sourceTree = "<group>"; };
 		B377B8CDD4B65B48468517CA /* Service.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Service.swift; path = amplify/generated/models/Service.swift; sourceTree = "<group>"; };
 		B819E3EBBA3ED5B839B5FB78 /* Service+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Service+Schema.swift"; path = "amplify/generated/models/Service+Schema.swift"; sourceTree = "<group>"; };
 		B84115DB30A7435920979592 /* MonthlyPrayerSchedule.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = MonthlyPrayerSchedule.swift; path = amplify/generated/models/MonthlyPrayerSchedule.swift; sourceTree = "<group>"; };
@@ -155,14 +185,20 @@
 		C4548962AE73324BB348C007 /* User+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "User+Schema.swift"; path = "amplify/generated/models/User+Schema.swift"; sourceTree = "<group>"; };
 		C5922F22631CB46E19E32516 /* GatheringAttendees.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = GatheringAttendees.swift; path = amplify/generated/models/GatheringAttendees.swift; sourceTree = "<group>"; };
 		C9841FD7AA601F7A8A0A9DD1 /* Hours.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Hours.swift; path = amplify/generated/models/Hours.swift; sourceTree = "<group>"; };
+		CD5DF746F09BC3396B8D86F3 /* InitiateMultipartUploadOutput.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = InitiateMultipartUploadOutput.swift; path = amplify/generated/models/InitiateMultipartUploadOutput.swift; sourceTree = "<group>"; };
 		CEB720E17E11BCE1E87A8E08 /* Day+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "Day+Schema.swift"; path = "amplify/generated/models/Day+Schema.swift"; sourceTree = "<group>"; };
 		D1A414A5C1DBB2475CB6C801 /* Day.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Day.swift; path = amplify/generated/models/Day.swift; sourceTree = "<group>"; };
 		D537C96B2B7BC3310FEE0755 /* VolunteerTaskUser.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = VolunteerTaskUser.swift; path = amplify/generated/models/VolunteerTaskUser.swift; sourceTree = "<group>"; };
 		D7260D540AE1A2B141F69B1A /* Announcement.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = Announcement.swift; path = amplify/generated/models/Announcement.swift; sourceTree = "<group>"; };
+		DACCBE40BA4877352D97FD3F /* InitiateMultipartUploadOutput+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "InitiateMultipartUploadOutput+Schema.swift"; path = "amplify/generated/models/InitiateMultipartUploadOutput+Schema.swift"; sourceTree = "<group>"; };
 		DCE6EDEEDCB5533EFCD95FFF /* ContactInfo+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "ContactInfo+Schema.swift"; path = "amplify/generated/models/ContactInfo+Schema.swift"; sourceTree = "<group>"; };
+		DD7361C6EE520FA96C149FD3 /* UploadedPart.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = UploadedPart.swift; path = amplify/generated/models/UploadedPart.swift; sourceTree = "<group>"; };
+		E1DF4C9070C3567C0E4AEF92 /* GenerateMultipartUploadUrlsOutput.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = GenerateMultipartUploadUrlsOutput.swift; path = amplify/generated/models/GenerateMultipartUploadUrlsOutput.swift; sourceTree = "<group>"; };
+		F45C85BB1BF835FC8079FE89 /* CompleteMultipartUploadOutput.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = CompleteMultipartUploadOutput.swift; path = amplify/generated/models/CompleteMultipartUploadOutput.swift; sourceTree = "<group>"; };
 		F72BE2D800856E84D82C63E2 /* ServiceType.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = ServiceType.swift; path = amplify/generated/models/ServiceType.swift; sourceTree = "<group>"; };
 		F7CBD91BB2C7F5B505D40055 /* CommitteeMembers.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = CommitteeMembers.swift; path = amplify/generated/models/CommitteeMembers.swift; sourceTree = "<group>"; };
 		FCD5AC76A1C6CDA5A948AE71 /* MosqueFollowers+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "MosqueFollowers+Schema.swift"; path = "amplify/generated/models/MosqueFollowers+Schema.swift"; sourceTree = "<group>"; };
+		FCE7760BBA1F6A0C9DC2CAA7 /* ListUploadedPartsOutput+Schema.swift */ = {isa = PBXFileReference; explicitFileType = sourcecode.swift; lastKnownFileType = sourcecode.swift; name = "ListUploadedPartsOutput+Schema.swift"; path = "amplify/generated/models/ListUploadedPartsOutput+Schema.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -318,6 +354,24 @@
 				1C03B83A4C9D0026C8CCADFF /* VolunteerTask.swift */,
 				5AB887232002A9E100B7BD23 /* VolunteerTaskUser+Schema.swift */,
 				D537C96B2B7BC3310FEE0755 /* VolunteerTaskUser.swift */,
+				AFACBC915D62B1FC76864B07 /* AbortMultipartUploadOutput+Schema.swift */,
+				1A1E2EB044E1CAE25F861A1D /* AbortMultipartUploadOutput.swift */,
+				810EFC0D06C247C37BE6ACF3 /* CompleteMultipartUploadOutput+Schema.swift */,
+				F45C85BB1BF835FC8079FE89 /* CompleteMultipartUploadOutput.swift */,
+				8887B88F740148F2D40BAA3D /* GenerateMultipartUploadUrlOutput+Schema.swift */,
+				6C1E9B61BE2C779729B526F2 /* GenerateMultipartUploadUrlOutput.swift */,
+				A69639703D48C241910991DB /* GenerateMultipartUploadUrlsOutput+Schema.swift */,
+				E1DF4C9070C3567C0E4AEF92 /* GenerateMultipartUploadUrlsOutput.swift */,
+				2907DA2DC3428FE5650E0852 /* InProcessUpload+Schema.swift */,
+				6AC0FC66FFC4DE5C0BE79CC7 /* InProcessUpload.swift */,
+				DACCBE40BA4877352D97FD3F /* InitiateMultipartUploadOutput+Schema.swift */,
+				CD5DF746F09BC3396B8D86F3 /* InitiateMultipartUploadOutput.swift */,
+				A973D9FDE3DE6E2B193417C0 /* ListInProcessUploadsOutput+Schema.swift */,
+				12075280361608D3412676C0 /* ListInProcessUploadsOutput.swift */,
+				FCE7760BBA1F6A0C9DC2CAA7 /* ListUploadedPartsOutput+Schema.swift */,
+				5B22A5D9114654EF82908426 /* ListUploadedPartsOutput.swift */,
+				3D9C2CA63B7805BBB6659A09 /* UploadedPart+Schema.swift */,
+				DD7361C6EE520FA96C149FD3 /* UploadedPart.swift */,
 			);
 			name = AmplifyModels;
 			sourceTree = "<group>";
@@ -513,6 +567,24 @@
 				519C354EF969517D31D98B7C /* VolunteerTask.swift in Sources */,
 				FF76B258224B06D56F595E6F /* VolunteerTaskUser+Schema.swift in Sources */,
 				AA77EFCF423A3FBD800A8DCD /* VolunteerTaskUser.swift in Sources */,
+				2579C13C4F780FE31FE3DA79 /* AbortMultipartUploadOutput+Schema.swift in Sources */,
+				11D0AC268446834A83AC6A6E /* AbortMultipartUploadOutput.swift in Sources */,
+				3BAC7B1DF3B57106ECB449EF /* CompleteMultipartUploadOutput+Schema.swift in Sources */,
+				505295910CE617D67A1B60EF /* CompleteMultipartUploadOutput.swift in Sources */,
+				AAF48303946098C51C32C39A /* GenerateMultipartUploadUrlOutput+Schema.swift in Sources */,
+				D1FCEB7466A684BA7ACF49E2 /* GenerateMultipartUploadUrlOutput.swift in Sources */,
+				90B0808539D2A32A19AD73DA /* GenerateMultipartUploadUrlsOutput+Schema.swift in Sources */,
+				6024D33EA2972FE326779590 /* GenerateMultipartUploadUrlsOutput.swift in Sources */,
+				14C1C592C7DD131DC4D6422D /* InProcessUpload+Schema.swift in Sources */,
+				5416433A87A44413403A1EA6 /* InProcessUpload.swift in Sources */,
+				055313D3BBAB6D3177FCC3AC /* InitiateMultipartUploadOutput+Schema.swift in Sources */,
+				5B988C22D42E34966F6EDFBF /* InitiateMultipartUploadOutput.swift in Sources */,
+				E6D0945C677580CD8D7680C8 /* ListInProcessUploadsOutput+Schema.swift in Sources */,
+				3D277A104476587F0A584040 /* ListInProcessUploadsOutput.swift in Sources */,
+				9E8E4528D6E53D7133FA8BC9 /* ListUploadedPartsOutput+Schema.swift in Sources */,
+				1EFE2CD664D0DC3C4371E8AE /* ListUploadedPartsOutput.swift in Sources */,
+				EC4979255E3107C006542BCC /* UploadedPart+Schema.swift in Sources */,
+				F2BBD024F6A7FBD24DBAF0A1 /* UploadedPart.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -71,6 +71,124 @@ export enum UserType {
   USER_READ_ONLY = "USER_READ_ONLY"
 }
 
+type EagerAbortMultipartUploadOutput = {
+  readonly success: boolean;
+}
+
+type LazyAbortMultipartUploadOutput = {
+  readonly success: boolean;
+}
+
+export declare type AbortMultipartUploadOutput = LazyLoading extends LazyLoadingDisabled ? EagerAbortMultipartUploadOutput : LazyAbortMultipartUploadOutput
+
+export declare const AbortMultipartUploadOutput: (new (init: ModelInit<AbortMultipartUploadOutput>) => AbortMultipartUploadOutput)
+
+type EagerCompleteMultipartUploadOutput = {
+  readonly location: string;
+}
+
+type LazyCompleteMultipartUploadOutput = {
+  readonly location: string;
+}
+
+export declare type CompleteMultipartUploadOutput = LazyLoading extends LazyLoadingDisabled ? EagerCompleteMultipartUploadOutput : LazyCompleteMultipartUploadOutput
+
+export declare const CompleteMultipartUploadOutput: (new (init: ModelInit<CompleteMultipartUploadOutput>) => CompleteMultipartUploadOutput)
+
+type EagerInitiateMultipartUploadOutput = {
+  readonly uploadId: string;
+}
+
+type LazyInitiateMultipartUploadOutput = {
+  readonly uploadId: string;
+}
+
+export declare type InitiateMultipartUploadOutput = LazyLoading extends LazyLoadingDisabled ? EagerInitiateMultipartUploadOutput : LazyInitiateMultipartUploadOutput
+
+export declare const InitiateMultipartUploadOutput: (new (init: ModelInit<InitiateMultipartUploadOutput>) => InitiateMultipartUploadOutput)
+
+type EagerGenerateMultipartUploadUrlsOutput = {
+  readonly items: GenerateMultipartUploadUrlOutput[];
+}
+
+type LazyGenerateMultipartUploadUrlsOutput = {
+  readonly items: GenerateMultipartUploadUrlOutput[];
+}
+
+export declare type GenerateMultipartUploadUrlsOutput = LazyLoading extends LazyLoadingDisabled ? EagerGenerateMultipartUploadUrlsOutput : LazyGenerateMultipartUploadUrlsOutput
+
+export declare const GenerateMultipartUploadUrlsOutput: (new (init: ModelInit<GenerateMultipartUploadUrlsOutput>) => GenerateMultipartUploadUrlsOutput)
+
+type EagerGenerateMultipartUploadUrlOutput = {
+  readonly partNumber: number;
+  readonly url: string;
+}
+
+type LazyGenerateMultipartUploadUrlOutput = {
+  readonly partNumber: number;
+  readonly url: string;
+}
+
+export declare type GenerateMultipartUploadUrlOutput = LazyLoading extends LazyLoadingDisabled ? EagerGenerateMultipartUploadUrlOutput : LazyGenerateMultipartUploadUrlOutput
+
+export declare const GenerateMultipartUploadUrlOutput: (new (init: ModelInit<GenerateMultipartUploadUrlOutput>) => GenerateMultipartUploadUrlOutput)
+
+type EagerListInProcessMultipartUploadsOutput = {
+  readonly items: InProcessUpload[];
+}
+
+type LazyListInProcessMultipartUploadsOutput = {
+  readonly items: InProcessUpload[];
+}
+
+export declare type ListInProcessMultipartUploadsOutput = LazyLoading extends LazyLoadingDisabled ? EagerListInProcessMultipartUploadsOutput : LazyListInProcessMultipartUploadsOutput
+
+export declare const ListInProcessMultipartUploadsOutput: (new (init: ModelInit<ListInProcessMultipartUploadsOutput>) => ListInProcessMultipartUploadsOutput)
+
+type EagerInProcessUpload = {
+  readonly uploadId: string;
+  readonly fileName: string;
+  readonly contentType: string;
+  readonly createdAt: string;
+}
+
+type LazyInProcessUpload = {
+  readonly uploadId: string;
+  readonly fileName: string;
+  readonly contentType: string;
+  readonly createdAt: string;
+}
+
+export declare type InProcessUpload = LazyLoading extends LazyLoadingDisabled ? EagerInProcessUpload : LazyInProcessUpload
+
+export declare const InProcessUpload: (new (init: ModelInit<InProcessUpload>) => InProcessUpload)
+
+type EagerListCompletedMultipartUploadsOutput = {
+  readonly items: UploadedPart[];
+}
+
+type LazyListCompletedMultipartUploadsOutput = {
+  readonly items: UploadedPart[];
+}
+
+export declare type ListCompletedMultipartUploadsOutput = LazyLoading extends LazyLoadingDisabled ? EagerListCompletedMultipartUploadsOutput : LazyListCompletedMultipartUploadsOutput
+
+export declare const ListCompletedMultipartUploadsOutput: (new (init: ModelInit<ListCompletedMultipartUploadsOutput>) => ListCompletedMultipartUploadsOutput)
+
+type EagerUploadedPart = {
+  readonly partNumber: number;
+  readonly eTag: string;
+}
+
+type LazyUploadedPart = {
+  readonly partNumber: number;
+  readonly eTag: string;
+}
+
+export declare type UploadedPart = LazyLoading extends LazyLoadingDisabled ? EagerUploadedPart : LazyUploadedPart
+
+export declare const UploadedPart: (new (init: ModelInit<UploadedPart>) => UploadedPart)
+
 type EagerContactInfo = {
   readonly phoneNumber?: string | null;
   readonly email?: string | null;
@@ -249,10 +367,10 @@ type EagerClass = {
   readonly endDateTime?: string | null;
   readonly recurring: boolean;
   readonly daysOfWeek?: DayType[] | keyof typeof DayType | null;
-  readonly instructorId: string;
-  readonly instructor?: User | null;
   readonly creatorId: string;
   readonly creator?: User | null;
+  readonly instructorId: string;
+  readonly instructor?: User | null;
   readonly mosqueId: string;
   readonly mosque?: Mosque | null;
   readonly createdAt?: string | null;
@@ -271,10 +389,10 @@ type LazyClass = {
   readonly endDateTime?: string | null;
   readonly recurring: boolean;
   readonly daysOfWeek?: DayType[] | keyof typeof DayType | null;
-  readonly instructorId: string;
-  readonly instructor: AsyncItem<User | undefined>;
   readonly creatorId: string;
   readonly creator: AsyncItem<User | undefined>;
+  readonly instructorId: string;
+  readonly instructor: AsyncItem<User | undefined>;
   readonly mosqueId: string;
   readonly mosque: AsyncItem<Mosque | undefined>;
   readonly createdAt?: string | null;

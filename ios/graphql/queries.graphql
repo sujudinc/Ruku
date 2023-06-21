@@ -1,5 +1,33 @@
 # this is an auto generated file. This will be overwritten
 
+query ListInProcessMultipartUploads(
+  $input: ListInProcessMultipartUploadsInput!
+) {
+  listInProcessMultipartUploads(input: $input) {
+    items {
+      uploadId
+      fileName
+      contentType
+      createdAt
+      __typename
+    }
+    __typename
+  }
+}
+
+query ListCompletedMultipartUploads(
+  $input: ListCompletedMultipartUploadsInput!
+) {
+  listCompletedMultipartUploads(input: $input) {
+    items {
+      partNumber
+      eTag
+      __typename
+    }
+    __typename
+  }
+}
+
 query GetAnnouncement($id: ID!) {
   getAnnouncement(id: $id) {
     id
@@ -201,7 +229,6 @@ query GetAnnouncement($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -209,7 +236,6 @@ query GetAnnouncement($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -254,7 +280,6 @@ query ListAnnouncements(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -262,7 +287,6 @@ query ListAnnouncements(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -317,7 +341,6 @@ query SyncAnnouncements(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -325,7 +348,6 @@ query SyncAnnouncements(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -382,7 +404,6 @@ query AnnouncementsByCreatorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -390,7 +411,6 @@ query AnnouncementsByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -447,7 +467,6 @@ query AnnouncementsByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -455,7 +474,6 @@ query AnnouncementsByMosqueId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -473,8 +491,8 @@ query GetClass($id: ID!) {
     endDateTime
     recurring
     daysOfWeek
-    instructorId
-    instructor {
+    creatorId
+    creator {
       id
       selfie
       firstName
@@ -570,8 +588,8 @@ query GetClass($id: ID!) {
       owner
       __typename
     }
-    creatorId
-    creator {
+    instructorId
+    instructor {
       id
       selfie
       firstName
@@ -766,7 +784,6 @@ query GetClass($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -774,7 +791,6 @@ query GetClass($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -793,8 +809,8 @@ query ListClasses(
       endDateTime
       recurring
       daysOfWeek
-      instructorId
-      instructor {
+      creatorId
+      creator {
         id
         selfie
         firstName
@@ -810,8 +826,8 @@ query ListClasses(
         owner
         __typename
       }
-      creatorId
-      creator {
+      instructorId
+      instructor {
         id
         selfie
         firstName
@@ -840,7 +856,6 @@ query ListClasses(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -848,7 +863,6 @@ query ListClasses(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -877,8 +891,8 @@ query SyncClasses(
       endDateTime
       recurring
       daysOfWeek
-      instructorId
-      instructor {
+      creatorId
+      creator {
         id
         selfie
         firstName
@@ -894,8 +908,8 @@ query SyncClasses(
         owner
         __typename
       }
-      creatorId
-      creator {
+      instructorId
+      instructor {
         id
         selfie
         firstName
@@ -924,7 +938,6 @@ query SyncClasses(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -932,93 +945,6 @@ query SyncClasses(
       _version
       _deleted
       _lastChangedAt
-      owner
-      __typename
-    }
-    nextToken
-    startedAt
-    __typename
-  }
-}
-
-query ClassesByInstructorId(
-  $instructorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelClassFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  classesByInstructorId(
-    instructorId: $instructorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      startDateTime
-      endDateTime
-      recurring
-      daysOfWeek
-      instructorId
-      instructor {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        type
-        status
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        type
-        status
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        liveVideoUrl
-        creatorId
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -1049,8 +975,8 @@ query ClassesByCreatorId(
       endDateTime
       recurring
       daysOfWeek
-      instructorId
-      instructor {
+      creatorId
+      creator {
         id
         selfie
         firstName
@@ -1066,8 +992,8 @@ query ClassesByCreatorId(
         owner
         __typename
       }
-      creatorId
-      creator {
+      instructorId
+      instructor {
         id
         selfie
         firstName
@@ -1096,7 +1022,6 @@ query ClassesByCreatorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -1104,7 +1029,90 @@ query ClassesByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
+      __typename
+    }
+    nextToken
+    startedAt
+    __typename
+  }
+}
+
+query ClassesByInstructorId(
+  $instructorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelClassFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  classesByInstructorId(
+    instructorId: $instructorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      startDateTime
+      endDateTime
+      recurring
+      daysOfWeek
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        type
+        status
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      instructorId
+      instructor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        type
+        status
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
       __typename
     }
     nextToken
@@ -1135,8 +1143,8 @@ query ClassesByMosqueId(
       endDateTime
       recurring
       daysOfWeek
-      instructorId
-      instructor {
+      creatorId
+      creator {
         id
         selfie
         firstName
@@ -1152,8 +1160,8 @@ query ClassesByMosqueId(
         owner
         __typename
       }
-      creatorId
-      creator {
+      instructorId
+      instructor {
         id
         selfie
         firstName
@@ -1182,7 +1190,6 @@ query ClassesByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -1190,7 +1197,6 @@ query ClassesByMosqueId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -1400,7 +1406,6 @@ query GetCommittee($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     members {
@@ -1413,6 +1418,7 @@ query GetCommittee($id: ID!) {
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -1425,7 +1431,6 @@ query GetCommittee($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -1470,7 +1475,6 @@ query ListCommittees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -1483,7 +1487,6 @@ query ListCommittees(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -1538,7 +1541,6 @@ query SyncCommittees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -1551,7 +1553,6 @@ query SyncCommittees(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -1608,7 +1609,6 @@ query CommitteesByCreatorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -1621,7 +1621,6 @@ query CommitteesByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -1678,7 +1677,6 @@ query CommitteesByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -1691,7 +1689,6 @@ query CommitteesByMosqueId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -1915,7 +1912,6 @@ query GetGathering($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     attendees {
@@ -1928,6 +1924,7 @@ query GetGathering($id: ID!) {
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -1940,7 +1937,6 @@ query GetGathering($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -1999,7 +1995,6 @@ query ListGatherings(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -2012,7 +2007,6 @@ query ListGatherings(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -2081,7 +2075,6 @@ query SyncGatherings(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -2094,7 +2087,6 @@ query SyncGatherings(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -2165,7 +2157,6 @@ query GatheringsByCreatorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -2178,7 +2169,6 @@ query GatheringsByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -2249,7 +2239,6 @@ query GatheringsByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -2262,7 +2251,6 @@ query GatheringsByMosqueId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -2415,7 +2403,6 @@ query GetDonation($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -2428,7 +2415,6 @@ query GetDonation($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -2436,7 +2422,6 @@ query GetDonation($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -2487,7 +2472,6 @@ query ListDonations(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -2495,7 +2479,6 @@ query ListDonations(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -2556,7 +2539,6 @@ query SyncDonations(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -2564,7 +2546,6 @@ query SyncDonations(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -2627,7 +2608,6 @@ query DonationsByDonorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -2635,7 +2615,6 @@ query DonationsByDonorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -2698,7 +2677,6 @@ query DonationsByFundraisingCampaignId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -2706,7 +2684,6 @@ query DonationsByFundraisingCampaignId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -2922,7 +2899,6 @@ query GetFundraisingCampaign($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     donations {
@@ -2938,7 +2914,6 @@ query GetFundraisingCampaign($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -2950,7 +2925,6 @@ query GetFundraisingCampaign($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -3005,7 +2979,6 @@ query ListFundraisingCampaigns(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3018,7 +2991,6 @@ query ListFundraisingCampaigns(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -3079,7 +3051,6 @@ query SyncFundraisingCampaigns(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3092,7 +3063,6 @@ query SyncFundraisingCampaigns(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -3155,7 +3125,6 @@ query FundraisingCampaignsByCreatorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3168,7 +3137,6 @@ query FundraisingCampaignsByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -3231,7 +3199,6 @@ query FundraisingCampaignsByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3244,7 +3211,6 @@ query FundraisingCampaignsByMosqueId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -3421,6 +3387,7 @@ query GetMosque($id: ID!) {
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -3440,7 +3407,6 @@ query GetMosque($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3456,15 +3422,14 @@ query GetMosque($id: ID!) {
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3483,7 +3448,6 @@ query GetMosque($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3505,7 +3469,6 @@ query GetMosque($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3530,7 +3493,6 @@ query GetMosque($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3549,7 +3511,6 @@ query GetMosque($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3570,7 +3531,6 @@ query GetMosque($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3590,7 +3550,6 @@ query GetMosque($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3611,7 +3570,6 @@ query GetMosque($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3623,7 +3581,6 @@ query GetMosque($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -3732,7 +3689,6 @@ query ListMosques(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -3851,7 +3807,6 @@ query SyncMosques(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -3972,7 +3927,6 @@ query MosquesByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -4188,7 +4142,6 @@ query GetMonthlyPrayerSchedule($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -4196,7 +4149,6 @@ query GetMonthlyPrayerSchedule($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -4251,7 +4203,6 @@ query ListMonthlyPrayerSchedules(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -4259,7 +4210,6 @@ query ListMonthlyPrayerSchedules(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -4320,7 +4270,6 @@ query SyncMonthlyPrayerSchedules(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -4328,7 +4277,6 @@ query SyncMonthlyPrayerSchedules(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -4391,7 +4339,6 @@ query MonthlyPrayerSchedulesByCreatorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -4399,7 +4346,6 @@ query MonthlyPrayerSchedulesByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -4462,7 +4408,6 @@ query MonthlyPrayerSchedulesByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -4470,7 +4415,6 @@ query MonthlyPrayerSchedulesByMosqueId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -4682,7 +4626,6 @@ query GetResource($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -4690,7 +4633,6 @@ query GetResource($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -4737,7 +4679,6 @@ query ListResources(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -4745,7 +4686,6 @@ query ListResources(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -4802,7 +4742,6 @@ query SyncResources(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -4810,7 +4749,6 @@ query SyncResources(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -4869,7 +4807,6 @@ query ResourcesByCreatorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -4877,7 +4814,6 @@ query ResourcesByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -4936,7 +4872,6 @@ query ResourcesByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -4944,7 +4879,6 @@ query ResourcesByMosqueId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -5155,7 +5089,6 @@ query GetService($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -5163,7 +5096,6 @@ query GetService($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -5209,7 +5141,6 @@ query ListServices(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -5217,7 +5148,6 @@ query ListServices(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -5273,7 +5203,6 @@ query SyncServices(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -5281,7 +5210,6 @@ query SyncServices(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -5339,7 +5267,6 @@ query ServicesByCreatorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -5347,7 +5274,6 @@ query ServicesByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -5405,7 +5331,6 @@ query ServicesByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -5413,7 +5338,6 @@ query ServicesByMosqueId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -5443,7 +5367,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5459,15 +5382,14 @@ query GetUser($id: ID!) {
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5486,7 +5408,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5508,7 +5429,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5533,7 +5453,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5552,7 +5471,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5572,7 +5490,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5593,7 +5510,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5613,7 +5529,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5634,7 +5549,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5650,15 +5564,14 @@ query GetUser($id: ID!) {
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5678,7 +5591,6 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5695,6 +5607,7 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -5712,6 +5625,7 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -5729,6 +5643,7 @@ query GetUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -5747,6 +5662,7 @@ query GetUser($id: ID!) {
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -6188,7 +6104,6 @@ query GetVolunteerTask($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     volunteers {
@@ -6202,6 +6117,7 @@ query GetVolunteerTask($id: ID!) {
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -6213,7 +6129,6 @@ query GetVolunteerTask($id: ID!) {
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -6260,7 +6175,6 @@ query ListVolunteerTasks(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -6273,7 +6187,6 @@ query ListVolunteerTasks(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -6330,7 +6243,6 @@ query SyncVolunteerTasks(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -6343,7 +6255,6 @@ query SyncVolunteerTasks(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -6402,7 +6313,6 @@ query VolunteerTasksByCreatorId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -6415,7 +6325,6 @@ query VolunteerTasksByCreatorId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -6474,7 +6383,6 @@ query VolunteerTasksByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -6487,7 +6395,6 @@ query VolunteerTasksByMosqueId(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     nextToken
@@ -6535,7 +6442,6 @@ query GetCommitteeMembers($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -6548,7 +6454,6 @@ query GetCommitteeMembers($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -6652,6 +6557,7 @@ query GetCommitteeMembers($id: ID!) {
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -6678,7 +6584,6 @@ query ListCommitteeMembers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -6702,6 +6607,7 @@ query ListCommitteeMembers(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -6738,7 +6644,6 @@ query SyncCommitteeMembers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -6762,6 +6667,7 @@ query SyncCommitteeMembers(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -6800,7 +6706,6 @@ query CommitteeMembersByCommitteeId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -6824,6 +6729,7 @@ query CommitteeMembersByCommitteeId(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -6862,7 +6768,6 @@ query CommitteeMembersByUserId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -6886,6 +6791,7 @@ query CommitteeMembersByUserId(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -6948,7 +6854,6 @@ query GetGatheringAttendees($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -6961,7 +6866,6 @@ query GetGatheringAttendees($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -7065,6 +6969,7 @@ query GetGatheringAttendees($id: ID!) {
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -7098,7 +7003,6 @@ query ListGatheringAttendees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -7122,6 +7026,7 @@ query ListGatheringAttendees(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -7161,7 +7066,6 @@ query SyncGatheringAttendees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -7185,6 +7089,7 @@ query SyncGatheringAttendees(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -7226,7 +7131,6 @@ query GatheringAttendeesByGatheringId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -7250,6 +7154,7 @@ query GatheringAttendeesByGatheringId(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -7291,7 +7196,6 @@ query GatheringAttendeesByUserId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -7315,6 +7219,7 @@ query GatheringAttendeesByUserId(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -7427,7 +7332,6 @@ query GetMosqueFollowers($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -7531,6 +7435,7 @@ query GetMosqueFollowers($id: ID!) {
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -7558,7 +7463,6 @@ query ListMosqueFollowers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -7582,6 +7486,7 @@ query ListMosqueFollowers(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -7619,7 +7524,6 @@ query SyncMosqueFollowers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -7643,6 +7547,7 @@ query SyncMosqueFollowers(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -7682,7 +7587,6 @@ query MosqueFollowersByMosqueId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -7706,6 +7610,7 @@ query MosqueFollowersByMosqueId(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -7745,7 +7650,6 @@ query MosqueFollowersByUserId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -7769,6 +7673,7 @@ query MosqueFollowersByUserId(
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -7915,7 +7820,6 @@ query GetVolunteerTaskUser($id: ID!) {
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -7928,7 +7832,6 @@ query GetVolunteerTaskUser($id: ID!) {
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -7937,6 +7840,7 @@ query GetVolunteerTaskUser($id: ID!) {
     _deleted
     _lastChangedAt
     owner
+    creatorId
     __typename
   }
 }
@@ -7984,7 +7888,6 @@ query ListVolunteerTaskUsers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -7993,6 +7896,7 @@ query ListVolunteerTaskUsers(
       _deleted
       _lastChangedAt
       owner
+      creatorId
       __typename
     }
     nextToken
@@ -8046,7 +7950,6 @@ query SyncVolunteerTaskUsers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -8055,6 +7958,7 @@ query SyncVolunteerTaskUsers(
       _deleted
       _lastChangedAt
       owner
+      creatorId
       __typename
     }
     nextToken
@@ -8110,7 +8014,6 @@ query VolunteerTaskUsersByUserId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -8119,6 +8022,7 @@ query VolunteerTaskUsersByUserId(
       _deleted
       _lastChangedAt
       owner
+      creatorId
       __typename
     }
     nextToken
@@ -8174,7 +8078,6 @@ query VolunteerTaskUsersByVolunteerTaskId(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -8183,6 +8086,7 @@ query VolunteerTaskUsersByVolunteerTaskId(
       _deleted
       _lastChangedAt
       owner
+      creatorId
       __typename
     }
     nextToken

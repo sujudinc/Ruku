@@ -5,9 +5,9 @@
 export const onCreateAnnouncement = /* GraphQL */ `
   subscription OnCreateAnnouncement(
     $filter: ModelSubscriptionAnnouncementFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateAnnouncement(filter: $filter, owner: $owner) {
+    onCreateAnnouncement(filter: $filter, creatorId: $creatorId) {
       id
       title
       content
@@ -207,7 +207,6 @@ export const onCreateAnnouncement = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -215,7 +214,6 @@ export const onCreateAnnouncement = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -223,9 +221,9 @@ export const onCreateAnnouncement = /* GraphQL */ `
 export const onUpdateAnnouncement = /* GraphQL */ `
   subscription OnUpdateAnnouncement(
     $filter: ModelSubscriptionAnnouncementFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateAnnouncement(filter: $filter, owner: $owner) {
+    onUpdateAnnouncement(filter: $filter, creatorId: $creatorId) {
       id
       title
       content
@@ -425,7 +423,6 @@ export const onUpdateAnnouncement = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -433,7 +430,6 @@ export const onUpdateAnnouncement = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -441,9 +437,9 @@ export const onUpdateAnnouncement = /* GraphQL */ `
 export const onDeleteAnnouncement = /* GraphQL */ `
   subscription OnDeleteAnnouncement(
     $filter: ModelSubscriptionAnnouncementFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteAnnouncement(filter: $filter, owner: $owner) {
+    onDeleteAnnouncement(filter: $filter, creatorId: $creatorId) {
       id
       title
       content
@@ -643,7 +639,6 @@ export const onDeleteAnnouncement = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -651,7 +646,6 @@ export const onDeleteAnnouncement = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -659,9 +653,9 @@ export const onDeleteAnnouncement = /* GraphQL */ `
 export const onCreateClass = /* GraphQL */ `
   subscription OnCreateClass(
     $filter: ModelSubscriptionClassFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateClass(filter: $filter, owner: $owner) {
+    onCreateClass(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -669,8 +663,8 @@ export const onCreateClass = /* GraphQL */ `
       endDateTime
       recurring
       daysOfWeek
-      instructorId
-      instructor {
+      creatorId
+      creator {
         id
         selfie
         firstName
@@ -766,8 +760,8 @@ export const onCreateClass = /* GraphQL */ `
         owner
         __typename
       }
-      creatorId
-      creator {
+      instructorId
+      instructor {
         id
         selfie
         firstName
@@ -962,7 +956,6 @@ export const onCreateClass = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -970,7 +963,6 @@ export const onCreateClass = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -978,9 +970,9 @@ export const onCreateClass = /* GraphQL */ `
 export const onUpdateClass = /* GraphQL */ `
   subscription OnUpdateClass(
     $filter: ModelSubscriptionClassFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateClass(filter: $filter, owner: $owner) {
+    onUpdateClass(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -988,8 +980,8 @@ export const onUpdateClass = /* GraphQL */ `
       endDateTime
       recurring
       daysOfWeek
-      instructorId
-      instructor {
+      creatorId
+      creator {
         id
         selfie
         firstName
@@ -1085,8 +1077,8 @@ export const onUpdateClass = /* GraphQL */ `
         owner
         __typename
       }
-      creatorId
-      creator {
+      instructorId
+      instructor {
         id
         selfie
         firstName
@@ -1281,7 +1273,6 @@ export const onUpdateClass = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -1289,7 +1280,6 @@ export const onUpdateClass = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -1297,9 +1287,9 @@ export const onUpdateClass = /* GraphQL */ `
 export const onDeleteClass = /* GraphQL */ `
   subscription OnDeleteClass(
     $filter: ModelSubscriptionClassFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteClass(filter: $filter, owner: $owner) {
+    onDeleteClass(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -1307,6 +1297,103 @@ export const onDeleteClass = /* GraphQL */ `
       endDateTime
       recurring
       daysOfWeek
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        type
+        status
+        createdAnnouncements {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdClasses {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdCommittees {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdGatherings {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdFundraisingCampaigns {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdMonthlyPrayerSchedules {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdMosques {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdResources {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdServices {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdVolunteerTasks {
+          nextToken
+          startedAt
+          __typename
+        }
+        instructingClasses {
+          nextToken
+          startedAt
+          __typename
+        }
+        donations {
+          nextToken
+          startedAt
+          __typename
+        }
+        committees {
+          nextToken
+          startedAt
+          __typename
+        }
+        gatherings {
+          nextToken
+          startedAt
+          __typename
+        }
+        mosques {
+          nextToken
+          startedAt
+          __typename
+        }
+        volunteerTasks {
+          nextToken
+          startedAt
+          __typename
+        }
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
       instructorId
       instructor {
         id
@@ -1404,103 +1491,6 @@ export const onDeleteClass = /* GraphQL */ `
         owner
         __typename
       }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        type
-        status
-        createdAnnouncements {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdClasses {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdCommittees {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdGatherings {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdFundraisingCampaigns {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdMonthlyPrayerSchedules {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdMosques {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdResources {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdServices {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdVolunteerTasks {
-          nextToken
-          startedAt
-          __typename
-        }
-        instructingClasses {
-          nextToken
-          startedAt
-          __typename
-        }
-        donations {
-          nextToken
-          startedAt
-          __typename
-        }
-        committees {
-          nextToken
-          startedAt
-          __typename
-        }
-        gatherings {
-          nextToken
-          startedAt
-          __typename
-        }
-        mosques {
-          nextToken
-          startedAt
-          __typename
-        }
-        volunteerTasks {
-          nextToken
-          startedAt
-          __typename
-        }
-        createdAt
-        updatedAt
-        _version
-        _deleted
-        _lastChangedAt
-        owner
-        __typename
-      }
       mosqueId
       mosque {
         id
@@ -1600,7 +1590,6 @@ export const onDeleteClass = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -1608,7 +1597,6 @@ export const onDeleteClass = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -1616,9 +1604,9 @@ export const onDeleteClass = /* GraphQL */ `
 export const onCreateCommittee = /* GraphQL */ `
   subscription OnCreateCommittee(
     $filter: ModelSubscriptionCommitteeFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateCommittee(filter: $filter, owner: $owner) {
+    onCreateCommittee(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -1818,7 +1806,6 @@ export const onCreateCommittee = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -1831,6 +1818,7 @@ export const onCreateCommittee = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -1843,7 +1831,6 @@ export const onCreateCommittee = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -1851,9 +1838,9 @@ export const onCreateCommittee = /* GraphQL */ `
 export const onUpdateCommittee = /* GraphQL */ `
   subscription OnUpdateCommittee(
     $filter: ModelSubscriptionCommitteeFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateCommittee(filter: $filter, owner: $owner) {
+    onUpdateCommittee(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -2053,7 +2040,6 @@ export const onUpdateCommittee = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -2066,6 +2052,7 @@ export const onUpdateCommittee = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -2078,7 +2065,6 @@ export const onUpdateCommittee = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -2086,9 +2072,9 @@ export const onUpdateCommittee = /* GraphQL */ `
 export const onDeleteCommittee = /* GraphQL */ `
   subscription OnDeleteCommittee(
     $filter: ModelSubscriptionCommitteeFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteCommittee(filter: $filter, owner: $owner) {
+    onDeleteCommittee(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -2288,7 +2274,6 @@ export const onDeleteCommittee = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -2301,6 +2286,7 @@ export const onDeleteCommittee = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -2313,7 +2299,6 @@ export const onDeleteCommittee = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -2321,9 +2306,9 @@ export const onDeleteCommittee = /* GraphQL */ `
 export const onCreateGathering = /* GraphQL */ `
   subscription OnCreateGathering(
     $filter: ModelSubscriptionGatheringFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateGathering(filter: $filter, owner: $owner) {
+    onCreateGathering(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -2537,7 +2522,6 @@ export const onCreateGathering = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -2550,6 +2534,7 @@ export const onCreateGathering = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -2562,7 +2547,6 @@ export const onCreateGathering = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -2570,9 +2554,9 @@ export const onCreateGathering = /* GraphQL */ `
 export const onUpdateGathering = /* GraphQL */ `
   subscription OnUpdateGathering(
     $filter: ModelSubscriptionGatheringFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateGathering(filter: $filter, owner: $owner) {
+    onUpdateGathering(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -2786,7 +2770,6 @@ export const onUpdateGathering = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -2799,6 +2782,7 @@ export const onUpdateGathering = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -2811,7 +2795,6 @@ export const onUpdateGathering = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -2819,9 +2802,9 @@ export const onUpdateGathering = /* GraphQL */ `
 export const onDeleteGathering = /* GraphQL */ `
   subscription OnDeleteGathering(
     $filter: ModelSubscriptionGatheringFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteGathering(filter: $filter, owner: $owner) {
+    onDeleteGathering(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -3035,7 +3018,6 @@ export const onDeleteGathering = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -3048,6 +3030,7 @@ export const onDeleteGathering = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -3060,7 +3043,6 @@ export const onDeleteGathering = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -3068,9 +3050,9 @@ export const onDeleteGathering = /* GraphQL */ `
 export const onCreateDonation = /* GraphQL */ `
   subscription OnCreateDonation(
     $filter: ModelSubscriptionDonationFilterInput
-    $owner: String
+    $donorId: String
   ) {
-    onCreateDonation(filter: $filter, owner: $owner) {
+    onCreateDonation(filter: $filter, donorId: $donorId) {
       id
       amount
       currency
@@ -3213,7 +3195,6 @@ export const onCreateDonation = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         donations {
@@ -3226,7 +3207,6 @@ export const onCreateDonation = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -3234,7 +3214,6 @@ export const onCreateDonation = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -3242,9 +3221,9 @@ export const onCreateDonation = /* GraphQL */ `
 export const onUpdateDonation = /* GraphQL */ `
   subscription OnUpdateDonation(
     $filter: ModelSubscriptionDonationFilterInput
-    $owner: String
+    $donorId: String
   ) {
-    onUpdateDonation(filter: $filter, owner: $owner) {
+    onUpdateDonation(filter: $filter, donorId: $donorId) {
       id
       amount
       currency
@@ -3387,7 +3366,6 @@ export const onUpdateDonation = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         donations {
@@ -3400,7 +3378,6 @@ export const onUpdateDonation = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -3408,7 +3385,6 @@ export const onUpdateDonation = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -3416,9 +3392,9 @@ export const onUpdateDonation = /* GraphQL */ `
 export const onDeleteDonation = /* GraphQL */ `
   subscription OnDeleteDonation(
     $filter: ModelSubscriptionDonationFilterInput
-    $owner: String
+    $donorId: String
   ) {
-    onDeleteDonation(filter: $filter, owner: $owner) {
+    onDeleteDonation(filter: $filter, donorId: $donorId) {
       id
       amount
       currency
@@ -3561,7 +3537,6 @@ export const onDeleteDonation = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         donations {
@@ -3574,7 +3549,6 @@ export const onDeleteDonation = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -3582,7 +3556,6 @@ export const onDeleteDonation = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -3590,9 +3563,9 @@ export const onDeleteDonation = /* GraphQL */ `
 export const onCreateFundraisingCampaign = /* GraphQL */ `
   subscription OnCreateFundraisingCampaign(
     $filter: ModelSubscriptionFundraisingCampaignFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateFundraisingCampaign(filter: $filter, owner: $owner) {
+    onCreateFundraisingCampaign(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -3798,7 +3771,6 @@ export const onCreateFundraisingCampaign = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3814,7 +3786,6 @@ export const onCreateFundraisingCampaign = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -3826,7 +3797,6 @@ export const onCreateFundraisingCampaign = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -3834,9 +3804,9 @@ export const onCreateFundraisingCampaign = /* GraphQL */ `
 export const onUpdateFundraisingCampaign = /* GraphQL */ `
   subscription OnUpdateFundraisingCampaign(
     $filter: ModelSubscriptionFundraisingCampaignFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateFundraisingCampaign(filter: $filter, owner: $owner) {
+    onUpdateFundraisingCampaign(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -4042,7 +4012,6 @@ export const onUpdateFundraisingCampaign = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -4058,7 +4027,6 @@ export const onUpdateFundraisingCampaign = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4070,7 +4038,6 @@ export const onUpdateFundraisingCampaign = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -4078,9 +4045,9 @@ export const onUpdateFundraisingCampaign = /* GraphQL */ `
 export const onDeleteFundraisingCampaign = /* GraphQL */ `
   subscription OnDeleteFundraisingCampaign(
     $filter: ModelSubscriptionFundraisingCampaignFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteFundraisingCampaign(filter: $filter, owner: $owner) {
+    onDeleteFundraisingCampaign(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -4286,7 +4253,6 @@ export const onDeleteFundraisingCampaign = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -4302,7 +4268,6 @@ export const onDeleteFundraisingCampaign = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4314,7 +4279,6 @@ export const onDeleteFundraisingCampaign = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -4322,9 +4286,9 @@ export const onDeleteFundraisingCampaign = /* GraphQL */ `
 export const onCreateMosque = /* GraphQL */ `
   subscription OnCreateMosque(
     $filter: ModelSubscriptionMosqueFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateMosque(filter: $filter, owner: $owner) {
+    onCreateMosque(filter: $filter, creatorId: $creatorId) {
       id
       name
       description
@@ -4491,6 +4455,7 @@ export const onCreateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -4510,7 +4475,6 @@ export const onCreateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4526,15 +4490,14 @@ export const onCreateMosque = /* GraphQL */ `
           endDateTime
           recurring
           daysOfWeek
-          instructorId
           creatorId
+          instructorId
           mosqueId
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4553,7 +4516,6 @@ export const onCreateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4575,7 +4537,6 @@ export const onCreateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4600,7 +4561,6 @@ export const onCreateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4619,7 +4579,6 @@ export const onCreateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4640,7 +4599,6 @@ export const onCreateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4660,7 +4618,6 @@ export const onCreateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4681,7 +4638,6 @@ export const onCreateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4693,7 +4649,6 @@ export const onCreateMosque = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -4701,9 +4656,9 @@ export const onCreateMosque = /* GraphQL */ `
 export const onUpdateMosque = /* GraphQL */ `
   subscription OnUpdateMosque(
     $filter: ModelSubscriptionMosqueFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateMosque(filter: $filter, owner: $owner) {
+    onUpdateMosque(filter: $filter, creatorId: $creatorId) {
       id
       name
       description
@@ -4870,6 +4825,7 @@ export const onUpdateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -4889,7 +4845,6 @@ export const onUpdateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4905,15 +4860,14 @@ export const onUpdateMosque = /* GraphQL */ `
           endDateTime
           recurring
           daysOfWeek
-          instructorId
           creatorId
+          instructorId
           mosqueId
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4932,7 +4886,6 @@ export const onUpdateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4954,7 +4907,6 @@ export const onUpdateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4979,7 +4931,6 @@ export const onUpdateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -4998,7 +4949,6 @@ export const onUpdateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5019,7 +4969,6 @@ export const onUpdateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5039,7 +4988,6 @@ export const onUpdateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5060,7 +5008,6 @@ export const onUpdateMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5072,7 +5019,6 @@ export const onUpdateMosque = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -5080,9 +5026,9 @@ export const onUpdateMosque = /* GraphQL */ `
 export const onDeleteMosque = /* GraphQL */ `
   subscription OnDeleteMosque(
     $filter: ModelSubscriptionMosqueFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteMosque(filter: $filter, owner: $owner) {
+    onDeleteMosque(filter: $filter, creatorId: $creatorId) {
       id
       name
       description
@@ -5249,6 +5195,7 @@ export const onDeleteMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -5268,7 +5215,6 @@ export const onDeleteMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5284,15 +5230,14 @@ export const onDeleteMosque = /* GraphQL */ `
           endDateTime
           recurring
           daysOfWeek
-          instructorId
           creatorId
+          instructorId
           mosqueId
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5311,7 +5256,6 @@ export const onDeleteMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5333,7 +5277,6 @@ export const onDeleteMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5358,7 +5301,6 @@ export const onDeleteMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5377,7 +5319,6 @@ export const onDeleteMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5398,7 +5339,6 @@ export const onDeleteMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5418,7 +5358,6 @@ export const onDeleteMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5439,7 +5378,6 @@ export const onDeleteMosque = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -5451,7 +5389,6 @@ export const onDeleteMosque = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -5459,9 +5396,9 @@ export const onDeleteMosque = /* GraphQL */ `
 export const onCreateMonthlyPrayerSchedule = /* GraphQL */ `
   subscription OnCreateMonthlyPrayerSchedule(
     $filter: ModelSubscriptionMonthlyPrayerScheduleFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateMonthlyPrayerSchedule(filter: $filter, owner: $owner) {
+    onCreateMonthlyPrayerSchedule(filter: $filter, creatorId: $creatorId) {
       id
       year
       month
@@ -5667,7 +5604,6 @@ export const onCreateMonthlyPrayerSchedule = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -5675,7 +5611,6 @@ export const onCreateMonthlyPrayerSchedule = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -5683,9 +5618,9 @@ export const onCreateMonthlyPrayerSchedule = /* GraphQL */ `
 export const onUpdateMonthlyPrayerSchedule = /* GraphQL */ `
   subscription OnUpdateMonthlyPrayerSchedule(
     $filter: ModelSubscriptionMonthlyPrayerScheduleFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateMonthlyPrayerSchedule(filter: $filter, owner: $owner) {
+    onUpdateMonthlyPrayerSchedule(filter: $filter, creatorId: $creatorId) {
       id
       year
       month
@@ -5891,7 +5826,6 @@ export const onUpdateMonthlyPrayerSchedule = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -5899,7 +5833,6 @@ export const onUpdateMonthlyPrayerSchedule = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -5907,9 +5840,9 @@ export const onUpdateMonthlyPrayerSchedule = /* GraphQL */ `
 export const onDeleteMonthlyPrayerSchedule = /* GraphQL */ `
   subscription OnDeleteMonthlyPrayerSchedule(
     $filter: ModelSubscriptionMonthlyPrayerScheduleFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteMonthlyPrayerSchedule(filter: $filter, owner: $owner) {
+    onDeleteMonthlyPrayerSchedule(filter: $filter, creatorId: $creatorId) {
       id
       year
       month
@@ -6115,7 +6048,6 @@ export const onDeleteMonthlyPrayerSchedule = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -6123,7 +6055,6 @@ export const onDeleteMonthlyPrayerSchedule = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -6131,9 +6062,9 @@ export const onDeleteMonthlyPrayerSchedule = /* GraphQL */ `
 export const onCreateResource = /* GraphQL */ `
   subscription OnCreateResource(
     $filter: ModelSubscriptionResourceFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateResource(filter: $filter, owner: $owner) {
+    onCreateResource(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -6335,7 +6266,6 @@ export const onCreateResource = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -6343,7 +6273,6 @@ export const onCreateResource = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -6351,9 +6280,9 @@ export const onCreateResource = /* GraphQL */ `
 export const onUpdateResource = /* GraphQL */ `
   subscription OnUpdateResource(
     $filter: ModelSubscriptionResourceFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateResource(filter: $filter, owner: $owner) {
+    onUpdateResource(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -6555,7 +6484,6 @@ export const onUpdateResource = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -6563,7 +6491,6 @@ export const onUpdateResource = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -6571,9 +6498,9 @@ export const onUpdateResource = /* GraphQL */ `
 export const onDeleteResource = /* GraphQL */ `
   subscription OnDeleteResource(
     $filter: ModelSubscriptionResourceFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteResource(filter: $filter, owner: $owner) {
+    onDeleteResource(filter: $filter, creatorId: $creatorId) {
       id
       title
       description
@@ -6775,7 +6702,6 @@ export const onDeleteResource = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -6783,7 +6709,6 @@ export const onDeleteResource = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -6791,9 +6716,9 @@ export const onDeleteResource = /* GraphQL */ `
 export const onCreateService = /* GraphQL */ `
   subscription OnCreateService(
     $filter: ModelSubscriptionServiceFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateService(filter: $filter, owner: $owner) {
+    onCreateService(filter: $filter, creatorId: $creatorId) {
       id
       type
       description
@@ -6994,7 +6919,6 @@ export const onCreateService = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -7002,7 +6926,6 @@ export const onCreateService = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -7010,9 +6933,9 @@ export const onCreateService = /* GraphQL */ `
 export const onUpdateService = /* GraphQL */ `
   subscription OnUpdateService(
     $filter: ModelSubscriptionServiceFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateService(filter: $filter, owner: $owner) {
+    onUpdateService(filter: $filter, creatorId: $creatorId) {
       id
       type
       description
@@ -7213,7 +7136,6 @@ export const onUpdateService = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -7221,7 +7143,6 @@ export const onUpdateService = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -7229,9 +7150,9 @@ export const onUpdateService = /* GraphQL */ `
 export const onDeleteService = /* GraphQL */ `
   subscription OnDeleteService(
     $filter: ModelSubscriptionServiceFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteService(filter: $filter, owner: $owner) {
+    onDeleteService(filter: $filter, creatorId: $creatorId) {
       id
       type
       description
@@ -7432,7 +7353,6 @@ export const onDeleteService = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -7440,7 +7360,6 @@ export const onDeleteService = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -7470,7 +7389,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7486,15 +7404,14 @@ export const onCreateUser = /* GraphQL */ `
           endDateTime
           recurring
           daysOfWeek
-          instructorId
           creatorId
+          instructorId
           mosqueId
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7513,7 +7430,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7535,7 +7451,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7560,7 +7475,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7579,7 +7493,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7599,7 +7512,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7620,7 +7532,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7640,7 +7551,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7661,7 +7571,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7677,15 +7586,14 @@ export const onCreateUser = /* GraphQL */ `
           endDateTime
           recurring
           daysOfWeek
-          instructorId
           creatorId
+          instructorId
           mosqueId
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7705,7 +7613,6 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7722,6 +7629,7 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -7739,6 +7647,7 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -7756,6 +7665,7 @@ export const onCreateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -7774,6 +7684,7 @@ export const onCreateUser = /* GraphQL */ `
           _deleted
           _lastChangedAt
           owner
+          creatorId
           __typename
         }
         nextToken
@@ -7815,7 +7726,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7831,15 +7741,14 @@ export const onUpdateUser = /* GraphQL */ `
           endDateTime
           recurring
           daysOfWeek
-          instructorId
           creatorId
+          instructorId
           mosqueId
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7858,7 +7767,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7880,7 +7788,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7905,7 +7812,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7924,7 +7830,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7944,7 +7849,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7965,7 +7869,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -7985,7 +7888,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8006,7 +7908,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8022,15 +7923,14 @@ export const onUpdateUser = /* GraphQL */ `
           endDateTime
           recurring
           daysOfWeek
-          instructorId
           creatorId
+          instructorId
           mosqueId
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8050,7 +7950,6 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8067,6 +7966,7 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -8084,6 +7984,7 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -8101,6 +8002,7 @@ export const onUpdateUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -8119,6 +8021,7 @@ export const onUpdateUser = /* GraphQL */ `
           _deleted
           _lastChangedAt
           owner
+          creatorId
           __typename
         }
         nextToken
@@ -8160,7 +8063,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8176,15 +8078,14 @@ export const onDeleteUser = /* GraphQL */ `
           endDateTime
           recurring
           daysOfWeek
-          instructorId
           creatorId
+          instructorId
           mosqueId
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8203,7 +8104,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8225,7 +8125,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8250,7 +8149,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8269,7 +8167,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8289,7 +8186,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8310,7 +8206,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8330,7 +8225,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8351,7 +8245,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8367,15 +8260,14 @@ export const onDeleteUser = /* GraphQL */ `
           endDateTime
           recurring
           daysOfWeek
-          instructorId
           creatorId
+          instructorId
           mosqueId
           createdAt
           updatedAt
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8395,7 +8287,6 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         nextToken
@@ -8412,6 +8303,7 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -8429,6 +8321,7 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -8446,6 +8339,7 @@ export const onDeleteUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
+          creatorId
           owner
           __typename
         }
@@ -8464,6 +8358,7 @@ export const onDeleteUser = /* GraphQL */ `
           _deleted
           _lastChangedAt
           owner
+          creatorId
           __typename
         }
         nextToken
@@ -8483,9 +8378,9 @@ export const onDeleteUser = /* GraphQL */ `
 export const onCreateVolunteerTask = /* GraphQL */ `
   subscription OnCreateVolunteerTask(
     $filter: ModelSubscriptionVolunteerTaskFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onCreateVolunteerTask(filter: $filter, owner: $owner) {
+    onCreateVolunteerTask(filter: $filter, creatorId: $creatorId) {
       id
       name
       description
@@ -8687,7 +8582,6 @@ export const onCreateVolunteerTask = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -8701,6 +8595,7 @@ export const onCreateVolunteerTask = /* GraphQL */ `
           _deleted
           _lastChangedAt
           owner
+          creatorId
           __typename
         }
         nextToken
@@ -8712,7 +8607,6 @@ export const onCreateVolunteerTask = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -8720,9 +8614,9 @@ export const onCreateVolunteerTask = /* GraphQL */ `
 export const onUpdateVolunteerTask = /* GraphQL */ `
   subscription OnUpdateVolunteerTask(
     $filter: ModelSubscriptionVolunteerTaskFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onUpdateVolunteerTask(filter: $filter, owner: $owner) {
+    onUpdateVolunteerTask(filter: $filter, creatorId: $creatorId) {
       id
       name
       description
@@ -8924,7 +8818,6 @@ export const onUpdateVolunteerTask = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -8938,6 +8831,7 @@ export const onUpdateVolunteerTask = /* GraphQL */ `
           _deleted
           _lastChangedAt
           owner
+          creatorId
           __typename
         }
         nextToken
@@ -8949,7 +8843,6 @@ export const onUpdateVolunteerTask = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -8957,9 +8850,9 @@ export const onUpdateVolunteerTask = /* GraphQL */ `
 export const onDeleteVolunteerTask = /* GraphQL */ `
   subscription OnDeleteVolunteerTask(
     $filter: ModelSubscriptionVolunteerTaskFilterInput
-    $owner: String
+    $creatorId: String
   ) {
-    onDeleteVolunteerTask(filter: $filter, owner: $owner) {
+    onDeleteVolunteerTask(filter: $filter, creatorId: $creatorId) {
       id
       name
       description
@@ -9161,7 +9054,6 @@ export const onDeleteVolunteerTask = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -9175,6 +9067,7 @@ export const onDeleteVolunteerTask = /* GraphQL */ `
           _deleted
           _lastChangedAt
           owner
+          creatorId
           __typename
         }
         nextToken
@@ -9186,7 +9079,6 @@ export const onDeleteVolunteerTask = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
   }
@@ -9194,9 +9086,14 @@ export const onDeleteVolunteerTask = /* GraphQL */ `
 export const onCreateCommitteeMembers = /* GraphQL */ `
   subscription OnCreateCommitteeMembers(
     $filter: ModelSubscriptionCommitteeMembersFilterInput
+    $creatorId: String
     $owner: String
   ) {
-    onCreateCommitteeMembers(filter: $filter, owner: $owner) {
+    onCreateCommitteeMembers(
+      filter: $filter
+      creatorId: $creatorId
+      owner: $owner
+    ) {
       id
       committeeId
       userId
@@ -9234,7 +9131,6 @@ export const onCreateCommitteeMembers = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         members {
@@ -9247,7 +9143,6 @@ export const onCreateCommitteeMembers = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -9351,6 +9246,7 @@ export const onCreateCommitteeMembers = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -9359,9 +9255,14 @@ export const onCreateCommitteeMembers = /* GraphQL */ `
 export const onUpdateCommitteeMembers = /* GraphQL */ `
   subscription OnUpdateCommitteeMembers(
     $filter: ModelSubscriptionCommitteeMembersFilterInput
+    $creatorId: String
     $owner: String
   ) {
-    onUpdateCommitteeMembers(filter: $filter, owner: $owner) {
+    onUpdateCommitteeMembers(
+      filter: $filter
+      creatorId: $creatorId
+      owner: $owner
+    ) {
       id
       committeeId
       userId
@@ -9399,7 +9300,6 @@ export const onUpdateCommitteeMembers = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         members {
@@ -9412,7 +9312,6 @@ export const onUpdateCommitteeMembers = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -9516,6 +9415,7 @@ export const onUpdateCommitteeMembers = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -9524,9 +9424,14 @@ export const onUpdateCommitteeMembers = /* GraphQL */ `
 export const onDeleteCommitteeMembers = /* GraphQL */ `
   subscription OnDeleteCommitteeMembers(
     $filter: ModelSubscriptionCommitteeMembersFilterInput
+    $creatorId: String
     $owner: String
   ) {
-    onDeleteCommitteeMembers(filter: $filter, owner: $owner) {
+    onDeleteCommitteeMembers(
+      filter: $filter
+      creatorId: $creatorId
+      owner: $owner
+    ) {
       id
       committeeId
       userId
@@ -9564,7 +9469,6 @@ export const onDeleteCommitteeMembers = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         members {
@@ -9577,7 +9481,6 @@ export const onDeleteCommitteeMembers = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -9681,6 +9584,7 @@ export const onDeleteCommitteeMembers = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -9689,9 +9593,14 @@ export const onDeleteCommitteeMembers = /* GraphQL */ `
 export const onCreateGatheringAttendees = /* GraphQL */ `
   subscription OnCreateGatheringAttendees(
     $filter: ModelSubscriptionGatheringAttendeesFilterInput
+    $creatorId: String
     $owner: String
   ) {
-    onCreateGatheringAttendees(filter: $filter, owner: $owner) {
+    onCreateGatheringAttendees(
+      filter: $filter
+      creatorId: $creatorId
+      owner: $owner
+    ) {
       id
       gatheringId
       userId
@@ -9743,7 +9652,6 @@ export const onCreateGatheringAttendees = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         attendees {
@@ -9756,7 +9664,6 @@ export const onCreateGatheringAttendees = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -9860,6 +9767,7 @@ export const onCreateGatheringAttendees = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -9868,9 +9776,14 @@ export const onCreateGatheringAttendees = /* GraphQL */ `
 export const onUpdateGatheringAttendees = /* GraphQL */ `
   subscription OnUpdateGatheringAttendees(
     $filter: ModelSubscriptionGatheringAttendeesFilterInput
+    $creatorId: String
     $owner: String
   ) {
-    onUpdateGatheringAttendees(filter: $filter, owner: $owner) {
+    onUpdateGatheringAttendees(
+      filter: $filter
+      creatorId: $creatorId
+      owner: $owner
+    ) {
       id
       gatheringId
       userId
@@ -9922,7 +9835,6 @@ export const onUpdateGatheringAttendees = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         attendees {
@@ -9935,7 +9847,6 @@ export const onUpdateGatheringAttendees = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -10039,6 +9950,7 @@ export const onUpdateGatheringAttendees = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -10047,9 +9959,14 @@ export const onUpdateGatheringAttendees = /* GraphQL */ `
 export const onDeleteGatheringAttendees = /* GraphQL */ `
   subscription OnDeleteGatheringAttendees(
     $filter: ModelSubscriptionGatheringAttendeesFilterInput
+    $creatorId: String
     $owner: String
   ) {
-    onDeleteGatheringAttendees(filter: $filter, owner: $owner) {
+    onDeleteGatheringAttendees(
+      filter: $filter
+      creatorId: $creatorId
+      owner: $owner
+    ) {
       id
       gatheringId
       userId
@@ -10101,7 +10018,6 @@ export const onDeleteGatheringAttendees = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         attendees {
@@ -10114,7 +10030,6 @@ export const onDeleteGatheringAttendees = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -10218,6 +10133,7 @@ export const onDeleteGatheringAttendees = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -10226,9 +10142,14 @@ export const onDeleteGatheringAttendees = /* GraphQL */ `
 export const onCreateMosqueFollowers = /* GraphQL */ `
   subscription OnCreateMosqueFollowers(
     $filter: ModelSubscriptionMosqueFollowersFilterInput
+    $creatorId: String
     $owner: String
   ) {
-    onCreateMosqueFollowers(filter: $filter, owner: $owner) {
+    onCreateMosqueFollowers(
+      filter: $filter
+      creatorId: $creatorId
+      owner: $owner
+    ) {
       id
       mosqueId
       userId
@@ -10330,7 +10251,6 @@ export const onCreateMosqueFollowers = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -10434,6 +10354,7 @@ export const onCreateMosqueFollowers = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -10442,9 +10363,14 @@ export const onCreateMosqueFollowers = /* GraphQL */ `
 export const onUpdateMosqueFollowers = /* GraphQL */ `
   subscription OnUpdateMosqueFollowers(
     $filter: ModelSubscriptionMosqueFollowersFilterInput
+    $creatorId: String
     $owner: String
   ) {
-    onUpdateMosqueFollowers(filter: $filter, owner: $owner) {
+    onUpdateMosqueFollowers(
+      filter: $filter
+      creatorId: $creatorId
+      owner: $owner
+    ) {
       id
       mosqueId
       userId
@@ -10546,7 +10472,6 @@ export const onUpdateMosqueFollowers = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -10650,6 +10575,7 @@ export const onUpdateMosqueFollowers = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -10658,9 +10584,14 @@ export const onUpdateMosqueFollowers = /* GraphQL */ `
 export const onDeleteMosqueFollowers = /* GraphQL */ `
   subscription OnDeleteMosqueFollowers(
     $filter: ModelSubscriptionMosqueFollowersFilterInput
+    $creatorId: String
     $owner: String
   ) {
-    onDeleteMosqueFollowers(filter: $filter, owner: $owner) {
+    onDeleteMosqueFollowers(
+      filter: $filter
+      creatorId: $creatorId
+      owner: $owner
+    ) {
       id
       mosqueId
       userId
@@ -10762,7 +10693,6 @@ export const onDeleteMosqueFollowers = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       user {
@@ -10866,6 +10796,7 @@ export const onDeleteMosqueFollowers = /* GraphQL */ `
       _version
       _deleted
       _lastChangedAt
+      creatorId
       owner
       __typename
     }
@@ -10875,8 +10806,13 @@ export const onCreateVolunteerTaskUser = /* GraphQL */ `
   subscription OnCreateVolunteerTaskUser(
     $filter: ModelSubscriptionVolunteerTaskUserFilterInput
     $owner: String
+    $creatorId: String
   ) {
-    onCreateVolunteerTaskUser(filter: $filter, owner: $owner) {
+    onCreateVolunteerTaskUser(
+      filter: $filter
+      owner: $owner
+      creatorId: $creatorId
+    ) {
       id
       userId
       volunteerTaskId
@@ -11012,7 +10948,6 @@ export const onCreateVolunteerTaskUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         volunteers {
@@ -11025,7 +10960,6 @@ export const onCreateVolunteerTaskUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -11034,6 +10968,7 @@ export const onCreateVolunteerTaskUser = /* GraphQL */ `
       _deleted
       _lastChangedAt
       owner
+      creatorId
       __typename
     }
   }
@@ -11042,8 +10977,13 @@ export const onUpdateVolunteerTaskUser = /* GraphQL */ `
   subscription OnUpdateVolunteerTaskUser(
     $filter: ModelSubscriptionVolunteerTaskUserFilterInput
     $owner: String
+    $creatorId: String
   ) {
-    onUpdateVolunteerTaskUser(filter: $filter, owner: $owner) {
+    onUpdateVolunteerTaskUser(
+      filter: $filter
+      owner: $owner
+      creatorId: $creatorId
+    ) {
       id
       userId
       volunteerTaskId
@@ -11179,7 +11119,6 @@ export const onUpdateVolunteerTaskUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         volunteers {
@@ -11192,7 +11131,6 @@ export const onUpdateVolunteerTaskUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -11201,6 +11139,7 @@ export const onUpdateVolunteerTaskUser = /* GraphQL */ `
       _deleted
       _lastChangedAt
       owner
+      creatorId
       __typename
     }
   }
@@ -11209,8 +11148,13 @@ export const onDeleteVolunteerTaskUser = /* GraphQL */ `
   subscription OnDeleteVolunteerTaskUser(
     $filter: ModelSubscriptionVolunteerTaskUserFilterInput
     $owner: String
+    $creatorId: String
   ) {
-    onDeleteVolunteerTaskUser(filter: $filter, owner: $owner) {
+    onDeleteVolunteerTaskUser(
+      filter: $filter
+      owner: $owner
+      creatorId: $creatorId
+    ) {
       id
       userId
       volunteerTaskId
@@ -11346,7 +11290,6 @@ export const onDeleteVolunteerTaskUser = /* GraphQL */ `
           _version
           _deleted
           _lastChangedAt
-          owner
           __typename
         }
         volunteers {
@@ -11359,7 +11302,6 @@ export const onDeleteVolunteerTaskUser = /* GraphQL */ `
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       createdAt
@@ -11368,6 +11310,7 @@ export const onDeleteVolunteerTaskUser = /* GraphQL */ `
       _deleted
       _lastChangedAt
       owner
+      creatorId
       __typename
     }
   }

@@ -10,8 +10,8 @@ public struct `Class`: Model {
   public var endDateTime: Temporal.DateTime?
   public var recurring: Bool
   public var daysOfWeek: [DayType]?
-  public var instructor: User?
   public var creator: User?
+  public var instructor: User?
   public var mosque: Mosque?
   public var createdAt: Temporal.DateTime?
   public var updatedAt: Temporal.DateTime?
@@ -23,8 +23,8 @@ public struct `Class`: Model {
       endDateTime: Temporal.DateTime? = nil,
       recurring: Bool,
       daysOfWeek: [DayType]? = nil,
-      instructor: User? = nil,
       creator: User? = nil,
+      instructor: User? = nil,
       mosque: Mosque? = nil) {
     self.init(id: id,
       title: title,
@@ -33,8 +33,8 @@ public struct `Class`: Model {
       endDateTime: endDateTime,
       recurring: recurring,
       daysOfWeek: daysOfWeek,
-      instructor: instructor,
       creator: creator,
+      instructor: instructor,
       mosque: mosque,
       createdAt: nil,
       updatedAt: nil)
@@ -46,8 +46,8 @@ public struct `Class`: Model {
       endDateTime: Temporal.DateTime? = nil,
       recurring: Bool,
       daysOfWeek: [DayType]? = nil,
-      instructor: User? = nil,
       creator: User? = nil,
+      instructor: User? = nil,
       mosque: Mosque? = nil,
       createdAt: Temporal.DateTime? = nil,
       updatedAt: Temporal.DateTime? = nil) {
@@ -58,8 +58,8 @@ public struct `Class`: Model {
       self.endDateTime = endDateTime
       self.recurring = recurring
       self.daysOfWeek = daysOfWeek
-      self.instructor = instructor
       self.creator = creator
+      self.instructor = instructor
       self.mosque = mosque
       self.createdAt = createdAt
       self.updatedAt = updatedAt

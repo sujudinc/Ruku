@@ -2,9 +2,9 @@
 
 subscription OnCreateAnnouncement(
   $filter: ModelSubscriptionAnnouncementFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateAnnouncement(filter: $filter, owner: $owner) {
+  onCreateAnnouncement(filter: $filter, creatorId: $creatorId) {
     id
     title
     content
@@ -204,7 +204,6 @@ subscription OnCreateAnnouncement(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -212,16 +211,15 @@ subscription OnCreateAnnouncement(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateAnnouncement(
   $filter: ModelSubscriptionAnnouncementFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateAnnouncement(filter: $filter, owner: $owner) {
+  onUpdateAnnouncement(filter: $filter, creatorId: $creatorId) {
     id
     title
     content
@@ -421,7 +419,6 @@ subscription OnUpdateAnnouncement(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -429,16 +426,15 @@ subscription OnUpdateAnnouncement(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteAnnouncement(
   $filter: ModelSubscriptionAnnouncementFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteAnnouncement(filter: $filter, owner: $owner) {
+  onDeleteAnnouncement(filter: $filter, creatorId: $creatorId) {
     id
     title
     content
@@ -638,7 +634,6 @@ subscription OnDeleteAnnouncement(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -646,16 +641,15 @@ subscription OnDeleteAnnouncement(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateClass(
   $filter: ModelSubscriptionClassFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateClass(filter: $filter, owner: $owner) {
+  onCreateClass(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -663,8 +657,8 @@ subscription OnCreateClass(
     endDateTime
     recurring
     daysOfWeek
-    instructorId
-    instructor {
+    creatorId
+    creator {
       id
       selfie
       firstName
@@ -760,8 +754,8 @@ subscription OnCreateClass(
       owner
       __typename
     }
-    creatorId
-    creator {
+    instructorId
+    instructor {
       id
       selfie
       firstName
@@ -956,7 +950,6 @@ subscription OnCreateClass(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -964,16 +957,15 @@ subscription OnCreateClass(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateClass(
   $filter: ModelSubscriptionClassFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateClass(filter: $filter, owner: $owner) {
+  onUpdateClass(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -981,8 +973,8 @@ subscription OnUpdateClass(
     endDateTime
     recurring
     daysOfWeek
-    instructorId
-    instructor {
+    creatorId
+    creator {
       id
       selfie
       firstName
@@ -1078,8 +1070,8 @@ subscription OnUpdateClass(
       owner
       __typename
     }
-    creatorId
-    creator {
+    instructorId
+    instructor {
       id
       selfie
       firstName
@@ -1274,7 +1266,6 @@ subscription OnUpdateClass(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -1282,16 +1273,15 @@ subscription OnUpdateClass(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteClass(
   $filter: ModelSubscriptionClassFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteClass(filter: $filter, owner: $owner) {
+  onDeleteClass(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -1299,6 +1289,103 @@ subscription OnDeleteClass(
     endDateTime
     recurring
     daysOfWeek
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      type
+      status
+      createdAnnouncements {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdClasses {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdMosques {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdResources {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdServices {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        startedAt
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        startedAt
+        __typename
+      }
+      donations {
+        nextToken
+        startedAt
+        __typename
+      }
+      committees {
+        nextToken
+        startedAt
+        __typename
+      }
+      gatherings {
+        nextToken
+        startedAt
+        __typename
+      }
+      mosques {
+        nextToken
+        startedAt
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        startedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
     instructorId
     instructor {
       id
@@ -1396,103 +1483,6 @@ subscription OnDeleteClass(
       owner
       __typename
     }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      type
-      status
-      createdAnnouncements {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdClasses {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdCommittees {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdMosques {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdResources {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdServices {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        startedAt
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        startedAt
-        __typename
-      }
-      donations {
-        nextToken
-        startedAt
-        __typename
-      }
-      committees {
-        nextToken
-        startedAt
-        __typename
-      }
-      gatherings {
-        nextToken
-        startedAt
-        __typename
-      }
-      mosques {
-        nextToken
-        startedAt
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        startedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      _version
-      _deleted
-      _lastChangedAt
-      owner
-      __typename
-    }
     mosqueId
     mosque {
       id
@@ -1592,7 +1582,6 @@ subscription OnDeleteClass(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -1600,16 +1589,15 @@ subscription OnDeleteClass(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateCommittee(
   $filter: ModelSubscriptionCommitteeFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateCommittee(filter: $filter, owner: $owner) {
+  onCreateCommittee(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -1809,7 +1797,6 @@ subscription OnCreateCommittee(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     members {
@@ -1822,6 +1809,7 @@ subscription OnCreateCommittee(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -1834,16 +1822,15 @@ subscription OnCreateCommittee(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateCommittee(
   $filter: ModelSubscriptionCommitteeFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateCommittee(filter: $filter, owner: $owner) {
+  onUpdateCommittee(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -2043,7 +2030,6 @@ subscription OnUpdateCommittee(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     members {
@@ -2056,6 +2042,7 @@ subscription OnUpdateCommittee(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -2068,16 +2055,15 @@ subscription OnUpdateCommittee(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteCommittee(
   $filter: ModelSubscriptionCommitteeFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteCommittee(filter: $filter, owner: $owner) {
+  onDeleteCommittee(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -2277,7 +2263,6 @@ subscription OnDeleteCommittee(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     members {
@@ -2290,6 +2275,7 @@ subscription OnDeleteCommittee(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -2302,16 +2288,15 @@ subscription OnDeleteCommittee(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateGathering(
   $filter: ModelSubscriptionGatheringFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateGathering(filter: $filter, owner: $owner) {
+  onCreateGathering(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -2525,7 +2510,6 @@ subscription OnCreateGathering(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     attendees {
@@ -2538,6 +2522,7 @@ subscription OnCreateGathering(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -2550,16 +2535,15 @@ subscription OnCreateGathering(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateGathering(
   $filter: ModelSubscriptionGatheringFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateGathering(filter: $filter, owner: $owner) {
+  onUpdateGathering(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -2773,7 +2757,6 @@ subscription OnUpdateGathering(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     attendees {
@@ -2786,6 +2769,7 @@ subscription OnUpdateGathering(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -2798,16 +2782,15 @@ subscription OnUpdateGathering(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteGathering(
   $filter: ModelSubscriptionGatheringFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteGathering(filter: $filter, owner: $owner) {
+  onDeleteGathering(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -3021,7 +3004,6 @@ subscription OnDeleteGathering(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     attendees {
@@ -3034,6 +3016,7 @@ subscription OnDeleteGathering(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -3046,16 +3029,15 @@ subscription OnDeleteGathering(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateDonation(
   $filter: ModelSubscriptionDonationFilterInput
-  $owner: String
+  $donorId: String
 ) {
-  onCreateDonation(filter: $filter, owner: $owner) {
+  onCreateDonation(filter: $filter, donorId: $donorId) {
     id
     amount
     currency
@@ -3198,7 +3180,6 @@ subscription OnCreateDonation(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3211,7 +3192,6 @@ subscription OnCreateDonation(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -3219,16 +3199,15 @@ subscription OnCreateDonation(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateDonation(
   $filter: ModelSubscriptionDonationFilterInput
-  $owner: String
+  $donorId: String
 ) {
-  onUpdateDonation(filter: $filter, owner: $owner) {
+  onUpdateDonation(filter: $filter, donorId: $donorId) {
     id
     amount
     currency
@@ -3371,7 +3350,6 @@ subscription OnUpdateDonation(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3384,7 +3362,6 @@ subscription OnUpdateDonation(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -3392,16 +3369,15 @@ subscription OnUpdateDonation(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteDonation(
   $filter: ModelSubscriptionDonationFilterInput
-  $owner: String
+  $donorId: String
 ) {
-  onDeleteDonation(filter: $filter, owner: $owner) {
+  onDeleteDonation(filter: $filter, donorId: $donorId) {
     id
     amount
     currency
@@ -3544,7 +3520,6 @@ subscription OnDeleteDonation(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       donations {
@@ -3557,7 +3532,6 @@ subscription OnDeleteDonation(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -3565,16 +3539,15 @@ subscription OnDeleteDonation(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateFundraisingCampaign(
   $filter: ModelSubscriptionFundraisingCampaignFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateFundraisingCampaign(filter: $filter, owner: $owner) {
+  onCreateFundraisingCampaign(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -3780,7 +3753,6 @@ subscription OnCreateFundraisingCampaign(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     donations {
@@ -3796,7 +3768,6 @@ subscription OnCreateFundraisingCampaign(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -3808,16 +3779,15 @@ subscription OnCreateFundraisingCampaign(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateFundraisingCampaign(
   $filter: ModelSubscriptionFundraisingCampaignFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateFundraisingCampaign(filter: $filter, owner: $owner) {
+  onUpdateFundraisingCampaign(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -4023,7 +3993,6 @@ subscription OnUpdateFundraisingCampaign(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     donations {
@@ -4039,7 +4008,6 @@ subscription OnUpdateFundraisingCampaign(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4051,16 +4019,15 @@ subscription OnUpdateFundraisingCampaign(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteFundraisingCampaign(
   $filter: ModelSubscriptionFundraisingCampaignFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteFundraisingCampaign(filter: $filter, owner: $owner) {
+  onDeleteFundraisingCampaign(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -4266,7 +4233,6 @@ subscription OnDeleteFundraisingCampaign(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     donations {
@@ -4282,7 +4248,6 @@ subscription OnDeleteFundraisingCampaign(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4294,16 +4259,15 @@ subscription OnDeleteFundraisingCampaign(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateMosque(
   $filter: ModelSubscriptionMosqueFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateMosque(filter: $filter, owner: $owner) {
+  onCreateMosque(filter: $filter, creatorId: $creatorId) {
     id
     name
     description
@@ -4470,6 +4434,7 @@ subscription OnCreateMosque(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -4489,7 +4454,6 @@ subscription OnCreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4505,15 +4469,14 @@ subscription OnCreateMosque(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4532,7 +4495,6 @@ subscription OnCreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4554,7 +4516,6 @@ subscription OnCreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4579,7 +4540,6 @@ subscription OnCreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4598,7 +4558,6 @@ subscription OnCreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4619,7 +4578,6 @@ subscription OnCreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4639,7 +4597,6 @@ subscription OnCreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4660,7 +4617,6 @@ subscription OnCreateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4672,16 +4628,15 @@ subscription OnCreateMosque(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateMosque(
   $filter: ModelSubscriptionMosqueFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateMosque(filter: $filter, owner: $owner) {
+  onUpdateMosque(filter: $filter, creatorId: $creatorId) {
     id
     name
     description
@@ -4848,6 +4803,7 @@ subscription OnUpdateMosque(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -4867,7 +4823,6 @@ subscription OnUpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4883,15 +4838,14 @@ subscription OnUpdateMosque(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4910,7 +4864,6 @@ subscription OnUpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4932,7 +4885,6 @@ subscription OnUpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4957,7 +4909,6 @@ subscription OnUpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4976,7 +4927,6 @@ subscription OnUpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -4997,7 +4947,6 @@ subscription OnUpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5017,7 +4966,6 @@ subscription OnUpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5038,7 +4986,6 @@ subscription OnUpdateMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5050,16 +4997,15 @@ subscription OnUpdateMosque(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteMosque(
   $filter: ModelSubscriptionMosqueFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteMosque(filter: $filter, owner: $owner) {
+  onDeleteMosque(filter: $filter, creatorId: $creatorId) {
     id
     name
     description
@@ -5226,6 +5172,7 @@ subscription OnDeleteMosque(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -5245,7 +5192,6 @@ subscription OnDeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5261,15 +5207,14 @@ subscription OnDeleteMosque(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5288,7 +5233,6 @@ subscription OnDeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5310,7 +5254,6 @@ subscription OnDeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5335,7 +5278,6 @@ subscription OnDeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5354,7 +5296,6 @@ subscription OnDeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5375,7 +5316,6 @@ subscription OnDeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5395,7 +5335,6 @@ subscription OnDeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5416,7 +5355,6 @@ subscription OnDeleteMosque(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -5428,16 +5366,15 @@ subscription OnDeleteMosque(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateMonthlyPrayerSchedule(
   $filter: ModelSubscriptionMonthlyPrayerScheduleFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateMonthlyPrayerSchedule(filter: $filter, owner: $owner) {
+  onCreateMonthlyPrayerSchedule(filter: $filter, creatorId: $creatorId) {
     id
     year
     month
@@ -5643,7 +5580,6 @@ subscription OnCreateMonthlyPrayerSchedule(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -5651,16 +5587,15 @@ subscription OnCreateMonthlyPrayerSchedule(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateMonthlyPrayerSchedule(
   $filter: ModelSubscriptionMonthlyPrayerScheduleFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateMonthlyPrayerSchedule(filter: $filter, owner: $owner) {
+  onUpdateMonthlyPrayerSchedule(filter: $filter, creatorId: $creatorId) {
     id
     year
     month
@@ -5866,7 +5801,6 @@ subscription OnUpdateMonthlyPrayerSchedule(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -5874,16 +5808,15 @@ subscription OnUpdateMonthlyPrayerSchedule(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteMonthlyPrayerSchedule(
   $filter: ModelSubscriptionMonthlyPrayerScheduleFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteMonthlyPrayerSchedule(filter: $filter, owner: $owner) {
+  onDeleteMonthlyPrayerSchedule(filter: $filter, creatorId: $creatorId) {
     id
     year
     month
@@ -6089,7 +6022,6 @@ subscription OnDeleteMonthlyPrayerSchedule(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6097,16 +6029,15 @@ subscription OnDeleteMonthlyPrayerSchedule(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateResource(
   $filter: ModelSubscriptionResourceFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateResource(filter: $filter, owner: $owner) {
+  onCreateResource(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -6308,7 +6239,6 @@ subscription OnCreateResource(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6316,16 +6246,15 @@ subscription OnCreateResource(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateResource(
   $filter: ModelSubscriptionResourceFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateResource(filter: $filter, owner: $owner) {
+  onUpdateResource(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -6527,7 +6456,6 @@ subscription OnUpdateResource(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6535,16 +6463,15 @@ subscription OnUpdateResource(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteResource(
   $filter: ModelSubscriptionResourceFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteResource(filter: $filter, owner: $owner) {
+  onDeleteResource(filter: $filter, creatorId: $creatorId) {
     id
     title
     description
@@ -6746,7 +6673,6 @@ subscription OnDeleteResource(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6754,16 +6680,15 @@ subscription OnDeleteResource(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateService(
   $filter: ModelSubscriptionServiceFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateService(filter: $filter, owner: $owner) {
+  onCreateService(filter: $filter, creatorId: $creatorId) {
     id
     type
     description
@@ -6964,7 +6889,6 @@ subscription OnCreateService(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -6972,16 +6896,15 @@ subscription OnCreateService(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateService(
   $filter: ModelSubscriptionServiceFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateService(filter: $filter, owner: $owner) {
+  onUpdateService(filter: $filter, creatorId: $creatorId) {
     id
     type
     description
@@ -7182,7 +7105,6 @@ subscription OnUpdateService(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -7190,16 +7112,15 @@ subscription OnUpdateService(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteService(
   $filter: ModelSubscriptionServiceFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteService(filter: $filter, owner: $owner) {
+  onDeleteService(filter: $filter, creatorId: $creatorId) {
     id
     type
     description
@@ -7400,7 +7321,6 @@ subscription OnDeleteService(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -7408,7 +7328,6 @@ subscription OnDeleteService(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
@@ -7437,7 +7356,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7453,15 +7371,14 @@ subscription OnCreateUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7480,7 +7397,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7502,7 +7418,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7527,7 +7442,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7546,7 +7460,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7566,7 +7479,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7587,7 +7499,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7607,7 +7518,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7628,7 +7538,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7644,15 +7553,14 @@ subscription OnCreateUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7672,7 +7580,6 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7689,6 +7596,7 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -7706,6 +7614,7 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -7723,6 +7632,7 @@ subscription OnCreateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -7741,6 +7651,7 @@ subscription OnCreateUser(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -7781,7 +7692,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7797,15 +7707,14 @@ subscription OnUpdateUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7824,7 +7733,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7846,7 +7754,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7871,7 +7778,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7890,7 +7796,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7910,7 +7815,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7931,7 +7835,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7951,7 +7854,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7972,7 +7874,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -7988,15 +7889,14 @@ subscription OnUpdateUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8016,7 +7916,6 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8033,6 +7932,7 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8050,6 +7950,7 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8067,6 +7968,7 @@ subscription OnUpdateUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8085,6 +7987,7 @@ subscription OnUpdateUser(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -8125,7 +8028,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8141,15 +8043,14 @@ subscription OnDeleteUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8168,7 +8069,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8190,7 +8090,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8215,7 +8114,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8234,7 +8132,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8254,7 +8151,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8275,7 +8171,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8295,7 +8190,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8316,7 +8210,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8332,15 +8225,14 @@ subscription OnDeleteUser(
         endDateTime
         recurring
         daysOfWeek
-        instructorId
         creatorId
+        instructorId
         mosqueId
         createdAt
         updatedAt
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8360,7 +8252,6 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       nextToken
@@ -8377,6 +8268,7 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8394,6 +8286,7 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8411,6 +8304,7 @@ subscription OnDeleteUser(
         _version
         _deleted
         _lastChangedAt
+        creatorId
         owner
         __typename
       }
@@ -8429,6 +8323,7 @@ subscription OnDeleteUser(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -8447,9 +8342,9 @@ subscription OnDeleteUser(
 
 subscription OnCreateVolunteerTask(
   $filter: ModelSubscriptionVolunteerTaskFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onCreateVolunteerTask(filter: $filter, owner: $owner) {
+  onCreateVolunteerTask(filter: $filter, creatorId: $creatorId) {
     id
     name
     description
@@ -8651,7 +8546,6 @@ subscription OnCreateVolunteerTask(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     volunteers {
@@ -8665,6 +8559,7 @@ subscription OnCreateVolunteerTask(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -8676,16 +8571,15 @@ subscription OnCreateVolunteerTask(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnUpdateVolunteerTask(
   $filter: ModelSubscriptionVolunteerTaskFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onUpdateVolunteerTask(filter: $filter, owner: $owner) {
+  onUpdateVolunteerTask(filter: $filter, creatorId: $creatorId) {
     id
     name
     description
@@ -8887,7 +8781,6 @@ subscription OnUpdateVolunteerTask(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     volunteers {
@@ -8901,6 +8794,7 @@ subscription OnUpdateVolunteerTask(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -8912,16 +8806,15 @@ subscription OnUpdateVolunteerTask(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnDeleteVolunteerTask(
   $filter: ModelSubscriptionVolunteerTaskFilterInput
-  $owner: String
+  $creatorId: String
 ) {
-  onDeleteVolunteerTask(filter: $filter, owner: $owner) {
+  onDeleteVolunteerTask(filter: $filter, creatorId: $creatorId) {
     id
     name
     description
@@ -9123,7 +9016,6 @@ subscription OnDeleteVolunteerTask(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     volunteers {
@@ -9137,6 +9029,7 @@ subscription OnDeleteVolunteerTask(
         _deleted
         _lastChangedAt
         owner
+        creatorId
         __typename
       }
       nextToken
@@ -9148,16 +9041,20 @@ subscription OnDeleteVolunteerTask(
     _version
     _deleted
     _lastChangedAt
-    owner
     __typename
   }
 }
 
 subscription OnCreateCommitteeMembers(
   $filter: ModelSubscriptionCommitteeMembersFilterInput
+  $creatorId: String
   $owner: String
 ) {
-  onCreateCommitteeMembers(filter: $filter, owner: $owner) {
+  onCreateCommitteeMembers(
+    filter: $filter
+    creatorId: $creatorId
+    owner: $owner
+  ) {
     id
     committeeId
     userId
@@ -9195,7 +9092,6 @@ subscription OnCreateCommitteeMembers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -9208,7 +9104,6 @@ subscription OnCreateCommitteeMembers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9312,6 +9207,7 @@ subscription OnCreateCommitteeMembers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -9319,9 +9215,14 @@ subscription OnCreateCommitteeMembers(
 
 subscription OnUpdateCommitteeMembers(
   $filter: ModelSubscriptionCommitteeMembersFilterInput
+  $creatorId: String
   $owner: String
 ) {
-  onUpdateCommitteeMembers(filter: $filter, owner: $owner) {
+  onUpdateCommitteeMembers(
+    filter: $filter
+    creatorId: $creatorId
+    owner: $owner
+  ) {
     id
     committeeId
     userId
@@ -9359,7 +9260,6 @@ subscription OnUpdateCommitteeMembers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -9372,7 +9272,6 @@ subscription OnUpdateCommitteeMembers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9476,6 +9375,7 @@ subscription OnUpdateCommitteeMembers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -9483,9 +9383,14 @@ subscription OnUpdateCommitteeMembers(
 
 subscription OnDeleteCommitteeMembers(
   $filter: ModelSubscriptionCommitteeMembersFilterInput
+  $creatorId: String
   $owner: String
 ) {
-  onDeleteCommitteeMembers(filter: $filter, owner: $owner) {
+  onDeleteCommitteeMembers(
+    filter: $filter
+    creatorId: $creatorId
+    owner: $owner
+  ) {
     id
     committeeId
     userId
@@ -9523,7 +9428,6 @@ subscription OnDeleteCommitteeMembers(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       members {
@@ -9536,7 +9440,6 @@ subscription OnDeleteCommitteeMembers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9640,6 +9543,7 @@ subscription OnDeleteCommitteeMembers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -9647,9 +9551,14 @@ subscription OnDeleteCommitteeMembers(
 
 subscription OnCreateGatheringAttendees(
   $filter: ModelSubscriptionGatheringAttendeesFilterInput
+  $creatorId: String
   $owner: String
 ) {
-  onCreateGatheringAttendees(filter: $filter, owner: $owner) {
+  onCreateGatheringAttendees(
+    filter: $filter
+    creatorId: $creatorId
+    owner: $owner
+  ) {
     id
     gatheringId
     userId
@@ -9701,7 +9610,6 @@ subscription OnCreateGatheringAttendees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -9714,7 +9622,6 @@ subscription OnCreateGatheringAttendees(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9818,6 +9725,7 @@ subscription OnCreateGatheringAttendees(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -9825,9 +9733,14 @@ subscription OnCreateGatheringAttendees(
 
 subscription OnUpdateGatheringAttendees(
   $filter: ModelSubscriptionGatheringAttendeesFilterInput
+  $creatorId: String
   $owner: String
 ) {
-  onUpdateGatheringAttendees(filter: $filter, owner: $owner) {
+  onUpdateGatheringAttendees(
+    filter: $filter
+    creatorId: $creatorId
+    owner: $owner
+  ) {
     id
     gatheringId
     userId
@@ -9879,7 +9792,6 @@ subscription OnUpdateGatheringAttendees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -9892,7 +9804,6 @@ subscription OnUpdateGatheringAttendees(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -9996,6 +9907,7 @@ subscription OnUpdateGatheringAttendees(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10003,9 +9915,14 @@ subscription OnUpdateGatheringAttendees(
 
 subscription OnDeleteGatheringAttendees(
   $filter: ModelSubscriptionGatheringAttendeesFilterInput
+  $creatorId: String
   $owner: String
 ) {
-  onDeleteGatheringAttendees(filter: $filter, owner: $owner) {
+  onDeleteGatheringAttendees(
+    filter: $filter
+    creatorId: $creatorId
+    owner: $owner
+  ) {
     id
     gatheringId
     userId
@@ -10057,7 +9974,6 @@ subscription OnDeleteGatheringAttendees(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       attendees {
@@ -10070,7 +9986,6 @@ subscription OnDeleteGatheringAttendees(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -10174,6 +10089,7 @@ subscription OnDeleteGatheringAttendees(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10181,9 +10097,14 @@ subscription OnDeleteGatheringAttendees(
 
 subscription OnCreateMosqueFollowers(
   $filter: ModelSubscriptionMosqueFollowersFilterInput
+  $creatorId: String
   $owner: String
 ) {
-  onCreateMosqueFollowers(filter: $filter, owner: $owner) {
+  onCreateMosqueFollowers(
+    filter: $filter
+    creatorId: $creatorId
+    owner: $owner
+  ) {
     id
     mosqueId
     userId
@@ -10285,7 +10206,6 @@ subscription OnCreateMosqueFollowers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -10389,6 +10309,7 @@ subscription OnCreateMosqueFollowers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10396,9 +10317,14 @@ subscription OnCreateMosqueFollowers(
 
 subscription OnUpdateMosqueFollowers(
   $filter: ModelSubscriptionMosqueFollowersFilterInput
+  $creatorId: String
   $owner: String
 ) {
-  onUpdateMosqueFollowers(filter: $filter, owner: $owner) {
+  onUpdateMosqueFollowers(
+    filter: $filter
+    creatorId: $creatorId
+    owner: $owner
+  ) {
     id
     mosqueId
     userId
@@ -10500,7 +10426,6 @@ subscription OnUpdateMosqueFollowers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -10604,6 +10529,7 @@ subscription OnUpdateMosqueFollowers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10611,9 +10537,14 @@ subscription OnUpdateMosqueFollowers(
 
 subscription OnDeleteMosqueFollowers(
   $filter: ModelSubscriptionMosqueFollowersFilterInput
+  $creatorId: String
   $owner: String
 ) {
-  onDeleteMosqueFollowers(filter: $filter, owner: $owner) {
+  onDeleteMosqueFollowers(
+    filter: $filter
+    creatorId: $creatorId
+    owner: $owner
+  ) {
     id
     mosqueId
     userId
@@ -10715,7 +10646,6 @@ subscription OnDeleteMosqueFollowers(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     user {
@@ -10819,6 +10749,7 @@ subscription OnDeleteMosqueFollowers(
     _version
     _deleted
     _lastChangedAt
+    creatorId
     owner
     __typename
   }
@@ -10827,8 +10758,13 @@ subscription OnDeleteMosqueFollowers(
 subscription OnCreateVolunteerTaskUser(
   $filter: ModelSubscriptionVolunteerTaskUserFilterInput
   $owner: String
+  $creatorId: String
 ) {
-  onCreateVolunteerTaskUser(filter: $filter, owner: $owner) {
+  onCreateVolunteerTaskUser(
+    filter: $filter
+    owner: $owner
+    creatorId: $creatorId
+  ) {
     id
     userId
     volunteerTaskId
@@ -10964,7 +10900,6 @@ subscription OnCreateVolunteerTaskUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -10977,7 +10912,6 @@ subscription OnCreateVolunteerTaskUser(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -10986,6 +10920,7 @@ subscription OnCreateVolunteerTaskUser(
     _deleted
     _lastChangedAt
     owner
+    creatorId
     __typename
   }
 }
@@ -10993,8 +10928,13 @@ subscription OnCreateVolunteerTaskUser(
 subscription OnUpdateVolunteerTaskUser(
   $filter: ModelSubscriptionVolunteerTaskUserFilterInput
   $owner: String
+  $creatorId: String
 ) {
-  onUpdateVolunteerTaskUser(filter: $filter, owner: $owner) {
+  onUpdateVolunteerTaskUser(
+    filter: $filter
+    owner: $owner
+    creatorId: $creatorId
+  ) {
     id
     userId
     volunteerTaskId
@@ -11130,7 +11070,6 @@ subscription OnUpdateVolunteerTaskUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -11143,7 +11082,6 @@ subscription OnUpdateVolunteerTaskUser(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -11152,6 +11090,7 @@ subscription OnUpdateVolunteerTaskUser(
     _deleted
     _lastChangedAt
     owner
+    creatorId
     __typename
   }
 }
@@ -11159,8 +11098,13 @@ subscription OnUpdateVolunteerTaskUser(
 subscription OnDeleteVolunteerTaskUser(
   $filter: ModelSubscriptionVolunteerTaskUserFilterInput
   $owner: String
+  $creatorId: String
 ) {
-  onDeleteVolunteerTaskUser(filter: $filter, owner: $owner) {
+  onDeleteVolunteerTaskUser(
+    filter: $filter
+    owner: $owner
+    creatorId: $creatorId
+  ) {
     id
     userId
     volunteerTaskId
@@ -11296,7 +11240,6 @@ subscription OnDeleteVolunteerTaskUser(
         _version
         _deleted
         _lastChangedAt
-        owner
         __typename
       }
       volunteers {
@@ -11309,7 +11252,6 @@ subscription OnDeleteVolunteerTaskUser(
       _version
       _deleted
       _lastChangedAt
-      owner
       __typename
     }
     createdAt
@@ -11318,6 +11260,7 @@ subscription OnDeleteVolunteerTaskUser(
     _deleted
     _lastChangedAt
     owner
+    creatorId
     __typename
   }
 }

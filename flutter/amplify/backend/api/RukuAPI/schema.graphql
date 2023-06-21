@@ -1,6 +1,48 @@
+# ------------------------------------------------------------------------------------- MUTATIONS
+
+type Mutation {
+  # ---------- MULTIPART UPLOAD
+  initiateMultipartUpload(
+    input: InitiateMultipartUploadInput!
+  ): InitiateMultipartUploadOutput
+
+  generateMultipartUploadUrls(
+    input: GenerateMultipartUploadUrlsInput!
+  ): GenerateMultipartUploadUrlsOutput
+
+  completeMultipartUpload(
+    input: CompleteMultipartUploadInput!
+  ): CompleteMultipartUploadOutput
+
+  abortMultipartUpload(
+    input: AbortMultipartUploadInput!
+  ): AbortMultipartUploadOutput
+}
+
+# -------------------------------------------------------------------------------------  QUERIES
+
+type Query {
+  # ---------- MULTIPART UPLOAD
+  listInProcessMultipartUploads(
+    input: ListInProcessMultipartUploadsInput!
+  ): ListInProcessMultipartUploadsOutput
+
+  listCompletedMultipartUploads(
+    input: ListCompletedMultipartUploadsInput!
+  ): ListCompletedMultipartUploadsOutput
+}
+
+# ------------------------------------------------------------------------------------- MODELS
+
 type Announcement
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   title: String!
   content: AWSJSON!
@@ -12,7 +54,13 @@ type Announcement
 
 type Class
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
@@ -20,17 +68,23 @@ type Class
   endDateTime: AWSDateTime
   recurring: Boolean!
   daysOfWeek: [DayType!]
-  instructorId: ID! @index(name: "byInstructor")
-  instructor: User @belongsTo(fields: ["instructorId"])
   creatorId: ID! @index(name: "byCreator")
   creator: User @belongsTo(fields: ["creatorId"])
+  instructorId: ID! @index(name: "byInstructor")
+  instructor: User @belongsTo(fields: ["instructorId"])
   mosqueId: ID! @index(name: "byMosque")
   mosque: Mosque @belongsTo(fields: ["mosqueId"])
 }
 
 type Committee
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
@@ -43,7 +97,13 @@ type Committee
 
 type Gathering
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
@@ -60,7 +120,13 @@ type Gathering
 
 type Donation
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "donorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   amount: Float!
   currency: String!
@@ -74,7 +140,13 @@ type Donation
 
 type FundraisingCampaign
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
@@ -94,7 +166,13 @@ type FundraisingCampaign
 
 type Mosque
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   name: String!
   description: String
@@ -110,16 +188,25 @@ type Mosque
   classes: [Class] @hasMany(indexName: "byMosque", fields: ["id"])
   committees: [Committee] @hasMany(indexName: "byMosque", fields: ["id"])
   gatherings: [Gathering] @hasMany(indexName: "byMosque", fields: ["id"])
-  fundraisingCampaigns: [FundraisingCampaign] @hasMany(indexName: "byMosque", fields: ["id"])
-  monthlyPrayerSchedules: [MonthlyPrayerSchedule] @hasMany(indexName: "byMosque", fields: ["id"])
+  fundraisingCampaigns: [FundraisingCampaign]
+    @hasMany(indexName: "byMosque", fields: ["id"])
+  monthlyPrayerSchedules: [MonthlyPrayerSchedule]
+    @hasMany(indexName: "byMosque", fields: ["id"])
   resources: [Resource] @hasMany(indexName: "byMosque", fields: ["id"])
   services: [Service] @hasMany(indexName: "byMosque", fields: ["id"])
-  volunteerTasks: [VolunteerTask] @hasMany(indexName: "byMosque", fields: ["id"])
+  volunteerTasks: [VolunteerTask]
+    @hasMany(indexName: "byMosque", fields: ["id"])
 }
 
 type MonthlyPrayerSchedule
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   year: Int!
   month: Int!
@@ -132,7 +219,13 @@ type MonthlyPrayerSchedule
 
 type Resource
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   title: String!
   description: String
@@ -146,7 +239,13 @@ type Resource
 
 type Service
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   type: ServiceType!
   description: String
@@ -159,7 +258,13 @@ type Service
 
 type User
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   selfie: String
   firstName: String!
@@ -167,17 +272,24 @@ type User
   email: AWSEmail!
   type: UserType!
   status: UserStatus!
-  createdAnnouncements: [Announcement] @hasMany(indexName: "byCreator", fields: ["id"])
+  createdAnnouncements: [Announcement]
+    @hasMany(indexName: "byCreator", fields: ["id"])
   createdClasses: [Class] @hasMany(indexName: "byCreator", fields: ["id"])
-  createdCommittees: [Committee] @hasMany(indexName: "byCreator", fields: ["id"])
-  createdGatherings: [Gathering] @hasMany(indexName: "byCreator", fields: ["id"])
-  createdFundraisingCampaigns: [FundraisingCampaign] @hasMany(indexName: "byCreator", fields: ["id"])
-  createdMonthlyPrayerSchedules: [MonthlyPrayerSchedule] @hasMany(indexName: "byCreator", fields: ["id"])
+  createdCommittees: [Committee]
+    @hasMany(indexName: "byCreator", fields: ["id"])
+  createdGatherings: [Gathering]
+    @hasMany(indexName: "byCreator", fields: ["id"])
+  createdFundraisingCampaigns: [FundraisingCampaign]
+    @hasMany(indexName: "byCreator", fields: ["id"])
+  createdMonthlyPrayerSchedules: [MonthlyPrayerSchedule]
+    @hasMany(indexName: "byCreator", fields: ["id"])
   createdMosques: [Mosque] @hasMany(indexName: "byCreator", fields: ["id"])
   createdResources: [Resource] @hasMany(indexName: "byCreator", fields: ["id"])
   createdServices: [Service] @hasMany(indexName: "byCreator", fields: ["id"])
-  createdVolunteerTasks: [VolunteerTask] @hasMany(indexName: "byCreator", fields: ["id"])
-  instructingClasses: [Class] @hasMany(indexName: "byInstructor", fields: ["id"])
+  createdVolunteerTasks: [VolunteerTask]
+    @hasMany(indexName: "byCreator", fields: ["id"])
+  instructingClasses: [Class]
+    @hasMany(indexName: "byInstructor", fields: ["id"])
   donations: [Donation] @hasMany(indexName: "byDonor", fields: ["id"])
   committees: [Committee] @manyToMany(relationName: "CommitteeMembers")
   gatherings: [Gathering] @manyToMany(relationName: "GatheringAttendees")
@@ -187,7 +299,13 @@ type User
 
 type VolunteerTask
   @model
-  @auth(rules: [{ allow: owner }, { allow: public, operations: [read] }]) {
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   name: String!
   description: String
@@ -199,6 +317,106 @@ type VolunteerTask
   mosque: Mosque @belongsTo(fields: ["mosqueId"])
   volunteers: [User] @manyToMany(relationName: "VolunteerTaskUser")
 }
+
+# ------------------------------------------------------------------------------------- CUSTOM MUTATION INPUTS
+
+input AbortMultipartUploadInput {
+  bucket: String!
+  key: String!
+  uploadId: String!
+}
+
+input CompleteMultipartUploadInput {
+  bucket: String!
+  key: String!
+  uploadId: String!
+  fileName: String!
+  parts: [CompleteMultipartUploadPartInput!]!
+}
+
+input CompleteMultipartUploadPartInput {
+  bucket: String!
+  key: String!
+  partNumber: Int!
+  eTag: String!
+}
+
+input InitiateMultipartUploadInput {
+  uploadType: UploadType!
+  fileName: String!
+  contentType: String!
+}
+
+input GenerateMultipartUploadUrlsInput {
+  bucket: String!
+  key: String!
+  uploadId: String!
+  parts: Int!
+}
+
+# ------------------------------------------------------------------------------------- CUSTOM QUERY INPUTS
+
+input ListInProcessMultipartUploadsInput {
+  bucket: String!
+  key: String!
+  limit: Int
+  nextToken: String
+}
+
+input ListCompletedMultipartUploadsInput {
+  bucket: String!
+  key: String!
+  uploadId: String!
+}
+
+# ------------------------------------------------------------------------------------- CUSTOM MUTATION OUTPUTS
+
+type AbortMultipartUploadOutput {
+  success: Boolean!
+}
+
+type CompleteMultipartUploadOutput {
+  location: String!
+}
+
+type InitiateMultipartUploadOutput {
+  bucket: String!
+  key: String!
+  uploadId: String!
+}
+
+type GenerateMultipartUploadUrlsOutput {
+  items: [GenerateMultipartUploadUrlOutput!]!
+}
+
+type GenerateMultipartUploadUrlOutput {
+  partNumber: Int!
+  url: String!
+}
+
+# ------------------------------------------------------------------------------------- CUSTOM QUERY OUTPUTS
+
+type ListInProcessMultipartUploadsOutput {
+  items: [InProcessUpload!]!
+}
+
+type InProcessUpload {
+  uploadId: String!
+  fileName: String!
+  contentType: String!
+  createdAt: String!
+}
+
+type ListCompletedMultipartUploadsOutput {
+  items: [UploadedPart!]!
+}
+
+type UploadedPart {
+  partNumber: Int!
+  eTag: String!
+}
+
+# ------------------------------------------------------------------------------------- CUSTOM TYPES
 
 type ContactInfo {
   phoneNumber: String
@@ -249,6 +467,8 @@ type SocialMedia {
   twitter: String
   instagram: String
 }
+
+# ------------------------------------------------------------------------------------- ENUMS
 
 enum DayType {
   MONDAY
@@ -304,6 +524,16 @@ enum ServiceType {
   FUNERAL
   COUNSELING
   OTHER
+}
+
+enum UploadType {
+  SELFIE
+  MOSQUE
+  RESOURCE
+  GATHERING_PICTURE
+  FUNDRAISING_CAMPAIGN_PICTURE
+  MONTHLY_PRAYER_SCHEDULE_PICTURE
+  VOLUNTEER_TASK_PICTURE
 }
 
 enum UserStatus {

@@ -24,6 +24,7 @@ extension Resource {
     
     model.authRules = [
       rule(allow: .owner, ownerField: "owner", identityClaim: "cognito:username", provider: .userPools, operations: [.create, .update, .delete, .read]),
+      rule(allow: .private, operations: [.read]),
       rule(allow: .public, operations: [.read])
     ]
     

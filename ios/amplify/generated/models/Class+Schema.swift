@@ -12,8 +12,8 @@ extension `Class` {
     case endDateTime
     case recurring
     case daysOfWeek
-    case instructor
     case creator
+    case instructor
     case mosque
     case createdAt
     case updatedAt
@@ -27,14 +27,15 @@ extension `Class` {
     
     model.authRules = [
       rule(allow: .owner, ownerField: "owner", identityClaim: "cognito:username", provider: .userPools, operations: [.create, .update, .delete, .read]),
+      rule(allow: .private, operations: [.read]),
       rule(allow: .public, operations: [.read])
     ]
     
     model.pluralName = "Classes"
     
     model.attributes(
-      .index(fields: ["instructorId"], name: "byInstructor"),
       .index(fields: ["creatorId"], name: "byCreator"),
+      .index(fields: ["instructorId"], name: "byInstructor"),
       .index(fields: ["mosqueId"], name: "byMosque"),
       .primaryKey(fields: [class.id])
     )
@@ -47,8 +48,8 @@ extension `Class` {
       .field(class.endDateTime, is: .optional, ofType: .dateTime),
       .field(class.recurring, is: .required, ofType: .bool),
       .field(class.daysOfWeek, is: .optional, ofType: .embeddedCollection(of: DayType.self)),
-      .belongsTo(class.instructor, is: .optional, ofType: User.self, targetNames: ["instructorId"]),
       .belongsTo(class.creator, is: .optional, ofType: User.self, targetNames: ["creatorId"]),
+      .belongsTo(class.instructor, is: .optional, ofType: User.self, targetNames: ["instructorId"]),
       .belongsTo(class.mosque, is: .optional, ofType: Mosque.self, targetNames: ["mosqueId"]),
       .field(class.createdAt, is: .optional, isReadOnly: true, ofType: .dateTime),
       .field(class.updatedAt, is: .optional, isReadOnly: true, ofType: .dateTime)

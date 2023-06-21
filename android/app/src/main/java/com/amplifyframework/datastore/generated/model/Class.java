@@ -24,10 +24,11 @@ import static com.amplifyframework.core.model.query.predicate.QueryField.field;
 @SuppressWarnings("all")
 @ModelConfig(pluralName = "Classes", type = Model.Type.USER, version = 1, authRules = {
   @AuthRule(allow = AuthStrategy.OWNER, ownerField = "owner", identityClaim = "cognito:username", provider = "userPools", operations = { ModelOperation.CREATE, ModelOperation.UPDATE, ModelOperation.DELETE, ModelOperation.READ }),
+  @AuthRule(allow = AuthStrategy.PRIVATE, operations = { ModelOperation.READ }),
   @AuthRule(allow = AuthStrategy.PUBLIC, operations = { ModelOperation.READ })
 })
-@Index(name = "byInstructor", fields = {"instructorId"})
 @Index(name = "byCreator", fields = {"creatorId"})
+@Index(name = "byInstructor", fields = {"instructorId"})
 @Index(name = "byMosque", fields = {"mosqueId"})
 public final class Class implements Model {
   public static final QueryField ID = field("Class", "id");
@@ -37,8 +38,8 @@ public final class Class implements Model {
   public static final QueryField END_DATE_TIME = field("Class", "endDateTime");
   public static final QueryField RECURRING = field("Class", "recurring");
   public static final QueryField DAYS_OF_WEEK = field("Class", "daysOfWeek");
-  public static final QueryField INSTRUCTOR = field("Class", "instructorId");
   public static final QueryField CREATOR = field("Class", "creatorId");
+  public static final QueryField INSTRUCTOR = field("Class", "instructorId");
   public static final QueryField MOSQUE = field("Class", "mosqueId");
   private final @ModelField(targetType="ID", isRequired = true) String id;
   private final @ModelField(targetType="String", isRequired = true) String title;
@@ -47,8 +48,8 @@ public final class Class implements Model {
   private final @ModelField(targetType="AWSDateTime") Temporal.DateTime endDateTime;
   private final @ModelField(targetType="Boolean", isRequired = true) Boolean recurring;
   private final @ModelField(targetType="DayType") List<DayType> daysOfWeek;
-  private final @ModelField(targetType="User") @BelongsTo(targetName = "instructorId", targetNames = {"instructorId"}, type = User.class) User instructor;
   private final @ModelField(targetType="User") @BelongsTo(targetName = "creatorId", targetNames = {"creatorId"}, type = User.class) User creator;
+  private final @ModelField(targetType="User") @BelongsTo(targetName = "instructorId", targetNames = {"instructorId"}, type = User.class) User instructor;
   private final @ModelField(targetType="Mosque") @BelongsTo(targetName = "mosqueId", targetNames = {"mosqueId"}, type = Mosque.class) Mosque mosque;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime createdAt;
   private @ModelField(targetType="AWSDateTime", isReadOnly = true) Temporal.DateTime updatedAt;
@@ -84,12 +85,12 @@ public final class Class implements Model {
       return daysOfWeek;
   }
   
-  public User getInstructor() {
-      return instructor;
-  }
-  
   public User getCreator() {
       return creator;
+  }
+  
+  public User getInstructor() {
+      return instructor;
   }
   
   public Mosque getMosque() {
@@ -104,7 +105,7 @@ public final class Class implements Model {
       return updatedAt;
   }
   
-  private Class(String id, String title, String description, Temporal.DateTime startDateTime, Temporal.DateTime endDateTime, Boolean recurring, List<DayType> daysOfWeek, User instructor, User creator, Mosque mosque) {
+  private Class(String id, String title, String description, Temporal.DateTime startDateTime, Temporal.DateTime endDateTime, Boolean recurring, List<DayType> daysOfWeek, User creator, User instructor, Mosque mosque) {
     this.id = id;
     this.title = title;
     this.description = description;
@@ -112,8 +113,8 @@ public final class Class implements Model {
     this.endDateTime = endDateTime;
     this.recurring = recurring;
     this.daysOfWeek = daysOfWeek;
-    this.instructor = instructor;
     this.creator = creator;
+    this.instructor = instructor;
     this.mosque = mosque;
   }
   
@@ -132,8 +133,8 @@ public final class Class implements Model {
               ObjectsCompat.equals(getEndDateTime(), class.getEndDateTime()) &&
               ObjectsCompat.equals(getRecurring(), class.getRecurring()) &&
               ObjectsCompat.equals(getDaysOfWeek(), class.getDaysOfWeek()) &&
-              ObjectsCompat.equals(getInstructor(), class.getInstructor()) &&
               ObjectsCompat.equals(getCreator(), class.getCreator()) &&
+              ObjectsCompat.equals(getInstructor(), class.getInstructor()) &&
               ObjectsCompat.equals(getMosque(), class.getMosque()) &&
               ObjectsCompat.equals(getCreatedAt(), class.getCreatedAt()) &&
               ObjectsCompat.equals(getUpdatedAt(), class.getUpdatedAt());
@@ -150,8 +151,8 @@ public final class Class implements Model {
       .append(getEndDateTime())
       .append(getRecurring())
       .append(getDaysOfWeek())
-      .append(getInstructor())
       .append(getCreator())
+      .append(getInstructor())
       .append(getMosque())
       .append(getCreatedAt())
       .append(getUpdatedAt())
@@ -170,8 +171,8 @@ public final class Class implements Model {
       .append("endDateTime=" + String.valueOf(getEndDateTime()) + ", ")
       .append("recurring=" + String.valueOf(getRecurring()) + ", ")
       .append("daysOfWeek=" + String.valueOf(getDaysOfWeek()) + ", ")
-      .append("instructor=" + String.valueOf(getInstructor()) + ", ")
       .append("creator=" + String.valueOf(getCreator()) + ", ")
+      .append("instructor=" + String.valueOf(getInstructor()) + ", ")
       .append("mosque=" + String.valueOf(getMosque()) + ", ")
       .append("createdAt=" + String.valueOf(getCreatedAt()) + ", ")
       .append("updatedAt=" + String.valueOf(getUpdatedAt()))
@@ -214,8 +215,8 @@ public final class Class implements Model {
       endDateTime,
       recurring,
       daysOfWeek,
-      instructor,
       creator,
+      instructor,
       mosque);
   }
   public interface TitleStep {
@@ -239,8 +240,8 @@ public final class Class implements Model {
     BuildStep description(String description);
     BuildStep endDateTime(Temporal.DateTime endDateTime);
     BuildStep daysOfWeek(List<DayType> daysOfWeek);
-    BuildStep instructor(User instructor);
     BuildStep creator(User creator);
+    BuildStep instructor(User instructor);
     BuildStep mosque(Mosque mosque);
   }
   
@@ -253,8 +254,8 @@ public final class Class implements Model {
     private String description;
     private Temporal.DateTime endDateTime;
     private List<DayType> daysOfWeek;
-    private User instructor;
     private User creator;
+    private User instructor;
     private Mosque mosque;
     @Override
      public Class build() {
@@ -268,8 +269,8 @@ public final class Class implements Model {
           endDateTime,
           recurring,
           daysOfWeek,
-          instructor,
           creator,
+          instructor,
           mosque);
     }
     
@@ -313,14 +314,14 @@ public final class Class implements Model {
     }
     
     @Override
-     public BuildStep instructor(User instructor) {
-        this.instructor = instructor;
+     public BuildStep creator(User creator) {
+        this.creator = creator;
         return this;
     }
     
     @Override
-     public BuildStep creator(User creator) {
-        this.creator = creator;
+     public BuildStep instructor(User instructor) {
+        this.instructor = instructor;
         return this;
     }
     
@@ -342,7 +343,7 @@ public final class Class implements Model {
   
 
   public final class CopyOfBuilder extends Builder {
-    private CopyOfBuilder(String id, String title, String description, Temporal.DateTime startDateTime, Temporal.DateTime endDateTime, Boolean recurring, List<DayType> daysOfWeek, User instructor, User creator, Mosque mosque) {
+    private CopyOfBuilder(String id, String title, String description, Temporal.DateTime startDateTime, Temporal.DateTime endDateTime, Boolean recurring, List<DayType> daysOfWeek, User creator, User instructor, Mosque mosque) {
       super.id(id);
       super.title(title)
         .startDateTime(startDateTime)
@@ -350,8 +351,8 @@ public final class Class implements Model {
         .description(description)
         .endDateTime(endDateTime)
         .daysOfWeek(daysOfWeek)
-        .instructor(instructor)
         .creator(creator)
+        .instructor(instructor)
         .mosque(mosque);
     }
     
@@ -386,13 +387,13 @@ public final class Class implements Model {
     }
     
     @Override
-     public CopyOfBuilder instructor(User instructor) {
-      return (CopyOfBuilder) super.instructor(instructor);
+     public CopyOfBuilder creator(User creator) {
+      return (CopyOfBuilder) super.creator(creator);
     }
     
     @Override
-     public CopyOfBuilder creator(User creator) {
-      return (CopyOfBuilder) super.creator(creator);
+     public CopyOfBuilder instructor(User instructor) {
+      return (CopyOfBuilder) super.instructor(instructor);
     }
     
     @Override

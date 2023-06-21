@@ -58,6 +58,16 @@ export enum ServiceType {
   OTHER = "OTHER"
 }
 
+export enum UploadType {
+  SELFIE = "SELFIE",
+  MOSQUE = "MOSQUE",
+  RESOURCE = "RESOURCE",
+  GATHERING_PICTURE = "GATHERING_PICTURE",
+  FUNDRAISING_CAMPAIGN_PICTURE = "FUNDRAISING_CAMPAIGN_PICTURE",
+  MONTHLY_PRAYER_SCHEDULE_PICTURE = "MONTHLY_PRAYER_SCHEDULE_PICTURE",
+  VOLUNTEER_TASK_PICTURE = "VOLUNTEER_TASK_PICTURE"
+}
+
 export enum UserStatus {
   ACTIVE = "ACTIVE",
   BLOCKED = "BLOCKED",
@@ -96,10 +106,14 @@ export declare type CompleteMultipartUploadOutput = LazyLoading extends LazyLoad
 export declare const CompleteMultipartUploadOutput: (new (init: ModelInit<CompleteMultipartUploadOutput>) => CompleteMultipartUploadOutput)
 
 type EagerInitiateMultipartUploadOutput = {
+  readonly bucket: string;
+  readonly key: string;
   readonly uploadId: string;
 }
 
 type LazyInitiateMultipartUploadOutput = {
+  readonly bucket: string;
+  readonly key: string;
   readonly uploadId: string;
 }
 

@@ -5,6 +5,8 @@
 export const initiateMultipartUpload = /* GraphQL */ `
   mutation InitiateMultipartUpload($input: InitiateMultipartUploadInput!) {
     initiateMultipartUpload(input: $input) {
+      bucket
+      key
       uploadId
       __typename
     }

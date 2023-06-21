@@ -40,6 +40,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Name": "string",
       "Region": "string"
     },
+    "InitiateMultipartUpload": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "RukuAuthCustomMessage": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
@@ -81,6 +88,12 @@ export type AmplifyDependentResourcesAttributes = {
       "LambdaExecutionRoleArn": "string",
       "Name": "string",
       "Region": "string"
+    },
+    "rukuCommonLayerPy": {
+      "Arn": "string"
+    },
+    "rukuCommonLayerTs": {
+      "Arn": "string"
     }
   },
   "storage": {

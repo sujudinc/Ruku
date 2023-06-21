@@ -342,8 +342,7 @@ input CompleteMultipartUploadPartInput {
 }
 
 input InitiateMultipartUploadInput {
-  bucket: String!
-  key: String!
+  uploadType: UploadType!
   fileName: String!
   contentType: String!
 }
@@ -381,6 +380,8 @@ type CompleteMultipartUploadOutput {
 }
 
 type InitiateMultipartUploadOutput {
+  bucket: String!
+  key: String!
   uploadId: String!
 }
 
@@ -523,6 +524,16 @@ enum ServiceType {
   FUNERAL
   COUNSELING
   OTHER
+}
+
+enum UploadType {
+  SELFIE
+  MOSQUE
+  RESOURCE
+  GATHERING_PICTURE
+  FUNDRAISING_CAMPAIGN_PICTURE
+  MONTHLY_PRAYER_SCHEDULE_PICTURE
+  VOLUNTEER_TASK_PICTURE
 }
 
 enum UserStatus {

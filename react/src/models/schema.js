@@ -2834,6 +2834,18 @@ export const schema = {
                 "OTHER"
             ]
         },
+        "UploadType": {
+            "name": "UploadType",
+            "values": [
+                "SELFIE",
+                "MOSQUE",
+                "RESOURCE",
+                "GATHERING_PICTURE",
+                "FUNDRAISING_CAMPAIGN_PICTURE",
+                "MONTHLY_PRAYER_SCHEDULE_PICTURE",
+                "VOLUNTEER_TASK_PICTURE"
+            ]
+        },
         "UserStatus": {
             "name": "UserStatus",
             "values": [
@@ -2880,6 +2892,20 @@ export const schema = {
         "InitiateMultipartUploadOutput": {
             "name": "InitiateMultipartUploadOutput",
             "fields": {
+                "bucket": {
+                    "name": "bucket",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "key": {
+                    "name": "key",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
                 "uploadId": {
                     "name": "uploadId",
                     "isArray": false,
@@ -3268,5 +3294,5 @@ export const schema = {
         }
     },
     "codegenVersion": "3.4.4",
-    "version": "06bd990018fda14aa60c90361b94d4da"
+    "version": "54172c6d155ddec02773b574ed0652d2"
 };

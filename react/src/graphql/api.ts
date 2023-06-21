@@ -3,14 +3,26 @@
 //  This file was automatically generated and should not be edited.
 
 export type InitiateMultipartUploadInput = {
-  bucket: string,
-  key: string,
+  uploadType: UploadType,
   fileName: string,
   contentType: string,
 };
 
+export enum UploadType {
+  SELFIE = "SELFIE",
+  MOSQUE = "MOSQUE",
+  RESOURCE = "RESOURCE",
+  GATHERING_PICTURE = "GATHERING_PICTURE",
+  FUNDRAISING_CAMPAIGN_PICTURE = "FUNDRAISING_CAMPAIGN_PICTURE",
+  MONTHLY_PRAYER_SCHEDULE_PICTURE = "MONTHLY_PRAYER_SCHEDULE_PICTURE",
+  VOLUNTEER_TASK_PICTURE = "VOLUNTEER_TASK_PICTURE",
+}
+
+
 export type InitiateMultipartUploadOutput = {
   __typename: "InitiateMultipartUploadOutput",
+  bucket: string,
+  key: string,
   uploadId: string,
 };
 
@@ -1891,6 +1903,8 @@ export type InitiateMultipartUploadMutationVariables = {
 export type InitiateMultipartUploadMutation = {
   initiateMultipartUpload?:  {
     __typename: "InitiateMultipartUploadOutput",
+    bucket: string,
+    key: string,
     uploadId: string,
   } | null,
 };

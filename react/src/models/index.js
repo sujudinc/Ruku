@@ -58,6 +58,16 @@ const ServiceType = {
   "OTHER": "OTHER"
 };
 
+const UploadType = {
+  "SELFIE": "SELFIE",
+  "MOSQUE": "MOSQUE",
+  "RESOURCE": "RESOURCE",
+  "GATHERING_PICTURE": "GATHERING_PICTURE",
+  "FUNDRAISING_CAMPAIGN_PICTURE": "FUNDRAISING_CAMPAIGN_PICTURE",
+  "MONTHLY_PRAYER_SCHEDULE_PICTURE": "MONTHLY_PRAYER_SCHEDULE_PICTURE",
+  "VOLUNTEER_TASK_PICTURE": "VOLUNTEER_TASK_PICTURE"
+};
+
 const UserStatus = {
   "ACTIVE": "ACTIVE",
   "BLOCKED": "BLOCKED",
@@ -96,6 +106,7 @@ export {
   PrayerType,
   ResourceType,
   ServiceType,
+  UploadType,
   UserStatus,
   UserType,
   AbortMultipartUploadOutput,

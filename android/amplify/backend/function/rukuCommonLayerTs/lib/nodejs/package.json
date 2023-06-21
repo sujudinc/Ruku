@@ -1,0 +1,22 @@
+{
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest --maxWorkers=5 | npx jest --coverage"
+  },
+  "dependencies": {
+    "@aws-sdk/client-appsync": "^3.354.0",
+    "@aws-sdk/client-dynamodb": "^3.354.0",
+    "@aws-sdk/client-s3": "^3.354.0",
+    "@aws-sdk/util-dynamodb": "^3.354.0",
+    "node-fetch": "^3.2.3"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.119",
+    "@types/node": "^20.3.1",
+    "esbuild": "^0.18.3",
+    "typescript": "^5.1.3"
+  }
+}

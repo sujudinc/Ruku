@@ -30,6 +30,7 @@ export const completeMultipartUpload = /* GraphQL */ `
   mutation CompleteMultipartUpload($input: CompleteMultipartUploadInput!) {
     completeMultipartUpload(input: $input) {
       location
+      versionId
       __typename
     }
   }

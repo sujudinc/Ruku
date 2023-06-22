@@ -81,7 +81,7 @@ const UserType = {
   "USER_READ_ONLY": "USER_READ_ONLY"
 };
 
-const { Announcement, Class, Committee, Gathering, Donation, FundraisingCampaign, Mosque, MonthlyPrayerSchedule, Resource, Service, User, VolunteerTask, CommitteeMembers, GatheringAttendees, MosqueFollowers, VolunteerTaskUser, AbortMultipartUploadOutput, CompleteMultipartUploadOutput, InitiateMultipartUploadOutput, GenerateMultipartUploadUrlsOutput, GenerateMultipartUploadUrlOutput, ListInProcessMultipartUploadsOutput, InProcessUpload, ListCompletedMultipartUploadsOutput, UploadedPart, ContactInfo, PrayerTime, OperatingHours, Day, Hours, Location, SocialMedia } = initSchema(schema);
+const { Announcement, Class, Committee, Gathering, Donation, FundraisingCampaign, Mosque, MonthlyPrayerSchedule, Resource, Service, User, VolunteerTask, CommitteeMembers, GatheringAttendees, MosqueFollowers, VolunteerTaskUser, AbortMultipartUploadOutput, CompleteMultipartUploadOutput, InitiateMultipartUploadOutput, GenerateMultipartUploadUrlsOutput, GenerateMultipartUploadUrlOutput, ListCompletedMultipartUploadsOutput, UploadedPart, ListInProgressMultipartUploadsOutput, InProgressUpload, ContactInfo, PrayerTime, OperatingHours, Day, Hours, Location, SocialMedia } = initSchema(schema);
 
 export {
   Announcement,
@@ -114,10 +114,10 @@ export {
   InitiateMultipartUploadOutput,
   GenerateMultipartUploadUrlsOutput,
   GenerateMultipartUploadUrlOutput,
-  ListInProcessMultipartUploadsOutput,
-  InProcessUpload,
   ListCompletedMultipartUploadsOutput,
   UploadedPart,
+  ListInProgressMultipartUploadsOutput,
+  InProgressUpload,
   ContactInfo,
   PrayerTime,
   OperatingHours,

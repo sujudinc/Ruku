@@ -22,7 +22,6 @@ export {
     Mutations,
     Queries,
     AppSyncService,
-    AppSyncOperationParams,
     DynamoModelApi,
     CreateOperation,
     ReadOperation,
@@ -34,6 +33,7 @@ export {
     BatchWriteOperation,
     BatchDeleteOperation,
     OperationFactory,
-    DynamoDbOperation,
     StorageService,
 };
+
+export type { AppSyncOperationParams, DynamoDbOperation };

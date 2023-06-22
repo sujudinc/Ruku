@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "api": {
+      "RukuAPI": [
+        "Query"
+      ]
+    },
+    "storage": {
+      "RukuStorage": [
+        "create",
+        "read",
+        "update",
+        "delete"
+      ]
+    }
+  },
+  "lambdaLayers": [
+    {
+      "type": "ProjectLayer",
+      "resourceName": "rukuCommonLayerTs",
+      "env": "dev",
+      "version": "Always choose latest version",
+      "isLatestVersionSelected": true
+    }
+  ]
+}

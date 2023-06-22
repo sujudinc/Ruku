@@ -53,8 +53,6 @@ export type CompleteMultipartUploadInput = {
 };
 
 export type CompleteMultipartUploadPartInput = {
-  bucket: string,
-  key: string,
   partNumber: number,
   eTag: string,
 };
@@ -62,6 +60,7 @@ export type CompleteMultipartUploadPartInput = {
 export type CompleteMultipartUploadOutput = {
   __typename: "CompleteMultipartUploadOutput",
   location: string,
+  versionId: string,
 };
 
 export type AbortMultipartUploadInput = {
@@ -1400,26 +1399,6 @@ export type DeleteVolunteerTaskUserInput = {
   _version?: number | null,
 };
 
-export type ListInProcessMultipartUploadsInput = {
-  bucket: string,
-  key: string,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type ListInProcessMultipartUploadsOutput = {
-  __typename: "ListInProcessMultipartUploadsOutput",
-  items:  Array<InProcessUpload >,
-};
-
-export type InProcessUpload = {
-  __typename: "InProcessUpload",
-  uploadId: string,
-  fileName: string,
-  contentType: string,
-  createdAt: string,
-};
-
 export type ListCompletedMultipartUploadsInput = {
   bucket: string,
   key: string,
@@ -1435,6 +1414,22 @@ export type UploadedPart = {
   __typename: "UploadedPart",
   partNumber: number,
   eTag: string,
+  size: number,
+};
+
+export type ListInProgressMultipartUploadsInput = {
+  bucket: string,
+};
+
+export type ListInProgressMultipartUploadsOutput = {
+  __typename: "ListInProgressMultipartUploadsOutput",
+  items:  Array<InProgressUpload >,
+};
+
+export type InProgressUpload = {
+  __typename: "InProgressUpload",
+  key: string,
+  uploadId: string,
 };
 
 export type ModelAnnouncementFilterInput = {
@@ -1932,6 +1927,7 @@ export type CompleteMultipartUploadMutation = {
   completeMultipartUpload?:  {
     __typename: "CompleteMultipartUploadOutput",
     location: string,
+    versionId: string,
   } | null,
 };
 
@@ -13247,23 +13243,6 @@ export type DeleteVolunteerTaskUserMutation = {
   } | null,
 };
 
-export type ListInProcessMultipartUploadsQueryVariables = {
-  input: ListInProcessMultipartUploadsInput,
-};
-
-export type ListInProcessMultipartUploadsQuery = {
-  listInProcessMultipartUploads?:  {
-    __typename: "ListInProcessMultipartUploadsOutput",
-    items:  Array< {
-      __typename: "InProcessUpload",
-      uploadId: string,
-      fileName: string,
-      contentType: string,
-      createdAt: string,
-    } >,
-  } | null,
-};
-
 export type ListCompletedMultipartUploadsQueryVariables = {
   input: ListCompletedMultipartUploadsInput,
 };
@@ -13275,6 +13254,22 @@ export type ListCompletedMultipartUploadsQuery = {
       __typename: "UploadedPart",
       partNumber: number,
       eTag: string,
+      size: number,
+    } >,
+  } | null,
+};
+
+export type ListInProgressMultipartUploadsQueryVariables = {
+  input: ListInProgressMultipartUploadsInput,
+};
+
+export type ListInProgressMultipartUploadsQuery = {
+  listInProgressMultipartUploads?:  {
+    __typename: "ListInProgressMultipartUploadsOutput",
+    items:  Array< {
+      __typename: "InProgressUpload",
+      key: string,
+      uploadId: string,
     } >,
   } | null,
 };

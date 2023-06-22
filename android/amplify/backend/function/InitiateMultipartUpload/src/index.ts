@@ -8,19 +8,20 @@
 Amplify Params - DO NOT EDIT */
 
 import { Callback, Context } from "aws-lambda";
-import { Event } from "./event";
 import {
     S3,
     CreateMultipartUploadCommandOutput,
     CreateMultipartUploadCommand,
 } from "@aws-sdk/client-s3";
+// import { API } from "rukuCommonLayerTs/";
+import { Event } from "./event";
 
 const GRAPHQL_ENDPOINT: string = process.env.API_RUKUAPI_GRAPHQLAPIENDPOINTOUTPUT!;
 const GRAPHQL_API_KEY: string = process.env.API_RUKUAPI_GRAPHQLAPIKEYOUTPUT!;
-const bucket: string = process.env.STORAGE_OPERANCEFILESTORAGE_BUCKETNAME!;
-const region: string = process.env.REGION!;
+const BUCKET: string = process.env.STORAGE_OPERANCEFILESTORAGE_BUCKETNAME!;
+const REGION: string = process.env.REGION!;
 
-const s3: S3 = new S3({ region });
+const s3: S3 = new S3({ region: REGION });
 
 type InitiateMultipartUploadOutput = {
     bucket: string;
@@ -28,18 +29,13 @@ type InitiateMultipartUploadOutput = {
     uploadId: string;
 };
 
-// const appsync = new AppSyncService({
-//     endpoint: GRAPHQL_ENDPOINT,
-//     apiKey: GRAPHQL_API_KEY,
-// });
-
 export const handler = async (
     event: Event,
     _context: Context,
     _callback: Callback
 ): Promise<InitiateMultipartUploadOutput> => {
-    const { sub: userId } = event.identity.claims;
     const { objectId, fileName, contentType, uploadType } = event.arguments.input;
+    const userId = event.identity.claims.sub;
     const key = `${uploadType}/${objectId}/${fileName}`;
 
     switch (uploadType) {
@@ -53,18 +49,18 @@ export const handler = async (
     }
 
     try {
-        const result: CreateMultipartUploadCommandOutput = await s3.send(
+        const output: CreateMultipartUploadCommandOutput = await s3.send(
             new CreateMultipartUploadCommand({
-                Bucket: bucket,
+                Bucket: BUCKET,
                 Key: key,
                 ContentType: contentType,
             })
         );
 
         return {
-            bucket,
+            bucket: BUCKET,
             key,
-            uploadId: result.UploadId!,
+            uploadId: output.UploadId!,
         };
     } catch (error) {
         throw error;

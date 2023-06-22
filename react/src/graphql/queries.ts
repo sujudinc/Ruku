@@ -2,22 +2,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const listInProcessMultipartUploads = /* GraphQL */ `
-  query ListInProcessMultipartUploads(
-    $input: ListInProcessMultipartUploadsInput!
-  ) {
-    listInProcessMultipartUploads(input: $input) {
-      items {
-        uploadId
-        fileName
-        contentType
-        createdAt
-        __typename
-      }
-      __typename
-    }
-  }
-`;
 export const listCompletedMultipartUploads = /* GraphQL */ `
   query ListCompletedMultipartUploads(
     $input: ListCompletedMultipartUploadsInput!
@@ -26,6 +10,21 @@ export const listCompletedMultipartUploads = /* GraphQL */ `
       items {
         partNumber
         eTag
+        size
+        __typename
+      }
+      __typename
+    }
+  }
+`;
+export const listInProgressMultipartUploads = /* GraphQL */ `
+  query ListInProgressMultipartUploads(
+    $input: ListInProgressMultipartUploadsInput!
+  ) {
+    listInProgressMultipartUploads(input: $input) {
+      items {
+        key
+        uploadId
         __typename
       }
       __typename

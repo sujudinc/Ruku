@@ -2886,6 +2886,13 @@ export const schema = {
                     "type": "String",
                     "isRequired": true,
                     "attributes": []
+                },
+                "versionId": {
+                    "name": "versionId",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
                 }
             }
         },
@@ -2949,54 +2956,6 @@ export const schema = {
                 }
             }
         },
-        "ListInProcessMultipartUploadsOutput": {
-            "name": "ListInProcessMultipartUploadsOutput",
-            "fields": {
-                "items": {
-                    "name": "items",
-                    "isArray": true,
-                    "type": {
-                        "nonModel": "InProcessUpload"
-                    },
-                    "isRequired": true,
-                    "attributes": [],
-                    "isArrayNullable": false
-                }
-            }
-        },
-        "InProcessUpload": {
-            "name": "InProcessUpload",
-            "fields": {
-                "uploadId": {
-                    "name": "uploadId",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "fileName": {
-                    "name": "fileName",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "contentType": {
-                    "name": "contentType",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "createdAt": {
-                    "name": "createdAt",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                }
-            }
-        },
         "ListCompletedMultipartUploadsOutput": {
             "name": "ListCompletedMultipartUploadsOutput",
             "fields": {
@@ -3024,6 +2983,47 @@ export const schema = {
                 },
                 "eTag": {
                     "name": "eTag",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "size": {
+                    "name": "size",
+                    "isArray": false,
+                    "type": "Int",
+                    "isRequired": true,
+                    "attributes": []
+                }
+            }
+        },
+        "ListInProgressMultipartUploadsOutput": {
+            "name": "ListInProgressMultipartUploadsOutput",
+            "fields": {
+                "items": {
+                    "name": "items",
+                    "isArray": true,
+                    "type": {
+                        "nonModel": "InProgressUpload"
+                    },
+                    "isRequired": true,
+                    "attributes": [],
+                    "isArrayNullable": false
+                }
+            }
+        },
+        "InProgressUpload": {
+            "name": "InProgressUpload",
+            "fields": {
+                "key": {
+                    "name": "key",
+                    "isArray": false,
+                    "type": "String",
+                    "isRequired": true,
+                    "attributes": []
+                },
+                "uploadId": {
+                    "name": "uploadId",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
@@ -3294,5 +3294,5 @@ export const schema = {
         }
     },
     "codegenVersion": "3.4.4",
-    "version": "54172c6d155ddec02773b574ed0652d2"
+    "version": "eb7b8fbedfc7c87984d81f57245bb4f6"
 };

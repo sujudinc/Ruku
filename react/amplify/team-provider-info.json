@@ -56,7 +56,7 @@
         },
         "rukuCommonLayerTs": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/rukuCommonLayerTs-LambdaLayerVersion5352fb73-build.zip"
+          "s3Key": "amplify-builds/rukuCommonLayerTs-LambdaLayerVersionc6557f78-build.zip"
         },
         "rukuCommonLayerPy": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
@@ -64,7 +64,27 @@
         },
         "InitiateMultipartUpload": {
           "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
-          "s3Key": "amplify-builds/InitiateMultipartUpload-51354b6a5035754f7275-build.zip"
+          "s3Key": "amplify-builds/InitiateMultipartUpload-567565426a49526c656a-build.zip"
+        },
+        "GenerateMultipartUploadUrls": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/GenerateMultipartUploadUrls-3848544b4f764a30736e-build.zip"
+        },
+        "CompleteMultipartUpload": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/CompleteMultipartUpload-646d7279714a2f455646-build.zip"
+        },
+        "AbortMultipartUpload": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/AbortMultipartUpload-30596255773070353657-build.zip"
+        },
+        "ListCompletedMultipartUploads": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/ListCompletedMultipartUploads-434f6b466f676d6c2b32-build.zip"
+        },
+        "ListInProgressMultipartUploads": {
+          "deploymentBucketName": "amplify-ruku-dev-153647-deployment",
+          "s3Key": "amplify-builds/ListInProgressMultipartUploads-4a3353744d7763536435-build.zip"
         }
       },
       "storage": {

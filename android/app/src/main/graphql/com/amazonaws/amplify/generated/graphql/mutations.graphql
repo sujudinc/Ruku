@@ -25,6 +25,7 @@ mutation GenerateMultipartUploadUrls(
 mutation CompleteMultipartUpload($input: CompleteMultipartUploadInput!) {
   completeMultipartUpload(input: $input) {
     location
+    versionId
     __typename
   }
 }

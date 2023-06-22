@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "paths": {
-      "rukuCommonLayerTs/*": ["../../rukuCommonLayerTs/lib/nodejs/index.ts"],
+      "rukuCommonLayerTs/*": ["../../rukuCommonLayerTs/lib/nodejs/"],
     },
     "target": "es2020",
     "strict": true,

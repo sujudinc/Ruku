@@ -23,13 +23,13 @@ type Mutation {
 
 type Query {
   # ---------- MULTIPART UPLOAD
-  listInProcessMultipartUploads(
-    input: ListInProcessMultipartUploadsInput!
-  ): ListInProcessMultipartUploadsOutput
-
   listCompletedMultipartUploads(
     input: ListCompletedMultipartUploadsInput!
   ): ListCompletedMultipartUploadsOutput
+
+  listInProgressMultipartUploads(
+    input: ListInProgressMultipartUploadsInput!
+  ): ListInProgressMultipartUploadsOutput
 }
 
 # ------------------------------------------------------------------------------------- MODELS
@@ -335,8 +335,6 @@ input CompleteMultipartUploadInput {
 }
 
 input CompleteMultipartUploadPartInput {
-  bucket: String!
-  key: String!
   partNumber: Int!
   eTag: String!
 }
@@ -356,17 +354,14 @@ input GenerateMultipartUploadUrlsInput {
 
 # ------------------------------------------------------------------------------------- CUSTOM QUERY INPUTS
 
-input ListInProcessMultipartUploadsInput {
-  bucket: String!
-  key: String!
-  limit: Int
-  nextToken: String
-}
-
 input ListCompletedMultipartUploadsInput {
   bucket: String!
   key: String!
   uploadId: String!
+}
+
+input ListInProgressMultipartUploadsInput {
+  bucket: String!
 }
 
 # ------------------------------------------------------------------------------------- CUSTOM MUTATION OUTPUTS
@@ -377,6 +372,7 @@ type AbortMultipartUploadOutput {
 
 type CompleteMultipartUploadOutput {
   location: String!
+  versionId: String!
 }
 
 type InitiateMultipartUploadOutput {
@@ -396,17 +392,6 @@ type GenerateMultipartUploadUrlOutput {
 
 # ------------------------------------------------------------------------------------- CUSTOM QUERY OUTPUTS
 
-type ListInProcessMultipartUploadsOutput {
-  items: [InProcessUpload!]!
-}
-
-type InProcessUpload {
-  uploadId: String!
-  fileName: String!
-  contentType: String!
-  createdAt: String!
-}
-
 type ListCompletedMultipartUploadsOutput {
   items: [UploadedPart!]!
 }
@@ -414,6 +399,16 @@ type ListCompletedMultipartUploadsOutput {
 type UploadedPart {
   partNumber: Int!
   eTag: String!
+  size: Int!
+}
+
+type ListInProgressMultipartUploadsOutput {
+  items: [InProgressUpload!]!
+}
+
+type InProgressUpload {
+  key: String!
+  uploadId: String!
 }
 
 # ------------------------------------------------------------------------------------- CUSTOM TYPES

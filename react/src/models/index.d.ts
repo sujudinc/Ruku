@@ -95,10 +95,12 @@ export declare const AbortMultipartUploadOutput: (new (init: ModelInit<AbortMult
 
 type EagerCompleteMultipartUploadOutput = {
   readonly location: string;
+  readonly versionId: string;
 }
 
 type LazyCompleteMultipartUploadOutput = {
   readonly location: string;
+  readonly versionId: string;
 }
 
 export declare type CompleteMultipartUploadOutput = LazyLoading extends LazyLoadingDisabled ? EagerCompleteMultipartUploadOutput : LazyCompleteMultipartUploadOutput
@@ -147,36 +149,6 @@ export declare type GenerateMultipartUploadUrlOutput = LazyLoading extends LazyL
 
 export declare const GenerateMultipartUploadUrlOutput: (new (init: ModelInit<GenerateMultipartUploadUrlOutput>) => GenerateMultipartUploadUrlOutput)
 
-type EagerListInProcessMultipartUploadsOutput = {
-  readonly items: InProcessUpload[];
-}
-
-type LazyListInProcessMultipartUploadsOutput = {
-  readonly items: InProcessUpload[];
-}
-
-export declare type ListInProcessMultipartUploadsOutput = LazyLoading extends LazyLoadingDisabled ? EagerListInProcessMultipartUploadsOutput : LazyListInProcessMultipartUploadsOutput
-
-export declare const ListInProcessMultipartUploadsOutput: (new (init: ModelInit<ListInProcessMultipartUploadsOutput>) => ListInProcessMultipartUploadsOutput)
-
-type EagerInProcessUpload = {
-  readonly uploadId: string;
-  readonly fileName: string;
-  readonly contentType: string;
-  readonly createdAt: string;
-}
-
-type LazyInProcessUpload = {
-  readonly uploadId: string;
-  readonly fileName: string;
-  readonly contentType: string;
-  readonly createdAt: string;
-}
-
-export declare type InProcessUpload = LazyLoading extends LazyLoadingDisabled ? EagerInProcessUpload : LazyInProcessUpload
-
-export declare const InProcessUpload: (new (init: ModelInit<InProcessUpload>) => InProcessUpload)
-
 type EagerListCompletedMultipartUploadsOutput = {
   readonly items: UploadedPart[];
 }
@@ -192,16 +164,44 @@ export declare const ListCompletedMultipartUploadsOutput: (new (init: ModelInit<
 type EagerUploadedPart = {
   readonly partNumber: number;
   readonly eTag: string;
+  readonly size: number;
 }
 
 type LazyUploadedPart = {
   readonly partNumber: number;
   readonly eTag: string;
+  readonly size: number;
 }
 
 export declare type UploadedPart = LazyLoading extends LazyLoadingDisabled ? EagerUploadedPart : LazyUploadedPart
 
 export declare const UploadedPart: (new (init: ModelInit<UploadedPart>) => UploadedPart)
+
+type EagerListInProgressMultipartUploadsOutput = {
+  readonly items: InProgressUpload[];
+}
+
+type LazyListInProgressMultipartUploadsOutput = {
+  readonly items: InProgressUpload[];
+}
+
+export declare type ListInProgressMultipartUploadsOutput = LazyLoading extends LazyLoadingDisabled ? EagerListInProgressMultipartUploadsOutput : LazyListInProgressMultipartUploadsOutput
+
+export declare const ListInProgressMultipartUploadsOutput: (new (init: ModelInit<ListInProgressMultipartUploadsOutput>) => ListInProgressMultipartUploadsOutput)
+
+type EagerInProgressUpload = {
+  readonly key: string;
+  readonly uploadId: string;
+}
+
+type LazyInProgressUpload = {
+  readonly key: string;
+  readonly uploadId: string;
+}
+
+export declare type InProgressUpload = LazyLoading extends LazyLoadingDisabled ? EagerInProgressUpload : LazyInProgressUpload
+
+export declare const InProgressUpload: (new (init: ModelInit<InProgressUpload>) => InProgressUpload)
 
 type EagerContactInfo = {
   readonly phoneNumber?: string | null;

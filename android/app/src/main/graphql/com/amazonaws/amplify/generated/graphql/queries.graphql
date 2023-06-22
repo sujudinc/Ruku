@@ -1,20 +1,5 @@
 # this is an auto generated file. This will be overwritten
 
-query ListInProcessMultipartUploads(
-  $input: ListInProcessMultipartUploadsInput!
-) {
-  listInProcessMultipartUploads(input: $input) {
-    items {
-      uploadId
-      fileName
-      contentType
-      createdAt
-      __typename
-    }
-    __typename
-  }
-}
-
 query ListCompletedMultipartUploads(
   $input: ListCompletedMultipartUploadsInput!
 ) {
@@ -22,6 +7,20 @@ query ListCompletedMultipartUploads(
     items {
       partNumber
       eTag
+      size
+      __typename
+    }
+    __typename
+  }
+}
+
+query ListInProgressMultipartUploads(
+  $input: ListInProgressMultipartUploadsInput!
+) {
+  listInProgressMultipartUploads(input: $input) {
+    items {
+      key
+      uploadId
       __typename
     }
     __typename

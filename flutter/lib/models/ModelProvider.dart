@@ -36,18 +36,29 @@ import 'Service.dart';
 import 'User.dart';
 import 'VolunteerTask.dart';
 import 'VolunteerTaskUser.dart';
+import 'AbortMultipartUploadOutput.dart';
+import 'CompleteMultipartUploadOutput.dart';
 import 'ContactInfo.dart';
 import 'Day.dart';
+import 'GenerateMultipartUploadUrlOutput.dart';
+import 'GenerateMultipartUploadUrlsOutput.dart';
 import 'Hours.dart';
+import 'InProgressUpload.dart';
+import 'InitiateMultipartUploadOutput.dart';
+import 'ListCompletedMultipartUploadsOutput.dart';
+import 'ListInProgressMultipartUploadsOutput.dart';
 import 'Location.dart';
 import 'OperatingHours.dart';
 import 'PrayerTime.dart';
 import 'SocialMedia.dart';
+import 'UploadedPart.dart';
 
+export 'AbortMultipartUploadOutput.dart';
 export 'Announcement.dart';
 export 'Class.dart';
 export 'Committee.dart';
 export 'CommitteeMembers.dart';
+export 'CompleteMultipartUploadOutput.dart';
 export 'ContactInfo.dart';
 export 'Day.dart';
 export 'DayType.dart';
@@ -57,7 +68,13 @@ export 'FundraisingCampaignType.dart';
 export 'Gathering.dart';
 export 'GatheringAttendees.dart';
 export 'GatheringType.dart';
+export 'GenerateMultipartUploadUrlOutput.dart';
+export 'GenerateMultipartUploadUrlsOutput.dart';
 export 'Hours.dart';
+export 'InProgressUpload.dart';
+export 'InitiateMultipartUploadOutput.dart';
+export 'ListCompletedMultipartUploadsOutput.dart';
+export 'ListInProgressMultipartUploadsOutput.dart';
 export 'Location.dart';
 export 'MonthlyPrayerSchedule.dart';
 export 'Mosque.dart';
@@ -70,6 +87,8 @@ export 'ResourceType.dart';
 export 'Service.dart';
 export 'ServiceType.dart';
 export 'SocialMedia.dart';
+export 'UploadType.dart';
+export 'UploadedPart.dart';
 export 'User.dart';
 export 'UserStatus.dart';
 export 'UserType.dart';
@@ -78,11 +97,11 @@ export 'VolunteerTaskUser.dart';
 
 class ModelProvider implements amplify_core.ModelProviderInterface {
   @override
-  String version = "c5a4f950ed95df2def2537ef6baff03a";
+  String version = "5c5cc7c8ba3cdbc1aa1ba8d4a3dde610";
   @override
   List<amplify_core.ModelSchema> modelSchemas = [Announcement.schema, Class.schema, Committee.schema, CommitteeMembers.schema, Donation.schema, FundraisingCampaign.schema, Gathering.schema, GatheringAttendees.schema, MonthlyPrayerSchedule.schema, Mosque.schema, MosqueFollowers.schema, Resource.schema, Service.schema, User.schema, VolunteerTask.schema, VolunteerTaskUser.schema];
   @override
-  List<amplify_core.ModelSchema> customTypeSchemas = [ContactInfo.schema, Day.schema, Hours.schema, Location.schema, OperatingHours.schema, PrayerTime.schema, SocialMedia.schema];
+  List<amplify_core.ModelSchema> customTypeSchemas = [AbortMultipartUploadOutput.schema, CompleteMultipartUploadOutput.schema, ContactInfo.schema, Day.schema, GenerateMultipartUploadUrlOutput.schema, GenerateMultipartUploadUrlsOutput.schema, Hours.schema, InProgressUpload.schema, InitiateMultipartUploadOutput.schema, ListCompletedMultipartUploadsOutput.schema, ListInProgressMultipartUploadsOutput.schema, Location.schema, OperatingHours.schema, PrayerTime.schema, SocialMedia.schema, UploadedPart.schema];
   static final ModelProvider _instance = ModelProvider();
 
   static ModelProvider get instance => _instance;

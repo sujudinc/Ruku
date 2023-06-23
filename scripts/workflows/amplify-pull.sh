@@ -1,15 +1,14 @@
 #!/bin/bash
 
-# cd to android and run amplify pull
-cd android
-amplify pull -y
-amplify codegen
-cd ..
+# cd android
+# amplify pull -y
+# amplify codegen
+# cd ..
 
-cd ios
-amplify pull -y
-amplify codegen
-cd ..
+# cd ios
+# amplify pull -y
+# amplify codegen
+# cd ..
 
 cd react
 amplify pull -y

@@ -34,8 +34,8 @@ class Class extends amplify_core.Model {
   final amplify_core.TemporalDateTime? _endDateTime;
   final bool? _recurring;
   final List<DayType>? _daysOfWeek;
-  final User? _instructor;
   final User? _creator;
+  final User? _instructor;
   final Mosque? _mosque;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
@@ -104,12 +104,12 @@ class Class extends amplify_core.Model {
     return _daysOfWeek;
   }
   
-  User? get instructor {
-    return _instructor;
-  }
-  
   User? get creator {
     return _creator;
+  }
+  
+  User? get instructor {
+    return _instructor;
   }
   
   Mosque? get mosque {
@@ -124,9 +124,9 @@ class Class extends amplify_core.Model {
     return _updatedAt;
   }
   
-  const Class._internal({required this.id, required title, description, required startDateTime, endDateTime, required recurring, daysOfWeek, instructor, creator, mosque, createdAt, updatedAt}): _title = title, _description = description, _startDateTime = startDateTime, _endDateTime = endDateTime, _recurring = recurring, _daysOfWeek = daysOfWeek, _instructor = instructor, _creator = creator, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt;
+  const Class._internal({required this.id, required title, description, required startDateTime, endDateTime, required recurring, daysOfWeek, creator, instructor, mosque, createdAt, updatedAt}): _title = title, _description = description, _startDateTime = startDateTime, _endDateTime = endDateTime, _recurring = recurring, _daysOfWeek = daysOfWeek, _creator = creator, _instructor = instructor, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt;
   
-  factory Class({String? id, required String title, String? description, required amplify_core.TemporalDateTime startDateTime, amplify_core.TemporalDateTime? endDateTime, required bool recurring, List<DayType>? daysOfWeek, User? instructor, User? creator, Mosque? mosque}) {
+  factory Class({String? id, required String title, String? description, required amplify_core.TemporalDateTime startDateTime, amplify_core.TemporalDateTime? endDateTime, required bool recurring, List<DayType>? daysOfWeek, User? creator, User? instructor, Mosque? mosque}) {
     return Class._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       title: title,
@@ -135,8 +135,8 @@ class Class extends amplify_core.Model {
       endDateTime: endDateTime,
       recurring: recurring,
       daysOfWeek: daysOfWeek != null ? List<DayType>.unmodifiable(daysOfWeek) : daysOfWeek,
-      instructor: instructor,
       creator: creator,
+      instructor: instructor,
       mosque: mosque);
   }
   
@@ -155,8 +155,8 @@ class Class extends amplify_core.Model {
       _endDateTime == other._endDateTime &&
       _recurring == other._recurring &&
       DeepCollectionEquality().equals(_daysOfWeek, other._daysOfWeek) &&
-      _instructor == other._instructor &&
       _creator == other._creator &&
+      _instructor == other._instructor &&
       _mosque == other._mosque;
   }
   
@@ -175,8 +175,8 @@ class Class extends amplify_core.Model {
     buffer.write("endDateTime=" + (_endDateTime != null ? _endDateTime!.format() : "null") + ", ");
     buffer.write("recurring=" + (_recurring != null ? _recurring!.toString() : "null") + ", ");
     buffer.write("daysOfWeek=" + (_daysOfWeek != null ? _daysOfWeek!.map((e) => amplify_core.enumToString(e)).toString() : "null") + ", ");
-    buffer.write("instructor=" + (_instructor != null ? _instructor!.toString() : "null") + ", ");
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
+    buffer.write("instructor=" + (_instructor != null ? _instructor!.toString() : "null") + ", ");
     buffer.write("mosque=" + (_mosque != null ? _mosque!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
     buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
@@ -185,7 +185,7 @@ class Class extends amplify_core.Model {
     return buffer.toString();
   }
   
-  Class copyWith({String? title, String? description, amplify_core.TemporalDateTime? startDateTime, amplify_core.TemporalDateTime? endDateTime, bool? recurring, List<DayType>? daysOfWeek, User? instructor, User? creator, Mosque? mosque}) {
+  Class copyWith({String? title, String? description, amplify_core.TemporalDateTime? startDateTime, amplify_core.TemporalDateTime? endDateTime, bool? recurring, List<DayType>? daysOfWeek, User? creator, User? instructor, Mosque? mosque}) {
     return Class._internal(
       id: id,
       title: title ?? this.title,
@@ -194,8 +194,8 @@ class Class extends amplify_core.Model {
       endDateTime: endDateTime ?? this.endDateTime,
       recurring: recurring ?? this.recurring,
       daysOfWeek: daysOfWeek ?? this.daysOfWeek,
-      instructor: instructor ?? this.instructor,
       creator: creator ?? this.creator,
+      instructor: instructor ?? this.instructor,
       mosque: mosque ?? this.mosque);
   }
   
@@ -206,8 +206,8 @@ class Class extends amplify_core.Model {
     ModelFieldValue<amplify_core.TemporalDateTime?>? endDateTime,
     ModelFieldValue<bool>? recurring,
     ModelFieldValue<List<DayType>>? daysOfWeek,
-    ModelFieldValue<User?>? instructor,
     ModelFieldValue<User?>? creator,
+    ModelFieldValue<User?>? instructor,
     ModelFieldValue<Mosque?>? mosque
   }) {
     return Class._internal(
@@ -218,8 +218,8 @@ class Class extends amplify_core.Model {
       endDateTime: endDateTime == null ? this.endDateTime : endDateTime.value,
       recurring: recurring == null ? this.recurring : recurring.value,
       daysOfWeek: daysOfWeek == null ? this.daysOfWeek : daysOfWeek.value,
-      instructor: instructor == null ? this.instructor : instructor.value,
       creator: creator == null ? this.creator : creator.value,
+      instructor: instructor == null ? this.instructor : instructor.value,
       mosque: mosque == null ? this.mosque : mosque.value
     );
   }
@@ -236,11 +236,11 @@ class Class extends amplify_core.Model {
           .map((e) => amplify_core.enumFromString<DayType>(e, DayType.values)!)
           .toList()
         : null,
-      _instructor = json['instructor']?['serializedData'] != null
-        ? User.fromJson(new Map<String, dynamic>.from(json['instructor']['serializedData']))
-        : null,
       _creator = json['creator']?['serializedData'] != null
         ? User.fromJson(new Map<String, dynamic>.from(json['creator']['serializedData']))
+        : null,
+      _instructor = json['instructor']?['serializedData'] != null
+        ? User.fromJson(new Map<String, dynamic>.from(json['instructor']['serializedData']))
         : null,
       _mosque = json['mosque']?['serializedData'] != null
         ? Mosque.fromJson(new Map<String, dynamic>.from(json['mosque']['serializedData']))
@@ -249,7 +249,7 @@ class Class extends amplify_core.Model {
       _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'title': _title, 'description': _description, 'startDateTime': _startDateTime?.format(), 'endDateTime': _endDateTime?.format(), 'recurring': _recurring, 'daysOfWeek': _daysOfWeek?.map((e) => amplify_core.enumToString(e)).toList(), 'instructor': _instructor?.toJson(), 'creator': _creator?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'title': _title, 'description': _description, 'startDateTime': _startDateTime?.format(), 'endDateTime': _endDateTime?.format(), 'recurring': _recurring, 'daysOfWeek': _daysOfWeek?.map((e) => amplify_core.enumToString(e)).toList(), 'creator': _creator?.toJson(), 'instructor': _instructor?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
   };
   
   Map<String, Object?> toMap() => {
@@ -260,8 +260,8 @@ class Class extends amplify_core.Model {
     'endDateTime': _endDateTime,
     'recurring': _recurring,
     'daysOfWeek': _daysOfWeek,
-    'instructor': _instructor,
     'creator': _creator,
+    'instructor': _instructor,
     'mosque': _mosque,
     'createdAt': _createdAt,
     'updatedAt': _updatedAt
@@ -275,11 +275,11 @@ class Class extends amplify_core.Model {
   static final ENDDATETIME = amplify_core.QueryField(fieldName: "endDateTime");
   static final RECURRING = amplify_core.QueryField(fieldName: "recurring");
   static final DAYSOFWEEK = amplify_core.QueryField(fieldName: "daysOfWeek");
-  static final INSTRUCTOR = amplify_core.QueryField(
-    fieldName: "instructor",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'User'));
   static final CREATOR = amplify_core.QueryField(
     fieldName: "creator",
+    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'User'));
+  static final INSTRUCTOR = amplify_core.QueryField(
+    fieldName: "instructor",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'User'));
   static final MOSQUE = amplify_core.QueryField(
     fieldName: "mosque",
@@ -291,13 +291,18 @@ class Class extends amplify_core.Model {
     modelSchemaDefinition.authRules = [
       amplify_core.AuthRule(
         authStrategy: amplify_core.AuthStrategy.OWNER,
-        ownerField: "owner",
+        ownerField: "creatorId",
         identityClaim: "cognito:username",
         provider: amplify_core.AuthRuleProvider.USERPOOLS,
         operations: const [
           amplify_core.ModelOperation.CREATE,
           amplify_core.ModelOperation.UPDATE,
           amplify_core.ModelOperation.DELETE,
+          amplify_core.ModelOperation.READ
+        ]),
+      amplify_core.AuthRule(
+        authStrategy: amplify_core.AuthStrategy.PRIVATE,
+        operations: const [
           amplify_core.ModelOperation.READ
         ]),
       amplify_core.AuthRule(
@@ -308,8 +313,8 @@ class Class extends amplify_core.Model {
     ];
     
     modelSchemaDefinition.indexes = [
-      amplify_core.ModelIndex(fields: const ["instructorId"], name: "byInstructor"),
       amplify_core.ModelIndex(fields: const ["creatorId"], name: "byCreator"),
+      amplify_core.ModelIndex(fields: const ["instructorId"], name: "byInstructor"),
       amplify_core.ModelIndex(fields: const ["mosqueId"], name: "byMosque")
     ];
     
@@ -353,16 +358,16 @@ class Class extends amplify_core.Model {
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
-      key: Class.INSTRUCTOR,
+      key: Class.CREATOR,
       isRequired: false,
-      targetNames: ['instructorId'],
+      targetNames: ['creatorId'],
       ofModelName: 'User'
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
-      key: Class.CREATOR,
+      key: Class.INSTRUCTOR,
       isRequired: false,
-      targetNames: ['creatorId'],
+      targetNames: ['instructorId'],
       ofModelName: 'User'
     ));
     

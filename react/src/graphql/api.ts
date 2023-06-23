@@ -2,6 +2,54 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
+export type AbortMultipartUploadInput = {
+  bucket: string,
+  key: string,
+  uploadId: string,
+};
+
+export type AbortMultipartUploadOutput = {
+  __typename: "AbortMultipartUploadOutput",
+  success: boolean,
+};
+
+export type CompleteMultipartUploadInput = {
+  bucket: string,
+  key: string,
+  uploadId: string,
+  fileName: string,
+  parts: Array< CompleteMultipartUploadPartInput >,
+};
+
+export type CompleteMultipartUploadPartInput = {
+  partNumber: number,
+  eTag: string,
+};
+
+export type CompleteMultipartUploadOutput = {
+  __typename: "CompleteMultipartUploadOutput",
+  location: string,
+  versionId: string,
+};
+
+export type GenerateMultipartUploadUrlsInput = {
+  bucket: string,
+  key: string,
+  uploadId: string,
+  parts: number,
+};
+
+export type GenerateMultipartUploadUrlsOutput = {
+  __typename: "GenerateMultipartUploadUrlsOutput",
+  items:  Array<GenerateMultipartUploadUrlOutput >,
+};
+
+export type GenerateMultipartUploadUrlOutput = {
+  __typename: "GenerateMultipartUploadUrlOutput",
+  partNumber: number,
+  url: string,
+};
+
 export type InitiateMultipartUploadInput = {
   uploadType: UploadType,
   fileName: string,
@@ -24,54 +72,6 @@ export type InitiateMultipartUploadOutput = {
   bucket: string,
   key: string,
   uploadId: string,
-};
-
-export type GenerateMultipartUploadUrlsInput = {
-  bucket: string,
-  key: string,
-  uploadId: string,
-  parts: number,
-};
-
-export type GenerateMultipartUploadUrlsOutput = {
-  __typename: "GenerateMultipartUploadUrlsOutput",
-  items:  Array<GenerateMultipartUploadUrlOutput >,
-};
-
-export type GenerateMultipartUploadUrlOutput = {
-  __typename: "GenerateMultipartUploadUrlOutput",
-  partNumber: number,
-  url: string,
-};
-
-export type CompleteMultipartUploadInput = {
-  bucket: string,
-  key: string,
-  uploadId: string,
-  fileName: string,
-  parts: Array< CompleteMultipartUploadPartInput >,
-};
-
-export type CompleteMultipartUploadPartInput = {
-  partNumber: number,
-  eTag: string,
-};
-
-export type CompleteMultipartUploadOutput = {
-  __typename: "CompleteMultipartUploadOutput",
-  location: string,
-  versionId: string,
-};
-
-export type AbortMultipartUploadInput = {
-  bucket: string,
-  key: string,
-  uploadId: string,
-};
-
-export type AbortMultipartUploadOutput = {
-  __typename: "AbortMultipartUploadOutput",
-  success: boolean,
 };
 
 export type CreateAnnouncementInput = {
@@ -1891,16 +1891,26 @@ export type ModelSubscriptionVolunteerTaskUserFilterInput = {
   _deleted?: ModelBooleanInput | null,
 };
 
-export type InitiateMultipartUploadMutationVariables = {
-  input: InitiateMultipartUploadInput,
+export type AbortMultipartUploadMutationVariables = {
+  input: AbortMultipartUploadInput,
 };
 
-export type InitiateMultipartUploadMutation = {
-  initiateMultipartUpload?:  {
-    __typename: "InitiateMultipartUploadOutput",
-    bucket: string,
-    key: string,
-    uploadId: string,
+export type AbortMultipartUploadMutation = {
+  abortMultipartUpload?:  {
+    __typename: "AbortMultipartUploadOutput",
+    success: boolean,
+  } | null,
+};
+
+export type CompleteMultipartUploadMutationVariables = {
+  input: CompleteMultipartUploadInput,
+};
+
+export type CompleteMultipartUploadMutation = {
+  completeMultipartUpload?:  {
+    __typename: "CompleteMultipartUploadOutput",
+    location: string,
+    versionId: string,
   } | null,
 };
 
@@ -1919,26 +1929,16 @@ export type GenerateMultipartUploadUrlsMutation = {
   } | null,
 };
 
-export type CompleteMultipartUploadMutationVariables = {
-  input: CompleteMultipartUploadInput,
+export type InitiateMultipartUploadMutationVariables = {
+  input: InitiateMultipartUploadInput,
 };
 
-export type CompleteMultipartUploadMutation = {
-  completeMultipartUpload?:  {
-    __typename: "CompleteMultipartUploadOutput",
-    location: string,
-    versionId: string,
-  } | null,
-};
-
-export type AbortMultipartUploadMutationVariables = {
-  input: AbortMultipartUploadInput,
-};
-
-export type AbortMultipartUploadMutation = {
-  abortMultipartUpload?:  {
-    __typename: "AbortMultipartUploadOutput",
-    success: boolean,
+export type InitiateMultipartUploadMutation = {
+  initiateMultipartUpload?:  {
+    __typename: "InitiateMultipartUploadOutput",
+    bucket: string,
+    key: string,
+    uploadId: string,
   } | null,
 };
 

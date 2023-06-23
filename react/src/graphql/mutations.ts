@@ -2,12 +2,19 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const initiateMultipartUpload = /* GraphQL */ `
-  mutation InitiateMultipartUpload($input: InitiateMultipartUploadInput!) {
-    initiateMultipartUpload(input: $input) {
-      bucket
-      key
-      uploadId
+export const abortMultipartUpload = /* GraphQL */ `
+  mutation AbortMultipartUpload($input: AbortMultipartUploadInput!) {
+    abortMultipartUpload(input: $input) {
+      success
+      __typename
+    }
+  }
+`;
+export const completeMultipartUpload = /* GraphQL */ `
+  mutation CompleteMultipartUpload($input: CompleteMultipartUploadInput!) {
+    completeMultipartUpload(input: $input) {
+      location
+      versionId
       __typename
     }
   }
@@ -26,19 +33,12 @@ export const generateMultipartUploadUrls = /* GraphQL */ `
     }
   }
 `;
-export const completeMultipartUpload = /* GraphQL */ `
-  mutation CompleteMultipartUpload($input: CompleteMultipartUploadInput!) {
-    completeMultipartUpload(input: $input) {
-      location
-      versionId
-      __typename
-    }
-  }
-`;
-export const abortMultipartUpload = /* GraphQL */ `
-  mutation AbortMultipartUpload($input: AbortMultipartUploadInput!) {
-    abortMultipartUpload(input: $input) {
-      success
+export const initiateMultipartUpload = /* GraphQL */ `
+  mutation InitiateMultipartUpload($input: InitiateMultipartUploadInput!) {
+    initiateMultipartUpload(input: $input) {
+      bucket
+      key
+      uploadId
       __typename
     }
   }

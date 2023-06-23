@@ -139,7 +139,7 @@
                 "specifiedByUrl": null,
                 "fields": [
                     {
-                        "name": "initiateMultipartUpload",
+                        "name": "abortMultipartUpload",
                         "description": null,
                         "args": [
                             {
@@ -150,7 +150,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "InitiateMultipartUploadInput",
+                                        "name": "AbortMultipartUploadInput",
                                         "ofType": null
                                     }
                                 },
@@ -161,36 +161,7 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "InitiateMultipartUploadOutput",
-                            "ofType": null
-                        },
-                        "isDeprecated": false,
-                        "deprecationReason": null
-                    },
-                    {
-                        "name": "generateMultipartUploadUrls",
-                        "description": null,
-                        "args": [
-                            {
-                                "name": "input",
-                                "description": null,
-                                "type": {
-                                    "kind": "NON_NULL",
-                                    "name": null,
-                                    "ofType": {
-                                        "kind": "INPUT_OBJECT",
-                                        "name": "GenerateMultipartUploadUrlsInput",
-                                        "ofType": null
-                                    }
-                                },
-                                "defaultValue": null,
-                                "isDeprecated": false,
-                                "deprecationReason": null
-                            }
-                        ],
-                        "type": {
-                            "kind": "OBJECT",
-                            "name": "GenerateMultipartUploadUrlsOutput",
+                            "name": "AbortMultipartUploadOutput",
                             "ofType": null
                         },
                         "isDeprecated": false,
@@ -226,7 +197,7 @@
                         "deprecationReason": null
                     },
                     {
-                        "name": "abortMultipartUpload",
+                        "name": "generateMultipartUploadUrls",
                         "description": null,
                         "args": [
                             {
@@ -237,7 +208,7 @@
                                     "name": null,
                                     "ofType": {
                                         "kind": "INPUT_OBJECT",
-                                        "name": "AbortMultipartUploadInput",
+                                        "name": "GenerateMultipartUploadUrlsInput",
                                         "ofType": null
                                     }
                                 },
@@ -248,7 +219,36 @@
                         ],
                         "type": {
                             "kind": "OBJECT",
-                            "name": "AbortMultipartUploadOutput",
+                            "name": "GenerateMultipartUploadUrlsOutput",
+                            "ofType": null
+                        },
+                        "isDeprecated": false,
+                        "deprecationReason": null
+                    },
+                    {
+                        "name": "initiateMultipartUpload",
+                        "description": null,
+                        "args": [
+                            {
+                                "name": "input",
+                                "description": null,
+                                "type": {
+                                    "kind": "NON_NULL",
+                                    "name": null,
+                                    "ofType": {
+                                        "kind": "INPUT_OBJECT",
+                                        "name": "InitiateMultipartUploadInput",
+                                        "ofType": null
+                                    }
+                                },
+                                "defaultValue": null,
+                                "isDeprecated": false,
+                                "deprecationReason": null
+                            }
+                        ],
+                        "type": {
+                            "kind": "OBJECT",
+                            "name": "InitiateMultipartUploadOutput",
                             "ofType": null
                         },
                         "isDeprecated": false,

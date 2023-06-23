@@ -2,21 +2,21 @@
 
 type Mutation {
   # ---------- MULTIPART UPLOAD
-  initiateMultipartUpload(
-    input: InitiateMultipartUploadInput!
-  ): InitiateMultipartUploadOutput
-
-  generateMultipartUploadUrls(
-    input: GenerateMultipartUploadUrlsInput!
-  ): GenerateMultipartUploadUrlsOutput
+  abortMultipartUpload(
+    input: AbortMultipartUploadInput!
+  ): AbortMultipartUploadOutput @function(name: "AbortMultipartUpload-${env}")
 
   completeMultipartUpload(
     input: CompleteMultipartUploadInput!
-  ): CompleteMultipartUploadOutput
+  ): CompleteMultipartUploadOutput @function(name: "CompleteMultipartUpload-${env}")
 
-  abortMultipartUpload(
-    input: AbortMultipartUploadInput!
-  ): AbortMultipartUploadOutput
+  generateMultipartUploadUrls(
+    input: GenerateMultipartUploadUrlsInput!
+  ): GenerateMultipartUploadUrlsOutput @function(name: "GenerateMultipartUploadUrls-${env}")
+
+  initiateMultipartUpload(
+    input: InitiateMultipartUploadInput!
+  ): InitiateMultipartUploadOutput @function(name: "InitiateMultipartUpload-${env}")
 }
 
 # -------------------------------------------------------------------------------------  QUERIES
@@ -25,11 +25,11 @@ type Query {
   # ---------- MULTIPART UPLOAD
   listCompletedMultipartUploads(
     input: ListCompletedMultipartUploadsInput!
-  ): ListCompletedMultipartUploadsOutput
+  ): ListCompletedMultipartUploadsOutput @function(name: "ListCompletedMultipartUploads-${env}")
 
   listInProgressMultipartUploads(
     input: ListInProgressMultipartUploadsInput!
-  ): ListInProgressMultipartUploadsOutput
+  ): ListInProgressMultipartUploadsOutput @function(name: "ListInProgressMultipartUploads-${env}")
 }
 
 # ------------------------------------------------------------------------------------- MODELS

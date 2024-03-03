@@ -1,0 +1,13 @@
+src/models
+amplify-codegen-temp/model
+
+amplify-dependent-resources-ref.d.ts
+api.ts
+event.ts
+queries.ts
+mutations.ts
+subscriptions.ts
+
+amplify-codegen-temp/models/models
+
+node_modules

@@ -1,0 +1,15 @@
+{
+  "resourceName": "RukuStorage",
+  "policyUUID": "f698052b",
+  "bucketName": "ruku-storage",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
+    "READ"
+  ],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "RukuStorageTrigger"
+}

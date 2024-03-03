@@ -1,0 +1,131 @@
+{
+  "version": "1",
+  "cognitoConfig": {
+    "identityPoolName": "ruku_identitypool",
+    "allowUnauthenticatedIdentities": true,
+    "resourceNameTruncated": "rukuafe8fe79",
+    "userPoolName": "ruku_userpool",
+    "autoVerifiedAttributes": [
+      "email"
+    ],
+    "mfaConfiguration": "OPTIONAL",
+    "mfaTypes": [
+      "SMS Text Message",
+      "TOTP"
+    ],
+    "smsAuthenticationMessage": "Your authentication code is {####}",
+    "smsVerificationMessage": "Your verification code is {####}",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
+    "defaultPasswordPolicy": true,
+    "passwordPolicyMinLength": 8,
+    "passwordPolicyCharacters": [
+      "Requires Lowercase",
+      "Requires Uppercase",
+      "Requires Numbers",
+      "Requires Symbols"
+    ],
+    "requiredAttributes": [
+      "email",
+      "family_name",
+      "given_name"
+    ],
+    "aliasAttributes": [],
+    "userpoolClientGenerateSecret": false,
+    "userpoolClientRefreshTokenValidity": 30,
+    "userpoolClientWriteAttributes": [
+      "address",
+      "birthdate",
+      "middle_name",
+      "gender",
+      "locale",
+      "name",
+      "nickname",
+      "phone_number",
+      "preferred_username",
+      "picture",
+      "profile",
+      "updated_at",
+      "website",
+      "zoneinfo",
+      "email",
+      "family_name",
+      "given_name"
+    ],
+    "userpoolClientReadAttributes": [
+      "address",
+      "birthdate",
+      "email",
+      "family_name",
+      "middle_name",
+      "gender",
+      "locale",
+      "given_name",
+      "name",
+      "nickname",
+      "phone_number",
+      "preferred_username",
+      "picture",
+      "profile",
+      "updated_at",
+      "website",
+      "zoneinfo",
+      "email_verified",
+      "phone_number_verified"
+    ],
+    "userpoolClientLambdaRole": "RukuAuafe8fe79_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": true,
+    "sharedId": "afe8fe79",
+    "resourceName": "RukuAuth",
+    "authSelections": "identityPoolAndUserPool",
+    "useDefault": "manual",
+    "thirdPartyAuth": true,
+    "authProviders": [
+      "accounts.google.com"
+    ],
+    "usernameAttributes": [
+      "email, phone_number"
+    ],
+    "userPoolGroups": true,
+    "adminQueries": true,
+    "triggers": {
+      "CustomMessage": [
+        "verification-link"
+      ],
+      "PostAuthentication": [
+        "custom"
+      ],
+      "PostConfirmation": [
+        "add-to-group"
+      ],
+      "PreAuthentication": [
+        "custom"
+      ],
+      "PreSignup": [
+        "email-filter-allowlist",
+        "email-filter-denylist"
+      ]
+    },
+    "hostedUI": true,
+    "hostedUIDomainName": "ruku",
+    "authProvidersUserPool": [
+      "Google"
+    ],
+    "audiences": [
+      "123"
+    ],
+    "hostedUIProviderMeta": "[{\"ProviderName\":\"Google\",\"authorize_scopes\":\"openid email profile\",\"AttributeMapping\":{\"email\":\"email\",\"family_name\":\"family_name\",\"given_name\":\"given_name\",\"username\":\"sub\"}}]",
+    "oAuthMetadata": "{\"AllowedOAuthFlows\":[\"code\"],\"AllowedOAuthScopes\":[\"phone\",\"email\",\"openid\",\"profile\",\"aws.cognito.signin.user.admin\"],\"CallbackURLs\":[\"http://localhost:3000/\",\"myapp://\",\"https://sujud.app/\"],\"LogoutURLs\":[\"http://localhost:3000/\",\"myapp://\",\"https://sujud.app/\"]}",
+    "userPoolGroupList": [
+      "Jamaah",
+      "Moderator",
+      "Admin",
+      "SuperAdmin"
+    ],
+    "adminQueryGroup": "SuperAdmin",
+    "serviceName": "Cognito",
+    "verificationBucketName": "rukuauthverificationbucket",
+    "usernameCaseSensitive": false,
+    "useEnabledMfas": true
+  }
+}

@@ -1,0 +1,8 @@
+src/models
+amplify-codegen-temp/models
+
+api.ts
+event.ts
+queries.ts
+mutations.ts
+subscriptions.ts

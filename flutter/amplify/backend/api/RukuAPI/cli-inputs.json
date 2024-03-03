@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "serviceConfiguration": {
+    "apiName": "RukuAPI",
+    "serviceName": "AppSync",
+    "defaultAuthType": {
+      "mode": "AMAZON_COGNITO_USER_POOLS",
+      "cognitoUserPoolId": "authRukuAuth"
+    },
+    "additionalAuthTypes": [
+      {
+        "mode": "API_KEY",
+        "expirationTime": 365,
+        "apiKeyExpirationDate": "2025-03-02T19:37:07.228Z",
+        "keyDescription": ""
+      },
+      {
+        "mode": "AWS_IAM"
+      },
+      {
+        "mode": "AWS_LAMBDA",
+        "lambdaFunction": "RukuAPILambdaAuthorizer",
+        "ttlSeconds": "300"
+      }
+    ]
+  }
+}

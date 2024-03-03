@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "amplify:AdminQueriesa8865030": "cd amplify/backend/function/AdminQueriesa8865030/src && pnpm i && pnpm build && cd -",
+    "amplify:RukuAPILambdaAuthorizer": "cd amplify/backend/function/RukuAPILambdaAuthorizer/src && pnpm i && pnpm build && cd -",
+    "amplify:RukuAuthCustomMessage": "cd amplify/backend/function/RukuAuthCustomMessage/src && pnpm i && pnpm build && cd -",
+    "amplify:RukuAuthPostAuthentication": "cd amplify/backend/function/RukuAuthPostAuthentication/src && pnpm i && pnpm build && cd -",
+    "amplify:RukuAuthPostConfirmation": "cd amplify/backend/function/RukuAuthPostConfirmation/src && pnpm i && pnpm build && cd -",
+    "amplify:RukuAuthPreAuthentication": "cd amplify/backend/function/RukuAuthPreAuthentication/src && pnpm i && pnpm build && cd -",
+    "amplify:RukuAuthPreSignup": "cd amplify/backend/function/RukuAuthPreSignup/src && pnpm i && pnpm build && cd -",
+    "amplify:RukuStorageTrigger": "cd amplify/backend/function/RukuStorageTrigger/src && pnpm i && pnpm build && cd -"
+  }
+}

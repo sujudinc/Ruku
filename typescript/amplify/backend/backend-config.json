@@ -1,0 +1,481 @@
+{
+  "api": {
+    "AdminQueries": {
+      "authorizationType": "AMAZON_COGNITO_USER_POOLS",
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "RukuAuth"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "AdminQueriesa8865030"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    },
+    "RukuAPI": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "RukuAuth"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "apiKeyConfig": {
+                "apiKeyExpirationDate": "2025-03-02T19:37:07.228Z",
+                "apiKeyExpirationDays": 365,
+                "description": ""
+              },
+              "authenticationType": "API_KEY"
+            },
+            {
+              "authenticationType": "AWS_IAM"
+            },
+            {
+              "authenticationType": "AWS_LAMBDA",
+              "lambdaAuthorizerConfig": {
+                "lambdaFunction": "RukuAPILambdaAuthorizer",
+                "ttlSeconds": "300"
+              }
+            }
+          ],
+          "defaultAuthentication": {
+            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+            "userPoolConfig": {
+              "userPoolId": "authRukuAuth"
+            }
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "RukuAuth": {
+      "customAuth": false,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "RukuAuthCustomMessage",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "RukuAuthPostAuthentication",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "RukuAuthPostConfirmation",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "RukuAuthPreAuthentication",
+          "triggerProvider": "Cognito"
+        },
+        {
+          "attributes": [
+            "Arn",
+            "Name"
+          ],
+          "category": "function",
+          "resourceName": "RukuAuthPreSignup",
+          "triggerProvider": "Cognito"
+        }
+      ],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OPTIONAL",
+        "mfaTypes": [
+          "SMS",
+          "TOTP"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [
+            "REQUIRES_LOWERCASE",
+            "REQUIRES_UPPERCASE",
+            "REQUIRES_NUMBERS",
+            "REQUIRES_SYMBOLS"
+          ],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL",
+          "FAMILY_NAME",
+          "GIVEN_NAME"
+        ],
+        "socialProviders": [
+          "GOOGLE"
+        ],
+        "usernameAttributes": [
+          "EMAIL",
+          "PHONE_NUMBER"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    },
+    "userPoolGroups": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId",
+            "AppClientIDWeb",
+            "AppClientID",
+            "IdentityPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "RukuAuth"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito-UserPool-Groups"
+    }
+  },
+  "function": {
+    "AdminQueriesa8865030": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "RukuAuth"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "RukuAPILambdaAuthorizer": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "rukuCommonLayerTs"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "RukuAuthCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "RukuAuthPostAuthentication": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "RukuAuthPostConfirmation": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "RukuAPI"
+        },
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "rukuCommonLayerTs"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "RukuAuthPreAuthentication": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "RukuAuthPreSignup": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "RukuStorageTrigger": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "rukuCommonLayerTs"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "rukuCommonLayerTs": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "LambdaLayer"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_auth_RukuAuth_googleClientId": {
+      "usedBy": [
+        {
+          "category": "auth",
+          "resourceName": "RukuAuth"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminQueriesa8865030_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueriesa8865030"
+        }
+      ]
+    },
+    "AMPLIFY_function_AdminQueriesa8865030_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "AdminQueriesa8865030"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAPILambdaAuthorizer_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAPILambdaAuthorizer"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAPILambdaAuthorizer_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAPILambdaAuthorizer"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthCustomMessage_EMAILMESSAGE": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthCustomMessage_EMAILSUBJECT": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthCustomMessage_REDIRECTURL": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthCustomMessage_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthCustomMessage_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthCustomMessage"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPostAuthentication_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPostAuthentication"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPostAuthentication_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPostAuthentication"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPostConfirmation_GROUP": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPostConfirmation_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPostConfirmation_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPostConfirmation"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPreAuthentication_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPreAuthentication"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPreAuthentication_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPreAuthentication"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPreSignup_DOMAINALLOWLIST": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPreSignup_DOMAINDENYLIST": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPreSignup_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAuthPreSignup_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAuthPreSignup"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuStorageTrigger_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuStorageTrigger"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuStorageTrigger_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuStorageTrigger"
+        }
+      ]
+    },
+    "AMPLIFY_function_rukuCommonLayerTs_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rukuCommonLayerTs"
+        }
+      ]
+    },
+    "AMPLIFY_function_rukuCommonLayerTs_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "rukuCommonLayerTs"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "RukuStorage": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "LambdaExecutionRole"
+          ],
+          "category": "function",
+          "resourceName": "RukuStorageTrigger"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    }
+  }
+}

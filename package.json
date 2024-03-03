@@ -1,0 +1,43 @@
+{
+  "name": "@sujud-app/ruku",
+  "version": "1.0.0",
+  "description": "The backend support for Ruku",
+  "author": "Ruku Inc.",
+  "license": "ISC",
+  "homepage": "https://sujud.app",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sujudinc/Ruku.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sujudinc/Ruku/issues"
+  },
+  "scripts": {
+    "test": "pnpm test",
+    "lint": "eslint --fix",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.ts": [
+      "pnpm lint",
+      "prettier --write"
+    ]
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^14.0.1",
+    "prettier": "^3.0.3"
+  }
+}

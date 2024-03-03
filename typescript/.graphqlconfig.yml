@@ -1,0 +1,16 @@
+projects:
+  RukuAPI:
+    schemaPath: amplify/backend/api/RukuAPI/build/schema.graphql
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+      - src/graphql/api.ts
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/graphql/api.ts
+        docsFilePath: src/graphql
+        region: ca-central-1
+        apiId: null
+        maxDepth: 3

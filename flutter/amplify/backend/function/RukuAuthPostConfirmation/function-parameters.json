@@ -23,9 +23,9 @@
     }
   ],
   "permissions": {
-    "api": {
-      "RukuAPI": [
-        "Mutation"
+    "storage": {
+      "User:@model(appsync)": [
+        "create"
       ]
     }
   }

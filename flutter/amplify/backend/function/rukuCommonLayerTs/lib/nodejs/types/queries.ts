@@ -15,14 +15,43 @@ export const getAnnouncement = /* GraphQL */ `query GetAnnouncement($id: ID!) {
     body
     images
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -37,6 +66,86 @@ export const getAnnouncement = /* GraphQL */ `query GetAnnouncement($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -48,8 +157,100 @@ export const getAnnouncement = /* GraphQL */ `query GetAnnouncement($id: ID!) {
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -74,8 +275,46 @@ export const listAnnouncements = /* GraphQL */ `query ListAnnouncements(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -107,8 +346,46 @@ export const announcementsByCreatorId = /* GraphQL */ `query AnnouncementsByCrea
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -140,8 +417,46 @@ export const announcementsByMosqueId = /* GraphQL */ `query AnnouncementsByMosqu
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -163,8 +478,46 @@ export const getBookmark = /* GraphQL */ `query GetBookmark($id: ID!) {
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -180,6 +533,86 @@ export const getBookmark = /* GraphQL */ `query GetBookmark($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -191,8 +624,100 @@ export const getBookmark = /* GraphQL */ `query GetBookmark($id: ID!) {
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -215,8 +740,45 @@ export const listBookmarks = /* GraphQL */ `query ListBookmarks(
     items {
       id
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -246,8 +808,45 @@ export const bookmarksByAnnouncementId = /* GraphQL */ `query BookmarksByAnnounc
     items {
       id
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -277,8 +876,45 @@ export const bookmarksByCreatorId = /* GraphQL */ `query BookmarksByCreatorId(
     items {
       id
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -308,8 +944,45 @@ export const bookmarksByMosqueId = /* GraphQL */ `query BookmarksByMosqueId(
     items {
       id
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -342,6 +1015,86 @@ export const getClass = /* GraphQL */ `query GetClass($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -358,6 +1111,86 @@ export const getClass = /* GraphQL */ `query GetClass($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -369,8 +1202,100 @@ export const getClass = /* GraphQL */ `query GetClass($id: ID!) {
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -396,8 +1321,49 @@ export const listClasses = /* GraphQL */ `query ListClasses(
       recurring
       daysOfWeek
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       instructorId
+      instructor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -433,8 +1399,49 @@ export const classesByCreatorId = /* GraphQL */ `query ClassesByCreatorId(
       recurring
       daysOfWeek
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       instructorId
+      instructor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -470,8 +1477,49 @@ export const classesByInstructorId = /* GraphQL */ `query ClassesByInstructorId(
       recurring
       daysOfWeek
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       instructorId
+      instructor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -507,8 +1555,49 @@ export const classesByMosqueId = /* GraphQL */ `query ClassesByMosqueId(
       recurring
       daysOfWeek
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       instructorId
+      instructor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -530,14 +1619,77 @@ export const getComment = /* GraphQL */ `query GetComment($id: ID!) {
       id
       text
       parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     subComments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -547,8 +1699,46 @@ export const getComment = /* GraphQL */ `query GetComment($id: ID!) {
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -564,6 +1754,86 @@ export const getComment = /* GraphQL */ `query GetComment($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -575,8 +1845,100 @@ export const getComment = /* GraphQL */ `query GetComment($id: ID!) {
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -600,9 +1962,61 @@ export const listComments = /* GraphQL */ `query ListComments(
       id
       text
       parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -633,9 +2047,61 @@ export const commentsByParentCommentId = /* GraphQL */ `query CommentsByParentCo
       id
       text
       parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -666,9 +2132,61 @@ export const commentsByAnnouncementId = /* GraphQL */ `query CommentsByAnnouncem
       id
       text
       parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -699,9 +2217,61 @@ export const commentsByCreatorId = /* GraphQL */ `query CommentsByCreatorId(
       id
       text
       parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -732,9 +2302,61 @@ export const commentsByMosqueId = /* GraphQL */ `query CommentsByMosqueId(
       id
       text
       parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -763,6 +2385,86 @@ export const getCommittee = /* GraphQL */ `query GetCommittee($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -774,13 +2476,115 @@ export const getCommittee = /* GraphQL */ `query GetCommittee($id: ID!) {
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     members {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
@@ -804,7 +2608,37 @@ export const listCommittees = /* GraphQL */ `query ListCommittees(
       title
       description
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -836,7 +2670,37 @@ export const committeesByCreatorId = /* GraphQL */ `query CommitteesByCreatorId(
       title
       description
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -868,7 +2732,37 @@ export const committeesByMosqueId = /* GraphQL */ `query CommitteesByMosqueId(
       title
       description
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -912,6 +2806,86 @@ export const getGathering = /* GraphQL */ `query GetGathering($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -923,13 +2897,115 @@ export const getGathering = /* GraphQL */ `query GetGathering($id: ID!) {
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     attendees {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
@@ -955,8 +3031,50 @@ export const listGatherings = /* GraphQL */ `query ListGatherings(
       type
       startDate
       endDate
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -990,8 +3108,50 @@ export const gatheringsByCreatorId = /* GraphQL */ `query GatheringsByCreatorId(
       type
       startDate
       endDate
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1025,8 +3185,50 @@ export const gatheringsByMosqueId = /* GraphQL */ `query GatheringsByMosqueId(
       type
       startDate
       endDate
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1056,6 +3258,86 @@ export const getDonation = /* GraphQL */ `query GetDonation($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1073,7 +3355,37 @@ export const getDonation = /* GraphQL */ `query GetDonation($id: ID!) {
       goalDate
       currency
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1099,7 +3411,38 @@ export const listDonations = /* GraphQL */ `query ListDonations(
       currency
       isAnonymous
       donorId
+      donor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       fundraisingCampaignId
+      fundraisingCampaign {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1132,7 +3475,38 @@ export const donationsByDonorId = /* GraphQL */ `query DonationsByDonorId(
       currency
       isAnonymous
       donorId
+      donor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       fundraisingCampaignId
+      fundraisingCampaign {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1165,7 +3539,38 @@ export const donationsByFundraisingCampaignId = /* GraphQL */ `query DonationsBy
       currency
       isAnonymous
       donorId
+      donor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       fundraisingCampaignId
+      fundraisingCampaign {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1200,6 +3605,86 @@ export const getFundraisingCampaign = /* GraphQL */ `query GetFundraisingCampaig
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1211,13 +3696,116 @@ export const getFundraisingCampaign = /* GraphQL */ `query GetFundraisingCampaig
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1251,7 +3839,37 @@ export const listFundraisingCampaigns = /* GraphQL */ `query ListFundraisingCamp
       goalDate
       currency
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1289,7 +3907,37 @@ export const fundraisingCampaignsByCreatorId = /* GraphQL */ `query FundraisingC
       goalDate
       currency
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1327,7 +3975,37 @@ export const fundraisingCampaignsByMosqueId = /* GraphQL */ `query FundraisingCa
       goalDate
       currency
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1349,8 +4027,46 @@ export const getLike = /* GraphQL */ `query GetLike($id: ID!) {
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1366,6 +4082,86 @@ export const getLike = /* GraphQL */ `query GetLike($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1377,8 +4173,100 @@ export const getLike = /* GraphQL */ `query GetLike($id: ID!) {
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1398,8 +4286,45 @@ export const listLikes = /* GraphQL */ `query ListLikes(
     items {
       id
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1426,8 +4351,45 @@ export const likesByAnnouncementId = /* GraphQL */ `query LikesByAnnouncementId(
     items {
       id
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1457,8 +4419,45 @@ export const likesByCreatorId = /* GraphQL */ `query LikesByCreatorId(
     items {
       id
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1488,8 +4487,45 @@ export const likesByMosqueId = /* GraphQL */ `query LikesByMosqueId(
     items {
       id
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1524,6 +4560,86 @@ export const getMonthlyPrayerSchedule = /* GraphQL */ `query GetMonthlyPrayerSch
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1535,8 +4651,100 @@ export const getMonthlyPrayerSchedule = /* GraphQL */ `query GetMonthlyPrayerSch
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1564,8 +4772,40 @@ export const listMonthlyPrayerSchedules = /* GraphQL */ `query ListMonthlyPrayer
       id
       year
       month
+      prayerTimes {
+        type
+        athan
+        iqamah
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1596,8 +4836,40 @@ export const monthlyPrayerSchedulesByCreatorId = /* GraphQL */ `query MonthlyPra
       id
       year
       month
+      prayerTimes {
+        type
+        athan
+        iqamah
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1628,8 +4900,40 @@ export const monthlyPrayerSchedulesByMosqueId = /* GraphQL */ `query MonthlyPray
       id
       year
       month
+      prayerTimes {
+        type
+        athan
+        iqamah
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1661,12 +4965,47 @@ export const getMosque = /* GraphQL */ `query GetMosque($id: ID!) {
       __typename
     }
     hours {
+      monday {
+        type
+        __typename
+      }
+      tuesday {
+        type
+        __typename
+      }
+      wednesday {
+        type
+        __typename
+      }
+      thursday {
+        type
+        __typename
+      }
+      friday {
+        type
+        __typename
+      }
+      saturday {
+        type
+        __typename
+      }
+      sunday {
+        type
+        __typename
+      }
       __typename
     }
     contactInfo {
       phone
       email
       website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
       __typename
     }
     liveVideoUrl
@@ -1681,64 +5020,305 @@ export const getMosque = /* GraphQL */ `query GetMosque($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
       __typename
     }
     followers {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     announcements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     classes {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     committees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     gatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     fundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     monthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     resources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     services {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     subscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     volunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1759,8 +5339,100 @@ export const listMosques = /* GraphQL */ `query ListMosques(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1792,8 +5464,100 @@ export const mosquesByCreatorId = /* GraphQL */ `query MosquesByCreatorId(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1824,6 +5588,86 @@ export const getMosqueSubscription = /* GraphQL */ `query GetMosqueSubscription(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1835,8 +5679,100 @@ export const getMosqueSubscription = /* GraphQL */ `query GetMosqueSubscription(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1867,7 +5803,33 @@ export const listMosqueSubscriptions = /* GraphQL */ `query ListMosqueSubscripti
       endDate
       stripeSubscriptionId
       purchaserId
+      purchaser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1901,7 +5863,33 @@ export const mosqueSubscriptionsByPurchaserId = /* GraphQL */ `query MosqueSubsc
       endDate
       stripeSubscriptionId
       purchaserId
+      purchaser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1935,7 +5923,33 @@ export const mosqueSubscriptionsByMosqueId = /* GraphQL */ `query MosqueSubscrip
       endDate
       stripeSubscriptionId
       purchaserId
+      purchaser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1966,6 +5980,86 @@ export const getResource = /* GraphQL */ `query GetResource($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1977,8 +6071,100 @@ export const getResource = /* GraphQL */ `query GetResource($id: ID!) {
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2005,7 +6191,33 @@ export const listResources = /* GraphQL */ `query ListResources(
       type
       url
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2039,7 +6251,33 @@ export const resourcesByCreatorId = /* GraphQL */ `query ResourcesByCreatorId(
       type
       url
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2073,7 +6311,33 @@ export const resourcesByMosqueId = /* GraphQL */ `query ResourcesByMosqueId(
       type
       url
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2103,6 +6367,86 @@ export const getService = /* GraphQL */ `query GetService($id: ID!) {
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2114,8 +6458,100 @@ export const getService = /* GraphQL */ `query GetService($id: ID!) {
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2141,7 +6577,33 @@ export const listServices = /* GraphQL */ `query ListServices(
       description
       documents
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2174,7 +6636,33 @@ export const servicesByCreatorId = /* GraphQL */ `query ServicesByCreatorId(
       description
       documents
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2207,7 +6695,33 @@ export const servicesByMosqueId = /* GraphQL */ `query ServicesByMosqueId(
       description
       documents
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2232,82 +6746,310 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
     status
     stripeCustomerId
     createdAnnouncements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdCommittees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdGatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdFundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdMonthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdMosques {
+      items {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdResources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdServices {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdVolunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     committees {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     gatherings {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     instructingClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     mosques {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     purchasedSubscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     volunteerTasks {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
       nextToken
       __typename
     }
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -2334,6 +7076,86 @@ export const listUsers = /* GraphQL */ `query ListUsers(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2362,6 +7184,86 @@ export const getVolunteerTask = /* GraphQL */ `query GetVolunteerTask($id: ID!) 
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2373,13 +7275,115 @@ export const getVolunteerTask = /* GraphQL */ `query GetVolunteerTask($id: ID!) 
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     volunteers {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
       nextToken
       __typename
     }
@@ -2405,7 +7409,37 @@ export const listVolunteerTasks = /* GraphQL */ `query ListVolunteerTasks(
       startDate
       endDate
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2439,7 +7473,37 @@ export const volunteerTasksByCreatorId = /* GraphQL */ `query VolunteerTasksByCr
       startDate
       endDate
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2473,7 +7537,37 @@ export const volunteerTasksByMosqueId = /* GraphQL */ `query VolunteerTasksByMos
       startDate
       endDate
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2496,7 +7590,37 @@ export const getCommitteeMembers = /* GraphQL */ `query GetCommitteeMembers($id:
       title
       description
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2511,6 +7635,86 @@ export const getCommitteeMembers = /* GraphQL */ `query GetCommitteeMembers($id:
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2537,6 +7741,31 @@ export const listCommitteeMembers = /* GraphQL */ `query ListCommitteeMembers(
       id
       committeeId
       userId
+      committee {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       createdAt
       updatedAt
       creatorId
@@ -2569,6 +7798,31 @@ export const committeeMembersByCommitteeId = /* GraphQL */ `query CommitteeMembe
       id
       committeeId
       userId
+      committee {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       createdAt
       updatedAt
       creatorId
@@ -2601,6 +7855,31 @@ export const committeeMembersByUserId = /* GraphQL */ `query CommitteeMembersByU
       id
       committeeId
       userId
+      committee {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       createdAt
       updatedAt
       creatorId
@@ -2627,8 +7906,50 @@ export const getGatheringAttendees = /* GraphQL */ `query GetGatheringAttendees(
       type
       startDate
       endDate
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2643,6 +7964,86 @@ export const getGatheringAttendees = /* GraphQL */ `query GetGatheringAttendees(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2673,6 +8074,34 @@ export const listGatheringAttendees = /* GraphQL */ `query ListGatheringAttendee
       id
       gatheringId
       userId
+      gathering {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       createdAt
       updatedAt
       creatorId
@@ -2705,6 +8134,34 @@ export const gatheringAttendeesByGatheringId = /* GraphQL */ `query GatheringAtt
       id
       gatheringId
       userId
+      gathering {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       createdAt
       updatedAt
       creatorId
@@ -2737,6 +8194,34 @@ export const gatheringAttendeesByUserId = /* GraphQL */ `query GatheringAttendee
       id
       gatheringId
       userId
+      gathering {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       createdAt
       updatedAt
       creatorId
@@ -2761,8 +8246,100 @@ export const getMosqueFollowers = /* GraphQL */ `query GetMosqueFollowers($id: I
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2777,6 +8354,86 @@ export const getMosqueFollowers = /* GraphQL */ `query GetMosqueFollowers($id: I
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2803,6 +8460,32 @@ export const listMosqueFollowers = /* GraphQL */ `query ListMosqueFollowers(
       id
       mosqueId
       userId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       createdAt
       updatedAt
       creatorId
@@ -2835,6 +8518,32 @@ export const mosqueFollowersByMosqueId = /* GraphQL */ `query MosqueFollowersByM
       id
       mosqueId
       userId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       createdAt
       updatedAt
       creatorId
@@ -2867,6 +8576,32 @@ export const mosqueFollowersByUserId = /* GraphQL */ `query MosqueFollowersByUse
       id
       mosqueId
       userId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       createdAt
       updatedAt
       creatorId
@@ -2896,6 +8631,86 @@ export const getVolunteerTaskUser = /* GraphQL */ `query GetVolunteerTaskUser($i
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2908,7 +8723,37 @@ export const getVolunteerTaskUser = /* GraphQL */ `query GetVolunteerTaskUser($i
       startDate
       endDate
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2938,6 +8783,33 @@ export const listVolunteerTaskUsers = /* GraphQL */ `query ListVolunteerTaskUser
       id
       userId
       volunteerTaskId
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      volunteerTask {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2970,6 +8842,33 @@ export const volunteerTaskUsersByUserId = /* GraphQL */ `query VolunteerTaskUser
       id
       userId
       volunteerTaskId
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      volunteerTask {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3002,6 +8901,33 @@ export const volunteerTaskUsersByVolunteerTaskId = /* GraphQL */ `query Voluntee
       id
       userId
       volunteerTaskId
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      volunteerTask {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       owner

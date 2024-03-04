@@ -1,9 +1,10 @@
-import { GraphQLService } from "@ruku/common-layer/services"
-import { API, Mutations } from "@ruku/common-layer/types"
+import { ENVS } from "@ruku/common-layer/configs"
+import { DynamoDBService } from "@ruku/common-layer/services"
+import { API } from "@ruku/common-layer/types"
 
 import { Event } from "../event"
 
-const _graphQLService = new GraphQLService()
+const _dynamoDBService = new DynamoDBService()
 
 export default async (event: Event) => {
 	const {
@@ -17,21 +18,18 @@ export default async (event: Event) => {
 			},
 		},
 	} = event
-	const user: API.CreateUserInput = {
-		id: userId,
-		selfie: null,
-		firstName: given_name,
-		lastName: family_name,
-		email,
-		phone: null,
-		type: userType === "ADMIN" ? API.UserType.ADMIN : API.UserType.USER,
-		status: API.UserStatus.ACTIVE,
-	}
 
-	await _graphQLService.executeOperation({
-		operation: Mutations.createUser,
-		variables: {
-			input: user,
+	await _dynamoDBService.createItem({
+		tableName: ENVS.DYNAMODB_TABLES.User,
+		item: {
+			id: userId,
+			selfie: null,
+			firstName: given_name,
+			lastName: family_name,
+			email,
+			phone: null,
+			type: userType === "ADMIN" ? API.UserType.ADMIN : API.UserType.USER,
+			status: API.UserStatus.ACTIVE,
 		},
 	})
 

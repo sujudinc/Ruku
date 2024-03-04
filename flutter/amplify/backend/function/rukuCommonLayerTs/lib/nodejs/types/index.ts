@@ -1,5 +1,5 @@
 import * as API from "./api"
-import * as Mutations from "./mutations"
-import * as Queries from "./queries"
+import * as Mutation from "./mutations"
+import * as Query from "./queries"
 
-export { API, Mutations, Queries }
+export { API, Mutation, Query }

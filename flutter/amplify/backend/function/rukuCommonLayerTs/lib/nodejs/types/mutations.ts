@@ -18,14 +18,43 @@ export const createAnnouncement = /* GraphQL */ `mutation CreateAnnouncement(
     body
     images
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -40,6 +69,86 @@ export const createAnnouncement = /* GraphQL */ `mutation CreateAnnouncement(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -51,8 +160,100 @@ export const createAnnouncement = /* GraphQL */ `mutation CreateAnnouncement(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -76,14 +277,43 @@ export const updateAnnouncement = /* GraphQL */ `mutation UpdateAnnouncement(
     body
     images
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -98,6 +328,86 @@ export const updateAnnouncement = /* GraphQL */ `mutation UpdateAnnouncement(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -109,8 +419,100 @@ export const updateAnnouncement = /* GraphQL */ `mutation UpdateAnnouncement(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -134,14 +536,43 @@ export const deleteAnnouncement = /* GraphQL */ `mutation DeleteAnnouncement(
     body
     images
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -156,6 +587,86 @@ export const deleteAnnouncement = /* GraphQL */ `mutation DeleteAnnouncement(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -167,8 +678,100 @@ export const deleteAnnouncement = /* GraphQL */ `mutation DeleteAnnouncement(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -194,8 +797,46 @@ export const createBookmark = /* GraphQL */ `mutation CreateBookmark(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -211,6 +852,86 @@ export const createBookmark = /* GraphQL */ `mutation CreateBookmark(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -222,8 +943,100 @@ export const createBookmark = /* GraphQL */ `mutation CreateBookmark(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -249,8 +1062,46 @@ export const updateBookmark = /* GraphQL */ `mutation UpdateBookmark(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -266,6 +1117,86 @@ export const updateBookmark = /* GraphQL */ `mutation UpdateBookmark(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -277,8 +1208,100 @@ export const updateBookmark = /* GraphQL */ `mutation UpdateBookmark(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -304,8 +1327,46 @@ export const deleteBookmark = /* GraphQL */ `mutation DeleteBookmark(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -321,6 +1382,86 @@ export const deleteBookmark = /* GraphQL */ `mutation DeleteBookmark(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -332,8 +1473,100 @@ export const deleteBookmark = /* GraphQL */ `mutation DeleteBookmark(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -370,6 +1603,86 @@ export const createClass = /* GraphQL */ `mutation CreateClass(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -386,6 +1699,86 @@ export const createClass = /* GraphQL */ `mutation CreateClass(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -397,8 +1790,100 @@ export const createClass = /* GraphQL */ `mutation CreateClass(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -435,6 +1920,86 @@ export const updateClass = /* GraphQL */ `mutation UpdateClass(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -451,6 +2016,86 @@ export const updateClass = /* GraphQL */ `mutation UpdateClass(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -462,8 +2107,100 @@ export const updateClass = /* GraphQL */ `mutation UpdateClass(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -500,6 +2237,86 @@ export const deleteClass = /* GraphQL */ `mutation DeleteClass(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -516,6 +2333,86 @@ export const deleteClass = /* GraphQL */ `mutation DeleteClass(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -527,8 +2424,100 @@ export const deleteClass = /* GraphQL */ `mutation DeleteClass(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -554,14 +2543,77 @@ export const createComment = /* GraphQL */ `mutation CreateComment(
       id
       text
       parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     subComments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -571,8 +2623,46 @@ export const createComment = /* GraphQL */ `mutation CreateComment(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -588,6 +2678,86 @@ export const createComment = /* GraphQL */ `mutation CreateComment(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -599,8 +2769,100 @@ export const createComment = /* GraphQL */ `mutation CreateComment(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -626,14 +2888,77 @@ export const updateComment = /* GraphQL */ `mutation UpdateComment(
       id
       text
       parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     subComments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -643,8 +2968,46 @@ export const updateComment = /* GraphQL */ `mutation UpdateComment(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -660,6 +3023,86 @@ export const updateComment = /* GraphQL */ `mutation UpdateComment(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -671,8 +3114,100 @@ export const updateComment = /* GraphQL */ `mutation UpdateComment(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -698,14 +3233,77 @@ export const deleteComment = /* GraphQL */ `mutation DeleteComment(
       id
       text
       parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
       announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     subComments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -715,8 +3313,46 @@ export const deleteComment = /* GraphQL */ `mutation DeleteComment(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -732,6 +3368,86 @@ export const deleteComment = /* GraphQL */ `mutation DeleteComment(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -743,8 +3459,100 @@ export const deleteComment = /* GraphQL */ `mutation DeleteComment(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -777,6 +3585,86 @@ export const createCommittee = /* GraphQL */ `mutation CreateCommittee(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -788,13 +3676,115 @@ export const createCommittee = /* GraphQL */ `mutation CreateCommittee(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     members {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
@@ -826,6 +3816,86 @@ export const updateCommittee = /* GraphQL */ `mutation UpdateCommittee(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -837,13 +3907,115 @@ export const updateCommittee = /* GraphQL */ `mutation UpdateCommittee(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     members {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
@@ -875,6 +4047,86 @@ export const deleteCommittee = /* GraphQL */ `mutation DeleteCommittee(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -886,13 +4138,115 @@ export const deleteCommittee = /* GraphQL */ `mutation DeleteCommittee(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     members {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
@@ -939,6 +4293,86 @@ export const createGathering = /* GraphQL */ `mutation CreateGathering(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -950,13 +4384,115 @@ export const createGathering = /* GraphQL */ `mutation CreateGathering(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     attendees {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1003,6 +4539,86 @@ export const updateGathering = /* GraphQL */ `mutation UpdateGathering(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1014,13 +4630,115 @@ export const updateGathering = /* GraphQL */ `mutation UpdateGathering(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     attendees {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1067,6 +4785,86 @@ export const deleteGathering = /* GraphQL */ `mutation DeleteGathering(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1078,13 +4876,115 @@ export const deleteGathering = /* GraphQL */ `mutation DeleteGathering(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     attendees {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1117,6 +5017,86 @@ export const createDonation = /* GraphQL */ `mutation CreateDonation(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1134,7 +5114,37 @@ export const createDonation = /* GraphQL */ `mutation CreateDonation(
       goalDate
       currency
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1168,6 +5178,86 @@ export const updateDonation = /* GraphQL */ `mutation UpdateDonation(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1185,7 +5275,37 @@ export const updateDonation = /* GraphQL */ `mutation UpdateDonation(
       goalDate
       currency
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1219,6 +5339,86 @@ export const deleteDonation = /* GraphQL */ `mutation DeleteDonation(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1236,7 +5436,37 @@ export const deleteDonation = /* GraphQL */ `mutation DeleteDonation(
       goalDate
       currency
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1275,6 +5505,86 @@ export const createFundraisingCampaign = /* GraphQL */ `mutation CreateFundraisi
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1286,13 +5596,116 @@ export const createFundraisingCampaign = /* GraphQL */ `mutation CreateFundraisi
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1330,6 +5743,86 @@ export const updateFundraisingCampaign = /* GraphQL */ `mutation UpdateFundraisi
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1341,13 +5834,116 @@ export const updateFundraisingCampaign = /* GraphQL */ `mutation UpdateFundraisi
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1385,6 +5981,86 @@ export const deleteFundraisingCampaign = /* GraphQL */ `mutation DeleteFundraisi
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1396,13 +6072,116 @@ export const deleteFundraisingCampaign = /* GraphQL */ `mutation DeleteFundraisi
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1427,8 +6206,46 @@ export const createLike = /* GraphQL */ `mutation CreateLike(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1444,6 +6261,86 @@ export const createLike = /* GraphQL */ `mutation CreateLike(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1455,8 +6352,100 @@ export const createLike = /* GraphQL */ `mutation CreateLike(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1482,8 +6471,46 @@ export const updateLike = /* GraphQL */ `mutation UpdateLike(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1499,6 +6526,86 @@ export const updateLike = /* GraphQL */ `mutation UpdateLike(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1510,8 +6617,100 @@ export const updateLike = /* GraphQL */ `mutation UpdateLike(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1537,8 +6736,46 @@ export const deleteLike = /* GraphQL */ `mutation DeleteLike(
       title
       body
       images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1554,6 +6791,86 @@ export const deleteLike = /* GraphQL */ `mutation DeleteLike(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1565,8 +6882,100 @@ export const deleteLike = /* GraphQL */ `mutation DeleteLike(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1605,6 +7014,86 @@ export const createMonthlyPrayerSchedule = /* GraphQL */ `mutation CreateMonthly
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1616,8 +7105,100 @@ export const createMonthlyPrayerSchedule = /* GraphQL */ `mutation CreateMonthly
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1656,6 +7237,86 @@ export const updateMonthlyPrayerSchedule = /* GraphQL */ `mutation UpdateMonthly
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1667,8 +7328,100 @@ export const updateMonthlyPrayerSchedule = /* GraphQL */ `mutation UpdateMonthly
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1707,6 +7460,86 @@ export const deleteMonthlyPrayerSchedule = /* GraphQL */ `mutation DeleteMonthly
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -1718,8 +7551,100 @@ export const deleteMonthlyPrayerSchedule = /* GraphQL */ `mutation DeleteMonthly
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -1755,12 +7680,47 @@ export const createMosque = /* GraphQL */ `mutation CreateMosque(
       __typename
     }
     hours {
+      monday {
+        type
+        __typename
+      }
+      tuesday {
+        type
+        __typename
+      }
+      wednesday {
+        type
+        __typename
+      }
+      thursday {
+        type
+        __typename
+      }
+      friday {
+        type
+        __typename
+      }
+      saturday {
+        type
+        __typename
+      }
+      sunday {
+        type
+        __typename
+      }
       __typename
     }
     contactInfo {
       phone
       email
       website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
       __typename
     }
     liveVideoUrl
@@ -1775,64 +7735,305 @@ export const createMosque = /* GraphQL */ `mutation CreateMosque(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
       __typename
     }
     followers {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     announcements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     classes {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     committees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     gatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     fundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     monthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     resources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     services {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     subscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     volunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1867,12 +8068,47 @@ export const updateMosque = /* GraphQL */ `mutation UpdateMosque(
       __typename
     }
     hours {
+      monday {
+        type
+        __typename
+      }
+      tuesday {
+        type
+        __typename
+      }
+      wednesday {
+        type
+        __typename
+      }
+      thursday {
+        type
+        __typename
+      }
+      friday {
+        type
+        __typename
+      }
+      saturday {
+        type
+        __typename
+      }
+      sunday {
+        type
+        __typename
+      }
       __typename
     }
     contactInfo {
       phone
       email
       website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
       __typename
     }
     liveVideoUrl
@@ -1887,64 +8123,305 @@ export const updateMosque = /* GraphQL */ `mutation UpdateMosque(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
       __typename
     }
     followers {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     announcements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     classes {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     committees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     gatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     fundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     monthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     resources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     services {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     subscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     volunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -1979,12 +8456,47 @@ export const deleteMosque = /* GraphQL */ `mutation DeleteMosque(
       __typename
     }
     hours {
+      monday {
+        type
+        __typename
+      }
+      tuesday {
+        type
+        __typename
+      }
+      wednesday {
+        type
+        __typename
+      }
+      thursday {
+        type
+        __typename
+      }
+      friday {
+        type
+        __typename
+      }
+      saturday {
+        type
+        __typename
+      }
+      sunday {
+        type
+        __typename
+      }
       __typename
     }
     contactInfo {
       phone
       email
       website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
       __typename
     }
     liveVideoUrl
@@ -1999,64 +8511,305 @@ export const deleteMosque = /* GraphQL */ `mutation DeleteMosque(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
       __typename
     }
     followers {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     announcements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     classes {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     committees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     gatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     fundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     monthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     resources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     services {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     subscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     volunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -2090,6 +8843,86 @@ export const createMosqueSubscription = /* GraphQL */ `mutation CreateMosqueSubs
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2101,8 +8934,100 @@ export const createMosqueSubscription = /* GraphQL */ `mutation CreateMosqueSubs
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2137,6 +9062,86 @@ export const updateMosqueSubscription = /* GraphQL */ `mutation UpdateMosqueSubs
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2148,8 +9153,100 @@ export const updateMosqueSubscription = /* GraphQL */ `mutation UpdateMosqueSubs
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2184,6 +9281,86 @@ export const deleteMosqueSubscription = /* GraphQL */ `mutation DeleteMosqueSubs
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2195,8 +9372,100 @@ export const deleteMosqueSubscription = /* GraphQL */ `mutation DeleteMosqueSubs
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2231,6 +9500,86 @@ export const createResource = /* GraphQL */ `mutation CreateResource(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2242,8 +9591,100 @@ export const createResource = /* GraphQL */ `mutation CreateResource(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2278,6 +9719,86 @@ export const updateResource = /* GraphQL */ `mutation UpdateResource(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2289,8 +9810,100 @@ export const updateResource = /* GraphQL */ `mutation UpdateResource(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2325,6 +9938,86 @@ export const deleteResource = /* GraphQL */ `mutation DeleteResource(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2336,8 +10029,100 @@ export const deleteResource = /* GraphQL */ `mutation DeleteResource(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2371,6 +10156,86 @@ export const createService = /* GraphQL */ `mutation CreateService(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2382,8 +10247,100 @@ export const createService = /* GraphQL */ `mutation CreateService(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2417,6 +10374,86 @@ export const updateService = /* GraphQL */ `mutation UpdateService(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2428,8 +10465,100 @@ export const updateService = /* GraphQL */ `mutation UpdateService(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2463,6 +10592,86 @@ export const deleteService = /* GraphQL */ `mutation DeleteService(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2474,8 +10683,100 @@ export const deleteService = /* GraphQL */ `mutation DeleteService(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2504,82 +10805,310 @@ export const createUser = /* GraphQL */ `mutation CreateUser(
     status
     stripeCustomerId
     createdAnnouncements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdCommittees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdGatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdFundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdMonthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdMosques {
+      items {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdResources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdServices {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdVolunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     committees {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     gatherings {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     instructingClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     mosques {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     purchasedSubscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     volunteerTasks {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
       nextToken
       __typename
     }
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -2608,82 +11137,310 @@ export const updateUser = /* GraphQL */ `mutation UpdateUser(
     status
     stripeCustomerId
     createdAnnouncements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdCommittees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdGatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdFundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdMonthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdMosques {
+      items {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdResources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdServices {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdVolunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     committees {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     gatherings {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     instructingClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     mosques {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     purchasedSubscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     volunteerTasks {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
       nextToken
       __typename
     }
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -2712,82 +11469,310 @@ export const deleteUser = /* GraphQL */ `mutation DeleteUser(
     status
     stripeCustomerId
     createdAnnouncements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdCommittees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdGatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdFundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdMonthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdMosques {
+      items {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdResources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdServices {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     createdVolunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     committees {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     gatherings {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     instructingClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     mosques {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
       nextToken
       __typename
     }
     purchasedSubscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     volunteerTasks {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
       nextToken
       __typename
     }
     bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
     comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
       nextToken
       __typename
     }
@@ -2822,6 +11807,86 @@ export const createVolunteerTask = /* GraphQL */ `mutation CreateVolunteerTask(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2833,13 +11898,115 @@ export const createVolunteerTask = /* GraphQL */ `mutation CreateVolunteerTask(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     volunteers {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
       nextToken
       __typename
     }
@@ -2873,6 +12040,86 @@ export const updateVolunteerTask = /* GraphQL */ `mutation UpdateVolunteerTask(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2884,13 +12131,115 @@ export const updateVolunteerTask = /* GraphQL */ `mutation UpdateVolunteerTask(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     volunteers {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
       nextToken
       __typename
     }
@@ -2924,6 +12273,86 @@ export const deleteVolunteerTask = /* GraphQL */ `mutation DeleteVolunteerTask(
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -2935,13 +12364,115 @@ export const deleteVolunteerTask = /* GraphQL */ `mutation DeleteVolunteerTask(
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
     }
     volunteers {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
       nextToken
       __typename
     }
@@ -2967,7 +12498,37 @@ export const createCommitteeMembers = /* GraphQL */ `mutation CreateCommitteeMem
       title
       description
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -2982,6 +12543,86 @@ export const createCommitteeMembers = /* GraphQL */ `mutation CreateCommitteeMem
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3011,7 +12652,37 @@ export const updateCommitteeMembers = /* GraphQL */ `mutation UpdateCommitteeMem
       title
       description
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3026,6 +12697,86 @@ export const updateCommitteeMembers = /* GraphQL */ `mutation UpdateCommitteeMem
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3055,7 +12806,37 @@ export const deleteCommitteeMembers = /* GraphQL */ `mutation DeleteCommitteeMem
       title
       description
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3070,6 +12851,86 @@ export const deleteCommitteeMembers = /* GraphQL */ `mutation DeleteCommitteeMem
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3101,8 +12962,50 @@ export const createGatheringAttendees = /* GraphQL */ `mutation CreateGatheringA
       type
       startDate
       endDate
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3117,6 +13020,86 @@ export const createGatheringAttendees = /* GraphQL */ `mutation CreateGatheringA
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3148,8 +13131,50 @@ export const updateGatheringAttendees = /* GraphQL */ `mutation UpdateGatheringA
       type
       startDate
       endDate
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3164,6 +13189,86 @@ export const updateGatheringAttendees = /* GraphQL */ `mutation UpdateGatheringA
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3195,8 +13300,50 @@ export const deleteGatheringAttendees = /* GraphQL */ `mutation DeleteGatheringA
       type
       startDate
       endDate
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3211,6 +13358,86 @@ export const deleteGatheringAttendees = /* GraphQL */ `mutation DeleteGatheringA
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3240,8 +13467,100 @@ export const createMosqueFollowers = /* GraphQL */ `mutation CreateMosqueFollowe
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3256,6 +13575,86 @@ export const createMosqueFollowers = /* GraphQL */ `mutation CreateMosqueFollowe
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3285,8 +13684,100 @@ export const updateMosqueFollowers = /* GraphQL */ `mutation UpdateMosqueFollowe
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3301,6 +13792,86 @@ export const updateMosqueFollowers = /* GraphQL */ `mutation UpdateMosqueFollowe
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3330,8 +13901,100 @@ export const deleteMosqueFollowers = /* GraphQL */ `mutation DeleteMosqueFollowe
       name
       description
       images
+      address {
+        addressLine1
+        addressLine2
+        addressLine3
+        city
+        province
+        postalCode
+        country
+        latitude
+        longitude
+        __typename
+      }
+      hours {
+        __typename
+      }
+      contactInfo {
+        phone
+        email
+        website
+        __typename
+      }
       liveVideoUrl
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3346,6 +14009,86 @@ export const deleteMosqueFollowers = /* GraphQL */ `mutation DeleteMosqueFollowe
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3380,6 +14123,86 @@ export const createVolunteerTaskUser = /* GraphQL */ `mutation CreateVolunteerTa
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3392,7 +14215,37 @@ export const createVolunteerTaskUser = /* GraphQL */ `mutation CreateVolunteerTa
       startDate
       endDate
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3426,6 +14279,86 @@ export const updateVolunteerTaskUser = /* GraphQL */ `mutation UpdateVolunteerTa
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3438,7 +14371,37 @@ export const updateVolunteerTaskUser = /* GraphQL */ `mutation UpdateVolunteerTa
       startDate
       endDate
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename
@@ -3472,6 +14435,86 @@ export const deleteVolunteerTaskUser = /* GraphQL */ `mutation DeleteVolunteerTa
       type
       status
       stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       owner
@@ -3484,7 +14527,37 @@ export const deleteVolunteerTaskUser = /* GraphQL */ `mutation DeleteVolunteerTa
       startDate
       endDate
       creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
       mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
       createdAt
       updatedAt
       __typename

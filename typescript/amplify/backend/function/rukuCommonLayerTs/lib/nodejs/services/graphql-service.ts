@@ -27,9 +27,6 @@ export default class GraphQLService {
 			)
 		).json()
 
-		console.log("------------- executeOperation response ---------------")
-		console.log(response)
-
 		if (
 			response &&
 			typeof response === "object" &&

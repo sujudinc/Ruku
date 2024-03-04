@@ -30,7 +30,7 @@
         "RukuAuthPostConfirmation": {
           "GROUP": "Jamaah",
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/RukuAuthPostConfirmation-4a6a63655364466a4b67-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPostConfirmation-596f326c6a4d4f4d744d-build.zip"
         },
         "RukuAuthPreSignup": {
           "DOMAINALLOWLIST": " ",
@@ -60,7 +60,7 @@
         },
         "rukuCommonLayerTs": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/rukuCommonLayerTs-LambdaLayerVersion6cf11055-build.zip"
+          "s3Key": "amplify-builds/rukuCommonLayerTs-LambdaLayerVersion38281783-build.zip"
         }
       },
       "storage": {

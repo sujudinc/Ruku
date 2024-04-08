@@ -25,79 +25,13 @@ import 'package:amplify_core/amplify_core.dart' as amplify_core;
 
 /** This is an auto generated class representing the Address type in your schema. */
 class Address {
-  final String? _addressLine1;
-  final String? _addressLine2;
-  final String? _addressLine3;
-  final String? _city;
-  final String? _province;
-  final String? _postalCode;
-  final String? _country;
+  final String? _address;
   final double? _latitude;
   final double? _longitude;
 
-  String get addressLine1 {
+  String get address {
     try {
-      return _addressLine1!;
-    } catch(e) {
-      throw amplify_core.AmplifyCodeGenModelException(
-          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
-          recoverySuggestion:
-            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
-          underlyingException: e.toString()
-          );
-    }
-  }
-  
-  String? get addressLine2 {
-    return _addressLine2;
-  }
-  
-  String? get addressLine3 {
-    return _addressLine3;
-  }
-  
-  String get city {
-    try {
-      return _city!;
-    } catch(e) {
-      throw amplify_core.AmplifyCodeGenModelException(
-          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
-          recoverySuggestion:
-            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
-          underlyingException: e.toString()
-          );
-    }
-  }
-  
-  String get province {
-    try {
-      return _province!;
-    } catch(e) {
-      throw amplify_core.AmplifyCodeGenModelException(
-          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
-          recoverySuggestion:
-            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
-          underlyingException: e.toString()
-          );
-    }
-  }
-  
-  String get postalCode {
-    try {
-      return _postalCode!;
-    } catch(e) {
-      throw amplify_core.AmplifyCodeGenModelException(
-          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
-          recoverySuggestion:
-            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
-          underlyingException: e.toString()
-          );
-    }
-  }
-  
-  String get country {
-    try {
-      return _country!;
+      return _address!;
     } catch(e) {
       throw amplify_core.AmplifyCodeGenModelException(
           amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
@@ -134,17 +68,11 @@ class Address {
     }
   }
   
-  const Address._internal({required addressLine1, addressLine2, addressLine3, required city, required province, required postalCode, required country, required latitude, required longitude}): _addressLine1 = addressLine1, _addressLine2 = addressLine2, _addressLine3 = addressLine3, _city = city, _province = province, _postalCode = postalCode, _country = country, _latitude = latitude, _longitude = longitude;
+  const Address._internal({required address, required latitude, required longitude}): _address = address, _latitude = latitude, _longitude = longitude;
   
-  factory Address({required String addressLine1, String? addressLine2, String? addressLine3, required String city, required String province, required String postalCode, required String country, required double latitude, required double longitude}) {
+  factory Address({required String address, required double latitude, required double longitude}) {
     return Address._internal(
-      addressLine1: addressLine1,
-      addressLine2: addressLine2,
-      addressLine3: addressLine3,
-      city: city,
-      province: province,
-      postalCode: postalCode,
-      country: country,
+      address: address,
       latitude: latitude,
       longitude: longitude);
   }
@@ -157,13 +85,7 @@ class Address {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is Address &&
-      _addressLine1 == other._addressLine1 &&
-      _addressLine2 == other._addressLine2 &&
-      _addressLine3 == other._addressLine3 &&
-      _city == other._city &&
-      _province == other._province &&
-      _postalCode == other._postalCode &&
-      _country == other._country &&
+      _address == other._address &&
       _latitude == other._latitude &&
       _longitude == other._longitude;
   }
@@ -176,13 +98,7 @@ class Address {
     var buffer = new StringBuffer();
     
     buffer.write("Address {");
-    buffer.write("addressLine1=" + "$_addressLine1" + ", ");
-    buffer.write("addressLine2=" + "$_addressLine2" + ", ");
-    buffer.write("addressLine3=" + "$_addressLine3" + ", ");
-    buffer.write("city=" + "$_city" + ", ");
-    buffer.write("province=" + "$_province" + ", ");
-    buffer.write("postalCode=" + "$_postalCode" + ", ");
-    buffer.write("country=" + "$_country" + ", ");
+    buffer.write("address=" + "$_address" + ", ");
     buffer.write("latitude=" + (_latitude != null ? _latitude!.toString() : "null") + ", ");
     buffer.write("longitude=" + (_longitude != null ? _longitude!.toString() : "null"));
     buffer.write("}");
@@ -190,66 +106,36 @@ class Address {
     return buffer.toString();
   }
   
-  Address copyWith({String? addressLine1, String? addressLine2, String? addressLine3, String? city, String? province, String? postalCode, String? country, double? latitude, double? longitude}) {
+  Address copyWith({String? address, double? latitude, double? longitude}) {
     return Address._internal(
-      addressLine1: addressLine1 ?? this.addressLine1,
-      addressLine2: addressLine2 ?? this.addressLine2,
-      addressLine3: addressLine3 ?? this.addressLine3,
-      city: city ?? this.city,
-      province: province ?? this.province,
-      postalCode: postalCode ?? this.postalCode,
-      country: country ?? this.country,
+      address: address ?? this.address,
       latitude: latitude ?? this.latitude,
       longitude: longitude ?? this.longitude);
   }
   
   Address copyWithModelFieldValues({
-    ModelFieldValue<String>? addressLine1,
-    ModelFieldValue<String?>? addressLine2,
-    ModelFieldValue<String?>? addressLine3,
-    ModelFieldValue<String>? city,
-    ModelFieldValue<String>? province,
-    ModelFieldValue<String>? postalCode,
-    ModelFieldValue<String>? country,
+    ModelFieldValue<String>? address,
     ModelFieldValue<double>? latitude,
     ModelFieldValue<double>? longitude
   }) {
     return Address._internal(
-      addressLine1: addressLine1 == null ? this.addressLine1 : addressLine1.value,
-      addressLine2: addressLine2 == null ? this.addressLine2 : addressLine2.value,
-      addressLine3: addressLine3 == null ? this.addressLine3 : addressLine3.value,
-      city: city == null ? this.city : city.value,
-      province: province == null ? this.province : province.value,
-      postalCode: postalCode == null ? this.postalCode : postalCode.value,
-      country: country == null ? this.country : country.value,
+      address: address == null ? this.address : address.value,
       latitude: latitude == null ? this.latitude : latitude.value,
       longitude: longitude == null ? this.longitude : longitude.value
     );
   }
   
   Address.fromJson(Map<String, dynamic> json)  
-    : _addressLine1 = json['addressLine1'],
-      _addressLine2 = json['addressLine2'],
-      _addressLine3 = json['addressLine3'],
-      _city = json['city'],
-      _province = json['province'],
-      _postalCode = json['postalCode'],
-      _country = json['country'],
+    : _address = json['address'],
       _latitude = (json['latitude'] as num?)?.toDouble(),
       _longitude = (json['longitude'] as num?)?.toDouble();
   
   Map<String, dynamic> toJson() => {
-    'addressLine1': _addressLine1, 'addressLine2': _addressLine2, 'addressLine3': _addressLine3, 'city': _city, 'province': _province, 'postalCode': _postalCode, 'country': _country, 'latitude': _latitude, 'longitude': _longitude
+    'address': _address, 'latitude': _latitude, 'longitude': _longitude
   };
   
   Map<String, Object?> toMap() => {
-    'addressLine1': _addressLine1,
-    'addressLine2': _addressLine2,
-    'addressLine3': _addressLine3,
-    'city': _city,
-    'province': _province,
-    'postalCode': _postalCode,
-    'country': _country,
+    'address': _address,
     'latitude': _latitude,
     'longitude': _longitude
   };
@@ -259,43 +145,7 @@ class Address {
     modelSchemaDefinition.pluralName = "Addresses";
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
-      fieldName: 'addressLine1',
-      isRequired: true,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
-      fieldName: 'addressLine2',
-      isRequired: false,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
-      fieldName: 'addressLine3',
-      isRequired: false,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
-      fieldName: 'city',
-      isRequired: true,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
-      fieldName: 'province',
-      isRequired: true,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
-      fieldName: 'postalCode',
-      isRequired: true,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
-      fieldName: 'country',
+      fieldName: 'address',
       isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));

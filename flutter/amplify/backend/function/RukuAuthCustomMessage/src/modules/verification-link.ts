@@ -7,8 +7,8 @@ export default async (event: Event) => {
 			return _signUpMessage(event)
 		// case "CustomMessage_AdminCreateUser": //When the user is created with adminCreateUser() API
 		// 	return adminCreateUserMessage(event)
-		// case "CustomMessage_ResendCode": //When user requests the code again.
-		// 	return resendCodeMessage(event)
+		case "CustomMessage_ResendCode": //When user requests the code again.
+			return _signUpMessage(event)
 		// case "CustomMessage_ForgotPassword": //Forgot password request initiated by user
 		// 	return forgotPassword(event)
 		// case "CustomMessage_UpdateUserAttribute": //Whenever the user attributes are updated

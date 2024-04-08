@@ -25,7 +25,7 @@
           "EMAILSUBJECT": "Confirm your account",
           "EMAILMESSAGE": "Tap the link to confirm your account.",
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/RukuAuthCustomMessage-6a633871763731367442-build.zip"
+          "s3Key": "amplify-builds/RukuAuthCustomMessage-704c413630436d736969-build.zip"
         },
         "RukuAuthPostAuthentication": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
@@ -56,7 +56,7 @@
         },
         "AdminQueriesa8865030": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/AdminQueriesa8865030-34664b41446d2b304548-build.zip"
+          "s3Key": "amplify-builds/AdminQueriesa8865030-5443362f44484c426f6c-build.zip"
         },
         "rukuCommonLayerTs": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",

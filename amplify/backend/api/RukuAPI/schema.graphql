@@ -331,7 +331,7 @@ type Service
 
 type User
 	@model(
-		mutations: { create: null, update: "updateUser", delete: null }
+		mutations: { create: null, delete: null }
 	)
   @auth(
     rules: [

@@ -87,7 +87,7 @@ jobs:
             #       color: 0x0000ff
 
             - name: Install Lambda Layer Packages
-              run: cd amplify/backend/function/deendownCommonLayerTs/lib/nodejs && pnpm i --no-frozen-lockfile && cd -
+              run: cd amplify/backend/function/rukuCommonLayerTs/lib/nodejs && pnpm i --no-frozen-lockfile && cd -
               shell: bash
 
             - name: Run amplify push

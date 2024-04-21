@@ -502,6 +502,7 @@ enum ServiceType {
 }
 
 enum UploadType {
+  ANNOUNCEMENT
   SELFIE
   MOSQUE
   RESOURCE

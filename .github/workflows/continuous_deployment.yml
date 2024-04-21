@@ -68,7 +68,7 @@ jobs:
                   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                   AMPLIFY_APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
                   AMPLIFY_ENV: ${{ github.ref_name }}
-                  AMPLIFY_PROJECT_NAME: ${{ secrets.AMPLIFY_PROJECT_NAME }}
+                  AMPLIFY_PROJECT_NAME: ${{ vars.AMPLIFY_PROJECT_NAME }}
                   AWS_APP_CLIENT_ID: ${{ secrets.AWS_APP_CLIENT_ID }}
                   AWS_APP_CLIENT_WEB_ID: ${{ secrets.AWS_APP_CLIENT_WEB_ID }}
                   AWS_COGNITO_IDENTITY_POOL_ID: ${{ secrets.AWS_COGNITO_IDENTITY_POOL_ID }}

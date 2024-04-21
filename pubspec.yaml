@@ -7,15 +7,15 @@ environment:
   sdk: '>=3.3.0 <4.0.0'
 
 dependencies:
-  amplify_datastore: ^1.6.0
-  amplify_flutter: ^1.6.1
+  amplify_datastore: ^1.8.0
+  amplify_flutter: ^1.8.0
   flutter:
     sdk: flutter
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^3.0.0
+  flutter_lints: ^3.0.2
 
 flutter:
   uses-material-design: true

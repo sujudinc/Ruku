@@ -31,9 +31,14 @@ class Mosque extends amplify_core.Model {
   final String? _name;
   final String? _description;
   final List<String>? _images;
-  final Address? _address;
+  final String? _address;
+  final double? _latitude;
+  final double? _longitude;
   final Hours? _hours;
-  final ContactInfo? _contactInfo;
+  final String? _phone;
+  final String? _email;
+  final String? _website;
+  final SocialMedia? _socialMedia;
   final String? _liveVideoUrl;
   final User? _creator;
   final List<MosqueFollowers>? _followers;
@@ -105,9 +110,35 @@ class Mosque extends amplify_core.Model {
     }
   }
   
-  Address get address {
+  String get address {
     try {
       return _address!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
+  }
+  
+  double get latitude {
+    try {
+      return _latitude!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
+  }
+  
+  double get longitude {
+    try {
+      return _longitude!;
     } catch(e) {
       throw amplify_core.AmplifyCodeGenModelException(
           amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
@@ -122,17 +153,20 @@ class Mosque extends amplify_core.Model {
     return _hours;
   }
   
-  ContactInfo get contactInfo {
-    try {
-      return _contactInfo!;
-    } catch(e) {
-      throw amplify_core.AmplifyCodeGenModelException(
-          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
-          recoverySuggestion:
-            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
-          underlyingException: e.toString()
-          );
-    }
+  String? get phone {
+    return _phone;
+  }
+  
+  String? get email {
+    return _email;
+  }
+  
+  String? get website {
+    return _website;
+  }
+  
+  SocialMedia? get socialMedia {
+    return _socialMedia;
   }
   
   String? get liveVideoUrl {
@@ -216,17 +250,22 @@ class Mosque extends amplify_core.Model {
     return _updatedAt;
   }
   
-  const Mosque._internal({required this.id, required name, required description, required images, required address, hours, required contactInfo, liveVideoUrl, required creator, followers, announcements, classes, committees, gatherings, fundraisingCampaigns, monthlyPrayerSchedules, resources, services, subscriptions, volunteerTasks, bookmarks, likes, comments, createdAt, updatedAt}): _name = name, _description = description, _images = images, _address = address, _hours = hours, _contactInfo = contactInfo, _liveVideoUrl = liveVideoUrl, _creator = creator, _followers = followers, _announcements = announcements, _classes = classes, _committees = committees, _gatherings = gatherings, _fundraisingCampaigns = fundraisingCampaigns, _monthlyPrayerSchedules = monthlyPrayerSchedules, _resources = resources, _services = services, _subscriptions = subscriptions, _volunteerTasks = volunteerTasks, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt;
+  const Mosque._internal({required this.id, required name, required description, required images, required address, required latitude, required longitude, hours, phone, email, website, socialMedia, liveVideoUrl, required creator, followers, announcements, classes, committees, gatherings, fundraisingCampaigns, monthlyPrayerSchedules, resources, services, subscriptions, volunteerTasks, bookmarks, likes, comments, createdAt, updatedAt}): _name = name, _description = description, _images = images, _address = address, _latitude = latitude, _longitude = longitude, _hours = hours, _phone = phone, _email = email, _website = website, _socialMedia = socialMedia, _liveVideoUrl = liveVideoUrl, _creator = creator, _followers = followers, _announcements = announcements, _classes = classes, _committees = committees, _gatherings = gatherings, _fundraisingCampaigns = fundraisingCampaigns, _monthlyPrayerSchedules = monthlyPrayerSchedules, _resources = resources, _services = services, _subscriptions = subscriptions, _volunteerTasks = volunteerTasks, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt;
   
-  factory Mosque({String? id, required String name, required String description, required List<String> images, required Address address, Hours? hours, required ContactInfo contactInfo, String? liveVideoUrl, required User creator, List<MosqueFollowers>? followers, List<Announcement>? announcements, List<Class>? classes, List<Committee>? committees, List<Gathering>? gatherings, List<FundraisingCampaign>? fundraisingCampaigns, List<MonthlyPrayerSchedule>? monthlyPrayerSchedules, List<Resource>? resources, List<Service>? services, List<MosqueSubscription>? subscriptions, List<VolunteerTask>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  factory Mosque({String? id, required String name, required String description, required List<String> images, required String address, required double latitude, required double longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, required User creator, List<MosqueFollowers>? followers, List<Announcement>? announcements, List<Class>? classes, List<Committee>? committees, List<Gathering>? gatherings, List<FundraisingCampaign>? fundraisingCampaigns, List<MonthlyPrayerSchedule>? monthlyPrayerSchedules, List<Resource>? resources, List<Service>? services, List<MosqueSubscription>? subscriptions, List<VolunteerTask>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return Mosque._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       name: name,
       description: description,
       images: images != null ? List<String>.unmodifiable(images) : images,
       address: address,
+      latitude: latitude,
+      longitude: longitude,
       hours: hours,
-      contactInfo: contactInfo,
+      phone: phone,
+      email: email,
+      website: website,
+      socialMedia: socialMedia,
       liveVideoUrl: liveVideoUrl,
       creator: creator,
       followers: followers != null ? List<MosqueFollowers>.unmodifiable(followers) : followers,
@@ -260,8 +299,13 @@ class Mosque extends amplify_core.Model {
       _description == other._description &&
       DeepCollectionEquality().equals(_images, other._images) &&
       _address == other._address &&
+      _latitude == other._latitude &&
+      _longitude == other._longitude &&
       _hours == other._hours &&
-      _contactInfo == other._contactInfo &&
+      _phone == other._phone &&
+      _email == other._email &&
+      _website == other._website &&
+      _socialMedia == other._socialMedia &&
       _liveVideoUrl == other._liveVideoUrl &&
       _creator == other._creator &&
       DeepCollectionEquality().equals(_followers, other._followers) &&
@@ -294,9 +338,14 @@ class Mosque extends amplify_core.Model {
     buffer.write("name=" + "$_name" + ", ");
     buffer.write("description=" + "$_description" + ", ");
     buffer.write("images=" + (_images != null ? _images!.toString() : "null") + ", ");
-    buffer.write("address=" + (_address != null ? _address!.toString() : "null") + ", ");
+    buffer.write("address=" + "$_address" + ", ");
+    buffer.write("latitude=" + (_latitude != null ? _latitude!.toString() : "null") + ", ");
+    buffer.write("longitude=" + (_longitude != null ? _longitude!.toString() : "null") + ", ");
     buffer.write("hours=" + (_hours != null ? _hours!.toString() : "null") + ", ");
-    buffer.write("contactInfo=" + (_contactInfo != null ? _contactInfo!.toString() : "null") + ", ");
+    buffer.write("phone=" + "$_phone" + ", ");
+    buffer.write("email=" + "$_email" + ", ");
+    buffer.write("website=" + "$_website" + ", ");
+    buffer.write("socialMedia=" + (_socialMedia != null ? _socialMedia!.toString() : "null") + ", ");
     buffer.write("liveVideoUrl=" + "$_liveVideoUrl" + ", ");
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
@@ -306,15 +355,20 @@ class Mosque extends amplify_core.Model {
     return buffer.toString();
   }
   
-  Mosque copyWith({String? name, String? description, List<String>? images, Address? address, Hours? hours, ContactInfo? contactInfo, String? liveVideoUrl, User? creator, List<MosqueFollowers>? followers, List<Announcement>? announcements, List<Class>? classes, List<Committee>? committees, List<Gathering>? gatherings, List<FundraisingCampaign>? fundraisingCampaigns, List<MonthlyPrayerSchedule>? monthlyPrayerSchedules, List<Resource>? resources, List<Service>? services, List<MosqueSubscription>? subscriptions, List<VolunteerTask>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  Mosque copyWith({String? name, String? description, List<String>? images, String? address, double? latitude, double? longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, User? creator, List<MosqueFollowers>? followers, List<Announcement>? announcements, List<Class>? classes, List<Committee>? committees, List<Gathering>? gatherings, List<FundraisingCampaign>? fundraisingCampaigns, List<MonthlyPrayerSchedule>? monthlyPrayerSchedules, List<Resource>? resources, List<Service>? services, List<MosqueSubscription>? subscriptions, List<VolunteerTask>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return Mosque._internal(
       id: id,
       name: name ?? this.name,
       description: description ?? this.description,
       images: images ?? this.images,
       address: address ?? this.address,
+      latitude: latitude ?? this.latitude,
+      longitude: longitude ?? this.longitude,
       hours: hours ?? this.hours,
-      contactInfo: contactInfo ?? this.contactInfo,
+      phone: phone ?? this.phone,
+      email: email ?? this.email,
+      website: website ?? this.website,
+      socialMedia: socialMedia ?? this.socialMedia,
       liveVideoUrl: liveVideoUrl ?? this.liveVideoUrl,
       creator: creator ?? this.creator,
       followers: followers ?? this.followers,
@@ -338,10 +392,15 @@ class Mosque extends amplify_core.Model {
   Mosque copyWithModelFieldValues({
     ModelFieldValue<String>? name,
     ModelFieldValue<String>? description,
-    ModelFieldValue<List<String>?>? images,
-    ModelFieldValue<Address>? address,
+    ModelFieldValue<List<String>>? images,
+    ModelFieldValue<String>? address,
+    ModelFieldValue<double>? latitude,
+    ModelFieldValue<double>? longitude,
     ModelFieldValue<Hours?>? hours,
-    ModelFieldValue<ContactInfo>? contactInfo,
+    ModelFieldValue<String?>? phone,
+    ModelFieldValue<String?>? email,
+    ModelFieldValue<String?>? website,
+    ModelFieldValue<SocialMedia?>? socialMedia,
     ModelFieldValue<String?>? liveVideoUrl,
     ModelFieldValue<User>? creator,
     ModelFieldValue<List<MosqueFollowers>?>? followers,
@@ -367,8 +426,13 @@ class Mosque extends amplify_core.Model {
       description: description == null ? this.description : description.value,
       images: images == null ? this.images : images.value,
       address: address == null ? this.address : address.value,
+      latitude: latitude == null ? this.latitude : latitude.value,
+      longitude: longitude == null ? this.longitude : longitude.value,
       hours: hours == null ? this.hours : hours.value,
-      contactInfo: contactInfo == null ? this.contactInfo : contactInfo.value,
+      phone: phone == null ? this.phone : phone.value,
+      email: email == null ? this.email : email.value,
+      website: website == null ? this.website : website.value,
+      socialMedia: socialMedia == null ? this.socialMedia : socialMedia.value,
       liveVideoUrl: liveVideoUrl == null ? this.liveVideoUrl : liveVideoUrl.value,
       creator: creator == null ? this.creator : creator.value,
       followers: followers == null ? this.followers : followers.value,
@@ -395,14 +459,17 @@ class Mosque extends amplify_core.Model {
       _name = json['name'],
       _description = json['description'],
       _images = json['images']?.cast<String>(),
-      _address = json['address']?['serializedData'] != null
-        ? Address.fromJson(new Map<String, dynamic>.from(json['address']['serializedData']))
-        : null,
+      _address = json['address'],
+      _latitude = (json['latitude'] as num?)?.toDouble(),
+      _longitude = (json['longitude'] as num?)?.toDouble(),
       _hours = json['hours']?['serializedData'] != null
         ? Hours.fromJson(new Map<String, dynamic>.from(json['hours']['serializedData']))
         : null,
-      _contactInfo = json['contactInfo']?['serializedData'] != null
-        ? ContactInfo.fromJson(new Map<String, dynamic>.from(json['contactInfo']['serializedData']))
+      _phone = json['phone'],
+      _email = json['email'],
+      _website = json['website'],
+      _socialMedia = json['socialMedia']?['serializedData'] != null
+        ? SocialMedia.fromJson(new Map<String, dynamic>.from(json['socialMedia']['serializedData']))
         : null,
       _liveVideoUrl = json['liveVideoUrl'],
       _creator = json['creator']?['serializedData'] != null
@@ -496,7 +563,7 @@ class Mosque extends amplify_core.Model {
       _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'name': _name, 'description': _description, 'images': _images, 'address': _address?.toJson(), 'hours': _hours?.toJson(), 'contactInfo': _contactInfo?.toJson(), 'liveVideoUrl': _liveVideoUrl, 'creator': _creator?.toJson(), 'followers': _followers?.map((MosqueFollowers? e) => e?.toJson()).toList(), 'announcements': _announcements?.map((Announcement? e) => e?.toJson()).toList(), 'classes': _classes?.map((Class? e) => e?.toJson()).toList(), 'committees': _committees?.map((Committee? e) => e?.toJson()).toList(), 'gatherings': _gatherings?.map((Gathering? e) => e?.toJson()).toList(), 'fundraisingCampaigns': _fundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'monthlyPrayerSchedules': _monthlyPrayerSchedules?.map((MonthlyPrayerSchedule? e) => e?.toJson()).toList(), 'resources': _resources?.map((Resource? e) => e?.toJson()).toList(), 'services': _services?.map((Service? e) => e?.toJson()).toList(), 'subscriptions': _subscriptions?.map((MosqueSubscription? e) => e?.toJson()).toList(), 'volunteerTasks': _volunteerTasks?.map((VolunteerTask? e) => e?.toJson()).toList(), 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'name': _name, 'description': _description, 'images': _images, 'address': _address, 'latitude': _latitude, 'longitude': _longitude, 'hours': _hours?.toJson(), 'phone': _phone, 'email': _email, 'website': _website, 'socialMedia': _socialMedia?.toJson(), 'liveVideoUrl': _liveVideoUrl, 'creator': _creator?.toJson(), 'followers': _followers?.map((MosqueFollowers? e) => e?.toJson()).toList(), 'announcements': _announcements?.map((Announcement? e) => e?.toJson()).toList(), 'classes': _classes?.map((Class? e) => e?.toJson()).toList(), 'committees': _committees?.map((Committee? e) => e?.toJson()).toList(), 'gatherings': _gatherings?.map((Gathering? e) => e?.toJson()).toList(), 'fundraisingCampaigns': _fundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'monthlyPrayerSchedules': _monthlyPrayerSchedules?.map((MonthlyPrayerSchedule? e) => e?.toJson()).toList(), 'resources': _resources?.map((Resource? e) => e?.toJson()).toList(), 'services': _services?.map((Service? e) => e?.toJson()).toList(), 'subscriptions': _subscriptions?.map((MosqueSubscription? e) => e?.toJson()).toList(), 'volunteerTasks': _volunteerTasks?.map((VolunteerTask? e) => e?.toJson()).toList(), 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
   };
   
   Map<String, Object?> toMap() => {
@@ -505,8 +572,13 @@ class Mosque extends amplify_core.Model {
     'description': _description,
     'images': _images,
     'address': _address,
+    'latitude': _latitude,
+    'longitude': _longitude,
     'hours': _hours,
-    'contactInfo': _contactInfo,
+    'phone': _phone,
+    'email': _email,
+    'website': _website,
+    'socialMedia': _socialMedia,
     'liveVideoUrl': _liveVideoUrl,
     'creator': _creator,
     'followers': _followers,
@@ -533,8 +605,13 @@ class Mosque extends amplify_core.Model {
   static final DESCRIPTION = amplify_core.QueryField(fieldName: "description");
   static final IMAGES = amplify_core.QueryField(fieldName: "images");
   static final ADDRESS = amplify_core.QueryField(fieldName: "address");
+  static final LATITUDE = amplify_core.QueryField(fieldName: "latitude");
+  static final LONGITUDE = amplify_core.QueryField(fieldName: "longitude");
   static final HOURS = amplify_core.QueryField(fieldName: "hours");
-  static final CONTACTINFO = amplify_core.QueryField(fieldName: "contactInfo");
+  static final PHONE = amplify_core.QueryField(fieldName: "phone");
+  static final EMAIL = amplify_core.QueryField(fieldName: "email");
+  static final WEBSITE = amplify_core.QueryField(fieldName: "website");
+  static final SOCIALMEDIA = amplify_core.QueryField(fieldName: "socialMedia");
   static final LIVEVIDEOURL = amplify_core.QueryField(fieldName: "liveVideoUrl");
   static final CREATOR = amplify_core.QueryField(
     fieldName: "creator",
@@ -636,10 +713,22 @@ class Mosque extends amplify_core.Model {
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.collection, ofModelName: amplify_core.ModelFieldTypeEnum.string.name)
     ));
     
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.embedded(
-      fieldName: 'address',
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Mosque.ADDRESS,
       isRequired: true,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.embedded, ofCustomTypeName: 'Address')
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Mosque.LATITUDE,
+      isRequired: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.double)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Mosque.LONGITUDE,
+      isRequired: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.double)
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.embedded(
@@ -648,10 +737,28 @@ class Mosque extends amplify_core.Model {
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.embedded, ofCustomTypeName: 'Hours')
     ));
     
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Mosque.PHONE,
+      isRequired: false,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Mosque.EMAIL,
+      isRequired: false,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Mosque.WEBSITE,
+      isRequired: false,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+    ));
+    
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.embedded(
-      fieldName: 'contactInfo',
-      isRequired: true,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.embedded, ofCustomTypeName: 'ContactInfo')
+      fieldName: 'socialMedia',
+      isRequired: false,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.embedded, ofCustomTypeName: 'SocialMedia')
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(

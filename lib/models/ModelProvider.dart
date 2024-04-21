@@ -40,22 +40,18 @@ import 'Service.dart';
 import 'User.dart';
 import 'VolunteerTask.dart';
 import 'VolunteerTaskUser.dart';
-import 'Address.dart';
-import 'ContactInfo.dart';
 import 'Day.dart';
 import 'Hours.dart';
 import 'OperatingHours.dart';
 import 'PrayerTime.dart';
 import 'SocialMedia.dart';
 
-export 'Address.dart';
 export 'Announcement.dart';
 export 'Bookmark.dart';
 export 'Class.dart';
 export 'Comment.dart';
 export 'Committee.dart';
 export 'CommitteeMembers.dart';
-export 'ContactInfo.dart';
 export 'Day.dart';
 export 'DayType.dart';
 export 'Donation.dart';
@@ -88,11 +84,11 @@ export 'VolunteerTaskUser.dart';
 
 class ModelProvider implements amplify_core.ModelProviderInterface {
   @override
-  String version = "7613b402df34a7c791a03ae0590de5e7";
+  String version = "9915dc0828cf586347418a01f8bb5c23";
   @override
   List<amplify_core.ModelSchema> modelSchemas = [Announcement.schema, Bookmark.schema, Class.schema, Comment.schema, Committee.schema, CommitteeMembers.schema, Donation.schema, FundraisingCampaign.schema, Gathering.schema, GatheringAttendees.schema, Like.schema, MonthlyPrayerSchedule.schema, Mosque.schema, MosqueFollowers.schema, MosqueSubscription.schema, Resource.schema, Service.schema, User.schema, VolunteerTask.schema, VolunteerTaskUser.schema];
   @override
-  List<amplify_core.ModelSchema> customTypeSchemas = [Address.schema, ContactInfo.schema, Day.schema, Hours.schema, OperatingHours.schema, PrayerTime.schema, SocialMedia.schema];
+  List<amplify_core.ModelSchema> customTypeSchemas = [Day.schema, Hours.schema, OperatingHours.schema, PrayerTime.schema, SocialMedia.schema];
   static final ModelProvider _instance = ModelProvider();
 
   static ModelProvider get instance => _instance;

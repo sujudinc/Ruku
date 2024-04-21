@@ -11,5 +11,24 @@
     "READ",
     "DELETE"
   ],
-  "triggerFunction": "RukuStorageTrigger"
+  "triggerFunction": "RukuStorageTrigger",
+  "groupAccess": {
+    "Jamaah": [
+      "READ"
+    ],
+    "Moderator": [
+      "CREATE_AND_UPDATE",
+      "READ"
+    ],
+    "Admin": [
+      "CREATE_AND_UPDATE",
+      "READ",
+      "DELETE"
+    ],
+    "SuperAdmin": [
+      "CREATE_AND_UPDATE",
+      "READ",
+      "DELETE"
+    ]
+  }
 }

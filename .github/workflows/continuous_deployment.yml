@@ -1,0 +1,119 @@
+name: Continous Deployment
+
+on:
+    pull_request:
+        types: [closed]
+        branches:
+            - production
+    push:
+        branches:
+            - dev
+            - staging
+env:
+    GH_TOKEN: ${{ github.token }}
+
+jobs:
+    continous-deployment:
+        runs-on: ubuntu-latest
+        environment: ${{ github.ref_name }}
+        permissions:
+            contents: write
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+              with:
+                  fetch-depth: 2
+
+            - name: Install AWS CLI and configure AWS Profile
+              run: |
+                  aws configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY }} --profile default
+                  aws configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }} --profile default
+                  aws configure set default.region ${{ secrets.AMPLIFY_REGION }}
+
+            - name: Check for changes in amplify folder
+              id: git-diff
+              run: |
+                  if git diff-index --quiet --exit-code HEAD~1 -- amplify/; then
+                  echo "No changes in amplify folder"
+                  echo "::set-output name=changes::false"
+                  else
+                  echo "::set-output name=changes::true"
+                  fi
+
+            # - name: Notify Discord on No Changes
+            #   uses: sarisia/actions-status-discord@v1
+            #   if: ${{ steps.git-diff.outputs.changes == 'false' }}
+            #   with:
+            #       webhook: ${{ secrets.DISCORD_WEBHOOK_DEPLOYMENT }}
+            #       title: "No Changes in Amplify Folder :information_source:"
+            #       description: "No changes have been made in the amplify folder. The deployment has been skipped."
+            #       color: 0x000000
+
+            - name: End Workflow if no changes
+              if: ${{ steps.git-diff.outputs.changes == 'false' }}
+              run: exit 1
+
+            - name: Setup Node
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "latest"
+
+            - name: Install Amplify
+              run: npm install -g pnpm @aws-amplify/cli --unsafe-perm=true
+
+            - name: Run amplify init
+              env:
+                  AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  AMPLIFY_APP_ID: ${{ secrets.AMPLIFY_APP_ID }}
+                  AMPLIFY_ENV: ${{ github.ref_name }}
+                  AMPLIFY_PROJECT_NAME: ${{ secrets.AMPLIFY_PROJECT_NAME }}
+                  AWS_APP_CLIENT_ID: ${{ secrets.AWS_APP_CLIENT_ID }}
+                  AWS_APP_CLIENT_WEB_ID: ${{ secrets.AWS_APP_CLIENT_WEB_ID }}
+                  AWS_COGNITO_IDENTITY_POOL_ID: ${{ secrets.AWS_COGNITO_IDENTITY_POOL_ID }}
+                  AWS_GOOGLE_CLIENT_ID: ${{ secrets.AWS_GOOGLE_CLIENT_ID }}
+                  AWS_GOOGLE_CLIENT_SECRET: ${{ secrets.AWS_GOOGLE_CLIENT_SECRET }}
+                  AWS_USER_POOLS_ID: ${{ secrets.AWS_USER_POOLS_ID }}
+              run: ./scripts/amplify/init.sh
+              shell: bash
+
+            # - name: Notify Discord on Deployment Start
+            #   uses: sarisia/actions-status-discord@v1
+            #   with:
+            #       webhook: ${{ secrets.DISCORD_WEBHOOK_DEPLOYMENT }}
+            #       title: "Starting Backend Deployment to ${{ github.ref_name }} Environment 🚀"
+            #       description: "The build is starting deployment to the ${{ github.ref_name }} Environment :rocket:. Please wait for the deployment to complete."
+            #       color: 0x0000ff
+
+            - name: Install Lambda Layer Packages
+              run: cd amplify/backend/function/deendownCommonLayerTs/lib/nodejs && pnpm i --no-frozen-lockfile && cd -
+              shell: bash
+
+            - name: Run amplify push
+              run: ./scripts/amplify/push.sh
+              shell: bash
+
+            - name: Post amplify push
+              uses: stefanzweifel/git-auto-commit-action@v5
+              with:
+                  commit_message: "cd: post amplify push | run number ${{ github.run_number }}"
+                  file_pattern: amplify/* src/*
+
+            # - name: Notify Discord on Deployment Success
+            #   uses: sarisia/actions-status-discord@v1
+            #   if: success()
+            #   with:
+            #       webhook: ${{ secrets.DISCORD_WEBHOOK_DEPLOYMENT }}
+            #       title: "Backend Deployment to ${{ github.ref_name }} Environment ✅"
+            #       description: "The build has been successfully deployed to the ${{ github.ref_name }} Environment :rocket:. Please check the changes and verify the deployment."
+            #       color: 0x00ff00
+
+            # - name: Notify Discord on Deployment Failure
+            #   uses: sarisia/actions-status-discord@v1
+            #   if: failure()
+            #   with:
+            #       webhook: ${{ secrets.DISCORD_WEBHOOK_DEPLOYMENT }}
+            #       title: "Backend Deployment to ${{ github.ref_name }} Environment ❌"
+            #       description: "The build has failed to deploy to the ${{ github.ref_name }} Environment :x:. Please check the logs and fix the issue."
+            #       color: 0xff0000

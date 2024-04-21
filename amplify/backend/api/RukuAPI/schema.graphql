@@ -368,6 +368,7 @@ type User
   mosques: [Mosque] @manyToMany(relationName: "MosqueFollowers")
   purchasedSubscriptions: [MosqueSubscription] @hasMany(indexName: "byPurchaserId", fields: ["id"])
   volunteerTasks: [VolunteerTask] @manyToMany(relationName: "VolunteerTaskUser")
+  likes: [Like] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }

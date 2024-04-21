@@ -36,6 +36,8 @@ class User extends amplify_core.Model {
   final UserType? _type;
   final UserStatus? _status;
   final String? _stripeCustomerId;
+  final List<Bookmark>? _bookmarks;
+  final List<Comment>? _comments;
   final List<Announcement>? _createdAnnouncements;
   final List<Class>? _createdClasses;
   final List<Committee>? _createdCommittees;
@@ -53,9 +55,7 @@ class User extends amplify_core.Model {
   final List<MosqueFollowers>? _mosques;
   final List<MosqueSubscription>? _purchasedSubscriptions;
   final List<VolunteerTaskUser>? _volunteerTasks;
-  final List<Bookmark>? _bookmarks;
   final List<Like>? _likes;
-  final List<Comment>? _comments;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
 
@@ -149,6 +149,14 @@ class User extends amplify_core.Model {
     return _stripeCustomerId;
   }
   
+  List<Bookmark>? get bookmarks {
+    return _bookmarks;
+  }
+  
+  List<Comment>? get comments {
+    return _comments;
+  }
+  
   List<Announcement>? get createdAnnouncements {
     return _createdAnnouncements;
   }
@@ -217,16 +225,8 @@ class User extends amplify_core.Model {
     return _volunteerTasks;
   }
   
-  List<Bookmark>? get bookmarks {
-    return _bookmarks;
-  }
-  
   List<Like>? get likes {
     return _likes;
-  }
-  
-  List<Comment>? get comments {
-    return _comments;
   }
   
   amplify_core.TemporalDateTime? get createdAt {
@@ -237,9 +237,9 @@ class User extends amplify_core.Model {
     return _updatedAt;
   }
   
-  const User._internal({required this.id, selfie, required firstName, required lastName, required email, phone, required type, required status, stripeCustomerId, createdAnnouncements, createdClasses, createdCommittees, createdGatherings, createdFundraisingCampaigns, createdMonthlyPrayerSchedules, createdMosques, createdResources, createdServices, createdVolunteerTasks, donations, committees, gatherings, instructingClasses, mosques, purchasedSubscriptions, volunteerTasks, bookmarks, likes, comments, createdAt, updatedAt}): _selfie = selfie, _firstName = firstName, _lastName = lastName, _email = email, _phone = phone, _type = type, _status = status, _stripeCustomerId = stripeCustomerId, _createdAnnouncements = createdAnnouncements, _createdClasses = createdClasses, _createdCommittees = createdCommittees, _createdGatherings = createdGatherings, _createdFundraisingCampaigns = createdFundraisingCampaigns, _createdMonthlyPrayerSchedules = createdMonthlyPrayerSchedules, _createdMosques = createdMosques, _createdResources = createdResources, _createdServices = createdServices, _createdVolunteerTasks = createdVolunteerTasks, _donations = donations, _committees = committees, _gatherings = gatherings, _instructingClasses = instructingClasses, _mosques = mosques, _purchasedSubscriptions = purchasedSubscriptions, _volunteerTasks = volunteerTasks, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt;
+  const User._internal({required this.id, selfie, required firstName, required lastName, required email, phone, required type, required status, stripeCustomerId, bookmarks, comments, createdAnnouncements, createdClasses, createdCommittees, createdGatherings, createdFundraisingCampaigns, createdMonthlyPrayerSchedules, createdMosques, createdResources, createdServices, createdVolunteerTasks, donations, committees, gatherings, instructingClasses, mosques, purchasedSubscriptions, volunteerTasks, likes, createdAt, updatedAt}): _selfie = selfie, _firstName = firstName, _lastName = lastName, _email = email, _phone = phone, _type = type, _status = status, _stripeCustomerId = stripeCustomerId, _bookmarks = bookmarks, _comments = comments, _createdAnnouncements = createdAnnouncements, _createdClasses = createdClasses, _createdCommittees = createdCommittees, _createdGatherings = createdGatherings, _createdFundraisingCampaigns = createdFundraisingCampaigns, _createdMonthlyPrayerSchedules = createdMonthlyPrayerSchedules, _createdMosques = createdMosques, _createdResources = createdResources, _createdServices = createdServices, _createdVolunteerTasks = createdVolunteerTasks, _donations = donations, _committees = committees, _gatherings = gatherings, _instructingClasses = instructingClasses, _mosques = mosques, _purchasedSubscriptions = purchasedSubscriptions, _volunteerTasks = volunteerTasks, _likes = likes, _createdAt = createdAt, _updatedAt = updatedAt;
   
-  factory User({String? id, String? selfie, required String firstName, required String lastName, required String email, String? phone, required UserType type, required UserStatus status, String? stripeCustomerId, List<Announcement>? createdAnnouncements, List<Class>? createdClasses, List<Committee>? createdCommittees, List<Gathering>? createdGatherings, List<FundraisingCampaign>? createdFundraisingCampaigns, List<MonthlyPrayerSchedule>? createdMonthlyPrayerSchedules, List<Mosque>? createdMosques, List<Resource>? createdResources, List<Service>? createdServices, List<VolunteerTask>? createdVolunteerTasks, List<Donation>? donations, List<CommitteeMembers>? committees, List<GatheringAttendees>? gatherings, List<Class>? instructingClasses, List<MosqueFollowers>? mosques, List<MosqueSubscription>? purchasedSubscriptions, List<VolunteerTaskUser>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  factory User({String? id, String? selfie, required String firstName, required String lastName, required String email, String? phone, required UserType type, required UserStatus status, String? stripeCustomerId, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<Class>? createdClasses, List<Committee>? createdCommittees, List<Gathering>? createdGatherings, List<FundraisingCampaign>? createdFundraisingCampaigns, List<MonthlyPrayerSchedule>? createdMonthlyPrayerSchedules, List<Mosque>? createdMosques, List<Resource>? createdResources, List<Service>? createdServices, List<VolunteerTask>? createdVolunteerTasks, List<Donation>? donations, List<CommitteeMembers>? committees, List<GatheringAttendees>? gatherings, List<Class>? instructingClasses, List<MosqueFollowers>? mosques, List<MosqueSubscription>? purchasedSubscriptions, List<VolunteerTaskUser>? volunteerTasks, List<Like>? likes, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return User._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       selfie: selfie,
@@ -250,6 +250,8 @@ class User extends amplify_core.Model {
       type: type,
       status: status,
       stripeCustomerId: stripeCustomerId,
+      bookmarks: bookmarks != null ? List<Bookmark>.unmodifiable(bookmarks) : bookmarks,
+      comments: comments != null ? List<Comment>.unmodifiable(comments) : comments,
       createdAnnouncements: createdAnnouncements != null ? List<Announcement>.unmodifiable(createdAnnouncements) : createdAnnouncements,
       createdClasses: createdClasses != null ? List<Class>.unmodifiable(createdClasses) : createdClasses,
       createdCommittees: createdCommittees != null ? List<Committee>.unmodifiable(createdCommittees) : createdCommittees,
@@ -267,9 +269,7 @@ class User extends amplify_core.Model {
       mosques: mosques != null ? List<MosqueFollowers>.unmodifiable(mosques) : mosques,
       purchasedSubscriptions: purchasedSubscriptions != null ? List<MosqueSubscription>.unmodifiable(purchasedSubscriptions) : purchasedSubscriptions,
       volunteerTasks: volunteerTasks != null ? List<VolunteerTaskUser>.unmodifiable(volunteerTasks) : volunteerTasks,
-      bookmarks: bookmarks != null ? List<Bookmark>.unmodifiable(bookmarks) : bookmarks,
       likes: likes != null ? List<Like>.unmodifiable(likes) : likes,
-      comments: comments != null ? List<Comment>.unmodifiable(comments) : comments,
       createdAt: createdAt,
       updatedAt: updatedAt);
   }
@@ -291,6 +291,8 @@ class User extends amplify_core.Model {
       _type == other._type &&
       _status == other._status &&
       _stripeCustomerId == other._stripeCustomerId &&
+      DeepCollectionEquality().equals(_bookmarks, other._bookmarks) &&
+      DeepCollectionEquality().equals(_comments, other._comments) &&
       DeepCollectionEquality().equals(_createdAnnouncements, other._createdAnnouncements) &&
       DeepCollectionEquality().equals(_createdClasses, other._createdClasses) &&
       DeepCollectionEquality().equals(_createdCommittees, other._createdCommittees) &&
@@ -308,9 +310,7 @@ class User extends amplify_core.Model {
       DeepCollectionEquality().equals(_mosques, other._mosques) &&
       DeepCollectionEquality().equals(_purchasedSubscriptions, other._purchasedSubscriptions) &&
       DeepCollectionEquality().equals(_volunteerTasks, other._volunteerTasks) &&
-      DeepCollectionEquality().equals(_bookmarks, other._bookmarks) &&
       DeepCollectionEquality().equals(_likes, other._likes) &&
-      DeepCollectionEquality().equals(_comments, other._comments) &&
       _createdAt == other._createdAt &&
       _updatedAt == other._updatedAt;
   }
@@ -339,7 +339,7 @@ class User extends amplify_core.Model {
     return buffer.toString();
   }
   
-  User copyWith({String? selfie, String? firstName, String? lastName, String? email, String? phone, UserType? type, UserStatus? status, String? stripeCustomerId, List<Announcement>? createdAnnouncements, List<Class>? createdClasses, List<Committee>? createdCommittees, List<Gathering>? createdGatherings, List<FundraisingCampaign>? createdFundraisingCampaigns, List<MonthlyPrayerSchedule>? createdMonthlyPrayerSchedules, List<Mosque>? createdMosques, List<Resource>? createdResources, List<Service>? createdServices, List<VolunteerTask>? createdVolunteerTasks, List<Donation>? donations, List<CommitteeMembers>? committees, List<GatheringAttendees>? gatherings, List<Class>? instructingClasses, List<MosqueFollowers>? mosques, List<MosqueSubscription>? purchasedSubscriptions, List<VolunteerTaskUser>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  User copyWith({String? selfie, String? firstName, String? lastName, String? email, String? phone, UserType? type, UserStatus? status, String? stripeCustomerId, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<Class>? createdClasses, List<Committee>? createdCommittees, List<Gathering>? createdGatherings, List<FundraisingCampaign>? createdFundraisingCampaigns, List<MonthlyPrayerSchedule>? createdMonthlyPrayerSchedules, List<Mosque>? createdMosques, List<Resource>? createdResources, List<Service>? createdServices, List<VolunteerTask>? createdVolunteerTasks, List<Donation>? donations, List<CommitteeMembers>? committees, List<GatheringAttendees>? gatherings, List<Class>? instructingClasses, List<MosqueFollowers>? mosques, List<MosqueSubscription>? purchasedSubscriptions, List<VolunteerTaskUser>? volunteerTasks, List<Like>? likes, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return User._internal(
       id: id,
       selfie: selfie ?? this.selfie,
@@ -350,6 +350,8 @@ class User extends amplify_core.Model {
       type: type ?? this.type,
       status: status ?? this.status,
       stripeCustomerId: stripeCustomerId ?? this.stripeCustomerId,
+      bookmarks: bookmarks ?? this.bookmarks,
+      comments: comments ?? this.comments,
       createdAnnouncements: createdAnnouncements ?? this.createdAnnouncements,
       createdClasses: createdClasses ?? this.createdClasses,
       createdCommittees: createdCommittees ?? this.createdCommittees,
@@ -367,9 +369,7 @@ class User extends amplify_core.Model {
       mosques: mosques ?? this.mosques,
       purchasedSubscriptions: purchasedSubscriptions ?? this.purchasedSubscriptions,
       volunteerTasks: volunteerTasks ?? this.volunteerTasks,
-      bookmarks: bookmarks ?? this.bookmarks,
       likes: likes ?? this.likes,
-      comments: comments ?? this.comments,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt);
   }
@@ -383,6 +383,8 @@ class User extends amplify_core.Model {
     ModelFieldValue<UserType>? type,
     ModelFieldValue<UserStatus>? status,
     ModelFieldValue<String?>? stripeCustomerId,
+    ModelFieldValue<List<Bookmark>?>? bookmarks,
+    ModelFieldValue<List<Comment>?>? comments,
     ModelFieldValue<List<Announcement>?>? createdAnnouncements,
     ModelFieldValue<List<Class>?>? createdClasses,
     ModelFieldValue<List<Committee>?>? createdCommittees,
@@ -400,9 +402,7 @@ class User extends amplify_core.Model {
     ModelFieldValue<List<MosqueFollowers>?>? mosques,
     ModelFieldValue<List<MosqueSubscription>?>? purchasedSubscriptions,
     ModelFieldValue<List<VolunteerTaskUser>?>? volunteerTasks,
-    ModelFieldValue<List<Bookmark>?>? bookmarks,
     ModelFieldValue<List<Like>?>? likes,
-    ModelFieldValue<List<Comment>?>? comments,
     ModelFieldValue<amplify_core.TemporalDateTime?>? createdAt,
     ModelFieldValue<amplify_core.TemporalDateTime?>? updatedAt
   }) {
@@ -416,6 +416,8 @@ class User extends amplify_core.Model {
       type: type == null ? this.type : type.value,
       status: status == null ? this.status : status.value,
       stripeCustomerId: stripeCustomerId == null ? this.stripeCustomerId : stripeCustomerId.value,
+      bookmarks: bookmarks == null ? this.bookmarks : bookmarks.value,
+      comments: comments == null ? this.comments : comments.value,
       createdAnnouncements: createdAnnouncements == null ? this.createdAnnouncements : createdAnnouncements.value,
       createdClasses: createdClasses == null ? this.createdClasses : createdClasses.value,
       createdCommittees: createdCommittees == null ? this.createdCommittees : createdCommittees.value,
@@ -433,9 +435,7 @@ class User extends amplify_core.Model {
       mosques: mosques == null ? this.mosques : mosques.value,
       purchasedSubscriptions: purchasedSubscriptions == null ? this.purchasedSubscriptions : purchasedSubscriptions.value,
       volunteerTasks: volunteerTasks == null ? this.volunteerTasks : volunteerTasks.value,
-      bookmarks: bookmarks == null ? this.bookmarks : bookmarks.value,
       likes: likes == null ? this.likes : likes.value,
-      comments: comments == null ? this.comments : comments.value,
       createdAt: createdAt == null ? this.createdAt : createdAt.value,
       updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value
     );
@@ -451,6 +451,18 @@ class User extends amplify_core.Model {
       _type = amplify_core.enumFromString<UserType>(json['type'], UserType.values),
       _status = amplify_core.enumFromString<UserStatus>(json['status'], UserStatus.values),
       _stripeCustomerId = json['stripeCustomerId'],
+      _bookmarks = json['bookmarks'] is List
+        ? (json['bookmarks'] as List)
+          .where((e) => e?['serializedData'] != null)
+          .map((e) => Bookmark.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
+          .toList()
+        : null,
+      _comments = json['comments'] is List
+        ? (json['comments'] as List)
+          .where((e) => e?['serializedData'] != null)
+          .map((e) => Comment.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
+          .toList()
+        : null,
       _createdAnnouncements = json['createdAnnouncements'] is List
         ? (json['createdAnnouncements'] as List)
           .where((e) => e?['serializedData'] != null)
@@ -553,29 +565,17 @@ class User extends amplify_core.Model {
           .map((e) => VolunteerTaskUser.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
           .toList()
         : null,
-      _bookmarks = json['bookmarks'] is List
-        ? (json['bookmarks'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Bookmark.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
       _likes = json['likes'] is List
         ? (json['likes'] as List)
           .where((e) => e?['serializedData'] != null)
           .map((e) => Like.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
           .toList()
         : null,
-      _comments = json['comments'] is List
-        ? (json['comments'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Comment.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
       _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'selfie': _selfie, 'firstName': _firstName, 'lastName': _lastName, 'email': _email, 'phone': _phone, 'type': amplify_core.enumToString(_type), 'status': amplify_core.enumToString(_status), 'stripeCustomerId': _stripeCustomerId, 'createdAnnouncements': _createdAnnouncements?.map((Announcement? e) => e?.toJson()).toList(), 'createdClasses': _createdClasses?.map((Class? e) => e?.toJson()).toList(), 'createdCommittees': _createdCommittees?.map((Committee? e) => e?.toJson()).toList(), 'createdGatherings': _createdGatherings?.map((Gathering? e) => e?.toJson()).toList(), 'createdFundraisingCampaigns': _createdFundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'createdMonthlyPrayerSchedules': _createdMonthlyPrayerSchedules?.map((MonthlyPrayerSchedule? e) => e?.toJson()).toList(), 'createdMosques': _createdMosques?.map((Mosque? e) => e?.toJson()).toList(), 'createdResources': _createdResources?.map((Resource? e) => e?.toJson()).toList(), 'createdServices': _createdServices?.map((Service? e) => e?.toJson()).toList(), 'createdVolunteerTasks': _createdVolunteerTasks?.map((VolunteerTask? e) => e?.toJson()).toList(), 'donations': _donations?.map((Donation? e) => e?.toJson()).toList(), 'committees': _committees?.map((CommitteeMembers? e) => e?.toJson()).toList(), 'gatherings': _gatherings?.map((GatheringAttendees? e) => e?.toJson()).toList(), 'instructingClasses': _instructingClasses?.map((Class? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((MosqueFollowers? e) => e?.toJson()).toList(), 'purchasedSubscriptions': _purchasedSubscriptions?.map((MosqueSubscription? e) => e?.toJson()).toList(), 'volunteerTasks': _volunteerTasks?.map((VolunteerTaskUser? e) => e?.toJson()).toList(), 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'selfie': _selfie, 'firstName': _firstName, 'lastName': _lastName, 'email': _email, 'phone': _phone, 'type': amplify_core.enumToString(_type), 'status': amplify_core.enumToString(_status), 'stripeCustomerId': _stripeCustomerId, 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAnnouncements': _createdAnnouncements?.map((Announcement? e) => e?.toJson()).toList(), 'createdClasses': _createdClasses?.map((Class? e) => e?.toJson()).toList(), 'createdCommittees': _createdCommittees?.map((Committee? e) => e?.toJson()).toList(), 'createdGatherings': _createdGatherings?.map((Gathering? e) => e?.toJson()).toList(), 'createdFundraisingCampaigns': _createdFundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'createdMonthlyPrayerSchedules': _createdMonthlyPrayerSchedules?.map((MonthlyPrayerSchedule? e) => e?.toJson()).toList(), 'createdMosques': _createdMosques?.map((Mosque? e) => e?.toJson()).toList(), 'createdResources': _createdResources?.map((Resource? e) => e?.toJson()).toList(), 'createdServices': _createdServices?.map((Service? e) => e?.toJson()).toList(), 'createdVolunteerTasks': _createdVolunteerTasks?.map((VolunteerTask? e) => e?.toJson()).toList(), 'donations': _donations?.map((Donation? e) => e?.toJson()).toList(), 'committees': _committees?.map((CommitteeMembers? e) => e?.toJson()).toList(), 'gatherings': _gatherings?.map((GatheringAttendees? e) => e?.toJson()).toList(), 'instructingClasses': _instructingClasses?.map((Class? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((MosqueFollowers? e) => e?.toJson()).toList(), 'purchasedSubscriptions': _purchasedSubscriptions?.map((MosqueSubscription? e) => e?.toJson()).toList(), 'volunteerTasks': _volunteerTasks?.map((VolunteerTaskUser? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
   };
   
   Map<String, Object?> toMap() => {
@@ -588,6 +588,8 @@ class User extends amplify_core.Model {
     'type': _type,
     'status': _status,
     'stripeCustomerId': _stripeCustomerId,
+    'bookmarks': _bookmarks,
+    'comments': _comments,
     'createdAnnouncements': _createdAnnouncements,
     'createdClasses': _createdClasses,
     'createdCommittees': _createdCommittees,
@@ -605,9 +607,7 @@ class User extends amplify_core.Model {
     'mosques': _mosques,
     'purchasedSubscriptions': _purchasedSubscriptions,
     'volunteerTasks': _volunteerTasks,
-    'bookmarks': _bookmarks,
     'likes': _likes,
-    'comments': _comments,
     'createdAt': _createdAt,
     'updatedAt': _updatedAt
   };
@@ -622,6 +622,12 @@ class User extends amplify_core.Model {
   static final TYPE = amplify_core.QueryField(fieldName: "type");
   static final STATUS = amplify_core.QueryField(fieldName: "status");
   static final STRIPECUSTOMERID = amplify_core.QueryField(fieldName: "stripeCustomerId");
+  static final BOOKMARKS = amplify_core.QueryField(
+    fieldName: "bookmarks",
+    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Bookmark'));
+  static final COMMENTS = amplify_core.QueryField(
+    fieldName: "comments",
+    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Comment'));
   static final CREATEDANNOUNCEMENTS = amplify_core.QueryField(
     fieldName: "createdAnnouncements",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Announcement'));
@@ -673,15 +679,9 @@ class User extends amplify_core.Model {
   static final VOLUNTEERTASKS = amplify_core.QueryField(
     fieldName: "volunteerTasks",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'VolunteerTaskUser'));
-  static final BOOKMARKS = amplify_core.QueryField(
-    fieldName: "bookmarks",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Bookmark'));
   static final LIKES = amplify_core.QueryField(
     fieldName: "likes",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Like'));
-  static final COMMENTS = amplify_core.QueryField(
-    fieldName: "comments",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Comment'));
   static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
   static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
@@ -760,6 +760,20 @@ class User extends amplify_core.Model {
       key: User.STRIPECUSTOMERID,
       isRequired: false,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
+      key: User.BOOKMARKS,
+      isRequired: false,
+      ofModelName: 'Bookmark',
+      associatedKey: Bookmark.CREATOR
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
+      key: User.COMMENTS,
+      isRequired: false,
+      ofModelName: 'Comment',
+      associatedKey: Comment.CREATOR
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
@@ -882,24 +896,10 @@ class User extends amplify_core.Model {
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.BOOKMARKS,
-      isRequired: false,
-      ofModelName: 'Bookmark',
-      associatedKey: Bookmark.CREATOR
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
       key: User.LIKES,
       isRequired: false,
       ofModelName: 'Like',
       associatedKey: Like.CREATOR
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.COMMENTS,
-      isRequired: false,
-      ofModelName: 'Comment',
-      associatedKey: Comment.CREATOR
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(

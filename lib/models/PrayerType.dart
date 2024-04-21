@@ -27,5 +27,7 @@ enum PrayerType {
   ISHA,
   JUMUAH,
   EID_AL_FITR,
-  EID_AL_ADHA
+  EID_AL_ADHA,
+  TAHAJJUD,
+  TARAWEH
 }

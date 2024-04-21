@@ -42,13 +42,22 @@ class Day {
     }
   }
   
-  List<OperatingHours>? get operatingHours {
-    return _operatingHours;
+  List<OperatingHours> get operatingHours {
+    try {
+      return _operatingHours!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
-  const Day._internal({required type, operatingHours}): _type = type, _operatingHours = operatingHours;
+  const Day._internal({required type, required operatingHours}): _type = type, _operatingHours = operatingHours;
   
-  factory Day({required DayType type, List<OperatingHours>? operatingHours}) {
+  factory Day({required DayType type, required List<OperatingHours> operatingHours}) {
     return Day._internal(
       type: type,
       operatingHours: operatingHours != null ? List<OperatingHours>.unmodifiable(operatingHours) : operatingHours);
@@ -127,7 +136,7 @@ class Day {
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.embedded(
       fieldName: 'operatingHours',
-      isRequired: false,
+      isRequired: true,
       isArray: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.embeddedCollection, ofCustomTypeName: 'OperatingHours')
     ));

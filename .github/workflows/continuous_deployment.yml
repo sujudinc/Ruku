@@ -95,7 +95,7 @@ jobs:
               shell: bash
 
             - name: Run amplify codegen
-              run: amplify codegen
+              run: amplify codegen models && amplify codegen statements
 
             - name: Post amplify push
               uses: stefanzweifel/git-auto-commit-action@v5

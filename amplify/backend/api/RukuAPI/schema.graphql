@@ -349,6 +349,8 @@ type User
   type: UserType!
   status: UserStatus!
   stripeCustomerId: String
+  bookmarks: [Bookmark] @hasMany(indexName: "byCreatorId", fields: ["id"])
+  comments: [Comment] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdAnnouncements: [Announcement] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdClasses: [Class] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdCommittees: [Committee] @hasMany(indexName: "byCreatorId", fields: ["id"])
@@ -363,12 +365,10 @@ type User
   committees: [Committee] @manyToMany(relationName: "CommitteeMembers")
   gatherings: [Gathering] @manyToMany(relationName: "GatheringAttendees")
   instructingClasses: [Class] @hasMany(indexName: "byInstructorId", fields: ["id"])
+  likes: [Like] @hasMany(indexName: "byCreatorId", fields: ["id"])
   mosques: [Mosque] @manyToMany(relationName: "MosqueFollowers")
   purchasedSubscriptions: [MosqueSubscription] @hasMany(indexName: "byPurchaserId", fields: ["id"])
   volunteerTasks: [VolunteerTask] @manyToMany(relationName: "VolunteerTaskUser")
-  bookmarks: [Bookmark] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  likes: [Like] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  comments: [Comment] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }

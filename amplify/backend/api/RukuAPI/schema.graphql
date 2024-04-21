@@ -486,12 +486,15 @@ enum PrayerType {
 
 enum ResourceType {
   ARTICLE
+  AUDIO
   VIDEO
   BOOK
   OTHER
 }
 
 enum ServiceType {
+  ADVICE
+  FIQH
   MARRIAGE
   FUNERAL
   COUNSELING

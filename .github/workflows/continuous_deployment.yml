@@ -95,7 +95,7 @@ jobs:
               shell: bash
 
             - name: Run amplify codegen
-              run: amplify codegen
+              run: amplify codegen models --model-schema ./amplify/backend/api/RukuAPI/schema.graphql --target typescript --output-dir ./src/graphql
 
             - name: Post amplify push
               uses: stefanzweifel/git-auto-commit-action@v5

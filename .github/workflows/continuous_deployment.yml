@@ -98,7 +98,6 @@ jobs:
               uses: stefanzweifel/git-auto-commit-action@v5
               with:
                   commit_message: "cd: post amplify push | run number ${{ github.run_number }}"
-                  file_pattern: amplify/* src/*
 
             # - name: Notify Discord on Deployment Success
             #   uses: sarisia/actions-status-discord@v1

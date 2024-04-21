@@ -365,7 +365,6 @@ type User
   committees: [Committee] @manyToMany(relationName: "CommitteeMembers")
   gatherings: [Gathering] @manyToMany(relationName: "GatheringAttendees")
   instructingClasses: [Class] @hasMany(indexName: "byInstructorId", fields: ["id"])
-  likes: [Like] @hasMany(indexName: "byCreatorId", fields: ["id"])
   mosques: [Mosque] @manyToMany(relationName: "MosqueFollowers")
   purchasedSubscriptions: [MosqueSubscription] @hasMany(indexName: "byPurchaserId", fields: ["id"])
   volunteerTasks: [VolunteerTask] @manyToMany(relationName: "VolunteerTaskUser")
@@ -400,7 +399,7 @@ type VolunteerTask
 
 type Day {
   type: DayType!
-  operatingHours: [OperatingHours!]
+  operatingHours: [OperatingHours!]!
 }
 
 type Hours {

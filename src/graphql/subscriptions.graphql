@@ -61,6 +61,14 @@ subscription OnCreateAnnouncement(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -129,15 +137,7 @@ subscription OnCreateAnnouncement(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -312,6 +312,14 @@ subscription OnUpdateAnnouncement(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -380,15 +388,7 @@ subscription OnUpdateAnnouncement(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -563,6 +563,14 @@ subscription OnDeleteAnnouncement(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -631,15 +639,7 @@ subscription OnDeleteAnnouncement(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -826,6 +826,14 @@ subscription OnCreateBookmark(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -894,15 +902,7 @@ subscription OnCreateBookmark(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1089,6 +1089,14 @@ subscription OnUpdateBookmark(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1157,15 +1165,7 @@ subscription OnUpdateBookmark(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1352,6 +1352,14 @@ subscription OnDeleteBookmark(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1420,15 +1428,7 @@ subscription OnDeleteBookmark(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1565,6 +1565,14 @@ subscription OnCreateClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1633,15 +1641,7 @@ subscription OnCreateClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1661,6 +1661,14 @@ subscription OnCreateClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1729,15 +1737,7 @@ subscription OnCreateClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1874,6 +1874,14 @@ subscription OnUpdateClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1942,15 +1950,7 @@ subscription OnUpdateClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1970,6 +1970,14 @@ subscription OnUpdateClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2038,15 +2046,7 @@ subscription OnUpdateClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2183,6 +2183,14 @@ subscription OnDeleteClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2251,15 +2259,7 @@ subscription OnDeleteClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2279,6 +2279,14 @@ subscription OnDeleteClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2347,15 +2355,7 @@ subscription OnDeleteClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2628,6 +2628,14 @@ subscription OnCreateComment(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2696,15 +2704,7 @@ subscription OnCreateComment(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2977,6 +2977,14 @@ subscription OnUpdateComment(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3045,15 +3053,7 @@ subscription OnUpdateComment(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3326,6 +3326,14 @@ subscription OnDeleteComment(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3394,15 +3402,7 @@ subscription OnDeleteComment(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3535,6 +3535,14 @@ subscription OnCreateCommittee(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3603,15 +3611,7 @@ subscription OnCreateCommittee(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3758,6 +3758,14 @@ subscription OnUpdateCommittee(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3826,15 +3834,7 @@ subscription OnUpdateCommittee(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3981,6 +3981,14 @@ subscription OnDeleteCommittee(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4049,15 +4057,7 @@ subscription OnDeleteCommittee(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4207,6 +4207,14 @@ subscription OnCreateGathering(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4275,15 +4283,7 @@ subscription OnCreateGathering(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4433,6 +4433,14 @@ subscription OnUpdateGathering(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4501,15 +4509,7 @@ subscription OnUpdateGathering(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4659,6 +4659,14 @@ subscription OnDeleteGathering(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4727,15 +4735,7 @@ subscription OnDeleteGathering(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4883,6 +4883,14 @@ subscription OnCreateDonation(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4951,15 +4959,7 @@ subscription OnCreateDonation(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5047,6 +5047,14 @@ subscription OnUpdateDonation(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5115,15 +5123,7 @@ subscription OnUpdateDonation(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5211,6 +5211,14 @@ subscription OnDeleteDonation(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5279,15 +5287,7 @@ subscription OnDeleteDonation(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5380,6 +5380,14 @@ subscription OnCreateFundraisingCampaign(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5448,15 +5456,7 @@ subscription OnCreateFundraisingCampaign(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5610,6 +5610,14 @@ subscription OnUpdateFundraisingCampaign(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5678,15 +5686,7 @@ subscription OnUpdateFundraisingCampaign(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5840,6 +5840,14 @@ subscription OnDeleteFundraisingCampaign(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5908,15 +5916,7 @@ subscription OnDeleteFundraisingCampaign(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6118,6 +6118,14 @@ subscription OnCreateLike(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6186,15 +6194,7 @@ subscription OnCreateLike(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6381,6 +6381,14 @@ subscription OnUpdateLike(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6449,15 +6457,7 @@ subscription OnUpdateLike(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6644,6 +6644,14 @@ subscription OnDeleteLike(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6712,15 +6720,7 @@ subscription OnDeleteLike(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6859,6 +6859,14 @@ subscription OnCreateMonthlyPrayerSchedule(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6927,15 +6935,7 @@ subscription OnCreateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7074,6 +7074,14 @@ subscription OnUpdateMonthlyPrayerSchedule(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7142,15 +7150,7 @@ subscription OnUpdateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7289,6 +7289,14 @@ subscription OnDeleteMonthlyPrayerSchedule(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7357,15 +7365,7 @@ subscription OnDeleteMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7544,6 +7544,14 @@ subscription OnCreateMosque(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7612,15 +7620,7 @@ subscription OnCreateMosque(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7917,6 +7917,14 @@ subscription OnUpdateMosque(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7985,15 +7993,7 @@ subscription OnUpdateMosque(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -8290,6 +8290,14 @@ subscription OnDeleteMosque(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -8358,15 +8366,7 @@ subscription OnDeleteMosque(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -8619,6 +8619,14 @@ subscription OnCreateMosqueSubscription(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -8687,15 +8695,7 @@ subscription OnCreateMosqueSubscription(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -8830,6 +8830,14 @@ subscription OnUpdateMosqueSubscription(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -8898,15 +8906,7 @@ subscription OnUpdateMosqueSubscription(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9041,6 +9041,14 @@ subscription OnDeleteMosqueSubscription(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9109,15 +9117,7 @@ subscription OnDeleteMosqueSubscription(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9252,6 +9252,14 @@ subscription OnCreateResource(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9320,15 +9328,7 @@ subscription OnCreateResource(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9463,6 +9463,14 @@ subscription OnUpdateResource(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9531,15 +9539,7 @@ subscription OnUpdateResource(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9674,6 +9674,14 @@ subscription OnDeleteResource(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9742,15 +9750,7 @@ subscription OnDeleteResource(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9884,6 +9884,14 @@ subscription OnCreateService(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9952,15 +9960,7 @@ subscription OnCreateService(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10094,6 +10094,14 @@ subscription OnUpdateService(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -10162,15 +10170,7 @@ subscription OnUpdateService(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10304,6 +10304,14 @@ subscription OnDeleteService(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -10372,15 +10380,7 @@ subscription OnDeleteService(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10515,6 +10515,14 @@ subscription OnCreateVolunteerTask(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -10583,15 +10591,7 @@ subscription OnCreateVolunteerTask(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10740,6 +10740,14 @@ subscription OnUpdateVolunteerTask(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -10808,15 +10816,7 @@ subscription OnUpdateVolunteerTask(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10965,6 +10965,14 @@ subscription OnDeleteVolunteerTask(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11033,15 +11041,7 @@ subscription OnDeleteVolunteerTask(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11238,6 +11238,14 @@ subscription OnCreateCommitteeMembers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11306,15 +11314,7 @@ subscription OnCreateCommitteeMembers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11400,6 +11400,14 @@ subscription OnUpdateCommitteeMembers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11468,15 +11476,7 @@ subscription OnUpdateCommitteeMembers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11562,6 +11562,14 @@ subscription OnDeleteCommitteeMembers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11630,15 +11638,7 @@ subscription OnDeleteCommitteeMembers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11727,6 +11727,14 @@ subscription OnCreateGatheringAttendees(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11795,15 +11803,7 @@ subscription OnCreateGatheringAttendees(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11892,6 +11892,14 @@ subscription OnUpdateGatheringAttendees(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11960,15 +11968,7 @@ subscription OnUpdateGatheringAttendees(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12057,6 +12057,14 @@ subscription OnDeleteGatheringAttendees(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12125,15 +12133,7 @@ subscription OnDeleteGatheringAttendees(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12271,6 +12271,14 @@ subscription OnCreateMosqueFollowers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12339,15 +12347,7 @@ subscription OnCreateMosqueFollowers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12485,6 +12485,14 @@ subscription OnUpdateMosqueFollowers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12553,15 +12561,7 @@ subscription OnUpdateMosqueFollowers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12699,6 +12699,14 @@ subscription OnDeleteMosqueFollowers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12767,15 +12775,7 @@ subscription OnDeleteMosqueFollowers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12815,6 +12815,14 @@ subscription OnCreateVolunteerTaskUser(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12883,15 +12891,7 @@ subscription OnCreateVolunteerTaskUser(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12979,6 +12979,14 @@ subscription OnUpdateVolunteerTaskUser(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -13047,15 +13055,7 @@ subscription OnUpdateVolunteerTaskUser(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -13143,6 +13143,14 @@ subscription OnDeleteVolunteerTaskUser(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -13211,15 +13219,7 @@ subscription OnDeleteVolunteerTaskUser(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }

@@ -61,6 +61,14 @@ mutation CreateAnnouncement(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -129,15 +137,7 @@ mutation CreateAnnouncement(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -312,6 +312,14 @@ mutation UpdateAnnouncement(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -380,15 +388,7 @@ mutation UpdateAnnouncement(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -563,6 +563,14 @@ mutation DeleteAnnouncement(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -631,15 +639,7 @@ mutation DeleteAnnouncement(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -826,6 +826,14 @@ mutation CreateBookmark(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -894,15 +902,7 @@ mutation CreateBookmark(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1089,6 +1089,14 @@ mutation UpdateBookmark(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1157,15 +1165,7 @@ mutation UpdateBookmark(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1352,6 +1352,14 @@ mutation DeleteBookmark(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1420,15 +1428,7 @@ mutation DeleteBookmark(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1565,6 +1565,14 @@ mutation CreateClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1633,15 +1641,7 @@ mutation CreateClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1661,6 +1661,14 @@ mutation CreateClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1729,15 +1737,7 @@ mutation CreateClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1874,6 +1874,14 @@ mutation UpdateClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1942,15 +1950,7 @@ mutation UpdateClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1970,6 +1970,14 @@ mutation UpdateClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2038,15 +2046,7 @@ mutation UpdateClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2183,6 +2183,14 @@ mutation DeleteClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2251,15 +2259,7 @@ mutation DeleteClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2279,6 +2279,14 @@ mutation DeleteClass(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2347,15 +2355,7 @@ mutation DeleteClass(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2628,6 +2628,14 @@ mutation CreateComment(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2696,15 +2704,7 @@ mutation CreateComment(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2977,6 +2977,14 @@ mutation UpdateComment(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3045,15 +3053,7 @@ mutation UpdateComment(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3326,6 +3326,14 @@ mutation DeleteComment(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3394,15 +3402,7 @@ mutation DeleteComment(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3535,6 +3535,14 @@ mutation CreateCommittee(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3603,15 +3611,7 @@ mutation CreateCommittee(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3758,6 +3758,14 @@ mutation UpdateCommittee(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3826,15 +3834,7 @@ mutation UpdateCommittee(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3981,6 +3981,14 @@ mutation DeleteCommittee(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4049,15 +4057,7 @@ mutation DeleteCommittee(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4207,6 +4207,14 @@ mutation CreateGathering(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4275,15 +4283,7 @@ mutation CreateGathering(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4433,6 +4433,14 @@ mutation UpdateGathering(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4501,15 +4509,7 @@ mutation UpdateGathering(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4659,6 +4659,14 @@ mutation DeleteGathering(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4727,15 +4735,7 @@ mutation DeleteGathering(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4883,6 +4883,14 @@ mutation CreateDonation(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4951,15 +4959,7 @@ mutation CreateDonation(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5047,6 +5047,14 @@ mutation UpdateDonation(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5115,15 +5123,7 @@ mutation UpdateDonation(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5211,6 +5211,14 @@ mutation DeleteDonation(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5279,15 +5287,7 @@ mutation DeleteDonation(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5380,6 +5380,14 @@ mutation CreateFundraisingCampaign(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5448,15 +5456,7 @@ mutation CreateFundraisingCampaign(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5610,6 +5610,14 @@ mutation UpdateFundraisingCampaign(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5678,15 +5686,7 @@ mutation UpdateFundraisingCampaign(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5840,6 +5840,14 @@ mutation DeleteFundraisingCampaign(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5908,15 +5916,7 @@ mutation DeleteFundraisingCampaign(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6118,6 +6118,14 @@ mutation CreateLike(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6186,15 +6194,7 @@ mutation CreateLike(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6381,6 +6381,14 @@ mutation UpdateLike(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6449,15 +6457,7 @@ mutation UpdateLike(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6644,6 +6644,14 @@ mutation DeleteLike(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6712,15 +6720,7 @@ mutation DeleteLike(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6859,6 +6859,14 @@ mutation CreateMonthlyPrayerSchedule(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6927,15 +6935,7 @@ mutation CreateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7074,6 +7074,14 @@ mutation UpdateMonthlyPrayerSchedule(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7142,15 +7150,7 @@ mutation UpdateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7289,6 +7289,14 @@ mutation DeleteMonthlyPrayerSchedule(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7357,15 +7365,7 @@ mutation DeleteMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7544,6 +7544,14 @@ mutation CreateMosque(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7612,15 +7620,7 @@ mutation CreateMosque(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7917,6 +7917,14 @@ mutation UpdateMosque(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7985,15 +7993,7 @@ mutation UpdateMosque(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -8290,6 +8290,14 @@ mutation DeleteMosque(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -8358,15 +8366,7 @@ mutation DeleteMosque(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -8619,6 +8619,14 @@ mutation CreateMosqueSubscription(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -8687,15 +8695,7 @@ mutation CreateMosqueSubscription(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -8830,6 +8830,14 @@ mutation UpdateMosqueSubscription(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -8898,15 +8906,7 @@ mutation UpdateMosqueSubscription(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9041,6 +9041,14 @@ mutation DeleteMosqueSubscription(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9109,15 +9117,7 @@ mutation DeleteMosqueSubscription(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9252,6 +9252,14 @@ mutation CreateResource(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9320,15 +9328,7 @@ mutation CreateResource(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9463,6 +9463,14 @@ mutation UpdateResource(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9531,15 +9539,7 @@ mutation UpdateResource(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9674,6 +9674,14 @@ mutation DeleteResource(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9742,15 +9750,7 @@ mutation DeleteResource(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -9884,6 +9884,14 @@ mutation CreateService(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -9952,15 +9960,7 @@ mutation CreateService(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10094,6 +10094,14 @@ mutation UpdateService(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -10162,15 +10170,7 @@ mutation UpdateService(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10304,6 +10304,14 @@ mutation DeleteService(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -10372,15 +10380,7 @@ mutation DeleteService(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10515,6 +10515,14 @@ mutation CreateVolunteerTask(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -10583,15 +10591,7 @@ mutation CreateVolunteerTask(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10740,6 +10740,14 @@ mutation UpdateVolunteerTask(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -10808,15 +10816,7 @@ mutation UpdateVolunteerTask(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -10965,6 +10965,14 @@ mutation DeleteVolunteerTask(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11033,15 +11041,7 @@ mutation DeleteVolunteerTask(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11233,6 +11233,14 @@ mutation CreateCommitteeMembers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11301,15 +11309,7 @@ mutation CreateCommitteeMembers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11390,6 +11390,14 @@ mutation UpdateCommitteeMembers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11458,15 +11466,7 @@ mutation UpdateCommitteeMembers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11547,6 +11547,14 @@ mutation DeleteCommitteeMembers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11615,15 +11623,7 @@ mutation DeleteCommitteeMembers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11707,6 +11707,14 @@ mutation CreateGatheringAttendees(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11775,15 +11783,7 @@ mutation CreateGatheringAttendees(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -11867,6 +11867,14 @@ mutation UpdateGatheringAttendees(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -11935,15 +11943,7 @@ mutation UpdateGatheringAttendees(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12027,6 +12027,14 @@ mutation DeleteGatheringAttendees(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12095,15 +12103,7 @@ mutation DeleteGatheringAttendees(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12236,6 +12236,14 @@ mutation CreateMosqueFollowers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12304,15 +12312,7 @@ mutation CreateMosqueFollowers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12445,6 +12445,14 @@ mutation UpdateMosqueFollowers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12513,15 +12521,7 @@ mutation UpdateMosqueFollowers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12654,6 +12654,14 @@ mutation DeleteMosqueFollowers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12722,15 +12730,7 @@ mutation DeleteMosqueFollowers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12765,6 +12765,14 @@ mutation CreateVolunteerTaskUser(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12833,15 +12841,7 @@ mutation CreateVolunteerTaskUser(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -12924,6 +12924,14 @@ mutation UpdateVolunteerTaskUser(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -12992,15 +13000,7 @@ mutation UpdateVolunteerTaskUser(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -13083,6 +13083,14 @@ mutation DeleteVolunteerTaskUser(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -13151,15 +13159,7 @@ mutation DeleteVolunteerTaskUser(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }

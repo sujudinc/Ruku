@@ -58,6 +58,14 @@ query GetAnnouncement($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -126,15 +134,7 @@ query GetAnnouncement($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -532,6 +532,14 @@ query GetBookmark($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -600,15 +608,7 @@ query GetBookmark($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1018,6 +1018,14 @@ query GetClass($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1086,15 +1094,7 @@ query GetClass($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1114,6 +1114,14 @@ query GetClass($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1182,15 +1190,7 @@ query GetClass($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -1776,6 +1776,14 @@ query GetComment($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -1844,15 +1852,7 @@ query GetComment($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2414,6 +2414,14 @@ query GetCommittee($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2482,15 +2490,7 @@ query GetCommittee($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -2824,6 +2824,14 @@ query GetGathering($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -2892,15 +2900,7 @@ query GetGathering($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3241,6 +3241,14 @@ query GetDonation($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3309,15 +3317,7 @@ query GetDonation($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -3582,6 +3582,14 @@ query GetFundraisingCampaign($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -3650,15 +3658,7 @@ query GetFundraisingCampaign($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4066,6 +4066,14 @@ query GetLike($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4134,15 +4142,7 @@ query GetLike($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -4554,6 +4554,14 @@ query GetMonthlyPrayerSchedule($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -4622,15 +4630,7 @@ query GetMonthlyPrayerSchedule($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5003,6 +5003,14 @@ query GetMosque($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5071,15 +5079,7 @@ query GetMosque($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5555,6 +5555,14 @@ query GetMosqueSubscription($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -5623,15 +5631,7 @@ query GetMosqueSubscription($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -5948,6 +5948,14 @@ query GetResource($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6016,15 +6024,7 @@ query GetResource($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6336,6 +6336,14 @@ query GetService($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -6404,15 +6412,7 @@ query GetService($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -6715,6 +6715,34 @@ query GetUser($id: ID!) {
     type
     status
     stripeCustomerId
+    bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
     createdAnnouncements {
       items {
         id
@@ -6988,37 +7016,9 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    bookmarks {
-      items {
-        id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
     likes {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    comments {
-      items {
-        id
-        text
-        parentCommentId
         announcementId
         creatorId
         mosqueId
@@ -7052,6 +7052,14 @@ query ListUsers(
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7120,15 +7128,7 @@ query ListUsers(
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7160,6 +7160,14 @@ query GetVolunteerTask($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7228,15 +7236,7 @@ query GetVolunteerTask($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7618,6 +7618,14 @@ query GetCommitteeMembers($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7686,15 +7694,7 @@ query GetCommitteeMembers($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -7929,6 +7929,14 @@ query GetGatheringAttendees($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -7997,15 +8005,7 @@ query GetGatheringAttendees($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -8302,6 +8302,14 @@ query GetMosqueFollowers($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -8370,15 +8378,7 @@ query GetMosqueFollowers($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }
@@ -8585,6 +8585,14 @@ query GetVolunteerTaskUser($id: ID!) {
       type
       status
       stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
       createdAnnouncements {
         nextToken
         __typename
@@ -8653,15 +8661,7 @@ query GetVolunteerTaskUser($id: ID!) {
         nextToken
         __typename
       }
-      bookmarks {
-        nextToken
-        __typename
-      }
       likes {
-        nextToken
-        __typename
-      }
-      comments {
         nextToken
         __typename
       }

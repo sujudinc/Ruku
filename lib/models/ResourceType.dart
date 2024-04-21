@@ -21,6 +21,7 @@
 
 enum ResourceType {
   ARTICLE,
+  AUDIO,
   VIDEO,
   BOOK,
   OTHER

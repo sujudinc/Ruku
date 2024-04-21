@@ -1,0 +1,8891 @@
+# this is an auto generated file. This will be overwritten
+
+query GetAnnouncement($id: ID!) {
+  getAnnouncement(id: $id) {
+    id
+    title
+    body
+    images
+    bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListAnnouncements(
+  $filter: ModelAnnouncementFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listAnnouncements(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      body
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query AnnouncementsByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelAnnouncementFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  announcementsByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      body
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query AnnouncementsByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelAnnouncementFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  announcementsByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      body
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetBookmark($id: ID!) {
+  getBookmark(id: $id) {
+    id
+    announcementId
+    announcement {
+      id
+      title
+      body
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListBookmarks(
+  $filter: ModelBookmarkFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listBookmarks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query BookmarksByAnnouncementId(
+  $announcementId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelBookmarkFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  bookmarksByAnnouncementId(
+    announcementId: $announcementId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query BookmarksByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelBookmarkFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  bookmarksByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query BookmarksByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelBookmarkFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  bookmarksByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetClass($id: ID!) {
+  getClass(id: $id) {
+    id
+    title
+    description
+    startDateTime
+    endDateTime
+    recurring
+    daysOfWeek
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    instructorId
+    instructor {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListClasses(
+  $filter: ModelClassFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listClasses(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      description
+      startDateTime
+      endDateTime
+      recurring
+      daysOfWeek
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      instructorId
+      instructor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query ClassesByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelClassFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  classesByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      startDateTime
+      endDateTime
+      recurring
+      daysOfWeek
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      instructorId
+      instructor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query ClassesByInstructorId(
+  $instructorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelClassFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  classesByInstructorId(
+    instructorId: $instructorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      startDateTime
+      endDateTime
+      recurring
+      daysOfWeek
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      instructorId
+      instructor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query ClassesByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelClassFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  classesByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      startDateTime
+      endDateTime
+      recurring
+      daysOfWeek
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      instructorId
+      instructor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetComment($id: ID!) {
+  getComment(id: $id) {
+    id
+    text
+    parentCommentId
+    parentComment {
+      id
+      text
+      parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    subComments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    announcementId
+    announcement {
+      id
+      title
+      body
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListComments(
+  $filter: ModelCommentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      text
+      parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommentsByParentCommentId(
+  $parentCommentId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  commentsByParentCommentId(
+    parentCommentId: $parentCommentId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      text
+      parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommentsByAnnouncementId(
+  $announcementId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  commentsByAnnouncementId(
+    announcementId: $announcementId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      text
+      parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommentsByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  commentsByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      text
+      parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommentsByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  commentsByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      text
+      parentCommentId
+      parentComment {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetCommittee($id: ID!) {
+  getCommittee(id: $id) {
+    id
+    title
+    description
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    members {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListCommittees(
+  $filter: ModelCommitteeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCommittees(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      description
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommitteesByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommitteeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  committeesByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommitteesByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommitteeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  committeesByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetGathering($id: ID!) {
+  getGathering(id: $id) {
+    id
+    title
+    description
+    type
+    startDate
+    endDate
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    attendees {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListGatherings(
+  $filter: ModelGatheringFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listGatherings(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      description
+      type
+      startDate
+      endDate
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GatheringsByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelGatheringFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  gatheringsByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      type
+      startDate
+      endDate
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GatheringsByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelGatheringFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  gatheringsByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      type
+      startDate
+      endDate
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetDonation($id: ID!) {
+  getDonation(id: $id) {
+    id
+    amount
+    currency
+    isAnonymous
+    donorId
+    donor {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    fundraisingCampaignId
+    fundraisingCampaign {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListDonations(
+  $filter: ModelDonationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listDonations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      amount
+      currency
+      isAnonymous
+      donorId
+      donor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      fundraisingCampaignId
+      fundraisingCampaign {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query DonationsByDonorId(
+  $donorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelDonationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  donationsByDonorId(
+    donorId: $donorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      amount
+      currency
+      isAnonymous
+      donorId
+      donor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      fundraisingCampaignId
+      fundraisingCampaign {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query DonationsByFundraisingCampaignId(
+  $fundraisingCampaignId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelDonationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  donationsByFundraisingCampaignId(
+    fundraisingCampaignId: $fundraisingCampaignId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      amount
+      currency
+      isAnonymous
+      donorId
+      donor {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      fundraisingCampaignId
+      fundraisingCampaign {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetFundraisingCampaign($id: ID!) {
+  getFundraisingCampaign(id: $id) {
+    id
+    title
+    description
+    featureImage
+    type
+    currentAmount
+    goal
+    goalDate
+    currency
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListFundraisingCampaigns(
+  $filter: ModelFundraisingCampaignFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listFundraisingCampaigns(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query FundraisingCampaignsByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelFundraisingCampaignFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  fundraisingCampaignsByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query FundraisingCampaignsByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelFundraisingCampaignFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  fundraisingCampaignsByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetLike($id: ID!) {
+  getLike(id: $id) {
+    id
+    announcementId
+    announcement {
+      id
+      title
+      body
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListLikes(
+  $filter: ModelLikeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listLikes(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query LikesByAnnouncementId(
+  $announcementId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelLikeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  likesByAnnouncementId(
+    announcementId: $announcementId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query LikesByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelLikeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  likesByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query LikesByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelLikeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  likesByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      announcementId
+      announcement {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetMonthlyPrayerSchedule($id: ID!) {
+  getMonthlyPrayerSchedule(id: $id) {
+    id
+    year
+    month
+    prayerTimes {
+      type
+      athan
+      iqamah
+      __typename
+    }
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListMonthlyPrayerSchedules(
+  $filter: ModelMonthlyPrayerScheduleFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMonthlyPrayerSchedules(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      year
+      month
+      prayerTimes {
+        type
+        athan
+        iqamah
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query MonthlyPrayerSchedulesByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelMonthlyPrayerScheduleFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  monthlyPrayerSchedulesByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      year
+      month
+      prayerTimes {
+        type
+        athan
+        iqamah
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query MonthlyPrayerSchedulesByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelMonthlyPrayerScheduleFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  monthlyPrayerSchedulesByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      year
+      month
+      prayerTimes {
+        type
+        athan
+        iqamah
+        __typename
+      }
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetMosque($id: ID!) {
+  getMosque(id: $id) {
+    id
+    name
+    description
+    images
+    address
+    latitude
+    longitude
+    hours {
+      monday {
+        type
+        __typename
+      }
+      tuesday {
+        type
+        __typename
+      }
+      wednesday {
+        type
+        __typename
+      }
+      thursday {
+        type
+        __typename
+      }
+      friday {
+        type
+        __typename
+      }
+      saturday {
+        type
+        __typename
+      }
+      sunday {
+        type
+        __typename
+      }
+      __typename
+    }
+    phone
+    email
+    website
+    socialMedia {
+      facebook
+      instagram
+      twitter
+      youtube
+      __typename
+    }
+    liveVideoUrl
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    followers {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    announcements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    classes {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    committees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    gatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    fundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    monthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    resources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    services {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    subscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    volunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListMosques(
+  $filter: ModelMosqueFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMosques(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query MosquesByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelMosqueFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  mosquesByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetMosqueSubscription($id: ID!) {
+  getMosqueSubscription(id: $id) {
+    id
+    status
+    startDate
+    endDate
+    stripeSubscriptionId
+    purchaserId
+    purchaser {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListMosqueSubscriptions(
+  $filter: ModelMosqueSubscriptionFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMosqueSubscriptions(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      status
+      startDate
+      endDate
+      stripeSubscriptionId
+      purchaserId
+      purchaser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query MosqueSubscriptionsByPurchaserId(
+  $purchaserId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelMosqueSubscriptionFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  mosqueSubscriptionsByPurchaserId(
+    purchaserId: $purchaserId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      status
+      startDate
+      endDate
+      stripeSubscriptionId
+      purchaserId
+      purchaser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query MosqueSubscriptionsByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelMosqueSubscriptionFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  mosqueSubscriptionsByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      status
+      startDate
+      endDate
+      stripeSubscriptionId
+      purchaserId
+      purchaser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetResource($id: ID!) {
+  getResource(id: $id) {
+    id
+    title
+    description
+    type
+    url
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListResources(
+  $filter: ModelResourceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listResources(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      description
+      type
+      url
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query ResourcesByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelResourceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  resourcesByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      type
+      url
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query ResourcesByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelResourceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  resourcesByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      title
+      description
+      type
+      url
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetService($id: ID!) {
+  getService(id: $id) {
+    id
+    type
+    description
+    documents
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListServices(
+  $filter: ModelServiceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      type
+      description
+      documents
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query ServicesByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelServiceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  servicesByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      type
+      description
+      documents
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query ServicesByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelServiceFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  servicesByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      type
+      description
+      documents
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    selfie
+    firstName
+    lastName
+    email
+    phone
+    type
+    status
+    stripeCustomerId
+    createdAnnouncements {
+      items {
+        id
+        title
+        body
+        images
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdCommittees {
+      items {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdGatherings {
+      items {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdFundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdMonthlyPrayerSchedules {
+      items {
+        id
+        year
+        month
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdMosques {
+      items {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdResources {
+      items {
+        id
+        title
+        description
+        type
+        url
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdServices {
+      items {
+        id
+        type
+        description
+        documents
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdVolunteerTasks {
+      items {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorId
+        fundraisingCampaignId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    committees {
+      items {
+        id
+        committeeId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    gatherings {
+      items {
+        id
+        gatheringId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    instructingClasses {
+      items {
+        id
+        title
+        description
+        startDateTime
+        endDateTime
+        recurring
+        daysOfWeek
+        creatorId
+        instructorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    mosques {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    purchasedSubscriptions {
+      items {
+        id
+        status
+        startDate
+        endDate
+        stripeSubscriptionId
+        purchaserId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    volunteerTasks {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    bookmarks {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentId
+        announcementId
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+query ListUsers(
+  $filter: ModelUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetVolunteerTask($id: ID!) {
+  getVolunteerTask(id: $id) {
+    id
+    name
+    description
+    startDate
+    endDate
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    volunteers {
+      items {
+        id
+        userId
+        volunteerTaskId
+        createdAt
+        updatedAt
+        owner
+        creatorId
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListVolunteerTasks(
+  $filter: ModelVolunteerTaskFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listVolunteerTasks(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      description
+      startDate
+      endDate
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query VolunteerTasksByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelVolunteerTaskFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  volunteerTasksByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      name
+      description
+      startDate
+      endDate
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query VolunteerTasksByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelVolunteerTaskFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  volunteerTasksByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      name
+      description
+      startDate
+      endDate
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetCommitteeMembers($id: ID!) {
+  getCommitteeMembers(id: $id) {
+    id
+    committeeId
+    userId
+    committee {
+      id
+      title
+      description
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    user {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    creatorId
+    owner
+    __typename
+  }
+}
+
+query ListCommitteeMembers(
+  $filter: ModelCommitteeMembersFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listCommitteeMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      committeeId
+      userId
+      committee {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommitteeMembersByCommitteeId(
+  $committeeId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommitteeMembersFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  committeeMembersByCommitteeId(
+    committeeId: $committeeId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      committeeId
+      userId
+      committee {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommitteeMembersByUserId(
+  $userId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommitteeMembersFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  committeeMembersByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      committeeId
+      userId
+      committee {
+        id
+        title
+        description
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetGatheringAttendees($id: ID!) {
+  getGatheringAttendees(id: $id) {
+    id
+    gatheringId
+    userId
+    gathering {
+      id
+      title
+      description
+      type
+      startDate
+      endDate
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      attendees {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    user {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    creatorId
+    owner
+    __typename
+  }
+}
+
+query ListGatheringAttendees(
+  $filter: ModelGatheringAttendeesFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listGatheringAttendees(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      gatheringId
+      userId
+      gathering {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GatheringAttendeesByGatheringId(
+  $gatheringId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelGatheringAttendeesFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  gatheringAttendeesByGatheringId(
+    gatheringId: $gatheringId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      gatheringId
+      userId
+      gathering {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GatheringAttendeesByUserId(
+  $userId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelGatheringAttendeesFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  gatheringAttendeesByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      gatheringId
+      userId
+      gathering {
+        id
+        title
+        description
+        type
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetMosqueFollowers($id: ID!) {
+  getMosqueFollowers(id: $id) {
+    id
+    mosqueId
+    userId
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    user {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    creatorId
+    owner
+    __typename
+  }
+}
+
+query ListMosqueFollowers(
+  $filter: ModelMosqueFollowersFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listMosqueFollowers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      mosqueId
+      userId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query MosqueFollowersByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelMosqueFollowersFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  mosqueFollowersByMosqueId(
+    mosqueId: $mosqueId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      mosqueId
+      userId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query MosqueFollowersByUserId(
+  $userId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelMosqueFollowersFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  mosqueFollowersByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      mosqueId
+      userId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetVolunteerTaskUser($id: ID!) {
+  getVolunteerTaskUser(id: $id) {
+    id
+    userId
+    volunteerTaskId
+    user {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdCommittees {
+        nextToken
+        __typename
+      }
+      createdGatherings {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      committees {
+        nextToken
+        __typename
+      }
+      gatherings {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    volunteerTask {
+      id
+      name
+      description
+      startDate
+      endDate
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      volunteers {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    creatorId
+    __typename
+  }
+}
+
+query ListVolunteerTaskUsers(
+  $filter: ModelVolunteerTaskUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listVolunteerTaskUsers(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      volunteerTaskId
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      volunteerTask {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      creatorId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query VolunteerTaskUsersByUserId(
+  $userId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelVolunteerTaskUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  volunteerTaskUsersByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      volunteerTaskId
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      volunteerTask {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      creatorId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query VolunteerTaskUsersByVolunteerTaskId(
+  $volunteerTaskId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelVolunteerTaskUserFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  volunteerTaskUsersByVolunteerTaskId(
+    volunteerTaskId: $volunteerTaskId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      userId
+      volunteerTaskId
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      volunteerTask {
+        id
+        name
+        description
+        startDate
+        endDate
+        creatorId
+        mosqueId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      creatorId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}

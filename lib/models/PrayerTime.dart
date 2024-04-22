@@ -42,35 +42,17 @@ class PrayerTime {
     }
   }
   
-  amplify_core.TemporalDateTime get athan {
-    try {
-      return _athan!;
-    } catch(e) {
-      throw amplify_core.AmplifyCodeGenModelException(
-          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
-          recoverySuggestion:
-            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
-          underlyingException: e.toString()
-          );
-    }
+  amplify_core.TemporalDateTime? get athan {
+    return _athan;
   }
   
-  amplify_core.TemporalDateTime get iqamah {
-    try {
-      return _iqamah!;
-    } catch(e) {
-      throw amplify_core.AmplifyCodeGenModelException(
-          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
-          recoverySuggestion:
-            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
-          underlyingException: e.toString()
-          );
-    }
+  amplify_core.TemporalDateTime? get iqamah {
+    return _iqamah;
   }
   
-  const PrayerTime._internal({required type, required athan, required iqamah}): _type = type, _athan = athan, _iqamah = iqamah;
+  const PrayerTime._internal({required type, athan, iqamah}): _type = type, _athan = athan, _iqamah = iqamah;
   
-  factory PrayerTime({required PrayerType type, required amplify_core.TemporalDateTime athan, required amplify_core.TemporalDateTime iqamah}) {
+  factory PrayerTime({required PrayerType type, amplify_core.TemporalDateTime? athan, amplify_core.TemporalDateTime? iqamah}) {
     return PrayerTime._internal(
       type: type,
       athan: athan,
@@ -115,8 +97,8 @@ class PrayerTime {
   
   PrayerTime copyWithModelFieldValues({
     ModelFieldValue<PrayerType>? type,
-    ModelFieldValue<amplify_core.TemporalDateTime>? athan,
-    ModelFieldValue<amplify_core.TemporalDateTime>? iqamah
+    ModelFieldValue<amplify_core.TemporalDateTime?>? athan,
+    ModelFieldValue<amplify_core.TemporalDateTime?>? iqamah
   }) {
     return PrayerTime._internal(
       type: type == null ? this.type : type.value,
@@ -152,13 +134,13 @@ class PrayerTime {
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
       fieldName: 'athan',
-      isRequired: true,
+      isRequired: false,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
       fieldName: 'iqamah',
-      isRequired: true,
+      isRequired: false,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
   });

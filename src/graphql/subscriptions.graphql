@@ -6848,6 +6848,7 @@ subscription OnCreateMonthlyPrayerSchedule(
       iqamah
       __typename
     }
+    timeZone
     creatorId
     creator {
       id
@@ -7063,6 +7064,7 @@ subscription OnUpdateMonthlyPrayerSchedule(
       iqamah
       __typename
     }
+    timeZone
     creatorId
     creator {
       id
@@ -7278,6 +7280,7 @@ subscription OnDeleteMonthlyPrayerSchedule(
       iqamah
       __typename
     }
+    timeZone
     creatorId
     creator {
       id
@@ -7733,6 +7736,7 @@ subscription OnCreateMosque(
         id
         year
         month
+        timeZone
         creatorId
         mosqueId
         createdAt
@@ -8106,6 +8110,7 @@ subscription OnUpdateMosque(
         id
         year
         month
+        timeZone
         creatorId
         mosqueId
         createdAt
@@ -8479,6 +8484,7 @@ subscription OnDeleteMosque(
         id
         year
         month
+        timeZone
         creatorId
         mosqueId
         createdAt

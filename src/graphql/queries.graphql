@@ -4543,6 +4543,7 @@ query GetMonthlyPrayerSchedule($id: ID!) {
       iqamah
       __typename
     }
+    timeZone
     creatorId
     creator {
       id
@@ -4764,6 +4765,7 @@ query ListMonthlyPrayerSchedules(
         iqamah
         __typename
       }
+      timeZone
       creatorId
       creator {
         id
@@ -4831,6 +4833,7 @@ query MonthlyPrayerSchedulesByCreatorId(
         iqamah
         __typename
       }
+      timeZone
       creatorId
       creator {
         id
@@ -4898,6 +4901,7 @@ query MonthlyPrayerSchedulesByMosqueId(
         iqamah
         __typename
       }
+      timeZone
       creatorId
       creator {
         id
@@ -5192,6 +5196,7 @@ query GetMosque($id: ID!) {
         id
         year
         month
+        timeZone
         creatorId
         mosqueId
         createdAt
@@ -6833,6 +6838,7 @@ query GetUser($id: ID!) {
         id
         year
         month
+        timeZone
         creatorId
         mosqueId
         createdAt

@@ -31,6 +31,7 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
   final int? _year;
   final int? _month;
   final List<PrayerTime>? _prayerTimes;
+  final String? _timeZone;
   final User? _creator;
   final Mosque? _mosque;
   final amplify_core.TemporalDateTime? _createdAt;
@@ -88,6 +89,19 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
     }
   }
   
+  String get timeZone {
+    try {
+      return _timeZone!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
+  }
+  
   User get creator {
     try {
       return _creator!;
@@ -122,14 +136,15 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
     return _updatedAt;
   }
   
-  const MonthlyPrayerSchedule._internal({required this.id, required year, required month, required prayerTimes, required creator, required mosque, createdAt, updatedAt}): _year = year, _month = month, _prayerTimes = prayerTimes, _creator = creator, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt;
+  const MonthlyPrayerSchedule._internal({required this.id, required year, required month, required prayerTimes, required timeZone, required creator, required mosque, createdAt, updatedAt}): _year = year, _month = month, _prayerTimes = prayerTimes, _timeZone = timeZone, _creator = creator, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt;
   
-  factory MonthlyPrayerSchedule({String? id, required int year, required int month, required List<PrayerTime> prayerTimes, required User creator, required Mosque mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  factory MonthlyPrayerSchedule({String? id, required int year, required int month, required List<PrayerTime> prayerTimes, required String timeZone, required User creator, required Mosque mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return MonthlyPrayerSchedule._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       year: year,
       month: month,
       prayerTimes: prayerTimes != null ? List<PrayerTime>.unmodifiable(prayerTimes) : prayerTimes,
+      timeZone: timeZone,
       creator: creator,
       mosque: mosque,
       createdAt: createdAt,
@@ -148,6 +163,7 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
       _year == other._year &&
       _month == other._month &&
       DeepCollectionEquality().equals(_prayerTimes, other._prayerTimes) &&
+      _timeZone == other._timeZone &&
       _creator == other._creator &&
       _mosque == other._mosque &&
       _createdAt == other._createdAt &&
@@ -166,6 +182,7 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
     buffer.write("year=" + (_year != null ? _year!.toString() : "null") + ", ");
     buffer.write("month=" + (_month != null ? _month!.toString() : "null") + ", ");
     buffer.write("prayerTimes=" + (_prayerTimes != null ? _prayerTimes!.toString() : "null") + ", ");
+    buffer.write("timeZone=" + "$_timeZone" + ", ");
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
     buffer.write("mosque=" + (_mosque != null ? _mosque!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
@@ -175,12 +192,13 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
     return buffer.toString();
   }
   
-  MonthlyPrayerSchedule copyWith({int? year, int? month, List<PrayerTime>? prayerTimes, User? creator, Mosque? mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  MonthlyPrayerSchedule copyWith({int? year, int? month, List<PrayerTime>? prayerTimes, String? timeZone, User? creator, Mosque? mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return MonthlyPrayerSchedule._internal(
       id: id,
       year: year ?? this.year,
       month: month ?? this.month,
       prayerTimes: prayerTimes ?? this.prayerTimes,
+      timeZone: timeZone ?? this.timeZone,
       creator: creator ?? this.creator,
       mosque: mosque ?? this.mosque,
       createdAt: createdAt ?? this.createdAt,
@@ -191,6 +209,7 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
     ModelFieldValue<int>? year,
     ModelFieldValue<int>? month,
     ModelFieldValue<List<PrayerTime>>? prayerTimes,
+    ModelFieldValue<String>? timeZone,
     ModelFieldValue<User>? creator,
     ModelFieldValue<Mosque>? mosque,
     ModelFieldValue<amplify_core.TemporalDateTime?>? createdAt,
@@ -201,6 +220,7 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
       year: year == null ? this.year : year.value,
       month: month == null ? this.month : month.value,
       prayerTimes: prayerTimes == null ? this.prayerTimes : prayerTimes.value,
+      timeZone: timeZone == null ? this.timeZone : timeZone.value,
       creator: creator == null ? this.creator : creator.value,
       mosque: mosque == null ? this.mosque : mosque.value,
       createdAt: createdAt == null ? this.createdAt : createdAt.value,
@@ -218,6 +238,7 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
           .map((e) => PrayerTime.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
           .toList()
         : null,
+      _timeZone = json['timeZone'],
       _creator = json['creator']?['serializedData'] != null
         ? User.fromJson(new Map<String, dynamic>.from(json['creator']['serializedData']))
         : null,
@@ -228,7 +249,7 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
       _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'year': _year, 'month': _month, 'prayerTimes': _prayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'creator': _creator?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'year': _year, 'month': _month, 'prayerTimes': _prayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'timeZone': _timeZone, 'creator': _creator?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
   };
   
   Map<String, Object?> toMap() => {
@@ -236,6 +257,7 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
     'year': _year,
     'month': _month,
     'prayerTimes': _prayerTimes,
+    'timeZone': _timeZone,
     'creator': _creator,
     'mosque': _mosque,
     'createdAt': _createdAt,
@@ -247,6 +269,7 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
   static final YEAR = amplify_core.QueryField(fieldName: "year");
   static final MONTH = amplify_core.QueryField(fieldName: "month");
   static final PRAYERTIMES = amplify_core.QueryField(fieldName: "prayerTimes");
+  static final TIMEZONE = amplify_core.QueryField(fieldName: "timeZone");
   static final CREATOR = amplify_core.QueryField(
     fieldName: "creator",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'User'));
@@ -307,6 +330,12 @@ class MonthlyPrayerSchedule extends amplify_core.Model {
       isRequired: true,
       isArray: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.embeddedCollection, ofCustomTypeName: 'PrayerTime')
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: MonthlyPrayerSchedule.TIMEZONE,
+      isRequired: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(

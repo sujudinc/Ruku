@@ -214,6 +214,7 @@ type MonthlyPrayerSchedule
   year: Int!
   month: Int!
   prayerTimes: [PrayerTime!]!
+  timeZone: String!
   creatorId: ID! @index(name: "byCreatorId")
   creator: User! @belongsTo(fields: ["creatorId"])
   mosqueId: ID! @index(name: "byMosqueId")
@@ -420,8 +421,8 @@ type OperatingHours {
 
 type PrayerTime {
   type: PrayerType!
-  athan: AWSDateTime!
-  iqamah: AWSDateTime!
+  athan: AWSDateTime
+  iqamah: AWSDateTime
 }
 
 type SocialMedia {

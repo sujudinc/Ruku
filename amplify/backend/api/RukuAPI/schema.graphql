@@ -90,50 +90,50 @@ type Comment
   mosque: Mosque! @belongsTo(fields: ["mosqueId"])
 }
 
-type Committee
-  @model
-  @auth(
-    rules: [
-      { allow: owner, ownerField: "creatorId" }
-      { allow: private, operations: [read] }
-      { allow: public, operations: [read] }
-    ]
-  ) {
-  id: ID!
-  title: String!
-  description: String
-  creatorId: ID! @index(name: "byCreatorId")
-  creator: User! @belongsTo(fields: ["creatorId"])
-  mosqueId: ID! @index(name: "byMosqueId")
-  mosque: Mosque! @belongsTo(fields: ["mosqueId"])
-  members: [User] @manyToMany(relationName: "CommitteeMembers")
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-}
+# type Committee
+#   @model
+#   @auth(
+#     rules: [
+#       { allow: owner, ownerField: "creatorId" }
+#       { allow: private, operations: [read] }
+#       { allow: public, operations: [read] }
+#     ]
+#   ) {
+#   id: ID!
+#   title: String!
+#   description: String
+#   creatorId: ID! @index(name: "byCreatorId")
+#   creator: User! @belongsTo(fields: ["creatorId"])
+#   mosqueId: ID! @index(name: "byMosqueId")
+#   mosque: Mosque! @belongsTo(fields: ["mosqueId"])
+#   members: [User] @manyToMany(relationName: "CommitteeMember")
+#   createdAt: AWSDateTime
+#   updatedAt: AWSDateTime
+# }
 
-type Gathering
-  @model
-  @auth(
-    rules: [
-      { allow: owner, ownerField: "creatorId" }
-      { allow: private, operations: [read] }
-      { allow: public, operations: [read] }
-    ]
-  ) {
-  id: ID!
-  title: String!
-  description: String
-  type: GatheringType!
-  startDate: AWSDateTime!
-  endDate: AWSDateTime
-  creatorId: ID! @index(name: "byCreatorId")
-  creator: User! @belongsTo(fields: ["creatorId"])
-  mosqueId: ID! @index(name: "byMosqueId")
-  mosque: Mosque! @belongsTo(fields: ["mosqueId"])
-  attendees: [User] @manyToMany(relationName: "GatheringAttendees")
-  createdAt: AWSDateTime
-  updatedAt: AWSDateTime
-}
+# type Gathering
+#   @model
+#   @auth(
+#     rules: [
+#       { allow: owner, ownerField: "creatorId" }
+#       { allow: private, operations: [read] }
+#       { allow: public, operations: [read] }
+#     ]
+#   ) {
+#   id: ID!
+#   title: String!
+#   description: String
+#   type: GatheringType!
+#   startDate: AWSDateTime!
+#   endDate: AWSDateTime
+#   creatorId: ID! @index(name: "byCreatorId")
+#   creator: User! @belongsTo(fields: ["creatorId"])
+#   mosqueId: ID! @index(name: "byMosqueId")
+#   mosque: Mosque! @belongsTo(fields: ["mosqueId"])
+#   attendees: [User] @manyToMany(relationName: "GatheringAttendee")
+#   createdAt: AWSDateTime
+#   updatedAt: AWSDateTime
+# }
 
 type Donation
   @model
@@ -247,11 +247,13 @@ type Mosque
   liveVideoUrl: String
   creatorId: ID! @index(name: "byCreatorId")
   creator: User! @belongsTo(fields: ["creatorId"])
-  followers: [User] @manyToMany(relationName: "MosqueFollowers")
+  organizationId: ID @index(name: "byOrganizationId")
+  organization: Organization @belongsTo(fields: ["organizationId"])
+  followers: [User] @manyToMany(relationName: "MosqueFollower")
   announcements: [Announcement] @hasMany(indexName: "byMosqueId", fields: ["id"])
   classes: [Class] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  committees: [Committee] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  gatherings: [Gathering] @hasMany(indexName: "byMosqueId", fields: ["id"])
+  # committees: [Committee] @hasMany(indexName: "byMosqueId", fields: ["id"])
+  # gatherings: [Gathering] @hasMany(indexName: "byMosqueId", fields: ["id"])
   fundraisingCampaigns: [FundraisingCampaign] @hasMany(indexName: "byMosqueId", fields: ["id"])
   monthlyPrayerSchedules: [MonthlyPrayerSchedule] @hasMany(indexName: "byMosqueId", fields: ["id"])
   resources: [Resource] @hasMany(indexName: "byMosqueId", fields: ["id"])
@@ -283,6 +285,30 @@ type MosqueSubscription
   purchaser: User! @belongsTo(fields: ["purchaserId"])
   mosqueId: ID! @index(name: "byMosqueId")
   mosque: Mosque! @belongsTo(fields: ["mosqueId"])
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Organization
+  @model
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "creatorId" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  description: String
+  logo: String
+  phone: AWSPhone
+  email: AWSEmail
+  website: String
+  creatorId: ID! @index(name: "byCreatorId")
+  creator: User! @belongsTo(fields: ["creatorId"])
+  members: [User] @manyToMany(relationName: "OrganizationMember")
+  mosques: [Mosque] @hasMany(indexName: "byOrganizationId", fields: ["id"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
 }
@@ -354,19 +380,21 @@ type User
   comments: [Comment] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdAnnouncements: [Announcement] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdClasses: [Class] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  createdCommittees: [Committee] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  createdGatherings: [Gathering] @hasMany(indexName: "byCreatorId", fields: ["id"])
+  # createdCommittees: [Committee] @hasMany(indexName: "byCreatorId", fields: ["id"])
+  # createdGatherings: [Gathering] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdFundraisingCampaigns: [FundraisingCampaign] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdMonthlyPrayerSchedules: [MonthlyPrayerSchedule] @hasMany(indexName: "byCreatorId", fields: ["id"])
+  createdOrganizations: [Organization] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdMosques: [Mosque] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdResources: [Resource] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdServices: [Service] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdVolunteerTasks: [VolunteerTask] @hasMany(indexName: "byCreatorId", fields: ["id"])
   donations: [Donation] @hasMany(indexName: "byDonor", fields: ["id"])
-  committees: [Committee] @manyToMany(relationName: "CommitteeMembers")
-  gatherings: [Gathering] @manyToMany(relationName: "GatheringAttendees")
+  # committees: [Committee] @manyToMany(relationName: "CommitteeMember")
+  # gatherings: [Gathering] @manyToMany(relationName: "GatheringAttendee")
   instructingClasses: [Class] @hasMany(indexName: "byInstructorId", fields: ["id"])
-  mosques: [Mosque] @manyToMany(relationName: "MosqueFollowers")
+  mosques: [Mosque] @manyToMany(relationName: "MosqueFollower")
+  organizations: [Organization] @manyToMany(relationName: "OrganizationMember")
   purchasedSubscriptions: [MosqueSubscription] @hasMany(indexName: "byPurchaserId", fields: ["id"])
   volunteerTasks: [VolunteerTask] @manyToMany(relationName: "VolunteerTaskUser")
   likes: [Like] @hasMany(indexName: "byCreatorId", fields: ["id"])

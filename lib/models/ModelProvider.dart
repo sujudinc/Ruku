@@ -24,17 +24,15 @@ import 'Announcement.dart';
 import 'Bookmark.dart';
 import 'Class.dart';
 import 'Comment.dart';
-import 'Committee.dart';
-import 'CommitteeMembers.dart';
 import 'Donation.dart';
 import 'FundraisingCampaign.dart';
-import 'Gathering.dart';
-import 'GatheringAttendees.dart';
 import 'Like.dart';
 import 'MonthlyPrayerSchedule.dart';
 import 'Mosque.dart';
-import 'MosqueFollowers.dart';
+import 'MosqueFollower.dart';
 import 'MosqueSubscription.dart';
+import 'Organization.dart';
+import 'OrganizationMember.dart';
 import 'Resource.dart';
 import 'Service.dart';
 import 'User.dart';
@@ -50,24 +48,22 @@ export 'Announcement.dart';
 export 'Bookmark.dart';
 export 'Class.dart';
 export 'Comment.dart';
-export 'Committee.dart';
-export 'CommitteeMembers.dart';
 export 'Day.dart';
 export 'DayType.dart';
 export 'Donation.dart';
 export 'FundraisingCampaign.dart';
 export 'FundraisingCampaignType.dart';
-export 'Gathering.dart';
-export 'GatheringAttendees.dart';
 export 'GatheringType.dart';
 export 'Hours.dart';
 export 'Like.dart';
 export 'MonthlyPrayerSchedule.dart';
 export 'Mosque.dart';
-export 'MosqueFollowers.dart';
+export 'MosqueFollower.dart';
 export 'MosqueSubscription.dart';
 export 'MosqueSubscriptionStatus.dart';
 export 'OperatingHours.dart';
+export 'Organization.dart';
+export 'OrganizationMember.dart';
 export 'PrayerTime.dart';
 export 'PrayerType.dart';
 export 'Resource.dart';
@@ -84,9 +80,9 @@ export 'VolunteerTaskUser.dart';
 
 class ModelProvider implements amplify_core.ModelProviderInterface {
   @override
-  String version = "68c3c1dbd10ccc201c79e9b0a52344a3";
+  String version = "48211a0accea35e73833be47cc781721";
   @override
-  List<amplify_core.ModelSchema> modelSchemas = [Announcement.schema, Bookmark.schema, Class.schema, Comment.schema, Committee.schema, CommitteeMembers.schema, Donation.schema, FundraisingCampaign.schema, Gathering.schema, GatheringAttendees.schema, Like.schema, MonthlyPrayerSchedule.schema, Mosque.schema, MosqueFollowers.schema, MosqueSubscription.schema, Resource.schema, Service.schema, User.schema, VolunteerTask.schema, VolunteerTaskUser.schema];
+  List<amplify_core.ModelSchema> modelSchemas = [Announcement.schema, Bookmark.schema, Class.schema, Comment.schema, Donation.schema, FundraisingCampaign.schema, Like.schema, MonthlyPrayerSchedule.schema, Mosque.schema, MosqueFollower.schema, MosqueSubscription.schema, Organization.schema, OrganizationMember.schema, Resource.schema, Service.schema, User.schema, VolunteerTask.schema, VolunteerTaskUser.schema];
   @override
   List<amplify_core.ModelSchema> customTypeSchemas = [Day.schema, Hours.schema, OperatingHours.schema, PrayerTime.schema, SocialMedia.schema];
   static final ModelProvider _instance = ModelProvider();
@@ -103,28 +99,24 @@ class ModelProvider implements amplify_core.ModelProviderInterface {
         return Class.classType;
       case "Comment":
         return Comment.classType;
-      case "Committee":
-        return Committee.classType;
-      case "CommitteeMembers":
-        return CommitteeMembers.classType;
       case "Donation":
         return Donation.classType;
       case "FundraisingCampaign":
         return FundraisingCampaign.classType;
-      case "Gathering":
-        return Gathering.classType;
-      case "GatheringAttendees":
-        return GatheringAttendees.classType;
       case "Like":
         return Like.classType;
       case "MonthlyPrayerSchedule":
         return MonthlyPrayerSchedule.classType;
       case "Mosque":
         return Mosque.classType;
-      case "MosqueFollowers":
-        return MosqueFollowers.classType;
+      case "MosqueFollower":
+        return MosqueFollower.classType;
       case "MosqueSubscription":
         return MosqueSubscription.classType;
+      case "Organization":
+        return Organization.classType;
+      case "OrganizationMember":
+        return OrganizationMember.classType;
       case "Resource":
         return Resource.classType;
       case "Service":

@@ -4,7 +4,6 @@ import { API } from "@ruku/common-layer/types"
 
 import { Event } from "../event"
 
-const _dynamoDBService = new DynamoDBService()
 
 export default async (event: Event) => {
 	const {
@@ -19,18 +18,25 @@ export default async (event: Event) => {
 		},
 	} = event
 
-	await _dynamoDBService.createItem({
+	const now = new Date().toISOString()
+
+	const user: API.User = {
+		__typename: "User",
+		id: userId,
+		selfie: null,
+		firstName: given_name,
+		lastName: family_name,
+		email,
+		phone: null,
+		type: userType as API.UserType,
+		status: API.UserStatus.ACTIVE,
+		createdAt: now,
+		updatedAt: now,
+	}
+
+	await new DynamoDBService().createItem({
 		tableName: ENVS.DYNAMODB_TABLES.User,
-		item: {
-			id: userId,
-			selfie: null,
-			firstName: given_name,
-			lastName: family_name,
-			email,
-			phone: null,
-			type: userType === "ADMIN" ? API.UserType.ADMIN : API.UserType.USER,
-			status: API.UserStatus.ACTIVE,
-		},
+		item: user,
 	})
 
 	return event

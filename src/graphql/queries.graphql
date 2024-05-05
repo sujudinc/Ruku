@@ -74,19 +74,15 @@ query GetAnnouncement($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -110,19 +106,15 @@ query GetAnnouncement($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -182,6 +174,20 @@ query GetAnnouncement($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -191,14 +197,6 @@ query GetAnnouncement($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -301,6 +299,7 @@ query ListAnnouncements(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -375,6 +374,7 @@ query AnnouncementsByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -449,6 +449,7 @@ query AnnouncementsByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -513,6 +514,7 @@ query GetBookmark($id: ID!) {
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -548,19 +550,15 @@ query GetBookmark($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -584,19 +582,15 @@ query GetBookmark($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -656,6 +650,20 @@ query GetBookmark($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -665,14 +673,6 @@ query GetBookmark($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -772,6 +772,7 @@ query ListBookmarks(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -843,6 +844,7 @@ query BookmarksByAnnouncementId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -914,6 +916,7 @@ query BookmarksByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -985,6 +988,7 @@ query BookmarksByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -1034,19 +1038,15 @@ query GetClass($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -1070,19 +1070,15 @@ query GetClass($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -1130,19 +1126,15 @@ query GetClass($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -1166,19 +1158,15 @@ query GetClass($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -1238,6 +1226,20 @@ query GetClass($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -1247,14 +1249,6 @@ query GetClass($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -1364,6 +1358,7 @@ query ListClasses(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -1445,6 +1440,7 @@ query ClassesByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -1526,6 +1522,7 @@ query ClassesByInstructorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -1607,6 +1604,7 @@ query ClassesByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -1686,6 +1684,7 @@ query GetComment($id: ID!) {
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -1757,6 +1756,7 @@ query GetComment($id: ID!) {
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -1792,19 +1792,15 @@ query GetComment($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -1828,19 +1824,15 @@ query GetComment($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -1900,6 +1892,20 @@ query GetComment($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -1909,14 +1915,6 @@ query GetComment($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -2033,6 +2031,7 @@ query ListComments(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -2121,6 +2120,7 @@ query CommentsByParentCommentId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -2209,6 +2209,7 @@ query CommentsByAnnouncementId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -2297,6 +2298,7 @@ query CommentsByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -2385,834 +2387,9 @@ query CommentsByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetCommittee($id: ID!) {
-  getCommittee(id: $id) {
-    id
-    title
-    description
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    members {
-      items {
-        id
-        committeeId
-        userId
-        createdAt
-        updatedAt
-        creatorId
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListCommittees(
-  $filter: ModelCommitteeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listCommittees(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      title
-      description
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      members {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query CommitteesByCreatorId(
-  $creatorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelCommitteeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  committeesByCreatorId(
-    creatorId: $creatorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      members {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query CommitteesByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelCommitteeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  committeesByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      members {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetGathering($id: ID!) {
-  getGathering(id: $id) {
-    id
-    title
-    description
-    type
-    startDate
-    endDate
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    attendees {
-      items {
-        id
-        gatheringId
-        userId
-        createdAt
-        updatedAt
-        creatorId
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListGatherings(
-  $filter: ModelGatheringFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listGatherings(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      title
-      description
-      type
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      attendees {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GatheringsByCreatorId(
-  $creatorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelGatheringFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  gatheringsByCreatorId(
-    creatorId: $creatorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      type
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      attendees {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GatheringsByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelGatheringFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  gatheringsByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      type
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      attendees {
-        nextToken
         __typename
       }
       createdAt
@@ -3257,19 +2434,15 @@ query GetDonation($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -3293,19 +2466,15 @@ query GetDonation($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -3367,6 +2536,7 @@ query GetDonation($id: ID!) {
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -3598,19 +2768,15 @@ query GetFundraisingCampaign($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -3634,19 +2800,15 @@ query GetFundraisingCampaign($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -3706,6 +2868,20 @@ query GetFundraisingCampaign($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -3715,14 +2891,6 @@ query GetFundraisingCampaign($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -3837,6 +3005,7 @@ query ListFundraisingCampaigns(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -3908,6 +3077,7 @@ query FundraisingCampaignsByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -3979,6 +3149,7 @@ query FundraisingCampaignsByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -4047,6 +3218,7 @@ query GetLike($id: ID!) {
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -4082,19 +3254,15 @@ query GetLike($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -4118,19 +3286,15 @@ query GetLike($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -4190,6 +3354,20 @@ query GetLike($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -4199,14 +3377,6 @@ query GetLike($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -4306,6 +3476,7 @@ query ListLikes(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -4377,6 +3548,7 @@ query LikesByAnnouncementId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -4448,6 +3620,7 @@ query LikesByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -4519,6 +3692,7 @@ query LikesByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -4571,19 +3745,15 @@ query GetMonthlyPrayerSchedule($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -4607,19 +3777,15 @@ query GetMonthlyPrayerSchedule($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -4679,6 +3845,20 @@ query GetMonthlyPrayerSchedule($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -4688,14 +3868,6 @@ query GetMonthlyPrayerSchedule($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -4796,6 +3968,7 @@ query ListMonthlyPrayerSchedules(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -4864,6 +4037,7 @@ query MonthlyPrayerSchedulesByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -4932,6 +4106,7 @@ query MonthlyPrayerSchedulesByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -5023,19 +4198,15 @@ query GetMosque($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -5059,19 +4230,15 @@ query GetMosque($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -5090,6 +4257,43 @@ query GetMosque($id: ID!) {
       createdAt
       updatedAt
       owner
+      __typename
+    }
+    organizationId
+    organization {
+      id
+      name
+      description
+      logo
+      phone
+      email
+      website
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
       __typename
     }
     followers {
@@ -5132,37 +4336,6 @@ query GetMosque($id: ID!) {
         daysOfWeek
         creatorId
         instructorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    committees {
-      items {
-        id
-        title
-        description
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    gatherings {
-      items {
-        id
-        title
-        description
-        type
-        startDate
-        endDate
-        creatorId
         mosqueId
         createdAt
         updatedAt
@@ -5360,6 +4533,20 @@ query ListMosques(
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -5369,14 +4556,6 @@ query ListMosques(
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -5477,6 +4656,20 @@ query MosquesByCreatorId(
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -5489,11 +4682,126 @@ query MosquesByCreatorId(
         nextToken
         __typename
       }
-      committees {
+      fundraisingCampaigns {
         nextToken
         __typename
       }
-      gatherings {
+      monthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      resources {
+        nextToken
+        __typename
+      }
+      services {
+        nextToken
+        __typename
+      }
+      subscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query MosquesByOrganizationId(
+  $organizationId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelMosqueFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  mosquesByOrganizationId(
+    organizationId: $organizationId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      liveVideoUrl
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      classes {
         nextToken
         __typename
       }
@@ -5576,19 +4884,15 @@ query GetMosqueSubscription($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -5612,19 +4916,15 @@ query GetMosqueSubscription($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -5684,6 +4984,20 @@ query GetMosqueSubscription($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -5693,14 +5007,6 @@ query GetMosqueSubscription($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -5796,6 +5102,7 @@ query ListMosqueSubscriptions(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -5859,6 +5166,7 @@ query MosqueSubscriptionsByPurchaserId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -5922,8 +5230,250 @@ query MosqueSubscriptionsByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetOrganization($id: ID!) {
+  getOrganization(id: $id) {
+    id
+    name
+    description
+    logo
+    phone
+    email
+    website
+    creatorId
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    members {
+      items {
+        id
+        organizationId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    mosques {
+      items {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        creatorId
+        organizationId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListOrganizations(
+  $filter: ModelOrganizationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listOrganizations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      name
+      description
+      logo
+      phone
+      email
+      website
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query OrganizationsByCreatorId(
+  $creatorId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelOrganizationFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  organizationsByCreatorId(
+    creatorId: $creatorId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      name
+      description
+      logo
+      phone
+      email
+      website
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
         __typename
       }
       createdAt
@@ -5969,19 +5519,15 @@ query GetResource($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -6005,19 +5551,15 @@ query GetResource($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -6077,6 +5619,20 @@ query GetResource($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -6086,14 +5642,6 @@ query GetResource($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -6185,6 +5733,7 @@ query ListResources(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -6248,6 +5797,7 @@ query ResourcesByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -6311,6 +5861,7 @@ query ResourcesByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -6357,19 +5908,15 @@ query GetService($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -6393,19 +5940,15 @@ query GetService($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -6465,6 +6008,20 @@ query GetService($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -6474,14 +6031,6 @@ query GetService($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -6572,6 +6121,7 @@ query ListServices(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -6634,6 +6184,7 @@ query ServicesByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -6696,6 +6247,7 @@ query ServicesByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -6782,37 +6334,6 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    createdCommittees {
-      items {
-        id
-        title
-        description
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdGatherings {
-      items {
-        id
-        title
-        description
-        type
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
     createdFundraisingCampaigns {
       items {
         id
@@ -6848,6 +6369,23 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
+    createdOrganizations {
+      items {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
     createdMosques {
       items {
         id
@@ -6862,6 +6400,7 @@ query GetUser($id: ID!) {
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -6931,34 +6470,6 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    committees {
-      items {
-        id
-        committeeId
-        userId
-        createdAt
-        updatedAt
-        creatorId
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    gatherings {
-      items {
-        id
-        gatheringId
-        userId
-        createdAt
-        updatedAt
-        creatorId
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
     instructingClasses {
       items {
         id
@@ -6982,6 +6493,20 @@ query GetUser($id: ID!) {
       items {
         id
         mosqueId
+        userId
+        createdAt
+        updatedAt
+        creatorId
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    organizations {
+      items {
+        id
+        organizationId
         userId
         createdAt
         updatedAt
@@ -7074,19 +6599,15 @@ query ListUsers(
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -7110,19 +6631,15 @@ query ListUsers(
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -7182,19 +6699,15 @@ query GetVolunteerTask($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -7218,19 +6731,15 @@ query GetVolunteerTask($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -7290,6 +6799,20 @@ query GetVolunteerTask($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -7299,14 +6822,6 @@ query GetVolunteerTask($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -7412,6 +6927,7 @@ query ListVolunteerTasks(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -7479,6 +6995,7 @@ query VolunteerTasksByCreatorId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -7546,6 +7063,7 @@ query VolunteerTasksByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -7563,640 +7081,8 @@ query VolunteerTasksByMosqueId(
   }
 }
 
-query GetCommitteeMembers($id: ID!) {
-  getCommitteeMembers(id: $id) {
-    id
-    committeeId
-    userId
-    committee {
-      id
-      title
-      description
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      members {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    user {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    createdAt
-    updatedAt
-    creatorId
-    owner
-    __typename
-  }
-}
-
-query ListCommitteeMembers(
-  $filter: ModelCommitteeMembersFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listCommitteeMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      committeeId
-      userId
-      committee {
-        id
-        title
-        description
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      user {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      creatorId
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query CommitteeMembersByCommitteeId(
-  $committeeId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelCommitteeMembersFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  committeeMembersByCommitteeId(
-    committeeId: $committeeId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      committeeId
-      userId
-      committee {
-        id
-        title
-        description
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      user {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      creatorId
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query CommitteeMembersByUserId(
-  $userId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelCommitteeMembersFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  committeeMembersByUserId(
-    userId: $userId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      committeeId
-      userId
-      committee {
-        id
-        title
-        description
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      user {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      creatorId
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetGatheringAttendees($id: ID!) {
-  getGatheringAttendees(id: $id) {
-    id
-    gatheringId
-    userId
-    gathering {
-      id
-      title
-      description
-      type
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      attendees {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    user {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    createdAt
-    updatedAt
-    creatorId
-    owner
-    __typename
-  }
-}
-
-query ListGatheringAttendees(
-  $filter: ModelGatheringAttendeesFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listGatheringAttendees(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      gatheringId
-      userId
-      gathering {
-        id
-        title
-        description
-        type
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      user {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      creatorId
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GatheringAttendeesByGatheringId(
-  $gatheringId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelGatheringAttendeesFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  gatheringAttendeesByGatheringId(
-    gatheringId: $gatheringId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      gatheringId
-      userId
-      gathering {
-        id
-        title
-        description
-        type
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      user {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      creatorId
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GatheringAttendeesByUserId(
-  $userId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelGatheringAttendeesFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  gatheringAttendeesByUserId(
-    userId: $userId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      gatheringId
-      userId
-      gathering {
-        id
-        title
-        description
-        type
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      user {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      creatorId
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetMosqueFollowers($id: ID!) {
-  getMosqueFollowers(id: $id) {
+query GetMosqueFollower($id: ID!) {
+  getMosqueFollower(id: $id) {
     id
     mosqueId
     userId
@@ -8238,6 +7124,20 @@ query GetMosqueFollowers($id: ID!) {
         owner
         __typename
       }
+      organizationId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
       followers {
         nextToken
         __typename
@@ -8247,14 +7147,6 @@ query GetMosqueFollowers($id: ID!) {
         __typename
       }
       classes {
-        nextToken
-        __typename
-      }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
         nextToken
         __typename
       }
@@ -8324,19 +7216,15 @@ query GetMosqueFollowers($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -8360,19 +7248,15 @@ query GetMosqueFollowers($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -8402,7 +7286,7 @@ query GetMosqueFollowers($id: ID!) {
 }
 
 query ListMosqueFollowers(
-  $filter: ModelMosqueFollowersFilterInput
+  $filter: ModelMosqueFollowerFilterInput
   $limit: Int
   $nextToken: String
 ) {
@@ -8424,6 +7308,7 @@ query ListMosqueFollowers(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -8457,7 +7342,7 @@ query ListMosqueFollowers(
 query MosqueFollowersByMosqueId(
   $mosqueId: ID!
   $sortDirection: ModelSortDirection
-  $filter: ModelMosqueFollowersFilterInput
+  $filter: ModelMosqueFollowerFilterInput
   $limit: Int
   $nextToken: String
 ) {
@@ -8485,6 +7370,7 @@ query MosqueFollowersByMosqueId(
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename
@@ -8518,7 +7404,7 @@ query MosqueFollowersByMosqueId(
 query MosqueFollowersByUserId(
   $userId: ID!
   $sortDirection: ModelSortDirection
-  $filter: ModelMosqueFollowersFilterInput
+  $filter: ModelMosqueFollowerFilterInput
   $limit: Int
   $nextToken: String
 ) {
@@ -8545,6 +7431,310 @@ query MosqueFollowersByUserId(
         email
         website
         liveVideoUrl
+        creatorId
+        organizationId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query GetOrganizationMember($id: ID!) {
+  getOrganizationMember(id: $id) {
+    id
+    organizationId
+    userId
+    organization {
+      id
+      name
+      description
+      logo
+      phone
+      email
+      website
+      creatorId
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      __typename
+    }
+    user {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdClasses {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      createdResources {
+        nextToken
+        __typename
+      }
+      createdServices {
+        nextToken
+        __typename
+      }
+      createdVolunteerTasks {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      instructingClasses {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      purchasedSubscriptions {
+        nextToken
+        __typename
+      }
+      volunteerTasks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    creatorId
+    owner
+    __typename
+  }
+}
+
+query ListOrganizationMembers(
+  $filter: ModelOrganizationMemberFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listOrganizationMembers(
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      organizationId
+      userId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query OrganizationMembersByOrganizationId(
+  $organizationId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelOrganizationMemberFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  organizationMembersByOrganizationId(
+    organizationId: $organizationId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      organizationId
+      userId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
+        creatorId
+        createdAt
+        updatedAt
+        __typename
+      }
+      user {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query OrganizationMembersByUserId(
+  $userId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelOrganizationMemberFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  organizationMembersByUserId(
+    userId: $userId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      organizationId
+      userId
+      organization {
+        id
+        name
+        description
+        logo
+        phone
+        email
+        website
         creatorId
         createdAt
         updatedAt
@@ -8607,19 +7797,15 @@ query GetVolunteerTaskUser($id: ID!) {
         nextToken
         __typename
       }
-      createdCommittees {
-        nextToken
-        __typename
-      }
-      createdGatherings {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
       createdMonthlyPrayerSchedules {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
         nextToken
         __typename
       }
@@ -8643,19 +7829,15 @@ query GetVolunteerTaskUser($id: ID!) {
         nextToken
         __typename
       }
-      committees {
-        nextToken
-        __typename
-      }
-      gatherings {
-        nextToken
-        __typename
-      }
       instructingClasses {
         nextToken
         __typename
       }
       mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
@@ -8712,6 +7894,7 @@ query GetVolunteerTaskUser($id: ID!) {
         website
         liveVideoUrl
         creatorId
+        organizationId
         createdAt
         updatedAt
         __typename

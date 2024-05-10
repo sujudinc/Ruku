@@ -17,7 +17,7 @@
 // Generated files can be excluded from analysis in analysis_options.yaml
 // For more info, see: https://dart.dev/guides/language/analysis-options#excluding-code-from-analysis
 
-// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
+// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, override_on_non_overriding_member, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
 
 import 'ModelProvider.dart';
 import 'package:amplify_core/amplify_core.dart' as amplify_core;
@@ -431,114 +431,240 @@ class User extends amplify_core.Model {
       _type = amplify_core.enumFromString<UserType>(json['type'], UserType.values),
       _status = amplify_core.enumFromString<UserStatus>(json['status'], UserStatus.values),
       _stripeCustomerId = json['stripeCustomerId'],
-      _bookmarks = json['bookmarks'] is List
-        ? (json['bookmarks'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Bookmark.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _comments = json['comments'] is List
-        ? (json['comments'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Comment.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdAnnouncements = json['createdAnnouncements'] is List
-        ? (json['createdAnnouncements'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Announcement.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdClasses = json['createdClasses'] is List
-        ? (json['createdClasses'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Class.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdFundraisingCampaigns = json['createdFundraisingCampaigns'] is List
-        ? (json['createdFundraisingCampaigns'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => FundraisingCampaign.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdMonthlyPrayerSchedules = json['createdMonthlyPrayerSchedules'] is List
-        ? (json['createdMonthlyPrayerSchedules'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => MonthlyPrayerSchedule.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdOrganizations = json['createdOrganizations'] is List
-        ? (json['createdOrganizations'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Organization.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdMosques = json['createdMosques'] is List
-        ? (json['createdMosques'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Mosque.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdResources = json['createdResources'] is List
-        ? (json['createdResources'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Resource.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdServices = json['createdServices'] is List
-        ? (json['createdServices'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Service.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _createdVolunteerTasks = json['createdVolunteerTasks'] is List
-        ? (json['createdVolunteerTasks'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => VolunteerTask.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _donations = json['donations'] is List
-        ? (json['donations'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Donation.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _instructingClasses = json['instructingClasses'] is List
-        ? (json['instructingClasses'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Class.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _mosques = json['mosques'] is List
-        ? (json['mosques'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => MosqueFollower.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _organizations = json['organizations'] is List
-        ? (json['organizations'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => OrganizationMember.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _purchasedSubscriptions = json['purchasedSubscriptions'] is List
-        ? (json['purchasedSubscriptions'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => MosqueSubscription.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _volunteerTasks = json['volunteerTasks'] is List
-        ? (json['volunteerTasks'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => VolunteerTaskUser.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _likes = json['likes'] is List
-        ? (json['likes'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Like.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
+      _bookmarks = json['bookmarks']  is Map
+        ? (json['bookmarks']['items'] is List
+          ? (json['bookmarks']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Bookmark.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['bookmarks'] is List
+          ? (json['bookmarks'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Bookmark.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _comments = json['comments']  is Map
+        ? (json['comments']['items'] is List
+          ? (json['comments']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Comment.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['comments'] is List
+          ? (json['comments'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Comment.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _createdAnnouncements = json['createdAnnouncements']  is Map
+        ? (json['createdAnnouncements']['items'] is List
+          ? (json['createdAnnouncements']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Announcement.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['createdAnnouncements'] is List
+          ? (json['createdAnnouncements'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Announcement.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _createdClasses = json['createdClasses']  is Map
+        ? (json['createdClasses']['items'] is List
+          ? (json['createdClasses']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['createdClasses'] is List
+          ? (json['createdClasses'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _createdFundraisingCampaigns = json['createdFundraisingCampaigns']  is Map
+        ? (json['createdFundraisingCampaigns']['items'] is List
+          ? (json['createdFundraisingCampaigns']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => FundraisingCampaign.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['createdFundraisingCampaigns'] is List
+          ? (json['createdFundraisingCampaigns'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => FundraisingCampaign.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _createdMonthlyPrayerSchedules = json['createdMonthlyPrayerSchedules']  is Map
+        ? (json['createdMonthlyPrayerSchedules']['items'] is List
+          ? (json['createdMonthlyPrayerSchedules']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => MonthlyPrayerSchedule.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['createdMonthlyPrayerSchedules'] is List
+          ? (json['createdMonthlyPrayerSchedules'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => MonthlyPrayerSchedule.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _createdOrganizations = json['createdOrganizations']  is Map
+        ? (json['createdOrganizations']['items'] is List
+          ? (json['createdOrganizations']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Organization.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['createdOrganizations'] is List
+          ? (json['createdOrganizations'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Organization.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _createdMosques = json['createdMosques']  is Map
+        ? (json['createdMosques']['items'] is List
+          ? (json['createdMosques']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Mosque.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['createdMosques'] is List
+          ? (json['createdMosques'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Mosque.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _createdResources = json['createdResources']  is Map
+        ? (json['createdResources']['items'] is List
+          ? (json['createdResources']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Resource.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['createdResources'] is List
+          ? (json['createdResources'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Resource.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _createdServices = json['createdServices']  is Map
+        ? (json['createdServices']['items'] is List
+          ? (json['createdServices']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Service.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['createdServices'] is List
+          ? (json['createdServices'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Service.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _createdVolunteerTasks = json['createdVolunteerTasks']  is Map
+        ? (json['createdVolunteerTasks']['items'] is List
+          ? (json['createdVolunteerTasks']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => VolunteerTask.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['createdVolunteerTasks'] is List
+          ? (json['createdVolunteerTasks'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => VolunteerTask.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _donations = json['donations']  is Map
+        ? (json['donations']['items'] is List
+          ? (json['donations']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Donation.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['donations'] is List
+          ? (json['donations'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Donation.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _instructingClasses = json['instructingClasses']  is Map
+        ? (json['instructingClasses']['items'] is List
+          ? (json['instructingClasses']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['instructingClasses'] is List
+          ? (json['instructingClasses'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _mosques = json['mosques']  is Map
+        ? (json['mosques']['items'] is List
+          ? (json['mosques']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => MosqueFollower.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['mosques'] is List
+          ? (json['mosques'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => MosqueFollower.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _organizations = json['organizations']  is Map
+        ? (json['organizations']['items'] is List
+          ? (json['organizations']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => OrganizationMember.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['organizations'] is List
+          ? (json['organizations'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => OrganizationMember.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _purchasedSubscriptions = json['purchasedSubscriptions']  is Map
+        ? (json['purchasedSubscriptions']['items'] is List
+          ? (json['purchasedSubscriptions']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => MosqueSubscription.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['purchasedSubscriptions'] is List
+          ? (json['purchasedSubscriptions'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => MosqueSubscription.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _volunteerTasks = json['volunteerTasks']  is Map
+        ? (json['volunteerTasks']['items'] is List
+          ? (json['volunteerTasks']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => VolunteerTaskUser.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['volunteerTasks'] is List
+          ? (json['volunteerTasks'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => VolunteerTaskUser.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _likes = json['likes']  is Map
+        ? (json['likes']['items'] is List
+          ? (json['likes']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Like.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['likes'] is List
+          ? (json['likes'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Like.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
       _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
   

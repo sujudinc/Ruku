@@ -17,7 +17,7 @@
 // Generated files can be excluded from analysis in analysis_options.yaml
 // For more info, see: https://dart.dev/guides/language/analysis-options#excluding-code-from-analysis
 
-// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
+// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, override_on_non_overriding_member, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
 
 import 'ModelProvider.dart';
 import 'package:amplify_core/amplify_core.dart' as amplify_core;
@@ -143,26 +143,26 @@ class Hours {
   }
   
   Hours.fromJson(Map<String, dynamic> json)  
-    : _monday = json['monday']?['serializedData'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['monday']['serializedData']))
+    : _monday = json['monday'] != null
+        ? Day.fromJson(new Map<String, dynamic>.from(json['monday']))
         : null,
-      _tuesday = json['tuesday']?['serializedData'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['tuesday']['serializedData']))
+      _tuesday = json['tuesday'] != null
+        ? Day.fromJson(new Map<String, dynamic>.from(json['tuesday']))
         : null,
-      _wednesday = json['wednesday']?['serializedData'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['wednesday']['serializedData']))
+      _wednesday = json['wednesday'] != null
+        ? Day.fromJson(new Map<String, dynamic>.from(json['wednesday']))
         : null,
-      _thursday = json['thursday']?['serializedData'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['thursday']['serializedData']))
+      _thursday = json['thursday'] != null
+        ? Day.fromJson(new Map<String, dynamic>.from(json['thursday']))
         : null,
-      _friday = json['friday']?['serializedData'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['friday']['serializedData']))
+      _friday = json['friday'] != null
+        ? Day.fromJson(new Map<String, dynamic>.from(json['friday']))
         : null,
-      _saturday = json['saturday']?['serializedData'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['saturday']['serializedData']))
+      _saturday = json['saturday'] != null
+        ? Day.fromJson(new Map<String, dynamic>.from(json['saturday']))
         : null,
-      _sunday = json['sunday']?['serializedData'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['sunday']['serializedData']))
+      _sunday = json['sunday'] != null
+        ? Day.fromJson(new Map<String, dynamic>.from(json['sunday']))
         : null;
   
   Map<String, dynamic> toJson() => {

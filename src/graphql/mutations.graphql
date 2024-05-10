@@ -161,6 +161,7 @@ mutation CreateAnnouncement(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -186,6 +187,7 @@ mutation CreateAnnouncement(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -410,6 +412,7 @@ mutation UpdateAnnouncement(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -435,6 +438,7 @@ mutation UpdateAnnouncement(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -659,6 +663,7 @@ mutation DeleteAnnouncement(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -684,6 +689,7 @@ mutation DeleteAnnouncement(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -800,6 +806,7 @@ mutation CreateBookmark(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -921,6 +928,7 @@ mutation CreateBookmark(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -946,6 +954,7 @@ mutation CreateBookmark(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -1062,6 +1071,7 @@ mutation UpdateBookmark(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -1183,6 +1193,7 @@ mutation UpdateBookmark(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -1208,6 +1219,7 @@ mutation UpdateBookmark(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -1324,6 +1336,7 @@ mutation DeleteBookmark(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -1445,6 +1458,7 @@ mutation DeleteBookmark(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -1470,6 +1484,7 @@ mutation DeleteBookmark(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -1744,6 +1759,7 @@ mutation CreateClass(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -1769,6 +1785,7 @@ mutation CreateClass(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -2043,6 +2060,7 @@ mutation UpdateClass(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -2068,6 +2086,7 @@ mutation UpdateClass(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -2342,6 +2361,7 @@ mutation DeleteClass(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -2367,6 +2387,7 @@ mutation DeleteClass(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -2498,6 +2519,7 @@ mutation CreateComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -2570,6 +2592,7 @@ mutation CreateComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -2691,6 +2714,7 @@ mutation CreateComment(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -2716,6 +2740,7 @@ mutation CreateComment(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -2847,6 +2872,7 @@ mutation UpdateComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -2919,6 +2945,7 @@ mutation UpdateComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3040,6 +3067,7 @@ mutation UpdateComment(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -3065,6 +3093,7 @@ mutation UpdateComment(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -3196,6 +3225,7 @@ mutation DeleteComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3268,6 +3298,7 @@ mutation DeleteComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3389,6 +3420,7 @@ mutation DeleteComment(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -3414,6 +3446,7 @@ mutation DeleteComment(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -3614,6 +3647,7 @@ mutation CreateDonation(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3771,6 +3805,7 @@ mutation UpdateDonation(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3928,6 +3963,7 @@ mutation DeleteDonation(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -4073,6 +4109,7 @@ mutation CreateFundraisingCampaign(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -4098,6 +4135,7 @@ mutation CreateFundraisingCampaign(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -4301,6 +4339,7 @@ mutation UpdateFundraisingCampaign(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -4326,6 +4365,7 @@ mutation UpdateFundraisingCampaign(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -4529,6 +4569,7 @@ mutation DeleteFundraisingCampaign(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -4554,6 +4595,7 @@ mutation DeleteFundraisingCampaign(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -4685,6 +4727,7 @@ mutation CreateLike(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -4806,6 +4849,7 @@ mutation CreateLike(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -4831,6 +4875,7 @@ mutation CreateLike(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -4947,6 +4992,7 @@ mutation UpdateLike(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -5068,6 +5114,7 @@ mutation UpdateLike(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5093,6 +5140,7 @@ mutation UpdateLike(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -5209,6 +5257,7 @@ mutation DeleteLike(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -5330,6 +5379,7 @@ mutation DeleteLike(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5355,6 +5405,7 @@ mutation DeleteLike(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -5544,6 +5595,7 @@ mutation CreateMonthlyPrayerSchedule(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5569,6 +5621,7 @@ mutation CreateMonthlyPrayerSchedule(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -5758,6 +5811,7 @@ mutation UpdateMonthlyPrayerSchedule(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5783,6 +5837,7 @@ mutation UpdateMonthlyPrayerSchedule(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -5972,6 +6027,7 @@ mutation DeleteMonthlyPrayerSchedule(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5997,6 +6053,7 @@ mutation DeleteMonthlyPrayerSchedule(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -6114,6 +6171,7 @@ mutation CreateMosque(
       __typename
     }
     liveVideoUrl
+    isVerified
     creatorId
     creator {
       id
@@ -6211,6 +6269,7 @@ mutation CreateMosque(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -6486,6 +6545,7 @@ mutation UpdateMosque(
       __typename
     }
     liveVideoUrl
+    isVerified
     creatorId
     creator {
       id
@@ -6583,6 +6643,7 @@ mutation UpdateMosque(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -6858,6 +6919,7 @@ mutation DeleteMosque(
       __typename
     }
     liveVideoUrl
+    isVerified
     creatorId
     creator {
       id
@@ -6955,6 +7017,7 @@ mutation DeleteMosque(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -7297,6 +7360,7 @@ mutation CreateMosqueSubscription(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -7322,6 +7386,7 @@ mutation CreateMosqueSubscription(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -7506,6 +7571,7 @@ mutation UpdateMosqueSubscription(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -7531,6 +7597,7 @@ mutation UpdateMosqueSubscription(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -7715,6 +7782,7 @@ mutation DeleteMosqueSubscription(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -7740,6 +7808,7 @@ mutation DeleteMosqueSubscription(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -7815,6 +7884,7 @@ mutation CreateOrganization(
     phone
     email
     website
+    isVerified
     creatorId
     creator {
       id
@@ -7930,6 +8000,7 @@ mutation CreateOrganization(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -7957,6 +8028,7 @@ mutation UpdateOrganization(
     phone
     email
     website
+    isVerified
     creatorId
     creator {
       id
@@ -8072,6 +8144,7 @@ mutation UpdateOrganization(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -8099,6 +8172,7 @@ mutation DeleteOrganization(
     phone
     email
     website
+    isVerified
     creatorId
     creator {
       id
@@ -8214,6 +8288,7 @@ mutation DeleteOrganization(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -8350,6 +8425,7 @@ mutation CreateResource(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -8375,6 +8451,7 @@ mutation CreateResource(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -8559,6 +8636,7 @@ mutation UpdateResource(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -8584,6 +8662,7 @@ mutation UpdateResource(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -8768,6 +8847,7 @@ mutation DeleteResource(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -8793,6 +8873,7 @@ mutation DeleteResource(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -8976,6 +9057,7 @@ mutation CreateService(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9001,6 +9083,7 @@ mutation CreateService(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -9184,6 +9267,7 @@ mutation UpdateService(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9209,6 +9293,7 @@ mutation UpdateService(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -9392,6 +9477,7 @@ mutation DeleteService(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9417,6 +9503,7 @@ mutation DeleteService(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -9601,6 +9688,7 @@ mutation CreateVolunteerTask(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9626,6 +9714,7 @@ mutation CreateVolunteerTask(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -9824,6 +9913,7 @@ mutation UpdateVolunteerTask(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9849,6 +9939,7 @@ mutation UpdateVolunteerTask(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10047,6 +10138,7 @@ mutation DeleteVolunteerTask(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -10072,6 +10164,7 @@ mutation DeleteVolunteerTask(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10179,6 +10272,7 @@ mutation CreateMosqueFollower(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -10204,6 +10298,7 @@ mutation CreateMosqueFollower(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10386,6 +10481,7 @@ mutation UpdateMosqueFollower(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -10411,6 +10507,7 @@ mutation UpdateMosqueFollower(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10593,6 +10690,7 @@ mutation DeleteMosqueFollower(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -10618,6 +10716,7 @@ mutation DeleteMosqueFollower(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10786,6 +10885,7 @@ mutation CreateOrganizationMember(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -10925,6 +11025,7 @@ mutation UpdateOrganizationMember(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -11064,6 +11165,7 @@ mutation DeleteOrganizationMember(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -11317,6 +11419,7 @@ mutation CreateVolunteerTaskUser(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -11469,6 +11572,7 @@ mutation UpdateVolunteerTaskUser(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -11621,6 +11725,7 @@ mutation DeleteVolunteerTaskUser(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt

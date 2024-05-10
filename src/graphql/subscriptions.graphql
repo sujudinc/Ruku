@@ -161,6 +161,7 @@ subscription OnCreateAnnouncement(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -186,6 +187,7 @@ subscription OnCreateAnnouncement(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -410,6 +412,7 @@ subscription OnUpdateAnnouncement(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -435,6 +438,7 @@ subscription OnUpdateAnnouncement(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -659,6 +663,7 @@ subscription OnDeleteAnnouncement(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -684,6 +689,7 @@ subscription OnDeleteAnnouncement(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -800,6 +806,7 @@ subscription OnCreateBookmark(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -921,6 +928,7 @@ subscription OnCreateBookmark(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -946,6 +954,7 @@ subscription OnCreateBookmark(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -1062,6 +1071,7 @@ subscription OnUpdateBookmark(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -1183,6 +1193,7 @@ subscription OnUpdateBookmark(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -1208,6 +1219,7 @@ subscription OnUpdateBookmark(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -1324,6 +1336,7 @@ subscription OnDeleteBookmark(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -1445,6 +1458,7 @@ subscription OnDeleteBookmark(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -1470,6 +1484,7 @@ subscription OnDeleteBookmark(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -1744,6 +1759,7 @@ subscription OnCreateClass(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -1769,6 +1785,7 @@ subscription OnCreateClass(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -2043,6 +2060,7 @@ subscription OnUpdateClass(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -2068,6 +2086,7 @@ subscription OnUpdateClass(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -2342,6 +2361,7 @@ subscription OnDeleteClass(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -2367,6 +2387,7 @@ subscription OnDeleteClass(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -2498,6 +2519,7 @@ subscription OnCreateComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -2570,6 +2592,7 @@ subscription OnCreateComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -2691,6 +2714,7 @@ subscription OnCreateComment(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -2716,6 +2740,7 @@ subscription OnCreateComment(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -2847,6 +2872,7 @@ subscription OnUpdateComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -2919,6 +2945,7 @@ subscription OnUpdateComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3040,6 +3067,7 @@ subscription OnUpdateComment(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -3065,6 +3093,7 @@ subscription OnUpdateComment(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -3196,6 +3225,7 @@ subscription OnDeleteComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3268,6 +3298,7 @@ subscription OnDeleteComment(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3389,6 +3420,7 @@ subscription OnDeleteComment(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -3414,6 +3446,7 @@ subscription OnDeleteComment(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -3614,6 +3647,7 @@ subscription OnCreateDonation(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3771,6 +3805,7 @@ subscription OnUpdateDonation(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -3928,6 +3963,7 @@ subscription OnDeleteDonation(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -4073,6 +4109,7 @@ subscription OnCreateFundraisingCampaign(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -4098,6 +4135,7 @@ subscription OnCreateFundraisingCampaign(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -4301,6 +4339,7 @@ subscription OnUpdateFundraisingCampaign(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -4326,6 +4365,7 @@ subscription OnUpdateFundraisingCampaign(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -4529,6 +4569,7 @@ subscription OnDeleteFundraisingCampaign(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -4554,6 +4595,7 @@ subscription OnDeleteFundraisingCampaign(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -4685,6 +4727,7 @@ subscription OnCreateLike(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -4806,6 +4849,7 @@ subscription OnCreateLike(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -4831,6 +4875,7 @@ subscription OnCreateLike(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -4947,6 +4992,7 @@ subscription OnUpdateLike(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -5068,6 +5114,7 @@ subscription OnUpdateLike(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5093,6 +5140,7 @@ subscription OnUpdateLike(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -5209,6 +5257,7 @@ subscription OnDeleteLike(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -5330,6 +5379,7 @@ subscription OnDeleteLike(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5355,6 +5405,7 @@ subscription OnDeleteLike(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -5544,6 +5595,7 @@ subscription OnCreateMonthlyPrayerSchedule(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5569,6 +5621,7 @@ subscription OnCreateMonthlyPrayerSchedule(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -5758,6 +5811,7 @@ subscription OnUpdateMonthlyPrayerSchedule(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5783,6 +5837,7 @@ subscription OnUpdateMonthlyPrayerSchedule(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -5972,6 +6027,7 @@ subscription OnDeleteMonthlyPrayerSchedule(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -5997,6 +6053,7 @@ subscription OnDeleteMonthlyPrayerSchedule(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -6114,6 +6171,7 @@ subscription OnCreateMosque(
       __typename
     }
     liveVideoUrl
+    isVerified
     creatorId
     creator {
       id
@@ -6211,6 +6269,7 @@ subscription OnCreateMosque(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -6486,6 +6545,7 @@ subscription OnUpdateMosque(
       __typename
     }
     liveVideoUrl
+    isVerified
     creatorId
     creator {
       id
@@ -6583,6 +6643,7 @@ subscription OnUpdateMosque(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -6858,6 +6919,7 @@ subscription OnDeleteMosque(
       __typename
     }
     liveVideoUrl
+    isVerified
     creatorId
     creator {
       id
@@ -6955,6 +7017,7 @@ subscription OnDeleteMosque(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -7297,6 +7360,7 @@ subscription OnCreateMosqueSubscription(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -7322,6 +7386,7 @@ subscription OnCreateMosqueSubscription(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -7506,6 +7571,7 @@ subscription OnUpdateMosqueSubscription(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -7531,6 +7597,7 @@ subscription OnUpdateMosqueSubscription(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -7715,6 +7782,7 @@ subscription OnDeleteMosqueSubscription(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -7740,6 +7808,7 @@ subscription OnDeleteMosqueSubscription(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -7815,6 +7884,7 @@ subscription OnCreateOrganization(
     phone
     email
     website
+    isVerified
     creatorId
     creator {
       id
@@ -7930,6 +8000,7 @@ subscription OnCreateOrganization(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -7957,6 +8028,7 @@ subscription OnUpdateOrganization(
     phone
     email
     website
+    isVerified
     creatorId
     creator {
       id
@@ -8072,6 +8144,7 @@ subscription OnUpdateOrganization(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -8099,6 +8172,7 @@ subscription OnDeleteOrganization(
     phone
     email
     website
+    isVerified
     creatorId
     creator {
       id
@@ -8214,6 +8288,7 @@ subscription OnDeleteOrganization(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -8350,6 +8425,7 @@ subscription OnCreateResource(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -8375,6 +8451,7 @@ subscription OnCreateResource(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -8559,6 +8636,7 @@ subscription OnUpdateResource(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -8584,6 +8662,7 @@ subscription OnUpdateResource(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -8768,6 +8847,7 @@ subscription OnDeleteResource(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -8793,6 +8873,7 @@ subscription OnDeleteResource(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -8976,6 +9057,7 @@ subscription OnCreateService(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9001,6 +9083,7 @@ subscription OnCreateService(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -9184,6 +9267,7 @@ subscription OnUpdateService(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9209,6 +9293,7 @@ subscription OnUpdateService(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -9392,6 +9477,7 @@ subscription OnDeleteService(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9417,6 +9503,7 @@ subscription OnDeleteService(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -9601,6 +9688,7 @@ subscription OnCreateVolunteerTask(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9626,6 +9714,7 @@ subscription OnCreateVolunteerTask(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -9824,6 +9913,7 @@ subscription OnUpdateVolunteerTask(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -9849,6 +9939,7 @@ subscription OnUpdateVolunteerTask(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10047,6 +10138,7 @@ subscription OnDeleteVolunteerTask(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -10072,6 +10164,7 @@ subscription OnDeleteVolunteerTask(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10184,6 +10277,7 @@ subscription OnCreateMosqueFollower(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -10209,6 +10303,7 @@ subscription OnCreateMosqueFollower(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10396,6 +10491,7 @@ subscription OnUpdateMosqueFollower(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -10421,6 +10517,7 @@ subscription OnUpdateMosqueFollower(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10608,6 +10705,7 @@ subscription OnDeleteMosqueFollower(
         __typename
       }
       liveVideoUrl
+      isVerified
       creatorId
       creator {
         id
@@ -10633,6 +10731,7 @@ subscription OnDeleteMosqueFollower(
         phone
         email
         website
+        isVerified
         creatorId
         createdAt
         updatedAt
@@ -10806,6 +10905,7 @@ subscription OnCreateOrganizationMember(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -10950,6 +11050,7 @@ subscription OnUpdateOrganizationMember(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -11094,6 +11195,7 @@ subscription OnDeleteOrganizationMember(
       phone
       email
       website
+      isVerified
       creatorId
       creator {
         id
@@ -11352,6 +11454,7 @@ subscription OnCreateVolunteerTaskUser(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -11509,6 +11612,7 @@ subscription OnUpdateVolunteerTaskUser(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt
@@ -11666,6 +11770,7 @@ subscription OnDeleteVolunteerTaskUser(
         email
         website
         liveVideoUrl
+        isVerified
         creatorId
         organizationId
         createdAt

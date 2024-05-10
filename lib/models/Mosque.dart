@@ -17,7 +17,7 @@
 // Generated files can be excluded from analysis in analysis_options.yaml
 // For more info, see: https://dart.dev/guides/language/analysis-options#excluding-code-from-analysis
 
-// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
+// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, override_on_non_overriding_member, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
 
 import 'ModelProvider.dart';
 import 'package:amplify_core/amplify_core.dart' as amplify_core;
@@ -40,6 +40,7 @@ class Mosque extends amplify_core.Model {
   final String? _website;
   final SocialMedia? _socialMedia;
   final String? _liveVideoUrl;
+  final bool? _isVerified;
   final User? _creator;
   final Organization? _organization;
   final List<MosqueFollower>? _followers;
@@ -172,6 +173,19 @@ class Mosque extends amplify_core.Model {
     return _liveVideoUrl;
   }
   
+  bool get isVerified {
+    try {
+      return _isVerified!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
+  }
+  
   User get creator {
     try {
       return _creator!;
@@ -245,9 +259,9 @@ class Mosque extends amplify_core.Model {
     return _updatedAt;
   }
   
-  const Mosque._internal({required this.id, required name, required description, required images, required address, required latitude, required longitude, hours, phone, email, website, socialMedia, liveVideoUrl, required creator, organization, followers, announcements, classes, fundraisingCampaigns, monthlyPrayerSchedules, resources, services, subscriptions, volunteerTasks, bookmarks, likes, comments, createdAt, updatedAt}): _name = name, _description = description, _images = images, _address = address, _latitude = latitude, _longitude = longitude, _hours = hours, _phone = phone, _email = email, _website = website, _socialMedia = socialMedia, _liveVideoUrl = liveVideoUrl, _creator = creator, _organization = organization, _followers = followers, _announcements = announcements, _classes = classes, _fundraisingCampaigns = fundraisingCampaigns, _monthlyPrayerSchedules = monthlyPrayerSchedules, _resources = resources, _services = services, _subscriptions = subscriptions, _volunteerTasks = volunteerTasks, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt;
+  const Mosque._internal({required this.id, required name, required description, required images, required address, required latitude, required longitude, hours, phone, email, website, socialMedia, liveVideoUrl, required isVerified, required creator, organization, followers, announcements, classes, fundraisingCampaigns, monthlyPrayerSchedules, resources, services, subscriptions, volunteerTasks, bookmarks, likes, comments, createdAt, updatedAt}): _name = name, _description = description, _images = images, _address = address, _latitude = latitude, _longitude = longitude, _hours = hours, _phone = phone, _email = email, _website = website, _socialMedia = socialMedia, _liveVideoUrl = liveVideoUrl, _isVerified = isVerified, _creator = creator, _organization = organization, _followers = followers, _announcements = announcements, _classes = classes, _fundraisingCampaigns = fundraisingCampaigns, _monthlyPrayerSchedules = monthlyPrayerSchedules, _resources = resources, _services = services, _subscriptions = subscriptions, _volunteerTasks = volunteerTasks, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt;
   
-  factory Mosque({String? id, required String name, required String description, required List<String> images, required String address, required double latitude, required double longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, required User creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<Class>? classes, List<FundraisingCampaign>? fundraisingCampaigns, List<MonthlyPrayerSchedule>? monthlyPrayerSchedules, List<Resource>? resources, List<Service>? services, List<MosqueSubscription>? subscriptions, List<VolunteerTask>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  factory Mosque({String? id, required String name, required String description, required List<String> images, required String address, required double latitude, required double longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, required bool isVerified, required User creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<Class>? classes, List<FundraisingCampaign>? fundraisingCampaigns, List<MonthlyPrayerSchedule>? monthlyPrayerSchedules, List<Resource>? resources, List<Service>? services, List<MosqueSubscription>? subscriptions, List<VolunteerTask>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return Mosque._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       name: name,
@@ -262,6 +276,7 @@ class Mosque extends amplify_core.Model {
       website: website,
       socialMedia: socialMedia,
       liveVideoUrl: liveVideoUrl,
+      isVerified: isVerified,
       creator: creator,
       organization: organization,
       followers: followers != null ? List<MosqueFollower>.unmodifiable(followers) : followers,
@@ -301,6 +316,7 @@ class Mosque extends amplify_core.Model {
       _website == other._website &&
       _socialMedia == other._socialMedia &&
       _liveVideoUrl == other._liveVideoUrl &&
+      _isVerified == other._isVerified &&
       _creator == other._creator &&
       _organization == other._organization &&
       DeepCollectionEquality().equals(_followers, other._followers) &&
@@ -340,6 +356,7 @@ class Mosque extends amplify_core.Model {
     buffer.write("website=" + "$_website" + ", ");
     buffer.write("socialMedia=" + (_socialMedia != null ? _socialMedia!.toString() : "null") + ", ");
     buffer.write("liveVideoUrl=" + "$_liveVideoUrl" + ", ");
+    buffer.write("isVerified=" + (_isVerified != null ? _isVerified!.toString() : "null") + ", ");
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
     buffer.write("organization=" + (_organization != null ? _organization!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
@@ -349,7 +366,7 @@ class Mosque extends amplify_core.Model {
     return buffer.toString();
   }
   
-  Mosque copyWith({String? name, String? description, List<String>? images, String? address, double? latitude, double? longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, User? creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<Class>? classes, List<FundraisingCampaign>? fundraisingCampaigns, List<MonthlyPrayerSchedule>? monthlyPrayerSchedules, List<Resource>? resources, List<Service>? services, List<MosqueSubscription>? subscriptions, List<VolunteerTask>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  Mosque copyWith({String? name, String? description, List<String>? images, String? address, double? latitude, double? longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, bool? isVerified, User? creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<Class>? classes, List<FundraisingCampaign>? fundraisingCampaigns, List<MonthlyPrayerSchedule>? monthlyPrayerSchedules, List<Resource>? resources, List<Service>? services, List<MosqueSubscription>? subscriptions, List<VolunteerTask>? volunteerTasks, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return Mosque._internal(
       id: id,
       name: name ?? this.name,
@@ -364,6 +381,7 @@ class Mosque extends amplify_core.Model {
       website: website ?? this.website,
       socialMedia: socialMedia ?? this.socialMedia,
       liveVideoUrl: liveVideoUrl ?? this.liveVideoUrl,
+      isVerified: isVerified ?? this.isVerified,
       creator: creator ?? this.creator,
       organization: organization ?? this.organization,
       followers: followers ?? this.followers,
@@ -395,6 +413,7 @@ class Mosque extends amplify_core.Model {
     ModelFieldValue<String?>? website,
     ModelFieldValue<SocialMedia?>? socialMedia,
     ModelFieldValue<String?>? liveVideoUrl,
+    ModelFieldValue<bool>? isVerified,
     ModelFieldValue<User>? creator,
     ModelFieldValue<Organization?>? organization,
     ModelFieldValue<List<MosqueFollower>?>? followers,
@@ -426,6 +445,7 @@ class Mosque extends amplify_core.Model {
       website: website == null ? this.website : website.value,
       socialMedia: socialMedia == null ? this.socialMedia : socialMedia.value,
       liveVideoUrl: liveVideoUrl == null ? this.liveVideoUrl : liveVideoUrl.value,
+      isVerified: isVerified == null ? this.isVerified : isVerified.value,
       creator: creator == null ? this.creator : creator.value,
       organization: organization == null ? this.organization : organization.value,
       followers: followers == null ? this.followers : followers.value,
@@ -453,99 +473,188 @@ class Mosque extends amplify_core.Model {
       _address = json['address'],
       _latitude = (json['latitude'] as num?)?.toDouble(),
       _longitude = (json['longitude'] as num?)?.toDouble(),
-      _hours = json['hours']?['serializedData'] != null
-        ? Hours.fromJson(new Map<String, dynamic>.from(json['hours']['serializedData']))
+      _hours = json['hours'] != null
+        ? Hours.fromJson(new Map<String, dynamic>.from(json['hours']))
         : null,
       _phone = json['phone'],
       _email = json['email'],
       _website = json['website'],
-      _socialMedia = json['socialMedia']?['serializedData'] != null
-        ? SocialMedia.fromJson(new Map<String, dynamic>.from(json['socialMedia']['serializedData']))
+      _socialMedia = json['socialMedia'] != null
+        ? SocialMedia.fromJson(new Map<String, dynamic>.from(json['socialMedia']))
         : null,
       _liveVideoUrl = json['liveVideoUrl'],
-      _creator = json['creator']?['serializedData'] != null
-        ? User.fromJson(new Map<String, dynamic>.from(json['creator']['serializedData']))
+      _isVerified = json['isVerified'],
+      _creator = json['creator'] != null
+        ? json['creator']['serializedData'] != null
+          ? User.fromJson(new Map<String, dynamic>.from(json['creator']['serializedData']))
+          : User.fromJson(new Map<String, dynamic>.from(json['creator']))
         : null,
-      _organization = json['organization']?['serializedData'] != null
-        ? Organization.fromJson(new Map<String, dynamic>.from(json['organization']['serializedData']))
+      _organization = json['organization'] != null
+        ? json['organization']['serializedData'] != null
+          ? Organization.fromJson(new Map<String, dynamic>.from(json['organization']['serializedData']))
+          : Organization.fromJson(new Map<String, dynamic>.from(json['organization']))
         : null,
-      _followers = json['followers'] is List
-        ? (json['followers'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => MosqueFollower.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _announcements = json['announcements'] is List
-        ? (json['announcements'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Announcement.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _classes = json['classes'] is List
-        ? (json['classes'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Class.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _fundraisingCampaigns = json['fundraisingCampaigns'] is List
-        ? (json['fundraisingCampaigns'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => FundraisingCampaign.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _monthlyPrayerSchedules = json['monthlyPrayerSchedules'] is List
-        ? (json['monthlyPrayerSchedules'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => MonthlyPrayerSchedule.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _resources = json['resources'] is List
-        ? (json['resources'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Resource.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _services = json['services'] is List
-        ? (json['services'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Service.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _subscriptions = json['subscriptions'] is List
-        ? (json['subscriptions'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => MosqueSubscription.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _volunteerTasks = json['volunteerTasks'] is List
-        ? (json['volunteerTasks'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => VolunteerTask.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _bookmarks = json['bookmarks'] is List
-        ? (json['bookmarks'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Bookmark.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _likes = json['likes'] is List
-        ? (json['likes'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Like.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _comments = json['comments'] is List
-        ? (json['comments'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Comment.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
+      _followers = json['followers']  is Map
+        ? (json['followers']['items'] is List
+          ? (json['followers']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => MosqueFollower.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['followers'] is List
+          ? (json['followers'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => MosqueFollower.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _announcements = json['announcements']  is Map
+        ? (json['announcements']['items'] is List
+          ? (json['announcements']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Announcement.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['announcements'] is List
+          ? (json['announcements'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Announcement.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _classes = json['classes']  is Map
+        ? (json['classes']['items'] is List
+          ? (json['classes']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['classes'] is List
+          ? (json['classes'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _fundraisingCampaigns = json['fundraisingCampaigns']  is Map
+        ? (json['fundraisingCampaigns']['items'] is List
+          ? (json['fundraisingCampaigns']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => FundraisingCampaign.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['fundraisingCampaigns'] is List
+          ? (json['fundraisingCampaigns'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => FundraisingCampaign.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _monthlyPrayerSchedules = json['monthlyPrayerSchedules']  is Map
+        ? (json['monthlyPrayerSchedules']['items'] is List
+          ? (json['monthlyPrayerSchedules']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => MonthlyPrayerSchedule.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['monthlyPrayerSchedules'] is List
+          ? (json['monthlyPrayerSchedules'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => MonthlyPrayerSchedule.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _resources = json['resources']  is Map
+        ? (json['resources']['items'] is List
+          ? (json['resources']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Resource.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['resources'] is List
+          ? (json['resources'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Resource.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _services = json['services']  is Map
+        ? (json['services']['items'] is List
+          ? (json['services']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Service.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['services'] is List
+          ? (json['services'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Service.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _subscriptions = json['subscriptions']  is Map
+        ? (json['subscriptions']['items'] is List
+          ? (json['subscriptions']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => MosqueSubscription.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['subscriptions'] is List
+          ? (json['subscriptions'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => MosqueSubscription.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _volunteerTasks = json['volunteerTasks']  is Map
+        ? (json['volunteerTasks']['items'] is List
+          ? (json['volunteerTasks']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => VolunteerTask.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['volunteerTasks'] is List
+          ? (json['volunteerTasks'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => VolunteerTask.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _bookmarks = json['bookmarks']  is Map
+        ? (json['bookmarks']['items'] is List
+          ? (json['bookmarks']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Bookmark.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['bookmarks'] is List
+          ? (json['bookmarks'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Bookmark.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _likes = json['likes']  is Map
+        ? (json['likes']['items'] is List
+          ? (json['likes']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Like.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['likes'] is List
+          ? (json['likes'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Like.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _comments = json['comments']  is Map
+        ? (json['comments']['items'] is List
+          ? (json['comments']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Comment.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['comments'] is List
+          ? (json['comments'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Comment.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
       _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'name': _name, 'description': _description, 'images': _images, 'address': _address, 'latitude': _latitude, 'longitude': _longitude, 'hours': _hours?.toJson(), 'phone': _phone, 'email': _email, 'website': _website, 'socialMedia': _socialMedia?.toJson(), 'liveVideoUrl': _liveVideoUrl, 'creator': _creator?.toJson(), 'organization': _organization?.toJson(), 'followers': _followers?.map((MosqueFollower? e) => e?.toJson()).toList(), 'announcements': _announcements?.map((Announcement? e) => e?.toJson()).toList(), 'classes': _classes?.map((Class? e) => e?.toJson()).toList(), 'fundraisingCampaigns': _fundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'monthlyPrayerSchedules': _monthlyPrayerSchedules?.map((MonthlyPrayerSchedule? e) => e?.toJson()).toList(), 'resources': _resources?.map((Resource? e) => e?.toJson()).toList(), 'services': _services?.map((Service? e) => e?.toJson()).toList(), 'subscriptions': _subscriptions?.map((MosqueSubscription? e) => e?.toJson()).toList(), 'volunteerTasks': _volunteerTasks?.map((VolunteerTask? e) => e?.toJson()).toList(), 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'name': _name, 'description': _description, 'images': _images, 'address': _address, 'latitude': _latitude, 'longitude': _longitude, 'hours': _hours?.toJson(), 'phone': _phone, 'email': _email, 'website': _website, 'socialMedia': _socialMedia?.toJson(), 'liveVideoUrl': _liveVideoUrl, 'isVerified': _isVerified, 'creator': _creator?.toJson(), 'organization': _organization?.toJson(), 'followers': _followers?.map((MosqueFollower? e) => e?.toJson()).toList(), 'announcements': _announcements?.map((Announcement? e) => e?.toJson()).toList(), 'classes': _classes?.map((Class? e) => e?.toJson()).toList(), 'fundraisingCampaigns': _fundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'monthlyPrayerSchedules': _monthlyPrayerSchedules?.map((MonthlyPrayerSchedule? e) => e?.toJson()).toList(), 'resources': _resources?.map((Resource? e) => e?.toJson()).toList(), 'services': _services?.map((Service? e) => e?.toJson()).toList(), 'subscriptions': _subscriptions?.map((MosqueSubscription? e) => e?.toJson()).toList(), 'volunteerTasks': _volunteerTasks?.map((VolunteerTask? e) => e?.toJson()).toList(), 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
   };
   
   Map<String, Object?> toMap() => {
@@ -562,6 +671,7 @@ class Mosque extends amplify_core.Model {
     'website': _website,
     'socialMedia': _socialMedia,
     'liveVideoUrl': _liveVideoUrl,
+    'isVerified': _isVerified,
     'creator': _creator,
     'organization': _organization,
     'followers': _followers,
@@ -594,6 +704,7 @@ class Mosque extends amplify_core.Model {
   static final WEBSITE = amplify_core.QueryField(fieldName: "website");
   static final SOCIALMEDIA = amplify_core.QueryField(fieldName: "socialMedia");
   static final LIVEVIDEOURL = amplify_core.QueryField(fieldName: "liveVideoUrl");
+  static final ISVERIFIED = amplify_core.QueryField(fieldName: "isVerified");
   static final CREATOR = amplify_core.QueryField(
     fieldName: "creator",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'User'));
@@ -744,6 +855,12 @@ class Mosque extends amplify_core.Model {
       key: Mosque.LIVEVIDEOURL,
       isRequired: false,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Mosque.ISVERIFIED,
+      isRequired: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.bool)
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(

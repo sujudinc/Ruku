@@ -17,7 +17,7 @@
 // Generated files can be excluded from analysis in analysis_options.yaml
 // For more info, see: https://dart.dev/guides/language/analysis-options#excluding-code-from-analysis
 
-// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
+// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, override_on_non_overriding_member, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
 
 import 'ModelProvider.dart';
 import 'package:amplify_core/amplify_core.dart' as amplify_core;
@@ -139,11 +139,15 @@ class VolunteerTaskUser extends amplify_core.Model {
   
   VolunteerTaskUser.fromJson(Map<String, dynamic> json)  
     : id = json['id'],
-      _user = json['user']?['serializedData'] != null
-        ? User.fromJson(new Map<String, dynamic>.from(json['user']['serializedData']))
+      _user = json['user'] != null
+        ? json['user']['serializedData'] != null
+          ? User.fromJson(new Map<String, dynamic>.from(json['user']['serializedData']))
+          : User.fromJson(new Map<String, dynamic>.from(json['user']))
         : null,
-      _volunteerTask = json['volunteerTask']?['serializedData'] != null
-        ? VolunteerTask.fromJson(new Map<String, dynamic>.from(json['volunteerTask']['serializedData']))
+      _volunteerTask = json['volunteerTask'] != null
+        ? json['volunteerTask']['serializedData'] != null
+          ? VolunteerTask.fromJson(new Map<String, dynamic>.from(json['volunteerTask']['serializedData']))
+          : VolunteerTask.fromJson(new Map<String, dynamic>.from(json['volunteerTask']))
         : null,
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
       _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
@@ -171,6 +175,51 @@ class VolunteerTaskUser extends amplify_core.Model {
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "VolunteerTaskUser";
     modelSchemaDefinition.pluralName = "VolunteerTaskUsers";
+    
+    modelSchemaDefinition.authRules = [
+      amplify_core.AuthRule(
+        authStrategy: amplify_core.AuthStrategy.OWNER,
+        ownerField: "owner",
+        identityClaim: "cognito:username",
+        provider: amplify_core.AuthRuleProvider.USERPOOLS,
+        operations: const [
+          amplify_core.ModelOperation.CREATE,
+          amplify_core.ModelOperation.UPDATE,
+          amplify_core.ModelOperation.DELETE,
+          amplify_core.ModelOperation.READ
+        ]),
+      amplify_core.AuthRule(
+        authStrategy: amplify_core.AuthStrategy.PRIVATE,
+        operations: const [
+          amplify_core.ModelOperation.READ
+        ]),
+      amplify_core.AuthRule(
+        authStrategy: amplify_core.AuthStrategy.PUBLIC,
+        operations: const [
+          amplify_core.ModelOperation.READ
+        ]),
+      amplify_core.AuthRule(
+        authStrategy: amplify_core.AuthStrategy.OWNER,
+        ownerField: "creatorId",
+        identityClaim: "cognito:username",
+        provider: amplify_core.AuthRuleProvider.USERPOOLS,
+        operations: const [
+          amplify_core.ModelOperation.CREATE,
+          amplify_core.ModelOperation.UPDATE,
+          amplify_core.ModelOperation.DELETE,
+          amplify_core.ModelOperation.READ
+        ]),
+      amplify_core.AuthRule(
+        authStrategy: amplify_core.AuthStrategy.PRIVATE,
+        operations: const [
+          amplify_core.ModelOperation.READ
+        ]),
+      amplify_core.AuthRule(
+        authStrategy: amplify_core.AuthStrategy.PUBLIC,
+        operations: const [
+          amplify_core.ModelOperation.READ
+        ])
+    ];
     
     modelSchemaDefinition.indexes = [
       amplify_core.ModelIndex(fields: const ["userId"], name: "byUser"),

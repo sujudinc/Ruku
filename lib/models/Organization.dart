@@ -17,7 +17,7 @@
 // Generated files can be excluded from analysis in analysis_options.yaml
 // For more info, see: https://dart.dev/guides/language/analysis-options#excluding-code-from-analysis
 
-// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
+// ignore_for_file: public_member_api_docs, annotate_overrides, dead_code, dead_codepublic_member_api_docs, depend_on_referenced_packages, file_names, library_private_types_in_public_api, no_leading_underscores_for_library_prefixes, no_leading_underscores_for_local_identifiers, non_constant_identifier_names, null_check_on_nullable_type_parameter, override_on_non_overriding_member, prefer_adjacent_string_concatenation, prefer_const_constructors, prefer_if_null_operators, prefer_interpolation_to_compose_strings, slash_for_doc_comments, sort_child_properties_last, unnecessary_const, unnecessary_constructor_name, unnecessary_late, unnecessary_new, unnecessary_null_aware_assignments, unnecessary_nullable_for_final_variable_declarations, unnecessary_string_interpolations, use_build_context_synchronously
 
 import 'ModelProvider.dart';
 import 'package:amplify_core/amplify_core.dart' as amplify_core;
@@ -34,6 +34,7 @@ class Organization extends amplify_core.Model {
   final String? _phone;
   final String? _email;
   final String? _website;
+  final bool? _isVerified;
   final User? _creator;
   final List<OrganizationMember>? _members;
   final List<Mosque>? _mosques;
@@ -86,6 +87,19 @@ class Organization extends amplify_core.Model {
     return _website;
   }
   
+  bool get isVerified {
+    try {
+      return _isVerified!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
+  }
+  
   User get creator {
     try {
       return _creator!;
@@ -115,9 +129,9 @@ class Organization extends amplify_core.Model {
     return _updatedAt;
   }
   
-  const Organization._internal({required this.id, required name, description, logo, phone, email, website, required creator, members, mosques, createdAt, updatedAt}): _name = name, _description = description, _logo = logo, _phone = phone, _email = email, _website = website, _creator = creator, _members = members, _mosques = mosques, _createdAt = createdAt, _updatedAt = updatedAt;
+  const Organization._internal({required this.id, required name, description, logo, phone, email, website, required isVerified, required creator, members, mosques, createdAt, updatedAt}): _name = name, _description = description, _logo = logo, _phone = phone, _email = email, _website = website, _isVerified = isVerified, _creator = creator, _members = members, _mosques = mosques, _createdAt = createdAt, _updatedAt = updatedAt;
   
-  factory Organization({String? id, required String name, String? description, String? logo, String? phone, String? email, String? website, required User creator, List<OrganizationMember>? members, List<Mosque>? mosques, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  factory Organization({String? id, required String name, String? description, String? logo, String? phone, String? email, String? website, required bool isVerified, required User creator, List<OrganizationMember>? members, List<Mosque>? mosques, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return Organization._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       name: name,
@@ -126,6 +140,7 @@ class Organization extends amplify_core.Model {
       phone: phone,
       email: email,
       website: website,
+      isVerified: isVerified,
       creator: creator,
       members: members != null ? List<OrganizationMember>.unmodifiable(members) : members,
       mosques: mosques != null ? List<Mosque>.unmodifiable(mosques) : mosques,
@@ -148,6 +163,7 @@ class Organization extends amplify_core.Model {
       _phone == other._phone &&
       _email == other._email &&
       _website == other._website &&
+      _isVerified == other._isVerified &&
       _creator == other._creator &&
       DeepCollectionEquality().equals(_members, other._members) &&
       DeepCollectionEquality().equals(_mosques, other._mosques) &&
@@ -170,6 +186,7 @@ class Organization extends amplify_core.Model {
     buffer.write("phone=" + "$_phone" + ", ");
     buffer.write("email=" + "$_email" + ", ");
     buffer.write("website=" + "$_website" + ", ");
+    buffer.write("isVerified=" + (_isVerified != null ? _isVerified!.toString() : "null") + ", ");
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
     buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
@@ -178,7 +195,7 @@ class Organization extends amplify_core.Model {
     return buffer.toString();
   }
   
-  Organization copyWith({String? name, String? description, String? logo, String? phone, String? email, String? website, User? creator, List<OrganizationMember>? members, List<Mosque>? mosques, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  Organization copyWith({String? name, String? description, String? logo, String? phone, String? email, String? website, bool? isVerified, User? creator, List<OrganizationMember>? members, List<Mosque>? mosques, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return Organization._internal(
       id: id,
       name: name ?? this.name,
@@ -187,6 +204,7 @@ class Organization extends amplify_core.Model {
       phone: phone ?? this.phone,
       email: email ?? this.email,
       website: website ?? this.website,
+      isVerified: isVerified ?? this.isVerified,
       creator: creator ?? this.creator,
       members: members ?? this.members,
       mosques: mosques ?? this.mosques,
@@ -201,6 +219,7 @@ class Organization extends amplify_core.Model {
     ModelFieldValue<String?>? phone,
     ModelFieldValue<String?>? email,
     ModelFieldValue<String?>? website,
+    ModelFieldValue<bool>? isVerified,
     ModelFieldValue<User>? creator,
     ModelFieldValue<List<OrganizationMember>?>? members,
     ModelFieldValue<List<Mosque>?>? mosques,
@@ -215,6 +234,7 @@ class Organization extends amplify_core.Model {
       phone: phone == null ? this.phone : phone.value,
       email: email == null ? this.email : email.value,
       website: website == null ? this.website : website.value,
+      isVerified: isVerified == null ? this.isVerified : isVerified.value,
       creator: creator == null ? this.creator : creator.value,
       members: members == null ? this.members : members.value,
       mosques: mosques == null ? this.mosques : mosques.value,
@@ -231,26 +251,43 @@ class Organization extends amplify_core.Model {
       _phone = json['phone'],
       _email = json['email'],
       _website = json['website'],
-      _creator = json['creator']?['serializedData'] != null
-        ? User.fromJson(new Map<String, dynamic>.from(json['creator']['serializedData']))
+      _isVerified = json['isVerified'],
+      _creator = json['creator'] != null
+        ? json['creator']['serializedData'] != null
+          ? User.fromJson(new Map<String, dynamic>.from(json['creator']['serializedData']))
+          : User.fromJson(new Map<String, dynamic>.from(json['creator']))
         : null,
-      _members = json['members'] is List
-        ? (json['members'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => OrganizationMember.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
-      _mosques = json['mosques'] is List
-        ? (json['mosques'] as List)
-          .where((e) => e?['serializedData'] != null)
-          .map((e) => Mosque.fromJson(new Map<String, dynamic>.from(e['serializedData'])))
-          .toList()
-        : null,
+      _members = json['members']  is Map
+        ? (json['members']['items'] is List
+          ? (json['members']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => OrganizationMember.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['members'] is List
+          ? (json['members'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => OrganizationMember.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
+      _mosques = json['mosques']  is Map
+        ? (json['mosques']['items'] is List
+          ? (json['mosques']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => Mosque.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['mosques'] is List
+          ? (json['mosques'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => Mosque.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
       _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'name': _name, 'description': _description, 'logo': _logo, 'phone': _phone, 'email': _email, 'website': _website, 'creator': _creator?.toJson(), 'members': _members?.map((OrganizationMember? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((Mosque? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'name': _name, 'description': _description, 'logo': _logo, 'phone': _phone, 'email': _email, 'website': _website, 'isVerified': _isVerified, 'creator': _creator?.toJson(), 'members': _members?.map((OrganizationMember? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((Mosque? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
   };
   
   Map<String, Object?> toMap() => {
@@ -261,6 +298,7 @@ class Organization extends amplify_core.Model {
     'phone': _phone,
     'email': _email,
     'website': _website,
+    'isVerified': _isVerified,
     'creator': _creator,
     'members': _members,
     'mosques': _mosques,
@@ -276,6 +314,7 @@ class Organization extends amplify_core.Model {
   static final PHONE = amplify_core.QueryField(fieldName: "phone");
   static final EMAIL = amplify_core.QueryField(fieldName: "email");
   static final WEBSITE = amplify_core.QueryField(fieldName: "website");
+  static final ISVERIFIED = amplify_core.QueryField(fieldName: "isVerified");
   static final CREATOR = amplify_core.QueryField(
     fieldName: "creator",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'User'));
@@ -355,6 +394,12 @@ class Organization extends amplify_core.Model {
       key: Organization.WEBSITE,
       isRequired: false,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Organization.ISVERIFIED,
+      isRequired: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.bool)
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(

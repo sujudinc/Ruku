@@ -200,7 +200,7 @@ type Mosque
   website: String
   socialMedia: SocialMedia
   liveVideoUrl: String
-  isVerified: Boolean! @default(value: false)
+  isVerified: Boolean! @default(value: "false")
   creatorId: ID! @index(name: "byCreatorId")
   creator: User! @belongsTo(fields: ["creatorId"])
   organizationId: ID @index(name: "byOrganizationId")
@@ -259,7 +259,7 @@ type Organization
   phone: AWSPhone
   email: AWSEmail
   website: String
-  isVerified: Boolean! @default(value: false)
+  isVerified: Boolean! @default(value: "false")
   creatorId: ID! @index(name: "byCreatorId")
   creator: User! @belongsTo(fields: ["creatorId"])
   members: [User] @manyToMany(relationName: "OrganizationMember")

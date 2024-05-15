@@ -80,7 +80,7 @@ export 'VolunteerTaskUser.dart';
 
 class ModelProvider implements amplify_core.ModelProviderInterface {
   @override
-  String version = "8890bf1c44f8318c78093550110dc6b7";
+  String version = "0999032ced4a634c975e23cf496a7fb0";
   @override
   List<amplify_core.ModelSchema> modelSchemas = [Announcement.schema, Bookmark.schema, Class.schema, Comment.schema, Donation.schema, FundraisingCampaign.schema, Like.schema, MonthlyPrayerSchedule.schema, Mosque.schema, MosqueFollower.schema, MosqueSubscription.schema, Organization.schema, OrganizationMember.schema, Resource.schema, Service.schema, User.schema, VolunteerTask.schema, VolunteerTaskUser.schema];
   @override

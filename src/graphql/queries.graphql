@@ -58,6 +58,7 @@ query GetAnnouncement($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -170,6 +171,7 @@ query GetAnnouncement($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -282,6 +284,7 @@ query ListAnnouncements(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -358,6 +361,7 @@ query AnnouncementsByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -434,6 +438,7 @@ query AnnouncementsByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -500,6 +505,7 @@ query GetBookmark($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -540,6 +546,7 @@ query GetBookmark($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -652,6 +659,7 @@ query GetBookmark($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -761,6 +769,7 @@ query ListBookmarks(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -834,6 +843,7 @@ query BookmarksByAnnouncementId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -907,6 +917,7 @@ query BookmarksByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -980,6 +991,7 @@ query BookmarksByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1034,6 +1046,7 @@ query GetClass($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -1122,6 +1135,7 @@ query GetClass($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -1234,6 +1248,7 @@ query GetClass($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1337,6 +1352,7 @@ query ListClasses(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1353,6 +1369,7 @@ query ListClasses(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1420,6 +1437,7 @@ query ClassesByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1436,6 +1454,7 @@ query ClassesByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1503,6 +1522,7 @@ query ClassesByInstructorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1519,6 +1539,7 @@ query ClassesByInstructorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1586,6 +1607,7 @@ query ClassesByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1602,6 +1624,7 @@ query ClassesByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1683,6 +1706,7 @@ query GetComment($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1756,6 +1780,7 @@ query GetComment($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -1796,6 +1821,7 @@ query GetComment($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -1908,6 +1934,7 @@ query GetComment($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2034,6 +2061,7 @@ query ListComments(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2124,6 +2152,7 @@ query CommentsByParentCommentId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2214,6 +2243,7 @@ query CommentsByAnnouncementId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2304,6 +2334,7 @@ query CommentsByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2394,6 +2425,7 @@ query CommentsByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2445,6 +2477,7 @@ query GetDonation($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -2544,6 +2577,7 @@ query GetDonation($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2605,6 +2639,7 @@ query ListDonations(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2666,6 +2701,7 @@ query DonationsByDonorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2727,6 +2763,7 @@ query DonationsByFundraisingCampaignId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -2780,6 +2817,7 @@ query GetFundraisingCampaign($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -2892,6 +2930,7 @@ query GetFundraisingCampaign($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3016,6 +3055,7 @@ query ListFundraisingCampaigns(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3089,6 +3129,7 @@ query FundraisingCampaignsByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3162,6 +3203,7 @@ query FundraisingCampaignsByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3232,6 +3274,7 @@ query GetLike($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3272,6 +3315,7 @@ query GetLike($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -3384,6 +3428,7 @@ query GetLike($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3493,6 +3538,7 @@ query ListLikes(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3566,6 +3612,7 @@ query LikesByAnnouncementId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3639,6 +3686,7 @@ query LikesByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3712,6 +3760,7 @@ query LikesByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3769,6 +3818,7 @@ query GetMonthlyPrayerSchedule($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -3881,6 +3931,7 @@ query GetMonthlyPrayerSchedule($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -3991,6 +4042,7 @@ query ListMonthlyPrayerSchedules(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -4061,6 +4113,7 @@ query MonthlyPrayerSchedulesByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -4131,6 +4184,7 @@ query MonthlyPrayerSchedulesByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -4228,6 +4282,7 @@ query GetMosque($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -4326,6 +4381,7 @@ query GetMosque($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -4576,6 +4632,7 @@ query ListMosques(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -4701,6 +4758,7 @@ query MosquesByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -4826,6 +4884,7 @@ query MosquesByOrganizationId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -4921,6 +4980,7 @@ query GetMosqueSubscription($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -5033,6 +5093,7 @@ query GetMosqueSubscription($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5138,6 +5199,7 @@ query ListMosqueSubscriptions(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5203,6 +5265,7 @@ query MosqueSubscriptionsByPurchaserId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5268,6 +5331,7 @@ query MosqueSubscriptionsByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5323,6 +5387,7 @@ query GetOrganization($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -5469,6 +5534,7 @@ query ListOrganizations(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5525,6 +5591,7 @@ query OrganizationsByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5565,6 +5632,7 @@ query GetResource($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -5677,6 +5745,7 @@ query GetResource($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5778,6 +5847,7 @@ query ListResources(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5843,6 +5913,7 @@ query ResourcesByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5908,6 +5979,7 @@ query ResourcesByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -5959,6 +6031,7 @@ query GetService($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -6071,6 +6144,7 @@ query GetService($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -6171,6 +6245,7 @@ query ListServices(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -6235,6 +6310,7 @@ query ServicesByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -6299,6 +6375,7 @@ query ServicesByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -6344,6 +6421,7 @@ query GetUser($id: ID!) {
     type
     status
     stripeCustomerId
+    isOnline
     bookmarks {
       items {
         id
@@ -6657,6 +6735,7 @@ query ListUsers(
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -6757,6 +6836,7 @@ query GetVolunteerTask($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -6869,6 +6949,7 @@ query GetVolunteerTask($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -6984,6 +7065,7 @@ query ListVolunteerTasks(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7053,6 +7135,7 @@ query VolunteerTasksByCreatorId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7122,6 +7205,7 @@ query VolunteerTasksByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7199,6 +7283,7 @@ query GetMosqueFollower($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7281,6 +7366,7 @@ query GetMosqueFollower($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -7405,6 +7491,7 @@ query ListMosqueFollowers(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7468,6 +7555,7 @@ query MosqueFollowersByMosqueId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7531,6 +7619,7 @@ query MosqueFollowersByUserId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7572,6 +7661,7 @@ query GetOrganizationMember($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7599,6 +7689,7 @@ query GetOrganizationMember($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -7722,6 +7813,7 @@ query ListOrganizationMembers(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7780,6 +7872,7 @@ query OrganizationMembersByOrganizationId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7838,6 +7931,7 @@ query OrganizationMembersByUserId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -7869,6 +7963,7 @@ query GetVolunteerTaskUser($id: ID!) {
       type
       status
       stripeCustomerId
+      isOnline
       bookmarks {
         nextToken
         __typename
@@ -7963,6 +8058,7 @@ query GetVolunteerTaskUser($id: ID!) {
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -8028,6 +8124,7 @@ query ListVolunteerTaskUsers(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -8084,6 +8181,7 @@ query VolunteerTaskUsersByUserId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner
@@ -8140,6 +8238,7 @@ query VolunteerTaskUsersByVolunteerTaskId(
         type
         status
         stripeCustomerId
+        isOnline
         createdAt
         updatedAt
         owner

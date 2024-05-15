@@ -331,6 +331,7 @@ type User
   type: UserType!
   status: UserStatus!
   stripeCustomerId: String
+  isOnline: Boolean
   bookmarks: [Bookmark] @hasMany(indexName: "byCreatorId", fields: ["id"])
   comments: [Comment] @hasMany(indexName: "byCreatorId", fields: ["id"])
   createdAnnouncements: [Announcement] @hasMany(indexName: "byCreatorId", fields: ["id"])

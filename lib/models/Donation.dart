@@ -104,17 +104,35 @@ class Donation extends amplify_core.Model {
     return _fundraisingCampaign;
   }
   
-  amplify_core.TemporalDateTime? get createdAt {
-    return _createdAt;
+  amplify_core.TemporalDateTime get createdAt {
+    try {
+      return _createdAt!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
-  amplify_core.TemporalDateTime? get updatedAt {
-    return _updatedAt;
+  amplify_core.TemporalDateTime get updatedAt {
+    try {
+      return _updatedAt!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
-  const Donation._internal({required this.id, required amount, required currency, required isAnonymous, required donor, fundraisingCampaign, createdAt, updatedAt}): _amount = amount, _currency = currency, _isAnonymous = isAnonymous, _donor = donor, _fundraisingCampaign = fundraisingCampaign, _createdAt = createdAt, _updatedAt = updatedAt;
+  const Donation._internal({required this.id, required amount, required currency, required isAnonymous, required donor, fundraisingCampaign, required createdAt, required updatedAt}): _amount = amount, _currency = currency, _isAnonymous = isAnonymous, _donor = donor, _fundraisingCampaign = fundraisingCampaign, _createdAt = createdAt, _updatedAt = updatedAt;
   
-  factory Donation({String? id, required double amount, required String currency, required bool isAnonymous, required User donor, FundraisingCampaign? fundraisingCampaign, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  factory Donation({String? id, required double amount, required String currency, required bool isAnonymous, required User donor, FundraisingCampaign? fundraisingCampaign, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt}) {
     return Donation._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       amount: amount,
@@ -183,8 +201,8 @@ class Donation extends amplify_core.Model {
     ModelFieldValue<bool>? isAnonymous,
     ModelFieldValue<User>? donor,
     ModelFieldValue<FundraisingCampaign?>? fundraisingCampaign,
-    ModelFieldValue<amplify_core.TemporalDateTime?>? createdAt,
-    ModelFieldValue<amplify_core.TemporalDateTime?>? updatedAt
+    ModelFieldValue<amplify_core.TemporalDateTime>? createdAt,
+    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt
   }) {
     return Donation._internal(
       id: id,
@@ -313,13 +331,13 @@ class Donation extends amplify_core.Model {
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
       key: Donation.CREATEDAT,
-      isRequired: false,
+      isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
       key: Donation.UPDATEDAT,
-      isRequired: false,
+      isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
   });

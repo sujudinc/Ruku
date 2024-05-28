@@ -40,21 +40,15 @@ class User extends amplify_core.Model {
   final List<Bookmark>? _bookmarks;
   final List<Comment>? _comments;
   final List<Announcement>? _createdAnnouncements;
-  final List<Class>? _createdClasses;
   final List<FundraisingCampaign>? _createdFundraisingCampaigns;
-  final List<MonthlyPrayerSchedule>? _createdMonthlyPrayerSchedules;
+  final List<PrayerTime>? _createdPrayerTimes;
   final List<Organization>? _createdOrganizations;
   final List<Mosque>? _createdMosques;
-  final List<Resource>? _createdResources;
-  final List<Service>? _createdServices;
-  final List<VolunteerTask>? _createdVolunteerTasks;
   final List<Donation>? _donations;
-  final List<Class>? _instructingClasses;
   final List<MosqueFollower>? _mosques;
   final List<OrganizationMember>? _organizations;
-  final List<MosqueSubscription>? _purchasedSubscriptions;
-  final List<VolunteerTaskUser>? _volunteerTasks;
   final List<Like>? _likes;
+  final List<PrayerTime>? _updatedPrayerTimes;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
 
@@ -164,16 +158,12 @@ class User extends amplify_core.Model {
     return _createdAnnouncements;
   }
   
-  List<Class>? get createdClasses {
-    return _createdClasses;
-  }
-  
   List<FundraisingCampaign>? get createdFundraisingCampaigns {
     return _createdFundraisingCampaigns;
   }
   
-  List<MonthlyPrayerSchedule>? get createdMonthlyPrayerSchedules {
-    return _createdMonthlyPrayerSchedules;
+  List<PrayerTime>? get createdPrayerTimes {
+    return _createdPrayerTimes;
   }
   
   List<Organization>? get createdOrganizations {
@@ -184,24 +174,8 @@ class User extends amplify_core.Model {
     return _createdMosques;
   }
   
-  List<Resource>? get createdResources {
-    return _createdResources;
-  }
-  
-  List<Service>? get createdServices {
-    return _createdServices;
-  }
-  
-  List<VolunteerTask>? get createdVolunteerTasks {
-    return _createdVolunteerTasks;
-  }
-  
   List<Donation>? get donations {
     return _donations;
-  }
-  
-  List<Class>? get instructingClasses {
-    return _instructingClasses;
   }
   
   List<MosqueFollower>? get mosques {
@@ -212,29 +186,43 @@ class User extends amplify_core.Model {
     return _organizations;
   }
   
-  List<MosqueSubscription>? get purchasedSubscriptions {
-    return _purchasedSubscriptions;
-  }
-  
-  List<VolunteerTaskUser>? get volunteerTasks {
-    return _volunteerTasks;
-  }
-  
   List<Like>? get likes {
     return _likes;
   }
   
-  amplify_core.TemporalDateTime? get createdAt {
-    return _createdAt;
+  List<PrayerTime>? get updatedPrayerTimes {
+    return _updatedPrayerTimes;
   }
   
-  amplify_core.TemporalDateTime? get updatedAt {
-    return _updatedAt;
+  amplify_core.TemporalDateTime get createdAt {
+    try {
+      return _createdAt!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
-  const User._internal({required this.id, selfie, required firstName, required lastName, required email, phone, required type, required status, stripeCustomerId, isOnline, bookmarks, comments, createdAnnouncements, createdClasses, createdFundraisingCampaigns, createdMonthlyPrayerSchedules, createdOrganizations, createdMosques, createdResources, createdServices, createdVolunteerTasks, donations, instructingClasses, mosques, organizations, purchasedSubscriptions, volunteerTasks, likes, createdAt, updatedAt}): _selfie = selfie, _firstName = firstName, _lastName = lastName, _email = email, _phone = phone, _type = type, _status = status, _stripeCustomerId = stripeCustomerId, _isOnline = isOnline, _bookmarks = bookmarks, _comments = comments, _createdAnnouncements = createdAnnouncements, _createdClasses = createdClasses, _createdFundraisingCampaigns = createdFundraisingCampaigns, _createdMonthlyPrayerSchedules = createdMonthlyPrayerSchedules, _createdOrganizations = createdOrganizations, _createdMosques = createdMosques, _createdResources = createdResources, _createdServices = createdServices, _createdVolunteerTasks = createdVolunteerTasks, _donations = donations, _instructingClasses = instructingClasses, _mosques = mosques, _organizations = organizations, _purchasedSubscriptions = purchasedSubscriptions, _volunteerTasks = volunteerTasks, _likes = likes, _createdAt = createdAt, _updatedAt = updatedAt;
+  amplify_core.TemporalDateTime get updatedAt {
+    try {
+      return _updatedAt!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
+  }
   
-  factory User({String? id, String? selfie, required String firstName, required String lastName, required String email, String? phone, required UserType type, required UserStatus status, String? stripeCustomerId, bool? isOnline, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<Class>? createdClasses, List<FundraisingCampaign>? createdFundraisingCampaigns, List<MonthlyPrayerSchedule>? createdMonthlyPrayerSchedules, List<Organization>? createdOrganizations, List<Mosque>? createdMosques, List<Resource>? createdResources, List<Service>? createdServices, List<VolunteerTask>? createdVolunteerTasks, List<Donation>? donations, List<Class>? instructingClasses, List<MosqueFollower>? mosques, List<OrganizationMember>? organizations, List<MosqueSubscription>? purchasedSubscriptions, List<VolunteerTaskUser>? volunteerTasks, List<Like>? likes, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  const User._internal({required this.id, selfie, required firstName, required lastName, required email, phone, required type, required status, stripeCustomerId, isOnline, bookmarks, comments, createdAnnouncements, createdFundraisingCampaigns, createdPrayerTimes, createdOrganizations, createdMosques, donations, mosques, organizations, likes, updatedPrayerTimes, required createdAt, required updatedAt}): _selfie = selfie, _firstName = firstName, _lastName = lastName, _email = email, _phone = phone, _type = type, _status = status, _stripeCustomerId = stripeCustomerId, _isOnline = isOnline, _bookmarks = bookmarks, _comments = comments, _createdAnnouncements = createdAnnouncements, _createdFundraisingCampaigns = createdFundraisingCampaigns, _createdPrayerTimes = createdPrayerTimes, _createdOrganizations = createdOrganizations, _createdMosques = createdMosques, _donations = donations, _mosques = mosques, _organizations = organizations, _likes = likes, _updatedPrayerTimes = updatedPrayerTimes, _createdAt = createdAt, _updatedAt = updatedAt;
+  
+  factory User({String? id, String? selfie, required String firstName, required String lastName, required String email, String? phone, required UserType type, required UserStatus status, String? stripeCustomerId, bool? isOnline, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<FundraisingCampaign>? createdFundraisingCampaigns, List<PrayerTime>? createdPrayerTimes, List<Organization>? createdOrganizations, List<Mosque>? createdMosques, List<Donation>? donations, List<MosqueFollower>? mosques, List<OrganizationMember>? organizations, List<Like>? likes, List<PrayerTime>? updatedPrayerTimes, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt}) {
     return User._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       selfie: selfie,
@@ -249,21 +237,15 @@ class User extends amplify_core.Model {
       bookmarks: bookmarks != null ? List<Bookmark>.unmodifiable(bookmarks) : bookmarks,
       comments: comments != null ? List<Comment>.unmodifiable(comments) : comments,
       createdAnnouncements: createdAnnouncements != null ? List<Announcement>.unmodifiable(createdAnnouncements) : createdAnnouncements,
-      createdClasses: createdClasses != null ? List<Class>.unmodifiable(createdClasses) : createdClasses,
       createdFundraisingCampaigns: createdFundraisingCampaigns != null ? List<FundraisingCampaign>.unmodifiable(createdFundraisingCampaigns) : createdFundraisingCampaigns,
-      createdMonthlyPrayerSchedules: createdMonthlyPrayerSchedules != null ? List<MonthlyPrayerSchedule>.unmodifiable(createdMonthlyPrayerSchedules) : createdMonthlyPrayerSchedules,
+      createdPrayerTimes: createdPrayerTimes != null ? List<PrayerTime>.unmodifiable(createdPrayerTimes) : createdPrayerTimes,
       createdOrganizations: createdOrganizations != null ? List<Organization>.unmodifiable(createdOrganizations) : createdOrganizations,
       createdMosques: createdMosques != null ? List<Mosque>.unmodifiable(createdMosques) : createdMosques,
-      createdResources: createdResources != null ? List<Resource>.unmodifiable(createdResources) : createdResources,
-      createdServices: createdServices != null ? List<Service>.unmodifiable(createdServices) : createdServices,
-      createdVolunteerTasks: createdVolunteerTasks != null ? List<VolunteerTask>.unmodifiable(createdVolunteerTasks) : createdVolunteerTasks,
       donations: donations != null ? List<Donation>.unmodifiable(donations) : donations,
-      instructingClasses: instructingClasses != null ? List<Class>.unmodifiable(instructingClasses) : instructingClasses,
       mosques: mosques != null ? List<MosqueFollower>.unmodifiable(mosques) : mosques,
       organizations: organizations != null ? List<OrganizationMember>.unmodifiable(organizations) : organizations,
-      purchasedSubscriptions: purchasedSubscriptions != null ? List<MosqueSubscription>.unmodifiable(purchasedSubscriptions) : purchasedSubscriptions,
-      volunteerTasks: volunteerTasks != null ? List<VolunteerTaskUser>.unmodifiable(volunteerTasks) : volunteerTasks,
       likes: likes != null ? List<Like>.unmodifiable(likes) : likes,
+      updatedPrayerTimes: updatedPrayerTimes != null ? List<PrayerTime>.unmodifiable(updatedPrayerTimes) : updatedPrayerTimes,
       createdAt: createdAt,
       updatedAt: updatedAt);
   }
@@ -289,21 +271,15 @@ class User extends amplify_core.Model {
       DeepCollectionEquality().equals(_bookmarks, other._bookmarks) &&
       DeepCollectionEquality().equals(_comments, other._comments) &&
       DeepCollectionEquality().equals(_createdAnnouncements, other._createdAnnouncements) &&
-      DeepCollectionEquality().equals(_createdClasses, other._createdClasses) &&
       DeepCollectionEquality().equals(_createdFundraisingCampaigns, other._createdFundraisingCampaigns) &&
-      DeepCollectionEquality().equals(_createdMonthlyPrayerSchedules, other._createdMonthlyPrayerSchedules) &&
+      DeepCollectionEquality().equals(_createdPrayerTimes, other._createdPrayerTimes) &&
       DeepCollectionEquality().equals(_createdOrganizations, other._createdOrganizations) &&
       DeepCollectionEquality().equals(_createdMosques, other._createdMosques) &&
-      DeepCollectionEquality().equals(_createdResources, other._createdResources) &&
-      DeepCollectionEquality().equals(_createdServices, other._createdServices) &&
-      DeepCollectionEquality().equals(_createdVolunteerTasks, other._createdVolunteerTasks) &&
       DeepCollectionEquality().equals(_donations, other._donations) &&
-      DeepCollectionEquality().equals(_instructingClasses, other._instructingClasses) &&
       DeepCollectionEquality().equals(_mosques, other._mosques) &&
       DeepCollectionEquality().equals(_organizations, other._organizations) &&
-      DeepCollectionEquality().equals(_purchasedSubscriptions, other._purchasedSubscriptions) &&
-      DeepCollectionEquality().equals(_volunteerTasks, other._volunteerTasks) &&
       DeepCollectionEquality().equals(_likes, other._likes) &&
+      DeepCollectionEquality().equals(_updatedPrayerTimes, other._updatedPrayerTimes) &&
       _createdAt == other._createdAt &&
       _updatedAt == other._updatedAt;
   }
@@ -333,7 +309,7 @@ class User extends amplify_core.Model {
     return buffer.toString();
   }
   
-  User copyWith({String? selfie, String? firstName, String? lastName, String? email, String? phone, UserType? type, UserStatus? status, String? stripeCustomerId, bool? isOnline, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<Class>? createdClasses, List<FundraisingCampaign>? createdFundraisingCampaigns, List<MonthlyPrayerSchedule>? createdMonthlyPrayerSchedules, List<Organization>? createdOrganizations, List<Mosque>? createdMosques, List<Resource>? createdResources, List<Service>? createdServices, List<VolunteerTask>? createdVolunteerTasks, List<Donation>? donations, List<Class>? instructingClasses, List<MosqueFollower>? mosques, List<OrganizationMember>? organizations, List<MosqueSubscription>? purchasedSubscriptions, List<VolunteerTaskUser>? volunteerTasks, List<Like>? likes, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  User copyWith({String? selfie, String? firstName, String? lastName, String? email, String? phone, UserType? type, UserStatus? status, String? stripeCustomerId, bool? isOnline, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<FundraisingCampaign>? createdFundraisingCampaigns, List<PrayerTime>? createdPrayerTimes, List<Organization>? createdOrganizations, List<Mosque>? createdMosques, List<Donation>? donations, List<MosqueFollower>? mosques, List<OrganizationMember>? organizations, List<Like>? likes, List<PrayerTime>? updatedPrayerTimes, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return User._internal(
       id: id,
       selfie: selfie ?? this.selfie,
@@ -348,21 +324,15 @@ class User extends amplify_core.Model {
       bookmarks: bookmarks ?? this.bookmarks,
       comments: comments ?? this.comments,
       createdAnnouncements: createdAnnouncements ?? this.createdAnnouncements,
-      createdClasses: createdClasses ?? this.createdClasses,
       createdFundraisingCampaigns: createdFundraisingCampaigns ?? this.createdFundraisingCampaigns,
-      createdMonthlyPrayerSchedules: createdMonthlyPrayerSchedules ?? this.createdMonthlyPrayerSchedules,
+      createdPrayerTimes: createdPrayerTimes ?? this.createdPrayerTimes,
       createdOrganizations: createdOrganizations ?? this.createdOrganizations,
       createdMosques: createdMosques ?? this.createdMosques,
-      createdResources: createdResources ?? this.createdResources,
-      createdServices: createdServices ?? this.createdServices,
-      createdVolunteerTasks: createdVolunteerTasks ?? this.createdVolunteerTasks,
       donations: donations ?? this.donations,
-      instructingClasses: instructingClasses ?? this.instructingClasses,
       mosques: mosques ?? this.mosques,
       organizations: organizations ?? this.organizations,
-      purchasedSubscriptions: purchasedSubscriptions ?? this.purchasedSubscriptions,
-      volunteerTasks: volunteerTasks ?? this.volunteerTasks,
       likes: likes ?? this.likes,
+      updatedPrayerTimes: updatedPrayerTimes ?? this.updatedPrayerTimes,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt);
   }
@@ -380,23 +350,17 @@ class User extends amplify_core.Model {
     ModelFieldValue<List<Bookmark>?>? bookmarks,
     ModelFieldValue<List<Comment>?>? comments,
     ModelFieldValue<List<Announcement>?>? createdAnnouncements,
-    ModelFieldValue<List<Class>?>? createdClasses,
     ModelFieldValue<List<FundraisingCampaign>?>? createdFundraisingCampaigns,
-    ModelFieldValue<List<MonthlyPrayerSchedule>?>? createdMonthlyPrayerSchedules,
+    ModelFieldValue<List<PrayerTime>?>? createdPrayerTimes,
     ModelFieldValue<List<Organization>?>? createdOrganizations,
     ModelFieldValue<List<Mosque>?>? createdMosques,
-    ModelFieldValue<List<Resource>?>? createdResources,
-    ModelFieldValue<List<Service>?>? createdServices,
-    ModelFieldValue<List<VolunteerTask>?>? createdVolunteerTasks,
     ModelFieldValue<List<Donation>?>? donations,
-    ModelFieldValue<List<Class>?>? instructingClasses,
     ModelFieldValue<List<MosqueFollower>?>? mosques,
     ModelFieldValue<List<OrganizationMember>?>? organizations,
-    ModelFieldValue<List<MosqueSubscription>?>? purchasedSubscriptions,
-    ModelFieldValue<List<VolunteerTaskUser>?>? volunteerTasks,
     ModelFieldValue<List<Like>?>? likes,
-    ModelFieldValue<amplify_core.TemporalDateTime?>? createdAt,
-    ModelFieldValue<amplify_core.TemporalDateTime?>? updatedAt
+    ModelFieldValue<List<PrayerTime>?>? updatedPrayerTimes,
+    ModelFieldValue<amplify_core.TemporalDateTime>? createdAt,
+    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt
   }) {
     return User._internal(
       id: id,
@@ -412,21 +376,15 @@ class User extends amplify_core.Model {
       bookmarks: bookmarks == null ? this.bookmarks : bookmarks.value,
       comments: comments == null ? this.comments : comments.value,
       createdAnnouncements: createdAnnouncements == null ? this.createdAnnouncements : createdAnnouncements.value,
-      createdClasses: createdClasses == null ? this.createdClasses : createdClasses.value,
       createdFundraisingCampaigns: createdFundraisingCampaigns == null ? this.createdFundraisingCampaigns : createdFundraisingCampaigns.value,
-      createdMonthlyPrayerSchedules: createdMonthlyPrayerSchedules == null ? this.createdMonthlyPrayerSchedules : createdMonthlyPrayerSchedules.value,
+      createdPrayerTimes: createdPrayerTimes == null ? this.createdPrayerTimes : createdPrayerTimes.value,
       createdOrganizations: createdOrganizations == null ? this.createdOrganizations : createdOrganizations.value,
       createdMosques: createdMosques == null ? this.createdMosques : createdMosques.value,
-      createdResources: createdResources == null ? this.createdResources : createdResources.value,
-      createdServices: createdServices == null ? this.createdServices : createdServices.value,
-      createdVolunteerTasks: createdVolunteerTasks == null ? this.createdVolunteerTasks : createdVolunteerTasks.value,
       donations: donations == null ? this.donations : donations.value,
-      instructingClasses: instructingClasses == null ? this.instructingClasses : instructingClasses.value,
       mosques: mosques == null ? this.mosques : mosques.value,
       organizations: organizations == null ? this.organizations : organizations.value,
-      purchasedSubscriptions: purchasedSubscriptions == null ? this.purchasedSubscriptions : purchasedSubscriptions.value,
-      volunteerTasks: volunteerTasks == null ? this.volunteerTasks : volunteerTasks.value,
       likes: likes == null ? this.likes : likes.value,
+      updatedPrayerTimes: updatedPrayerTimes == null ? this.updatedPrayerTimes : updatedPrayerTimes.value,
       createdAt: createdAt == null ? this.createdAt : createdAt.value,
       updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value
     );
@@ -482,19 +440,6 @@ class User extends amplify_core.Model {
               .map((e) => Announcement.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
               .toList()
           : null),
-      _createdClasses = json['createdClasses']  is Map
-        ? (json['createdClasses']['items'] is List
-          ? (json['createdClasses']['items'] as List)
-              .where((e) => e != null)
-              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e)))
-              .toList()
-          : null)
-        : (json['createdClasses'] is List
-          ? (json['createdClasses'] as List)
-              .where((e) => e?['serializedData'] != null)
-              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
-              .toList()
-          : null),
       _createdFundraisingCampaigns = json['createdFundraisingCampaigns']  is Map
         ? (json['createdFundraisingCampaigns']['items'] is List
           ? (json['createdFundraisingCampaigns']['items'] as List)
@@ -508,17 +453,17 @@ class User extends amplify_core.Model {
               .map((e) => FundraisingCampaign.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
               .toList()
           : null),
-      _createdMonthlyPrayerSchedules = json['createdMonthlyPrayerSchedules']  is Map
-        ? (json['createdMonthlyPrayerSchedules']['items'] is List
-          ? (json['createdMonthlyPrayerSchedules']['items'] as List)
+      _createdPrayerTimes = json['createdPrayerTimes']  is Map
+        ? (json['createdPrayerTimes']['items'] is List
+          ? (json['createdPrayerTimes']['items'] as List)
               .where((e) => e != null)
-              .map((e) => MonthlyPrayerSchedule.fromJson(new Map<String, dynamic>.from(e)))
+              .map((e) => PrayerTime.fromJson(new Map<String, dynamic>.from(e)))
               .toList()
           : null)
-        : (json['createdMonthlyPrayerSchedules'] is List
-          ? (json['createdMonthlyPrayerSchedules'] as List)
+        : (json['createdPrayerTimes'] is List
+          ? (json['createdPrayerTimes'] as List)
               .where((e) => e?['serializedData'] != null)
-              .map((e) => MonthlyPrayerSchedule.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .map((e) => PrayerTime.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
               .toList()
           : null),
       _createdOrganizations = json['createdOrganizations']  is Map
@@ -547,45 +492,6 @@ class User extends amplify_core.Model {
               .map((e) => Mosque.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
               .toList()
           : null),
-      _createdResources = json['createdResources']  is Map
-        ? (json['createdResources']['items'] is List
-          ? (json['createdResources']['items'] as List)
-              .where((e) => e != null)
-              .map((e) => Resource.fromJson(new Map<String, dynamic>.from(e)))
-              .toList()
-          : null)
-        : (json['createdResources'] is List
-          ? (json['createdResources'] as List)
-              .where((e) => e?['serializedData'] != null)
-              .map((e) => Resource.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
-              .toList()
-          : null),
-      _createdServices = json['createdServices']  is Map
-        ? (json['createdServices']['items'] is List
-          ? (json['createdServices']['items'] as List)
-              .where((e) => e != null)
-              .map((e) => Service.fromJson(new Map<String, dynamic>.from(e)))
-              .toList()
-          : null)
-        : (json['createdServices'] is List
-          ? (json['createdServices'] as List)
-              .where((e) => e?['serializedData'] != null)
-              .map((e) => Service.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
-              .toList()
-          : null),
-      _createdVolunteerTasks = json['createdVolunteerTasks']  is Map
-        ? (json['createdVolunteerTasks']['items'] is List
-          ? (json['createdVolunteerTasks']['items'] as List)
-              .where((e) => e != null)
-              .map((e) => VolunteerTask.fromJson(new Map<String, dynamic>.from(e)))
-              .toList()
-          : null)
-        : (json['createdVolunteerTasks'] is List
-          ? (json['createdVolunteerTasks'] as List)
-              .where((e) => e?['serializedData'] != null)
-              .map((e) => VolunteerTask.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
-              .toList()
-          : null),
       _donations = json['donations']  is Map
         ? (json['donations']['items'] is List
           ? (json['donations']['items'] as List)
@@ -597,19 +503,6 @@ class User extends amplify_core.Model {
           ? (json['donations'] as List)
               .where((e) => e?['serializedData'] != null)
               .map((e) => Donation.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
-              .toList()
-          : null),
-      _instructingClasses = json['instructingClasses']  is Map
-        ? (json['instructingClasses']['items'] is List
-          ? (json['instructingClasses']['items'] as List)
-              .where((e) => e != null)
-              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e)))
-              .toList()
-          : null)
-        : (json['instructingClasses'] is List
-          ? (json['instructingClasses'] as List)
-              .where((e) => e?['serializedData'] != null)
-              .map((e) => Class.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
               .toList()
           : null),
       _mosques = json['mosques']  is Map
@@ -638,32 +531,6 @@ class User extends amplify_core.Model {
               .map((e) => OrganizationMember.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
               .toList()
           : null),
-      _purchasedSubscriptions = json['purchasedSubscriptions']  is Map
-        ? (json['purchasedSubscriptions']['items'] is List
-          ? (json['purchasedSubscriptions']['items'] as List)
-              .where((e) => e != null)
-              .map((e) => MosqueSubscription.fromJson(new Map<String, dynamic>.from(e)))
-              .toList()
-          : null)
-        : (json['purchasedSubscriptions'] is List
-          ? (json['purchasedSubscriptions'] as List)
-              .where((e) => e?['serializedData'] != null)
-              .map((e) => MosqueSubscription.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
-              .toList()
-          : null),
-      _volunteerTasks = json['volunteerTasks']  is Map
-        ? (json['volunteerTasks']['items'] is List
-          ? (json['volunteerTasks']['items'] as List)
-              .where((e) => e != null)
-              .map((e) => VolunteerTaskUser.fromJson(new Map<String, dynamic>.from(e)))
-              .toList()
-          : null)
-        : (json['volunteerTasks'] is List
-          ? (json['volunteerTasks'] as List)
-              .where((e) => e?['serializedData'] != null)
-              .map((e) => VolunteerTaskUser.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
-              .toList()
-          : null),
       _likes = json['likes']  is Map
         ? (json['likes']['items'] is List
           ? (json['likes']['items'] as List)
@@ -677,11 +544,24 @@ class User extends amplify_core.Model {
               .map((e) => Like.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
               .toList()
           : null),
+      _updatedPrayerTimes = json['updatedPrayerTimes']  is Map
+        ? (json['updatedPrayerTimes']['items'] is List
+          ? (json['updatedPrayerTimes']['items'] as List)
+              .where((e) => e != null)
+              .map((e) => PrayerTime.fromJson(new Map<String, dynamic>.from(e)))
+              .toList()
+          : null)
+        : (json['updatedPrayerTimes'] is List
+          ? (json['updatedPrayerTimes'] as List)
+              .where((e) => e?['serializedData'] != null)
+              .map((e) => PrayerTime.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
+              .toList()
+          : null),
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
       _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'selfie': _selfie, 'firstName': _firstName, 'lastName': _lastName, 'email': _email, 'phone': _phone, 'type': amplify_core.enumToString(_type), 'status': amplify_core.enumToString(_status), 'stripeCustomerId': _stripeCustomerId, 'isOnline': _isOnline, 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAnnouncements': _createdAnnouncements?.map((Announcement? e) => e?.toJson()).toList(), 'createdClasses': _createdClasses?.map((Class? e) => e?.toJson()).toList(), 'createdFundraisingCampaigns': _createdFundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'createdMonthlyPrayerSchedules': _createdMonthlyPrayerSchedules?.map((MonthlyPrayerSchedule? e) => e?.toJson()).toList(), 'createdOrganizations': _createdOrganizations?.map((Organization? e) => e?.toJson()).toList(), 'createdMosques': _createdMosques?.map((Mosque? e) => e?.toJson()).toList(), 'createdResources': _createdResources?.map((Resource? e) => e?.toJson()).toList(), 'createdServices': _createdServices?.map((Service? e) => e?.toJson()).toList(), 'createdVolunteerTasks': _createdVolunteerTasks?.map((VolunteerTask? e) => e?.toJson()).toList(), 'donations': _donations?.map((Donation? e) => e?.toJson()).toList(), 'instructingClasses': _instructingClasses?.map((Class? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((MosqueFollower? e) => e?.toJson()).toList(), 'organizations': _organizations?.map((OrganizationMember? e) => e?.toJson()).toList(), 'purchasedSubscriptions': _purchasedSubscriptions?.map((MosqueSubscription? e) => e?.toJson()).toList(), 'volunteerTasks': _volunteerTasks?.map((VolunteerTaskUser? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'selfie': _selfie, 'firstName': _firstName, 'lastName': _lastName, 'email': _email, 'phone': _phone, 'type': amplify_core.enumToString(_type), 'status': amplify_core.enumToString(_status), 'stripeCustomerId': _stripeCustomerId, 'isOnline': _isOnline, 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAnnouncements': _createdAnnouncements?.map((Announcement? e) => e?.toJson()).toList(), 'createdFundraisingCampaigns': _createdFundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'createdPrayerTimes': _createdPrayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'createdOrganizations': _createdOrganizations?.map((Organization? e) => e?.toJson()).toList(), 'createdMosques': _createdMosques?.map((Mosque? e) => e?.toJson()).toList(), 'donations': _donations?.map((Donation? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((MosqueFollower? e) => e?.toJson()).toList(), 'organizations': _organizations?.map((OrganizationMember? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'updatedPrayerTimes': _updatedPrayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
   };
   
   Map<String, Object?> toMap() => {
@@ -698,21 +578,15 @@ class User extends amplify_core.Model {
     'bookmarks': _bookmarks,
     'comments': _comments,
     'createdAnnouncements': _createdAnnouncements,
-    'createdClasses': _createdClasses,
     'createdFundraisingCampaigns': _createdFundraisingCampaigns,
-    'createdMonthlyPrayerSchedules': _createdMonthlyPrayerSchedules,
+    'createdPrayerTimes': _createdPrayerTimes,
     'createdOrganizations': _createdOrganizations,
     'createdMosques': _createdMosques,
-    'createdResources': _createdResources,
-    'createdServices': _createdServices,
-    'createdVolunteerTasks': _createdVolunteerTasks,
     'donations': _donations,
-    'instructingClasses': _instructingClasses,
     'mosques': _mosques,
     'organizations': _organizations,
-    'purchasedSubscriptions': _purchasedSubscriptions,
-    'volunteerTasks': _volunteerTasks,
     'likes': _likes,
+    'updatedPrayerTimes': _updatedPrayerTimes,
     'createdAt': _createdAt,
     'updatedAt': _updatedAt
   };
@@ -737,51 +611,33 @@ class User extends amplify_core.Model {
   static final CREATEDANNOUNCEMENTS = amplify_core.QueryField(
     fieldName: "createdAnnouncements",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Announcement'));
-  static final CREATEDCLASSES = amplify_core.QueryField(
-    fieldName: "createdClasses",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Class'));
   static final CREATEDFUNDRAISINGCAMPAIGNS = amplify_core.QueryField(
     fieldName: "createdFundraisingCampaigns",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'FundraisingCampaign'));
-  static final CREATEDMONTHLYPRAYERSCHEDULES = amplify_core.QueryField(
-    fieldName: "createdMonthlyPrayerSchedules",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'MonthlyPrayerSchedule'));
+  static final CREATEDPRAYERTIMES = amplify_core.QueryField(
+    fieldName: "createdPrayerTimes",
+    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'PrayerTime'));
   static final CREATEDORGANIZATIONS = amplify_core.QueryField(
     fieldName: "createdOrganizations",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Organization'));
   static final CREATEDMOSQUES = amplify_core.QueryField(
     fieldName: "createdMosques",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Mosque'));
-  static final CREATEDRESOURCES = amplify_core.QueryField(
-    fieldName: "createdResources",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Resource'));
-  static final CREATEDSERVICES = amplify_core.QueryField(
-    fieldName: "createdServices",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Service'));
-  static final CREATEDVOLUNTEERTASKS = amplify_core.QueryField(
-    fieldName: "createdVolunteerTasks",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'VolunteerTask'));
   static final DONATIONS = amplify_core.QueryField(
     fieldName: "donations",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Donation'));
-  static final INSTRUCTINGCLASSES = amplify_core.QueryField(
-    fieldName: "instructingClasses",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Class'));
   static final MOSQUES = amplify_core.QueryField(
     fieldName: "mosques",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'MosqueFollower'));
   static final ORGANIZATIONS = amplify_core.QueryField(
     fieldName: "organizations",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'OrganizationMember'));
-  static final PURCHASEDSUBSCRIPTIONS = amplify_core.QueryField(
-    fieldName: "purchasedSubscriptions",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'MosqueSubscription'));
-  static final VOLUNTEERTASKS = amplify_core.QueryField(
-    fieldName: "volunteerTasks",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'VolunteerTaskUser'));
   static final LIKES = amplify_core.QueryField(
     fieldName: "likes",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Like'));
+  static final UPDATEDPRAYERTIMES = amplify_core.QueryField(
+    fieldName: "updatedPrayerTimes",
+    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'PrayerTime'));
   static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
   static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
@@ -890,13 +746,6 @@ class User extends amplify_core.Model {
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.CREATEDCLASSES,
-      isRequired: false,
-      ofModelName: 'Class',
-      associatedKey: Class.CREATOR
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
       key: User.CREATEDFUNDRAISINGCAMPAIGNS,
       isRequired: false,
       ofModelName: 'FundraisingCampaign',
@@ -904,10 +753,10 @@ class User extends amplify_core.Model {
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.CREATEDMONTHLYPRAYERSCHEDULES,
+      key: User.CREATEDPRAYERTIMES,
       isRequired: false,
-      ofModelName: 'MonthlyPrayerSchedule',
-      associatedKey: MonthlyPrayerSchedule.CREATOR
+      ofModelName: 'PrayerTime',
+      associatedKey: PrayerTime.CREATEDBYUSER
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
@@ -925,38 +774,10 @@ class User extends amplify_core.Model {
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.CREATEDRESOURCES,
-      isRequired: false,
-      ofModelName: 'Resource',
-      associatedKey: Resource.CREATOR
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.CREATEDSERVICES,
-      isRequired: false,
-      ofModelName: 'Service',
-      associatedKey: Service.CREATOR
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.CREATEDVOLUNTEERTASKS,
-      isRequired: false,
-      ofModelName: 'VolunteerTask',
-      associatedKey: VolunteerTask.CREATOR
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
       key: User.DONATIONS,
       isRequired: false,
       ofModelName: 'Donation',
       associatedKey: Donation.DONOR
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.INSTRUCTINGCLASSES,
-      isRequired: false,
-      ofModelName: 'Class',
-      associatedKey: Class.INSTRUCTOR
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
@@ -974,35 +795,28 @@ class User extends amplify_core.Model {
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.PURCHASEDSUBSCRIPTIONS,
-      isRequired: false,
-      ofModelName: 'MosqueSubscription',
-      associatedKey: MosqueSubscription.PURCHASER
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: User.VOLUNTEERTASKS,
-      isRequired: false,
-      ofModelName: 'VolunteerTaskUser',
-      associatedKey: VolunteerTaskUser.USER
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
       key: User.LIKES,
       isRequired: false,
       ofModelName: 'Like',
       associatedKey: Like.CREATOR
     ));
     
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
+      key: User.UPDATEDPRAYERTIMES,
+      isRequired: false,
+      ofModelName: 'PrayerTime',
+      associatedKey: PrayerTime.UPDATEDBYUSER
+    ));
+    
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
       key: User.CREATEDAT,
-      isRequired: false,
+      isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
       key: User.UPDATEDAT,
-      isRequired: false,
+      isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
   });

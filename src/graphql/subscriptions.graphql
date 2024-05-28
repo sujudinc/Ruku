@@ -74,15 +74,11 @@ subscription OnCreateAnnouncement(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -94,23 +90,7 @@ subscription OnCreateAnnouncement(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -122,15 +102,11 @@ subscription OnCreateAnnouncement(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -203,31 +179,11 @@ subscription OnCreateAnnouncement(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -327,15 +283,11 @@ subscription OnUpdateAnnouncement(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -347,23 +299,7 @@ subscription OnUpdateAnnouncement(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -375,15 +311,11 @@ subscription OnUpdateAnnouncement(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -456,31 +388,11 @@ subscription OnUpdateAnnouncement(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -580,15 +492,11 @@ subscription OnDeleteAnnouncement(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -600,23 +508,7 @@ subscription OnDeleteAnnouncement(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -628,15 +520,11 @@ subscription OnDeleteAnnouncement(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -709,31 +597,11 @@ subscription OnDeleteAnnouncement(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -848,15 +716,11 @@ subscription OnCreateBookmark(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -868,23 +732,7 @@ subscription OnCreateBookmark(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -896,15 +744,11 @@ subscription OnCreateBookmark(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -977,31 +821,11 @@ subscription OnCreateBookmark(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -1116,15 +940,11 @@ subscription OnUpdateBookmark(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -1136,23 +956,7 @@ subscription OnUpdateBookmark(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -1164,15 +968,11 @@ subscription OnUpdateBookmark(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -1245,31 +1045,11 @@ subscription OnUpdateBookmark(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -1384,15 +1164,11 @@ subscription OnDeleteBookmark(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -1404,23 +1180,7 @@ subscription OnDeleteBookmark(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -1432,15 +1192,11 @@ subscription OnDeleteBookmark(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -1513,943 +1269,11 @@ subscription OnDeleteBookmark(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnCreateClass(
-  $filter: ModelSubscriptionClassFilterInput
-  $creatorId: String
-) {
-  onCreateClass(filter: $filter, creatorId: $creatorId) {
-    id
-    title
-    description
-    startDateTime
-    endDateTime
-    recurring
-    daysOfWeek
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    instructorId
-    instructor {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateClass(
-  $filter: ModelSubscriptionClassFilterInput
-  $creatorId: String
-) {
-  onUpdateClass(filter: $filter, creatorId: $creatorId) {
-    id
-    title
-    description
-    startDateTime
-    endDateTime
-    recurring
-    daysOfWeek
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    instructorId
-    instructor {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteClass(
-  $filter: ModelSubscriptionClassFilterInput
-  $creatorId: String
-) {
-  onDeleteClass(filter: $filter, creatorId: $creatorId) {
-    id
-    title
-    description
-    startDateTime
-    endDateTime
-    recurring
-    daysOfWeek
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    instructorId
-    instructor {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -2653,15 +1477,11 @@ subscription OnCreateComment(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -2673,23 +1493,7 @@ subscription OnCreateComment(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -2701,15 +1505,11 @@ subscription OnCreateComment(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2782,31 +1582,11 @@ subscription OnCreateComment(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -3010,15 +1790,11 @@ subscription OnUpdateComment(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -3030,23 +1806,7 @@ subscription OnUpdateComment(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -3058,15 +1818,11 @@ subscription OnUpdateComment(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -3139,31 +1895,11 @@ subscription OnUpdateComment(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -3367,15 +2103,11 @@ subscription OnDeleteComment(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -3387,23 +2119,7 @@ subscription OnDeleteComment(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -3415,15 +2131,11 @@ subscription OnDeleteComment(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -3496,31 +2208,11 @@ subscription OnDeleteComment(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -3579,15 +2271,11 @@ subscription OnCreateDonation(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -3599,23 +2287,7 @@ subscription OnCreateDonation(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -3627,15 +2299,11 @@ subscription OnCreateDonation(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -3739,15 +2407,11 @@ subscription OnUpdateDonation(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -3759,23 +2423,7 @@ subscription OnUpdateDonation(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -3787,15 +2435,11 @@ subscription OnUpdateDonation(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -3899,15 +2543,11 @@ subscription OnDeleteDonation(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -3919,23 +2559,7 @@ subscription OnDeleteDonation(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -3947,15 +2571,11 @@ subscription OnDeleteDonation(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -4064,15 +2684,11 @@ subscription OnCreateFundraisingCampaign(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -4084,23 +2700,7 @@ subscription OnCreateFundraisingCampaign(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -4112,15 +2712,11 @@ subscription OnCreateFundraisingCampaign(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -4193,31 +2789,11 @@ subscription OnCreateFundraisingCampaign(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -4296,15 +2872,11 @@ subscription OnUpdateFundraisingCampaign(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -4316,23 +2888,7 @@ subscription OnUpdateFundraisingCampaign(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -4344,15 +2900,11 @@ subscription OnUpdateFundraisingCampaign(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -4425,31 +2977,11 @@ subscription OnUpdateFundraisingCampaign(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -4528,15 +3060,11 @@ subscription OnDeleteFundraisingCampaign(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -4548,23 +3076,7 @@ subscription OnDeleteFundraisingCampaign(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -4576,15 +3088,11 @@ subscription OnDeleteFundraisingCampaign(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -4657,31 +3165,11 @@ subscription OnDeleteFundraisingCampaign(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -4811,15 +3299,11 @@ subscription OnCreateLike(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -4831,23 +3315,7 @@ subscription OnCreateLike(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -4859,15 +3327,11 @@ subscription OnCreateLike(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -4940,31 +3404,11 @@ subscription OnCreateLike(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -5079,15 +3523,11 @@ subscription OnUpdateLike(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -5099,23 +3539,7 @@ subscription OnUpdateLike(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -5127,15 +3551,11 @@ subscription OnUpdateLike(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -5208,31 +3628,11 @@ subscription OnUpdateLike(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -5347,15 +3747,11 @@ subscription OnDeleteLike(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -5367,23 +3763,7 @@ subscription OnDeleteLike(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -5395,15 +3775,11 @@ subscription OnDeleteLike(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -5476,31 +3852,11 @@ subscription OnDeleteLike(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -5526,23 +3882,56 @@ subscription OnDeleteLike(
   }
 }
 
-subscription OnCreateMonthlyPrayerSchedule(
-  $filter: ModelSubscriptionMonthlyPrayerScheduleFilterInput
+subscription OnCreatePrayerTime(
+  $filter: ModelSubscriptionPrayerTimeFilterInput
   $creatorId: String
 ) {
-  onCreateMonthlyPrayerSchedule(filter: $filter, creatorId: $creatorId) {
+  onCreatePrayerTime(filter: $filter, creatorId: $creatorId) {
     id
-    year
-    month
-    prayerTimes {
-      type
+    fajr {
       athan
       iqamah
       __typename
     }
+    dhuhr {
+      athan
+      iqamah
+      __typename
+    }
+    asr {
+      athan
+      iqamah
+      __typename
+    }
+    maghrib {
+      athan
+      iqamah
+      __typename
+    }
+    isha {
+      athan
+      iqamah
+      __typename
+    }
+    jummah {
+      athan
+      iqamah
+      __typename
+    }
+    taraweeh {
+      start
+      end
+      __typename
+    }
+    eid {
+      athan
+      iqamah
+      __typename
+    }
+    startDate
     timeZone
-    creatorId
-    creator {
+    createdByUserId
+    createdByUser {
       id
       selfie
       firstName
@@ -5565,15 +3954,11 @@ subscription OnCreateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -5585,23 +3970,7 @@ subscription OnCreateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -5613,15 +3982,76 @@ subscription OnCreateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
+      likes {
         nextToken
         __typename
       }
-      volunteerTasks {
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    updatedByUserId
+    updatedByUser {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -5694,31 +4124,11 @@ subscription OnCreateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -5740,27 +4150,61 @@ subscription OnCreateMonthlyPrayerSchedule(
     }
     createdAt
     updatedAt
+    creatorId
     __typename
   }
 }
 
-subscription OnUpdateMonthlyPrayerSchedule(
-  $filter: ModelSubscriptionMonthlyPrayerScheduleFilterInput
+subscription OnUpdatePrayerTime(
+  $filter: ModelSubscriptionPrayerTimeFilterInput
   $creatorId: String
 ) {
-  onUpdateMonthlyPrayerSchedule(filter: $filter, creatorId: $creatorId) {
+  onUpdatePrayerTime(filter: $filter, creatorId: $creatorId) {
     id
-    year
-    month
-    prayerTimes {
-      type
+    fajr {
       athan
       iqamah
       __typename
     }
+    dhuhr {
+      athan
+      iqamah
+      __typename
+    }
+    asr {
+      athan
+      iqamah
+      __typename
+    }
+    maghrib {
+      athan
+      iqamah
+      __typename
+    }
+    isha {
+      athan
+      iqamah
+      __typename
+    }
+    jummah {
+      athan
+      iqamah
+      __typename
+    }
+    taraweeh {
+      start
+      end
+      __typename
+    }
+    eid {
+      athan
+      iqamah
+      __typename
+    }
+    startDate
     timeZone
-    creatorId
-    creator {
+    createdByUserId
+    createdByUser {
       id
       selfie
       firstName
@@ -5783,15 +4227,11 @@ subscription OnUpdateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -5803,23 +4243,7 @@ subscription OnUpdateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -5831,15 +4255,76 @@ subscription OnUpdateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
+      likes {
         nextToken
         __typename
       }
-      volunteerTasks {
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    updatedByUserId
+    updatedByUser {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -5912,31 +4397,11 @@ subscription OnUpdateMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -5958,27 +4423,61 @@ subscription OnUpdateMonthlyPrayerSchedule(
     }
     createdAt
     updatedAt
+    creatorId
     __typename
   }
 }
 
-subscription OnDeleteMonthlyPrayerSchedule(
-  $filter: ModelSubscriptionMonthlyPrayerScheduleFilterInput
+subscription OnDeletePrayerTime(
+  $filter: ModelSubscriptionPrayerTimeFilterInput
   $creatorId: String
 ) {
-  onDeleteMonthlyPrayerSchedule(filter: $filter, creatorId: $creatorId) {
+  onDeletePrayerTime(filter: $filter, creatorId: $creatorId) {
     id
-    year
-    month
-    prayerTimes {
-      type
+    fajr {
       athan
       iqamah
       __typename
     }
+    dhuhr {
+      athan
+      iqamah
+      __typename
+    }
+    asr {
+      athan
+      iqamah
+      __typename
+    }
+    maghrib {
+      athan
+      iqamah
+      __typename
+    }
+    isha {
+      athan
+      iqamah
+      __typename
+    }
+    jummah {
+      athan
+      iqamah
+      __typename
+    }
+    taraweeh {
+      start
+      end
+      __typename
+    }
+    eid {
+      athan
+      iqamah
+      __typename
+    }
+    startDate
     timeZone
-    creatorId
-    creator {
+    createdByUserId
+    createdByUser {
       id
       selfie
       firstName
@@ -6001,15 +4500,11 @@ subscription OnDeleteMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -6021,23 +4516,7 @@ subscription OnDeleteMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -6049,15 +4528,76 @@ subscription OnDeleteMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
+      likes {
         nextToken
         __typename
       }
-      volunteerTasks {
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    updatedByUserId
+    updatedByUser {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
         nextToken
         __typename
       }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -6130,31 +4670,11 @@ subscription OnDeleteMonthlyPrayerSchedule(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -6176,6 +4696,7 @@ subscription OnDeleteMonthlyPrayerSchedule(
     }
     createdAt
     updatedAt
+    creatorId
     __typename
   }
 }
@@ -6259,15 +4780,11 @@ subscription OnCreateMosque(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -6279,23 +4796,7 @@ subscription OnCreateMosque(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -6307,15 +4808,11 @@ subscription OnCreateMosque(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -6392,25 +4889,6 @@ subscription OnCreateMosque(
       nextToken
       __typename
     }
-    classes {
-      items {
-        id
-        title
-        description
-        startDateTime
-        endDateTime
-        recurring
-        daysOfWeek
-        creatorId
-        instructorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
     fundraisingCampaigns {
       items {
         id
@@ -6431,79 +4909,17 @@ subscription OnCreateMosque(
       nextToken
       __typename
     }
-    monthlyPrayerSchedules {
+    prayerTimes {
       items {
         id
-        year
-        month
+        startDate
         timeZone
+        createdByUserId
+        updatedByUserId
+        mosqueId
+        createdAt
+        updatedAt
         creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    resources {
-      items {
-        id
-        title
-        description
-        type
-        url
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    services {
-      items {
-        id
-        type
-        description
-        documents
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    subscriptions {
-      items {
-        id
-        status
-        startDate
-        endDate
-        stripeSubscriptionId
-        purchaserId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    volunteerTasks {
-      items {
-        id
-        name
-        description
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
         __typename
       }
       nextToken
@@ -6635,15 +5051,11 @@ subscription OnUpdateMosque(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -6655,23 +5067,7 @@ subscription OnUpdateMosque(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -6683,15 +5079,11 @@ subscription OnUpdateMosque(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -6768,25 +5160,6 @@ subscription OnUpdateMosque(
       nextToken
       __typename
     }
-    classes {
-      items {
-        id
-        title
-        description
-        startDateTime
-        endDateTime
-        recurring
-        daysOfWeek
-        creatorId
-        instructorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
     fundraisingCampaigns {
       items {
         id
@@ -6807,79 +5180,17 @@ subscription OnUpdateMosque(
       nextToken
       __typename
     }
-    monthlyPrayerSchedules {
+    prayerTimes {
       items {
         id
-        year
-        month
+        startDate
         timeZone
+        createdByUserId
+        updatedByUserId
+        mosqueId
+        createdAt
+        updatedAt
         creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    resources {
-      items {
-        id
-        title
-        description
-        type
-        url
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    services {
-      items {
-        id
-        type
-        description
-        documents
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    subscriptions {
-      items {
-        id
-        status
-        startDate
-        endDate
-        stripeSubscriptionId
-        purchaserId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    volunteerTasks {
-      items {
-        id
-        name
-        description
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
         __typename
       }
       nextToken
@@ -7011,15 +5322,11 @@ subscription OnDeleteMosque(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -7031,23 +5338,7 @@ subscription OnDeleteMosque(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -7059,15 +5350,11 @@ subscription OnDeleteMosque(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -7144,25 +5431,6 @@ subscription OnDeleteMosque(
       nextToken
       __typename
     }
-    classes {
-      items {
-        id
-        title
-        description
-        startDateTime
-        endDateTime
-        recurring
-        daysOfWeek
-        creatorId
-        instructorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
     fundraisingCampaigns {
       items {
         id
@@ -7183,79 +5451,17 @@ subscription OnDeleteMosque(
       nextToken
       __typename
     }
-    monthlyPrayerSchedules {
+    prayerTimes {
       items {
         id
-        year
-        month
+        startDate
         timeZone
+        createdByUserId
+        updatedByUserId
+        mosqueId
+        createdAt
+        updatedAt
         creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    resources {
-      items {
-        id
-        title
-        description
-        type
-        url
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    services {
-      items {
-        id
-        type
-        description
-        documents
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    subscriptions {
-      items {
-        id
-        status
-        startDate
-        endDate
-        stripeSubscriptionId
-        purchaserId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    volunteerTasks {
-      items {
-        id
-        name
-        description
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
         __typename
       }
       nextToken
@@ -7308,645 +5514,6 @@ subscription OnDeleteMosque(
   }
 }
 
-subscription OnCreateMosqueSubscription(
-  $filter: ModelSubscriptionMosqueSubscriptionFilterInput
-  $purchaserId: String
-) {
-  onCreateMosqueSubscription(filter: $filter, purchaserId: $purchaserId) {
-    id
-    status
-    startDate
-    endDate
-    stripeSubscriptionId
-    purchaserId
-    purchaser {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateMosqueSubscription(
-  $filter: ModelSubscriptionMosqueSubscriptionFilterInput
-  $purchaserId: String
-) {
-  onUpdateMosqueSubscription(filter: $filter, purchaserId: $purchaserId) {
-    id
-    status
-    startDate
-    endDate
-    stripeSubscriptionId
-    purchaserId
-    purchaser {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteMosqueSubscription(
-  $filter: ModelSubscriptionMosqueSubscriptionFilterInput
-  $purchaserId: String
-) {
-  onDeleteMosqueSubscription(filter: $filter, purchaserId: $purchaserId) {
-    id
-    status
-    startDate
-    endDate
-    stripeSubscriptionId
-    purchaserId
-    purchaser {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
 subscription OnCreateOrganization(
   $filter: ModelSubscriptionOrganizationFilterInput
   $creatorId: String
@@ -7984,15 +5551,11 @@ subscription OnCreateOrganization(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -8004,23 +5567,7 @@ subscription OnCreateOrganization(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -8032,15 +5579,11 @@ subscription OnCreateOrganization(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -8129,15 +5672,11 @@ subscription OnUpdateOrganization(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -8149,23 +5688,7 @@ subscription OnUpdateOrganization(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -8177,15 +5700,11 @@ subscription OnUpdateOrganization(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -8274,15 +5793,11 @@ subscription OnDeleteOrganization(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -8294,23 +5809,7 @@ subscription OnDeleteOrganization(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -8322,15 +5821,11 @@ subscription OnDeleteOrganization(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -8371,1962 +5866,6 @@ subscription OnDeleteOrganization(
         organizationId
         createdAt
         updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnCreateResource(
-  $filter: ModelSubscriptionResourceFilterInput
-  $creatorId: String
-) {
-  onCreateResource(filter: $filter, creatorId: $creatorId) {
-    id
-    title
-    description
-    type
-    url
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateResource(
-  $filter: ModelSubscriptionResourceFilterInput
-  $creatorId: String
-) {
-  onUpdateResource(filter: $filter, creatorId: $creatorId) {
-    id
-    title
-    description
-    type
-    url
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteResource(
-  $filter: ModelSubscriptionResourceFilterInput
-  $creatorId: String
-) {
-  onDeleteResource(filter: $filter, creatorId: $creatorId) {
-    id
-    title
-    description
-    type
-    url
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnCreateService(
-  $filter: ModelSubscriptionServiceFilterInput
-  $creatorId: String
-) {
-  onCreateService(filter: $filter, creatorId: $creatorId) {
-    id
-    type
-    description
-    documents
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateService(
-  $filter: ModelSubscriptionServiceFilterInput
-  $creatorId: String
-) {
-  onUpdateService(filter: $filter, creatorId: $creatorId) {
-    id
-    type
-    description
-    documents
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteService(
-  $filter: ModelSubscriptionServiceFilterInput
-  $creatorId: String
-) {
-  onDeleteService(filter: $filter, creatorId: $creatorId) {
-    id
-    type
-    description
-    documents
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnCreateVolunteerTask(
-  $filter: ModelSubscriptionVolunteerTaskFilterInput
-  $creatorId: String
-) {
-  onCreateVolunteerTask(filter: $filter, creatorId: $creatorId) {
-    id
-    name
-    description
-    startDate
-    endDate
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    volunteers {
-      items {
-        id
-        userId
-        volunteerTaskId
-        createdAt
-        updatedAt
-        owner
-        creatorId
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateVolunteerTask(
-  $filter: ModelSubscriptionVolunteerTaskFilterInput
-  $creatorId: String
-) {
-  onUpdateVolunteerTask(filter: $filter, creatorId: $creatorId) {
-    id
-    name
-    description
-    startDate
-    endDate
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    volunteers {
-      items {
-        id
-        userId
-        volunteerTaskId
-        createdAt
-        updatedAt
-        owner
-        creatorId
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteVolunteerTask(
-  $filter: ModelSubscriptionVolunteerTaskFilterInput
-  $creatorId: String
-) {
-  onDeleteVolunteerTask(filter: $filter, creatorId: $creatorId) {
-    id
-    name
-    description
-    startDate
-    endDate
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    volunteers {
-      items {
-        id
-        userId
-        volunteerTaskId
-        createdAt
-        updatedAt
-        owner
-        creatorId
         __typename
       }
       nextToken
@@ -10414,31 +5953,11 @@ subscription OnCreateMosqueFollower(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -10481,15 +6000,11 @@ subscription OnCreateMosqueFollower(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -10501,23 +6016,7 @@ subscription OnCreateMosqueFollower(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -10529,15 +6028,11 @@ subscription OnCreateMosqueFollower(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -10630,31 +6125,11 @@ subscription OnUpdateMosqueFollower(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -10697,15 +6172,11 @@ subscription OnUpdateMosqueFollower(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -10717,23 +6188,7 @@ subscription OnUpdateMosqueFollower(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -10745,15 +6200,11 @@ subscription OnUpdateMosqueFollower(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -10846,31 +6297,11 @@ subscription OnDeleteMosqueFollower(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -10913,15 +6344,11 @@ subscription OnDeleteMosqueFollower(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -10933,23 +6360,7 @@ subscription OnDeleteMosqueFollower(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -10961,15 +6372,11 @@ subscription OnDeleteMosqueFollower(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -11060,15 +6467,11 @@ subscription OnCreateOrganizationMember(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -11080,23 +6483,7 @@ subscription OnCreateOrganizationMember(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -11108,15 +6495,11 @@ subscription OnCreateOrganizationMember(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -11207,15 +6590,11 @@ subscription OnUpdateOrganizationMember(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -11227,23 +6606,7 @@ subscription OnUpdateOrganizationMember(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -11255,15 +6618,11 @@ subscription OnUpdateOrganizationMember(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -11354,15 +6713,11 @@ subscription OnDeleteOrganizationMember(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -11374,23 +6729,7 @@ subscription OnDeleteOrganizationMember(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -11402,15 +6741,11 @@ subscription OnDeleteOrganizationMember(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -11423,486 +6758,6 @@ subscription OnDeleteOrganizationMember(
     updatedAt
     creatorId
     owner
-    __typename
-  }
-}
-
-subscription OnCreateVolunteerTaskUser(
-  $filter: ModelSubscriptionVolunteerTaskUserFilterInput
-  $owner: String
-  $creatorId: String
-) {
-  onCreateVolunteerTaskUser(
-    filter: $filter
-    owner: $owner
-    creatorId: $creatorId
-  ) {
-    id
-    userId
-    volunteerTaskId
-    user {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    volunteerTask {
-      id
-      name
-      description
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      volunteers {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    owner
-    creatorId
-    __typename
-  }
-}
-
-subscription OnUpdateVolunteerTaskUser(
-  $filter: ModelSubscriptionVolunteerTaskUserFilterInput
-  $owner: String
-  $creatorId: String
-) {
-  onUpdateVolunteerTaskUser(
-    filter: $filter
-    owner: $owner
-    creatorId: $creatorId
-  ) {
-    id
-    userId
-    volunteerTaskId
-    user {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    volunteerTask {
-      id
-      name
-      description
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      volunteers {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    owner
-    creatorId
-    __typename
-  }
-}
-
-subscription OnDeleteVolunteerTaskUser(
-  $filter: ModelSubscriptionVolunteerTaskUserFilterInput
-  $owner: String
-  $creatorId: String
-) {
-  onDeleteVolunteerTaskUser(
-    filter: $filter
-    owner: $owner
-    creatorId: $creatorId
-  ) {
-    id
-    userId
-    volunteerTaskId
-    user {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    volunteerTask {
-      id
-      name
-      description
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      volunteers {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    owner
-    creatorId
     __typename
   }
 }

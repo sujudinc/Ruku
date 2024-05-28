@@ -71,15 +71,11 @@ query GetAnnouncement($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -91,23 +87,7 @@ query GetAnnouncement($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -119,15 +99,11 @@ query GetAnnouncement($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -200,31 +176,11 @@ query GetAnnouncement($id: ID!) {
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -559,15 +515,11 @@ query GetBookmark($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -579,23 +531,7 @@ query GetBookmark($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -607,15 +543,11 @@ query GetBookmark($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -688,31 +620,11 @@ query GetBookmark($id: ID!) {
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -1026,639 +938,6 @@ query BookmarksByMosqueId(
   }
 }
 
-query GetClass($id: ID!) {
-  getClass(id: $id) {
-    id
-    title
-    description
-    startDateTime
-    endDateTime
-    recurring
-    daysOfWeek
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    instructorId
-    instructor {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListClasses(
-  $filter: ModelClassFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listClasses(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      title
-      description
-      startDateTime
-      endDateTime
-      recurring
-      daysOfWeek
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      instructorId
-      instructor {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query ClassesByCreatorId(
-  $creatorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelClassFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  classesByCreatorId(
-    creatorId: $creatorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      startDateTime
-      endDateTime
-      recurring
-      daysOfWeek
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      instructorId
-      instructor {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query ClassesByInstructorId(
-  $instructorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelClassFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  classesByInstructorId(
-    instructorId: $instructorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      startDateTime
-      endDateTime
-      recurring
-      daysOfWeek
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      instructorId
-      instructor {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query ClassesByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelClassFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  classesByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      startDateTime
-      endDateTime
-      recurring
-      daysOfWeek
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      instructorId
-      instructor {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
 query GetComment($id: ID!) {
   getComment(id: $id) {
     id
@@ -1834,15 +1113,11 @@ query GetComment($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -1854,23 +1129,7 @@ query GetComment($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -1882,15 +1141,11 @@ query GetComment($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -1963,31 +1218,11 @@ query GetComment($id: ID!) {
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -2490,15 +1725,11 @@ query GetDonation($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -2510,23 +1741,7 @@ query GetDonation($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -2538,15 +1753,11 @@ query GetDonation($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2830,15 +2041,11 @@ query GetFundraisingCampaign($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -2850,23 +2057,7 @@ query GetFundraisingCampaign($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -2878,15 +2069,11 @@ query GetFundraisingCampaign($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2959,31 +2146,11 @@ query GetFundraisingCampaign($id: ID!) {
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -3328,15 +2495,11 @@ query GetLike($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -3348,23 +2511,7 @@ query GetLike($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -3376,15 +2523,11 @@ query GetLike($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -3457,31 +2600,11 @@ query GetLike($id: ID!) {
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -3795,297 +2918,15 @@ query LikesByMosqueId(
   }
 }
 
-query GetMonthlyPrayerSchedule($id: ID!) {
-  getMonthlyPrayerSchedule(id: $id) {
-    id
-    year
-    month
-    prayerTimes {
-      type
-      athan
-      iqamah
-      __typename
-    }
-    timeZone
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListMonthlyPrayerSchedules(
-  $filter: ModelMonthlyPrayerScheduleFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listMonthlyPrayerSchedules(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      year
-      month
-      prayerTimes {
-        type
-        athan
-        iqamah
-        __typename
-      }
-      timeZone
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query MonthlyPrayerSchedulesByCreatorId(
-  $creatorId: ID!
+query PrayerTimesByCreatedByUserId(
+  $createdByUserId: ID!
   $sortDirection: ModelSortDirection
-  $filter: ModelMonthlyPrayerScheduleFilterInput
+  $filter: ModelPrayerTimeFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  monthlyPrayerSchedulesByCreatorId(
-    creatorId: $creatorId
+  prayerTimesByCreatedByUserId(
+    createdByUserId: $createdByUserId
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -4093,17 +2934,67 @@ query MonthlyPrayerSchedulesByCreatorId(
   ) {
     items {
       id
-      year
-      month
-      prayerTimes {
-        type
+      fajr {
         athan
         iqamah
         __typename
       }
+      dhuhr {
+        athan
+        iqamah
+        __typename
+      }
+      asr {
+        athan
+        iqamah
+        __typename
+      }
+      maghrib {
+        athan
+        iqamah
+        __typename
+      }
+      isha {
+        athan
+        iqamah
+        __typename
+      }
+      jummah {
+        athan
+        iqamah
+        __typename
+      }
+      taraweeh {
+        start
+        end
+        __typename
+      }
+      eid {
+        athan
+        iqamah
+        __typename
+      }
+      startDate
       timeZone
-      creatorId
-      creator {
+      createdByUserId
+      createdByUser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      updatedByUserId
+      updatedByUser {
         id
         selfie
         firstName
@@ -4141,6 +3032,7 @@ query MonthlyPrayerSchedulesByCreatorId(
       }
       createdAt
       updatedAt
+      creatorId
       __typename
     }
     nextToken
@@ -4148,14 +3040,136 @@ query MonthlyPrayerSchedulesByCreatorId(
   }
 }
 
-query MonthlyPrayerSchedulesByMosqueId(
-  $mosqueId: ID!
+query PrayerTimesByUpdatedByUserId(
+  $updatedByUserId: ID!
   $sortDirection: ModelSortDirection
-  $filter: ModelMonthlyPrayerScheduleFilterInput
+  $filter: ModelPrayerTimeFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  monthlyPrayerSchedulesByMosqueId(
+  prayerTimesByUpdatedByUserId(
+    updatedByUserId: $updatedByUserId
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      fajr {
+        athan
+        iqamah
+        __typename
+      }
+      dhuhr {
+        athan
+        iqamah
+        __typename
+      }
+      asr {
+        athan
+        iqamah
+        __typename
+      }
+      maghrib {
+        athan
+        iqamah
+        __typename
+      }
+      isha {
+        athan
+        iqamah
+        __typename
+      }
+      jummah {
+        athan
+        iqamah
+        __typename
+      }
+      taraweeh {
+        start
+        end
+        __typename
+      }
+      eid {
+        athan
+        iqamah
+        __typename
+      }
+      startDate
+      timeZone
+      createdByUserId
+      createdByUser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      updatedByUserId
+      updatedByUser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueId
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        isVerified
+        creatorId
+        organizationId
+        createdAt
+        updatedAt
+        __typename
+      }
+      createdAt
+      updatedAt
+      creatorId
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query PrayerTimesByMosqueId(
+  $mosqueId: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelPrayerTimeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  prayerTimesByMosqueId(
     mosqueId: $mosqueId
     sortDirection: $sortDirection
     filter: $filter
@@ -4164,17 +3178,67 @@ query MonthlyPrayerSchedulesByMosqueId(
   ) {
     items {
       id
-      year
-      month
-      prayerTimes {
-        type
+      fajr {
         athan
         iqamah
         __typename
       }
+      dhuhr {
+        athan
+        iqamah
+        __typename
+      }
+      asr {
+        athan
+        iqamah
+        __typename
+      }
+      maghrib {
+        athan
+        iqamah
+        __typename
+      }
+      isha {
+        athan
+        iqamah
+        __typename
+      }
+      jummah {
+        athan
+        iqamah
+        __typename
+      }
+      taraweeh {
+        start
+        end
+        __typename
+      }
+      eid {
+        athan
+        iqamah
+        __typename
+      }
+      startDate
       timeZone
-      creatorId
-      creator {
+      createdByUserId
+      createdByUser {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      updatedByUserId
+      updatedByUser {
         id
         selfie
         firstName
@@ -4212,6 +3276,7 @@ query MonthlyPrayerSchedulesByMosqueId(
       }
       createdAt
       updatedAt
+      creatorId
       __typename
     }
     nextToken
@@ -4295,15 +3360,11 @@ query GetMosque($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -4315,23 +3376,7 @@ query GetMosque($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -4343,15 +3388,11 @@ query GetMosque($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -4428,25 +3469,6 @@ query GetMosque($id: ID!) {
       nextToken
       __typename
     }
-    classes {
-      items {
-        id
-        title
-        description
-        startDateTime
-        endDateTime
-        recurring
-        daysOfWeek
-        creatorId
-        instructorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
     fundraisingCampaigns {
       items {
         id
@@ -4467,79 +3489,17 @@ query GetMosque($id: ID!) {
       nextToken
       __typename
     }
-    monthlyPrayerSchedules {
+    prayerTimes {
       items {
         id
-        year
-        month
+        startDate
         timeZone
+        createdByUserId
+        updatedByUserId
+        mosqueId
+        createdAt
+        updatedAt
         creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    resources {
-      items {
-        id
-        title
-        description
-        type
-        url
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    services {
-      items {
-        id
-        type
-        description
-        documents
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    subscriptions {
-      items {
-        id
-        status
-        startDate
-        endDate
-        stripeSubscriptionId
-        purchaserId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    volunteerTasks {
-      items {
-        id
-        name
-        description
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
         __typename
       }
       nextToken
@@ -4661,31 +3621,11 @@ query ListMosques(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -4787,31 +3727,11 @@ query MosquesByCreatorId(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -4913,31 +3833,11 @@ query MosquesByOrganizationId(
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -4951,410 +3851,6 @@ query MosquesByOrganizationId(
       }
       comments {
         nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetMosqueSubscription($id: ID!) {
-  getMosqueSubscription(id: $id) {
-    id
-    status
-    startDate
-    endDate
-    stripeSubscriptionId
-    purchaserId
-    purchaser {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListMosqueSubscriptions(
-  $filter: ModelMosqueSubscriptionFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listMosqueSubscriptions(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      status
-      startDate
-      endDate
-      stripeSubscriptionId
-      purchaserId
-      purchaser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query MosqueSubscriptionsByPurchaserId(
-  $purchaserId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelMosqueSubscriptionFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  mosqueSubscriptionsByPurchaserId(
-    purchaserId: $purchaserId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      status
-      startDate
-      endDate
-      stripeSubscriptionId
-      purchaserId
-      purchaser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query MosqueSubscriptionsByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelMosqueSubscriptionFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  mosqueSubscriptionsByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      status
-      startDate
-      endDate
-      stripeSubscriptionId
-      purchaserId
-      purchaser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
         __typename
       }
       createdAt
@@ -5400,15 +3896,11 @@ query GetOrganization($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -5420,23 +3912,7 @@ query GetOrganization($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -5448,15 +3924,11 @@ query GetOrganization($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -5614,802 +4086,6 @@ query OrganizationsByCreatorId(
   }
 }
 
-query GetResource($id: ID!) {
-  getResource(id: $id) {
-    id
-    title
-    description
-    type
-    url
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListResources(
-  $filter: ModelResourceFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listResources(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      title
-      description
-      type
-      url
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query ResourcesByCreatorId(
-  $creatorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelResourceFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  resourcesByCreatorId(
-    creatorId: $creatorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      type
-      url
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query ResourcesByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelResourceFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  resourcesByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      title
-      description
-      type
-      url
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetService($id: ID!) {
-  getService(id: $id) {
-    id
-    type
-    description
-    documents
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListServices(
-  $filter: ModelServiceFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listServices(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      type
-      description
-      documents
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query ServicesByCreatorId(
-  $creatorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelServiceFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  servicesByCreatorId(
-    creatorId: $creatorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      type
-      description
-      documents
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query ServicesByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelServiceFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  servicesByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      type
-      description
-      documents
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
 query GetUser($id: ID!) {
   getUser(id: $id) {
     id
@@ -6465,25 +4141,6 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    createdClasses {
-      items {
-        id
-        title
-        description
-        startDateTime
-        endDateTime
-        recurring
-        daysOfWeek
-        creatorId
-        instructorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
     createdFundraisingCampaigns {
       items {
         id
@@ -6504,16 +4161,17 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    createdMonthlyPrayerSchedules {
+    createdPrayerTimes {
       items {
         id
-        year
-        month
+        startDate
         timeZone
-        creatorId
+        createdByUserId
+        updatedByUserId
         mosqueId
         createdAt
         updatedAt
+        creatorId
         __typename
       }
       nextToken
@@ -6560,53 +4218,6 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    createdResources {
-      items {
-        id
-        title
-        description
-        type
-        url
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdServices {
-      items {
-        id
-        type
-        description
-        documents
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdVolunteerTasks {
-      items {
-        id
-        name
-        description
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
     donations {
       items {
         id
@@ -6615,25 +4226,6 @@ query GetUser($id: ID!) {
         isAnonymous
         donorId
         fundraisingCampaignId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    instructingClasses {
-      items {
-        id
-        title
-        description
-        startDateTime
-        endDateTime
-        recurring
-        daysOfWeek
-        creatorId
-        instructorId
-        mosqueId
         createdAt
         updatedAt
         __typename
@@ -6669,36 +4261,6 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    purchasedSubscriptions {
-      items {
-        id
-        status
-        startDate
-        endDate
-        stripeSubscriptionId
-        purchaserId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    volunteerTasks {
-      items {
-        id
-        userId
-        volunteerTaskId
-        createdAt
-        updatedAt
-        owner
-        creatorId
-        __typename
-      }
-      nextToken
-      __typename
-    }
     likes {
       items {
         id
@@ -6707,6 +4269,22 @@ query GetUser($id: ID!) {
         mosqueId
         createdAt
         updatedAt
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    updatedPrayerTimes {
+      items {
+        id
+        startDate
+        timeZone
+        createdByUserId
+        updatedByUserId
+        mosqueId
+        createdAt
+        updatedAt
+        creatorId
         __typename
       }
       nextToken
@@ -6748,15 +4326,11 @@ query ListUsers(
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -6768,23 +4342,7 @@ query ListUsers(
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -6796,447 +4354,17 @@ query ListUsers(
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
       createdAt
       updatedAt
       owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetVolunteerTask($id: ID!) {
-  getVolunteerTask(id: $id) {
-    id
-    name
-    description
-    startDate
-    endDate
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      classes {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    volunteers {
-      items {
-        id
-        userId
-        volunteerTaskId
-        createdAt
-        updatedAt
-        owner
-        creatorId
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListVolunteerTasks(
-  $filter: ModelVolunteerTaskFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listVolunteerTasks(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      name
-      description
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      volunteers {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query VolunteerTasksByCreatorId(
-  $creatorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelVolunteerTaskFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  volunteerTasksByCreatorId(
-    creatorId: $creatorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      name
-      description
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      volunteers {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query VolunteerTasksByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelVolunteerTaskFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  volunteerTasksByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      name
-      description
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      volunteers {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
       __typename
     }
     nextToken
@@ -7312,31 +4440,11 @@ query GetMosqueFollower($id: ID!) {
         nextToken
         __typename
       }
-      classes {
-        nextToken
-        __typename
-      }
       fundraisingCampaigns {
         nextToken
         __typename
       }
-      monthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      resources {
-        nextToken
-        __typename
-      }
-      services {
-        nextToken
-        __typename
-      }
-      subscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
+      prayerTimes {
         nextToken
         __typename
       }
@@ -7379,15 +4487,11 @@ query GetMosqueFollower($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -7399,23 +4503,7 @@ query GetMosqueFollower($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -7427,15 +4515,11 @@ query GetMosqueFollower($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -7702,15 +4786,11 @@ query GetOrganizationMember($id: ID!) {
         nextToken
         __typename
       }
-      createdClasses {
-        nextToken
-        __typename
-      }
       createdFundraisingCampaigns {
         nextToken
         __typename
       }
-      createdMonthlyPrayerSchedules {
+      createdPrayerTimes {
         nextToken
         __typename
       }
@@ -7722,23 +4802,7 @@ query GetOrganizationMember($id: ID!) {
         nextToken
         __typename
       }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
       donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
         nextToken
         __typename
       }
@@ -7750,15 +4814,11 @@ query GetOrganizationMember($id: ID!) {
         nextToken
         __typename
       }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
       likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -7941,325 +5001,6 @@ query OrganizationMembersByUserId(
       updatedAt
       creatorId
       owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetVolunteerTaskUser($id: ID!) {
-  getVolunteerTaskUser(id: $id) {
-    id
-    userId
-    volunteerTaskId
-    user {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdClasses {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdMonthlyPrayerSchedules {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      createdResources {
-        nextToken
-        __typename
-      }
-      createdServices {
-        nextToken
-        __typename
-      }
-      createdVolunteerTasks {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      instructingClasses {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      purchasedSubscriptions {
-        nextToken
-        __typename
-      }
-      volunteerTasks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    volunteerTask {
-      id
-      name
-      description
-      startDate
-      endDate
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      volunteers {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    owner
-    creatorId
-    __typename
-  }
-}
-
-query ListVolunteerTaskUsers(
-  $filter: ModelVolunteerTaskUserFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listVolunteerTaskUsers(
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      userId
-      volunteerTaskId
-      user {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      volunteerTask {
-        id
-        name
-        description
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      creatorId
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query VolunteerTaskUsersByUserId(
-  $userId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelVolunteerTaskUserFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  volunteerTaskUsersByUserId(
-    userId: $userId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      userId
-      volunteerTaskId
-      user {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      volunteerTask {
-        id
-        name
-        description
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      creatorId
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query VolunteerTaskUsersByVolunteerTaskId(
-  $volunteerTaskId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelVolunteerTaskUserFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  volunteerTaskUsersByVolunteerTaskId(
-    volunteerTaskId: $volunteerTaskId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      userId
-      volunteerTaskId
-      user {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      volunteerTask {
-        id
-        name
-        description
-        startDate
-        endDate
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      creatorId
       __typename
     }
     nextToken

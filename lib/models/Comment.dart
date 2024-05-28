@@ -110,17 +110,35 @@ class Comment extends amplify_core.Model {
     }
   }
   
-  amplify_core.TemporalDateTime? get createdAt {
-    return _createdAt;
+  amplify_core.TemporalDateTime get createdAt {
+    try {
+      return _createdAt!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
-  amplify_core.TemporalDateTime? get updatedAt {
-    return _updatedAt;
+  amplify_core.TemporalDateTime get updatedAt {
+    try {
+      return _updatedAt!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
-  const Comment._internal({required this.id, required text, parentComment, subComments, required announcement, required creator, required mosque, createdAt, updatedAt}): _text = text, _parentComment = parentComment, _subComments = subComments, _announcement = announcement, _creator = creator, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt;
+  const Comment._internal({required this.id, required text, parentComment, subComments, required announcement, required creator, required mosque, required createdAt, required updatedAt}): _text = text, _parentComment = parentComment, _subComments = subComments, _announcement = announcement, _creator = creator, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt;
   
-  factory Comment({String? id, required String text, Comment? parentComment, List<Comment>? subComments, required Announcement announcement, required User creator, required Mosque mosque}) {
+  factory Comment({String? id, required String text, Comment? parentComment, List<Comment>? subComments, required Announcement announcement, required User creator, required Mosque mosque, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt}) {
     return Comment._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       text: text,
@@ -128,7 +146,9 @@ class Comment extends amplify_core.Model {
       subComments: subComments != null ? List<Comment>.unmodifiable(subComments) : subComments,
       announcement: announcement,
       creator: creator,
-      mosque: mosque);
+      mosque: mosque,
+      createdAt: createdAt,
+      updatedAt: updatedAt);
   }
   
   bool equals(Object other) {
@@ -145,7 +165,9 @@ class Comment extends amplify_core.Model {
       DeepCollectionEquality().equals(_subComments, other._subComments) &&
       _announcement == other._announcement &&
       _creator == other._creator &&
-      _mosque == other._mosque;
+      _mosque == other._mosque &&
+      _createdAt == other._createdAt &&
+      _updatedAt == other._updatedAt;
   }
   
   @override
@@ -169,7 +191,7 @@ class Comment extends amplify_core.Model {
     return buffer.toString();
   }
   
-  Comment copyWith({String? text, Comment? parentComment, List<Comment>? subComments, Announcement? announcement, User? creator, Mosque? mosque}) {
+  Comment copyWith({String? text, Comment? parentComment, List<Comment>? subComments, Announcement? announcement, User? creator, Mosque? mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
     return Comment._internal(
       id: id,
       text: text ?? this.text,
@@ -177,7 +199,9 @@ class Comment extends amplify_core.Model {
       subComments: subComments ?? this.subComments,
       announcement: announcement ?? this.announcement,
       creator: creator ?? this.creator,
-      mosque: mosque ?? this.mosque);
+      mosque: mosque ?? this.mosque,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt);
   }
   
   Comment copyWithModelFieldValues({
@@ -186,7 +210,9 @@ class Comment extends amplify_core.Model {
     ModelFieldValue<List<Comment>?>? subComments,
     ModelFieldValue<Announcement>? announcement,
     ModelFieldValue<User>? creator,
-    ModelFieldValue<Mosque>? mosque
+    ModelFieldValue<Mosque>? mosque,
+    ModelFieldValue<amplify_core.TemporalDateTime>? createdAt,
+    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt
   }) {
     return Comment._internal(
       id: id,
@@ -195,7 +221,9 @@ class Comment extends amplify_core.Model {
       subComments: subComments == null ? this.subComments : subComments.value,
       announcement: announcement == null ? this.announcement : announcement.value,
       creator: creator == null ? this.creator : creator.value,
-      mosque: mosque == null ? this.mosque : mosque.value
+      mosque: mosque == null ? this.mosque : mosque.value,
+      createdAt: createdAt == null ? this.createdAt : createdAt.value,
+      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value
     );
   }
   
@@ -272,6 +300,8 @@ class Comment extends amplify_core.Model {
   static final MOSQUE = amplify_core.QueryField(
     fieldName: "mosque",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Mosque'));
+  static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
+  static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "Comment";
     modelSchemaDefinition.pluralName = "Comments";
@@ -350,17 +380,15 @@ class Comment extends amplify_core.Model {
       ofModelName: 'Mosque'
     ));
     
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.nonQueryField(
-      fieldName: 'createdAt',
-      isRequired: false,
-      isReadOnly: true,
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Comment.CREATEDAT,
+      isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
     
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.nonQueryField(
-      fieldName: 'updatedAt',
-      isRequired: false,
-      isReadOnly: true,
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Comment.UPDATEDAT,
+      isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
   });

@@ -216,8 +216,12 @@ type Mosque
   email: AWSEmail
   website: String
   socialMedia: SocialMedia
-  liveVideoUrl: String
-  isVerified: Boolean! @default(value: "false")
+  isVerified: Boolean! @default(value: "false") @auth(
+    rules: [
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
   creatorID: ID! @index(name: "byCreator")
   creator: User! @belongsTo(fields: ["creatorID"])
   organizationID: ID @index(name: "byOrganization")

@@ -13,7 +13,7 @@ type Announcement
     ]
   ) {
   id: ID!
-  content: String!
+  content: AWSJSON!
   images: [String]
   bookmarks: [Bookmark]! @hasMany(indexName: "byAnnouncement", fields: ["id"])
   likes: [Like]! @hasMany(indexName: "byAnnouncement", fields: ["id"])

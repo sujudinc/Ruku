@@ -1597,8 +1597,7 @@ subscription OnCreateMosque(
     announcements {
       items {
         id
-        title
-        body
+        content
         images
         creatorID
         mosqueID
@@ -1879,8 +1878,7 @@ subscription OnUpdateMosque(
     announcements {
       items {
         id
-        title
-        body
+        content
         images
         creatorID
         mosqueID
@@ -2161,8 +2159,7 @@ subscription OnDeleteMosque(
     announcements {
       items {
         id
-        title
-        body
+        content
         images
         creatorID
         mosqueID

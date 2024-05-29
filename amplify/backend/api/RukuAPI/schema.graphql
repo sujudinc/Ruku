@@ -13,8 +13,7 @@ type Announcement
     ]
   ) {
   id: ID!
-  title: String!
-  body: String!
+  content: String!
   images: [String]
   bookmarks: [Bookmark]! @hasMany(indexName: "byAnnouncement", fields: ["id"])
   likes: [Like]! @hasMany(indexName: "byAnnouncement", fields: ["id"])

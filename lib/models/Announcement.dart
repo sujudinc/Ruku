@@ -28,6 +28,7 @@ import 'package:collection/collection.dart';
 class Announcement extends amplify_core.Model {
   static const classType = const _AnnouncementModelType();
   final String id;
+  final AnnouncementType? _type;
   final String? _content;
   final List<String>? _images;
   final List<Bookmark>? _bookmarks;
@@ -50,6 +51,19 @@ class Announcement extends amplify_core.Model {
       return AnnouncementModelIdentifier(
         id: id
       );
+  }
+  
+  AnnouncementType get type {
+    try {
+      return _type!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
   String get content {
@@ -137,11 +151,12 @@ class Announcement extends amplify_core.Model {
     return _owner;
   }
   
-  const Announcement._internal({required this.id, required content, images, bookmarks, likes, comments, required creator, required mosque, required createdAt, required updatedAt, owner}): _content = content, _images = images, _bookmarks = bookmarks, _likes = likes, _comments = comments, _creator = creator, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt, _owner = owner;
+  const Announcement._internal({required this.id, required type, required content, images, bookmarks, likes, comments, required creator, required mosque, required createdAt, required updatedAt, owner}): _type = type, _content = content, _images = images, _bookmarks = bookmarks, _likes = likes, _comments = comments, _creator = creator, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt, _owner = owner;
   
-  factory Announcement({String? id, required String content, List<String>? images, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, required User creator, required Mosque mosque, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, String? owner}) {
+  factory Announcement({String? id, required AnnouncementType type, required String content, List<String>? images, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, required User creator, required Mosque mosque, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, String? owner}) {
     return Announcement._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
+      type: type,
       content: content,
       images: images != null ? List<String>.unmodifiable(images) : images,
       bookmarks: bookmarks != null ? List<Bookmark>.unmodifiable(bookmarks) : bookmarks,
@@ -163,6 +178,7 @@ class Announcement extends amplify_core.Model {
     if (identical(other, this)) return true;
     return other is Announcement &&
       id == other.id &&
+      _type == other._type &&
       _content == other._content &&
       DeepCollectionEquality().equals(_images, other._images) &&
       DeepCollectionEquality().equals(_bookmarks, other._bookmarks) &&
@@ -184,6 +200,7 @@ class Announcement extends amplify_core.Model {
     
     buffer.write("Announcement {");
     buffer.write("id=" + "$id" + ", ");
+    buffer.write("type=" + (_type != null ? amplify_core.enumToString(_type)! : "null") + ", ");
     buffer.write("content=" + "$_content" + ", ");
     buffer.write("images=" + (_images != null ? _images!.toString() : "null") + ", ");
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
@@ -196,9 +213,10 @@ class Announcement extends amplify_core.Model {
     return buffer.toString();
   }
   
-  Announcement copyWith({String? content, List<String>? images, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, User? creator, Mosque? mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, String? owner}) {
+  Announcement copyWith({AnnouncementType? type, String? content, List<String>? images, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, User? creator, Mosque? mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, String? owner}) {
     return Announcement._internal(
       id: id,
+      type: type ?? this.type,
       content: content ?? this.content,
       images: images ?? this.images,
       bookmarks: bookmarks ?? this.bookmarks,
@@ -212,6 +230,7 @@ class Announcement extends amplify_core.Model {
   }
   
   Announcement copyWithModelFieldValues({
+    ModelFieldValue<AnnouncementType>? type,
     ModelFieldValue<String>? content,
     ModelFieldValue<List<String>?>? images,
     ModelFieldValue<List<Bookmark>?>? bookmarks,
@@ -225,6 +244,7 @@ class Announcement extends amplify_core.Model {
   }) {
     return Announcement._internal(
       id: id,
+      type: type == null ? this.type : type.value,
       content: content == null ? this.content : content.value,
       images: images == null ? this.images : images.value,
       bookmarks: bookmarks == null ? this.bookmarks : bookmarks.value,
@@ -240,6 +260,7 @@ class Announcement extends amplify_core.Model {
   
   Announcement.fromJson(Map<String, dynamic> json)  
     : id = json['id'],
+      _type = amplify_core.enumFromString<AnnouncementType>(json['type'], AnnouncementType.values),
       _content = json['content'],
       _images = json['images']?.cast<String>(),
       _bookmarks = json['bookmarks']  is Map
@@ -296,11 +317,12 @@ class Announcement extends amplify_core.Model {
       _owner = json['owner'];
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'content': _content, 'images': _images, 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'creator': _creator?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owner': _owner
+    'id': id, 'type': amplify_core.enumToString(_type), 'content': _content, 'images': _images, 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'creator': _creator?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owner': _owner
   };
   
   Map<String, Object?> toMap() => {
     'id': id,
+    'type': _type,
     'content': _content,
     'images': _images,
     'bookmarks': _bookmarks,
@@ -315,6 +337,7 @@ class Announcement extends amplify_core.Model {
 
   static final amplify_core.QueryModelIdentifier<AnnouncementModelIdentifier> MODEL_IDENTIFIER = amplify_core.QueryModelIdentifier<AnnouncementModelIdentifier>();
   static final ID = amplify_core.QueryField(fieldName: "id");
+  static final TYPE = amplify_core.QueryField(fieldName: "type");
   static final CONTENT = amplify_core.QueryField(fieldName: "content");
   static final IMAGES = amplify_core.QueryField(fieldName: "images");
   static final BOOKMARKS = amplify_core.QueryField(
@@ -369,6 +392,12 @@ class Announcement extends amplify_core.Model {
     ];
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.id());
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Announcement.TYPE,
+      isRequired: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.enumeration)
+    ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
       key: Announcement.CONTENT,

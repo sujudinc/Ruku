@@ -40,6 +40,7 @@ import 'SocialMedia.dart';
 import 'SunnahPrayer.dart';
 
 export 'Announcement.dart';
+export 'AnnouncementType.dart';
 export 'Bookmark.dart';
 export 'Comment.dart';
 export 'Day.dart';
@@ -64,7 +65,7 @@ export 'UserType.dart';
 
 class ModelProvider implements amplify_core.ModelProviderInterface {
   @override
-  String version = "0278febf0f8449b8e69e7c468c38a5a9";
+  String version = "63016cf7bd6dd704a0cbdf7f0abc05d4";
   @override
   List<amplify_core.ModelSchema> modelSchemas = [Announcement.schema, Bookmark.schema, Comment.schema, Donation.schema, FundraisingCampaign.schema, Like.schema, Mosque.schema, MosqueFollower.schema, Organization.schema, OrganizationMember.schema, PrayerTime.schema, User.schema];
   @override

@@ -1597,6 +1597,7 @@ mutation CreateMosque(
     announcements {
       items {
         id
+        type
         content
         images
         creatorID
@@ -1878,6 +1879,7 @@ mutation UpdateMosque(
     announcements {
       items {
         id
+        type
         content
         images
         creatorID
@@ -2159,6 +2161,7 @@ mutation DeleteMosque(
     announcements {
       items {
         id
+        type
         content
         images
         creatorID

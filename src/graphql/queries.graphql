@@ -3,6 +3,7 @@
 query GetAnnouncement($id: ID!) {
   getAnnouncement(id: $id) {
     id
+    type
     content
     images
     bookmarks {
@@ -221,6 +222,7 @@ query ListAnnouncements(
   listAnnouncements(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      type
       content
       images
       bookmarks {
@@ -300,6 +302,7 @@ query AnnouncementsByCreatorID(
   ) {
     items {
       id
+      type
       content
       images
       bookmarks {
@@ -379,6 +382,7 @@ query AnnouncementsByMosqueID(
   ) {
     items {
       id
+      type
       content
       images
       bookmarks {
@@ -461,6 +465,7 @@ query BookmarksByAnnouncementID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -538,6 +543,7 @@ query BookmarksByCreatorID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -615,6 +621,7 @@ query BookmarksByMosqueID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -710,6 +717,7 @@ query CommentsByParentCommentID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -805,6 +813,7 @@ query CommentsByAnnouncementID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -900,6 +909,7 @@ query CommentsByCreatorID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -995,6 +1005,7 @@ query CommentsByMosqueID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -1624,6 +1635,7 @@ query LikesByAnnouncementID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -1701,6 +1713,7 @@ query LikesByCreatorID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -1778,6 +1791,7 @@ query LikesByMosqueID(
       announcementID
       announcement {
         id
+        type
         content
         images
         creatorID
@@ -2386,6 +2400,7 @@ query GetMosque($id: ID!) {
     announcements {
       items {
         id
+        type
         content
         images
         creatorID

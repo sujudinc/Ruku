@@ -1597,6 +1597,7 @@ subscription OnCreateMosque(
     announcements {
       items {
         id
+        type
         content
         images
         creatorID
@@ -1878,6 +1879,7 @@ subscription OnUpdateMosque(
     announcements {
       items {
         id
+        type
         content
         images
         creatorID
@@ -2159,6 +2161,7 @@ subscription OnDeleteMosque(
     announcements {
       items {
         id
+        type
         content
         images
         creatorID

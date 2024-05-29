@@ -137,7 +137,6 @@ query GetAnnouncement($id: ID!) {
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -266,7 +265,6 @@ query ListAnnouncements(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -346,7 +344,6 @@ query AnnouncementsByCreatorID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -426,7 +423,6 @@ query AnnouncementsByMosqueID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -504,7 +500,6 @@ query BookmarksByAnnouncementID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -582,7 +577,6 @@ query BookmarksByCreatorID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -660,7 +654,6 @@ query BookmarksByMosqueID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -756,7 +749,6 @@ query CommentsByParentCommentID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -852,7 +844,6 @@ query CommentsByAnnouncementID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -948,7 +939,6 @@ query CommentsByCreatorID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -1044,7 +1034,6 @@ query CommentsByMosqueID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -1292,7 +1281,6 @@ query GetFundraisingCampaign($id: ID!) {
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -1435,7 +1423,6 @@ query ListFundraisingCampaigns(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -1513,7 +1500,6 @@ query FundraisingCampaignsByCreatorID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -1591,7 +1577,6 @@ query FundraisingCampaignsByMosqueID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -1674,7 +1659,6 @@ query LikesByAnnouncementID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -1752,7 +1736,6 @@ query LikesByCreatorID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -1830,7 +1813,6 @@ query LikesByMosqueID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -1954,7 +1936,6 @@ query PrayerTimesByCreatedByUserID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -2079,7 +2060,6 @@ query PrayerTimesByUpdatedByUserID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -2204,7 +2184,6 @@ query PrayerTimesByMosqueID(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -2275,7 +2254,6 @@ query GetMosque($id: ID!) {
       youtube
       __typename
     }
-    liveVideoUrl
     isVerified
     creatorID
     creator {
@@ -2531,7 +2509,6 @@ query ListMosques(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -2641,7 +2618,6 @@ query MosquesByCreatorID(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -2751,7 +2727,6 @@ query MosquesByOrganizationID(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -2927,7 +2902,6 @@ query GetOrganization($id: ID!) {
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -3084,7 +3058,6 @@ query GetMosqueFollower($id: ID!) {
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -3247,7 +3220,6 @@ query ListMosqueFollowers(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -3313,7 +3285,6 @@ query MosqueFollowersByMosqueId(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -3379,7 +3350,6 @@ query MosqueFollowersByUserId(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID

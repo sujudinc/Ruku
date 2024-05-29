@@ -101,7 +101,6 @@ subscription OnCreateFundraisingCampaign(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -296,7 +295,6 @@ subscription OnUpdateFundraisingCampaign(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -491,7 +489,6 @@ subscription OnDeleteFundraisingCampaign(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -785,7 +782,6 @@ subscription OnCreatePrayerTime(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -1063,7 +1059,6 @@ subscription OnUpdatePrayerTime(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -1341,7 +1336,6 @@ subscription OnDeletePrayerTime(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -1472,7 +1466,6 @@ subscription OnCreateMosque(
       youtube
       __typename
     }
-    liveVideoUrl
     isVerified
     creatorID
     creator {
@@ -1754,7 +1747,6 @@ subscription OnUpdateMosque(
       youtube
       __typename
     }
-    liveVideoUrl
     isVerified
     creatorID
     creator {
@@ -2036,7 +2028,6 @@ subscription OnDeleteMosque(
       youtube
       __typename
     }
-    liveVideoUrl
     isVerified
     creatorID
     creator {
@@ -2369,7 +2360,6 @@ subscription OnCreateOrganization(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -2494,7 +2484,6 @@ subscription OnUpdateOrganization(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -2619,7 +2608,6 @@ subscription OnDeleteOrganization(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -2670,7 +2658,6 @@ subscription OnCreateMosqueFollower(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -2842,7 +2829,6 @@ subscription OnUpdateMosqueFollower(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -3014,7 +3000,6 @@ subscription OnDeleteMosqueFollower(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {

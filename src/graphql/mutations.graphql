@@ -101,7 +101,6 @@ mutation CreateFundraisingCampaign(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -296,7 +295,6 @@ mutation UpdateFundraisingCampaign(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -491,7 +489,6 @@ mutation DeleteFundraisingCampaign(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -785,7 +782,6 @@ mutation CreatePrayerTime(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -1063,7 +1059,6 @@ mutation UpdatePrayerTime(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -1341,7 +1336,6 @@ mutation DeletePrayerTime(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -1472,7 +1466,6 @@ mutation CreateMosque(
       youtube
       __typename
     }
-    liveVideoUrl
     isVerified
     creatorID
     creator {
@@ -1754,7 +1747,6 @@ mutation UpdateMosque(
       youtube
       __typename
     }
-    liveVideoUrl
     isVerified
     creatorID
     creator {
@@ -2036,7 +2028,6 @@ mutation DeleteMosque(
       youtube
       __typename
     }
-    liveVideoUrl
     isVerified
     creatorID
     creator {
@@ -2369,7 +2360,6 @@ mutation CreateOrganization(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -2494,7 +2484,6 @@ mutation UpdateOrganization(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -2619,7 +2608,6 @@ mutation DeleteOrganization(
         phone
         email
         website
-        liveVideoUrl
         isVerified
         creatorID
         organizationID
@@ -2669,7 +2657,6 @@ mutation CreateMosqueFollower(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -2840,7 +2827,6 @@ mutation UpdateMosqueFollower(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {
@@ -3011,7 +2997,6 @@ mutation DeleteMosqueFollower(
         youtube
         __typename
       }
-      liveVideoUrl
       isVerified
       creatorID
       creator {

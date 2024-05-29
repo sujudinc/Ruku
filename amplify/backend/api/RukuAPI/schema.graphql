@@ -4,7 +4,7 @@ type Announcement
   @model
   @auth(
     rules: [
-      { allow: owner, ownerField: "creatorId" }
+      { allow: owner }
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]
@@ -13,92 +13,69 @@ type Announcement
   title: String!
   body: String!
   images: [String]
-  bookmarks: [Bookmark] @hasMany(indexName: "byAnnouncementId", fields: ["id"])
-  likes: [Like] @hasMany(indexName: "byAnnouncementId", fields: ["id"])
-  comments: [Comment] @hasMany(indexName: "byAnnouncementId", fields: ["id"])
-  creatorId: ID! @index(name: "byCreatorId")
-  creator: User! @belongsTo(fields: ["creatorId"])
-  mosqueId: ID! @index(name: "byMosqueId")
-  mosque: Mosque! @belongsTo(fields: ["mosqueId"])
+  bookmarks: [Bookmark]! @hasMany(indexName: "byAnnouncement", fields: ["id"])
+  likes: [Like]! @hasMany(indexName: "byAnnouncement", fields: ["id"])
+  comments: [Comment]! @hasMany(indexName: "byAnnouncement", fields: ["id"])
+  creatorID: ID! @index(name: "byCreator")
+  creator: User! @belongsTo(fields: ["creatorID"])
+  mosqueID: ID! @index(name: "byMosque")
+  mosque: Mosque! @belongsTo(fields: ["mosqueID"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 
 type Bookmark
   @model
   @auth(
     rules: [
-      { allow: owner, ownerField: "creatorId" }
+      { allow: owner }
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]
   ) {
   id: ID!
-  announcementId: ID! @index(name: "byAnnouncementId")
-  announcement: Announcement! @belongsTo(fields: ["announcementId"])
-  creatorId: ID! @index(name: "byCreatorId")
-  creator: User! @belongsTo(fields: ["creatorId"])
-  mosqueId: ID! @index(name: "byMosqueId")
-  mosque: Mosque! @belongsTo(fields: ["mosqueId"])
+  announcementID: ID! @index(name: "byAnnouncement")
+  announcement: Announcement! @belongsTo(fields: ["announcementID"])
+  creatorID: ID! @index(name: "byCreator")
+  creator: User! @belongsTo(fields: ["creatorID"])
+  mosqueID: ID! @index(name: "byMosque")
+  mosque: Mosque! @belongsTo(fields: ["mosqueID"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
-
-# type Class
-#   @model
-#   @auth(
-#     rules: [
-#       { allow: owner, ownerField: "creatorId" }
-#       { allow: private, operations: [read] }
-#       { allow: public, operations: [read] }
-#     ]
-#   ) {
-#   id: ID!
-#   title: String!
-#   description: String
-#   startDateTime: AWSDateTime!
-#   endDateTime: AWSDateTime
-#   recurring: Boolean!
-#   daysOfWeek: [DayType!]
-#   creatorId: ID! @index(name: "byCreatorId")
-#   creator: User! @belongsTo(fields: ["creatorId"])
-#   instructorId: ID! @index(name: "byInstructorId")
-#   instructor: User! @belongsTo(fields: ["instructorId"])
-#   mosqueId: ID! @index(name: "byMosqueId")
-#   mosque: Mosque! @belongsTo(fields: ["mosqueId"])
-#   createdAt: AWSDateTime!
-#   updatedAt: AWSDateTime!
-# }
 
 type Comment
   @model
   @auth(
     rules: [
-      { allow: owner, ownerField: "creatorId" }
+      { allow: owner }
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]
   ) {
   id: ID!
   text: String!
-  parentCommentId: ID @index(name: "byParentCommentId")
-  parentComment: Comment @belongsTo(fields: ["parentCommentId"])
-  subComments: [Comment] @hasMany(indexName: "byParentCommentId", fields: ["id"])
-  announcementId: ID! @index(name: "byAnnouncementId")
-  announcement: Announcement! @belongsTo(fields: ["announcementId"])
-  creatorId: ID! @index(name: "byCreatorId")
-  creator: User! @belongsTo(fields: ["creatorId"])
-  mosqueId: ID! @index(name: "byMosqueId")
-  mosque: Mosque! @belongsTo(fields: ["mosqueId"])
+  parentCommentID: ID @index(name: "byParentComment")
+  parentComment: Comment @belongsTo(fields: ["parentCommentID"])
+  subComments: [Comment]! @hasMany(indexName: "byParentComment", fields: ["id"])
+  announcementID: ID! @index(name: "byAnnouncement")
+  announcement: Announcement! @belongsTo(fields: ["announcementID"])
+  creatorID: ID! @index(name: "byCreator")
+  creator: User! @belongsTo(fields: ["creatorID"])
+  mosqueID: ID! @index(name: "byMosque")
+  mosque: Mosque! @belongsTo(fields: ["mosqueID"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 
 type Donation
   @model
   @auth(
     rules: [
-      { allow: owner, ownerField: "donorId" }
+      { allow: owner }
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]
@@ -107,19 +84,20 @@ type Donation
   amount: Float!
   currency: String!
   isAnonymous: Boolean!
-  donorId: ID! @index(name: "byDonor")
-  donor: User! @belongsTo(fields: ["donorId"])
-  fundraisingCampaignId: ID! @index(name: "byFundraisingCampaignId")
-  fundraisingCampaign: FundraisingCampaign @belongsTo(fields: ["fundraisingCampaignId"])
+  donorID: ID! @index(name: "byDonor")
+  donor: User! @belongsTo(fields: ["donorID"])
+  fundraisingCampaignID: ID! @index(name: "byFundraisingCampaign")
+  fundraisingCampaign: FundraisingCampaign @belongsTo(fields: ["fundraisingCampaignID"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 
 type FundraisingCampaign
   @model
   @auth(
     rules: [
-      { allow: owner, ownerField: "creatorId" }
+      { allow: owner, ownerField: "owners"}
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]
@@ -133,33 +111,35 @@ type FundraisingCampaign
   goal: Float!
   goalDate: AWSDateTime!
   currency: String!
-  creatorId: ID! @index(name: "byCreatorId")
-  creator: User! @belongsTo(fields: ["creatorId"])
-  mosqueId: ID! @index(name: "byMosqueId")
-  mosque: Mosque! @belongsTo(fields: ["mosqueId"])
-  donations: [Donation] @hasMany(indexName: "byFundraisingCampaignId", fields: ["id"])
+  creatorID: ID! @index(name: "byCreator")
+  creator: User! @belongsTo(fields: ["creatorID"])
+  mosqueID: ID! @index(name: "byMosque")
+  mosque: Mosque! @belongsTo(fields: ["mosqueID"])
+  donations: [Donation]! @hasMany(indexName: "byFundraisingCampaign", fields: ["id"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owners: [String] @auth(rules: [{ allow: owner }])
 }
 
 type Like
   @model
   @auth(
     rules: [
-      { allow: owner, ownerField: "creatorId" }
+      { allow: owner }
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]
   ) {
   id: ID!
-  announcementId: ID! @index(name: "byAnnouncementId")
-  announcement: Announcement! @belongsTo(fields: ["announcementId"])
-  creatorId: ID! @index(name: "byCreatorId")
-  creator: User! @belongsTo(fields: ["creatorId"])
-  mosqueId: ID! @index(name: "byMosqueId")
-  mosque: Mosque! @belongsTo(fields: ["mosqueId"])
+  announcementID: ID! @index(name: "byAnnouncement")
+  announcement: Announcement! @belongsTo(fields: ["announcementID"])
+  creatorID: ID! @index(name: "byCreator")
+  creator: User! @belongsTo(fields: ["creatorID"])
+  mosqueID: ID! @index(name: "byMosque")
+  mosque: Mosque! @belongsTo(fields: ["mosqueID"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 
 type PrayerTime
@@ -168,7 +148,7 @@ type PrayerTime
   )
   @auth(
     rules: [
-      { allow: owner, ownerField: "creatorId" }
+      { allow: owner, ownerField: "owners"}
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]
@@ -185,21 +165,22 @@ type PrayerTime
   eid: [FardPrayer]
   startDate: AWSDateTime!
   timeZone: String!
-  createdByUserId: ID! @index(name: "byCreatedByUserId")
-  createdByUser: User! @belongsTo(fields: ["createdByUserId"])
-  updatedByUserId: ID! @index(name: "byUpdatedByUserId")
-  updatedByUser: User! @belongsTo(fields: ["updatedByUserId"])
-  mosqueId: ID! @index(name: "byMosqueId")
-  mosque: Mosque! @belongsTo(fields: ["mosqueId"])
+  createdByUserID: ID! @index(name: "byCreatedByUser")
+  createdByUser: User! @belongsTo(fields: ["createdByUserID"])
+  updatedByUserID: ID! @index(name: "byUpdatedByUser")
+  updatedByUser: User! @belongsTo(fields: ["updatedByUserID"])
+  mosqueID: ID! @index(name: "byMosque")
+  mosque: Mosque! @belongsTo(fields: ["mosqueID"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owners: [String] @auth(rules: [{ allow: owner }])
 }
 
 type Mosque
   @model
   @auth(
     rules: [
-      { allow: owner, ownerField: "creatorId" }
+      { allow: owner, ownerField: "owners" }
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]
@@ -218,53 +199,27 @@ type Mosque
   socialMedia: SocialMedia
   liveVideoUrl: String
   isVerified: Boolean! @default(value: "false")
-  creatorId: ID! @index(name: "byCreatorId")
-  creator: User! @belongsTo(fields: ["creatorId"])
-  organizationId: ID @index(name: "byOrganizationId")
-  organization: Organization @belongsTo(fields: ["organizationId"])
-  followers: [User] @manyToMany(relationName: "MosqueFollower")
-  announcements: [Announcement] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  # classes: [Class] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  fundraisingCampaigns: [FundraisingCampaign] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  prayerTimes: [PrayerTime] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  # resources: [Resource] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  # services: [Service] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  # subscriptions: [MosqueSubscription] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  # volunteerTasks: [VolunteerTask] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  bookmarks: [Bookmark] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  likes: [Like] @hasMany(indexName: "byMosqueId", fields: ["id"])
-  comments: [Comment] @hasMany(indexName: "byMosqueId", fields: ["id"])
+  creatorID: ID! @index(name: "byCreator")
+  creator: User! @belongsTo(fields: ["creatorID"])
+  organizationID: ID @index(name: "byOrganization")
+  organization: Organization @belongsTo(fields: ["organizationID"])
+  followers: [User]! @manyToMany(relationName: "MosqueFollower")
+  announcements: [Announcement]! @hasMany(indexName: "byMosque", fields: ["id"])
+  fundraisingCampaigns: [FundraisingCampaign]! @hasMany(indexName: "byMosque", fields: ["id"])
+  prayerTimes: [PrayerTime]! @hasMany(indexName: "byMosque", fields: ["id"])
+  bookmarks: [Bookmark]! @hasMany(indexName: "byMosque", fields: ["id"])
+  likes: [Like]! @hasMany(indexName: "byMosque", fields: ["id"])
+  comments: [Comment]! @hasMany(indexName: "byMosque", fields: ["id"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owners: [String] @auth(rules: [{ allow: owner }])
 }
-
-# type MosqueSubscription
-#   @model
-#   @auth(
-#     rules: [
-#       { allow: owner, ownerField: "purchaserId" }
-#       { allow: private, operations: [read] }
-#       { allow: public, operations: [read] }
-#     ]
-#   ) {
-#   id: ID!
-#   status: MosqueSubscriptionStatus!
-#   startDate: AWSDateTime!
-#   endDate: AWSDateTime
-#   stripeSubscriptionId: String!
-#   purchaserId: ID! @index(name: "byPurchaserId")
-#   purchaser: User! @belongsTo(fields: ["purchaserId"])
-#   mosqueId: ID! @index(name: "byMosqueId")
-#   mosque: Mosque! @belongsTo(fields: ["mosqueId"])
-#   createdAt: AWSDateTime
-#   updatedAt: AWSDateTime
-# }
 
 type Organization
   @model
   @auth(
     rules: [
-      { allow: owner, ownerField: "creatorId" }
+      { allow: owner, ownerField: "owners" }
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]
@@ -277,56 +232,14 @@ type Organization
   email: AWSEmail
   website: String
   isVerified: Boolean! @default(value: "false")
-  creatorId: ID! @index(name: "byCreatorId")
-  creator: User! @belongsTo(fields: ["creatorId"])
-  members: [User] @manyToMany(relationName: "OrganizationMember")
-  mosques: [Mosque] @hasMany(indexName: "byOrganizationId", fields: ["id"])
+  creatorID: ID! @index(name: "byCreator")
+  creator: User! @belongsTo(fields: ["creatorID"])
+  members: [User]! @manyToMany(relationName: "OrganizationMember")
+  mosques: [Mosque]! @hasMany(indexName: "byOrganization", fields: ["id"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
+  owners: [String] @auth(rules: [{ allow: owner }])
 }
-
-# type Resource
-#   @model
-#   @auth(
-#     rules: [
-#       { allow: owner, ownerField: "creatorId" }
-#       { allow: private, operations: [read] }
-#       { allow: public, operations: [read] }
-#     ]
-#   ) {
-#   id: ID!
-#   title: String!
-#   description: String
-#   type: ResourceType!
-#   url: String!
-#   creatorId: ID! @index(name: "byCreatorId")
-#   creator: User! @belongsTo(fields: ["creatorId"])
-#   mosqueId: ID! @index(name: "byMosqueId")
-#   mosque: Mosque! @belongsTo(fields: ["mosqueId"])
-#   createdAt: AWSDateTime!
-#   updatedAt: AWSDateTime!
-# }
-
-# type Service
-#   @model
-#   @auth(
-#     rules: [
-#       { allow: owner, ownerField: "creatorId" }
-#       { allow: private, operations: [read] }
-#       { allow: public, operations: [read] }
-#     ]
-#   ) {
-#   id: ID!
-#   type: ServiceType!
-#   description: String
-#   documents: [String]
-#   creatorId: ID! @index(name: "byCreatorId")
-#   creator: User! @belongsTo(fields: ["creatorId"])
-#   mosqueId: ID! @index(name: "byMosqueId")
-#   mosque: Mosque! @belongsTo(fields: ["mosqueId"])
-#   createdAt: AWSDateTime!
-#   updatedAt: AWSDateTime!
-# }
 
 type User
 	@model(
@@ -349,51 +262,22 @@ type User
   status: UserStatus!
   stripeCustomerId: String
   isOnline: Boolean
-  bookmarks: [Bookmark] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  comments: [Comment] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  createdAnnouncements: [Announcement] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  # createdClasses: [Class] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  createdFundraisingCampaigns: [FundraisingCampaign] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  createdPrayerTimes: [PrayerTime] @hasMany(indexName: "byCreatedByUserId", fields: ["id"])
-  createdOrganizations: [Organization] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  createdMosques: [Mosque] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  # createdResources: [Resource] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  # createdServices: [Service] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  # createdVolunteerTasks: [VolunteerTask] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  donations: [Donation] @hasMany(indexName: "byDonor", fields: ["id"])
-  # instructingClasses: [Class] @hasMany(indexName: "byInstructorId", fields: ["id"])
-  mosques: [Mosque] @manyToMany(relationName: "MosqueFollower")
-  organizations: [Organization] @manyToMany(relationName: "OrganizationMember")
-  # purchasedSubscriptions: [MosqueSubscription] @hasMany(indexName: "byPurchaserId", fields: ["id"])
-  # volunteerTasks: [VolunteerTask] @manyToMany(relationName: "Volunteer")
-  likes: [Like] @hasMany(indexName: "byCreatorId", fields: ["id"])
-  updatedPrayerTimes: [PrayerTime] @hasMany(indexName: "byUpdatedByUserId", fields: ["id"])
+  bookmarks: [Bookmark]! @hasMany(indexName: "byCreator", fields: ["id"])
+  comments: [Comment]! @hasMany(indexName: "byCreator", fields: ["id"])
+  createdAnnouncements: [Announcement]! @hasMany(indexName: "byCreator", fields: ["id"])
+  createdFundraisingCampaigns: [FundraisingCampaign]! @hasMany(indexName: "byCreator", fields: ["id"])
+  createdPrayerTimes: [PrayerTime]! @hasMany(indexName: "byCreatedByUser", fields: ["id"])
+  createdOrganizations: [Organization]! @hasMany(indexName: "byCreator", fields: ["id"])
+  createdMosques: [Mosque]! @hasMany(indexName: "byCreator", fields: ["id"])
+  donations: [Donation]! @hasMany(indexName: "byDonor", fields: ["id"])
+  mosques: [Mosque]! @manyToMany(relationName: "MosqueFollower")
+  organizations: [Organization]! @manyToMany(relationName: "OrganizationMember")
+  likes: [Like]! @hasMany(indexName: "byCreator", fields: ["id"])
+  updatedPrayerTimes: [PrayerTime]! @hasMany(indexName: "byUpdatedByUser", fields: ["id"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
+  owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
-
-# type VolunteerTask
-#   @model
-#   @auth(
-#     rules: [
-#       { allow: owner, ownerField: "creatorId" }
-#       { allow: private, operations: [read] }
-#       { allow: public, operations: [read] }
-#     ]
-#   ) {
-#   id: ID!
-#   name: String!
-#   description: String
-#   startDate: AWSDateTime!
-#   endDate: AWSDateTime
-#   creatorId: ID! @index(name: "byCreatorId")
-#   creator: User! @belongsTo(fields: ["creatorId"])
-#   mosqueId: ID! @index(name: "byMosqueId")
-#   mosque: Mosque! @belongsTo(fields: ["mosqueId"])
-#   volunteers: [User] @manyToMany(relationName: "Volunteer")
-#   createdAt: AWSDateTime
-#   updatedAt: AWSDateTime
-# }
 
 # ------------------------------------------------------------------------------------- CUSTOM TYPES
 
@@ -459,30 +343,6 @@ enum FundraisingCampaignType {
   OTHER
   REFUGEES
 }
-
-# enum MosqueSubscriptionStatus {
-#   LIFETIME
-#   TRIAL
-#   ACTIVE
-#   INACTIVE
-# }
-
-# enum ResourceType {
-#   ARTICLE
-#   AUDIO
-#   VIDEO
-#   BOOK
-#   OTHER
-# }
-
-# enum ServiceType {
-#   ADVICE
-#   FIQH
-#   MARRIAGE
-#   FUNERAL
-#   COUNSELING
-#   OTHER
-# }
 
 enum UserStatus {
   ACTIVE

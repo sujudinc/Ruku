@@ -109,9 +109,7 @@ type Donation
 }
 
 type FundraisingCampaign
-  @model(
-    queries: { list: null }
-  )
+  @model
   @auth(
     rules: [
       { allow: owner, ownerField: "owners"}

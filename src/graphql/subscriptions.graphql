@@ -1,2656 +1,10 @@
 # this is an auto generated file. This will be overwritten
 
-subscription OnCreateAnnouncement(
-  $filter: ModelSubscriptionAnnouncementFilterInput
-  $creatorId: String
-) {
-  onCreateAnnouncement(filter: $filter, creatorId: $creatorId) {
-    id
-    title
-    body
-    images
-    bookmarks {
-      items {
-        id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    likes {
-      items {
-        id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    comments {
-      items {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateAnnouncement(
-  $filter: ModelSubscriptionAnnouncementFilterInput
-  $creatorId: String
-) {
-  onUpdateAnnouncement(filter: $filter, creatorId: $creatorId) {
-    id
-    title
-    body
-    images
-    bookmarks {
-      items {
-        id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    likes {
-      items {
-        id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    comments {
-      items {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteAnnouncement(
-  $filter: ModelSubscriptionAnnouncementFilterInput
-  $creatorId: String
-) {
-  onDeleteAnnouncement(filter: $filter, creatorId: $creatorId) {
-    id
-    title
-    body
-    images
-    bookmarks {
-      items {
-        id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    likes {
-      items {
-        id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    comments {
-      items {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnCreateBookmark(
-  $filter: ModelSubscriptionBookmarkFilterInput
-  $creatorId: String
-) {
-  onCreateBookmark(filter: $filter, creatorId: $creatorId) {
-    id
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateBookmark(
-  $filter: ModelSubscriptionBookmarkFilterInput
-  $creatorId: String
-) {
-  onUpdateBookmark(filter: $filter, creatorId: $creatorId) {
-    id
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteBookmark(
-  $filter: ModelSubscriptionBookmarkFilterInput
-  $creatorId: String
-) {
-  onDeleteBookmark(filter: $filter, creatorId: $creatorId) {
-    id
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnCreateComment(
-  $filter: ModelSubscriptionCommentFilterInput
-  $creatorId: String
-) {
-  onCreateComment(filter: $filter, creatorId: $creatorId) {
-    id
-    text
-    parentCommentId
-    parentComment {
-      id
-      text
-      parentCommentId
-      parentComment {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      subComments {
-        nextToken
-        __typename
-      }
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    subComments {
-      items {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateComment(
-  $filter: ModelSubscriptionCommentFilterInput
-  $creatorId: String
-) {
-  onUpdateComment(filter: $filter, creatorId: $creatorId) {
-    id
-    text
-    parentCommentId
-    parentComment {
-      id
-      text
-      parentCommentId
-      parentComment {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      subComments {
-        nextToken
-        __typename
-      }
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    subComments {
-      items {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteComment(
-  $filter: ModelSubscriptionCommentFilterInput
-  $creatorId: String
-) {
-  onDeleteComment(filter: $filter, creatorId: $creatorId) {
-    id
-    text
-    parentCommentId
-    parentComment {
-      id
-      text
-      parentCommentId
-      parentComment {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      subComments {
-        nextToken
-        __typename
-      }
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    subComments {
-      items {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnCreateDonation(
-  $filter: ModelSubscriptionDonationFilterInput
-  $donorId: String
-) {
-  onCreateDonation(filter: $filter, donorId: $donorId) {
-    id
-    amount
-    currency
-    isAnonymous
-    donorId
-    donor {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    fundraisingCampaignId
-    fundraisingCampaign {
-      id
-      title
-      description
-      featureImage
-      type
-      currentAmount
-      goal
-      goalDate
-      currency
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateDonation(
-  $filter: ModelSubscriptionDonationFilterInput
-  $donorId: String
-) {
-  onUpdateDonation(filter: $filter, donorId: $donorId) {
-    id
-    amount
-    currency
-    isAnonymous
-    donorId
-    donor {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    fundraisingCampaignId
-    fundraisingCampaign {
-      id
-      title
-      description
-      featureImage
-      type
-      currentAmount
-      goal
-      goalDate
-      currency
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteDonation(
-  $filter: ModelSubscriptionDonationFilterInput
-  $donorId: String
-) {
-  onDeleteDonation(filter: $filter, donorId: $donorId) {
-    id
-    amount
-    currency
-    isAnonymous
-    donorId
-    donor {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    fundraisingCampaignId
-    fundraisingCampaign {
-      id
-      title
-      description
-      featureImage
-      type
-      currentAmount
-      goal
-      goalDate
-      currency
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
 subscription OnCreateFundraisingCampaign(
   $filter: ModelSubscriptionFundraisingCampaignFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onCreateFundraisingCampaign(filter: $filter, creatorId: $creatorId) {
+  onCreateFundraisingCampaign(filter: $filter, owner: $owner) {
     id
     title
     description
@@ -2660,7 +14,7 @@ subscription OnCreateFundraisingCampaign(
     goal
     goalDate
     currency
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -2725,7 +79,7 @@ subscription OnCreateFundraisingCampaign(
       owner
       __typename
     }
-    mosqueId
+    mosqueID
     mosque {
       id
       name
@@ -2749,7 +103,7 @@ subscription OnCreateFundraisingCampaign(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -2766,7 +120,7 @@ subscription OnCreateFundraisingCampaign(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -2776,9 +130,11 @@ subscription OnCreateFundraisingCampaign(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -2811,6 +167,8 @@ subscription OnCreateFundraisingCampaign(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     donations {
@@ -2819,10 +177,11 @@ subscription OnCreateFundraisingCampaign(
         amount
         currency
         isAnonymous
-        donorId
-        fundraisingCampaignId
+        donorID
+        fundraisingCampaignID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -2830,15 +189,17 @@ subscription OnCreateFundraisingCampaign(
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnUpdateFundraisingCampaign(
   $filter: ModelSubscriptionFundraisingCampaignFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onUpdateFundraisingCampaign(filter: $filter, creatorId: $creatorId) {
+  onUpdateFundraisingCampaign(filter: $filter, owner: $owner) {
     id
     title
     description
@@ -2848,7 +209,7 @@ subscription OnUpdateFundraisingCampaign(
     goal
     goalDate
     currency
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -2913,7 +274,7 @@ subscription OnUpdateFundraisingCampaign(
       owner
       __typename
     }
-    mosqueId
+    mosqueID
     mosque {
       id
       name
@@ -2937,7 +298,7 @@ subscription OnUpdateFundraisingCampaign(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -2954,7 +315,7 @@ subscription OnUpdateFundraisingCampaign(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -2964,9 +325,11 @@ subscription OnUpdateFundraisingCampaign(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -2999,6 +362,8 @@ subscription OnUpdateFundraisingCampaign(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     donations {
@@ -3007,10 +372,11 @@ subscription OnUpdateFundraisingCampaign(
         amount
         currency
         isAnonymous
-        donorId
-        fundraisingCampaignId
+        donorID
+        fundraisingCampaignID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -3018,15 +384,17 @@ subscription OnUpdateFundraisingCampaign(
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnDeleteFundraisingCampaign(
   $filter: ModelSubscriptionFundraisingCampaignFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onDeleteFundraisingCampaign(filter: $filter, creatorId: $creatorId) {
+  onDeleteFundraisingCampaign(filter: $filter, owner: $owner) {
     id
     title
     description
@@ -3036,7 +404,7 @@ subscription OnDeleteFundraisingCampaign(
     goal
     goalDate
     currency
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -3101,7 +469,7 @@ subscription OnDeleteFundraisingCampaign(
       owner
       __typename
     }
-    mosqueId
+    mosqueID
     mosque {
       id
       name
@@ -3125,7 +493,7 @@ subscription OnDeleteFundraisingCampaign(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -3142,7 +510,7 @@ subscription OnDeleteFundraisingCampaign(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -3152,9 +520,11 @@ subscription OnDeleteFundraisingCampaign(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -3187,6 +557,8 @@ subscription OnDeleteFundraisingCampaign(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     donations {
@@ -3195,10 +567,11 @@ subscription OnDeleteFundraisingCampaign(
         amount
         currency
         isAnonymous
-        donorId
-        fundraisingCampaignId
+        donorID
+        fundraisingCampaignID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -3206,687 +579,17 @@ subscription OnDeleteFundraisingCampaign(
     }
     createdAt
     updatedAt
-    __typename
-  }
-}
-
-subscription OnCreateLike(
-  $filter: ModelSubscriptionLikeFilterInput
-  $creatorId: String
-) {
-  onCreateLike(filter: $filter, creatorId: $creatorId) {
-    id
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnUpdateLike(
-  $filter: ModelSubscriptionLikeFilterInput
-  $creatorId: String
-) {
-  onUpdateLike(filter: $filter, creatorId: $creatorId) {
-    id
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-subscription OnDeleteLike(
-  $filter: ModelSubscriptionLikeFilterInput
-  $creatorId: String
-) {
-  onDeleteLike(filter: $filter, creatorId: $creatorId) {
-    id
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnCreatePrayerTime(
   $filter: ModelSubscriptionPrayerTimeFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onCreatePrayerTime(filter: $filter, creatorId: $creatorId) {
+  onCreatePrayerTime(filter: $filter, owner: $owner) {
     id
     fajr {
       athan
@@ -3930,7 +633,7 @@ subscription OnCreatePrayerTime(
     }
     startDate
     timeZone
-    createdByUserId
+    createdByUserID
     createdByUser {
       id
       selfie
@@ -3995,7 +698,7 @@ subscription OnCreatePrayerTime(
       owner
       __typename
     }
-    updatedByUserId
+    updatedByUserID
     updatedByUser {
       id
       selfie
@@ -4060,7 +763,7 @@ subscription OnCreatePrayerTime(
       owner
       __typename
     }
-    mosqueId
+    mosqueID
     mosque {
       id
       name
@@ -4084,7 +787,7 @@ subscription OnCreatePrayerTime(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -4101,7 +804,7 @@ subscription OnCreatePrayerTime(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -4111,9 +814,11 @@ subscription OnCreatePrayerTime(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -4146,20 +851,23 @@ subscription OnCreatePrayerTime(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     createdAt
     updatedAt
-    creatorId
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnUpdatePrayerTime(
   $filter: ModelSubscriptionPrayerTimeFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onUpdatePrayerTime(filter: $filter, creatorId: $creatorId) {
+  onUpdatePrayerTime(filter: $filter, owner: $owner) {
     id
     fajr {
       athan
@@ -4203,7 +911,7 @@ subscription OnUpdatePrayerTime(
     }
     startDate
     timeZone
-    createdByUserId
+    createdByUserID
     createdByUser {
       id
       selfie
@@ -4268,7 +976,7 @@ subscription OnUpdatePrayerTime(
       owner
       __typename
     }
-    updatedByUserId
+    updatedByUserID
     updatedByUser {
       id
       selfie
@@ -4333,7 +1041,7 @@ subscription OnUpdatePrayerTime(
       owner
       __typename
     }
-    mosqueId
+    mosqueID
     mosque {
       id
       name
@@ -4357,7 +1065,7 @@ subscription OnUpdatePrayerTime(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -4374,7 +1082,7 @@ subscription OnUpdatePrayerTime(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -4384,9 +1092,11 @@ subscription OnUpdatePrayerTime(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -4419,20 +1129,23 @@ subscription OnUpdatePrayerTime(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     createdAt
     updatedAt
-    creatorId
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnDeletePrayerTime(
   $filter: ModelSubscriptionPrayerTimeFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onDeletePrayerTime(filter: $filter, creatorId: $creatorId) {
+  onDeletePrayerTime(filter: $filter, owner: $owner) {
     id
     fajr {
       athan
@@ -4476,7 +1189,7 @@ subscription OnDeletePrayerTime(
     }
     startDate
     timeZone
-    createdByUserId
+    createdByUserID
     createdByUser {
       id
       selfie
@@ -4541,7 +1254,7 @@ subscription OnDeletePrayerTime(
       owner
       __typename
     }
-    updatedByUserId
+    updatedByUserID
     updatedByUser {
       id
       selfie
@@ -4606,7 +1319,7 @@ subscription OnDeletePrayerTime(
       owner
       __typename
     }
-    mosqueId
+    mosqueID
     mosque {
       id
       name
@@ -4630,7 +1343,7 @@ subscription OnDeletePrayerTime(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -4647,7 +1360,7 @@ subscription OnDeletePrayerTime(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -4657,9 +1370,11 @@ subscription OnDeletePrayerTime(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -4692,20 +1407,23 @@ subscription OnDeletePrayerTime(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     createdAt
     updatedAt
-    creatorId
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnCreateMosque(
   $filter: ModelSubscriptionMosqueFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onCreateMosque(filter: $filter, creatorId: $creatorId) {
+  onCreateMosque(filter: $filter, owner: $owner) {
     id
     name
     description
@@ -4756,7 +1474,7 @@ subscription OnCreateMosque(
     }
     liveVideoUrl
     isVerified
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -4821,7 +1539,7 @@ subscription OnCreateMosque(
       owner
       __typename
     }
-    organizationId
+    organizationID
     organization {
       id
       name
@@ -4831,7 +1549,7 @@ subscription OnCreateMosque(
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -4858,6 +1576,8 @@ subscription OnCreateMosque(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     followers {
@@ -4867,7 +1587,7 @@ subscription OnCreateMosque(
         userId
         createdAt
         updatedAt
-        creatorId
+        owners
         owner
         __typename
       }
@@ -4880,10 +1600,11 @@ subscription OnCreateMosque(
         title
         body
         images
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -4900,10 +1621,12 @@ subscription OnCreateMosque(
         goal
         goalDate
         currency
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       nextToken
@@ -4914,12 +1637,13 @@ subscription OnCreateMosque(
         id
         startDate
         timeZone
-        createdByUserId
-        updatedByUserId
-        mosqueId
+        createdByUserID
+        updatedByUserID
+        mosqueID
         createdAt
         updatedAt
-        creatorId
+        owners
+        owner
         __typename
       }
       nextToken
@@ -4928,11 +1652,12 @@ subscription OnCreateMosque(
     bookmarks {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -4941,11 +1666,12 @@ subscription OnCreateMosque(
     likes {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -4955,12 +1681,13 @@ subscription OnCreateMosque(
       items {
         id
         text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -4968,15 +1695,17 @@ subscription OnCreateMosque(
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnUpdateMosque(
   $filter: ModelSubscriptionMosqueFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onUpdateMosque(filter: $filter, creatorId: $creatorId) {
+  onUpdateMosque(filter: $filter, owner: $owner) {
     id
     name
     description
@@ -5027,7 +1756,7 @@ subscription OnUpdateMosque(
     }
     liveVideoUrl
     isVerified
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -5092,7 +1821,7 @@ subscription OnUpdateMosque(
       owner
       __typename
     }
-    organizationId
+    organizationID
     organization {
       id
       name
@@ -5102,7 +1831,7 @@ subscription OnUpdateMosque(
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -5129,6 +1858,8 @@ subscription OnUpdateMosque(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     followers {
@@ -5138,7 +1869,7 @@ subscription OnUpdateMosque(
         userId
         createdAt
         updatedAt
-        creatorId
+        owners
         owner
         __typename
       }
@@ -5151,10 +1882,11 @@ subscription OnUpdateMosque(
         title
         body
         images
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -5171,10 +1903,12 @@ subscription OnUpdateMosque(
         goal
         goalDate
         currency
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       nextToken
@@ -5185,12 +1919,13 @@ subscription OnUpdateMosque(
         id
         startDate
         timeZone
-        createdByUserId
-        updatedByUserId
-        mosqueId
+        createdByUserID
+        updatedByUserID
+        mosqueID
         createdAt
         updatedAt
-        creatorId
+        owners
+        owner
         __typename
       }
       nextToken
@@ -5199,11 +1934,12 @@ subscription OnUpdateMosque(
     bookmarks {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -5212,11 +1948,12 @@ subscription OnUpdateMosque(
     likes {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -5226,12 +1963,13 @@ subscription OnUpdateMosque(
       items {
         id
         text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -5239,15 +1977,17 @@ subscription OnUpdateMosque(
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnDeleteMosque(
   $filter: ModelSubscriptionMosqueFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onDeleteMosque(filter: $filter, creatorId: $creatorId) {
+  onDeleteMosque(filter: $filter, owner: $owner) {
     id
     name
     description
@@ -5298,7 +2038,7 @@ subscription OnDeleteMosque(
     }
     liveVideoUrl
     isVerified
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -5363,7 +2103,7 @@ subscription OnDeleteMosque(
       owner
       __typename
     }
-    organizationId
+    organizationID
     organization {
       id
       name
@@ -5373,7 +2113,7 @@ subscription OnDeleteMosque(
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -5400,6 +2140,8 @@ subscription OnDeleteMosque(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     followers {
@@ -5409,7 +2151,7 @@ subscription OnDeleteMosque(
         userId
         createdAt
         updatedAt
-        creatorId
+        owners
         owner
         __typename
       }
@@ -5422,10 +2164,11 @@ subscription OnDeleteMosque(
         title
         body
         images
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -5442,10 +2185,12 @@ subscription OnDeleteMosque(
         goal
         goalDate
         currency
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       nextToken
@@ -5456,12 +2201,13 @@ subscription OnDeleteMosque(
         id
         startDate
         timeZone
-        createdByUserId
-        updatedByUserId
-        mosqueId
+        createdByUserID
+        updatedByUserID
+        mosqueID
         createdAt
         updatedAt
-        creatorId
+        owners
+        owner
         __typename
       }
       nextToken
@@ -5470,11 +2216,12 @@ subscription OnDeleteMosque(
     bookmarks {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -5483,11 +2230,12 @@ subscription OnDeleteMosque(
     likes {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -5497,12 +2245,13 @@ subscription OnDeleteMosque(
       items {
         id
         text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -5510,15 +2259,17 @@ subscription OnDeleteMosque(
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnCreateOrganization(
   $filter: ModelSubscriptionOrganizationFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onCreateOrganization(filter: $filter, creatorId: $creatorId) {
+  onCreateOrganization(filter: $filter, owner: $owner) {
     id
     name
     description
@@ -5527,7 +2278,7 @@ subscription OnCreateOrganization(
     email
     website
     isVerified
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -5599,7 +2350,7 @@ subscription OnCreateOrganization(
         userId
         createdAt
         updatedAt
-        creatorId
+        owners
         owner
         __typename
       }
@@ -5620,10 +2371,12 @@ subscription OnCreateOrganization(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       nextToken
@@ -5631,15 +2384,17 @@ subscription OnCreateOrganization(
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnUpdateOrganization(
   $filter: ModelSubscriptionOrganizationFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onUpdateOrganization(filter: $filter, creatorId: $creatorId) {
+  onUpdateOrganization(filter: $filter, owner: $owner) {
     id
     name
     description
@@ -5648,7 +2403,7 @@ subscription OnUpdateOrganization(
     email
     website
     isVerified
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -5720,7 +2475,7 @@ subscription OnUpdateOrganization(
         userId
         createdAt
         updatedAt
-        creatorId
+        owners
         owner
         __typename
       }
@@ -5741,10 +2496,12 @@ subscription OnUpdateOrganization(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       nextToken
@@ -5752,15 +2509,17 @@ subscription OnUpdateOrganization(
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnDeleteOrganization(
   $filter: ModelSubscriptionOrganizationFilterInput
-  $creatorId: String
+  $owner: String
 ) {
-  onDeleteOrganization(filter: $filter, creatorId: $creatorId) {
+  onDeleteOrganization(filter: $filter, owner: $owner) {
     id
     name
     description
@@ -5769,7 +2528,7 @@ subscription OnDeleteOrganization(
     email
     website
     isVerified
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -5841,7 +2600,7 @@ subscription OnDeleteOrganization(
         userId
         createdAt
         updatedAt
-        creatorId
+        owners
         owner
         __typename
       }
@@ -5862,10 +2621,12 @@ subscription OnDeleteOrganization(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       nextToken
@@ -5873,20 +2634,18 @@ subscription OnDeleteOrganization(
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
 
 subscription OnCreateMosqueFollower(
   $filter: ModelSubscriptionMosqueFollowerFilterInput
-  $creatorId: String
+  $owners: String
   $owner: String
 ) {
-  onCreateMosqueFollower(
-    filter: $filter
-    creatorId: $creatorId
-    owner: $owner
-  ) {
+  onCreateMosqueFollower(filter: $filter, owners: $owners, owner: $owner) {
     id
     mosqueId
     userId
@@ -5913,7 +2672,7 @@ subscription OnCreateMosqueFollower(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -5930,7 +2689,7 @@ subscription OnCreateMosqueFollower(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -5940,9 +2699,11 @@ subscription OnCreateMosqueFollower(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -5975,6 +2736,8 @@ subscription OnCreateMosqueFollower(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     user {
@@ -6043,7 +2806,7 @@ subscription OnCreateMosqueFollower(
     }
     createdAt
     updatedAt
-    creatorId
+    owners
     owner
     __typename
   }
@@ -6051,14 +2814,10 @@ subscription OnCreateMosqueFollower(
 
 subscription OnUpdateMosqueFollower(
   $filter: ModelSubscriptionMosqueFollowerFilterInput
-  $creatorId: String
+  $owners: String
   $owner: String
 ) {
-  onUpdateMosqueFollower(
-    filter: $filter
-    creatorId: $creatorId
-    owner: $owner
-  ) {
+  onUpdateMosqueFollower(filter: $filter, owners: $owners, owner: $owner) {
     id
     mosqueId
     userId
@@ -6085,7 +2844,7 @@ subscription OnUpdateMosqueFollower(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -6102,7 +2861,7 @@ subscription OnUpdateMosqueFollower(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -6112,9 +2871,11 @@ subscription OnUpdateMosqueFollower(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -6147,6 +2908,8 @@ subscription OnUpdateMosqueFollower(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     user {
@@ -6215,7 +2978,7 @@ subscription OnUpdateMosqueFollower(
     }
     createdAt
     updatedAt
-    creatorId
+    owners
     owner
     __typename
   }
@@ -6223,14 +2986,10 @@ subscription OnUpdateMosqueFollower(
 
 subscription OnDeleteMosqueFollower(
   $filter: ModelSubscriptionMosqueFollowerFilterInput
-  $creatorId: String
+  $owners: String
   $owner: String
 ) {
-  onDeleteMosqueFollower(
-    filter: $filter
-    creatorId: $creatorId
-    owner: $owner
-  ) {
+  onDeleteMosqueFollower(filter: $filter, owners: $owners, owner: $owner) {
     id
     mosqueId
     userId
@@ -6257,7 +3016,7 @@ subscription OnDeleteMosqueFollower(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -6274,7 +3033,7 @@ subscription OnDeleteMosqueFollower(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -6284,9 +3043,11 @@ subscription OnDeleteMosqueFollower(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -6319,6 +3080,8 @@ subscription OnDeleteMosqueFollower(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     user {
@@ -6387,7 +3150,7 @@ subscription OnDeleteMosqueFollower(
     }
     createdAt
     updatedAt
-    creatorId
+    owners
     owner
     __typename
   }
@@ -6395,14 +3158,10 @@ subscription OnDeleteMosqueFollower(
 
 subscription OnCreateOrganizationMember(
   $filter: ModelSubscriptionOrganizationMemberFilterInput
-  $creatorId: String
+  $owners: String
   $owner: String
 ) {
-  onCreateOrganizationMember(
-    filter: $filter
-    creatorId: $creatorId
-    owner: $owner
-  ) {
+  onCreateOrganizationMember(filter: $filter, owners: $owners, owner: $owner) {
     id
     organizationId
     userId
@@ -6415,7 +3174,7 @@ subscription OnCreateOrganizationMember(
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -6442,6 +3201,8 @@ subscription OnCreateOrganizationMember(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     user {
@@ -6510,7 +3271,7 @@ subscription OnCreateOrganizationMember(
     }
     createdAt
     updatedAt
-    creatorId
+    owners
     owner
     __typename
   }
@@ -6518,14 +3279,10 @@ subscription OnCreateOrganizationMember(
 
 subscription OnUpdateOrganizationMember(
   $filter: ModelSubscriptionOrganizationMemberFilterInput
-  $creatorId: String
+  $owners: String
   $owner: String
 ) {
-  onUpdateOrganizationMember(
-    filter: $filter
-    creatorId: $creatorId
-    owner: $owner
-  ) {
+  onUpdateOrganizationMember(filter: $filter, owners: $owners, owner: $owner) {
     id
     organizationId
     userId
@@ -6538,7 +3295,7 @@ subscription OnUpdateOrganizationMember(
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -6565,6 +3322,8 @@ subscription OnUpdateOrganizationMember(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     user {
@@ -6633,7 +3392,7 @@ subscription OnUpdateOrganizationMember(
     }
     createdAt
     updatedAt
-    creatorId
+    owners
     owner
     __typename
   }
@@ -6641,14 +3400,10 @@ subscription OnUpdateOrganizationMember(
 
 subscription OnDeleteOrganizationMember(
   $filter: ModelSubscriptionOrganizationMemberFilterInput
-  $creatorId: String
+  $owners: String
   $owner: String
 ) {
-  onDeleteOrganizationMember(
-    filter: $filter
-    creatorId: $creatorId
-    owner: $owner
-  ) {
+  onDeleteOrganizationMember(filter: $filter, owners: $owners, owner: $owner) {
     id
     organizationId
     userId
@@ -6661,7 +3416,7 @@ subscription OnDeleteOrganizationMember(
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -6688,6 +3443,8 @@ subscription OnDeleteOrganizationMember(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     user {
@@ -6756,7 +3513,7 @@ subscription OnDeleteOrganizationMember(
     }
     createdAt
     updatedAt
-    creatorId
+    owners
     owner
     __typename
   }

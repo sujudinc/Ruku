@@ -51,6 +51,7 @@ class User extends amplify_core.Model {
   final List<PrayerTime>? _updatedPrayerTimes;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
+  final String? _owner;
 
   @override
   getInstanceType() => classType;
@@ -220,9 +221,13 @@ class User extends amplify_core.Model {
     }
   }
   
-  const User._internal({required this.id, selfie, required firstName, required lastName, required email, phone, required type, required status, stripeCustomerId, isOnline, bookmarks, comments, createdAnnouncements, createdFundraisingCampaigns, createdPrayerTimes, createdOrganizations, createdMosques, donations, mosques, organizations, likes, updatedPrayerTimes, required createdAt, required updatedAt}): _selfie = selfie, _firstName = firstName, _lastName = lastName, _email = email, _phone = phone, _type = type, _status = status, _stripeCustomerId = stripeCustomerId, _isOnline = isOnline, _bookmarks = bookmarks, _comments = comments, _createdAnnouncements = createdAnnouncements, _createdFundraisingCampaigns = createdFundraisingCampaigns, _createdPrayerTimes = createdPrayerTimes, _createdOrganizations = createdOrganizations, _createdMosques = createdMosques, _donations = donations, _mosques = mosques, _organizations = organizations, _likes = likes, _updatedPrayerTimes = updatedPrayerTimes, _createdAt = createdAt, _updatedAt = updatedAt;
+  String? get owner {
+    return _owner;
+  }
   
-  factory User({String? id, String? selfie, required String firstName, required String lastName, required String email, String? phone, required UserType type, required UserStatus status, String? stripeCustomerId, bool? isOnline, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<FundraisingCampaign>? createdFundraisingCampaigns, List<PrayerTime>? createdPrayerTimes, List<Organization>? createdOrganizations, List<Mosque>? createdMosques, List<Donation>? donations, List<MosqueFollower>? mosques, List<OrganizationMember>? organizations, List<Like>? likes, List<PrayerTime>? updatedPrayerTimes, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt}) {
+  const User._internal({required this.id, selfie, required firstName, required lastName, required email, phone, required type, required status, stripeCustomerId, isOnline, bookmarks, comments, createdAnnouncements, createdFundraisingCampaigns, createdPrayerTimes, createdOrganizations, createdMosques, donations, mosques, organizations, likes, updatedPrayerTimes, required createdAt, required updatedAt, owner}): _selfie = selfie, _firstName = firstName, _lastName = lastName, _email = email, _phone = phone, _type = type, _status = status, _stripeCustomerId = stripeCustomerId, _isOnline = isOnline, _bookmarks = bookmarks, _comments = comments, _createdAnnouncements = createdAnnouncements, _createdFundraisingCampaigns = createdFundraisingCampaigns, _createdPrayerTimes = createdPrayerTimes, _createdOrganizations = createdOrganizations, _createdMosques = createdMosques, _donations = donations, _mosques = mosques, _organizations = organizations, _likes = likes, _updatedPrayerTimes = updatedPrayerTimes, _createdAt = createdAt, _updatedAt = updatedAt, _owner = owner;
+  
+  factory User({String? id, String? selfie, required String firstName, required String lastName, required String email, String? phone, required UserType type, required UserStatus status, String? stripeCustomerId, bool? isOnline, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<FundraisingCampaign>? createdFundraisingCampaigns, List<PrayerTime>? createdPrayerTimes, List<Organization>? createdOrganizations, List<Mosque>? createdMosques, List<Donation>? donations, List<MosqueFollower>? mosques, List<OrganizationMember>? organizations, List<Like>? likes, List<PrayerTime>? updatedPrayerTimes, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, String? owner}) {
     return User._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       selfie: selfie,
@@ -247,7 +252,8 @@ class User extends amplify_core.Model {
       likes: likes != null ? List<Like>.unmodifiable(likes) : likes,
       updatedPrayerTimes: updatedPrayerTimes != null ? List<PrayerTime>.unmodifiable(updatedPrayerTimes) : updatedPrayerTimes,
       createdAt: createdAt,
-      updatedAt: updatedAt);
+      updatedAt: updatedAt,
+      owner: owner);
   }
   
   bool equals(Object other) {
@@ -281,7 +287,8 @@ class User extends amplify_core.Model {
       DeepCollectionEquality().equals(_likes, other._likes) &&
       DeepCollectionEquality().equals(_updatedPrayerTimes, other._updatedPrayerTimes) &&
       _createdAt == other._createdAt &&
-      _updatedAt == other._updatedAt;
+      _updatedAt == other._updatedAt &&
+      _owner == other._owner;
   }
   
   @override
@@ -303,13 +310,14 @@ class User extends amplify_core.Model {
     buffer.write("stripeCustomerId=" + "$_stripeCustomerId" + ", ");
     buffer.write("isOnline=" + (_isOnline != null ? _isOnline!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
-    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
+    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null") + ", ");
+    buffer.write("owner=" + "$_owner");
     buffer.write("}");
     
     return buffer.toString();
   }
   
-  User copyWith({String? selfie, String? firstName, String? lastName, String? email, String? phone, UserType? type, UserStatus? status, String? stripeCustomerId, bool? isOnline, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<FundraisingCampaign>? createdFundraisingCampaigns, List<PrayerTime>? createdPrayerTimes, List<Organization>? createdOrganizations, List<Mosque>? createdMosques, List<Donation>? donations, List<MosqueFollower>? mosques, List<OrganizationMember>? organizations, List<Like>? likes, List<PrayerTime>? updatedPrayerTimes, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  User copyWith({String? selfie, String? firstName, String? lastName, String? email, String? phone, UserType? type, UserStatus? status, String? stripeCustomerId, bool? isOnline, List<Bookmark>? bookmarks, List<Comment>? comments, List<Announcement>? createdAnnouncements, List<FundraisingCampaign>? createdFundraisingCampaigns, List<PrayerTime>? createdPrayerTimes, List<Organization>? createdOrganizations, List<Mosque>? createdMosques, List<Donation>? donations, List<MosqueFollower>? mosques, List<OrganizationMember>? organizations, List<Like>? likes, List<PrayerTime>? updatedPrayerTimes, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, String? owner}) {
     return User._internal(
       id: id,
       selfie: selfie ?? this.selfie,
@@ -334,7 +342,8 @@ class User extends amplify_core.Model {
       likes: likes ?? this.likes,
       updatedPrayerTimes: updatedPrayerTimes ?? this.updatedPrayerTimes,
       createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt);
+      updatedAt: updatedAt ?? this.updatedAt,
+      owner: owner ?? this.owner);
   }
   
   User copyWithModelFieldValues({
@@ -360,7 +369,8 @@ class User extends amplify_core.Model {
     ModelFieldValue<List<Like>?>? likes,
     ModelFieldValue<List<PrayerTime>?>? updatedPrayerTimes,
     ModelFieldValue<amplify_core.TemporalDateTime>? createdAt,
-    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt
+    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt,
+    ModelFieldValue<String?>? owner
   }) {
     return User._internal(
       id: id,
@@ -386,7 +396,8 @@ class User extends amplify_core.Model {
       likes: likes == null ? this.likes : likes.value,
       updatedPrayerTimes: updatedPrayerTimes == null ? this.updatedPrayerTimes : updatedPrayerTimes.value,
       createdAt: createdAt == null ? this.createdAt : createdAt.value,
-      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value
+      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value,
+      owner: owner == null ? this.owner : owner.value
     );
   }
   
@@ -558,10 +569,11 @@ class User extends amplify_core.Model {
               .toList()
           : null),
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
-      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
+      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null,
+      _owner = json['owner'];
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'selfie': _selfie, 'firstName': _firstName, 'lastName': _lastName, 'email': _email, 'phone': _phone, 'type': amplify_core.enumToString(_type), 'status': amplify_core.enumToString(_status), 'stripeCustomerId': _stripeCustomerId, 'isOnline': _isOnline, 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAnnouncements': _createdAnnouncements?.map((Announcement? e) => e?.toJson()).toList(), 'createdFundraisingCampaigns': _createdFundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'createdPrayerTimes': _createdPrayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'createdOrganizations': _createdOrganizations?.map((Organization? e) => e?.toJson()).toList(), 'createdMosques': _createdMosques?.map((Mosque? e) => e?.toJson()).toList(), 'donations': _donations?.map((Donation? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((MosqueFollower? e) => e?.toJson()).toList(), 'organizations': _organizations?.map((OrganizationMember? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'updatedPrayerTimes': _updatedPrayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'selfie': _selfie, 'firstName': _firstName, 'lastName': _lastName, 'email': _email, 'phone': _phone, 'type': amplify_core.enumToString(_type), 'status': amplify_core.enumToString(_status), 'stripeCustomerId': _stripeCustomerId, 'isOnline': _isOnline, 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAnnouncements': _createdAnnouncements?.map((Announcement? e) => e?.toJson()).toList(), 'createdFundraisingCampaigns': _createdFundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'createdPrayerTimes': _createdPrayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'createdOrganizations': _createdOrganizations?.map((Organization? e) => e?.toJson()).toList(), 'createdMosques': _createdMosques?.map((Mosque? e) => e?.toJson()).toList(), 'donations': _donations?.map((Donation? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((MosqueFollower? e) => e?.toJson()).toList(), 'organizations': _organizations?.map((OrganizationMember? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'updatedPrayerTimes': _updatedPrayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owner': _owner
   };
   
   Map<String, Object?> toMap() => {
@@ -588,7 +600,8 @@ class User extends amplify_core.Model {
     'likes': _likes,
     'updatedPrayerTimes': _updatedPrayerTimes,
     'createdAt': _createdAt,
-    'updatedAt': _updatedAt
+    'updatedAt': _updatedAt,
+    'owner': _owner
   };
 
   static final amplify_core.QueryModelIdentifier<UserModelIdentifier> MODEL_IDENTIFIER = amplify_core.QueryModelIdentifier<UserModelIdentifier>();
@@ -640,6 +653,7 @@ class User extends amplify_core.Model {
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'PrayerTime'));
   static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
   static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
+  static final OWNER = amplify_core.QueryField(fieldName: "owner");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "User";
     modelSchemaDefinition.pluralName = "Users";
@@ -818,6 +832,12 @@ class User extends amplify_core.Model {
       key: User.UPDATEDAT,
       isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: User.OWNER,
+      isRequired: false,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
   });
 }

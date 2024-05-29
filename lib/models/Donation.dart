@@ -34,6 +34,7 @@ class Donation extends amplify_core.Model {
   final FundraisingCampaign? _fundraisingCampaign;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
+  final String? _owner;
 
   @override
   getInstanceType() => classType;
@@ -130,9 +131,13 @@ class Donation extends amplify_core.Model {
     }
   }
   
-  const Donation._internal({required this.id, required amount, required currency, required isAnonymous, required donor, fundraisingCampaign, required createdAt, required updatedAt}): _amount = amount, _currency = currency, _isAnonymous = isAnonymous, _donor = donor, _fundraisingCampaign = fundraisingCampaign, _createdAt = createdAt, _updatedAt = updatedAt;
+  String? get owner {
+    return _owner;
+  }
   
-  factory Donation({String? id, required double amount, required String currency, required bool isAnonymous, required User donor, FundraisingCampaign? fundraisingCampaign, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt}) {
+  const Donation._internal({required this.id, required amount, required currency, required isAnonymous, required donor, fundraisingCampaign, required createdAt, required updatedAt, owner}): _amount = amount, _currency = currency, _isAnonymous = isAnonymous, _donor = donor, _fundraisingCampaign = fundraisingCampaign, _createdAt = createdAt, _updatedAt = updatedAt, _owner = owner;
+  
+  factory Donation({String? id, required double amount, required String currency, required bool isAnonymous, required User donor, FundraisingCampaign? fundraisingCampaign, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, String? owner}) {
     return Donation._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       amount: amount,
@@ -141,7 +146,8 @@ class Donation extends amplify_core.Model {
       donor: donor,
       fundraisingCampaign: fundraisingCampaign,
       createdAt: createdAt,
-      updatedAt: updatedAt);
+      updatedAt: updatedAt,
+      owner: owner);
   }
   
   bool equals(Object other) {
@@ -159,7 +165,8 @@ class Donation extends amplify_core.Model {
       _donor == other._donor &&
       _fundraisingCampaign == other._fundraisingCampaign &&
       _createdAt == other._createdAt &&
-      _updatedAt == other._updatedAt;
+      _updatedAt == other._updatedAt &&
+      _owner == other._owner;
   }
   
   @override
@@ -177,13 +184,14 @@ class Donation extends amplify_core.Model {
     buffer.write("donor=" + (_donor != null ? _donor!.toString() : "null") + ", ");
     buffer.write("fundraisingCampaign=" + (_fundraisingCampaign != null ? _fundraisingCampaign!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
-    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
+    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null") + ", ");
+    buffer.write("owner=" + "$_owner");
     buffer.write("}");
     
     return buffer.toString();
   }
   
-  Donation copyWith({double? amount, String? currency, bool? isAnonymous, User? donor, FundraisingCampaign? fundraisingCampaign, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  Donation copyWith({double? amount, String? currency, bool? isAnonymous, User? donor, FundraisingCampaign? fundraisingCampaign, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, String? owner}) {
     return Donation._internal(
       id: id,
       amount: amount ?? this.amount,
@@ -192,7 +200,8 @@ class Donation extends amplify_core.Model {
       donor: donor ?? this.donor,
       fundraisingCampaign: fundraisingCampaign ?? this.fundraisingCampaign,
       createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt);
+      updatedAt: updatedAt ?? this.updatedAt,
+      owner: owner ?? this.owner);
   }
   
   Donation copyWithModelFieldValues({
@@ -202,7 +211,8 @@ class Donation extends amplify_core.Model {
     ModelFieldValue<User>? donor,
     ModelFieldValue<FundraisingCampaign?>? fundraisingCampaign,
     ModelFieldValue<amplify_core.TemporalDateTime>? createdAt,
-    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt
+    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt,
+    ModelFieldValue<String?>? owner
   }) {
     return Donation._internal(
       id: id,
@@ -212,7 +222,8 @@ class Donation extends amplify_core.Model {
       donor: donor == null ? this.donor : donor.value,
       fundraisingCampaign: fundraisingCampaign == null ? this.fundraisingCampaign : fundraisingCampaign.value,
       createdAt: createdAt == null ? this.createdAt : createdAt.value,
-      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value
+      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value,
+      owner: owner == null ? this.owner : owner.value
     );
   }
   
@@ -232,10 +243,11 @@ class Donation extends amplify_core.Model {
           : FundraisingCampaign.fromJson(new Map<String, dynamic>.from(json['fundraisingCampaign']))
         : null,
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
-      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
+      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null,
+      _owner = json['owner'];
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'amount': _amount, 'currency': _currency, 'isAnonymous': _isAnonymous, 'donor': _donor?.toJson(), 'fundraisingCampaign': _fundraisingCampaign?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'amount': _amount, 'currency': _currency, 'isAnonymous': _isAnonymous, 'donor': _donor?.toJson(), 'fundraisingCampaign': _fundraisingCampaign?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owner': _owner
   };
   
   Map<String, Object?> toMap() => {
@@ -246,7 +258,8 @@ class Donation extends amplify_core.Model {
     'donor': _donor,
     'fundraisingCampaign': _fundraisingCampaign,
     'createdAt': _createdAt,
-    'updatedAt': _updatedAt
+    'updatedAt': _updatedAt,
+    'owner': _owner
   };
 
   static final amplify_core.QueryModelIdentifier<DonationModelIdentifier> MODEL_IDENTIFIER = amplify_core.QueryModelIdentifier<DonationModelIdentifier>();
@@ -262,6 +275,7 @@ class Donation extends amplify_core.Model {
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'FundraisingCampaign'));
   static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
   static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
+  static final OWNER = amplify_core.QueryField(fieldName: "owner");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "Donation";
     modelSchemaDefinition.pluralName = "Donations";
@@ -269,7 +283,7 @@ class Donation extends amplify_core.Model {
     modelSchemaDefinition.authRules = [
       amplify_core.AuthRule(
         authStrategy: amplify_core.AuthStrategy.OWNER,
-        ownerField: "donorId",
+        ownerField: "owner",
         identityClaim: "cognito:username",
         provider: amplify_core.AuthRuleProvider.USERPOOLS,
         operations: const [
@@ -291,8 +305,8 @@ class Donation extends amplify_core.Model {
     ];
     
     modelSchemaDefinition.indexes = [
-      amplify_core.ModelIndex(fields: const ["donorId"], name: "byDonor"),
-      amplify_core.ModelIndex(fields: const ["fundraisingCampaignId"], name: "byFundraisingCampaignId")
+      amplify_core.ModelIndex(fields: const ["donorID"], name: "byDonor"),
+      amplify_core.ModelIndex(fields: const ["fundraisingCampaignID"], name: "byFundraisingCampaign")
     ];
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.id());
@@ -318,14 +332,14 @@ class Donation extends amplify_core.Model {
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: Donation.DONOR,
       isRequired: true,
-      targetNames: ['donorId'],
+      targetNames: ['donorID'],
       ofModelName: 'User'
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: Donation.FUNDRAISINGCAMPAIGN,
       isRequired: false,
-      targetNames: ['fundraisingCampaignId'],
+      targetNames: ['fundraisingCampaignID'],
       ofModelName: 'FundraisingCampaign'
     ));
     
@@ -339,6 +353,12 @@ class Donation extends amplify_core.Model {
       key: Donation.UPDATEDAT,
       isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Donation.OWNER,
+      isRequired: false,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
   });
 }

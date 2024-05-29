@@ -40,6 +40,7 @@ class Organization extends amplify_core.Model {
   final List<Mosque>? _mosques;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
+  final List<String>? _owners;
 
   @override
   getInstanceType() => classType;
@@ -129,9 +130,13 @@ class Organization extends amplify_core.Model {
     return _updatedAt;
   }
   
-  const Organization._internal({required this.id, required name, description, logo, phone, email, website, required isVerified, required creator, members, mosques, createdAt, updatedAt}): _name = name, _description = description, _logo = logo, _phone = phone, _email = email, _website = website, _isVerified = isVerified, _creator = creator, _members = members, _mosques = mosques, _createdAt = createdAt, _updatedAt = updatedAt;
+  List<String>? get owners {
+    return _owners;
+  }
   
-  factory Organization({String? id, required String name, String? description, String? logo, String? phone, String? email, String? website, required bool isVerified, required User creator, List<OrganizationMember>? members, List<Mosque>? mosques, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  const Organization._internal({required this.id, required name, description, logo, phone, email, website, required isVerified, required creator, members, mosques, createdAt, updatedAt, owners}): _name = name, _description = description, _logo = logo, _phone = phone, _email = email, _website = website, _isVerified = isVerified, _creator = creator, _members = members, _mosques = mosques, _createdAt = createdAt, _updatedAt = updatedAt, _owners = owners;
+  
+  factory Organization({String? id, required String name, String? description, String? logo, String? phone, String? email, String? website, required bool isVerified, required User creator, List<OrganizationMember>? members, List<Mosque>? mosques, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, List<String>? owners}) {
     return Organization._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       name: name,
@@ -145,7 +150,8 @@ class Organization extends amplify_core.Model {
       members: members != null ? List<OrganizationMember>.unmodifiable(members) : members,
       mosques: mosques != null ? List<Mosque>.unmodifiable(mosques) : mosques,
       createdAt: createdAt,
-      updatedAt: updatedAt);
+      updatedAt: updatedAt,
+      owners: owners != null ? List<String>.unmodifiable(owners) : owners);
   }
   
   bool equals(Object other) {
@@ -168,7 +174,8 @@ class Organization extends amplify_core.Model {
       DeepCollectionEquality().equals(_members, other._members) &&
       DeepCollectionEquality().equals(_mosques, other._mosques) &&
       _createdAt == other._createdAt &&
-      _updatedAt == other._updatedAt;
+      _updatedAt == other._updatedAt &&
+      DeepCollectionEquality().equals(_owners, other._owners);
   }
   
   @override
@@ -189,13 +196,14 @@ class Organization extends amplify_core.Model {
     buffer.write("isVerified=" + (_isVerified != null ? _isVerified!.toString() : "null") + ", ");
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
-    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
+    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null") + ", ");
+    buffer.write("owners=" + (_owners != null ? _owners!.toString() : "null"));
     buffer.write("}");
     
     return buffer.toString();
   }
   
-  Organization copyWith({String? name, String? description, String? logo, String? phone, String? email, String? website, bool? isVerified, User? creator, List<OrganizationMember>? members, List<Mosque>? mosques, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  Organization copyWith({String? name, String? description, String? logo, String? phone, String? email, String? website, bool? isVerified, User? creator, List<OrganizationMember>? members, List<Mosque>? mosques, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, List<String>? owners}) {
     return Organization._internal(
       id: id,
       name: name ?? this.name,
@@ -209,7 +217,8 @@ class Organization extends amplify_core.Model {
       members: members ?? this.members,
       mosques: mosques ?? this.mosques,
       createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt);
+      updatedAt: updatedAt ?? this.updatedAt,
+      owners: owners ?? this.owners);
   }
   
   Organization copyWithModelFieldValues({
@@ -224,7 +233,8 @@ class Organization extends amplify_core.Model {
     ModelFieldValue<List<OrganizationMember>?>? members,
     ModelFieldValue<List<Mosque>?>? mosques,
     ModelFieldValue<amplify_core.TemporalDateTime?>? createdAt,
-    ModelFieldValue<amplify_core.TemporalDateTime?>? updatedAt
+    ModelFieldValue<amplify_core.TemporalDateTime?>? updatedAt,
+    ModelFieldValue<List<String>?>? owners
   }) {
     return Organization._internal(
       id: id,
@@ -239,7 +249,8 @@ class Organization extends amplify_core.Model {
       members: members == null ? this.members : members.value,
       mosques: mosques == null ? this.mosques : mosques.value,
       createdAt: createdAt == null ? this.createdAt : createdAt.value,
-      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value
+      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value,
+      owners: owners == null ? this.owners : owners.value
     );
   }
   
@@ -284,10 +295,11 @@ class Organization extends amplify_core.Model {
               .toList()
           : null),
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
-      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
+      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null,
+      _owners = json['owners']?.cast<String>();
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'name': _name, 'description': _description, 'logo': _logo, 'phone': _phone, 'email': _email, 'website': _website, 'isVerified': _isVerified, 'creator': _creator?.toJson(), 'members': _members?.map((OrganizationMember? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((Mosque? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'name': _name, 'description': _description, 'logo': _logo, 'phone': _phone, 'email': _email, 'website': _website, 'isVerified': _isVerified, 'creator': _creator?.toJson(), 'members': _members?.map((OrganizationMember? e) => e?.toJson()).toList(), 'mosques': _mosques?.map((Mosque? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owners': _owners
   };
   
   Map<String, Object?> toMap() => {
@@ -303,7 +315,8 @@ class Organization extends amplify_core.Model {
     'members': _members,
     'mosques': _mosques,
     'createdAt': _createdAt,
-    'updatedAt': _updatedAt
+    'updatedAt': _updatedAt,
+    'owners': _owners
   };
 
   static final amplify_core.QueryModelIdentifier<OrganizationModelIdentifier> MODEL_IDENTIFIER = amplify_core.QueryModelIdentifier<OrganizationModelIdentifier>();
@@ -326,6 +339,7 @@ class Organization extends amplify_core.Model {
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Mosque'));
   static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
   static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
+  static final OWNERS = amplify_core.QueryField(fieldName: "owners");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "Organization";
     modelSchemaDefinition.pluralName = "Organizations";
@@ -333,7 +347,7 @@ class Organization extends amplify_core.Model {
     modelSchemaDefinition.authRules = [
       amplify_core.AuthRule(
         authStrategy: amplify_core.AuthStrategy.OWNER,
-        ownerField: "creatorId",
+        ownerField: "owners",
         identityClaim: "cognito:username",
         provider: amplify_core.AuthRuleProvider.USERPOOLS,
         operations: const [
@@ -355,7 +369,7 @@ class Organization extends amplify_core.Model {
     ];
     
     modelSchemaDefinition.indexes = [
-      amplify_core.ModelIndex(fields: const ["creatorId"], name: "byCreatorId")
+      amplify_core.ModelIndex(fields: const ["creatorID"], name: "byCreator")
     ];
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.id());
@@ -405,7 +419,7 @@ class Organization extends amplify_core.Model {
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: Organization.CREATOR,
       isRequired: true,
-      targetNames: ['creatorId'],
+      targetNames: ['creatorID'],
       ofModelName: 'User'
     ));
     
@@ -433,6 +447,13 @@ class Organization extends amplify_core.Model {
       key: Organization.UPDATEDAT,
       isRequired: false,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Organization.OWNERS,
+      isRequired: false,
+      isArray: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.collection, ofModelName: amplify_core.ModelFieldTypeEnum.string.name)
     ));
   });
 }

@@ -43,6 +43,7 @@ class PrayerTime extends amplify_core.Model {
   final Mosque? _mosque;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
+  final List<String>? _owners;
 
   @override
   getInstanceType() => classType;
@@ -234,9 +235,13 @@ class PrayerTime extends amplify_core.Model {
     }
   }
   
-  const PrayerTime._internal({required this.id, required fajr, required dhuhr, required asr, required maghrib, required isha, required jummah, taraweeh, eid, required startDate, required timeZone, required createdByUser, required updatedByUser, required mosque, required createdAt, required updatedAt}): _fajr = fajr, _dhuhr = dhuhr, _asr = asr, _maghrib = maghrib, _isha = isha, _jummah = jummah, _taraweeh = taraweeh, _eid = eid, _startDate = startDate, _timeZone = timeZone, _createdByUser = createdByUser, _updatedByUser = updatedByUser, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt;
+  List<String>? get owners {
+    return _owners;
+  }
   
-  factory PrayerTime({String? id, required FardPrayer fajr, required FardPrayer dhuhr, required FardPrayer asr, required FardPrayer maghrib, required FardPrayer isha, required List<FardPrayer> jummah, SunnahPrayer? taraweeh, List<FardPrayer>? eid, required amplify_core.TemporalDateTime startDate, required String timeZone, required User createdByUser, required User updatedByUser, required Mosque mosque, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt}) {
+  const PrayerTime._internal({required this.id, required fajr, required dhuhr, required asr, required maghrib, required isha, required jummah, taraweeh, eid, required startDate, required timeZone, required createdByUser, required updatedByUser, required mosque, required createdAt, required updatedAt, owners}): _fajr = fajr, _dhuhr = dhuhr, _asr = asr, _maghrib = maghrib, _isha = isha, _jummah = jummah, _taraweeh = taraweeh, _eid = eid, _startDate = startDate, _timeZone = timeZone, _createdByUser = createdByUser, _updatedByUser = updatedByUser, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt, _owners = owners;
+  
+  factory PrayerTime({String? id, required FardPrayer fajr, required FardPrayer dhuhr, required FardPrayer asr, required FardPrayer maghrib, required FardPrayer isha, required List<FardPrayer> jummah, SunnahPrayer? taraweeh, List<FardPrayer>? eid, required amplify_core.TemporalDateTime startDate, required String timeZone, required User createdByUser, required User updatedByUser, required Mosque mosque, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, List<String>? owners}) {
     return PrayerTime._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       fajr: fajr,
@@ -253,7 +258,8 @@ class PrayerTime extends amplify_core.Model {
       updatedByUser: updatedByUser,
       mosque: mosque,
       createdAt: createdAt,
-      updatedAt: updatedAt);
+      updatedAt: updatedAt,
+      owners: owners != null ? List<String>.unmodifiable(owners) : owners);
   }
   
   bool equals(Object other) {
@@ -279,7 +285,8 @@ class PrayerTime extends amplify_core.Model {
       _updatedByUser == other._updatedByUser &&
       _mosque == other._mosque &&
       _createdAt == other._createdAt &&
-      _updatedAt == other._updatedAt;
+      _updatedAt == other._updatedAt &&
+      DeepCollectionEquality().equals(_owners, other._owners);
   }
   
   @override
@@ -305,13 +312,14 @@ class PrayerTime extends amplify_core.Model {
     buffer.write("updatedByUser=" + (_updatedByUser != null ? _updatedByUser!.toString() : "null") + ", ");
     buffer.write("mosque=" + (_mosque != null ? _mosque!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
-    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
+    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null") + ", ");
+    buffer.write("owners=" + (_owners != null ? _owners!.toString() : "null"));
     buffer.write("}");
     
     return buffer.toString();
   }
   
-  PrayerTime copyWith({FardPrayer? fajr, FardPrayer? dhuhr, FardPrayer? asr, FardPrayer? maghrib, FardPrayer? isha, List<FardPrayer>? jummah, SunnahPrayer? taraweeh, List<FardPrayer>? eid, amplify_core.TemporalDateTime? startDate, String? timeZone, User? createdByUser, User? updatedByUser, Mosque? mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  PrayerTime copyWith({FardPrayer? fajr, FardPrayer? dhuhr, FardPrayer? asr, FardPrayer? maghrib, FardPrayer? isha, List<FardPrayer>? jummah, SunnahPrayer? taraweeh, List<FardPrayer>? eid, amplify_core.TemporalDateTime? startDate, String? timeZone, User? createdByUser, User? updatedByUser, Mosque? mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, List<String>? owners}) {
     return PrayerTime._internal(
       id: id,
       fajr: fajr ?? this.fajr,
@@ -328,7 +336,8 @@ class PrayerTime extends amplify_core.Model {
       updatedByUser: updatedByUser ?? this.updatedByUser,
       mosque: mosque ?? this.mosque,
       createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt);
+      updatedAt: updatedAt ?? this.updatedAt,
+      owners: owners ?? this.owners);
   }
   
   PrayerTime copyWithModelFieldValues({
@@ -346,7 +355,8 @@ class PrayerTime extends amplify_core.Model {
     ModelFieldValue<User>? updatedByUser,
     ModelFieldValue<Mosque>? mosque,
     ModelFieldValue<amplify_core.TemporalDateTime>? createdAt,
-    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt
+    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt,
+    ModelFieldValue<List<String>?>? owners
   }) {
     return PrayerTime._internal(
       id: id,
@@ -364,7 +374,8 @@ class PrayerTime extends amplify_core.Model {
       updatedByUser: updatedByUser == null ? this.updatedByUser : updatedByUser.value,
       mosque: mosque == null ? this.mosque : mosque.value,
       createdAt: createdAt == null ? this.createdAt : createdAt.value,
-      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value
+      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value,
+      owners: owners == null ? this.owners : owners.value
     );
   }
   
@@ -418,10 +429,11 @@ class PrayerTime extends amplify_core.Model {
           : Mosque.fromJson(new Map<String, dynamic>.from(json['mosque']))
         : null,
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
-      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
+      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null,
+      _owners = json['owners']?.cast<String>();
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'fajr': _fajr?.toJson(), 'dhuhr': _dhuhr?.toJson(), 'asr': _asr?.toJson(), 'maghrib': _maghrib?.toJson(), 'isha': _isha?.toJson(), 'jummah': _jummah?.map((FardPrayer? e) => e?.toJson()).toList(), 'taraweeh': _taraweeh?.toJson(), 'eid': _eid?.map((FardPrayer? e) => e?.toJson()).toList(), 'startDate': _startDate?.format(), 'timeZone': _timeZone, 'createdByUser': _createdByUser?.toJson(), 'updatedByUser': _updatedByUser?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'fajr': _fajr?.toJson(), 'dhuhr': _dhuhr?.toJson(), 'asr': _asr?.toJson(), 'maghrib': _maghrib?.toJson(), 'isha': _isha?.toJson(), 'jummah': _jummah?.map((FardPrayer? e) => e?.toJson()).toList(), 'taraweeh': _taraweeh?.toJson(), 'eid': _eid?.map((FardPrayer? e) => e?.toJson()).toList(), 'startDate': _startDate?.format(), 'timeZone': _timeZone, 'createdByUser': _createdByUser?.toJson(), 'updatedByUser': _updatedByUser?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owners': _owners
   };
   
   Map<String, Object?> toMap() => {
@@ -440,7 +452,8 @@ class PrayerTime extends amplify_core.Model {
     'updatedByUser': _updatedByUser,
     'mosque': _mosque,
     'createdAt': _createdAt,
-    'updatedAt': _updatedAt
+    'updatedAt': _updatedAt,
+    'owners': _owners
   };
 
   static final amplify_core.QueryModelIdentifier<PrayerTimeModelIdentifier> MODEL_IDENTIFIER = amplify_core.QueryModelIdentifier<PrayerTimeModelIdentifier>();
@@ -466,6 +479,7 @@ class PrayerTime extends amplify_core.Model {
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Mosque'));
   static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
   static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
+  static final OWNERS = amplify_core.QueryField(fieldName: "owners");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "PrayerTime";
     modelSchemaDefinition.pluralName = "PrayerTimes";
@@ -473,7 +487,7 @@ class PrayerTime extends amplify_core.Model {
     modelSchemaDefinition.authRules = [
       amplify_core.AuthRule(
         authStrategy: amplify_core.AuthStrategy.OWNER,
-        ownerField: "creatorId",
+        ownerField: "owners",
         identityClaim: "cognito:username",
         provider: amplify_core.AuthRuleProvider.USERPOOLS,
         operations: const [
@@ -495,9 +509,9 @@ class PrayerTime extends amplify_core.Model {
     ];
     
     modelSchemaDefinition.indexes = [
-      amplify_core.ModelIndex(fields: const ["createdByUserId"], name: "byCreatedByUserId"),
-      amplify_core.ModelIndex(fields: const ["updatedByUserId"], name: "byUpdatedByUserId"),
-      amplify_core.ModelIndex(fields: const ["mosqueId"], name: "byMosqueId")
+      amplify_core.ModelIndex(fields: const ["createdByUserID"], name: "byCreatedByUser"),
+      amplify_core.ModelIndex(fields: const ["updatedByUserID"], name: "byUpdatedByUser"),
+      amplify_core.ModelIndex(fields: const ["mosqueID"], name: "byMosque")
     ];
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.id());
@@ -567,21 +581,21 @@ class PrayerTime extends amplify_core.Model {
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: PrayerTime.CREATEDBYUSER,
       isRequired: true,
-      targetNames: ['createdByUserId'],
+      targetNames: ['createdByUserID'],
       ofModelName: 'User'
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: PrayerTime.UPDATEDBYUSER,
       isRequired: true,
-      targetNames: ['updatedByUserId'],
+      targetNames: ['updatedByUserID'],
       ofModelName: 'User'
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: PrayerTime.MOSQUE,
       isRequired: true,
-      targetNames: ['mosqueId'],
+      targetNames: ['mosqueID'],
       ofModelName: 'Mosque'
     ));
     
@@ -595,6 +609,13 @@ class PrayerTime extends amplify_core.Model {
       key: PrayerTime.UPDATEDAT,
       isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: PrayerTime.OWNERS,
+      isRequired: false,
+      isArray: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.collection, ofModelName: amplify_core.ModelFieldTypeEnum.string.name)
     ));
   });
 }

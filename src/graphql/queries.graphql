@@ -9,11 +9,12 @@ query GetAnnouncement($id: ID!) {
     bookmarks {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -22,11 +23,12 @@ query GetAnnouncement($id: ID!) {
     likes {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -36,18 +38,19 @@ query GetAnnouncement($id: ID!) {
       items {
         id
         text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
       __typename
     }
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -112,7 +115,7 @@ query GetAnnouncement($id: ID!) {
       owner
       __typename
     }
-    mosqueId
+    mosqueID
     mosque {
       id
       name
@@ -136,7 +139,7 @@ query GetAnnouncement($id: ID!) {
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -153,7 +156,7 @@ query GetAnnouncement($id: ID!) {
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -163,9 +166,11 @@ query GetAnnouncement($id: ID!) {
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -198,10 +203,13 @@ query GetAnnouncement($id: ID!) {
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     createdAt
     updatedAt
+    owner
     __typename
   }
 }
@@ -229,7 +237,7 @@ query ListAnnouncements(
         nextToken
         __typename
       }
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -246,7 +254,7 @@ query ListAnnouncements(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -260,14 +268,17 @@ query ListAnnouncements(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken
@@ -275,15 +286,15 @@ query ListAnnouncements(
   }
 }
 
-query AnnouncementsByCreatorId(
-  $creatorId: ID!
+query AnnouncementsByCreatorID(
+  $creatorID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelAnnouncementFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  announcementsByCreatorId(
-    creatorId: $creatorId
+  announcementsByCreatorID(
+    creatorID: $creatorID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -306,7 +317,7 @@ query AnnouncementsByCreatorId(
         nextToken
         __typename
       }
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -323,7 +334,7 @@ query AnnouncementsByCreatorId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -337,14 +348,17 @@ query AnnouncementsByCreatorId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken
@@ -352,15 +366,15 @@ query AnnouncementsByCreatorId(
   }
 }
 
-query AnnouncementsByMosqueId(
-  $mosqueId: ID!
+query AnnouncementsByMosqueID(
+  $mosqueID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelAnnouncementFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  announcementsByMosqueId(
-    mosqueId: $mosqueId
+  announcementsByMosqueID(
+    mosqueID: $mosqueID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -383,7 +397,7 @@ query AnnouncementsByMosqueId(
         nextToken
         __typename
       }
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -400,7 +414,7 @@ query AnnouncementsByMosqueId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -414,141 +428,12 @@ query AnnouncementsByMosqueId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetBookmark($id: ID!) {
-  getBookmark(id: $id) {
-    id
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
+        owners
         owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
         __typename
       }
       createdAt
@@ -556,175 +441,20 @@ query GetBookmark($id: ID!) {
       owner
       __typename
     }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListBookmarks(
-  $filter: ModelBookmarkFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listBookmarks(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
     nextToken
     __typename
   }
 }
 
-query BookmarksByAnnouncementId(
-  $announcementId: ID!
+query BookmarksByAnnouncementID(
+  $announcementID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelBookmarkFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  bookmarksByAnnouncementId(
-    announcementId: $announcementId
+  bookmarksByAnnouncementID(
+    announcementID: $announcementID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -732,19 +462,20 @@ query BookmarksByAnnouncementId(
   ) {
     items {
       id
-      announcementId
+      announcementID
       announcement {
         id
         title
         body
         images
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -761,7 +492,7 @@ query BookmarksByAnnouncementId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -775,378 +506,12 @@ query BookmarksByAnnouncementId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query BookmarksByCreatorId(
-  $creatorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelBookmarkFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  bookmarksByCreatorId(
-    creatorId: $creatorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
+        owners
         owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query BookmarksByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelBookmarkFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  bookmarksByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetComment($id: ID!) {
-  getComment(id: $id) {
-    id
-    text
-    parentCommentId
-    parentComment {
-      id
-      text
-      parentCommentId
-      parentComment {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      subComments {
-        nextToken
-        __typename
-      }
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    subComments {
-      items {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    announcementId
-    announcement {
-      id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
         __typename
       }
       createdAt
@@ -1154,192 +519,20 @@ query GetComment($id: ID!) {
       owner
       __typename
     }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListComments(
-  $filter: ModelCommentFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listComments(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      text
-      parentCommentId
-      parentComment {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      subComments {
-        nextToken
-        __typename
-      }
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
     nextToken
     __typename
   }
 }
 
-query CommentsByParentCommentId(
-  $parentCommentId: ID!
+query BookmarksByCreatorID(
+  $creatorID: ID!
   $sortDirection: ModelSortDirection
-  $filter: ModelCommentFilterInput
+  $filter: ModelBookmarkFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  commentsByParentCommentId(
-    parentCommentId: $parentCommentId
+  bookmarksByCreatorID(
+    creatorID: $creatorID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -1347,36 +540,20 @@ query CommentsByParentCommentId(
   ) {
     items {
       id
-      text
-      parentCommentId
-      parentComment {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      subComments {
-        nextToken
-        __typename
-      }
-      announcementId
+      announcementID
       announcement {
         id
         title
         body
         images
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -1393,7 +570,7 @@ query CommentsByParentCommentId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -1407,358 +584,12 @@ query CommentsByParentCommentId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query CommentsByAnnouncementId(
-  $announcementId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelCommentFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  commentsByAnnouncementId(
-    announcementId: $announcementId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      text
-      parentCommentId
-      parentComment {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      subComments {
-        nextToken
-        __typename
-      }
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
+        owners
         owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query CommentsByCreatorId(
-  $creatorId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelCommentFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  commentsByCreatorId(
-    creatorId: $creatorId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      text
-      parentCommentId
-      parentComment {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      subComments {
-        nextToken
-        __typename
-      }
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query CommentsByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelCommentFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  commentsByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      text
-      parentCommentId
-      parentComment {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      subComments {
-        nextToken
-        __typename
-      }
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetDonation($id: ID!) {
-  getDonation(id: $id) {
-    id
-    amount
-    currency
-    isAnonymous
-    donorId
-    donor {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
         __typename
       }
       createdAt
@@ -1766,18 +597,41 @@ query GetDonation($id: ID!) {
       owner
       __typename
     }
-    fundraisingCampaignId
-    fundraisingCampaign {
+    nextToken
+    __typename
+  }
+}
+
+query BookmarksByMosqueID(
+  $mosqueID: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelBookmarkFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  bookmarksByMosqueID(
+    mosqueID: $mosqueID
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
       id
-      title
-      description
-      featureImage
-      type
-      currentAmount
-      goal
-      goalDate
-      currency
-      creatorId
+      announcementID
+      announcement {
+        id
+        title
+        body
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      creatorID
       creator {
         id
         selfie
@@ -1794,7 +648,7 @@ query GetDonation($id: ID!) {
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -1808,38 +662,428 @@ query GetDonation($id: ID!) {
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
-        __typename
-      }
-      donations {
-        nextToken
+        owners
+        owner
         __typename
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
-    createdAt
-    updatedAt
+    nextToken
     __typename
   }
 }
 
-query ListDonations(
+query CommentsByParentCommentID(
+  $parentCommentID: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  commentsByParentCommentID(
+    parentCommentID: $parentCommentID
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      text
+      parentCommentID
+      parentComment {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementID
+      announcement {
+        id
+        title
+        body
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommentsByAnnouncementID(
+  $announcementID: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  commentsByAnnouncementID(
+    announcementID: $announcementID
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      text
+      parentCommentID
+      parentComment {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementID
+      announcement {
+        id
+        title
+        body
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommentsByCreatorID(
+  $creatorID: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  commentsByCreatorID(
+    creatorID: $creatorID
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      text
+      parentCommentID
+      parentComment {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementID
+      announcement {
+        id
+        title
+        body
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query CommentsByMosqueID(
+  $mosqueID: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelCommentFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  commentsByMosqueID(
+    mosqueID: $mosqueID
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
+      id
+      text
+      parentCommentID
+      parentComment {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementID
+      announcement {
+        id
+        title
+        body
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        liveVideoUrl
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
+
+query DonationsByDonorID(
+  $donorID: ID!
+  $sortDirection: ModelSortDirection
   $filter: ModelDonationFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  listDonations(filter: $filter, limit: $limit, nextToken: $nextToken) {
+  donationsByDonorID(
+    donorID: $donorID
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
     items {
       id
       amount
       currency
       isAnonymous
-      donorId
+      donorID
       donor {
         id
         selfie
@@ -1856,7 +1100,7 @@ query ListDonations(
         owner
         __typename
       }
-      fundraisingCampaignId
+      fundraisingCampaignID
       fundraisingCampaign {
         id
         title
@@ -1867,14 +1111,17 @@ query ListDonations(
         goal
         goalDate
         currency
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken
@@ -1882,15 +1129,15 @@ query ListDonations(
   }
 }
 
-query DonationsByDonorId(
-  $donorId: ID!
+query DonationsByFundraisingCampaignID(
+  $fundraisingCampaignID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelDonationFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  donationsByDonorId(
-    donorId: $donorId
+  donationsByFundraisingCampaignID(
+    fundraisingCampaignID: $fundraisingCampaignID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -1901,7 +1148,7 @@ query DonationsByDonorId(
       amount
       currency
       isAnonymous
-      donorId
+      donorID
       donor {
         id
         selfie
@@ -1918,7 +1165,7 @@ query DonationsByDonorId(
         owner
         __typename
       }
-      fundraisingCampaignId
+      fundraisingCampaignID
       fundraisingCampaign {
         id
         title
@@ -1929,76 +1176,17 @@ query DonationsByDonorId(
         goal
         goalDate
         currency
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query DonationsByFundraisingCampaignId(
-  $fundraisingCampaignId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelDonationFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  donationsByFundraisingCampaignId(
-    fundraisingCampaignId: $fundraisingCampaignId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      amount
-      currency
-      isAnonymous
-      donorId
-      donor {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
+        owners
         owner
         __typename
       }
-      fundraisingCampaignId
-      fundraisingCampaign {
-        id
-        title
-        description
-        featureImage
-        type
-        currentAmount
-        goal
-        goalDate
-        currency
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken
@@ -2017,7 +1205,7 @@ query GetFundraisingCampaign($id: ID!) {
     goal
     goalDate
     currency
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -2082,7 +1270,7 @@ query GetFundraisingCampaign($id: ID!) {
       owner
       __typename
     }
-    mosqueId
+    mosqueID
     mosque {
       id
       name
@@ -2106,7 +1294,7 @@ query GetFundraisingCampaign($id: ID!) {
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -2123,7 +1311,7 @@ query GetFundraisingCampaign($id: ID!) {
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -2133,9 +1321,11 @@ query GetFundraisingCampaign($id: ID!) {
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -2168,6 +1358,8 @@ query GetFundraisingCampaign($id: ID!) {
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     donations {
@@ -2176,10 +1368,11 @@ query GetFundraisingCampaign($id: ID!) {
         amount
         currency
         isAnonymous
-        donorId
-        fundraisingCampaignId
+        donorID
+        fundraisingCampaignID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -2187,6 +1380,8 @@ query GetFundraisingCampaign($id: ID!) {
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
@@ -2211,7 +1406,7 @@ query ListFundraisingCampaigns(
       goal
       goalDate
       currency
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -2228,7 +1423,7 @@ query ListFundraisingCampaigns(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -2242,10 +1437,12 @@ query ListFundraisingCampaigns(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       donations {
@@ -2254,6 +1451,8 @@ query ListFundraisingCampaigns(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     nextToken
@@ -2261,15 +1460,15 @@ query ListFundraisingCampaigns(
   }
 }
 
-query FundraisingCampaignsByCreatorId(
-  $creatorId: ID!
+query FundraisingCampaignsByCreatorID(
+  $creatorID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelFundraisingCampaignFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  fundraisingCampaignsByCreatorId(
-    creatorId: $creatorId
+  fundraisingCampaignsByCreatorID(
+    creatorID: $creatorID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -2285,7 +1484,7 @@ query FundraisingCampaignsByCreatorId(
       goal
       goalDate
       currency
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -2302,7 +1501,7 @@ query FundraisingCampaignsByCreatorId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -2316,10 +1515,12 @@ query FundraisingCampaignsByCreatorId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       donations {
@@ -2328,6 +1529,8 @@ query FundraisingCampaignsByCreatorId(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     nextToken
@@ -2335,15 +1538,15 @@ query FundraisingCampaignsByCreatorId(
   }
 }
 
-query FundraisingCampaignsByMosqueId(
-  $mosqueId: ID!
+query FundraisingCampaignsByMosqueID(
+  $mosqueID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelFundraisingCampaignFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  fundraisingCampaignsByMosqueId(
-    mosqueId: $mosqueId
+  fundraisingCampaignsByMosqueID(
+    mosqueID: $mosqueID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -2359,7 +1562,7 @@ query FundraisingCampaignsByMosqueId(
       goal
       goalDate
       currency
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -2376,7 +1579,7 @@ query FundraisingCampaignsByMosqueId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -2390,10 +1593,12 @@ query FundraisingCampaignsByMosqueId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       donations {
@@ -2402,6 +1607,8 @@ query FundraisingCampaignsByMosqueId(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     nextToken
@@ -2409,28 +1616,36 @@ query FundraisingCampaignsByMosqueId(
   }
 }
 
-query GetLike($id: ID!) {
-  getLike(id: $id) {
-    id
-    announcementId
-    announcement {
+query LikesByAnnouncementID(
+  $announcementID: ID!
+  $sortDirection: ModelSortDirection
+  $filter: ModelLikeFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  likesByAnnouncementID(
+    announcementID: $announcementID
+    sortDirection: $sortDirection
+    filter: $filter
+    limit: $limit
+    nextToken: $nextToken
+  ) {
+    items {
       id
-      title
-      body
-      images
-      bookmarks {
-        nextToken
+      announcementID
+      announcement {
+        id
+        title
+        body
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
         __typename
       }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -2447,7 +1662,7 @@ query GetLike($id: ID!) {
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -2461,74 +1676,12 @@ query GetLike($id: ID!) {
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    creatorId
-    creator {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
+        owners
+        owner
         __typename
       }
       createdAt
@@ -2536,175 +1689,20 @@ query GetLike($id: ID!) {
       owner
       __typename
     }
-    mosqueId
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      liveVideoUrl
-      isVerified
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationId
-      organization {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    createdAt
-    updatedAt
-    __typename
-  }
-}
-
-query ListLikes(
-  $filter: ModelLikeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listLikes(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
     nextToken
     __typename
   }
 }
 
-query LikesByAnnouncementId(
-  $announcementId: ID!
+query LikesByCreatorID(
+  $creatorID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelLikeFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  likesByAnnouncementId(
-    announcementId: $announcementId
+  likesByCreatorID(
+    creatorID: $creatorID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -2712,19 +1710,20 @@ query LikesByAnnouncementId(
   ) {
     items {
       id
-      announcementId
+      announcementID
       announcement {
         id
         title
         body
         images
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -2741,7 +1740,7 @@ query LikesByAnnouncementId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -2755,14 +1754,17 @@ query LikesByAnnouncementId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken
@@ -2770,15 +1772,15 @@ query LikesByAnnouncementId(
   }
 }
 
-query LikesByCreatorId(
-  $creatorId: ID!
+query LikesByMosqueID(
+  $mosqueID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelLikeFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  likesByCreatorId(
-    creatorId: $creatorId
+  likesByMosqueID(
+    mosqueID: $mosqueID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -2786,19 +1788,20 @@ query LikesByCreatorId(
   ) {
     items {
       id
-      announcementId
+      announcementID
       announcement {
         id
         title
         body
         images
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -2815,7 +1818,7 @@ query LikesByCreatorId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -2829,88 +1832,17 @@ query LikesByCreatorId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
-        __typename
-      }
-      createdAt
-      updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query LikesByMosqueId(
-  $mosqueId: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelLikeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  likesByMosqueId(
-    mosqueId: $mosqueId
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      announcementId
-      announcement {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      creatorId
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
+        owners
         owner
         __typename
       }
-      mosqueId
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
       createdAt
       updatedAt
+      owner
       __typename
     }
     nextToken
@@ -2918,15 +1850,15 @@ query LikesByMosqueId(
   }
 }
 
-query PrayerTimesByCreatedByUserId(
-  $createdByUserId: ID!
+query PrayerTimesByCreatedByUserID(
+  $createdByUserID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelPrayerTimeFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  prayerTimesByCreatedByUserId(
-    createdByUserId: $createdByUserId
+  prayerTimesByCreatedByUserID(
+    createdByUserID: $createdByUserID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -2976,7 +1908,7 @@ query PrayerTimesByCreatedByUserId(
       }
       startDate
       timeZone
-      createdByUserId
+      createdByUserID
       createdByUser {
         id
         selfie
@@ -2993,7 +1925,7 @@ query PrayerTimesByCreatedByUserId(
         owner
         __typename
       }
-      updatedByUserId
+      updatedByUserID
       updatedByUser {
         id
         selfie
@@ -3010,7 +1942,7 @@ query PrayerTimesByCreatedByUserId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -3024,15 +1956,18 @@ query PrayerTimesByCreatedByUserId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       createdAt
       updatedAt
-      creatorId
+      owners
+      owner
       __typename
     }
     nextToken
@@ -3040,15 +1975,15 @@ query PrayerTimesByCreatedByUserId(
   }
 }
 
-query PrayerTimesByUpdatedByUserId(
-  $updatedByUserId: ID!
+query PrayerTimesByUpdatedByUserID(
+  $updatedByUserID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelPrayerTimeFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  prayerTimesByUpdatedByUserId(
-    updatedByUserId: $updatedByUserId
+  prayerTimesByUpdatedByUserID(
+    updatedByUserID: $updatedByUserID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -3098,7 +2033,7 @@ query PrayerTimesByUpdatedByUserId(
       }
       startDate
       timeZone
-      createdByUserId
+      createdByUserID
       createdByUser {
         id
         selfie
@@ -3115,7 +2050,7 @@ query PrayerTimesByUpdatedByUserId(
         owner
         __typename
       }
-      updatedByUserId
+      updatedByUserID
       updatedByUser {
         id
         selfie
@@ -3132,7 +2067,7 @@ query PrayerTimesByUpdatedByUserId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -3146,15 +2081,18 @@ query PrayerTimesByUpdatedByUserId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       createdAt
       updatedAt
-      creatorId
+      owners
+      owner
       __typename
     }
     nextToken
@@ -3162,15 +2100,15 @@ query PrayerTimesByUpdatedByUserId(
   }
 }
 
-query PrayerTimesByMosqueId(
-  $mosqueId: ID!
+query PrayerTimesByMosqueID(
+  $mosqueID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelPrayerTimeFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  prayerTimesByMosqueId(
-    mosqueId: $mosqueId
+  prayerTimesByMosqueID(
+    mosqueID: $mosqueID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -3220,7 +2158,7 @@ query PrayerTimesByMosqueId(
       }
       startDate
       timeZone
-      createdByUserId
+      createdByUserID
       createdByUser {
         id
         selfie
@@ -3237,7 +2175,7 @@ query PrayerTimesByMosqueId(
         owner
         __typename
       }
-      updatedByUserId
+      updatedByUserID
       updatedByUser {
         id
         selfie
@@ -3254,7 +2192,7 @@ query PrayerTimesByMosqueId(
         owner
         __typename
       }
-      mosqueId
+      mosqueID
       mosque {
         id
         name
@@ -3268,15 +2206,18 @@ query PrayerTimesByMosqueId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       createdAt
       updatedAt
-      creatorId
+      owners
+      owner
       __typename
     }
     nextToken
@@ -3336,7 +2277,7 @@ query GetMosque($id: ID!) {
     }
     liveVideoUrl
     isVerified
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -3401,7 +2342,7 @@ query GetMosque($id: ID!) {
       owner
       __typename
     }
-    organizationId
+    organizationID
     organization {
       id
       name
@@ -3411,7 +2352,7 @@ query GetMosque($id: ID!) {
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -3438,6 +2379,8 @@ query GetMosque($id: ID!) {
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     followers {
@@ -3447,7 +2390,7 @@ query GetMosque($id: ID!) {
         userId
         createdAt
         updatedAt
-        creatorId
+        owners
         owner
         __typename
       }
@@ -3460,10 +2403,11 @@ query GetMosque($id: ID!) {
         title
         body
         images
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -3480,10 +2424,12 @@ query GetMosque($id: ID!) {
         goal
         goalDate
         currency
-        creatorId
-        mosqueId
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       nextToken
@@ -3494,12 +2440,13 @@ query GetMosque($id: ID!) {
         id
         startDate
         timeZone
-        createdByUserId
-        updatedByUserId
-        mosqueId
+        createdByUserID
+        updatedByUserID
+        mosqueID
         createdAt
         updatedAt
-        creatorId
+        owners
+        owner
         __typename
       }
       nextToken
@@ -3508,11 +2455,12 @@ query GetMosque($id: ID!) {
     bookmarks {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -3521,11 +2469,12 @@ query GetMosque($id: ID!) {
     likes {
       items {
         id
-        announcementId
-        creatorId
-        mosqueId
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -3535,12 +2484,13 @@ query GetMosque($id: ID!) {
       items {
         id
         text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
         createdAt
         updatedAt
+        owner
         __typename
       }
       nextToken
@@ -3548,6 +2498,8 @@ query GetMosque($id: ID!) {
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
@@ -3581,7 +2533,7 @@ query ListMosques(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -3598,7 +2550,7 @@ query ListMosques(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -3608,9 +2560,11 @@ query ListMosques(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -3643,6 +2597,8 @@ query ListMosques(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     nextToken
@@ -3650,15 +2606,15 @@ query ListMosques(
   }
 }
 
-query MosquesByCreatorId(
-  $creatorId: ID!
+query MosquesByCreatorID(
+  $creatorID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelMosqueFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  mosquesByCreatorId(
-    creatorId: $creatorId
+  mosquesByCreatorID(
+    creatorID: $creatorID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -3687,7 +2643,7 @@ query MosquesByCreatorId(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -3704,7 +2660,7 @@ query MosquesByCreatorId(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -3714,9 +2670,11 @@ query MosquesByCreatorId(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -3749,6 +2707,8 @@ query MosquesByCreatorId(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     nextToken
@@ -3756,15 +2716,15 @@ query MosquesByCreatorId(
   }
 }
 
-query MosquesByOrganizationId(
-  $organizationId: ID!
+query MosquesByOrganizationID(
+  $organizationID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelMosqueFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  mosquesByOrganizationId(
-    organizationId: $organizationId
+  mosquesByOrganizationID(
+    organizationID: $organizationID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -3793,7 +2753,7 @@ query MosquesByOrganizationId(
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -3810,7 +2770,7 @@ query MosquesByOrganizationId(
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -3820,9 +2780,11 @@ query MosquesByOrganizationId(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -3855,6 +2817,8 @@ query MosquesByOrganizationId(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     nextToken
@@ -3872,7 +2836,7 @@ query GetOrganization($id: ID!) {
     email
     website
     isVerified
-    creatorId
+    creatorID
     creator {
       id
       selfie
@@ -3944,7 +2908,7 @@ query GetOrganization($id: ID!) {
         userId
         createdAt
         updatedAt
-        creatorId
+        owners
         owner
         __typename
       }
@@ -3965,10 +2929,12 @@ query GetOrganization($id: ID!) {
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       nextToken
@@ -3976,6 +2942,8 @@ query GetOrganization($id: ID!) {
     }
     createdAt
     updatedAt
+    owners
+    owner
     __typename
   }
 }
@@ -3995,7 +2963,7 @@ query ListOrganizations(
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -4022,6 +2990,8 @@ query ListOrganizations(
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     nextToken
@@ -4029,15 +2999,15 @@ query ListOrganizations(
   }
 }
 
-query OrganizationsByCreatorId(
-  $creatorId: ID!
+query OrganizationsByCreatorID(
+  $creatorID: ID!
   $sortDirection: ModelSortDirection
   $filter: ModelOrganizationFilterInput
   $limit: Int
   $nextToken: String
 ) {
-  organizationsByCreatorId(
-    creatorId: $creatorId
+  organizationsByCreatorID(
+    creatorID: $creatorID
     sortDirection: $sortDirection
     filter: $filter
     limit: $limit
@@ -4052,7 +3022,7 @@ query OrganizationsByCreatorId(
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -4079,291 +3049,7 @@ query OrganizationsByCreatorId(
       }
       createdAt
       updatedAt
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query GetUser($id: ID!) {
-  getUser(id: $id) {
-    id
-    selfie
-    firstName
-    lastName
-    email
-    phone
-    type
-    status
-    stripeCustomerId
-    isOnline
-    bookmarks {
-      items {
-        id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    comments {
-      items {
-        id
-        text
-        parentCommentId
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdAnnouncements {
-      items {
-        id
-        title
-        body
-        images
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdFundraisingCampaigns {
-      items {
-        id
-        title
-        description
-        featureImage
-        type
-        currentAmount
-        goal
-        goalDate
-        currency
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdPrayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserId
-        updatedByUserId
-        mosqueId
-        createdAt
-        updatedAt
-        creatorId
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdOrganizations {
-      items {
-        id
-        name
-        description
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdMosques {
-      items {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        liveVideoUrl
-        isVerified
-        creatorId
-        organizationId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    donations {
-      items {
-        id
-        amount
-        currency
-        isAnonymous
-        donorId
-        fundraisingCampaignId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    mosques {
-      items {
-        id
-        mosqueId
-        userId
-        createdAt
-        updatedAt
-        creatorId
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    organizations {
-      items {
-        id
-        organizationId
-        userId
-        createdAt
-        updatedAt
-        creatorId
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    likes {
-      items {
-        id
-        announcementId
-        creatorId
-        mosqueId
-        createdAt
-        updatedAt
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    updatedPrayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserId
-        updatedByUserId
-        mosqueId
-        createdAt
-        updatedAt
-        creatorId
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    createdAt
-    updatedAt
-    owner
-    __typename
-  }
-}
-
-query ListUsers(
-  $filter: ModelUserFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  listUsers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-    items {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
+      owners
       owner
       __typename
     }
@@ -4400,7 +3086,7 @@ query GetMosqueFollower($id: ID!) {
       }
       liveVideoUrl
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -4417,7 +3103,7 @@ query GetMosqueFollower($id: ID!) {
         owner
         __typename
       }
-      organizationId
+      organizationID
       organization {
         id
         name
@@ -4427,9 +3113,11 @@ query GetMosqueFollower($id: ID!) {
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       followers {
@@ -4462,6 +3150,8 @@ query GetMosqueFollower($id: ID!) {
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     user {
@@ -4530,7 +3220,7 @@ query GetMosqueFollower($id: ID!) {
     }
     createdAt
     updatedAt
-    creatorId
+    owners
     owner
     __typename
   }
@@ -4559,10 +3249,12 @@ query ListMosqueFollowers(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       user {
@@ -4583,7 +3275,7 @@ query ListMosqueFollowers(
       }
       createdAt
       updatedAt
-      creatorId
+      owners
       owner
       __typename
     }
@@ -4623,10 +3315,12 @@ query MosqueFollowersByMosqueId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       user {
@@ -4647,7 +3341,7 @@ query MosqueFollowersByMosqueId(
       }
       createdAt
       updatedAt
-      creatorId
+      owners
       owner
       __typename
     }
@@ -4687,10 +3381,12 @@ query MosqueFollowersByUserId(
         website
         liveVideoUrl
         isVerified
-        creatorId
-        organizationId
+        creatorID
+        organizationID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       user {
@@ -4711,7 +3407,7 @@ query MosqueFollowersByUserId(
       }
       createdAt
       updatedAt
-      creatorId
+      owners
       owner
       __typename
     }
@@ -4734,7 +3430,7 @@ query GetOrganizationMember($id: ID!) {
       email
       website
       isVerified
-      creatorId
+      creatorID
       creator {
         id
         selfie
@@ -4761,6 +3457,8 @@ query GetOrganizationMember($id: ID!) {
       }
       createdAt
       updatedAt
+      owners
+      owner
       __typename
     }
     user {
@@ -4829,7 +3527,7 @@ query GetOrganizationMember($id: ID!) {
     }
     createdAt
     updatedAt
-    creatorId
+    owners
     owner
     __typename
   }
@@ -4858,9 +3556,11 @@ query ListOrganizationMembers(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       user {
@@ -4881,7 +3581,7 @@ query ListOrganizationMembers(
       }
       createdAt
       updatedAt
-      creatorId
+      owners
       owner
       __typename
     }
@@ -4917,9 +3617,11 @@ query OrganizationMembersByOrganizationId(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       user {
@@ -4940,7 +3642,7 @@ query OrganizationMembersByOrganizationId(
       }
       createdAt
       updatedAt
-      creatorId
+      owners
       owner
       __typename
     }
@@ -4976,9 +3678,11 @@ query OrganizationMembersByUserId(
         email
         website
         isVerified
-        creatorId
+        creatorID
         createdAt
         updatedAt
+        owners
+        owner
         __typename
       }
       user {
@@ -4999,7 +3703,7 @@ query OrganizationMembersByUserId(
       }
       createdAt
       updatedAt
-      creatorId
+      owners
       owner
       __typename
     }

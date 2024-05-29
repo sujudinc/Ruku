@@ -52,6 +52,7 @@ class Mosque extends amplify_core.Model {
   final List<Comment>? _comments;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
+  final List<String>? _owners;
 
   @override
   getInstanceType() => classType;
@@ -252,9 +253,13 @@ class Mosque extends amplify_core.Model {
     }
   }
   
-  const Mosque._internal({required this.id, required name, required description, required images, required address, required latitude, required longitude, hours, phone, email, website, socialMedia, liveVideoUrl, required isVerified, required creator, organization, followers, announcements, fundraisingCampaigns, prayerTimes, bookmarks, likes, comments, required createdAt, required updatedAt}): _name = name, _description = description, _images = images, _address = address, _latitude = latitude, _longitude = longitude, _hours = hours, _phone = phone, _email = email, _website = website, _socialMedia = socialMedia, _liveVideoUrl = liveVideoUrl, _isVerified = isVerified, _creator = creator, _organization = organization, _followers = followers, _announcements = announcements, _fundraisingCampaigns = fundraisingCampaigns, _prayerTimes = prayerTimes, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt;
+  List<String>? get owners {
+    return _owners;
+  }
   
-  factory Mosque({String? id, required String name, required String description, required List<String> images, required String address, required double latitude, required double longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, required bool isVerified, required User creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<PrayerTime>? prayerTimes, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt}) {
+  const Mosque._internal({required this.id, required name, required description, required images, required address, required latitude, required longitude, hours, phone, email, website, socialMedia, liveVideoUrl, required isVerified, required creator, organization, followers, announcements, fundraisingCampaigns, prayerTimes, bookmarks, likes, comments, required createdAt, required updatedAt, owners}): _name = name, _description = description, _images = images, _address = address, _latitude = latitude, _longitude = longitude, _hours = hours, _phone = phone, _email = email, _website = website, _socialMedia = socialMedia, _liveVideoUrl = liveVideoUrl, _isVerified = isVerified, _creator = creator, _organization = organization, _followers = followers, _announcements = announcements, _fundraisingCampaigns = fundraisingCampaigns, _prayerTimes = prayerTimes, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt, _owners = owners;
+  
+  factory Mosque({String? id, required String name, required String description, required List<String> images, required String address, required double latitude, required double longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, required bool isVerified, required User creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<PrayerTime>? prayerTimes, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, List<String>? owners}) {
     return Mosque._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       name: name,
@@ -280,7 +285,8 @@ class Mosque extends amplify_core.Model {
       likes: likes != null ? List<Like>.unmodifiable(likes) : likes,
       comments: comments != null ? List<Comment>.unmodifiable(comments) : comments,
       createdAt: createdAt,
-      updatedAt: updatedAt);
+      updatedAt: updatedAt,
+      owners: owners != null ? List<String>.unmodifiable(owners) : owners);
   }
   
   bool equals(Object other) {
@@ -315,7 +321,8 @@ class Mosque extends amplify_core.Model {
       DeepCollectionEquality().equals(_likes, other._likes) &&
       DeepCollectionEquality().equals(_comments, other._comments) &&
       _createdAt == other._createdAt &&
-      _updatedAt == other._updatedAt;
+      _updatedAt == other._updatedAt &&
+      DeepCollectionEquality().equals(_owners, other._owners);
   }
   
   @override
@@ -343,13 +350,14 @@ class Mosque extends amplify_core.Model {
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
     buffer.write("organization=" + (_organization != null ? _organization!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
-    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
+    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null") + ", ");
+    buffer.write("owners=" + (_owners != null ? _owners!.toString() : "null"));
     buffer.write("}");
     
     return buffer.toString();
   }
   
-  Mosque copyWith({String? name, String? description, List<String>? images, String? address, double? latitude, double? longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, bool? isVerified, User? creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<PrayerTime>? prayerTimes, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  Mosque copyWith({String? name, String? description, List<String>? images, String? address, double? latitude, double? longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, String? liveVideoUrl, bool? isVerified, User? creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<PrayerTime>? prayerTimes, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, List<String>? owners}) {
     return Mosque._internal(
       id: id,
       name: name ?? this.name,
@@ -375,7 +383,8 @@ class Mosque extends amplify_core.Model {
       likes: likes ?? this.likes,
       comments: comments ?? this.comments,
       createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt);
+      updatedAt: updatedAt ?? this.updatedAt,
+      owners: owners ?? this.owners);
   }
   
   Mosque copyWithModelFieldValues({
@@ -402,7 +411,8 @@ class Mosque extends amplify_core.Model {
     ModelFieldValue<List<Like>?>? likes,
     ModelFieldValue<List<Comment>?>? comments,
     ModelFieldValue<amplify_core.TemporalDateTime>? createdAt,
-    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt
+    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt,
+    ModelFieldValue<List<String>?>? owners
   }) {
     return Mosque._internal(
       id: id,
@@ -429,7 +439,8 @@ class Mosque extends amplify_core.Model {
       likes: likes == null ? this.likes : likes.value,
       comments: comments == null ? this.comments : comments.value,
       createdAt: createdAt == null ? this.createdAt : createdAt.value,
-      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value
+      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value,
+      owners: owners == null ? this.owners : owners.value
     );
   }
   
@@ -554,10 +565,11 @@ class Mosque extends amplify_core.Model {
               .toList()
           : null),
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
-      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
+      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null,
+      _owners = json['owners']?.cast<String>();
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'name': _name, 'description': _description, 'images': _images, 'address': _address, 'latitude': _latitude, 'longitude': _longitude, 'hours': _hours?.toJson(), 'phone': _phone, 'email': _email, 'website': _website, 'socialMedia': _socialMedia?.toJson(), 'liveVideoUrl': _liveVideoUrl, 'isVerified': _isVerified, 'creator': _creator?.toJson(), 'organization': _organization?.toJson(), 'followers': _followers?.map((MosqueFollower? e) => e?.toJson()).toList(), 'announcements': _announcements?.map((Announcement? e) => e?.toJson()).toList(), 'fundraisingCampaigns': _fundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'prayerTimes': _prayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'name': _name, 'description': _description, 'images': _images, 'address': _address, 'latitude': _latitude, 'longitude': _longitude, 'hours': _hours?.toJson(), 'phone': _phone, 'email': _email, 'website': _website, 'socialMedia': _socialMedia?.toJson(), 'liveVideoUrl': _liveVideoUrl, 'isVerified': _isVerified, 'creator': _creator?.toJson(), 'organization': _organization?.toJson(), 'followers': _followers?.map((MosqueFollower? e) => e?.toJson()).toList(), 'announcements': _announcements?.map((Announcement? e) => e?.toJson()).toList(), 'fundraisingCampaigns': _fundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'prayerTimes': _prayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owners': _owners
   };
   
   Map<String, Object?> toMap() => {
@@ -585,7 +597,8 @@ class Mosque extends amplify_core.Model {
     'likes': _likes,
     'comments': _comments,
     'createdAt': _createdAt,
-    'updatedAt': _updatedAt
+    'updatedAt': _updatedAt,
+    'owners': _owners
   };
 
   static final amplify_core.QueryModelIdentifier<MosqueModelIdentifier> MODEL_IDENTIFIER = amplify_core.QueryModelIdentifier<MosqueModelIdentifier>();
@@ -632,6 +645,7 @@ class Mosque extends amplify_core.Model {
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Comment'));
   static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
   static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
+  static final OWNERS = amplify_core.QueryField(fieldName: "owners");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "Mosque";
     modelSchemaDefinition.pluralName = "Mosques";
@@ -639,7 +653,7 @@ class Mosque extends amplify_core.Model {
     modelSchemaDefinition.authRules = [
       amplify_core.AuthRule(
         authStrategy: amplify_core.AuthStrategy.OWNER,
-        ownerField: "creatorId",
+        ownerField: "owners",
         identityClaim: "cognito:username",
         provider: amplify_core.AuthRuleProvider.USERPOOLS,
         operations: const [
@@ -661,8 +675,8 @@ class Mosque extends amplify_core.Model {
     ];
     
     modelSchemaDefinition.indexes = [
-      amplify_core.ModelIndex(fields: const ["creatorId"], name: "byCreatorId"),
-      amplify_core.ModelIndex(fields: const ["organizationId"], name: "byOrganizationId")
+      amplify_core.ModelIndex(fields: const ["creatorID"], name: "byCreator"),
+      amplify_core.ModelIndex(fields: const ["organizationID"], name: "byOrganization")
     ];
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.id());
@@ -749,14 +763,14 @@ class Mosque extends amplify_core.Model {
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: Mosque.CREATOR,
       isRequired: true,
-      targetNames: ['creatorId'],
+      targetNames: ['creatorID'],
       ofModelName: 'User'
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: Mosque.ORGANIZATION,
       isRequired: false,
-      targetNames: ['organizationId'],
+      targetNames: ['organizationID'],
       ofModelName: 'Organization'
     ));
     
@@ -819,6 +833,13 @@ class Mosque extends amplify_core.Model {
       key: Mosque.UPDATEDAT,
       isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Mosque.OWNERS,
+      isRequired: false,
+      isArray: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.collection, ofModelName: amplify_core.ModelFieldTypeEnum.string.name)
     ));
   });
 }

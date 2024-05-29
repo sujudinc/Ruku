@@ -36,6 +36,7 @@ class Comment extends amplify_core.Model {
   final Mosque? _mosque;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
+  final String? _owner;
 
   @override
   getInstanceType() => classType;
@@ -136,9 +137,13 @@ class Comment extends amplify_core.Model {
     }
   }
   
-  const Comment._internal({required this.id, required text, parentComment, subComments, required announcement, required creator, required mosque, required createdAt, required updatedAt}): _text = text, _parentComment = parentComment, _subComments = subComments, _announcement = announcement, _creator = creator, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt;
+  String? get owner {
+    return _owner;
+  }
   
-  factory Comment({String? id, required String text, Comment? parentComment, List<Comment>? subComments, required Announcement announcement, required User creator, required Mosque mosque, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt}) {
+  const Comment._internal({required this.id, required text, parentComment, subComments, required announcement, required creator, required mosque, required createdAt, required updatedAt, owner}): _text = text, _parentComment = parentComment, _subComments = subComments, _announcement = announcement, _creator = creator, _mosque = mosque, _createdAt = createdAt, _updatedAt = updatedAt, _owner = owner;
+  
+  factory Comment({String? id, required String text, Comment? parentComment, List<Comment>? subComments, required Announcement announcement, required User creator, required Mosque mosque, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, String? owner}) {
     return Comment._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       text: text,
@@ -148,7 +153,8 @@ class Comment extends amplify_core.Model {
       creator: creator,
       mosque: mosque,
       createdAt: createdAt,
-      updatedAt: updatedAt);
+      updatedAt: updatedAt,
+      owner: owner);
   }
   
   bool equals(Object other) {
@@ -167,7 +173,8 @@ class Comment extends amplify_core.Model {
       _creator == other._creator &&
       _mosque == other._mosque &&
       _createdAt == other._createdAt &&
-      _updatedAt == other._updatedAt;
+      _updatedAt == other._updatedAt &&
+      _owner == other._owner;
   }
   
   @override
@@ -185,13 +192,14 @@ class Comment extends amplify_core.Model {
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
     buffer.write("mosque=" + (_mosque != null ? _mosque!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
-    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
+    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null") + ", ");
+    buffer.write("owner=" + "$_owner");
     buffer.write("}");
     
     return buffer.toString();
   }
   
-  Comment copyWith({String? text, Comment? parentComment, List<Comment>? subComments, Announcement? announcement, User? creator, Mosque? mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt}) {
+  Comment copyWith({String? text, Comment? parentComment, List<Comment>? subComments, Announcement? announcement, User? creator, Mosque? mosque, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, String? owner}) {
     return Comment._internal(
       id: id,
       text: text ?? this.text,
@@ -201,7 +209,8 @@ class Comment extends amplify_core.Model {
       creator: creator ?? this.creator,
       mosque: mosque ?? this.mosque,
       createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt);
+      updatedAt: updatedAt ?? this.updatedAt,
+      owner: owner ?? this.owner);
   }
   
   Comment copyWithModelFieldValues({
@@ -212,7 +221,8 @@ class Comment extends amplify_core.Model {
     ModelFieldValue<User>? creator,
     ModelFieldValue<Mosque>? mosque,
     ModelFieldValue<amplify_core.TemporalDateTime>? createdAt,
-    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt
+    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt,
+    ModelFieldValue<String?>? owner
   }) {
     return Comment._internal(
       id: id,
@@ -223,7 +233,8 @@ class Comment extends amplify_core.Model {
       creator: creator == null ? this.creator : creator.value,
       mosque: mosque == null ? this.mosque : mosque.value,
       createdAt: createdAt == null ? this.createdAt : createdAt.value,
-      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value
+      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value,
+      owner: owner == null ? this.owner : owner.value
     );
   }
   
@@ -264,10 +275,11 @@ class Comment extends amplify_core.Model {
           : Mosque.fromJson(new Map<String, dynamic>.from(json['mosque']))
         : null,
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
-      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
+      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null,
+      _owner = json['owner'];
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'text': _text, 'parentComment': _parentComment?.toJson(), 'subComments': _subComments?.map((Comment? e) => e?.toJson()).toList(), 'announcement': _announcement?.toJson(), 'creator': _creator?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'text': _text, 'parentComment': _parentComment?.toJson(), 'subComments': _subComments?.map((Comment? e) => e?.toJson()).toList(), 'announcement': _announcement?.toJson(), 'creator': _creator?.toJson(), 'mosque': _mosque?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owner': _owner
   };
   
   Map<String, Object?> toMap() => {
@@ -279,7 +291,8 @@ class Comment extends amplify_core.Model {
     'creator': _creator,
     'mosque': _mosque,
     'createdAt': _createdAt,
-    'updatedAt': _updatedAt
+    'updatedAt': _updatedAt,
+    'owner': _owner
   };
 
   static final amplify_core.QueryModelIdentifier<CommentModelIdentifier> MODEL_IDENTIFIER = amplify_core.QueryModelIdentifier<CommentModelIdentifier>();
@@ -302,6 +315,7 @@ class Comment extends amplify_core.Model {
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Mosque'));
   static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
   static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
+  static final OWNER = amplify_core.QueryField(fieldName: "owner");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "Comment";
     modelSchemaDefinition.pluralName = "Comments";
@@ -309,7 +323,7 @@ class Comment extends amplify_core.Model {
     modelSchemaDefinition.authRules = [
       amplify_core.AuthRule(
         authStrategy: amplify_core.AuthStrategy.OWNER,
-        ownerField: "creatorId",
+        ownerField: "owner",
         identityClaim: "cognito:username",
         provider: amplify_core.AuthRuleProvider.USERPOOLS,
         operations: const [
@@ -331,10 +345,10 @@ class Comment extends amplify_core.Model {
     ];
     
     modelSchemaDefinition.indexes = [
-      amplify_core.ModelIndex(fields: const ["parentCommentId"], name: "byParentCommentId"),
-      amplify_core.ModelIndex(fields: const ["announcementId"], name: "byAnnouncementId"),
-      amplify_core.ModelIndex(fields: const ["creatorId"], name: "byCreatorId"),
-      amplify_core.ModelIndex(fields: const ["mosqueId"], name: "byMosqueId")
+      amplify_core.ModelIndex(fields: const ["parentCommentID"], name: "byParentComment"),
+      amplify_core.ModelIndex(fields: const ["announcementID"], name: "byAnnouncement"),
+      amplify_core.ModelIndex(fields: const ["creatorID"], name: "byCreator"),
+      amplify_core.ModelIndex(fields: const ["mosqueID"], name: "byMosque")
     ];
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.id());
@@ -348,7 +362,7 @@ class Comment extends amplify_core.Model {
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: Comment.PARENTCOMMENT,
       isRequired: false,
-      targetNames: ['parentCommentId'],
+      targetNames: ['parentCommentID'],
       ofModelName: 'Comment'
     ));
     
@@ -362,21 +376,21 @@ class Comment extends amplify_core.Model {
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: Comment.ANNOUNCEMENT,
       isRequired: true,
-      targetNames: ['announcementId'],
+      targetNames: ['announcementID'],
       ofModelName: 'Announcement'
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: Comment.CREATOR,
       isRequired: true,
-      targetNames: ['creatorId'],
+      targetNames: ['creatorID'],
       ofModelName: 'User'
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: Comment.MOSQUE,
       isRequired: true,
-      targetNames: ['mosqueId'],
+      targetNames: ['mosqueID'],
       ofModelName: 'Mosque'
     ));
     
@@ -390,6 +404,12 @@ class Comment extends amplify_core.Model {
       key: Comment.UPDATEDAT,
       isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: Comment.OWNER,
+      isRequired: false,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.string)
     ));
   });
 }

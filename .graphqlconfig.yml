@@ -2,7 +2,7 @@ projects:
     DeenDownAPI:
         schemaPath: amplify/backend/api/RukuAPI/build/schema.graphql
         includes:
-            - src/graphql/**/*.ts
+            - src/graphql/*.ts
         excludes:
             - ./amplify/**
             - src/graphql/api.ts

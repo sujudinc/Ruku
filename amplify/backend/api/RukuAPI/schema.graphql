@@ -283,10 +283,34 @@ type Organization
     ]
   )
   creator: User! @belongsTo(fields: ["creatorID"])
-  members: [User]! @manyToMany(relationName: "OrganizationMember")
+  members: [OrganizationMember]! @hasMany(indexName: "byOrganization", fields: ["id"])
   mosques: [Mosque]! @hasMany(indexName: "byOrganization", fields: ["id"])
   createdAt: AWSDateTime
   updatedAt: AWSDateTime
+  owners: [String] @auth(rules: [{ allow: owner }])
+}
+
+type OrganizationMember
+  @model(
+    queries: null
+    mutations: { update: null }
+    subscriptions: { onUpdate: null }
+  )
+  @auth(
+    rules: [
+      { allow: owner, ownerField: "owners" }
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  role: MemberRole!
+  organizationID: ID! @index(name: "byOrganization")
+  organization: Organization! @belongsTo(fields: ["organizationID"])
+  memberID: ID! @index(name: "byMember")
+  member: User! @belongsTo(fields: ["memberID"])
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
   owners: [String] @auth(rules: [{ allow: owner }])
 }
 
@@ -322,7 +346,7 @@ type User
   createdMosques: [Mosque]! @hasMany(indexName: "byCreator", fields: ["id"])
   donations: [Donation]! @hasMany(indexName: "byDonor", fields: ["id"])
   mosques: [Mosque]! @manyToMany(relationName: "MosqueFollower")
-  organizations: [Organization]! @manyToMany(relationName: "OrganizationMember")
+  organizations: [OrganizationMember]! @hasMany(indexName: "byMember", fields: ["id"])
   likes: [Like]! @hasMany(indexName: "byCreator", fields: ["id"])
   updatedPrayerTimes: [PrayerTime]! @hasMany(indexName: "byUpdatedByUser", fields: ["id"])
   createdAt: AWSDateTime!
@@ -399,6 +423,11 @@ enum FundraisingCampaignType {
   ORPHANS
   OTHER
   REFUGEES
+}
+
+enum MemberRole {
+  ADMIN
+  MEMBER
 }
 
 enum UserStatus {

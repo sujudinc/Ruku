@@ -246,6 +246,7 @@ type Mosque
   socialMedia: SocialMedia
   isVerified: Boolean @default(value: "false") @auth(
     rules: [
+      { allow: owner, ownerField: "owners", operations: [create, read]}
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]

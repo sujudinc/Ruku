@@ -3041,6 +3041,230 @@ query OrganizationsByCreatorID(
   }
 }
 
+query GetUser($id: ID!) {
+  getUser(id: $id) {
+    id
+    selfie
+    firstName
+    lastName
+    email
+    phone
+    type
+    status
+    stripeCustomerId
+    isOnline
+    bookmarks {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAnnouncements {
+      items {
+        id
+        type
+        content
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdFundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdPrayerTimes {
+      items {
+        id
+        startDate
+        timeZone
+        createdByUserID
+        updatedByUserID
+        mosqueID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdOrganizations {
+      items {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdMosques {
+      items {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorID
+        fundraisingCampaignID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    mosques {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    organizations {
+      items {
+        id
+        organizationId
+        userId
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    updatedPrayerTimes {
+      items {
+        id
+        startDate
+        timeZone
+        createdByUserID
+        updatedByUserID
+        mosqueID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
 query GetMosqueFollower($id: ID!) {
   getMosqueFollower(id: $id) {
     id

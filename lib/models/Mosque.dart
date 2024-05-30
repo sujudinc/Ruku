@@ -164,17 +164,8 @@ class Mosque extends amplify_core.Model {
     return _socialMedia;
   }
   
-  bool get isVerified {
-    try {
-      return _isVerified!;
-    } catch(e) {
-      throw amplify_core.AmplifyCodeGenModelException(
-          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
-          recoverySuggestion:
-            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
-          underlyingException: e.toString()
-          );
-    }
+  bool? get isVerified {
+    return _isVerified;
   }
   
   User get creator {
@@ -252,9 +243,9 @@ class Mosque extends amplify_core.Model {
     return _owners;
   }
   
-  const Mosque._internal({required this.id, required name, required description, required images, required address, required latitude, required longitude, hours, phone, email, website, socialMedia, required isVerified, required creator, organization, followers, announcements, fundraisingCampaigns, prayerTimes, bookmarks, likes, comments, required createdAt, required updatedAt, owners}): _name = name, _description = description, _images = images, _address = address, _latitude = latitude, _longitude = longitude, _hours = hours, _phone = phone, _email = email, _website = website, _socialMedia = socialMedia, _isVerified = isVerified, _creator = creator, _organization = organization, _followers = followers, _announcements = announcements, _fundraisingCampaigns = fundraisingCampaigns, _prayerTimes = prayerTimes, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt, _owners = owners;
+  const Mosque._internal({required this.id, required name, required description, required images, required address, required latitude, required longitude, hours, phone, email, website, socialMedia, isVerified, required creator, organization, followers, announcements, fundraisingCampaigns, prayerTimes, bookmarks, likes, comments, required createdAt, required updatedAt, owners}): _name = name, _description = description, _images = images, _address = address, _latitude = latitude, _longitude = longitude, _hours = hours, _phone = phone, _email = email, _website = website, _socialMedia = socialMedia, _isVerified = isVerified, _creator = creator, _organization = organization, _followers = followers, _announcements = announcements, _fundraisingCampaigns = fundraisingCampaigns, _prayerTimes = prayerTimes, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt, _owners = owners;
   
-  factory Mosque({String? id, required String name, required String description, required List<String> images, required String address, required double latitude, required double longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, required bool isVerified, required User creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<PrayerTime>? prayerTimes, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, List<String>? owners}) {
+  factory Mosque({String? id, required String name, required String description, required List<String> images, required String address, required double latitude, required double longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, bool? isVerified, required User creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<PrayerTime>? prayerTimes, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, List<String>? owners}) {
     return Mosque._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       name: name,
@@ -390,7 +381,7 @@ class Mosque extends amplify_core.Model {
     ModelFieldValue<String?>? email,
     ModelFieldValue<String?>? website,
     ModelFieldValue<SocialMedia?>? socialMedia,
-    ModelFieldValue<bool>? isVerified,
+    ModelFieldValue<bool?>? isVerified,
     ModelFieldValue<User>? creator,
     ModelFieldValue<Organization?>? organization,
     ModelFieldValue<List<MosqueFollower>?>? followers,
@@ -736,7 +727,7 @@ class Mosque extends amplify_core.Model {
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
       key: Mosque.ISVERIFIED,
-      isRequired: true,
+      isRequired: false,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.bool)
     ));
     

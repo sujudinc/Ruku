@@ -18,6 +18,10 @@ export default async (event: Event) => {
 		},
 	} = event
 
+	if (!userId || !email || !given_name || !family_name || !userType) {
+		throw new Error("Missing required attributes")
+	}
+
 	const now = new Date().toISOString()
 
 	const user: API.User = {

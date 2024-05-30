@@ -2,8 +2,16 @@
 
 type Announcement
   @model(
-    mutations: { update: null }
-    subscriptions: { onUpdate: null }
+    mutations: { 
+      create: "createAnnouncement"
+      update: null
+      delete: "deleteAnnouncement"
+    }
+    subscriptions: {
+      onCreate: ["onCreateAnnouncement"]
+      onUpdate: [null]
+      onDelete: ["onDeleteAnnouncement"]
+    }
   )
   @auth(
     rules: [
@@ -31,8 +39,12 @@ type Announcement
 type Bookmark
   @model(
     queries: null
-    mutations: { update: null }
-    subscriptions: { onUpdate: null }
+    mutations: { 
+      create: "createBookmark",
+      update: null,
+      delete: "deleteBookmark",
+    }
+    subscriptions: null
   )
   @auth(
     rules: [
@@ -56,8 +68,12 @@ type Bookmark
 type Comment
   @model(
     queries: null
-    mutations: { update: null }
-    subscriptions: { onUpdate: null }
+    mutations: {
+      create: "createComment",
+      update: null,
+      delete: "deleteComment",
+    }
+    subscriptions: null
   )
   @auth(
     rules: [
@@ -85,8 +101,16 @@ type Comment
 type Donation
   @model(
     queries: null
-    mutations: { update: null }
-    subscriptions: { onUpdate: null }
+    mutations: { 
+      create: "createDonation",
+      update: null,
+      delete: "deleteDonation",
+    }
+    subscriptions: {
+      onCreate: ["onCreateDonation"]
+      onUpdate: [null]
+      onDelete: ["onDeleteDonation"]
+    }
   )
   @auth(
     rules: [
@@ -139,8 +163,12 @@ type FundraisingCampaign
 type Like
   @model(
     queries: null
-    mutations: { update: null }
-    subscriptions: { onUpdate: null }
+    mutations: { 
+      create: "createLike",
+      update: null,
+      delete: "deleteLike",
+    }
+    subscriptions: null
   )
   @auth(
     rules: [
@@ -293,8 +321,12 @@ type Organization
 type OrganizationMember
   @model(
     queries: null
-    mutations: { update: null }
-    subscriptions: { onUpdate: null }
+    mutations: { 
+      create: "createOrganizationMember",
+      update: null,
+      delete: "deleteOrganizationMember",
+    }
+    subscriptions: null
   )
   @auth(
     rules: [
@@ -316,9 +348,16 @@ type OrganizationMember
 
 type User
 	@model(
-    queries: { get: "getUser", list: null }
-		mutations: { create: null, delete: null }
-    subscriptions: { onCreate: null, onDelete: null }
+    queries: {
+      get: "getUser",
+      list: null,
+    }
+		mutations: {
+      create: null,
+      update: "updateUser",
+      delete: null,
+    }
+    subscriptions: null
 	)
   @auth(
     rules: [

@@ -222,8 +222,18 @@ type Mosque
       { allow: public, operations: [read] }
     ]
   )
-  creatorID: ID! @index(name: "byCreator")
-  creator: User! @belongsTo(fields: ["creatorID"])
+  creatorID: ID! @index(name: "byCreator") @auth(
+    rules: [
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
+  creator: User! @belongsTo(fields: ["creatorID"]) @auth(
+    rules: [
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
   organizationID: ID @index(name: "byOrganization")
   organization: Organization @belongsTo(fields: ["organizationID"])
   followers: [User]! @manyToMany(relationName: "MosqueFollower")
@@ -233,7 +243,12 @@ type Mosque
   bookmarks: [Bookmark]! @hasMany(indexName: "byMosque", fields: ["id"])
   likes: [Like]! @hasMany(indexName: "byMosque", fields: ["id"])
   comments: [Comment]! @hasMany(indexName: "byMosque", fields: ["id"])
-  createdAt: AWSDateTime!
+  createdAt: AWSDateTime! @auth(
+    rules: [
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
   updatedAt: AWSDateTime!
   owners: [String] @auth(rules: [{ allow: owner }])
 }
@@ -250,12 +265,23 @@ type Organization
   id: ID!
   name: String!
   description: String
+  domain: String
   logo: String
   phone: AWSPhone
   email: AWSEmail
   website: String
-  isVerified: Boolean! @default(value: "false")
-  creatorID: ID! @index(name: "byCreator")
+  isVerified: Boolean! @default(value: "false") @auth(
+    rules: [
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
+  creatorID: ID! @index(name: "byCreator") @auth(
+    rules: [
+      { allow: private, operations: [read] }
+      { allow: public, operations: [read] }
+    ]
+  )
   creator: User! @belongsTo(fields: ["creatorID"])
   members: [User]! @manyToMany(relationName: "OrganizationMember")
   mosques: [Mosque]! @hasMany(indexName: "byOrganization", fields: ["id"])

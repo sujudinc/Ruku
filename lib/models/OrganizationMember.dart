@@ -21,16 +21,19 @@
 
 import 'ModelProvider.dart';
 import 'package:amplify_core/amplify_core.dart' as amplify_core;
+import 'package:collection/collection.dart';
 
 
 /** This is an auto generated class representing the OrganizationMember type in your schema. */
 class OrganizationMember extends amplify_core.Model {
   static const classType = const _OrganizationMemberModelType();
   final String id;
+  final MemberRole? _role;
   final Organization? _organization;
-  final User? _user;
+  final User? _member;
   final amplify_core.TemporalDateTime? _createdAt;
   final amplify_core.TemporalDateTime? _updatedAt;
+  final List<String>? _owners;
 
   @override
   getInstanceType() => classType;
@@ -43,6 +46,19 @@ class OrganizationMember extends amplify_core.Model {
       return OrganizationMemberModelIdentifier(
         id: id
       );
+  }
+  
+  MemberRole get role {
+    try {
+      return _role!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
   Organization get organization {
@@ -58,9 +74,9 @@ class OrganizationMember extends amplify_core.Model {
     }
   }
   
-  User get user {
+  User get member {
     try {
-      return _user!;
+      return _member!;
     } catch(e) {
       throw amplify_core.AmplifyCodeGenModelException(
           amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
@@ -71,21 +87,47 @@ class OrganizationMember extends amplify_core.Model {
     }
   }
   
-  amplify_core.TemporalDateTime? get createdAt {
-    return _createdAt;
+  amplify_core.TemporalDateTime get createdAt {
+    try {
+      return _createdAt!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
-  amplify_core.TemporalDateTime? get updatedAt {
-    return _updatedAt;
+  amplify_core.TemporalDateTime get updatedAt {
+    try {
+      return _updatedAt!;
+    } catch(e) {
+      throw amplify_core.AmplifyCodeGenModelException(
+          amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
+          recoverySuggestion:
+            amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastRecoverySuggestion,
+          underlyingException: e.toString()
+          );
+    }
   }
   
-  const OrganizationMember._internal({required this.id, required organization, required user, createdAt, updatedAt}): _organization = organization, _user = user, _createdAt = createdAt, _updatedAt = updatedAt;
+  List<String>? get owners {
+    return _owners;
+  }
   
-  factory OrganizationMember({String? id, required Organization organization, required User user}) {
+  const OrganizationMember._internal({required this.id, required role, required organization, required member, required createdAt, required updatedAt, owners}): _role = role, _organization = organization, _member = member, _createdAt = createdAt, _updatedAt = updatedAt, _owners = owners;
+  
+  factory OrganizationMember({String? id, required MemberRole role, required Organization organization, required User member, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, List<String>? owners}) {
     return OrganizationMember._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
+      role: role,
       organization: organization,
-      user: user);
+      member: member,
+      createdAt: createdAt,
+      updatedAt: updatedAt,
+      owners: owners != null ? List<String>.unmodifiable(owners) : owners);
   }
   
   bool equals(Object other) {
@@ -97,8 +139,12 @@ class OrganizationMember extends amplify_core.Model {
     if (identical(other, this)) return true;
     return other is OrganizationMember &&
       id == other.id &&
+      _role == other._role &&
       _organization == other._organization &&
-      _user == other._user;
+      _member == other._member &&
+      _createdAt == other._createdAt &&
+      _updatedAt == other._updatedAt &&
+      DeepCollectionEquality().equals(_owners, other._owners);
   }
   
   @override
@@ -110,68 +156,90 @@ class OrganizationMember extends amplify_core.Model {
     
     buffer.write("OrganizationMember {");
     buffer.write("id=" + "$id" + ", ");
+    buffer.write("role=" + (_role != null ? amplify_core.enumToString(_role)! : "null") + ", ");
     buffer.write("organization=" + (_organization != null ? _organization!.toString() : "null") + ", ");
-    buffer.write("user=" + (_user != null ? _user!.toString() : "null") + ", ");
+    buffer.write("member=" + (_member != null ? _member!.toString() : "null") + ", ");
     buffer.write("createdAt=" + (_createdAt != null ? _createdAt!.format() : "null") + ", ");
-    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null"));
+    buffer.write("updatedAt=" + (_updatedAt != null ? _updatedAt!.format() : "null") + ", ");
+    buffer.write("owners=" + (_owners != null ? _owners!.toString() : "null"));
     buffer.write("}");
     
     return buffer.toString();
   }
   
-  OrganizationMember copyWith({Organization? organization, User? user}) {
+  OrganizationMember copyWith({MemberRole? role, Organization? organization, User? member, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, List<String>? owners}) {
     return OrganizationMember._internal(
       id: id,
+      role: role ?? this.role,
       organization: organization ?? this.organization,
-      user: user ?? this.user);
+      member: member ?? this.member,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
+      owners: owners ?? this.owners);
   }
   
   OrganizationMember copyWithModelFieldValues({
+    ModelFieldValue<MemberRole>? role,
     ModelFieldValue<Organization>? organization,
-    ModelFieldValue<User>? user
+    ModelFieldValue<User>? member,
+    ModelFieldValue<amplify_core.TemporalDateTime>? createdAt,
+    ModelFieldValue<amplify_core.TemporalDateTime>? updatedAt,
+    ModelFieldValue<List<String>?>? owners
   }) {
     return OrganizationMember._internal(
       id: id,
+      role: role == null ? this.role : role.value,
       organization: organization == null ? this.organization : organization.value,
-      user: user == null ? this.user : user.value
+      member: member == null ? this.member : member.value,
+      createdAt: createdAt == null ? this.createdAt : createdAt.value,
+      updatedAt: updatedAt == null ? this.updatedAt : updatedAt.value,
+      owners: owners == null ? this.owners : owners.value
     );
   }
   
   OrganizationMember.fromJson(Map<String, dynamic> json)  
     : id = json['id'],
+      _role = amplify_core.enumFromString<MemberRole>(json['role'], MemberRole.values),
       _organization = json['organization'] != null
         ? json['organization']['serializedData'] != null
           ? Organization.fromJson(new Map<String, dynamic>.from(json['organization']['serializedData']))
           : Organization.fromJson(new Map<String, dynamic>.from(json['organization']))
         : null,
-      _user = json['user'] != null
-        ? json['user']['serializedData'] != null
-          ? User.fromJson(new Map<String, dynamic>.from(json['user']['serializedData']))
-          : User.fromJson(new Map<String, dynamic>.from(json['user']))
+      _member = json['member'] != null
+        ? json['member']['serializedData'] != null
+          ? User.fromJson(new Map<String, dynamic>.from(json['member']['serializedData']))
+          : User.fromJson(new Map<String, dynamic>.from(json['member']))
         : null,
       _createdAt = json['createdAt'] != null ? amplify_core.TemporalDateTime.fromString(json['createdAt']) : null,
-      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null;
+      _updatedAt = json['updatedAt'] != null ? amplify_core.TemporalDateTime.fromString(json['updatedAt']) : null,
+      _owners = json['owners']?.cast<String>();
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'organization': _organization?.toJson(), 'user': _user?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format()
+    'id': id, 'role': amplify_core.enumToString(_role), 'organization': _organization?.toJson(), 'member': _member?.toJson(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owners': _owners
   };
   
   Map<String, Object?> toMap() => {
     'id': id,
+    'role': _role,
     'organization': _organization,
-    'user': _user,
+    'member': _member,
     'createdAt': _createdAt,
-    'updatedAt': _updatedAt
+    'updatedAt': _updatedAt,
+    'owners': _owners
   };
 
   static final amplify_core.QueryModelIdentifier<OrganizationMemberModelIdentifier> MODEL_IDENTIFIER = amplify_core.QueryModelIdentifier<OrganizationMemberModelIdentifier>();
   static final ID = amplify_core.QueryField(fieldName: "id");
+  static final ROLE = amplify_core.QueryField(fieldName: "role");
   static final ORGANIZATION = amplify_core.QueryField(
     fieldName: "organization",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Organization'));
-  static final USER = amplify_core.QueryField(
-    fieldName: "user",
+  static final MEMBER = amplify_core.QueryField(
+    fieldName: "member",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'User'));
+  static final CREATEDAT = amplify_core.QueryField(fieldName: "createdAt");
+  static final UPDATEDAT = amplify_core.QueryField(fieldName: "updatedAt");
+  static final OWNERS = amplify_core.QueryField(fieldName: "owners");
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
     modelSchemaDefinition.name = "OrganizationMember";
     modelSchemaDefinition.pluralName = "OrganizationMembers";
@@ -197,63 +265,53 @@ class OrganizationMember extends amplify_core.Model {
         authStrategy: amplify_core.AuthStrategy.PUBLIC,
         operations: const [
           amplify_core.ModelOperation.READ
-        ]),
-      amplify_core.AuthRule(
-        authStrategy: amplify_core.AuthStrategy.OWNER,
-        ownerField: "owner",
-        identityClaim: "cognito:username",
-        provider: amplify_core.AuthRuleProvider.USERPOOLS,
-        operations: const [
-          amplify_core.ModelOperation.CREATE,
-          amplify_core.ModelOperation.UPDATE,
-          amplify_core.ModelOperation.DELETE,
-          amplify_core.ModelOperation.READ
-        ]),
-      amplify_core.AuthRule(
-        authStrategy: amplify_core.AuthStrategy.PRIVATE,
-        operations: const [
-          amplify_core.ModelOperation.READ
-        ]),
-      amplify_core.AuthRule(
-        authStrategy: amplify_core.AuthStrategy.PUBLIC,
-        operations: const [
-          amplify_core.ModelOperation.READ
         ])
     ];
     
     modelSchemaDefinition.indexes = [
-      amplify_core.ModelIndex(fields: const ["organizationId"], name: "byOrganization"),
-      amplify_core.ModelIndex(fields: const ["userId"], name: "byUser")
+      amplify_core.ModelIndex(fields: const ["organizationID"], name: "byOrganization"),
+      amplify_core.ModelIndex(fields: const ["memberID"], name: "byMember")
     ];
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.id());
     
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: OrganizationMember.ROLE,
+      isRequired: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.enumeration)
+    ));
+    
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
       key: OrganizationMember.ORGANIZATION,
       isRequired: true,
-      targetNames: ['organizationId'],
+      targetNames: ['organizationID'],
       ofModelName: 'Organization'
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.belongsTo(
-      key: OrganizationMember.USER,
+      key: OrganizationMember.MEMBER,
       isRequired: true,
-      targetNames: ['userId'],
+      targetNames: ['memberID'],
       ofModelName: 'User'
     ));
     
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.nonQueryField(
-      fieldName: 'createdAt',
-      isRequired: false,
-      isReadOnly: true,
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: OrganizationMember.CREATEDAT,
+      isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
     ));
     
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.nonQueryField(
-      fieldName: 'updatedAt',
-      isRequired: false,
-      isReadOnly: true,
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: OrganizationMember.UPDATEDAT,
+      isRequired: true,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.dateTime)
+    ));
+    
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
+      key: OrganizationMember.OWNERS,
+      isRequired: false,
+      isArray: true,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.collection, ofModelName: amplify_core.ModelFieldTypeEnum.string.name)
     ));
   });
 }

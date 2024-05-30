@@ -805,7 +805,7 @@ class User extends amplify_core.Model {
       key: User.ORGANIZATIONS,
       isRequired: false,
       ofModelName: 'OrganizationMember',
-      associatedKey: OrganizationMember.USER
+      associatedKey: OrganizationMember.MEMBER
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(

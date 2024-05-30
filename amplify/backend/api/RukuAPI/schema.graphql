@@ -244,7 +244,7 @@ type Mosque
   email: AWSEmail
   website: String
   socialMedia: SocialMedia
-  isVerified: Boolean! @default(value: "false") @auth(
+  isVerified: Boolean @default(value: "false") @auth(
     rules: [
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
@@ -252,6 +252,7 @@ type Mosque
   )
   creatorID: ID! @index(name: "byCreator") @auth(
     rules: [
+      { allow: owner, ownerField: "owners", operations: [create, read]}
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]

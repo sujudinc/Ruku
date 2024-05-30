@@ -292,7 +292,7 @@ type Organization
 
 type User
 	@model(
-    queries: { list: null }
+    queries: { get: "getUser", list: null }
 		mutations: { create: null, delete: null }
     subscriptions: { onCreate: null, onDelete: null }
 	)

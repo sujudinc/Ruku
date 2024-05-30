@@ -160,6 +160,7 @@ query GetAnnouncement($id: ID!) {
         id
         name
         description
+        domain
         logo
         phone
         email
@@ -1304,6 +1305,7 @@ query GetFundraisingCampaign($id: ID!) {
         id
         name
         description
+        domain
         logo
         phone
         email
@@ -2325,6 +2327,7 @@ query GetMosque($id: ID!) {
       id
       name
       description
+      domain
       logo
       phone
       email
@@ -2532,6 +2535,7 @@ query ListMosques(
         id
         name
         description
+        domain
         logo
         phone
         email
@@ -2641,6 +2645,7 @@ query MosquesByCreatorID(
         id
         name
         description
+        domain
         logo
         phone
         email
@@ -2750,6 +2755,7 @@ query MosquesByOrganizationID(
         id
         name
         description
+        domain
         logo
         phone
         email
@@ -2806,6 +2812,7 @@ query GetOrganization($id: ID!) {
     id
     name
     description
+    domain
     logo
     phone
     email
@@ -2932,6 +2939,7 @@ query ListOrganizations(
       id
       name
       description
+      domain
       logo
       phone
       email
@@ -2991,6 +2999,7 @@ query OrganizationsByCreatorID(
       id
       name
       description
+      domain
       logo
       phone
       email
@@ -3081,6 +3090,7 @@ query GetMosqueFollower($id: ID!) {
         id
         name
         description
+        domain
         logo
         phone
         email
@@ -3395,6 +3405,7 @@ query GetOrganizationMember($id: ID!) {
       id
       name
       description
+      domain
       logo
       phone
       email
@@ -3521,6 +3532,7 @@ query ListOrganizationMembers(
         id
         name
         description
+        domain
         logo
         phone
         email
@@ -3582,6 +3594,7 @@ query OrganizationMembersByOrganizationId(
         id
         name
         description
+        domain
         logo
         phone
         email
@@ -3643,6 +3656,7 @@ query OrganizationMembersByUserId(
         id
         name
         description
+        domain
         logo
         phone
         email

@@ -1,5 +1,1831 @@
 # this is an auto generated file. This will be overwritten
 
+mutation CreateAnnouncement(
+  $input: CreateAnnouncementInput!
+  $condition: ModelAnnouncementConditionInput
+) {
+  createAnnouncement(input: $input, condition: $condition) {
+    id
+    type
+    content
+    images
+    bookmarks {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation DeleteAnnouncement(
+  $input: DeleteAnnouncementInput!
+  $condition: ModelAnnouncementConditionInput
+) {
+  deleteAnnouncement(input: $input, condition: $condition) {
+    id
+    type
+    content
+    images
+    bookmarks {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation CreateBookmark(
+  $input: CreateBookmarkInput!
+  $condition: ModelBookmarkConditionInput
+) {
+  createBookmark(input: $input, condition: $condition) {
+    id
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation DeleteBookmark(
+  $input: DeleteBookmarkInput!
+  $condition: ModelBookmarkConditionInput
+) {
+  deleteBookmark(input: $input, condition: $condition) {
+    id
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation CreateComment(
+  $input: CreateCommentInput!
+  $condition: ModelCommentConditionInput
+) {
+  createComment(input: $input, condition: $condition) {
+    id
+    text
+    parentCommentID
+    parentComment {
+      id
+      text
+      parentCommentID
+      parentComment {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementID
+      announcement {
+        id
+        type
+        content
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    subComments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation DeleteComment(
+  $input: DeleteCommentInput!
+  $condition: ModelCommentConditionInput
+) {
+  deleteComment(input: $input, condition: $condition) {
+    id
+    text
+    parentCommentID
+    parentComment {
+      id
+      text
+      parentCommentID
+      parentComment {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementID
+      announcement {
+        id
+        type
+        content
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    subComments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation CreateDonation(
+  $input: CreateDonationInput!
+  $condition: ModelDonationConditionInput
+) {
+  createDonation(input: $input, condition: $condition) {
+    id
+    amount
+    currency
+    isAnonymous
+    donorID
+    donor {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    fundraisingCampaignID
+    fundraisingCampaign {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation DeleteDonation(
+  $input: DeleteDonationInput!
+  $condition: ModelDonationConditionInput
+) {
+  deleteDonation(input: $input, condition: $condition) {
+    id
+    amount
+    currency
+    isAnonymous
+    donorID
+    donor {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    fundraisingCampaignID
+    fundraisingCampaign {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
 mutation CreateFundraisingCampaign(
   $input: CreateFundraisingCampaignInput!
   $condition: ModelFundraisingCampaignConditionInput
@@ -580,6 +2406,468 @@ mutation DeleteFundraisingCampaign(
     createdAt
     updatedAt
     owners
+    owner
+    __typename
+  }
+}
+
+mutation CreateLike(
+  $input: CreateLikeInput!
+  $condition: ModelLikeConditionInput
+) {
+  createLike(input: $input, condition: $condition) {
+    id
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+mutation DeleteLike(
+  $input: DeleteLikeInput!
+  $condition: ModelLikeConditionInput
+) {
+  deleteLike(input: $input, condition: $condition) {
+    id
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
     owner
     __typename
   }
@@ -2638,6 +4926,478 @@ mutation DeleteOrganization(
     createdAt
     updatedAt
     owners
+    owner
+    __typename
+  }
+}
+
+mutation CreateOrganizationMember(
+  $input: CreateOrganizationMemberInput!
+  $condition: ModelOrganizationMemberConditionInput
+) {
+  createOrganizationMember(input: $input, condition: $condition) {
+    id
+    role
+    organizationID
+    organization {
+      id
+      name
+      description
+      domain
+      logo
+      phone
+      email
+      website
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    memberID
+    member {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owners
+    owner
+    __typename
+  }
+}
+
+mutation DeleteOrganizationMember(
+  $input: DeleteOrganizationMemberInput!
+  $condition: ModelOrganizationMemberConditionInput
+) {
+  deleteOrganizationMember(input: $input, condition: $condition) {
+    id
+    role
+    organizationID
+    organization {
+      id
+      name
+      description
+      domain
+      logo
+      phone
+      email
+      website
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    memberID
+    member {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owners
+    owner
+    __typename
+  }
+}
+
+mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    selfie
+    firstName
+    lastName
+    email
+    phone
+    type
+    status
+    stripeCustomerId
+    isOnline
+    bookmarks {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAnnouncements {
+      items {
+        id
+        type
+        content
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdFundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdPrayerTimes {
+      items {
+        id
+        startDate
+        timeZone
+        createdByUserID
+        updatedByUserID
+        mosqueID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdOrganizations {
+      items {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdMosques {
+      items {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorID
+        fundraisingCampaignID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    mosques {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    organizations {
+      items {
+        id
+        role
+        organizationID
+        memberID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    updatedPrayerTimes {
+      items {
+        id
+        startDate
+        timeZone
+        createdByUserID
+        updatedByUserID
+        mosqueID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
     owner
     __typename
   }

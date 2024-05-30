@@ -1,5 +1,719 @@
 # this is an auto generated file. This will be overwritten
 
+subscription OnCreateAnnouncement(
+  $filter: ModelSubscriptionAnnouncementFilterInput
+  $owner: String
+) {
+  onCreateAnnouncement(filter: $filter, owner: $owner) {
+    id
+    type
+    content
+    images
+    bookmarks {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+subscription OnDeleteAnnouncement(
+  $filter: ModelSubscriptionAnnouncementFilterInput
+  $owner: String
+) {
+  onDeleteAnnouncement(filter: $filter, owner: $owner) {
+    id
+    type
+    content
+    images
+    bookmarks {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      prayerTimes {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+subscription OnCreateDonation(
+  $filter: ModelSubscriptionDonationFilterInput
+  $owner: String
+) {
+  onCreateDonation(filter: $filter, owner: $owner) {
+    id
+    amount
+    currency
+    isAnonymous
+    donorID
+    donor {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    fundraisingCampaignID
+    fundraisingCampaign {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
+subscription OnDeleteDonation(
+  $filter: ModelSubscriptionDonationFilterInput
+  $owner: String
+) {
+  onDeleteDonation(filter: $filter, owner: $owner) {
+    id
+    amount
+    currency
+    isAnonymous
+    donorID
+    donor {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      updatedPrayerTimes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    fundraisingCampaignID
+    fundraisingCampaign {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+
 subscription OnCreateFundraisingCampaign(
   $filter: ModelSubscriptionFundraisingCampaignFilterInput
   $owner: String

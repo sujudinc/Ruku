@@ -25,42 +25,42 @@
           "EMAILSUBJECT": "Confirm your account",
           "EMAILMESSAGE": "Tap the link to confirm your account.",
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/RukuAuthCustomMessage-42646255466942795457-build.zip"
+          "s3Key": "amplify-builds/RukuAuthCustomMessage-566e75646f5366536b4c-build.zip"
         },
         "RukuAuthPostAuthentication": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/RukuAuthPostAuthentication-6d4c6d756a4e7974707a-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPostAuthentication-59354b6c356a677a5664-build.zip"
         },
         "RukuAuthPostConfirmation": {
           "GROUP": "Jamaah",
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/RukuAuthPostConfirmation-446f5032736350382b64-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPostConfirmation-374b68456d7a37383538-build.zip"
         },
         "RukuAuthPreAuthentication": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/RukuAuthPreAuthentication-7130436e494c36587a71-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPreAuthentication-394479684577596a4559-build.zip"
         },
         "RukuAuthPreSignup": {
           "DOMAINALLOWLIST": " ",
           "DOMAINDENYLIST": " ",
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/RukuAuthPreSignup-716f47304e372f793877-build.zip"
+          "s3Key": "amplify-builds/RukuAuthPreSignup-4f5263786e6e45623867-build.zip"
         },
         "RukuAPILambdaAuthorizer": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/RukuAPILambdaAuthorizer-6c474d447a2f384b666d-build.zip"
+          "s3Key": "amplify-builds/RukuAPILambdaAuthorizer-773334795977596f2b62-build.zip"
         },
         "RukuStorageTrigger": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/RukuStorageTrigger-4c394679484d42515233-build.zip"
+          "s3Key": "amplify-builds/RukuStorageTrigger-2b5a53424b3931774f53-build.zip"
         },
         "AdminQueriesa8865030": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/AdminQueriesa8865030-6f54794a752f5a654c34-build.zip"
+          "s3Key": "amplify-builds/AdminQueriesa8865030-6967726f4e4271355050-build.zip"
         },
         "rukuCommonLayerTs": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
-          "s3Key": "amplify-builds/rukuCommonLayerTs-LambdaLayerVersion38281783-build.zip"
+          "s3Key": "amplify-builds/rukuCommonLayerTs-LambdaLayerVersion018f499d-build.zip"
         }
       },
       "api": {

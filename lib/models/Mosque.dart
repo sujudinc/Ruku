@@ -39,13 +39,13 @@ class Mosque extends amplify_core.Model {
   final String? _email;
   final String? _website;
   final SocialMedia? _socialMedia;
+  final PrayerTimes? _prayerTimes;
   final bool? _isVerified;
   final User? _creator;
   final Organization? _organization;
   final List<MosqueFollower>? _followers;
   final List<Announcement>? _announcements;
   final List<FundraisingCampaign>? _fundraisingCampaigns;
-  final List<PrayerTime>? _prayerTimes;
   final List<Bookmark>? _bookmarks;
   final List<Like>? _likes;
   final List<Comment>? _comments;
@@ -164,6 +164,10 @@ class Mosque extends amplify_core.Model {
     return _socialMedia;
   }
   
+  PrayerTimes? get prayerTimes {
+    return _prayerTimes;
+  }
+  
   bool? get isVerified {
     return _isVerified;
   }
@@ -195,10 +199,6 @@ class Mosque extends amplify_core.Model {
   
   List<FundraisingCampaign>? get fundraisingCampaigns {
     return _fundraisingCampaigns;
-  }
-  
-  List<PrayerTime>? get prayerTimes {
-    return _prayerTimes;
   }
   
   List<Bookmark>? get bookmarks {
@@ -243,9 +243,9 @@ class Mosque extends amplify_core.Model {
     return _owners;
   }
   
-  const Mosque._internal({required this.id, required name, required description, required images, required address, required latitude, required longitude, hours, phone, email, website, socialMedia, isVerified, required creator, organization, followers, announcements, fundraisingCampaigns, prayerTimes, bookmarks, likes, comments, required createdAt, required updatedAt, owners}): _name = name, _description = description, _images = images, _address = address, _latitude = latitude, _longitude = longitude, _hours = hours, _phone = phone, _email = email, _website = website, _socialMedia = socialMedia, _isVerified = isVerified, _creator = creator, _organization = organization, _followers = followers, _announcements = announcements, _fundraisingCampaigns = fundraisingCampaigns, _prayerTimes = prayerTimes, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt, _owners = owners;
+  const Mosque._internal({required this.id, required name, required description, required images, required address, required latitude, required longitude, hours, phone, email, website, socialMedia, prayerTimes, isVerified, required creator, organization, followers, announcements, fundraisingCampaigns, bookmarks, likes, comments, required createdAt, required updatedAt, owners}): _name = name, _description = description, _images = images, _address = address, _latitude = latitude, _longitude = longitude, _hours = hours, _phone = phone, _email = email, _website = website, _socialMedia = socialMedia, _prayerTimes = prayerTimes, _isVerified = isVerified, _creator = creator, _organization = organization, _followers = followers, _announcements = announcements, _fundraisingCampaigns = fundraisingCampaigns, _bookmarks = bookmarks, _likes = likes, _comments = comments, _createdAt = createdAt, _updatedAt = updatedAt, _owners = owners;
   
-  factory Mosque({String? id, required String name, required String description, required List<String> images, required String address, required double latitude, required double longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, bool? isVerified, required User creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<PrayerTime>? prayerTimes, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, List<String>? owners}) {
+  factory Mosque({String? id, required String name, required String description, required List<String> images, required String address, required double latitude, required double longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, PrayerTimes? prayerTimes, bool? isVerified, required User creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, required amplify_core.TemporalDateTime createdAt, required amplify_core.TemporalDateTime updatedAt, List<String>? owners}) {
     return Mosque._internal(
       id: id == null ? amplify_core.UUID.getUUID() : id,
       name: name,
@@ -259,13 +259,13 @@ class Mosque extends amplify_core.Model {
       email: email,
       website: website,
       socialMedia: socialMedia,
+      prayerTimes: prayerTimes,
       isVerified: isVerified,
       creator: creator,
       organization: organization,
       followers: followers != null ? List<MosqueFollower>.unmodifiable(followers) : followers,
       announcements: announcements != null ? List<Announcement>.unmodifiable(announcements) : announcements,
       fundraisingCampaigns: fundraisingCampaigns != null ? List<FundraisingCampaign>.unmodifiable(fundraisingCampaigns) : fundraisingCampaigns,
-      prayerTimes: prayerTimes != null ? List<PrayerTime>.unmodifiable(prayerTimes) : prayerTimes,
       bookmarks: bookmarks != null ? List<Bookmark>.unmodifiable(bookmarks) : bookmarks,
       likes: likes != null ? List<Like>.unmodifiable(likes) : likes,
       comments: comments != null ? List<Comment>.unmodifiable(comments) : comments,
@@ -294,13 +294,13 @@ class Mosque extends amplify_core.Model {
       _email == other._email &&
       _website == other._website &&
       _socialMedia == other._socialMedia &&
+      _prayerTimes == other._prayerTimes &&
       _isVerified == other._isVerified &&
       _creator == other._creator &&
       _organization == other._organization &&
       DeepCollectionEquality().equals(_followers, other._followers) &&
       DeepCollectionEquality().equals(_announcements, other._announcements) &&
       DeepCollectionEquality().equals(_fundraisingCampaigns, other._fundraisingCampaigns) &&
-      DeepCollectionEquality().equals(_prayerTimes, other._prayerTimes) &&
       DeepCollectionEquality().equals(_bookmarks, other._bookmarks) &&
       DeepCollectionEquality().equals(_likes, other._likes) &&
       DeepCollectionEquality().equals(_comments, other._comments) &&
@@ -329,6 +329,7 @@ class Mosque extends amplify_core.Model {
     buffer.write("email=" + "$_email" + ", ");
     buffer.write("website=" + "$_website" + ", ");
     buffer.write("socialMedia=" + (_socialMedia != null ? _socialMedia!.toString() : "null") + ", ");
+    buffer.write("prayerTimes=" + (_prayerTimes != null ? _prayerTimes!.toString() : "null") + ", ");
     buffer.write("isVerified=" + (_isVerified != null ? _isVerified!.toString() : "null") + ", ");
     buffer.write("creator=" + (_creator != null ? _creator!.toString() : "null") + ", ");
     buffer.write("organization=" + (_organization != null ? _organization!.toString() : "null") + ", ");
@@ -340,7 +341,7 @@ class Mosque extends amplify_core.Model {
     return buffer.toString();
   }
   
-  Mosque copyWith({String? name, String? description, List<String>? images, String? address, double? latitude, double? longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, bool? isVerified, User? creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<PrayerTime>? prayerTimes, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, List<String>? owners}) {
+  Mosque copyWith({String? name, String? description, List<String>? images, String? address, double? latitude, double? longitude, Hours? hours, String? phone, String? email, String? website, SocialMedia? socialMedia, PrayerTimes? prayerTimes, bool? isVerified, User? creator, Organization? organization, List<MosqueFollower>? followers, List<Announcement>? announcements, List<FundraisingCampaign>? fundraisingCampaigns, List<Bookmark>? bookmarks, List<Like>? likes, List<Comment>? comments, amplify_core.TemporalDateTime? createdAt, amplify_core.TemporalDateTime? updatedAt, List<String>? owners}) {
     return Mosque._internal(
       id: id,
       name: name ?? this.name,
@@ -354,13 +355,13 @@ class Mosque extends amplify_core.Model {
       email: email ?? this.email,
       website: website ?? this.website,
       socialMedia: socialMedia ?? this.socialMedia,
+      prayerTimes: prayerTimes ?? this.prayerTimes,
       isVerified: isVerified ?? this.isVerified,
       creator: creator ?? this.creator,
       organization: organization ?? this.organization,
       followers: followers ?? this.followers,
       announcements: announcements ?? this.announcements,
       fundraisingCampaigns: fundraisingCampaigns ?? this.fundraisingCampaigns,
-      prayerTimes: prayerTimes ?? this.prayerTimes,
       bookmarks: bookmarks ?? this.bookmarks,
       likes: likes ?? this.likes,
       comments: comments ?? this.comments,
@@ -381,13 +382,13 @@ class Mosque extends amplify_core.Model {
     ModelFieldValue<String?>? email,
     ModelFieldValue<String?>? website,
     ModelFieldValue<SocialMedia?>? socialMedia,
+    ModelFieldValue<PrayerTimes?>? prayerTimes,
     ModelFieldValue<bool?>? isVerified,
     ModelFieldValue<User>? creator,
     ModelFieldValue<Organization?>? organization,
     ModelFieldValue<List<MosqueFollower>?>? followers,
     ModelFieldValue<List<Announcement>?>? announcements,
     ModelFieldValue<List<FundraisingCampaign>?>? fundraisingCampaigns,
-    ModelFieldValue<List<PrayerTime>?>? prayerTimes,
     ModelFieldValue<List<Bookmark>?>? bookmarks,
     ModelFieldValue<List<Like>?>? likes,
     ModelFieldValue<List<Comment>?>? comments,
@@ -408,13 +409,13 @@ class Mosque extends amplify_core.Model {
       email: email == null ? this.email : email.value,
       website: website == null ? this.website : website.value,
       socialMedia: socialMedia == null ? this.socialMedia : socialMedia.value,
+      prayerTimes: prayerTimes == null ? this.prayerTimes : prayerTimes.value,
       isVerified: isVerified == null ? this.isVerified : isVerified.value,
       creator: creator == null ? this.creator : creator.value,
       organization: organization == null ? this.organization : organization.value,
       followers: followers == null ? this.followers : followers.value,
       announcements: announcements == null ? this.announcements : announcements.value,
       fundraisingCampaigns: fundraisingCampaigns == null ? this.fundraisingCampaigns : fundraisingCampaigns.value,
-      prayerTimes: prayerTimes == null ? this.prayerTimes : prayerTimes.value,
       bookmarks: bookmarks == null ? this.bookmarks : bookmarks.value,
       likes: likes == null ? this.likes : likes.value,
       comments: comments == null ? this.comments : comments.value,
@@ -440,6 +441,9 @@ class Mosque extends amplify_core.Model {
       _website = json['website'],
       _socialMedia = json['socialMedia'] != null
         ? SocialMedia.fromJson(new Map<String, dynamic>.from(json['socialMedia']))
+        : null,
+      _prayerTimes = json['prayerTimes'] != null
+        ? PrayerTimes.fromJson(new Map<String, dynamic>.from(json['prayerTimes']))
         : null,
       _isVerified = json['isVerified'],
       _creator = json['creator'] != null
@@ -491,19 +495,6 @@ class Mosque extends amplify_core.Model {
               .map((e) => FundraisingCampaign.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
               .toList()
           : null),
-      _prayerTimes = json['prayerTimes']  is Map
-        ? (json['prayerTimes']['items'] is List
-          ? (json['prayerTimes']['items'] as List)
-              .where((e) => e != null)
-              .map((e) => PrayerTime.fromJson(new Map<String, dynamic>.from(e)))
-              .toList()
-          : null)
-        : (json['prayerTimes'] is List
-          ? (json['prayerTimes'] as List)
-              .where((e) => e?['serializedData'] != null)
-              .map((e) => PrayerTime.fromJson(new Map<String, dynamic>.from(e?['serializedData'])))
-              .toList()
-          : null),
       _bookmarks = json['bookmarks']  is Map
         ? (json['bookmarks']['items'] is List
           ? (json['bookmarks']['items'] as List)
@@ -548,7 +539,7 @@ class Mosque extends amplify_core.Model {
       _owners = json['owners']?.cast<String>();
   
   Map<String, dynamic> toJson() => {
-    'id': id, 'name': _name, 'description': _description, 'images': _images, 'address': _address, 'latitude': _latitude, 'longitude': _longitude, 'hours': _hours?.toJson(), 'phone': _phone, 'email': _email, 'website': _website, 'socialMedia': _socialMedia?.toJson(), 'isVerified': _isVerified, 'creator': _creator?.toJson(), 'organization': _organization?.toJson(), 'followers': _followers?.map((MosqueFollower? e) => e?.toJson()).toList(), 'announcements': _announcements?.map((Announcement? e) => e?.toJson()).toList(), 'fundraisingCampaigns': _fundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'prayerTimes': _prayerTimes?.map((PrayerTime? e) => e?.toJson()).toList(), 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owners': _owners
+    'id': id, 'name': _name, 'description': _description, 'images': _images, 'address': _address, 'latitude': _latitude, 'longitude': _longitude, 'hours': _hours?.toJson(), 'phone': _phone, 'email': _email, 'website': _website, 'socialMedia': _socialMedia?.toJson(), 'prayerTimes': _prayerTimes?.toJson(), 'isVerified': _isVerified, 'creator': _creator?.toJson(), 'organization': _organization?.toJson(), 'followers': _followers?.map((MosqueFollower? e) => e?.toJson()).toList(), 'announcements': _announcements?.map((Announcement? e) => e?.toJson()).toList(), 'fundraisingCampaigns': _fundraisingCampaigns?.map((FundraisingCampaign? e) => e?.toJson()).toList(), 'bookmarks': _bookmarks?.map((Bookmark? e) => e?.toJson()).toList(), 'likes': _likes?.map((Like? e) => e?.toJson()).toList(), 'comments': _comments?.map((Comment? e) => e?.toJson()).toList(), 'createdAt': _createdAt?.format(), 'updatedAt': _updatedAt?.format(), 'owners': _owners
   };
   
   Map<String, Object?> toMap() => {
@@ -564,13 +555,13 @@ class Mosque extends amplify_core.Model {
     'email': _email,
     'website': _website,
     'socialMedia': _socialMedia,
+    'prayerTimes': _prayerTimes,
     'isVerified': _isVerified,
     'creator': _creator,
     'organization': _organization,
     'followers': _followers,
     'announcements': _announcements,
     'fundraisingCampaigns': _fundraisingCampaigns,
-    'prayerTimes': _prayerTimes,
     'bookmarks': _bookmarks,
     'likes': _likes,
     'comments': _comments,
@@ -592,6 +583,7 @@ class Mosque extends amplify_core.Model {
   static final EMAIL = amplify_core.QueryField(fieldName: "email");
   static final WEBSITE = amplify_core.QueryField(fieldName: "website");
   static final SOCIALMEDIA = amplify_core.QueryField(fieldName: "socialMedia");
+  static final PRAYERTIMES = amplify_core.QueryField(fieldName: "prayerTimes");
   static final ISVERIFIED = amplify_core.QueryField(fieldName: "isVerified");
   static final CREATOR = amplify_core.QueryField(
     fieldName: "creator",
@@ -608,9 +600,6 @@ class Mosque extends amplify_core.Model {
   static final FUNDRAISINGCAMPAIGNS = amplify_core.QueryField(
     fieldName: "fundraisingCampaigns",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'FundraisingCampaign'));
-  static final PRAYERTIMES = amplify_core.QueryField(
-    fieldName: "prayerTimes",
-    fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'PrayerTime'));
   static final BOOKMARKS = amplify_core.QueryField(
     fieldName: "bookmarks",
     fieldType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.model, ofModelName: 'Bookmark'));
@@ -725,6 +714,12 @@ class Mosque extends amplify_core.Model {
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.embedded, ofCustomTypeName: 'SocialMedia')
     ));
     
+    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.embedded(
+      fieldName: 'prayerTimes',
+      isRequired: false,
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.embedded, ofCustomTypeName: 'PrayerTimes')
+    ));
+    
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.field(
       key: Mosque.ISVERIFIED,
       isRequired: false,
@@ -764,13 +759,6 @@ class Mosque extends amplify_core.Model {
       isRequired: false,
       ofModelName: 'FundraisingCampaign',
       associatedKey: FundraisingCampaign.MOSQUE
-    ));
-    
-    modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(
-      key: Mosque.PRAYERTIMES,
-      isRequired: false,
-      ofModelName: 'PrayerTime',
-      associatedKey: PrayerTime.MOSQUE
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.hasMany(

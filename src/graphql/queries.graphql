@@ -78,10 +78,6 @@ query GetAnnouncement($id: ID!) {
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -103,10 +99,6 @@ query GetAnnouncement($id: ID!) {
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -135,6 +127,10 @@ query GetAnnouncement($id: ID!) {
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -182,10 +178,6 @@ query GetAnnouncement($id: ID!) {
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -1223,10 +1215,6 @@ query GetFundraisingCampaign($id: ID!) {
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -1248,10 +1236,6 @@ query GetFundraisingCampaign($id: ID!) {
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -1280,6 +1264,10 @@ query GetFundraisingCampaign($id: ID!) {
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -1327,10 +1315,6 @@ query GetFundraisingCampaign($id: ID!) {
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -1834,378 +1818,6 @@ query LikesByMosqueID(
   }
 }
 
-query PrayerTimesByCreatedByUserID(
-  $createdByUserID: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelPrayerTimeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  prayerTimesByCreatedByUserID(
-    createdByUserID: $createdByUserID
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      fajr {
-        athan
-        iqamah
-        __typename
-      }
-      dhuhr {
-        athan
-        iqamah
-        __typename
-      }
-      asr {
-        athan
-        iqamah
-        __typename
-      }
-      maghrib {
-        athan
-        iqamah
-        __typename
-      }
-      isha {
-        athan
-        iqamah
-        __typename
-      }
-      jummah {
-        athan
-        iqamah
-        __typename
-      }
-      taraweeh {
-        start
-        end
-        __typename
-      }
-      eid {
-        athan
-        iqamah
-        __typename
-      }
-      startDate
-      timeZone
-      createdByUserID
-      createdByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      updatedByUserID
-      updatedByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueID
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        isVerified
-        creatorID
-        organizationID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      owners
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query PrayerTimesByUpdatedByUserID(
-  $updatedByUserID: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelPrayerTimeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  prayerTimesByUpdatedByUserID(
-    updatedByUserID: $updatedByUserID
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      fajr {
-        athan
-        iqamah
-        __typename
-      }
-      dhuhr {
-        athan
-        iqamah
-        __typename
-      }
-      asr {
-        athan
-        iqamah
-        __typename
-      }
-      maghrib {
-        athan
-        iqamah
-        __typename
-      }
-      isha {
-        athan
-        iqamah
-        __typename
-      }
-      jummah {
-        athan
-        iqamah
-        __typename
-      }
-      taraweeh {
-        start
-        end
-        __typename
-      }
-      eid {
-        athan
-        iqamah
-        __typename
-      }
-      startDate
-      timeZone
-      createdByUserID
-      createdByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      updatedByUserID
-      updatedByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueID
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        isVerified
-        creatorID
-        organizationID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      owners
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
-query PrayerTimesByMosqueID(
-  $mosqueID: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelPrayerTimeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  prayerTimesByMosqueID(
-    mosqueID: $mosqueID
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      fajr {
-        athan
-        iqamah
-        __typename
-      }
-      dhuhr {
-        athan
-        iqamah
-        __typename
-      }
-      asr {
-        athan
-        iqamah
-        __typename
-      }
-      maghrib {
-        athan
-        iqamah
-        __typename
-      }
-      isha {
-        athan
-        iqamah
-        __typename
-      }
-      jummah {
-        athan
-        iqamah
-        __typename
-      }
-      taraweeh {
-        start
-        end
-        __typename
-      }
-      eid {
-        athan
-        iqamah
-        __typename
-      }
-      startDate
-      timeZone
-      createdByUserID
-      createdByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      updatedByUserID
-      updatedByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueID
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        isVerified
-        creatorID
-        organizationID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      owners
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-
 query GetMosque($id: ID!) {
   getMosque(id: $id) {
     id
@@ -2256,6 +1868,60 @@ query GetMosque($id: ID!) {
       youtube
       __typename
     }
+    prayerTimes {
+      timeZone
+      fajr {
+        athan
+        iqamah
+        __typename
+      }
+      dhuhr {
+        athan
+        iqamah
+        __typename
+      }
+      asr {
+        athan
+        iqamah
+        __typename
+      }
+      maghrib {
+        athan
+        iqamah
+        __typename
+      }
+      isha {
+        athan
+        iqamah
+        __typename
+      }
+      jummah {
+        athan
+        iqamah
+        __typename
+      }
+      tahajjud {
+        start
+        end
+        __typename
+      }
+      taraweeh {
+        start
+        end
+        __typename
+      }
+      eidAlAdha {
+        start
+        end
+        __typename
+      }
+      eidAlFitr {
+        start
+        end
+        __typename
+      }
+      __typename
+    }
     isVerified
     creatorID
     creator {
@@ -2285,10 +1951,6 @@ query GetMosque($id: ID!) {
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -2310,10 +1972,6 @@ query GetMosque($id: ID!) {
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2416,23 +2074,6 @@ query GetMosque($id: ID!) {
       nextToken
       __typename
     }
-    prayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserID
-        updatedByUserID
-        mosqueID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
     bookmarks {
       items {
         id
@@ -2512,6 +2153,10 @@ query ListMosques(
         youtube
         __typename
       }
+      prayerTimes {
+        timeZone
+        __typename
+      }
       isVerified
       creatorID
       creator {
@@ -2557,10 +2202,6 @@ query ListMosques(
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -2622,6 +2263,10 @@ query MosquesByCreatorID(
         youtube
         __typename
       }
+      prayerTimes {
+        timeZone
+        __typename
+      }
       isVerified
       creatorID
       creator {
@@ -2667,10 +2312,6 @@ query MosquesByCreatorID(
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -2732,6 +2373,10 @@ query MosquesByOrganizationID(
         youtube
         __typename
       }
+      prayerTimes {
+        timeZone
+        __typename
+      }
       isVerified
       creatorID
       creator {
@@ -2777,10 +2422,6 @@ query MosquesByOrganizationID(
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -2846,10 +2487,6 @@ query GetOrganization($id: ID!) {
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -2871,10 +2508,6 @@ query GetOrganization($id: ID!) {
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -3248,23 +2881,6 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    createdPrayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserID
-        updatedByUserID
-        mosqueID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
     createdOrganizations {
       items {
         id
@@ -3369,23 +2985,6 @@ query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    updatedPrayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserID
-        updatedByUserID
-        mosqueID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
     createdAt
     updatedAt
     owner
@@ -3417,6 +3016,10 @@ query GetMosqueFollower($id: ID!) {
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -3467,10 +3070,6 @@ query GetMosqueFollower($id: ID!) {
         nextToken
         __typename
       }
-      prayerTimes {
-        nextToken
-        __typename
-      }
       bookmarks {
         nextToken
         __typename
@@ -3516,10 +3115,6 @@ query GetMosqueFollower($id: ID!) {
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -3541,10 +3136,6 @@ query GetMosqueFollower($id: ID!) {
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }

@@ -30,12 +30,12 @@ import 'Mosque.dart';
 import 'MosqueFollower.dart';
 import 'Organization.dart';
 import 'OrganizationMember.dart';
-import 'PrayerTime.dart';
 import 'User.dart';
 import 'Day.dart';
 import 'FardPrayer.dart';
 import 'Hours.dart';
 import 'OperatingHours.dart';
+import 'PrayerTimes.dart';
 import 'SocialMedia.dart';
 import 'SunnahPrayer.dart';
 
@@ -57,7 +57,7 @@ export 'MosqueFollower.dart';
 export 'OperatingHours.dart';
 export 'Organization.dart';
 export 'OrganizationMember.dart';
-export 'PrayerTime.dart';
+export 'PrayerTimes.dart';
 export 'SocialMedia.dart';
 export 'SunnahPrayer.dart';
 export 'User.dart';
@@ -66,11 +66,11 @@ export 'UserType.dart';
 
 class ModelProvider implements amplify_core.ModelProviderInterface {
   @override
-  String version = "e4a9780f01bdb8a752cfbc608ab120e6";
+  String version = "1da4b3c443b4fa8c65915be8d65270d8";
   @override
-  List<amplify_core.ModelSchema> modelSchemas = [Announcement.schema, Bookmark.schema, Comment.schema, Donation.schema, FundraisingCampaign.schema, Like.schema, Mosque.schema, MosqueFollower.schema, Organization.schema, OrganizationMember.schema, PrayerTime.schema, User.schema];
+  List<amplify_core.ModelSchema> modelSchemas = [Announcement.schema, Bookmark.schema, Comment.schema, Donation.schema, FundraisingCampaign.schema, Like.schema, Mosque.schema, MosqueFollower.schema, Organization.schema, OrganizationMember.schema, User.schema];
   @override
-  List<amplify_core.ModelSchema> customTypeSchemas = [Day.schema, FardPrayer.schema, Hours.schema, OperatingHours.schema, SocialMedia.schema, SunnahPrayer.schema];
+  List<amplify_core.ModelSchema> customTypeSchemas = [Day.schema, FardPrayer.schema, Hours.schema, OperatingHours.schema, PrayerTimes.schema, SocialMedia.schema, SunnahPrayer.schema];
   static final ModelProvider _instance = ModelProvider();
 
   static ModelProvider get instance => _instance;
@@ -97,8 +97,6 @@ class ModelProvider implements amplify_core.ModelProviderInterface {
         return Organization.classType;
       case "OrganizationMember":
         return OrganizationMember.classType;
-      case "PrayerTime":
-        return PrayerTime.classType;
       case "User":
         return User.classType;
       default:

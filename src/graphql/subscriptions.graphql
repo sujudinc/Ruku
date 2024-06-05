@@ -1303,7 +1303,7 @@ subscription OnCreateMosque(
         iqamah
         __typename
       }
-      dhuhr {
+      thuhr {
         athan
         iqamah
         __typename
@@ -1614,7 +1614,7 @@ subscription OnUpdateMosque(
         iqamah
         __typename
       }
-      dhuhr {
+      thuhr {
         athan
         iqamah
         __typename
@@ -1925,7 +1925,7 @@ subscription OnDeleteMosque(
         iqamah
         __typename
       }
-      dhuhr {
+      thuhr {
         athan
         iqamah
         __typename

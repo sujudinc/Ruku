@@ -28,7 +28,7 @@ import 'package:collection/collection.dart';
 class PrayerTimes {
   final String? _timeZone;
   final FardPrayer? _fajr;
-  final FardPrayer? _dhuhr;
+  final FardPrayer? _thuhr;
   final FardPrayer? _asr;
   final FardPrayer? _maghrib;
   final FardPrayer? _isha;
@@ -55,8 +55,8 @@ class PrayerTimes {
     return _fajr;
   }
   
-  FardPrayer? get dhuhr {
-    return _dhuhr;
+  FardPrayer? get thuhr {
+    return _thuhr;
   }
   
   FardPrayer? get asr {
@@ -91,13 +91,13 @@ class PrayerTimes {
     return _eidAlFitr;
   }
   
-  const PrayerTimes._internal({required timeZone, fajr, dhuhr, asr, maghrib, isha, jummah, tahajjud, taraweeh, eidAlAdha, eidAlFitr}): _timeZone = timeZone, _fajr = fajr, _dhuhr = dhuhr, _asr = asr, _maghrib = maghrib, _isha = isha, _jummah = jummah, _tahajjud = tahajjud, _taraweeh = taraweeh, _eidAlAdha = eidAlAdha, _eidAlFitr = eidAlFitr;
+  const PrayerTimes._internal({required timeZone, fajr, thuhr, asr, maghrib, isha, jummah, tahajjud, taraweeh, eidAlAdha, eidAlFitr}): _timeZone = timeZone, _fajr = fajr, _thuhr = thuhr, _asr = asr, _maghrib = maghrib, _isha = isha, _jummah = jummah, _tahajjud = tahajjud, _taraweeh = taraweeh, _eidAlAdha = eidAlAdha, _eidAlFitr = eidAlFitr;
   
-  factory PrayerTimes({required String timeZone, FardPrayer? fajr, FardPrayer? dhuhr, FardPrayer? asr, FardPrayer? maghrib, FardPrayer? isha, List<FardPrayer>? jummah, SunnahPrayer? tahajjud, SunnahPrayer? taraweeh, List<SunnahPrayer>? eidAlAdha, List<SunnahPrayer>? eidAlFitr}) {
+  factory PrayerTimes({required String timeZone, FardPrayer? fajr, FardPrayer? thuhr, FardPrayer? asr, FardPrayer? maghrib, FardPrayer? isha, List<FardPrayer>? jummah, SunnahPrayer? tahajjud, SunnahPrayer? taraweeh, List<SunnahPrayer>? eidAlAdha, List<SunnahPrayer>? eidAlFitr}) {
     return PrayerTimes._internal(
       timeZone: timeZone,
       fajr: fajr,
-      dhuhr: dhuhr,
+      thuhr: thuhr,
       asr: asr,
       maghrib: maghrib,
       isha: isha,
@@ -118,7 +118,7 @@ class PrayerTimes {
     return other is PrayerTimes &&
       _timeZone == other._timeZone &&
       _fajr == other._fajr &&
-      _dhuhr == other._dhuhr &&
+      _thuhr == other._thuhr &&
       _asr == other._asr &&
       _maghrib == other._maghrib &&
       _isha == other._isha &&
@@ -139,7 +139,7 @@ class PrayerTimes {
     buffer.write("PrayerTimes {");
     buffer.write("timeZone=" + "$_timeZone" + ", ");
     buffer.write("fajr=" + (_fajr != null ? _fajr!.toString() : "null") + ", ");
-    buffer.write("dhuhr=" + (_dhuhr != null ? _dhuhr!.toString() : "null") + ", ");
+    buffer.write("thuhr=" + (_thuhr != null ? _thuhr!.toString() : "null") + ", ");
     buffer.write("asr=" + (_asr != null ? _asr!.toString() : "null") + ", ");
     buffer.write("maghrib=" + (_maghrib != null ? _maghrib!.toString() : "null") + ", ");
     buffer.write("isha=" + (_isha != null ? _isha!.toString() : "null") + ", ");
@@ -153,11 +153,11 @@ class PrayerTimes {
     return buffer.toString();
   }
   
-  PrayerTimes copyWith({String? timeZone, FardPrayer? fajr, FardPrayer? dhuhr, FardPrayer? asr, FardPrayer? maghrib, FardPrayer? isha, List<FardPrayer>? jummah, SunnahPrayer? tahajjud, SunnahPrayer? taraweeh, List<SunnahPrayer>? eidAlAdha, List<SunnahPrayer>? eidAlFitr}) {
+  PrayerTimes copyWith({String? timeZone, FardPrayer? fajr, FardPrayer? thuhr, FardPrayer? asr, FardPrayer? maghrib, FardPrayer? isha, List<FardPrayer>? jummah, SunnahPrayer? tahajjud, SunnahPrayer? taraweeh, List<SunnahPrayer>? eidAlAdha, List<SunnahPrayer>? eidAlFitr}) {
     return PrayerTimes._internal(
       timeZone: timeZone ?? this.timeZone,
       fajr: fajr ?? this.fajr,
-      dhuhr: dhuhr ?? this.dhuhr,
+      thuhr: thuhr ?? this.thuhr,
       asr: asr ?? this.asr,
       maghrib: maghrib ?? this.maghrib,
       isha: isha ?? this.isha,
@@ -171,7 +171,7 @@ class PrayerTimes {
   PrayerTimes copyWithModelFieldValues({
     ModelFieldValue<String>? timeZone,
     ModelFieldValue<FardPrayer?>? fajr,
-    ModelFieldValue<FardPrayer?>? dhuhr,
+    ModelFieldValue<FardPrayer?>? thuhr,
     ModelFieldValue<FardPrayer?>? asr,
     ModelFieldValue<FardPrayer?>? maghrib,
     ModelFieldValue<FardPrayer?>? isha,
@@ -184,7 +184,7 @@ class PrayerTimes {
     return PrayerTimes._internal(
       timeZone: timeZone == null ? this.timeZone : timeZone.value,
       fajr: fajr == null ? this.fajr : fajr.value,
-      dhuhr: dhuhr == null ? this.dhuhr : dhuhr.value,
+      thuhr: thuhr == null ? this.thuhr : thuhr.value,
       asr: asr == null ? this.asr : asr.value,
       maghrib: maghrib == null ? this.maghrib : maghrib.value,
       isha: isha == null ? this.isha : isha.value,
@@ -201,8 +201,8 @@ class PrayerTimes {
       _fajr = json['fajr'] != null
         ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['fajr']))
         : null,
-      _dhuhr = json['dhuhr'] != null
-        ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['dhuhr']))
+      _thuhr = json['thuhr'] != null
+        ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['thuhr']))
         : null,
       _asr = json['asr'] != null
         ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['asr']))
@@ -239,13 +239,13 @@ class PrayerTimes {
         : null;
   
   Map<String, dynamic> toJson() => {
-    'timeZone': _timeZone, 'fajr': _fajr?.toJson(), 'dhuhr': _dhuhr?.toJson(), 'asr': _asr?.toJson(), 'maghrib': _maghrib?.toJson(), 'isha': _isha?.toJson(), 'jummah': _jummah?.map((FardPrayer? e) => e?.toJson()).toList(), 'tahajjud': _tahajjud?.toJson(), 'taraweeh': _taraweeh?.toJson(), 'eidAlAdha': _eidAlAdha?.map((SunnahPrayer? e) => e?.toJson()).toList(), 'eidAlFitr': _eidAlFitr?.map((SunnahPrayer? e) => e?.toJson()).toList()
+    'timeZone': _timeZone, 'fajr': _fajr?.toJson(), 'thuhr': _thuhr?.toJson(), 'asr': _asr?.toJson(), 'maghrib': _maghrib?.toJson(), 'isha': _isha?.toJson(), 'jummah': _jummah?.map((FardPrayer? e) => e?.toJson()).toList(), 'tahajjud': _tahajjud?.toJson(), 'taraweeh': _taraweeh?.toJson(), 'eidAlAdha': _eidAlAdha?.map((SunnahPrayer? e) => e?.toJson()).toList(), 'eidAlFitr': _eidAlFitr?.map((SunnahPrayer? e) => e?.toJson()).toList()
   };
   
   Map<String, Object?> toMap() => {
     'timeZone': _timeZone,
     'fajr': _fajr,
-    'dhuhr': _dhuhr,
+    'thuhr': _thuhr,
     'asr': _asr,
     'maghrib': _maghrib,
     'isha': _isha,
@@ -273,7 +273,7 @@ class PrayerTimes {
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.embedded(
-      fieldName: 'dhuhr',
+      fieldName: 'thuhr',
       isRequired: false,
       ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.embedded, ofCustomTypeName: 'FardPrayer')
     ));

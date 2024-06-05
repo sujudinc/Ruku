@@ -2829,7 +2829,7 @@ mutation CreateMosque(
         iqamah
         __typename
       }
-      dhuhr {
+      thuhr {
         athan
         iqamah
         __typename
@@ -3140,7 +3140,7 @@ mutation UpdateMosque(
         iqamah
         __typename
       }
-      dhuhr {
+      thuhr {
         athan
         iqamah
         __typename
@@ -3451,7 +3451,7 @@ mutation DeleteMosque(
         iqamah
         __typename
       }
-      dhuhr {
+      thuhr {
         athan
         iqamah
         __typename

@@ -1875,7 +1875,7 @@ query GetMosque($id: ID!) {
         iqamah
         __typename
       }
-      dhuhr {
+      thuhr {
         athan
         iqamah
         __typename

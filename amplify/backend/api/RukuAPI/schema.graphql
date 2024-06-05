@@ -189,40 +189,6 @@ type Like
   owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
 }
 
-type PrayerTime
-  @model(
-    queries: null
-  )
-  @auth(
-    rules: [
-      { allow: owner, ownerField: "owners"}
-      { allow: private, operations: [read] }
-      { allow: public, operations: [read] }
-    ]
-  )
-  {
-  id: ID!
-  fajr: FardPrayer!
-  dhuhr: FardPrayer!
-  asr: FardPrayer!
-  maghrib: FardPrayer!
-  isha: FardPrayer!
-  jummah: [FardPrayer]!
-  taraweeh: SunnahPrayer
-  eid: [FardPrayer]
-  startDate: AWSDateTime!
-  timeZone: String!
-  createdByUserID: ID! @index(name: "byCreatedByUser")
-  createdByUser: User! @belongsTo(fields: ["createdByUserID"])
-  updatedByUserID: ID! @index(name: "byUpdatedByUser")
-  updatedByUser: User! @belongsTo(fields: ["updatedByUserID"])
-  mosqueID: ID! @index(name: "byMosque")
-  mosque: Mosque! @belongsTo(fields: ["mosqueID"])
-  createdAt: AWSDateTime!
-  updatedAt: AWSDateTime!
-  owners: [String] @auth(rules: [{ allow: owner }])
-}
-
 type Mosque
   @model
   @auth(
@@ -244,6 +210,7 @@ type Mosque
   email: AWSEmail
   website: String
   socialMedia: SocialMedia
+  prayerTimes: PrayerTimes
   isVerified: Boolean @default(value: "false") @auth(
     rules: [
       { allow: owner, ownerField: "owners", operations: [create, read]}
@@ -269,7 +236,6 @@ type Mosque
   followers: [User]! @manyToMany(relationName: "MosqueFollower")
   announcements: [Announcement]! @hasMany(indexName: "byMosque", fields: ["id"])
   fundraisingCampaigns: [FundraisingCampaign]! @hasMany(indexName: "byMosque", fields: ["id"])
-  prayerTimes: [PrayerTime]! @hasMany(indexName: "byMosque", fields: ["id"])
   bookmarks: [Bookmark]! @hasMany(indexName: "byMosque", fields: ["id"])
   likes: [Like]! @hasMany(indexName: "byMosque", fields: ["id"])
   comments: [Comment]! @hasMany(indexName: "byMosque", fields: ["id"])
@@ -382,14 +348,12 @@ type User
   comments: [Comment]! @hasMany(indexName: "byCreator", fields: ["id"])
   createdAnnouncements: [Announcement]! @hasMany(indexName: "byCreator", fields: ["id"])
   createdFundraisingCampaigns: [FundraisingCampaign]! @hasMany(indexName: "byCreator", fields: ["id"])
-  createdPrayerTimes: [PrayerTime]! @hasMany(indexName: "byCreatedByUser", fields: ["id"])
   createdOrganizations: [Organization]! @hasMany(indexName: "byCreator", fields: ["id"])
   createdMosques: [Mosque]! @hasMany(indexName: "byCreator", fields: ["id"])
   donations: [Donation]! @hasMany(indexName: "byDonor", fields: ["id"])
   mosques: [Mosque]! @manyToMany(relationName: "MosqueFollower")
   organizations: [OrganizationMember]! @hasMany(indexName: "byMember", fields: ["id"])
   likes: [Like]! @hasMany(indexName: "byCreator", fields: ["id"])
-  updatedPrayerTimes: [PrayerTime]! @hasMany(indexName: "byUpdatedByUser", fields: ["id"])
   createdAt: AWSDateTime!
   updatedAt: AWSDateTime!
   owner: String @auth(rules: [{ allow: owner, operations: [read, delete] }])
@@ -400,6 +364,11 @@ type User
 type Day {
   type: DayType!
   operatingHours: [OperatingHours!]!
+}
+
+type FardPrayer {
+  athan: AWSTime!
+  iqamah: AWSTime!
 }
 
 type Hours {
@@ -417,14 +386,18 @@ type OperatingHours {
   close: AWSTime!
 }
 
-type FardPrayer {
-  athan: AWSTime!
-  iqamah: AWSTime!
-}
-
-type SunnahPrayer {
-  start: AWSTime!
-  end: AWSTime
+type PrayerTimes {
+  timeZone: String!
+  fajr: FardPrayer
+  dhuhr: FardPrayer
+  asr: FardPrayer
+  maghrib: FardPrayer
+  isha: FardPrayer
+  jummah: [FardPrayer!]
+  tahajjud: SunnahPrayer
+  taraweeh: SunnahPrayer
+  eidAlAdha: [SunnahPrayer!]
+  eidAlFitr: [SunnahPrayer!]
 }
 
 type SocialMedia {
@@ -432,6 +405,11 @@ type SocialMedia {
   instagram: String
   twitter: String
   youtube: String
+}
+
+type SunnahPrayer {
+  start: AWSTime!
+  end: AWSTime
 }
 
 # ------------------------------------------------------------------------------------- ENUMS

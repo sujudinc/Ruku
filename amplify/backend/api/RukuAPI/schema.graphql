@@ -389,7 +389,7 @@ type OperatingHours {
 type PrayerTimes {
   timeZone: String!
   fajr: FardPrayer
-  dhuhr: FardPrayer
+  thuhr: FardPrayer
   asr: FardPrayer
   maghrib: FardPrayer
   isha: FardPrayer

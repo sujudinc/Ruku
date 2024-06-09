@@ -26,7 +26,7 @@ import 'package:amplify_core/amplify_core.dart' as amplify_core;
 /** This is an auto generated class representing the FardPrayer type in your schema. */
 class FardPrayer {
   final amplify_core.TemporalTime? _athan;
-  final amplify_core.TemporalTime? _iqamah;
+  final int? _iqamahAfter;
 
   amplify_core.TemporalTime get athan {
     try {
@@ -41,9 +41,9 @@ class FardPrayer {
     }
   }
   
-  amplify_core.TemporalTime get iqamah {
+  int get iqamahAfter {
     try {
-      return _iqamah!;
+      return _iqamahAfter!;
     } catch(e) {
       throw amplify_core.AmplifyCodeGenModelException(
           amplify_core.AmplifyExceptionMessages.codeGenRequiredFieldForceCastExceptionMessage,
@@ -54,12 +54,12 @@ class FardPrayer {
     }
   }
   
-  const FardPrayer._internal({required athan, required iqamah}): _athan = athan, _iqamah = iqamah;
+  const FardPrayer._internal({required athan, required iqamahAfter}): _athan = athan, _iqamahAfter = iqamahAfter;
   
-  factory FardPrayer({required amplify_core.TemporalTime athan, required amplify_core.TemporalTime iqamah}) {
+  factory FardPrayer({required amplify_core.TemporalTime athan, required int iqamahAfter}) {
     return FardPrayer._internal(
       athan: athan,
-      iqamah: iqamah);
+      iqamahAfter: iqamahAfter);
   }
   
   bool equals(Object other) {
@@ -71,7 +71,7 @@ class FardPrayer {
     if (identical(other, this)) return true;
     return other is FardPrayer &&
       _athan == other._athan &&
-      _iqamah == other._iqamah;
+      _iqamahAfter == other._iqamahAfter;
   }
   
   @override
@@ -83,39 +83,39 @@ class FardPrayer {
     
     buffer.write("FardPrayer {");
     buffer.write("athan=" + (_athan != null ? _athan!.format() : "null") + ", ");
-    buffer.write("iqamah=" + (_iqamah != null ? _iqamah!.format() : "null"));
+    buffer.write("iqamahAfter=" + (_iqamahAfter != null ? _iqamahAfter!.toString() : "null"));
     buffer.write("}");
     
     return buffer.toString();
   }
   
-  FardPrayer copyWith({amplify_core.TemporalTime? athan, amplify_core.TemporalTime? iqamah}) {
+  FardPrayer copyWith({amplify_core.TemporalTime? athan, int? iqamahAfter}) {
     return FardPrayer._internal(
       athan: athan ?? this.athan,
-      iqamah: iqamah ?? this.iqamah);
+      iqamahAfter: iqamahAfter ?? this.iqamahAfter);
   }
   
   FardPrayer copyWithModelFieldValues({
     ModelFieldValue<amplify_core.TemporalTime>? athan,
-    ModelFieldValue<amplify_core.TemporalTime>? iqamah
+    ModelFieldValue<int>? iqamahAfter
   }) {
     return FardPrayer._internal(
       athan: athan == null ? this.athan : athan.value,
-      iqamah: iqamah == null ? this.iqamah : iqamah.value
+      iqamahAfter: iqamahAfter == null ? this.iqamahAfter : iqamahAfter.value
     );
   }
   
   FardPrayer.fromJson(Map<String, dynamic> json)  
     : _athan = json['athan'] != null ? amplify_core.TemporalTime.fromString(json['athan']) : null,
-      _iqamah = json['iqamah'] != null ? amplify_core.TemporalTime.fromString(json['iqamah']) : null;
+      _iqamahAfter = (json['iqamahAfter'] as num?)?.toInt();
   
   Map<String, dynamic> toJson() => {
-    'athan': _athan?.format(), 'iqamah': _iqamah?.format()
+    'athan': _athan?.format(), 'iqamahAfter': _iqamahAfter
   };
   
   Map<String, Object?> toMap() => {
     'athan': _athan,
-    'iqamah': _iqamah
+    'iqamahAfter': _iqamahAfter
   };
 
   static var schema = amplify_core.Model.defineSchema(define: (amplify_core.ModelSchemaDefinition modelSchemaDefinition) {
@@ -129,9 +129,9 @@ class FardPrayer {
     ));
     
     modelSchemaDefinition.addField(amplify_core.ModelFieldDefinition.customTypeField(
-      fieldName: 'iqamah',
+      fieldName: 'iqamahAfter',
       isRequired: true,
-      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.time)
+      ofType: amplify_core.ModelFieldType(amplify_core.ModelFieldTypeEnum.int)
     ));
   });
 }

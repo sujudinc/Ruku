@@ -1872,32 +1872,32 @@ query GetMosque($id: ID!) {
       timeZone
       fajr {
         athan
-        iqamah
+        iqamahAfter
         __typename
       }
       thuhr {
         athan
-        iqamah
+        iqamahAfter
         __typename
       }
       asr {
         athan
-        iqamah
+        iqamahAfter
         __typename
       }
       maghrib {
         athan
-        iqamah
+        iqamahAfter
         __typename
       }
       isha {
         athan
-        iqamah
+        iqamahAfter
         __typename
       }
       jummah {
         athan
-        iqamah
+        iqamahAfter
         __typename
       }
       tahajjud {

@@ -434,16 +434,22 @@ class Mosque extends amplify_core.Model {
       _latitude = (json['latitude'] as num?)?.toDouble(),
       _longitude = (json['longitude'] as num?)?.toDouble(),
       _hours = json['hours'] != null
-        ? Hours.fromJson(new Map<String, dynamic>.from(json['hours']))
+          ? json['hours']['serializedData'] != null
+              ? Hours.fromJson(new Map<String, dynamic>.from(json['hours']['serializedData']))
+              : Hours.fromJson(new Map<String, dynamic>.from(json['hours']))
         : null,
       _phone = json['phone'],
       _email = json['email'],
       _website = json['website'],
       _socialMedia = json['socialMedia'] != null
-        ? SocialMedia.fromJson(new Map<String, dynamic>.from(json['socialMedia']))
+          ? json['socialMedia']['serializedData'] != null
+              ? SocialMedia.fromJson(new Map<String, dynamic>.from(json['socialMedia']['serializedData']))
+              : SocialMedia.fromJson(new Map<String, dynamic>.from(json['socialMedia']))
         : null,
       _prayerTimes = json['prayerTimes'] != null
-        ? PrayerTimes.fromJson(new Map<String, dynamic>.from(json['prayerTimes']))
+          ? json['prayerTimes']['serializedData'] != null
+              ? PrayerTimes.fromJson(new Map<String, dynamic>.from(json['prayerTimes']['serializedData']))
+              : PrayerTimes.fromJson(new Map<String, dynamic>.from(json['prayerTimes']))
         : null,
       _isVerified = json['isVerified'],
       _creator = json['creator'] != null

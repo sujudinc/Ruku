@@ -144,25 +144,39 @@ class Hours {
   
   Hours.fromJson(Map<String, dynamic> json)  
     : _monday = json['monday'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['monday']))
+          ? json['monday']['serializedData'] != null
+              ? Day.fromJson(new Map<String, dynamic>.from(json['monday']['serializedData']))
+              : Day.fromJson(new Map<String, dynamic>.from(json['monday']))
         : null,
       _tuesday = json['tuesday'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['tuesday']))
+          ? json['tuesday']['serializedData'] != null
+              ? Day.fromJson(new Map<String, dynamic>.from(json['tuesday']['serializedData']))
+              : Day.fromJson(new Map<String, dynamic>.from(json['tuesday']))
         : null,
       _wednesday = json['wednesday'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['wednesday']))
+          ? json['wednesday']['serializedData'] != null
+              ? Day.fromJson(new Map<String, dynamic>.from(json['wednesday']['serializedData']))
+              : Day.fromJson(new Map<String, dynamic>.from(json['wednesday']))
         : null,
       _thursday = json['thursday'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['thursday']))
+          ? json['thursday']['serializedData'] != null
+              ? Day.fromJson(new Map<String, dynamic>.from(json['thursday']['serializedData']))
+              : Day.fromJson(new Map<String, dynamic>.from(json['thursday']))
         : null,
       _friday = json['friday'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['friday']))
+          ? json['friday']['serializedData'] != null
+              ? Day.fromJson(new Map<String, dynamic>.from(json['friday']['serializedData']))
+              : Day.fromJson(new Map<String, dynamic>.from(json['friday']))
         : null,
       _saturday = json['saturday'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['saturday']))
+          ? json['saturday']['serializedData'] != null
+              ? Day.fromJson(new Map<String, dynamic>.from(json['saturday']['serializedData']))
+              : Day.fromJson(new Map<String, dynamic>.from(json['saturday']))
         : null,
       _sunday = json['sunday'] != null
-        ? Day.fromJson(new Map<String, dynamic>.from(json['sunday']))
+          ? json['sunday']['serializedData'] != null
+              ? Day.fromJson(new Map<String, dynamic>.from(json['sunday']['serializedData']))
+              : Day.fromJson(new Map<String, dynamic>.from(json['sunday']))
         : null;
   
   Map<String, dynamic> toJson() => {

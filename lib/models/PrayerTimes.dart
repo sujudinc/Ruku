@@ -199,42 +199,56 @@ class PrayerTimes {
   PrayerTimes.fromJson(Map<String, dynamic> json)  
     : _timeZone = json['timeZone'],
       _fajr = json['fajr'] != null
-        ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['fajr']))
+          ? json['fajr']['serializedData'] != null
+              ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['fajr']['serializedData']))
+              : FardPrayer.fromJson(new Map<String, dynamic>.from(json['fajr']))
         : null,
       _thuhr = json['thuhr'] != null
-        ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['thuhr']))
+          ? json['thuhr']['serializedData'] != null
+              ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['thuhr']['serializedData']))
+              : FardPrayer.fromJson(new Map<String, dynamic>.from(json['thuhr']))
         : null,
       _asr = json['asr'] != null
-        ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['asr']))
+          ? json['asr']['serializedData'] != null
+              ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['asr']['serializedData']))
+              : FardPrayer.fromJson(new Map<String, dynamic>.from(json['asr']))
         : null,
       _maghrib = json['maghrib'] != null
-        ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['maghrib']))
+          ? json['maghrib']['serializedData'] != null
+              ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['maghrib']['serializedData']))
+              : FardPrayer.fromJson(new Map<String, dynamic>.from(json['maghrib']))
         : null,
       _isha = json['isha'] != null
-        ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['isha']))
+          ? json['isha']['serializedData'] != null
+              ? FardPrayer.fromJson(new Map<String, dynamic>.from(json['isha']['serializedData']))
+              : FardPrayer.fromJson(new Map<String, dynamic>.from(json['isha']))
         : null,
       _jummah = json['jummah'] is List
         ? (json['jummah'] as List)
           .where((e) => e != null)
-          .map((e) => FardPrayer.fromJson(new Map<String, dynamic>.from(e)))
+          .map((e) => FardPrayer.fromJson(new Map<String, dynamic>.from(e['serializedData'] ?? e)))
           .toList()
         : null,
       _tahajjud = json['tahajjud'] != null
-        ? SunnahPrayer.fromJson(new Map<String, dynamic>.from(json['tahajjud']))
+          ? json['tahajjud']['serializedData'] != null
+              ? SunnahPrayer.fromJson(new Map<String, dynamic>.from(json['tahajjud']['serializedData']))
+              : SunnahPrayer.fromJson(new Map<String, dynamic>.from(json['tahajjud']))
         : null,
       _taraweeh = json['taraweeh'] != null
-        ? SunnahPrayer.fromJson(new Map<String, dynamic>.from(json['taraweeh']))
+          ? json['taraweeh']['serializedData'] != null
+              ? SunnahPrayer.fromJson(new Map<String, dynamic>.from(json['taraweeh']['serializedData']))
+              : SunnahPrayer.fromJson(new Map<String, dynamic>.from(json['taraweeh']))
         : null,
       _eidAlAdha = json['eidAlAdha'] is List
         ? (json['eidAlAdha'] as List)
           .where((e) => e != null)
-          .map((e) => SunnahPrayer.fromJson(new Map<String, dynamic>.from(e)))
+          .map((e) => SunnahPrayer.fromJson(new Map<String, dynamic>.from(e['serializedData'] ?? e)))
           .toList()
         : null,
       _eidAlFitr = json['eidAlFitr'] is List
         ? (json['eidAlFitr'] as List)
           .where((e) => e != null)
-          .map((e) => SunnahPrayer.fromJson(new Map<String, dynamic>.from(e)))
+          .map((e) => SunnahPrayer.fromJson(new Map<String, dynamic>.from(e['serializedData'] ?? e)))
           .toList()
         : null;
   

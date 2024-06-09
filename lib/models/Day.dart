@@ -111,7 +111,7 @@ class Day {
       _operatingHours = json['operatingHours'] is List
         ? (json['operatingHours'] as List)
           .where((e) => e != null)
-          .map((e) => OperatingHours.fromJson(new Map<String, dynamic>.from(e)))
+          .map((e) => OperatingHours.fromJson(new Map<String, dynamic>.from(e['serializedData'] ?? e)))
           .toList()
         : null;
   

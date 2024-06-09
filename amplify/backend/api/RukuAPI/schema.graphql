@@ -368,7 +368,7 @@ type Day {
 
 type FardPrayer {
   athan: AWSTime!
-  iqamah: AWSTime!
+  iqamahAfter: Int!
 }
 
 type Hours {

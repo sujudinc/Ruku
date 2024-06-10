@@ -2,26 +2,65 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-import * as APITypes from "../api";
+import * as APITypes from "./api";
 type GeneratedMutation<InputType, OutputType> = string & {
   __generatedMutationInput: InputType;
   __generatedMutationOutput: OutputType;
 };
 
-export const createFundraisingCampaign = /* GraphQL */ `mutation CreateFundraisingCampaign(
-  $input: CreateFundraisingCampaignInput!
-  $condition: ModelFundraisingCampaignConditionInput
+export const createAnnouncement = /* GraphQL */ `mutation CreateAnnouncement(
+  $input: CreateAnnouncementInput!
+  $condition: ModelAnnouncementConditionInput
 ) {
-  createFundraisingCampaign(input: $input, condition: $condition) {
+  createAnnouncement(input: $input, condition: $condition) {
     id
-    title
-    description
-    featureImage
     type
-    currentAmount
-    goal
-    goalDate
-    currency
+    content
+    images
+    bookmarks {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
     creatorID
     creator {
       id
@@ -50,10 +89,6 @@ export const createFundraisingCampaign = /* GraphQL */ `mutation CreateFundraisi
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -75,10 +110,6 @@ export const createFundraisingCampaign = /* GraphQL */ `mutation CreateFundraisi
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -107,6 +138,10 @@ export const createFundraisingCampaign = /* GraphQL */ `mutation CreateFundraisi
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -157,7 +192,1750 @@ export const createFundraisingCampaign = /* GraphQL */ `mutation CreateFundraisi
         nextToken
         __typename
       }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateAnnouncementMutationVariables,
+  APITypes.CreateAnnouncementMutation
+>;
+export const deleteAnnouncement = /* GraphQL */ `mutation DeleteAnnouncement(
+  $input: DeleteAnnouncementInput!
+  $condition: ModelAnnouncementConditionInput
+) {
+  deleteAnnouncement(input: $input, condition: $condition) {
+    id
+    type
+    content
+    images
+    bookmarks {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
       prayerTimes {
+        timeZone
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteAnnouncementMutationVariables,
+  APITypes.DeleteAnnouncementMutation
+>;
+export const createBookmark = /* GraphQL */ `mutation CreateBookmark(
+  $input: CreateBookmarkInput!
+  $condition: ModelBookmarkConditionInput
+) {
+  createBookmark(input: $input, condition: $condition) {
+    id
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateBookmarkMutationVariables,
+  APITypes.CreateBookmarkMutation
+>;
+export const deleteBookmark = /* GraphQL */ `mutation DeleteBookmark(
+  $input: DeleteBookmarkInput!
+  $condition: ModelBookmarkConditionInput
+) {
+  deleteBookmark(input: $input, condition: $condition) {
+    id
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteBookmarkMutationVariables,
+  APITypes.DeleteBookmarkMutation
+>;
+export const createComment = /* GraphQL */ `mutation CreateComment(
+  $input: CreateCommentInput!
+  $condition: ModelCommentConditionInput
+) {
+  createComment(input: $input, condition: $condition) {
+    id
+    text
+    parentCommentID
+    parentComment {
+      id
+      text
+      parentCommentID
+      parentComment {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementID
+      announcement {
+        id
+        type
+        content
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    subComments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateCommentMutationVariables,
+  APITypes.CreateCommentMutation
+>;
+export const deleteComment = /* GraphQL */ `mutation DeleteComment(
+  $input: DeleteCommentInput!
+  $condition: ModelCommentConditionInput
+) {
+  deleteComment(input: $input, condition: $condition) {
+    id
+    text
+    parentCommentID
+    parentComment {
+      id
+      text
+      parentCommentID
+      parentComment {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      subComments {
+        nextToken
+        __typename
+      }
+      announcementID
+      announcement {
+        id
+        type
+        content
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    subComments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    announcementID
+    announcement {
+      id
+      type
+      content
+      images
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      bookmarks {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteCommentMutationVariables,
+  APITypes.DeleteCommentMutation
+>;
+export const createDonation = /* GraphQL */ `mutation CreateDonation(
+  $input: CreateDonationInput!
+  $condition: ModelDonationConditionInput
+) {
+  createDonation(input: $input, condition: $condition) {
+    id
+    amount
+    currency
+    isAnonymous
+    donorID
+    donor {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    fundraisingCampaignID
+    fundraisingCampaign {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateDonationMutationVariables,
+  APITypes.CreateDonationMutation
+>;
+export const deleteDonation = /* GraphQL */ `mutation DeleteDonation(
+  $input: DeleteDonationInput!
+  $condition: ModelDonationConditionInput
+) {
+  deleteDonation(input: $input, condition: $condition) {
+    id
+    amount
+    currency
+    isAnonymous
+    donorID
+    donor {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    fundraisingCampaignID
+    fundraisingCampaign {
+      id
+      title
+      description
+      featureImage
+      type
+      currentAmount
+      goal
+      goalDate
+      currency
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteDonationMutationVariables,
+  APITypes.DeleteDonationMutation
+>;
+export const createFundraisingCampaign = /* GraphQL */ `mutation CreateFundraisingCampaign(
+  $input: CreateFundraisingCampaignInput!
+  $condition: ModelFundraisingCampaignConditionInput
+) {
+  createFundraisingCampaign(input: $input, condition: $condition) {
+    id
+    title
+    description
+    featureImage
+    type
+    currentAmount
+    goal
+    goalDate
+    currency
+    creatorID
+    creator {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    mosqueID
+    mosque {
+      id
+      name
+      description
+      images
+      address
+      latitude
+      longitude
+      hours {
+        __typename
+      }
+      phone
+      email
+      website
+      socialMedia {
+        facebook
+        instagram
+        twitter
+        youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
+        __typename
+      }
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      organizationID
+      organization {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      followers {
+        nextToken
+        __typename
+      }
+      announcements {
+        nextToken
+        __typename
+      }
+      fundraisingCampaigns {
         nextToken
         __typename
       }
@@ -248,10 +2026,6 @@ export const updateFundraisingCampaign = /* GraphQL */ `mutation UpdateFundraisi
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -273,10 +2047,6 @@ export const updateFundraisingCampaign = /* GraphQL */ `mutation UpdateFundraisi
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -305,6 +2075,10 @@ export const updateFundraisingCampaign = /* GraphQL */ `mutation UpdateFundraisi
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -352,10 +2126,6 @@ export const updateFundraisingCampaign = /* GraphQL */ `mutation UpdateFundraisi
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -446,10 +2216,6 @@ export const deleteFundraisingCampaign = /* GraphQL */ `mutation DeleteFundraisi
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -471,10 +2237,6 @@ export const deleteFundraisingCampaign = /* GraphQL */ `mutation DeleteFundraisi
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -503,6 +2265,10 @@ export const deleteFundraisingCampaign = /* GraphQL */ `mutation DeleteFundraisi
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -550,10 +2316,6 @@ export const deleteFundraisingCampaign = /* GraphQL */ `mutation DeleteFundraisi
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -602,103 +2364,19 @@ export const deleteFundraisingCampaign = /* GraphQL */ `mutation DeleteFundraisi
   APITypes.DeleteFundraisingCampaignMutationVariables,
   APITypes.DeleteFundraisingCampaignMutation
 >;
-export const createPrayerTime = /* GraphQL */ `mutation CreatePrayerTime(
-  $input: CreatePrayerTimeInput!
-  $condition: ModelPrayerTimeConditionInput
+export const createLike = /* GraphQL */ `mutation CreateLike(
+  $input: CreateLikeInput!
+  $condition: ModelLikeConditionInput
 ) {
-  createPrayerTime(input: $input, condition: $condition) {
+  createLike(input: $input, condition: $condition) {
     id
-    fajr {
-      athan
-      iqamah
-      __typename
-    }
-    dhuhr {
-      athan
-      iqamah
-      __typename
-    }
-    asr {
-      athan
-      iqamah
-      __typename
-    }
-    maghrib {
-      athan
-      iqamah
-      __typename
-    }
-    isha {
-      athan
-      iqamah
-      __typename
-    }
-    jummah {
-      athan
-      iqamah
-      __typename
-    }
-    taraweeh {
-      start
-      end
-      __typename
-    }
-    eid {
-      athan
-      iqamah
-      __typename
-    }
-    startDate
-    timeZone
-    createdByUserID
-    createdByUser {
+    announcementID
+    announcement {
       id
-      selfie
-      firstName
-      lastName
-      email
-      phone
       type
-      status
-      stripeCustomerId
-      isOnline
+      content
+      images
       bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
         nextToken
         __typename
       }
@@ -706,8 +2384,46 @@ export const createPrayerTime = /* GraphQL */ `mutation CreatePrayerTime(
         nextToken
         __typename
       }
-      updatedPrayerTimes {
+      comments {
         nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
         __typename
       }
       createdAt
@@ -715,8 +2431,8 @@ export const createPrayerTime = /* GraphQL */ `mutation CreatePrayerTime(
       owner
       __typename
     }
-    updatedByUserID
-    updatedByUser {
+    creatorID
+    creator {
       id
       selfie
       firstName
@@ -743,10 +2459,6 @@ export const createPrayerTime = /* GraphQL */ `mutation CreatePrayerTime(
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -768,10 +2480,6 @@ export const createPrayerTime = /* GraphQL */ `mutation CreatePrayerTime(
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -800,6 +2508,10 @@ export const createPrayerTime = /* GraphQL */ `mutation CreatePrayerTime(
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -850,10 +2562,6 @@ export const createPrayerTime = /* GraphQL */ `mutation CreatePrayerTime(
         nextToken
         __typename
       }
-      prayerTimes {
-        nextToken
-        __typename
-      }
       bookmarks {
         nextToken
         __typename
@@ -874,112 +2582,27 @@ export const createPrayerTime = /* GraphQL */ `mutation CreatePrayerTime(
     }
     createdAt
     updatedAt
-    owners
     owner
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.CreatePrayerTimeMutationVariables,
-  APITypes.CreatePrayerTimeMutation
+  APITypes.CreateLikeMutationVariables,
+  APITypes.CreateLikeMutation
 >;
-export const updatePrayerTime = /* GraphQL */ `mutation UpdatePrayerTime(
-  $input: UpdatePrayerTimeInput!
-  $condition: ModelPrayerTimeConditionInput
+export const deleteLike = /* GraphQL */ `mutation DeleteLike(
+  $input: DeleteLikeInput!
+  $condition: ModelLikeConditionInput
 ) {
-  updatePrayerTime(input: $input, condition: $condition) {
+  deleteLike(input: $input, condition: $condition) {
     id
-    fajr {
-      athan
-      iqamah
-      __typename
-    }
-    dhuhr {
-      athan
-      iqamah
-      __typename
-    }
-    asr {
-      athan
-      iqamah
-      __typename
-    }
-    maghrib {
-      athan
-      iqamah
-      __typename
-    }
-    isha {
-      athan
-      iqamah
-      __typename
-    }
-    jummah {
-      athan
-      iqamah
-      __typename
-    }
-    taraweeh {
-      start
-      end
-      __typename
-    }
-    eid {
-      athan
-      iqamah
-      __typename
-    }
-    startDate
-    timeZone
-    createdByUserID
-    createdByUser {
+    announcementID
+    announcement {
       id
-      selfie
-      firstName
-      lastName
-      email
-      phone
       type
-      status
-      stripeCustomerId
-      isOnline
+      content
+      images
       bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
         nextToken
         __typename
       }
@@ -987,8 +2610,46 @@ export const updatePrayerTime = /* GraphQL */ `mutation UpdatePrayerTime(
         nextToken
         __typename
       }
-      updatedPrayerTimes {
+      comments {
         nextToken
+        __typename
+      }
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      mosqueID
+      mosque {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
         __typename
       }
       createdAt
@@ -996,8 +2657,8 @@ export const updatePrayerTime = /* GraphQL */ `mutation UpdatePrayerTime(
       owner
       __typename
     }
-    updatedByUserID
-    updatedByUser {
+    creatorID
+    creator {
       id
       selfie
       firstName
@@ -1024,10 +2685,6 @@ export const updatePrayerTime = /* GraphQL */ `mutation UpdatePrayerTime(
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -1049,10 +2706,6 @@ export const updatePrayerTime = /* GraphQL */ `mutation UpdatePrayerTime(
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -1081,6 +2734,10 @@ export const updatePrayerTime = /* GraphQL */ `mutation UpdatePrayerTime(
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -1131,10 +2788,6 @@ export const updatePrayerTime = /* GraphQL */ `mutation UpdatePrayerTime(
         nextToken
         __typename
       }
-      prayerTimes {
-        nextToken
-        __typename
-      }
       bookmarks {
         nextToken
         __typename
@@ -1155,295 +2808,13 @@ export const updatePrayerTime = /* GraphQL */ `mutation UpdatePrayerTime(
     }
     createdAt
     updatedAt
-    owners
     owner
     __typename
   }
 }
 ` as GeneratedMutation<
-  APITypes.UpdatePrayerTimeMutationVariables,
-  APITypes.UpdatePrayerTimeMutation
->;
-export const deletePrayerTime = /* GraphQL */ `mutation DeletePrayerTime(
-  $input: DeletePrayerTimeInput!
-  $condition: ModelPrayerTimeConditionInput
-) {
-  deletePrayerTime(input: $input, condition: $condition) {
-    id
-    fajr {
-      athan
-      iqamah
-      __typename
-    }
-    dhuhr {
-      athan
-      iqamah
-      __typename
-    }
-    asr {
-      athan
-      iqamah
-      __typename
-    }
-    maghrib {
-      athan
-      iqamah
-      __typename
-    }
-    isha {
-      athan
-      iqamah
-      __typename
-    }
-    jummah {
-      athan
-      iqamah
-      __typename
-    }
-    taraweeh {
-      start
-      end
-      __typename
-    }
-    eid {
-      athan
-      iqamah
-      __typename
-    }
-    startDate
-    timeZone
-    createdByUserID
-    createdByUser {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    updatedByUserID
-    updatedByUser {
-      id
-      selfie
-      firstName
-      lastName
-      email
-      phone
-      type
-      status
-      stripeCustomerId
-      isOnline
-      bookmarks {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAnnouncements {
-        nextToken
-        __typename
-      }
-      createdFundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdOrganizations {
-        nextToken
-        __typename
-      }
-      createdMosques {
-        nextToken
-        __typename
-      }
-      donations {
-        nextToken
-        __typename
-      }
-      mosques {
-        nextToken
-        __typename
-      }
-      organizations {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owner
-      __typename
-    }
-    mosqueID
-    mosque {
-      id
-      name
-      description
-      images
-      address
-      latitude
-      longitude
-      hours {
-        __typename
-      }
-      phone
-      email
-      website
-      socialMedia {
-        facebook
-        instagram
-        twitter
-        youtube
-        __typename
-      }
-      isVerified
-      creatorID
-      creator {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      organizationID
-      organization {
-        id
-        name
-        description
-        domain
-        logo
-        phone
-        email
-        website
-        isVerified
-        creatorID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      followers {
-        nextToken
-        __typename
-      }
-      announcements {
-        nextToken
-        __typename
-      }
-      fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
-        nextToken
-        __typename
-      }
-      bookmarks {
-        nextToken
-        __typename
-      }
-      likes {
-        nextToken
-        __typename
-      }
-      comments {
-        nextToken
-        __typename
-      }
-      createdAt
-      updatedAt
-      owners
-      owner
-      __typename
-    }
-    createdAt
-    updatedAt
-    owners
-    owner
-    __typename
-  }
-}
-` as GeneratedMutation<
-  APITypes.DeletePrayerTimeMutationVariables,
-  APITypes.DeletePrayerTimeMutation
+  APITypes.DeleteLikeMutationVariables,
+  APITypes.DeleteLikeMutation
 >;
 export const createMosque = /* GraphQL */ `mutation CreateMosque(
   $input: CreateMosqueInput!
@@ -1498,6 +2869,60 @@ export const createMosque = /* GraphQL */ `mutation CreateMosque(
       youtube
       __typename
     }
+    prayerTimes {
+      timeZone
+      fajr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      thuhr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      asr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      maghrib {
+        athan
+        iqamahAfter
+        __typename
+      }
+      isha {
+        athan
+        iqamahAfter
+        __typename
+      }
+      jummah {
+        athan
+        iqamahAfter
+        __typename
+      }
+      tahajjud {
+        start
+        end
+        __typename
+      }
+      taraweeh {
+        start
+        end
+        __typename
+      }
+      eidAlAdha {
+        start
+        end
+        __typename
+      }
+      eidAlFitr {
+        start
+        end
+        __typename
+      }
+      __typename
+    }
     isVerified
     creatorID
     creator {
@@ -1527,10 +2952,6 @@ export const createMosque = /* GraphQL */ `mutation CreateMosque(
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -1552,10 +2973,6 @@ export const createMosque = /* GraphQL */ `mutation CreateMosque(
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -1648,23 +3065,6 @@ export const createMosque = /* GraphQL */ `mutation CreateMosque(
         goalDate
         currency
         creatorID
-        mosqueID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    prayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserID
-        updatedByUserID
         mosqueID
         createdAt
         updatedAt
@@ -1783,6 +3183,60 @@ export const updateMosque = /* GraphQL */ `mutation UpdateMosque(
       youtube
       __typename
     }
+    prayerTimes {
+      timeZone
+      fajr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      thuhr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      asr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      maghrib {
+        athan
+        iqamahAfter
+        __typename
+      }
+      isha {
+        athan
+        iqamahAfter
+        __typename
+      }
+      jummah {
+        athan
+        iqamahAfter
+        __typename
+      }
+      tahajjud {
+        start
+        end
+        __typename
+      }
+      taraweeh {
+        start
+        end
+        __typename
+      }
+      eidAlAdha {
+        start
+        end
+        __typename
+      }
+      eidAlFitr {
+        start
+        end
+        __typename
+      }
+      __typename
+    }
     isVerified
     creatorID
     creator {
@@ -1812,10 +3266,6 @@ export const updateMosque = /* GraphQL */ `mutation UpdateMosque(
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -1837,10 +3287,6 @@ export const updateMosque = /* GraphQL */ `mutation UpdateMosque(
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -1933,23 +3379,6 @@ export const updateMosque = /* GraphQL */ `mutation UpdateMosque(
         goalDate
         currency
         creatorID
-        mosqueID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    prayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserID
-        updatedByUserID
         mosqueID
         createdAt
         updatedAt
@@ -2068,6 +3497,60 @@ export const deleteMosque = /* GraphQL */ `mutation DeleteMosque(
       youtube
       __typename
     }
+    prayerTimes {
+      timeZone
+      fajr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      thuhr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      asr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      maghrib {
+        athan
+        iqamahAfter
+        __typename
+      }
+      isha {
+        athan
+        iqamahAfter
+        __typename
+      }
+      jummah {
+        athan
+        iqamahAfter
+        __typename
+      }
+      tahajjud {
+        start
+        end
+        __typename
+      }
+      taraweeh {
+        start
+        end
+        __typename
+      }
+      eidAlAdha {
+        start
+        end
+        __typename
+      }
+      eidAlFitr {
+        start
+        end
+        __typename
+      }
+      __typename
+    }
     isVerified
     creatorID
     creator {
@@ -2097,10 +3580,6 @@ export const deleteMosque = /* GraphQL */ `mutation DeleteMosque(
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -2122,10 +3601,6 @@ export const deleteMosque = /* GraphQL */ `mutation DeleteMosque(
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2218,23 +3693,6 @@ export const deleteMosque = /* GraphQL */ `mutation DeleteMosque(
         goalDate
         currency
         creatorID
-        mosqueID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
-    prayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserID
-        updatedByUserID
         mosqueID
         createdAt
         updatedAt
@@ -2342,10 +3800,6 @@ export const createOrganization = /* GraphQL */ `mutation CreateOrganization(
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -2367,10 +3821,6 @@ export const createOrganization = /* GraphQL */ `mutation CreateOrganization(
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2471,10 +3921,6 @@ export const updateOrganization = /* GraphQL */ `mutation UpdateOrganization(
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -2496,10 +3942,6 @@ export const updateOrganization = /* GraphQL */ `mutation UpdateOrganization(
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2600,10 +4042,6 @@ export const deleteOrganization = /* GraphQL */ `mutation DeleteOrganization(
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -2625,10 +4063,6 @@ export const deleteOrganization = /* GraphQL */ `mutation DeleteOrganization(
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2687,6 +4121,437 @@ export const deleteOrganization = /* GraphQL */ `mutation DeleteOrganization(
   APITypes.DeleteOrganizationMutationVariables,
   APITypes.DeleteOrganizationMutation
 >;
+export const createOrganizationMember = /* GraphQL */ `mutation CreateOrganizationMember(
+  $input: CreateOrganizationMemberInput!
+  $condition: ModelOrganizationMemberConditionInput
+) {
+  createOrganizationMember(input: $input, condition: $condition) {
+    id
+    role
+    organizationID
+    organization {
+      id
+      name
+      description
+      domain
+      logo
+      phone
+      email
+      website
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    memberID
+    member {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owners
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.CreateOrganizationMemberMutationVariables,
+  APITypes.CreateOrganizationMemberMutation
+>;
+export const deleteOrganizationMember = /* GraphQL */ `mutation DeleteOrganizationMember(
+  $input: DeleteOrganizationMemberInput!
+  $condition: ModelOrganizationMemberConditionInput
+) {
+  deleteOrganizationMember(input: $input, condition: $condition) {
+    id
+    role
+    organizationID
+    organization {
+      id
+      name
+      description
+      domain
+      logo
+      phone
+      email
+      website
+      isVerified
+      creatorID
+      creator {
+        id
+        selfie
+        firstName
+        lastName
+        email
+        phone
+        type
+        status
+        stripeCustomerId
+        isOnline
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      members {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owners
+      owner
+      __typename
+    }
+    memberID
+    member {
+      id
+      selfie
+      firstName
+      lastName
+      email
+      phone
+      type
+      status
+      stripeCustomerId
+      isOnline
+      bookmarks {
+        nextToken
+        __typename
+      }
+      comments {
+        nextToken
+        __typename
+      }
+      createdAnnouncements {
+        nextToken
+        __typename
+      }
+      createdFundraisingCampaigns {
+        nextToken
+        __typename
+      }
+      createdOrganizations {
+        nextToken
+        __typename
+      }
+      createdMosques {
+        nextToken
+        __typename
+      }
+      donations {
+        nextToken
+        __typename
+      }
+      mosques {
+        nextToken
+        __typename
+      }
+      organizations {
+        nextToken
+        __typename
+      }
+      likes {
+        nextToken
+        __typename
+      }
+      createdAt
+      updatedAt
+      owner
+      __typename
+    }
+    createdAt
+    updatedAt
+    owners
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.DeleteOrganizationMemberMutationVariables,
+  APITypes.DeleteOrganizationMemberMutation
+>;
+export const updateUser = /* GraphQL */ `mutation UpdateUser(
+  $input: UpdateUserInput!
+  $condition: ModelUserConditionInput
+) {
+  updateUser(input: $input, condition: $condition) {
+    id
+    selfie
+    firstName
+    lastName
+    email
+    phone
+    type
+    status
+    stripeCustomerId
+    isOnline
+    bookmarks {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    comments {
+      items {
+        id
+        text
+        parentCommentID
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAnnouncements {
+      items {
+        id
+        type
+        content
+        images
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdFundraisingCampaigns {
+      items {
+        id
+        title
+        description
+        featureImage
+        type
+        currentAmount
+        goal
+        goalDate
+        currency
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdOrganizations {
+      items {
+        id
+        name
+        description
+        domain
+        logo
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdMosques {
+      items {
+        id
+        name
+        description
+        images
+        address
+        latitude
+        longitude
+        phone
+        email
+        website
+        isVerified
+        creatorID
+        organizationID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    donations {
+      items {
+        id
+        amount
+        currency
+        isAnonymous
+        donorID
+        fundraisingCampaignID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    mosques {
+      items {
+        id
+        mosqueId
+        userId
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    organizations {
+      items {
+        id
+        role
+        organizationID
+        memberID
+        createdAt
+        updatedAt
+        owners
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    likes {
+      items {
+        id
+        announcementID
+        creatorID
+        mosqueID
+        createdAt
+        updatedAt
+        owner
+        __typename
+      }
+      nextToken
+      __typename
+    }
+    createdAt
+    updatedAt
+    owner
+    __typename
+  }
+}
+` as GeneratedMutation<
+  APITypes.UpdateUserMutationVariables,
+  APITypes.UpdateUserMutation
+>;
 export const createMosqueFollower = /* GraphQL */ `mutation CreateMosqueFollower(
   $input: CreateMosqueFollowerInput!
   $condition: ModelMosqueFollowerConditionInput
@@ -2714,6 +4579,10 @@ export const createMosqueFollower = /* GraphQL */ `mutation CreateMosqueFollower
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -2764,10 +4633,6 @@ export const createMosqueFollower = /* GraphQL */ `mutation CreateMosqueFollower
         nextToken
         __typename
       }
-      prayerTimes {
-        nextToken
-        __typename
-      }
       bookmarks {
         nextToken
         __typename
@@ -2813,10 +4678,6 @@ export const createMosqueFollower = /* GraphQL */ `mutation CreateMosqueFollower
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -2838,10 +4699,6 @@ export const createMosqueFollower = /* GraphQL */ `mutation CreateMosqueFollower
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2890,6 +4747,10 @@ export const updateMosqueFollower = /* GraphQL */ `mutation UpdateMosqueFollower
         youtube
         __typename
       }
+      prayerTimes {
+        timeZone
+        __typename
+      }
       isVerified
       creatorID
       creator {
@@ -2938,10 +4799,6 @@ export const updateMosqueFollower = /* GraphQL */ `mutation UpdateMosqueFollower
         nextToken
         __typename
       }
-      prayerTimes {
-        nextToken
-        __typename
-      }
       bookmarks {
         nextToken
         __typename
@@ -2987,10 +4844,6 @@ export const updateMosqueFollower = /* GraphQL */ `mutation UpdateMosqueFollower
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -3012,10 +4865,6 @@ export const updateMosqueFollower = /* GraphQL */ `mutation UpdateMosqueFollower
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -3064,6 +4913,10 @@ export const deleteMosqueFollower = /* GraphQL */ `mutation DeleteMosqueFollower
         youtube
         __typename
       }
+      prayerTimes {
+        timeZone
+        __typename
+      }
       isVerified
       creatorID
       creator {
@@ -3112,10 +4965,6 @@ export const deleteMosqueFollower = /* GraphQL */ `mutation DeleteMosqueFollower
         nextToken
         __typename
       }
-      prayerTimes {
-        nextToken
-        __typename
-      }
       bookmarks {
         nextToken
         __typename
@@ -3161,10 +5010,6 @@ export const deleteMosqueFollower = /* GraphQL */ `mutation DeleteMosqueFollower
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -3186,10 +5031,6 @@ export const deleteMosqueFollower = /* GraphQL */ `mutation DeleteMosqueFollower
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }

@@ -2,7 +2,7 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-import * as APITypes from "../api";
+import * as APITypes from "./api";
 type GeneratedQuery<InputType, OutputType> = string & {
   __generatedQueryInput: InputType;
   __generatedQueryOutput: OutputType;
@@ -86,10 +86,6 @@ export const getAnnouncement = /* GraphQL */ `query GetAnnouncement($id: ID!) {
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -111,10 +107,6 @@ export const getAnnouncement = /* GraphQL */ `query GetAnnouncement($id: ID!) {
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -143,6 +135,10 @@ export const getAnnouncement = /* GraphQL */ `query GetAnnouncement($id: ID!) {
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -190,10 +186,6 @@ export const getAnnouncement = /* GraphQL */ `query GetAnnouncement($id: ID!) {
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -1270,10 +1262,6 @@ export const getFundraisingCampaign = /* GraphQL */ `query GetFundraisingCampaig
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -1295,10 +1283,6 @@ export const getFundraisingCampaign = /* GraphQL */ `query GetFundraisingCampaig
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -1327,6 +1311,10 @@ export const getFundraisingCampaign = /* GraphQL */ `query GetFundraisingCampaig
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -1374,10 +1362,6 @@ export const getFundraisingCampaign = /* GraphQL */ `query GetFundraisingCampaig
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -1902,387 +1886,6 @@ export const likesByMosqueID = /* GraphQL */ `query LikesByMosqueID(
   APITypes.LikesByMosqueIDQueryVariables,
   APITypes.LikesByMosqueIDQuery
 >;
-export const prayerTimesByCreatedByUserID = /* GraphQL */ `query PrayerTimesByCreatedByUserID(
-  $createdByUserID: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelPrayerTimeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  prayerTimesByCreatedByUserID(
-    createdByUserID: $createdByUserID
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      fajr {
-        athan
-        iqamah
-        __typename
-      }
-      dhuhr {
-        athan
-        iqamah
-        __typename
-      }
-      asr {
-        athan
-        iqamah
-        __typename
-      }
-      maghrib {
-        athan
-        iqamah
-        __typename
-      }
-      isha {
-        athan
-        iqamah
-        __typename
-      }
-      jummah {
-        athan
-        iqamah
-        __typename
-      }
-      taraweeh {
-        start
-        end
-        __typename
-      }
-      eid {
-        athan
-        iqamah
-        __typename
-      }
-      startDate
-      timeZone
-      createdByUserID
-      createdByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      updatedByUserID
-      updatedByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueID
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        isVerified
-        creatorID
-        organizationID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      owners
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-` as GeneratedQuery<
-  APITypes.PrayerTimesByCreatedByUserIDQueryVariables,
-  APITypes.PrayerTimesByCreatedByUserIDQuery
->;
-export const prayerTimesByUpdatedByUserID = /* GraphQL */ `query PrayerTimesByUpdatedByUserID(
-  $updatedByUserID: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelPrayerTimeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  prayerTimesByUpdatedByUserID(
-    updatedByUserID: $updatedByUserID
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      fajr {
-        athan
-        iqamah
-        __typename
-      }
-      dhuhr {
-        athan
-        iqamah
-        __typename
-      }
-      asr {
-        athan
-        iqamah
-        __typename
-      }
-      maghrib {
-        athan
-        iqamah
-        __typename
-      }
-      isha {
-        athan
-        iqamah
-        __typename
-      }
-      jummah {
-        athan
-        iqamah
-        __typename
-      }
-      taraweeh {
-        start
-        end
-        __typename
-      }
-      eid {
-        athan
-        iqamah
-        __typename
-      }
-      startDate
-      timeZone
-      createdByUserID
-      createdByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      updatedByUserID
-      updatedByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueID
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        isVerified
-        creatorID
-        organizationID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      owners
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-` as GeneratedQuery<
-  APITypes.PrayerTimesByUpdatedByUserIDQueryVariables,
-  APITypes.PrayerTimesByUpdatedByUserIDQuery
->;
-export const prayerTimesByMosqueID = /* GraphQL */ `query PrayerTimesByMosqueID(
-  $mosqueID: ID!
-  $sortDirection: ModelSortDirection
-  $filter: ModelPrayerTimeFilterInput
-  $limit: Int
-  $nextToken: String
-) {
-  prayerTimesByMosqueID(
-    mosqueID: $mosqueID
-    sortDirection: $sortDirection
-    filter: $filter
-    limit: $limit
-    nextToken: $nextToken
-  ) {
-    items {
-      id
-      fajr {
-        athan
-        iqamah
-        __typename
-      }
-      dhuhr {
-        athan
-        iqamah
-        __typename
-      }
-      asr {
-        athan
-        iqamah
-        __typename
-      }
-      maghrib {
-        athan
-        iqamah
-        __typename
-      }
-      isha {
-        athan
-        iqamah
-        __typename
-      }
-      jummah {
-        athan
-        iqamah
-        __typename
-      }
-      taraweeh {
-        start
-        end
-        __typename
-      }
-      eid {
-        athan
-        iqamah
-        __typename
-      }
-      startDate
-      timeZone
-      createdByUserID
-      createdByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      updatedByUserID
-      updatedByUser {
-        id
-        selfie
-        firstName
-        lastName
-        email
-        phone
-        type
-        status
-        stripeCustomerId
-        isOnline
-        createdAt
-        updatedAt
-        owner
-        __typename
-      }
-      mosqueID
-      mosque {
-        id
-        name
-        description
-        images
-        address
-        latitude
-        longitude
-        phone
-        email
-        website
-        isVerified
-        creatorID
-        organizationID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      createdAt
-      updatedAt
-      owners
-      owner
-      __typename
-    }
-    nextToken
-    __typename
-  }
-}
-` as GeneratedQuery<
-  APITypes.PrayerTimesByMosqueIDQueryVariables,
-  APITypes.PrayerTimesByMosqueIDQuery
->;
 export const getMosque = /* GraphQL */ `query GetMosque($id: ID!) {
   getMosque(id: $id) {
     id
@@ -2333,6 +1936,60 @@ export const getMosque = /* GraphQL */ `query GetMosque($id: ID!) {
       youtube
       __typename
     }
+    prayerTimes {
+      timeZone
+      fajr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      thuhr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      asr {
+        athan
+        iqamahAfter
+        __typename
+      }
+      maghrib {
+        athan
+        iqamahAfter
+        __typename
+      }
+      isha {
+        athan
+        iqamahAfter
+        __typename
+      }
+      jummah {
+        athan
+        iqamahAfter
+        __typename
+      }
+      tahajjud {
+        start
+        end
+        __typename
+      }
+      taraweeh {
+        start
+        end
+        __typename
+      }
+      eidAlAdha {
+        start
+        end
+        __typename
+      }
+      eidAlFitr {
+        start
+        end
+        __typename
+      }
+      __typename
+    }
     isVerified
     creatorID
     creator {
@@ -2362,10 +2019,6 @@ export const getMosque = /* GraphQL */ `query GetMosque($id: ID!) {
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -2387,10 +2040,6 @@ export const getMosque = /* GraphQL */ `query GetMosque($id: ID!) {
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -2493,23 +2142,6 @@ export const getMosque = /* GraphQL */ `query GetMosque($id: ID!) {
       nextToken
       __typename
     }
-    prayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserID
-        updatedByUserID
-        mosqueID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
     bookmarks {
       items {
         id
@@ -2589,6 +2221,10 @@ export const listMosques = /* GraphQL */ `query ListMosques(
         youtube
         __typename
       }
+      prayerTimes {
+        timeZone
+        __typename
+      }
       isVerified
       creatorID
       creator {
@@ -2634,10 +2270,6 @@ export const listMosques = /* GraphQL */ `query ListMosques(
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -2702,6 +2334,10 @@ export const mosquesByCreatorID = /* GraphQL */ `query MosquesByCreatorID(
         youtube
         __typename
       }
+      prayerTimes {
+        timeZone
+        __typename
+      }
       isVerified
       creatorID
       creator {
@@ -2747,10 +2383,6 @@ export const mosquesByCreatorID = /* GraphQL */ `query MosquesByCreatorID(
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -2815,6 +2447,10 @@ export const mosquesByOrganizationID = /* GraphQL */ `query MosquesByOrganizatio
         youtube
         __typename
       }
+      prayerTimes {
+        timeZone
+        __typename
+      }
       isVerified
       creatorID
       creator {
@@ -2860,10 +2496,6 @@ export const mosquesByOrganizationID = /* GraphQL */ `query MosquesByOrganizatio
         __typename
       }
       fundraisingCampaigns {
-        nextToken
-        __typename
-      }
-      prayerTimes {
         nextToken
         __typename
       }
@@ -2932,10 +2564,6 @@ export const getOrganization = /* GraphQL */ `query GetOrganization($id: ID!) {
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -2957,10 +2585,6 @@ export const getOrganization = /* GraphQL */ `query GetOrganization($id: ID!) {
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }
@@ -3349,23 +2973,6 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    createdPrayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserID
-        updatedByUserID
-        mosqueID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
     createdOrganizations {
       items {
         id
@@ -3470,23 +3077,6 @@ export const getUser = /* GraphQL */ `query GetUser($id: ID!) {
       nextToken
       __typename
     }
-    updatedPrayerTimes {
-      items {
-        id
-        startDate
-        timeZone
-        createdByUserID
-        updatedByUserID
-        mosqueID
-        createdAt
-        updatedAt
-        owners
-        owner
-        __typename
-      }
-      nextToken
-      __typename
-    }
     createdAt
     updatedAt
     owner
@@ -3518,6 +3108,10 @@ export const getMosqueFollower = /* GraphQL */ `query GetMosqueFollower($id: ID!
         instagram
         twitter
         youtube
+        __typename
+      }
+      prayerTimes {
+        timeZone
         __typename
       }
       isVerified
@@ -3568,10 +3162,6 @@ export const getMosqueFollower = /* GraphQL */ `query GetMosqueFollower($id: ID!
         nextToken
         __typename
       }
-      prayerTimes {
-        nextToken
-        __typename
-      }
       bookmarks {
         nextToken
         __typename
@@ -3617,10 +3207,6 @@ export const getMosqueFollower = /* GraphQL */ `query GetMosqueFollower($id: ID!
         nextToken
         __typename
       }
-      createdPrayerTimes {
-        nextToken
-        __typename
-      }
       createdOrganizations {
         nextToken
         __typename
@@ -3642,10 +3228,6 @@ export const getMosqueFollower = /* GraphQL */ `query GetMosqueFollower($id: ID!
         __typename
       }
       likes {
-        nextToken
-        __typename
-      }
-      updatedPrayerTimes {
         nextToken
         __typename
       }

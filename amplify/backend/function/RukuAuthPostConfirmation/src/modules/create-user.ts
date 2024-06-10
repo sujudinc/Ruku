@@ -34,8 +34,10 @@ export default async (event: Event) => {
 		phone: null,
 		type: userType as API.UserType,
 		status: API.UserStatus.ACTIVE,
-		createdAt: now,
+		isOnline: false,
+    createdAt: now,
 		updatedAt: now,
+    owner: `${event.request.userAttributes.sub} :: ${event.userName}`
 	}
 
 	await new DynamoDBService().createItem({

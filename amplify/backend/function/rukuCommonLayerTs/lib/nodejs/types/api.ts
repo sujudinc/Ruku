@@ -2,56 +2,42 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateFundraisingCampaignInput = {
+export type CreateAnnouncementInput = {
   id?: string | null,
-  title: string,
-  description?: string | null,
-  featureImage?: string | null,
-  type: FundraisingCampaignType,
-  currentAmount: number,
-  goal: number,
-  goalDate: string,
-  currency: string,
+  type: AnnouncementType,
+  content: string,
+  images?: Array< string | null > | null,
   creatorID: string,
   mosqueID: string,
   createdAt?: string | null,
   updatedAt?: string | null,
-  owners?: Array< string | null > | null,
+  owner?: string | null,
 };
 
-export enum FundraisingCampaignType {
-  BILL = "BILL",
-  COMMUNITY = "COMMUNITY",
-  EDUCATION = "EDUCATION",
-  EMERGENCY_RELIEF = "EMERGENCY_RELIEF",
-  ENVIRONMENT = "ENVIRONMENT",
-  FUNERAL = "FUNERAL",
-  HEALTH = "HEALTH",
-  MOSQUE = "MOSQUE",
-  ORPHANS = "ORPHANS",
-  OTHER = "OTHER",
-  REFUGEES = "REFUGEES",
+export enum AnnouncementType {
+  AUDIO = "AUDIO",
+  POLL = "POLL",
+  TEXT = "TEXT",
 }
 
 
-export type ModelFundraisingCampaignConditionInput = {
-  title?: ModelStringInput | null,
-  description?: ModelStringInput | null,
-  featureImage?: ModelStringInput | null,
-  type?: ModelFundraisingCampaignTypeInput | null,
-  currentAmount?: ModelFloatInput | null,
-  goal?: ModelFloatInput | null,
-  goalDate?: ModelStringInput | null,
-  currency?: ModelStringInput | null,
+export type ModelAnnouncementConditionInput = {
+  type?: ModelAnnouncementTypeInput | null,
+  content?: ModelStringInput | null,
+  images?: ModelStringInput | null,
   creatorID?: ModelIDInput | null,
   mosqueID?: ModelIDInput | null,
   createdAt?: ModelStringInput | null,
   updatedAt?: ModelStringInput | null,
-  owners?: ModelStringInput | null,
-  and?: Array< ModelFundraisingCampaignConditionInput | null > | null,
-  or?: Array< ModelFundraisingCampaignConditionInput | null > | null,
-  not?: ModelFundraisingCampaignConditionInput | null,
   owner?: ModelStringInput | null,
+  and?: Array< ModelAnnouncementConditionInput | null > | null,
+  or?: Array< ModelAnnouncementConditionInput | null > | null,
+  not?: ModelAnnouncementConditionInput | null,
+};
+
+export type ModelAnnouncementTypeInput = {
+  eq?: AnnouncementType | null,
+  ne?: AnnouncementType | null,
 };
 
 export type ModelStringInput = {
@@ -94,23 +80,6 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type ModelFundraisingCampaignTypeInput = {
-  eq?: FundraisingCampaignType | null,
-  ne?: FundraisingCampaignType | null,
-};
-
-export type ModelFloatInput = {
-  ne?: number | null,
-  eq?: number | null,
-  le?: number | null,
-  lt?: number | null,
-  ge?: number | null,
-  gt?: number | null,
-  between?: Array< number | null > | null,
-  attributeExists?: boolean | null,
-  attributeType?: ModelAttributeTypes | null,
-};
-
 export type ModelIDInput = {
   ne?: string | null,
   eq?: string | null,
@@ -127,71 +96,23 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type FundraisingCampaign = {
-  __typename: "FundraisingCampaign",
+export type Announcement = {
+  __typename: "Announcement",
   id: string,
-  title: string,
-  description?: string | null,
-  featureImage?: string | null,
-  type: FundraisingCampaignType,
-  currentAmount: number,
-  goal: number,
-  goalDate: string,
-  currency: string,
+  type: AnnouncementType,
+  content: string,
+  images?: Array< string | null > | null,
+  bookmarks?: ModelBookmarkConnection | null,
+  likes?: ModelLikeConnection | null,
+  comments?: ModelCommentConnection | null,
   creatorID: string,
   creator: User,
   mosqueID: string,
   mosque: Mosque,
-  donations?: ModelDonationConnection | null,
-  createdAt: string,
-  updatedAt: string,
-  owners?: Array< string | null > | null,
-  owner?: string | null,
-};
-
-export type User = {
-  __typename: "User",
-  id: string,
-  selfie?: string | null,
-  firstName: string,
-  lastName: string,
-  email: string,
-  phone?: string | null,
-  type: UserType,
-  status: UserStatus,
-  stripeCustomerId?: string | null,
-  isOnline?: boolean | null,
-  bookmarks?: ModelBookmarkConnection | null,
-  comments?: ModelCommentConnection | null,
-  createdAnnouncements?: ModelAnnouncementConnection | null,
-  createdFundraisingCampaigns?: ModelFundraisingCampaignConnection | null,
-  createdPrayerTimes?: ModelPrayerTimeConnection | null,
-  createdOrganizations?: ModelOrganizationConnection | null,
-  createdMosques?: ModelMosqueConnection | null,
-  donations?: ModelDonationConnection | null,
-  mosques?: ModelMosqueFollowerConnection | null,
-  organizations?: ModelOrganizationMemberConnection | null,
-  likes?: ModelLikeConnection | null,
-  updatedPrayerTimes?: ModelPrayerTimeConnection | null,
   createdAt: string,
   updatedAt: string,
   owner?: string | null,
 };
-
-export enum UserType {
-  ADMIN = "ADMIN",
-  SUPER_ADMIN = "SUPER_ADMIN",
-  USER = "USER",
-  USER_READ_ONLY = "USER_READ_ONLY",
-}
-
-
-export enum UserStatus {
-  ACTIVE = "ACTIVE",
-  BLOCKED = "BLOCKED",
-  DEACTIVATED = "DEACTIVATED",
-}
-
 
 export type ModelBookmarkConnection = {
   __typename: "ModelBookmarkConnection",
@@ -213,40 +134,61 @@ export type Bookmark = {
   owner?: string | null,
 };
 
-export type Announcement = {
-  __typename: "Announcement",
+export type User = {
+  __typename: "User",
   id: string,
-  type: AnnouncementType,
-  content: string,
-  images?: Array< string | null > | null,
+  selfie?: string | null,
+  firstName: string,
+  lastName: string,
+  email: string,
+  phone?: string | null,
+  type: UserType,
+  status: UserStatus,
+  stripeCustomerId?: string | null,
+  isOnline?: boolean | null,
   bookmarks?: ModelBookmarkConnection | null,
-  likes?: ModelLikeConnection | null,
   comments?: ModelCommentConnection | null,
-  creatorID: string,
-  creator: User,
-  mosqueID: string,
-  mosque: Mosque,
+  createdAnnouncements?: ModelAnnouncementConnection | null,
+  createdFundraisingCampaigns?: ModelFundraisingCampaignConnection | null,
+  createdOrganizations?: ModelOrganizationConnection | null,
+  createdMosques?: ModelMosqueConnection | null,
+  donations?: ModelDonationConnection | null,
+  mosques?: ModelMosqueFollowerConnection | null,
+  organizations?: ModelOrganizationMemberConnection | null,
+  likes?: ModelLikeConnection | null,
   createdAt: string,
   updatedAt: string,
   owner?: string | null,
 };
 
-export enum AnnouncementType {
-  AUDIO = "AUDIO",
-  POLL = "POLL",
-  TEXT = "TEXT",
+export enum UserType {
+  ADMIN = "ADMIN",
+  SUPER_ADMIN = "SUPER_ADMIN",
+  USER = "USER",
+  USER_READ_ONLY = "USER_READ_ONLY",
 }
 
 
-export type ModelLikeConnection = {
-  __typename: "ModelLikeConnection",
-  items:  Array<Like | null >,
+export enum UserStatus {
+  ACTIVE = "ACTIVE",
+  BLOCKED = "BLOCKED",
+  DEACTIVATED = "DEACTIVATED",
+}
+
+
+export type ModelCommentConnection = {
+  __typename: "ModelCommentConnection",
+  items:  Array<Comment | null >,
   nextToken?: string | null,
 };
 
-export type Like = {
-  __typename: "Like",
+export type Comment = {
+  __typename: "Comment",
   id: string,
+  text: string,
+  parentCommentID?: string | null,
+  parentComment?: Comment | null,
+  subComments?: ModelCommentConnection | null,
   announcementID: string,
   announcement: Announcement,
   creatorID: string,
@@ -272,7 +214,8 @@ export type Mosque = {
   email?: string | null,
   website?: string | null,
   socialMedia?: SocialMedia | null,
-  isVerified: boolean,
+  prayerTimes?: PrayerTimes | null,
+  isVerified?: boolean | null,
   creatorID: string,
   creator: User,
   organizationID?: string | null,
@@ -280,7 +223,6 @@ export type Mosque = {
   followers?: ModelMosqueFollowerConnection | null,
   announcements?: ModelAnnouncementConnection | null,
   fundraisingCampaigns?: ModelFundraisingCampaignConnection | null,
-  prayerTimes?: ModelPrayerTimeConnection | null,
   bookmarks?: ModelBookmarkConnection | null,
   likes?: ModelLikeConnection | null,
   comments?: ModelCommentConnection | null,
@@ -330,6 +272,33 @@ export type SocialMedia = {
   instagram?: string | null,
   twitter?: string | null,
   youtube?: string | null,
+};
+
+export type PrayerTimes = {
+  __typename: "PrayerTimes",
+  timeZone: string,
+  fajr?: FardPrayer | null,
+  thuhr?: FardPrayer | null,
+  asr?: FardPrayer | null,
+  maghrib?: FardPrayer | null,
+  isha?: FardPrayer | null,
+  jummah?:  Array<FardPrayer > | null,
+  tahajjud?: SunnahPrayer | null,
+  taraweeh?: SunnahPrayer | null,
+  eidAlAdha?:  Array<SunnahPrayer > | null,
+  eidAlFitr?:  Array<SunnahPrayer > | null,
+};
+
+export type FardPrayer = {
+  __typename: "FardPrayer",
+  athan: string,
+  iqamahAfter: number,
+};
+
+export type SunnahPrayer = {
+  __typename: "SunnahPrayer",
+  start: string,
+  end?: string | null,
 };
 
 export type Organization = {
@@ -416,78 +385,42 @@ export type ModelFundraisingCampaignConnection = {
   nextToken?: string | null,
 };
 
-export type ModelPrayerTimeConnection = {
-  __typename: "ModelPrayerTimeConnection",
-  items:  Array<PrayerTime | null >,
-  nextToken?: string | null,
-};
-
-export type PrayerTime = {
-  __typename: "PrayerTime",
+export type FundraisingCampaign = {
+  __typename: "FundraisingCampaign",
   id: string,
-  fajr: FardPrayer,
-  dhuhr: FardPrayer,
-  asr: FardPrayer,
-  maghrib: FardPrayer,
-  isha: FardPrayer,
-  jummah:  Array<FardPrayer | null >,
-  taraweeh?: SunnahPrayer | null,
-  eid?:  Array<FardPrayer | null > | null,
-  startDate: string,
-  timeZone: string,
-  createdByUserID: string,
-  createdByUser: User,
-  updatedByUserID: string,
-  updatedByUser: User,
+  title: string,
+  description?: string | null,
+  featureImage?: string | null,
+  type: FundraisingCampaignType,
+  currentAmount: number,
+  goal: number,
+  goalDate: string,
+  currency: string,
+  creatorID: string,
+  creator: User,
   mosqueID: string,
   mosque: Mosque,
+  donations?: ModelDonationConnection | null,
   createdAt: string,
   updatedAt: string,
   owners?: Array< string | null > | null,
   owner?: string | null,
 };
 
-export type FardPrayer = {
-  __typename: "FardPrayer",
-  athan: string,
-  iqamah: string,
-};
+export enum FundraisingCampaignType {
+  BILL = "BILL",
+  COMMUNITY = "COMMUNITY",
+  EDUCATION = "EDUCATION",
+  EMERGENCY_RELIEF = "EMERGENCY_RELIEF",
+  ENVIRONMENT = "ENVIRONMENT",
+  FUNERAL = "FUNERAL",
+  HEALTH = "HEALTH",
+  MOSQUE = "MOSQUE",
+  ORPHANS = "ORPHANS",
+  OTHER = "OTHER",
+  REFUGEES = "REFUGEES",
+}
 
-export type SunnahPrayer = {
-  __typename: "SunnahPrayer",
-  start: string,
-  end?: string | null,
-};
-
-export type ModelCommentConnection = {
-  __typename: "ModelCommentConnection",
-  items:  Array<Comment | null >,
-  nextToken?: string | null,
-};
-
-export type Comment = {
-  __typename: "Comment",
-  id: string,
-  text: string,
-  parentCommentID?: string | null,
-  parentComment?: Comment | null,
-  subComments?: ModelCommentConnection | null,
-  announcementID: string,
-  announcement: Announcement,
-  creatorID: string,
-  creator: User,
-  mosqueID: string,
-  mosque: Mosque,
-  createdAt: string,
-  updatedAt: string,
-  owner?: string | null,
-};
-
-export type ModelOrganizationConnection = {
-  __typename: "ModelOrganizationConnection",
-  items:  Array<Organization | null >,
-  nextToken?: string | null,
-};
 
 export type ModelDonationConnection = {
   __typename: "ModelDonationConnection",
@@ -508,6 +441,183 @@ export type Donation = {
   createdAt: string,
   updatedAt: string,
   owner?: string | null,
+};
+
+export type ModelLikeConnection = {
+  __typename: "ModelLikeConnection",
+  items:  Array<Like | null >,
+  nextToken?: string | null,
+};
+
+export type Like = {
+  __typename: "Like",
+  id: string,
+  announcementID: string,
+  announcement: Announcement,
+  creatorID: string,
+  creator: User,
+  mosqueID: string,
+  mosque: Mosque,
+  createdAt: string,
+  updatedAt: string,
+  owner?: string | null,
+};
+
+export type ModelOrganizationConnection = {
+  __typename: "ModelOrganizationConnection",
+  items:  Array<Organization | null >,
+  nextToken?: string | null,
+};
+
+export type DeleteAnnouncementInput = {
+  id: string,
+};
+
+export type CreateBookmarkInput = {
+  id?: string | null,
+  announcementID: string,
+  creatorID: string,
+  mosqueID: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  owner?: string | null,
+};
+
+export type ModelBookmarkConditionInput = {
+  announcementID?: ModelIDInput | null,
+  creatorID?: ModelIDInput | null,
+  mosqueID?: ModelIDInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  owner?: ModelStringInput | null,
+  and?: Array< ModelBookmarkConditionInput | null > | null,
+  or?: Array< ModelBookmarkConditionInput | null > | null,
+  not?: ModelBookmarkConditionInput | null,
+};
+
+export type DeleteBookmarkInput = {
+  id: string,
+};
+
+export type CreateCommentInput = {
+  id?: string | null,
+  text: string,
+  parentCommentID?: string | null,
+  announcementID: string,
+  creatorID: string,
+  mosqueID: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  owner?: string | null,
+};
+
+export type ModelCommentConditionInput = {
+  text?: ModelStringInput | null,
+  parentCommentID?: ModelIDInput | null,
+  announcementID?: ModelIDInput | null,
+  creatorID?: ModelIDInput | null,
+  mosqueID?: ModelIDInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  owner?: ModelStringInput | null,
+  and?: Array< ModelCommentConditionInput | null > | null,
+  or?: Array< ModelCommentConditionInput | null > | null,
+  not?: ModelCommentConditionInput | null,
+};
+
+export type DeleteCommentInput = {
+  id: string,
+};
+
+export type CreateDonationInput = {
+  id?: string | null,
+  amount: number,
+  currency: string,
+  isAnonymous: boolean,
+  donorID: string,
+  fundraisingCampaignID: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  owner?: string | null,
+};
+
+export type ModelDonationConditionInput = {
+  amount?: ModelFloatInput | null,
+  currency?: ModelStringInput | null,
+  isAnonymous?: ModelBooleanInput | null,
+  donorID?: ModelIDInput | null,
+  fundraisingCampaignID?: ModelIDInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  owner?: ModelStringInput | null,
+  and?: Array< ModelDonationConditionInput | null > | null,
+  or?: Array< ModelDonationConditionInput | null > | null,
+  not?: ModelDonationConditionInput | null,
+};
+
+export type ModelFloatInput = {
+  ne?: number | null,
+  eq?: number | null,
+  le?: number | null,
+  lt?: number | null,
+  ge?: number | null,
+  gt?: number | null,
+  between?: Array< number | null > | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
+export type ModelBooleanInput = {
+  ne?: boolean | null,
+  eq?: boolean | null,
+  attributeExists?: boolean | null,
+  attributeType?: ModelAttributeTypes | null,
+};
+
+export type DeleteDonationInput = {
+  id: string,
+};
+
+export type CreateFundraisingCampaignInput = {
+  id?: string | null,
+  title: string,
+  description?: string | null,
+  featureImage?: string | null,
+  type: FundraisingCampaignType,
+  currentAmount: number,
+  goal: number,
+  goalDate: string,
+  currency: string,
+  creatorID: string,
+  mosqueID: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  owners?: Array< string | null > | null,
+};
+
+export type ModelFundraisingCampaignConditionInput = {
+  title?: ModelStringInput | null,
+  description?: ModelStringInput | null,
+  featureImage?: ModelStringInput | null,
+  type?: ModelFundraisingCampaignTypeInput | null,
+  currentAmount?: ModelFloatInput | null,
+  goal?: ModelFloatInput | null,
+  goalDate?: ModelStringInput | null,
+  currency?: ModelStringInput | null,
+  creatorID?: ModelIDInput | null,
+  mosqueID?: ModelIDInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  owners?: ModelStringInput | null,
+  and?: Array< ModelFundraisingCampaignConditionInput | null > | null,
+  or?: Array< ModelFundraisingCampaignConditionInput | null > | null,
+  not?: ModelFundraisingCampaignConditionInput | null,
+  owner?: ModelStringInput | null,
+};
+
+export type ModelFundraisingCampaignTypeInput = {
+  eq?: FundraisingCampaignType | null,
+  ne?: FundraisingCampaignType | null,
 };
 
 export type UpdateFundraisingCampaignInput = {
@@ -531,72 +641,29 @@ export type DeleteFundraisingCampaignInput = {
   id: string,
 };
 
-export type CreatePrayerTimeInput = {
+export type CreateLikeInput = {
   id?: string | null,
-  fajr: FardPrayerInput,
-  dhuhr: FardPrayerInput,
-  asr: FardPrayerInput,
-  maghrib: FardPrayerInput,
-  isha: FardPrayerInput,
-  jummah: Array< FardPrayerInput | null >,
-  taraweeh?: SunnahPrayerInput | null,
-  eid?: Array< FardPrayerInput | null > | null,
-  startDate: string,
-  timeZone: string,
-  createdByUserID: string,
-  updatedByUserID: string,
+  announcementID: string,
+  creatorID: string,
   mosqueID: string,
   createdAt?: string | null,
   updatedAt?: string | null,
-  owners?: Array< string | null > | null,
+  owner?: string | null,
 };
 
-export type FardPrayerInput = {
-  athan: string,
-  iqamah: string,
-};
-
-export type SunnahPrayerInput = {
-  start: string,
-  end?: string | null,
-};
-
-export type ModelPrayerTimeConditionInput = {
-  startDate?: ModelStringInput | null,
-  timeZone?: ModelStringInput | null,
-  createdByUserID?: ModelIDInput | null,
-  updatedByUserID?: ModelIDInput | null,
+export type ModelLikeConditionInput = {
+  announcementID?: ModelIDInput | null,
+  creatorID?: ModelIDInput | null,
   mosqueID?: ModelIDInput | null,
   createdAt?: ModelStringInput | null,
   updatedAt?: ModelStringInput | null,
-  owners?: ModelStringInput | null,
-  and?: Array< ModelPrayerTimeConditionInput | null > | null,
-  or?: Array< ModelPrayerTimeConditionInput | null > | null,
-  not?: ModelPrayerTimeConditionInput | null,
   owner?: ModelStringInput | null,
+  and?: Array< ModelLikeConditionInput | null > | null,
+  or?: Array< ModelLikeConditionInput | null > | null,
+  not?: ModelLikeConditionInput | null,
 };
 
-export type UpdatePrayerTimeInput = {
-  id: string,
-  fajr?: FardPrayerInput | null,
-  dhuhr?: FardPrayerInput | null,
-  asr?: FardPrayerInput | null,
-  maghrib?: FardPrayerInput | null,
-  isha?: FardPrayerInput | null,
-  jummah?: Array< FardPrayerInput | null > | null,
-  taraweeh?: SunnahPrayerInput | null,
-  eid?: Array< FardPrayerInput | null > | null,
-  startDate?: string | null,
-  timeZone?: string | null,
-  createdByUserID?: string | null,
-  updatedByUserID?: string | null,
-  mosqueID?: string | null,
-  createdAt?: string | null,
-  updatedAt?: string | null,
-  owners?: Array< string | null > | null,
-};
-
-export type DeletePrayerTimeInput = {
+export type DeleteLikeInput = {
   id: string,
 };
 
@@ -613,7 +680,8 @@ export type CreateMosqueInput = {
   email?: string | null,
   website?: string | null,
   socialMedia?: SocialMediaInput | null,
-  isVerified: boolean,
+  prayerTimes?: PrayerTimesInput | null,
+  isVerified?: boolean | null,
   creatorID: string,
   organizationID?: string | null,
   createdAt?: string | null,
@@ -648,6 +716,30 @@ export type SocialMediaInput = {
   youtube?: string | null,
 };
 
+export type PrayerTimesInput = {
+  timeZone: string,
+  fajr?: FardPrayerInput | null,
+  thuhr?: FardPrayerInput | null,
+  asr?: FardPrayerInput | null,
+  maghrib?: FardPrayerInput | null,
+  isha?: FardPrayerInput | null,
+  jummah?: Array< FardPrayerInput > | null,
+  tahajjud?: SunnahPrayerInput | null,
+  taraweeh?: SunnahPrayerInput | null,
+  eidAlAdha?: Array< SunnahPrayerInput > | null,
+  eidAlFitr?: Array< SunnahPrayerInput > | null,
+};
+
+export type FardPrayerInput = {
+  athan: string,
+  iqamahAfter: number,
+};
+
+export type SunnahPrayerInput = {
+  start: string,
+  end?: string | null,
+};
+
 export type ModelMosqueConditionInput = {
   name?: ModelStringInput | null,
   description?: ModelStringInput | null,
@@ -670,13 +762,6 @@ export type ModelMosqueConditionInput = {
   owner?: ModelStringInput | null,
 };
 
-export type ModelBooleanInput = {
-  ne?: boolean | null,
-  eq?: boolean | null,
-  attributeExists?: boolean | null,
-  attributeType?: ModelAttributeTypes | null,
-};
-
 export type UpdateMosqueInput = {
   id: string,
   name?: string | null,
@@ -690,6 +775,7 @@ export type UpdateMosqueInput = {
   email?: string | null,
   website?: string | null,
   socialMedia?: SocialMediaInput | null,
+  prayerTimes?: PrayerTimesInput | null,
   isVerified?: boolean | null,
   creatorID?: string | null,
   organizationID?: string | null,
@@ -757,6 +843,82 @@ export type DeleteOrganizationInput = {
   id: string,
 };
 
+export type CreateOrganizationMemberInput = {
+  id?: string | null,
+  role: MemberRole,
+  organizationID: string,
+  memberID: string,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  owners?: Array< string | null > | null,
+};
+
+export type ModelOrganizationMemberConditionInput = {
+  role?: ModelMemberRoleInput | null,
+  organizationID?: ModelIDInput | null,
+  memberID?: ModelIDInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  owners?: ModelStringInput | null,
+  and?: Array< ModelOrganizationMemberConditionInput | null > | null,
+  or?: Array< ModelOrganizationMemberConditionInput | null > | null,
+  not?: ModelOrganizationMemberConditionInput | null,
+  owner?: ModelStringInput | null,
+};
+
+export type ModelMemberRoleInput = {
+  eq?: MemberRole | null,
+  ne?: MemberRole | null,
+};
+
+export type DeleteOrganizationMemberInput = {
+  id: string,
+};
+
+export type UpdateUserInput = {
+  id: string,
+  selfie?: string | null,
+  firstName?: string | null,
+  lastName?: string | null,
+  email?: string | null,
+  phone?: string | null,
+  type?: UserType | null,
+  status?: UserStatus | null,
+  stripeCustomerId?: string | null,
+  isOnline?: boolean | null,
+  createdAt?: string | null,
+  updatedAt?: string | null,
+  owner?: string | null,
+};
+
+export type ModelUserConditionInput = {
+  selfie?: ModelStringInput | null,
+  firstName?: ModelStringInput | null,
+  lastName?: ModelStringInput | null,
+  email?: ModelStringInput | null,
+  phone?: ModelStringInput | null,
+  type?: ModelUserTypeInput | null,
+  status?: ModelUserStatusInput | null,
+  stripeCustomerId?: ModelStringInput | null,
+  isOnline?: ModelBooleanInput | null,
+  createdAt?: ModelStringInput | null,
+  updatedAt?: ModelStringInput | null,
+  owner?: ModelStringInput | null,
+  and?: Array< ModelUserConditionInput | null > | null,
+  or?: Array< ModelUserConditionInput | null > | null,
+  not?: ModelUserConditionInput | null,
+};
+
+export type ModelUserTypeInput = {
+  eq?: UserType | null,
+  ne?: UserType | null,
+};
+
+export type ModelUserStatusInput = {
+  eq?: UserStatus | null,
+  ne?: UserStatus | null,
+};
+
 export type CreateMosqueFollowerInput = {
   id?: string | null,
   mosqueId: string,
@@ -798,11 +960,6 @@ export type ModelAnnouncementFilterInput = {
   and?: Array< ModelAnnouncementFilterInput | null > | null,
   or?: Array< ModelAnnouncementFilterInput | null > | null,
   not?: ModelAnnouncementFilterInput | null,
-};
-
-export type ModelAnnouncementTypeInput = {
-  eq?: AnnouncementType | null,
-  ne?: AnnouncementType | null,
 };
 
 export enum ModelSortDirection {
@@ -888,22 +1045,6 @@ export type ModelLikeFilterInput = {
   not?: ModelLikeFilterInput | null,
 };
 
-export type ModelPrayerTimeFilterInput = {
-  id?: ModelIDInput | null,
-  startDate?: ModelStringInput | null,
-  timeZone?: ModelStringInput | null,
-  createdByUserID?: ModelIDInput | null,
-  updatedByUserID?: ModelIDInput | null,
-  mosqueID?: ModelIDInput | null,
-  createdAt?: ModelStringInput | null,
-  updatedAt?: ModelStringInput | null,
-  owners?: ModelStringInput | null,
-  and?: Array< ModelPrayerTimeFilterInput | null > | null,
-  or?: Array< ModelPrayerTimeFilterInput | null > | null,
-  not?: ModelPrayerTimeFilterInput | null,
-  owner?: ModelStringInput | null,
-};
-
 export type ModelMosqueFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
@@ -961,11 +1102,6 @@ export type ModelOrganizationMemberFilterInput = {
   owner?: ModelStringInput | null,
 };
 
-export type ModelMemberRoleInput = {
-  eq?: MemberRole | null,
-  ne?: MemberRole | null,
-};
-
 export type ModelMosqueFollowerFilterInput = {
   id?: ModelIDInput | null,
   mosqueId?: ModelIDInput | null,
@@ -979,23 +1115,17 @@ export type ModelMosqueFollowerFilterInput = {
   owner?: ModelStringInput | null,
 };
 
-export type ModelSubscriptionFundraisingCampaignFilterInput = {
+export type ModelSubscriptionAnnouncementFilterInput = {
   id?: ModelSubscriptionIDInput | null,
-  title?: ModelSubscriptionStringInput | null,
-  description?: ModelSubscriptionStringInput | null,
-  featureImage?: ModelSubscriptionStringInput | null,
   type?: ModelSubscriptionStringInput | null,
-  currentAmount?: ModelSubscriptionFloatInput | null,
-  goal?: ModelSubscriptionFloatInput | null,
-  goalDate?: ModelSubscriptionStringInput | null,
-  currency?: ModelSubscriptionStringInput | null,
+  content?: ModelSubscriptionStringInput | null,
+  images?: ModelSubscriptionStringInput | null,
   creatorID?: ModelSubscriptionIDInput | null,
   mosqueID?: ModelSubscriptionIDInput | null,
   createdAt?: ModelSubscriptionStringInput | null,
   updatedAt?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionFundraisingCampaignFilterInput | null > | null,
-  or?: Array< ModelSubscriptionFundraisingCampaignFilterInput | null > | null,
-  owners?: ModelStringInput | null,
+  and?: Array< ModelSubscriptionAnnouncementFilterInput | null > | null,
+  or?: Array< ModelSubscriptionAnnouncementFilterInput | null > | null,
   owner?: ModelStringInput | null,
 };
 
@@ -1029,6 +1159,20 @@ export type ModelSubscriptionStringInput = {
   notIn?: Array< string | null > | null,
 };
 
+export type ModelSubscriptionDonationFilterInput = {
+  id?: ModelSubscriptionIDInput | null,
+  amount?: ModelSubscriptionFloatInput | null,
+  currency?: ModelSubscriptionStringInput | null,
+  isAnonymous?: ModelSubscriptionBooleanInput | null,
+  donorID?: ModelSubscriptionIDInput | null,
+  fundraisingCampaignID?: ModelSubscriptionIDInput | null,
+  createdAt?: ModelSubscriptionStringInput | null,
+  updatedAt?: ModelSubscriptionStringInput | null,
+  and?: Array< ModelSubscriptionDonationFilterInput | null > | null,
+  or?: Array< ModelSubscriptionDonationFilterInput | null > | null,
+  owner?: ModelStringInput | null,
+};
+
 export type ModelSubscriptionFloatInput = {
   ne?: number | null,
   eq?: number | null,
@@ -1041,17 +1185,27 @@ export type ModelSubscriptionFloatInput = {
   notIn?: Array< number | null > | null,
 };
 
-export type ModelSubscriptionPrayerTimeFilterInput = {
+export type ModelSubscriptionBooleanInput = {
+  ne?: boolean | null,
+  eq?: boolean | null,
+};
+
+export type ModelSubscriptionFundraisingCampaignFilterInput = {
   id?: ModelSubscriptionIDInput | null,
-  startDate?: ModelSubscriptionStringInput | null,
-  timeZone?: ModelSubscriptionStringInput | null,
-  createdByUserID?: ModelSubscriptionIDInput | null,
-  updatedByUserID?: ModelSubscriptionIDInput | null,
+  title?: ModelSubscriptionStringInput | null,
+  description?: ModelSubscriptionStringInput | null,
+  featureImage?: ModelSubscriptionStringInput | null,
+  type?: ModelSubscriptionStringInput | null,
+  currentAmount?: ModelSubscriptionFloatInput | null,
+  goal?: ModelSubscriptionFloatInput | null,
+  goalDate?: ModelSubscriptionStringInput | null,
+  currency?: ModelSubscriptionStringInput | null,
+  creatorID?: ModelSubscriptionIDInput | null,
   mosqueID?: ModelSubscriptionIDInput | null,
   createdAt?: ModelSubscriptionStringInput | null,
   updatedAt?: ModelSubscriptionStringInput | null,
-  and?: Array< ModelSubscriptionPrayerTimeFilterInput | null > | null,
-  or?: Array< ModelSubscriptionPrayerTimeFilterInput | null > | null,
+  and?: Array< ModelSubscriptionFundraisingCampaignFilterInput | null > | null,
+  or?: Array< ModelSubscriptionFundraisingCampaignFilterInput | null > | null,
   owners?: ModelStringInput | null,
   owner?: ModelStringInput | null,
 };
@@ -1076,11 +1230,6 @@ export type ModelSubscriptionMosqueFilterInput = {
   or?: Array< ModelSubscriptionMosqueFilterInput | null > | null,
   owners?: ModelStringInput | null,
   owner?: ModelStringInput | null,
-};
-
-export type ModelSubscriptionBooleanInput = {
-  ne?: boolean | null,
-  eq?: boolean | null,
 };
 
 export type ModelSubscriptionOrganizationFilterInput = {
@@ -1112,6 +1261,1784 @@ export type ModelSubscriptionMosqueFollowerFilterInput = {
   or?: Array< ModelSubscriptionMosqueFollowerFilterInput | null > | null,
   owners?: ModelStringInput | null,
   owner?: ModelStringInput | null,
+};
+
+export type CreateAnnouncementMutationVariables = {
+  input: CreateAnnouncementInput,
+  condition?: ModelAnnouncementConditionInput | null,
+};
+
+export type CreateAnnouncementMutation = {
+  createAnnouncement?:  {
+    __typename: "Announcement",
+    id: string,
+    type: AnnouncementType,
+    content: string,
+    images?: Array< string | null > | null,
+    bookmarks?:  {
+      __typename: "ModelBookmarkConnection",
+      items:  Array< {
+        __typename: "Bookmark",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    comments?:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        text: string,
+        parentCommentID?: string | null,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    creatorID: string,
+    creator:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    mosqueID: string,
+    mosque:  {
+      __typename: "Mosque",
+      id: string,
+      name: string,
+      description: string,
+      images: Array< string >,
+      address: string,
+      latitude: number,
+      longitude: number,
+      hours?:  {
+        __typename: "Hours",
+      } | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      socialMedia?:  {
+        __typename: "SocialMedia",
+        facebook?: string | null,
+        instagram?: string | null,
+        twitter?: string | null,
+        youtube?: string | null,
+      } | null,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      organizationID?: string | null,
+      organization?:  {
+        __typename: "Organization",
+        id: string,
+        name: string,
+        description?: string | null,
+        domain?: string | null,
+        logo?: string | null,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified: boolean,
+        creatorID: string,
+        createdAt?: string | null,
+        updatedAt?: string | null,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null,
+      followers?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      announcements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      fundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type DeleteAnnouncementMutationVariables = {
+  input: DeleteAnnouncementInput,
+  condition?: ModelAnnouncementConditionInput | null,
+};
+
+export type DeleteAnnouncementMutation = {
+  deleteAnnouncement?:  {
+    __typename: "Announcement",
+    id: string,
+    type: AnnouncementType,
+    content: string,
+    images?: Array< string | null > | null,
+    bookmarks?:  {
+      __typename: "ModelBookmarkConnection",
+      items:  Array< {
+        __typename: "Bookmark",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    comments?:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        text: string,
+        parentCommentID?: string | null,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    creatorID: string,
+    creator:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    mosqueID: string,
+    mosque:  {
+      __typename: "Mosque",
+      id: string,
+      name: string,
+      description: string,
+      images: Array< string >,
+      address: string,
+      latitude: number,
+      longitude: number,
+      hours?:  {
+        __typename: "Hours",
+      } | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      socialMedia?:  {
+        __typename: "SocialMedia",
+        facebook?: string | null,
+        instagram?: string | null,
+        twitter?: string | null,
+        youtube?: string | null,
+      } | null,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      organizationID?: string | null,
+      organization?:  {
+        __typename: "Organization",
+        id: string,
+        name: string,
+        description?: string | null,
+        domain?: string | null,
+        logo?: string | null,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified: boolean,
+        creatorID: string,
+        createdAt?: string | null,
+        updatedAt?: string | null,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null,
+      followers?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      announcements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      fundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type CreateBookmarkMutationVariables = {
+  input: CreateBookmarkInput,
+  condition?: ModelBookmarkConditionInput | null,
+};
+
+export type CreateBookmarkMutation = {
+  createBookmark?:  {
+    __typename: "Bookmark",
+    id: string,
+    announcementID: string,
+    announcement:  {
+      __typename: "Announcement",
+      id: string,
+      type: AnnouncementType,
+      content: string,
+      images?: Array< string | null > | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    creatorID: string,
+    creator:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    mosqueID: string,
+    mosque:  {
+      __typename: "Mosque",
+      id: string,
+      name: string,
+      description: string,
+      images: Array< string >,
+      address: string,
+      latitude: number,
+      longitude: number,
+      hours?:  {
+        __typename: "Hours",
+      } | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      socialMedia?:  {
+        __typename: "SocialMedia",
+        facebook?: string | null,
+        instagram?: string | null,
+        twitter?: string | null,
+        youtube?: string | null,
+      } | null,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      organizationID?: string | null,
+      organization?:  {
+        __typename: "Organization",
+        id: string,
+        name: string,
+        description?: string | null,
+        domain?: string | null,
+        logo?: string | null,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified: boolean,
+        creatorID: string,
+        createdAt?: string | null,
+        updatedAt?: string | null,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null,
+      followers?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      announcements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      fundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type DeleteBookmarkMutationVariables = {
+  input: DeleteBookmarkInput,
+  condition?: ModelBookmarkConditionInput | null,
+};
+
+export type DeleteBookmarkMutation = {
+  deleteBookmark?:  {
+    __typename: "Bookmark",
+    id: string,
+    announcementID: string,
+    announcement:  {
+      __typename: "Announcement",
+      id: string,
+      type: AnnouncementType,
+      content: string,
+      images?: Array< string | null > | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    creatorID: string,
+    creator:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    mosqueID: string,
+    mosque:  {
+      __typename: "Mosque",
+      id: string,
+      name: string,
+      description: string,
+      images: Array< string >,
+      address: string,
+      latitude: number,
+      longitude: number,
+      hours?:  {
+        __typename: "Hours",
+      } | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      socialMedia?:  {
+        __typename: "SocialMedia",
+        facebook?: string | null,
+        instagram?: string | null,
+        twitter?: string | null,
+        youtube?: string | null,
+      } | null,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      organizationID?: string | null,
+      organization?:  {
+        __typename: "Organization",
+        id: string,
+        name: string,
+        description?: string | null,
+        domain?: string | null,
+        logo?: string | null,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified: boolean,
+        creatorID: string,
+        createdAt?: string | null,
+        updatedAt?: string | null,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null,
+      followers?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      announcements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      fundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type CreateCommentMutationVariables = {
+  input: CreateCommentInput,
+  condition?: ModelCommentConditionInput | null,
+};
+
+export type CreateCommentMutation = {
+  createComment?:  {
+    __typename: "Comment",
+    id: string,
+    text: string,
+    parentCommentID?: string | null,
+    parentComment?:  {
+      __typename: "Comment",
+      id: string,
+      text: string,
+      parentCommentID?: string | null,
+      parentComment?:  {
+        __typename: "Comment",
+        id: string,
+        text: string,
+        parentCommentID?: string | null,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null,
+      subComments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      announcementID: string,
+      announcement:  {
+        __typename: "Announcement",
+        id: string,
+        type: AnnouncementType,
+        content: string,
+        images?: Array< string | null > | null,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    } | null,
+    subComments?:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        text: string,
+        parentCommentID?: string | null,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    announcementID: string,
+    announcement:  {
+      __typename: "Announcement",
+      id: string,
+      type: AnnouncementType,
+      content: string,
+      images?: Array< string | null > | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    creatorID: string,
+    creator:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    mosqueID: string,
+    mosque:  {
+      __typename: "Mosque",
+      id: string,
+      name: string,
+      description: string,
+      images: Array< string >,
+      address: string,
+      latitude: number,
+      longitude: number,
+      hours?:  {
+        __typename: "Hours",
+      } | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      socialMedia?:  {
+        __typename: "SocialMedia",
+        facebook?: string | null,
+        instagram?: string | null,
+        twitter?: string | null,
+        youtube?: string | null,
+      } | null,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      organizationID?: string | null,
+      organization?:  {
+        __typename: "Organization",
+        id: string,
+        name: string,
+        description?: string | null,
+        domain?: string | null,
+        logo?: string | null,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified: boolean,
+        creatorID: string,
+        createdAt?: string | null,
+        updatedAt?: string | null,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null,
+      followers?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      announcements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      fundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type DeleteCommentMutationVariables = {
+  input: DeleteCommentInput,
+  condition?: ModelCommentConditionInput | null,
+};
+
+export type DeleteCommentMutation = {
+  deleteComment?:  {
+    __typename: "Comment",
+    id: string,
+    text: string,
+    parentCommentID?: string | null,
+    parentComment?:  {
+      __typename: "Comment",
+      id: string,
+      text: string,
+      parentCommentID?: string | null,
+      parentComment?:  {
+        __typename: "Comment",
+        id: string,
+        text: string,
+        parentCommentID?: string | null,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null,
+      subComments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      announcementID: string,
+      announcement:  {
+        __typename: "Announcement",
+        id: string,
+        type: AnnouncementType,
+        content: string,
+        images?: Array< string | null > | null,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    } | null,
+    subComments?:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        text: string,
+        parentCommentID?: string | null,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    announcementID: string,
+    announcement:  {
+      __typename: "Announcement",
+      id: string,
+      type: AnnouncementType,
+      content: string,
+      images?: Array< string | null > | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    creatorID: string,
+    creator:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    mosqueID: string,
+    mosque:  {
+      __typename: "Mosque",
+      id: string,
+      name: string,
+      description: string,
+      images: Array< string >,
+      address: string,
+      latitude: number,
+      longitude: number,
+      hours?:  {
+        __typename: "Hours",
+      } | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      socialMedia?:  {
+        __typename: "SocialMedia",
+        facebook?: string | null,
+        instagram?: string | null,
+        twitter?: string | null,
+        youtube?: string | null,
+      } | null,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      organizationID?: string | null,
+      organization?:  {
+        __typename: "Organization",
+        id: string,
+        name: string,
+        description?: string | null,
+        domain?: string | null,
+        logo?: string | null,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified: boolean,
+        creatorID: string,
+        createdAt?: string | null,
+        updatedAt?: string | null,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null,
+      followers?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      announcements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      fundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type CreateDonationMutationVariables = {
+  input: CreateDonationInput,
+  condition?: ModelDonationConditionInput | null,
+};
+
+export type CreateDonationMutation = {
+  createDonation?:  {
+    __typename: "Donation",
+    id: string,
+    amount: number,
+    currency: string,
+    isAnonymous: boolean,
+    donorID: string,
+    donor:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    fundraisingCampaignID: string,
+    fundraisingCampaign?:  {
+      __typename: "FundraisingCampaign",
+      id: string,
+      title: string,
+      description?: string | null,
+      featureImage?: string | null,
+      type: FundraisingCampaignType,
+      currentAmount: number,
+      goal: number,
+      goalDate: string,
+      currency: string,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type DeleteDonationMutationVariables = {
+  input: DeleteDonationInput,
+  condition?: ModelDonationConditionInput | null,
+};
+
+export type DeleteDonationMutation = {
+  deleteDonation?:  {
+    __typename: "Donation",
+    id: string,
+    amount: number,
+    currency: string,
+    isAnonymous: boolean,
+    donorID: string,
+    donor:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    fundraisingCampaignID: string,
+    fundraisingCampaign?:  {
+      __typename: "FundraisingCampaign",
+      id: string,
+      title: string,
+      description?: string | null,
+      featureImage?: string | null,
+      type: FundraisingCampaignType,
+      currentAmount: number,
+      goal: number,
+      goalDate: string,
+      currency: string,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
 };
 
 export type CreateFundraisingCampaignMutationVariables = {
@@ -1160,10 +3087,6 @@ export type CreateFundraisingCampaignMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -1186,10 +3109,6 @@ export type CreateFundraisingCampaignMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -1219,7 +3138,11 @@ export type CreateFundraisingCampaignMutation = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -1265,10 +3188,6 @@ export type CreateFundraisingCampaignMutation = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -1357,10 +3276,6 @@ export type UpdateFundraisingCampaignMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -1383,10 +3298,6 @@ export type UpdateFundraisingCampaignMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -1416,7 +3327,11 @@ export type UpdateFundraisingCampaignMutation = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -1462,10 +3377,6 @@ export type UpdateFundraisingCampaignMutation = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -1554,10 +3465,6 @@ export type DeleteFundraisingCampaignMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -1580,10 +3487,6 @@ export type DeleteFundraisingCampaignMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -1613,7 +3516,11 @@ export type DeleteFundraisingCampaignMutation = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -1659,10 +3566,6 @@ export type DeleteFundraisingCampaignMutation = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -1705,124 +3608,78 @@ export type DeleteFundraisingCampaignMutation = {
   } | null,
 };
 
-export type CreatePrayerTimeMutationVariables = {
-  input: CreatePrayerTimeInput,
-  condition?: ModelPrayerTimeConditionInput | null,
+export type CreateLikeMutationVariables = {
+  input: CreateLikeInput,
+  condition?: ModelLikeConditionInput | null,
 };
 
-export type CreatePrayerTimeMutation = {
-  createPrayerTime?:  {
-    __typename: "PrayerTime",
+export type CreateLikeMutation = {
+  createLike?:  {
+    __typename: "Like",
     id: string,
-    fajr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    dhuhr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    asr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    maghrib:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    isha:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    jummah:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null >,
-    taraweeh?:  {
-      __typename: "SunnahPrayer",
-      start: string,
-      end?: string | null,
-    } | null,
-    eid?:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null > | null,
-    startDate: string,
-    timeZone: string,
-    createdByUserID: string,
-    createdByUser:  {
-      __typename: "User",
+    announcementID: string,
+    announcement:  {
+      __typename: "Announcement",
       id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
+      type: AnnouncementType,
+      content: string,
+      images?: Array< string | null > | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
         nextToken?: string | null,
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
         nextToken?: string | null,
       } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
+      comments?:  {
+        __typename: "ModelCommentConnection",
         nextToken?: string | null,
       } | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
       createdAt: string,
       updatedAt: string,
       owner?: string | null,
     },
-    updatedByUserID: string,
-    updatedByUser:  {
+    creatorID: string,
+    creator:  {
       __typename: "User",
       id: string,
       selfie?: string | null,
@@ -1850,10 +3707,6 @@ export type CreatePrayerTimeMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -1876,10 +3729,6 @@ export type CreatePrayerTimeMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -1909,7 +3758,11 @@ export type CreatePrayerTimeMutation = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -1957,10 +3810,6 @@ export type CreatePrayerTimeMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
         nextToken?: string | null,
@@ -1980,129 +3829,82 @@ export type CreatePrayerTimeMutation = {
     },
     createdAt: string,
     updatedAt: string,
-    owners?: Array< string | null > | null,
     owner?: string | null,
   } | null,
 };
 
-export type UpdatePrayerTimeMutationVariables = {
-  input: UpdatePrayerTimeInput,
-  condition?: ModelPrayerTimeConditionInput | null,
+export type DeleteLikeMutationVariables = {
+  input: DeleteLikeInput,
+  condition?: ModelLikeConditionInput | null,
 };
 
-export type UpdatePrayerTimeMutation = {
-  updatePrayerTime?:  {
-    __typename: "PrayerTime",
+export type DeleteLikeMutation = {
+  deleteLike?:  {
+    __typename: "Like",
     id: string,
-    fajr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    dhuhr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    asr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    maghrib:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    isha:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    jummah:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null >,
-    taraweeh?:  {
-      __typename: "SunnahPrayer",
-      start: string,
-      end?: string | null,
-    } | null,
-    eid?:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null > | null,
-    startDate: string,
-    timeZone: string,
-    createdByUserID: string,
-    createdByUser:  {
-      __typename: "User",
+    announcementID: string,
+    announcement:  {
+      __typename: "Announcement",
       id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
+      type: AnnouncementType,
+      content: string,
+      images?: Array< string | null > | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
         nextToken?: string | null,
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
         nextToken?: string | null,
       } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
+      comments?:  {
+        __typename: "ModelCommentConnection",
         nextToken?: string | null,
       } | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
       createdAt: string,
       updatedAt: string,
       owner?: string | null,
     },
-    updatedByUserID: string,
-    updatedByUser:  {
+    creatorID: string,
+    creator:  {
       __typename: "User",
       id: string,
       selfie?: string | null,
@@ -2130,10 +3932,6 @@ export type UpdatePrayerTimeMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -2156,10 +3954,6 @@ export type UpdatePrayerTimeMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -2189,7 +3983,11 @@ export type UpdatePrayerTimeMutation = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -2237,10 +4035,6 @@ export type UpdatePrayerTimeMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
         nextToken?: string | null,
@@ -2260,287 +4054,6 @@ export type UpdatePrayerTimeMutation = {
     },
     createdAt: string,
     updatedAt: string,
-    owners?: Array< string | null > | null,
-    owner?: string | null,
-  } | null,
-};
-
-export type DeletePrayerTimeMutationVariables = {
-  input: DeletePrayerTimeInput,
-  condition?: ModelPrayerTimeConditionInput | null,
-};
-
-export type DeletePrayerTimeMutation = {
-  deletePrayerTime?:  {
-    __typename: "PrayerTime",
-    id: string,
-    fajr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    dhuhr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    asr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    maghrib:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    isha:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    jummah:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null >,
-    taraweeh?:  {
-      __typename: "SunnahPrayer",
-      start: string,
-      end?: string | null,
-    } | null,
-    eid?:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null > | null,
-    startDate: string,
-    timeZone: string,
-    createdByUserID: string,
-    createdByUser:  {
-      __typename: "User",
-      id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owner?: string | null,
-    },
-    updatedByUserID: string,
-    updatedByUser:  {
-      __typename: "User",
-      id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owner?: string | null,
-    },
-    mosqueID: string,
-    mosque:  {
-      __typename: "Mosque",
-      id: string,
-      name: string,
-      description: string,
-      images: Array< string >,
-      address: string,
-      latitude: number,
-      longitude: number,
-      hours?:  {
-        __typename: "Hours",
-      } | null,
-      phone?: string | null,
-      email?: string | null,
-      website?: string | null,
-      socialMedia?:  {
-        __typename: "SocialMedia",
-        facebook?: string | null,
-        instagram?: string | null,
-        twitter?: string | null,
-        youtube?: string | null,
-      } | null,
-      isVerified: boolean,
-      creatorID: string,
-      creator:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      organizationID?: string | null,
-      organization?:  {
-        __typename: "Organization",
-        id: string,
-        name: string,
-        description?: string | null,
-        domain?: string | null,
-        logo?: string | null,
-        phone?: string | null,
-        email?: string | null,
-        website?: string | null,
-        isVerified: boolean,
-        creatorID: string,
-        createdAt?: string | null,
-        updatedAt?: string | null,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null,
-      followers?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      announcements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      fundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owners?: Array< string | null > | null,
-      owner?: string | null,
-    },
-    createdAt: string,
-    updatedAt: string,
-    owners?: Array< string | null > | null,
     owner?: string | null,
   } | null,
 };
@@ -2601,7 +4114,61 @@ export type CreateMosqueMutation = {
       twitter?: string | null,
       youtube?: string | null,
     } | null,
-    isVerified: boolean,
+    prayerTimes?:  {
+      __typename: "PrayerTimes",
+      timeZone: string,
+      fajr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      thuhr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      asr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      maghrib?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      isha?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      jummah?:  Array< {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } > | null,
+      tahajjud?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      taraweeh?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      eidAlAdha?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+      eidAlFitr?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+    } | null,
+    isVerified?: boolean | null,
     creatorID: string,
     creator:  {
       __typename: "User",
@@ -2631,10 +4198,6 @@ export type CreateMosqueMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -2657,10 +4220,6 @@ export type CreateMosqueMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -2753,23 +4312,6 @@ export type CreateMosqueMutation = {
         goalDate: string,
         currency: string,
         creatorID: string,
-        mosqueID: string,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null >,
-      nextToken?: string | null,
-    } | null,
-    prayerTimes?:  {
-      __typename: "ModelPrayerTimeConnection",
-      items:  Array< {
-        __typename: "PrayerTime",
-        id: string,
-        startDate: string,
-        timeZone: string,
-        createdByUserID: string,
-        updatedByUserID: string,
         mosqueID: string,
         createdAt: string,
         updatedAt: string,
@@ -2885,7 +4427,61 @@ export type UpdateMosqueMutation = {
       twitter?: string | null,
       youtube?: string | null,
     } | null,
-    isVerified: boolean,
+    prayerTimes?:  {
+      __typename: "PrayerTimes",
+      timeZone: string,
+      fajr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      thuhr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      asr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      maghrib?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      isha?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      jummah?:  Array< {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } > | null,
+      tahajjud?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      taraweeh?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      eidAlAdha?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+      eidAlFitr?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+    } | null,
+    isVerified?: boolean | null,
     creatorID: string,
     creator:  {
       __typename: "User",
@@ -2915,10 +4511,6 @@ export type UpdateMosqueMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -2941,10 +4533,6 @@ export type UpdateMosqueMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -3037,23 +4625,6 @@ export type UpdateMosqueMutation = {
         goalDate: string,
         currency: string,
         creatorID: string,
-        mosqueID: string,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null >,
-      nextToken?: string | null,
-    } | null,
-    prayerTimes?:  {
-      __typename: "ModelPrayerTimeConnection",
-      items:  Array< {
-        __typename: "PrayerTime",
-        id: string,
-        startDate: string,
-        timeZone: string,
-        createdByUserID: string,
-        updatedByUserID: string,
         mosqueID: string,
         createdAt: string,
         updatedAt: string,
@@ -3169,7 +4740,61 @@ export type DeleteMosqueMutation = {
       twitter?: string | null,
       youtube?: string | null,
     } | null,
-    isVerified: boolean,
+    prayerTimes?:  {
+      __typename: "PrayerTimes",
+      timeZone: string,
+      fajr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      thuhr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      asr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      maghrib?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      isha?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      jummah?:  Array< {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } > | null,
+      tahajjud?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      taraweeh?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      eidAlAdha?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+      eidAlFitr?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+    } | null,
+    isVerified?: boolean | null,
     creatorID: string,
     creator:  {
       __typename: "User",
@@ -3199,10 +4824,6 @@ export type DeleteMosqueMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -3225,10 +4846,6 @@ export type DeleteMosqueMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -3321,23 +4938,6 @@ export type DeleteMosqueMutation = {
         goalDate: string,
         currency: string,
         creatorID: string,
-        mosqueID: string,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null >,
-      nextToken?: string | null,
-    } | null,
-    prayerTimes?:  {
-      __typename: "ModelPrayerTimeConnection",
-      items:  Array< {
-        __typename: "PrayerTime",
-        id: string,
-        startDate: string,
-        timeZone: string,
-        createdByUserID: string,
-        updatedByUserID: string,
         mosqueID: string,
         createdAt: string,
         updatedAt: string,
@@ -3443,10 +5043,6 @@ export type CreateOrganizationMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -3469,10 +5065,6 @@ export type CreateOrganizationMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -3508,7 +5100,7 @@ export type CreateOrganizationMutation = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -3571,10 +5163,6 @@ export type UpdateOrganizationMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -3597,10 +5185,6 @@ export type UpdateOrganizationMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -3636,7 +5220,7 @@ export type UpdateOrganizationMutation = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -3699,10 +5283,6 @@ export type DeleteOrganizationMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -3725,10 +5305,6 @@ export type DeleteOrganizationMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -3764,7 +5340,7 @@ export type DeleteOrganizationMutation = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -3777,6 +5353,434 @@ export type DeleteOrganizationMutation = {
     createdAt?: string | null,
     updatedAt?: string | null,
     owners?: Array< string | null > | null,
+    owner?: string | null,
+  } | null,
+};
+
+export type CreateOrganizationMemberMutationVariables = {
+  input: CreateOrganizationMemberInput,
+  condition?: ModelOrganizationMemberConditionInput | null,
+};
+
+export type CreateOrganizationMemberMutation = {
+  createOrganizationMember?:  {
+    __typename: "OrganizationMember",
+    id: string,
+    role: MemberRole,
+    organizationID: string,
+    organization:  {
+      __typename: "Organization",
+      id: string,
+      name: string,
+      description?: string | null,
+      domain?: string | null,
+      logo?: string | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      isVerified: boolean,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      members?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt?: string | null,
+      updatedAt?: string | null,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    memberID: string,
+    member:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owners?: Array< string | null > | null,
+    owner?: string | null,
+  } | null,
+};
+
+export type DeleteOrganizationMemberMutationVariables = {
+  input: DeleteOrganizationMemberInput,
+  condition?: ModelOrganizationMemberConditionInput | null,
+};
+
+export type DeleteOrganizationMemberMutation = {
+  deleteOrganizationMember?:  {
+    __typename: "OrganizationMember",
+    id: string,
+    role: MemberRole,
+    organizationID: string,
+    organization:  {
+      __typename: "Organization",
+      id: string,
+      name: string,
+      description?: string | null,
+      domain?: string | null,
+      logo?: string | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      isVerified: boolean,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      members?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt?: string | null,
+      updatedAt?: string | null,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    memberID: string,
+    member:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owners?: Array< string | null > | null,
+    owner?: string | null,
+  } | null,
+};
+
+export type UpdateUserMutationVariables = {
+  input: UpdateUserInput,
+  condition?: ModelUserConditionInput | null,
+};
+
+export type UpdateUserMutation = {
+  updateUser?:  {
+    __typename: "User",
+    id: string,
+    selfie?: string | null,
+    firstName: string,
+    lastName: string,
+    email: string,
+    phone?: string | null,
+    type: UserType,
+    status: UserStatus,
+    stripeCustomerId?: string | null,
+    isOnline?: boolean | null,
+    bookmarks?:  {
+      __typename: "ModelBookmarkConnection",
+      items:  Array< {
+        __typename: "Bookmark",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    comments?:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        text: string,
+        parentCommentID?: string | null,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAnnouncements?:  {
+      __typename: "ModelAnnouncementConnection",
+      items:  Array< {
+        __typename: "Announcement",
+        id: string,
+        type: AnnouncementType,
+        content: string,
+        images?: Array< string | null > | null,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdFundraisingCampaigns?:  {
+      __typename: "ModelFundraisingCampaignConnection",
+      items:  Array< {
+        __typename: "FundraisingCampaign",
+        id: string,
+        title: string,
+        description?: string | null,
+        featureImage?: string | null,
+        type: FundraisingCampaignType,
+        currentAmount: number,
+        goal: number,
+        goalDate: string,
+        currency: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdOrganizations?:  {
+      __typename: "ModelOrganizationConnection",
+      items:  Array< {
+        __typename: "Organization",
+        id: string,
+        name: string,
+        description?: string | null,
+        domain?: string | null,
+        logo?: string | null,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified: boolean,
+        creatorID: string,
+        createdAt?: string | null,
+        updatedAt?: string | null,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdMosques?:  {
+      __typename: "ModelMosqueConnection",
+      items:  Array< {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    donations?:  {
+      __typename: "ModelDonationConnection",
+      items:  Array< {
+        __typename: "Donation",
+        id: string,
+        amount: number,
+        currency: string,
+        isAnonymous: boolean,
+        donorID: string,
+        fundraisingCampaignID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    mosques?:  {
+      __typename: "ModelMosqueFollowerConnection",
+      items:  Array< {
+        __typename: "MosqueFollower",
+        id: string,
+        mosqueId: string,
+        userId: string,
+        createdAt: string,
+        updatedAt: string,
+        owners?: string | null,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    organizations?:  {
+      __typename: "ModelOrganizationMemberConnection",
+      items:  Array< {
+        __typename: "OrganizationMember",
+        id: string,
+        role: MemberRole,
+        organizationID: string,
+        memberID: string,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
     owner?: string | null,
   } | null,
 };
@@ -3814,7 +5818,11 @@ export type CreateMosqueFollowerMutation = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -3862,10 +5870,6 @@ export type CreateMosqueFollowerMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
         nextToken?: string | null,
@@ -3911,10 +5915,6 @@ export type CreateMosqueFollowerMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -3937,10 +5937,6 @@ export type CreateMosqueFollowerMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -3987,7 +5983,11 @@ export type UpdateMosqueFollowerMutation = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -4035,10 +6035,6 @@ export type UpdateMosqueFollowerMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
         nextToken?: string | null,
@@ -4084,10 +6080,6 @@ export type UpdateMosqueFollowerMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -4110,10 +6102,6 @@ export type UpdateMosqueFollowerMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -4160,7 +6148,11 @@ export type DeleteMosqueFollowerMutation = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -4208,10 +6200,6 @@ export type DeleteMosqueFollowerMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
         nextToken?: string | null,
@@ -4257,10 +6245,6 @@ export type DeleteMosqueFollowerMutation = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -4283,10 +6267,6 @@ export type DeleteMosqueFollowerMutation = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -4384,10 +6364,6 @@ export type GetAnnouncementQuery = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -4410,10 +6386,6 @@ export type GetAnnouncementQuery = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -4443,7 +6415,11 @@ export type GetAnnouncementQuery = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -4489,10 +6465,6 @@ export type GetAnnouncementQuery = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -4575,7 +6547,7 @@ export type ListAnnouncementsQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -4650,7 +6622,7 @@ export type AnnouncementsByCreatorIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -4725,7 +6697,7 @@ export type AnnouncementsByMosqueIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -4798,7 +6770,7 @@ export type BookmarksByAnnouncementIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -4871,7 +6843,7 @@ export type BookmarksByCreatorIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -4944,7 +6916,7 @@ export type BookmarksByMosqueIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -5035,7 +7007,7 @@ export type CommentsByParentCommentIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -5126,7 +7098,7 @@ export type CommentsByAnnouncementIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -5217,7 +7189,7 @@ export type CommentsByCreatorIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -5308,7 +7280,7 @@ export type CommentsByMosqueIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -5491,10 +7463,6 @@ export type GetFundraisingCampaignQuery = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -5517,10 +7485,6 @@ export type GetFundraisingCampaignQuery = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -5550,7 +7514,11 @@ export type GetFundraisingCampaignQuery = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -5596,10 +7564,6 @@ export type GetFundraisingCampaignQuery = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -5692,7 +7656,7 @@ export type ListFundraisingCampaignsQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -5765,7 +7729,7 @@ export type FundraisingCampaignsByCreatorIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -5838,7 +7802,7 @@ export type FundraisingCampaignsByMosqueIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -5916,7 +7880,7 @@ export type LikesByAnnouncementIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -5989,7 +7953,7 @@ export type LikesByCreatorIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -6062,7 +8026,7 @@ export type LikesByMosqueIDQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -6072,366 +8036,6 @@ export type LikesByMosqueIDQuery = {
       },
       createdAt: string,
       updatedAt: string,
-      owner?: string | null,
-    } | null >,
-    nextToken?: string | null,
-  } | null,
-};
-
-export type PrayerTimesByCreatedByUserIDQueryVariables = {
-  createdByUserID: string,
-  sortDirection?: ModelSortDirection | null,
-  filter?: ModelPrayerTimeFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type PrayerTimesByCreatedByUserIDQuery = {
-  prayerTimesByCreatedByUserID?:  {
-    __typename: "ModelPrayerTimeConnection",
-    items:  Array< {
-      __typename: "PrayerTime",
-      id: string,
-      fajr:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      dhuhr:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      asr:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      maghrib:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      isha:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      jummah:  Array< {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      } | null >,
-      taraweeh?:  {
-        __typename: "SunnahPrayer",
-        start: string,
-        end?: string | null,
-      } | null,
-      eid?:  Array< {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      } | null > | null,
-      startDate: string,
-      timeZone: string,
-      createdByUserID: string,
-      createdByUser:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      updatedByUserID: string,
-      updatedByUser:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      mosqueID: string,
-      mosque:  {
-        __typename: "Mosque",
-        id: string,
-        name: string,
-        description: string,
-        images: Array< string >,
-        address: string,
-        latitude: number,
-        longitude: number,
-        phone?: string | null,
-        email?: string | null,
-        website?: string | null,
-        isVerified: boolean,
-        creatorID: string,
-        organizationID?: string | null,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      },
-      createdAt: string,
-      updatedAt: string,
-      owners?: Array< string | null > | null,
-      owner?: string | null,
-    } | null >,
-    nextToken?: string | null,
-  } | null,
-};
-
-export type PrayerTimesByUpdatedByUserIDQueryVariables = {
-  updatedByUserID: string,
-  sortDirection?: ModelSortDirection | null,
-  filter?: ModelPrayerTimeFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type PrayerTimesByUpdatedByUserIDQuery = {
-  prayerTimesByUpdatedByUserID?:  {
-    __typename: "ModelPrayerTimeConnection",
-    items:  Array< {
-      __typename: "PrayerTime",
-      id: string,
-      fajr:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      dhuhr:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      asr:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      maghrib:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      isha:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      jummah:  Array< {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      } | null >,
-      taraweeh?:  {
-        __typename: "SunnahPrayer",
-        start: string,
-        end?: string | null,
-      } | null,
-      eid?:  Array< {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      } | null > | null,
-      startDate: string,
-      timeZone: string,
-      createdByUserID: string,
-      createdByUser:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      updatedByUserID: string,
-      updatedByUser:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      mosqueID: string,
-      mosque:  {
-        __typename: "Mosque",
-        id: string,
-        name: string,
-        description: string,
-        images: Array< string >,
-        address: string,
-        latitude: number,
-        longitude: number,
-        phone?: string | null,
-        email?: string | null,
-        website?: string | null,
-        isVerified: boolean,
-        creatorID: string,
-        organizationID?: string | null,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      },
-      createdAt: string,
-      updatedAt: string,
-      owners?: Array< string | null > | null,
-      owner?: string | null,
-    } | null >,
-    nextToken?: string | null,
-  } | null,
-};
-
-export type PrayerTimesByMosqueIDQueryVariables = {
-  mosqueID: string,
-  sortDirection?: ModelSortDirection | null,
-  filter?: ModelPrayerTimeFilterInput | null,
-  limit?: number | null,
-  nextToken?: string | null,
-};
-
-export type PrayerTimesByMosqueIDQuery = {
-  prayerTimesByMosqueID?:  {
-    __typename: "ModelPrayerTimeConnection",
-    items:  Array< {
-      __typename: "PrayerTime",
-      id: string,
-      fajr:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      dhuhr:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      asr:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      maghrib:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      isha:  {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      },
-      jummah:  Array< {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      } | null >,
-      taraweeh?:  {
-        __typename: "SunnahPrayer",
-        start: string,
-        end?: string | null,
-      } | null,
-      eid?:  Array< {
-        __typename: "FardPrayer",
-        athan: string,
-        iqamah: string,
-      } | null > | null,
-      startDate: string,
-      timeZone: string,
-      createdByUserID: string,
-      createdByUser:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      updatedByUserID: string,
-      updatedByUser:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      mosqueID: string,
-      mosque:  {
-        __typename: "Mosque",
-        id: string,
-        name: string,
-        description: string,
-        images: Array< string >,
-        address: string,
-        latitude: number,
-        longitude: number,
-        phone?: string | null,
-        email?: string | null,
-        website?: string | null,
-        isVerified: boolean,
-        creatorID: string,
-        organizationID?: string | null,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      },
-      createdAt: string,
-      updatedAt: string,
-      owners?: Array< string | null > | null,
       owner?: string | null,
     } | null >,
     nextToken?: string | null,
@@ -6493,7 +8097,61 @@ export type GetMosqueQuery = {
       twitter?: string | null,
       youtube?: string | null,
     } | null,
-    isVerified: boolean,
+    prayerTimes?:  {
+      __typename: "PrayerTimes",
+      timeZone: string,
+      fajr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      thuhr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      asr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      maghrib?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      isha?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      jummah?:  Array< {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } > | null,
+      tahajjud?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      taraweeh?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      eidAlAdha?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+      eidAlFitr?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+    } | null,
+    isVerified?: boolean | null,
     creatorID: string,
     creator:  {
       __typename: "User",
@@ -6523,10 +8181,6 @@ export type GetMosqueQuery = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -6549,10 +8203,6 @@ export type GetMosqueQuery = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -6653,23 +8303,6 @@ export type GetMosqueQuery = {
       } | null >,
       nextToken?: string | null,
     } | null,
-    prayerTimes?:  {
-      __typename: "ModelPrayerTimeConnection",
-      items:  Array< {
-        __typename: "PrayerTime",
-        id: string,
-        startDate: string,
-        timeZone: string,
-        createdByUserID: string,
-        updatedByUserID: string,
-        mosqueID: string,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null >,
-      nextToken?: string | null,
-    } | null,
     bookmarks?:  {
       __typename: "ModelBookmarkConnection",
       items:  Array< {
@@ -6752,7 +8385,11 @@ export type ListMosquesQuery = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -6798,10 +8435,6 @@ export type ListMosquesQuery = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -6858,7 +8491,11 @@ export type MosquesByCreatorIDQuery = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -6904,10 +8541,6 @@ export type MosquesByCreatorIDQuery = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -6964,7 +8597,11 @@ export type MosquesByOrganizationIDQuery = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -7010,10 +8647,6 @@ export type MosquesByOrganizationIDQuery = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -7082,10 +8715,6 @@ export type GetOrganizationQuery = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -7108,10 +8737,6 @@ export type GetOrganizationQuery = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -7147,7 +8772,7 @@ export type GetOrganizationQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -7477,23 +9102,6 @@ export type GetUserQuery = {
       } | null >,
       nextToken?: string | null,
     } | null,
-    createdPrayerTimes?:  {
-      __typename: "ModelPrayerTimeConnection",
-      items:  Array< {
-        __typename: "PrayerTime",
-        id: string,
-        startDate: string,
-        timeZone: string,
-        createdByUserID: string,
-        updatedByUserID: string,
-        mosqueID: string,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null >,
-      nextToken?: string | null,
-    } | null,
     createdOrganizations?:  {
       __typename: "ModelOrganizationConnection",
       items:  Array< {
@@ -7529,7 +9137,7 @@ export type GetUserQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -7598,23 +9206,6 @@ export type GetUserQuery = {
       } | null >,
       nextToken?: string | null,
     } | null,
-    updatedPrayerTimes?:  {
-      __typename: "ModelPrayerTimeConnection",
-      items:  Array< {
-        __typename: "PrayerTime",
-        id: string,
-        startDate: string,
-        timeZone: string,
-        createdByUserID: string,
-        updatedByUserID: string,
-        mosqueID: string,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null >,
-      nextToken?: string | null,
-    } | null,
     createdAt: string,
     updatedAt: string,
     owner?: string | null,
@@ -7653,7 +9244,11 @@ export type GetMosqueFollowerQuery = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -7701,10 +9296,6 @@ export type GetMosqueFollowerQuery = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
         nextToken?: string | null,
@@ -7750,10 +9341,6 @@ export type GetMosqueFollowerQuery = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -7776,10 +9363,6 @@ export type GetMosqueFollowerQuery = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -7819,7 +9402,7 @@ export type ListMosqueFollowersQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -7880,7 +9463,7 @@ export type MosqueFollowersByMosqueIdQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -7941,7 +9524,7 @@ export type MosqueFollowersByUserIdQuery = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -7971,6 +9554,696 @@ export type MosqueFollowersByUserIdQuery = {
       owner?: string | null,
     } | null >,
     nextToken?: string | null,
+  } | null,
+};
+
+export type OnCreateAnnouncementSubscriptionVariables = {
+  filter?: ModelSubscriptionAnnouncementFilterInput | null,
+  owner?: string | null,
+};
+
+export type OnCreateAnnouncementSubscription = {
+  onCreateAnnouncement?:  {
+    __typename: "Announcement",
+    id: string,
+    type: AnnouncementType,
+    content: string,
+    images?: Array< string | null > | null,
+    bookmarks?:  {
+      __typename: "ModelBookmarkConnection",
+      items:  Array< {
+        __typename: "Bookmark",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    comments?:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        text: string,
+        parentCommentID?: string | null,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    creatorID: string,
+    creator:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    mosqueID: string,
+    mosque:  {
+      __typename: "Mosque",
+      id: string,
+      name: string,
+      description: string,
+      images: Array< string >,
+      address: string,
+      latitude: number,
+      longitude: number,
+      hours?:  {
+        __typename: "Hours",
+      } | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      socialMedia?:  {
+        __typename: "SocialMedia",
+        facebook?: string | null,
+        instagram?: string | null,
+        twitter?: string | null,
+        youtube?: string | null,
+      } | null,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      organizationID?: string | null,
+      organization?:  {
+        __typename: "Organization",
+        id: string,
+        name: string,
+        description?: string | null,
+        domain?: string | null,
+        logo?: string | null,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified: boolean,
+        creatorID: string,
+        createdAt?: string | null,
+        updatedAt?: string | null,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null,
+      followers?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      announcements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      fundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type OnDeleteAnnouncementSubscriptionVariables = {
+  filter?: ModelSubscriptionAnnouncementFilterInput | null,
+  owner?: string | null,
+};
+
+export type OnDeleteAnnouncementSubscription = {
+  onDeleteAnnouncement?:  {
+    __typename: "Announcement",
+    id: string,
+    type: AnnouncementType,
+    content: string,
+    images?: Array< string | null > | null,
+    bookmarks?:  {
+      __typename: "ModelBookmarkConnection",
+      items:  Array< {
+        __typename: "Bookmark",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    likes?:  {
+      __typename: "ModelLikeConnection",
+      items:  Array< {
+        __typename: "Like",
+        id: string,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    comments?:  {
+      __typename: "ModelCommentConnection",
+      items:  Array< {
+        __typename: "Comment",
+        id: string,
+        text: string,
+        parentCommentID?: string | null,
+        announcementID: string,
+        creatorID: string,
+        mosqueID: string,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      } | null >,
+      nextToken?: string | null,
+    } | null,
+    creatorID: string,
+    creator:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    mosqueID: string,
+    mosque:  {
+      __typename: "Mosque",
+      id: string,
+      name: string,
+      description: string,
+      images: Array< string >,
+      address: string,
+      latitude: number,
+      longitude: number,
+      hours?:  {
+        __typename: "Hours",
+      } | null,
+      phone?: string | null,
+      email?: string | null,
+      website?: string | null,
+      socialMedia?:  {
+        __typename: "SocialMedia",
+        facebook?: string | null,
+        instagram?: string | null,
+        twitter?: string | null,
+        youtube?: string | null,
+      } | null,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      organizationID?: string | null,
+      organization?:  {
+        __typename: "Organization",
+        id: string,
+        name: string,
+        description?: string | null,
+        domain?: string | null,
+        logo?: string | null,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified: boolean,
+        creatorID: string,
+        createdAt?: string | null,
+        updatedAt?: string | null,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      } | null,
+      followers?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      announcements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      fundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    },
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type OnCreateDonationSubscriptionVariables = {
+  filter?: ModelSubscriptionDonationFilterInput | null,
+  owner?: string | null,
+};
+
+export type OnCreateDonationSubscription = {
+  onCreateDonation?:  {
+    __typename: "Donation",
+    id: string,
+    amount: number,
+    currency: string,
+    isAnonymous: boolean,
+    donorID: string,
+    donor:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    fundraisingCampaignID: string,
+    fundraisingCampaign?:  {
+      __typename: "FundraisingCampaign",
+      id: string,
+      title: string,
+      description?: string | null,
+      featureImage?: string | null,
+      type: FundraisingCampaignType,
+      currentAmount: number,
+      goal: number,
+      goalDate: string,
+      currency: string,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
+  } | null,
+};
+
+export type OnDeleteDonationSubscriptionVariables = {
+  filter?: ModelSubscriptionDonationFilterInput | null,
+  owner?: string | null,
+};
+
+export type OnDeleteDonationSubscription = {
+  onDeleteDonation?:  {
+    __typename: "Donation",
+    id: string,
+    amount: number,
+    currency: string,
+    isAnonymous: boolean,
+    donorID: string,
+    donor:  {
+      __typename: "User",
+      id: string,
+      selfie?: string | null,
+      firstName: string,
+      lastName: string,
+      email: string,
+      phone?: string | null,
+      type: UserType,
+      status: UserStatus,
+      stripeCustomerId?: string | null,
+      isOnline?: boolean | null,
+      bookmarks?:  {
+        __typename: "ModelBookmarkConnection",
+        nextToken?: string | null,
+      } | null,
+      comments?:  {
+        __typename: "ModelCommentConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAnnouncements?:  {
+        __typename: "ModelAnnouncementConnection",
+        nextToken?: string | null,
+      } | null,
+      createdFundraisingCampaigns?:  {
+        __typename: "ModelFundraisingCampaignConnection",
+        nextToken?: string | null,
+      } | null,
+      createdOrganizations?:  {
+        __typename: "ModelOrganizationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdMosques?:  {
+        __typename: "ModelMosqueConnection",
+        nextToken?: string | null,
+      } | null,
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      mosques?:  {
+        __typename: "ModelMosqueFollowerConnection",
+        nextToken?: string | null,
+      } | null,
+      organizations?:  {
+        __typename: "ModelOrganizationMemberConnection",
+        nextToken?: string | null,
+      } | null,
+      likes?:  {
+        __typename: "ModelLikeConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owner?: string | null,
+    },
+    fundraisingCampaignID: string,
+    fundraisingCampaign?:  {
+      __typename: "FundraisingCampaign",
+      id: string,
+      title: string,
+      description?: string | null,
+      featureImage?: string | null,
+      type: FundraisingCampaignType,
+      currentAmount: number,
+      goal: number,
+      goalDate: string,
+      currency: string,
+      creatorID: string,
+      creator:  {
+        __typename: "User",
+        id: string,
+        selfie?: string | null,
+        firstName: string,
+        lastName: string,
+        email: string,
+        phone?: string | null,
+        type: UserType,
+        status: UserStatus,
+        stripeCustomerId?: string | null,
+        isOnline?: boolean | null,
+        createdAt: string,
+        updatedAt: string,
+        owner?: string | null,
+      },
+      mosqueID: string,
+      mosque:  {
+        __typename: "Mosque",
+        id: string,
+        name: string,
+        description: string,
+        images: Array< string >,
+        address: string,
+        latitude: number,
+        longitude: number,
+        phone?: string | null,
+        email?: string | null,
+        website?: string | null,
+        isVerified?: boolean | null,
+        creatorID: string,
+        organizationID?: string | null,
+        createdAt: string,
+        updatedAt: string,
+        owners?: Array< string | null > | null,
+        owner?: string | null,
+      },
+      donations?:  {
+        __typename: "ModelDonationConnection",
+        nextToken?: string | null,
+      } | null,
+      createdAt: string,
+      updatedAt: string,
+      owners?: Array< string | null > | null,
+      owner?: string | null,
+    } | null,
+    createdAt: string,
+    updatedAt: string,
+    owner?: string | null,
   } | null,
 };
 
@@ -8020,10 +10293,6 @@ export type OnCreateFundraisingCampaignSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -8046,10 +10315,6 @@ export type OnCreateFundraisingCampaignSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -8079,7 +10344,11 @@ export type OnCreateFundraisingCampaignSubscription = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -8125,10 +10394,6 @@ export type OnCreateFundraisingCampaignSubscription = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -8217,10 +10482,6 @@ export type OnUpdateFundraisingCampaignSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -8243,10 +10504,6 @@ export type OnUpdateFundraisingCampaignSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -8276,7 +10533,11 @@ export type OnUpdateFundraisingCampaignSubscription = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -8322,10 +10583,6 @@ export type OnUpdateFundraisingCampaignSubscription = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -8414,10 +10671,6 @@ export type OnDeleteFundraisingCampaignSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -8440,10 +10693,6 @@ export type OnDeleteFundraisingCampaignSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -8473,7 +10722,11 @@ export type OnDeleteFundraisingCampaignSubscription = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -8519,10 +10772,6 @@ export type OnDeleteFundraisingCampaignSubscription = {
       } | null,
       fundraisingCampaigns?:  {
         __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       bookmarks?:  {
@@ -8558,846 +10807,6 @@ export type OnDeleteFundraisingCampaignSubscription = {
       } | null >,
       nextToken?: string | null,
     } | null,
-    createdAt: string,
-    updatedAt: string,
-    owners?: Array< string | null > | null,
-    owner?: string | null,
-  } | null,
-};
-
-export type OnCreatePrayerTimeSubscriptionVariables = {
-  filter?: ModelSubscriptionPrayerTimeFilterInput | null,
-  owner?: string | null,
-};
-
-export type OnCreatePrayerTimeSubscription = {
-  onCreatePrayerTime?:  {
-    __typename: "PrayerTime",
-    id: string,
-    fajr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    dhuhr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    asr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    maghrib:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    isha:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    jummah:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null >,
-    taraweeh?:  {
-      __typename: "SunnahPrayer",
-      start: string,
-      end?: string | null,
-    } | null,
-    eid?:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null > | null,
-    startDate: string,
-    timeZone: string,
-    createdByUserID: string,
-    createdByUser:  {
-      __typename: "User",
-      id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owner?: string | null,
-    },
-    updatedByUserID: string,
-    updatedByUser:  {
-      __typename: "User",
-      id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owner?: string | null,
-    },
-    mosqueID: string,
-    mosque:  {
-      __typename: "Mosque",
-      id: string,
-      name: string,
-      description: string,
-      images: Array< string >,
-      address: string,
-      latitude: number,
-      longitude: number,
-      hours?:  {
-        __typename: "Hours",
-      } | null,
-      phone?: string | null,
-      email?: string | null,
-      website?: string | null,
-      socialMedia?:  {
-        __typename: "SocialMedia",
-        facebook?: string | null,
-        instagram?: string | null,
-        twitter?: string | null,
-        youtube?: string | null,
-      } | null,
-      isVerified: boolean,
-      creatorID: string,
-      creator:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      organizationID?: string | null,
-      organization?:  {
-        __typename: "Organization",
-        id: string,
-        name: string,
-        description?: string | null,
-        domain?: string | null,
-        logo?: string | null,
-        phone?: string | null,
-        email?: string | null,
-        website?: string | null,
-        isVerified: boolean,
-        creatorID: string,
-        createdAt?: string | null,
-        updatedAt?: string | null,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null,
-      followers?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      announcements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      fundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owners?: Array< string | null > | null,
-      owner?: string | null,
-    },
-    createdAt: string,
-    updatedAt: string,
-    owners?: Array< string | null > | null,
-    owner?: string | null,
-  } | null,
-};
-
-export type OnUpdatePrayerTimeSubscriptionVariables = {
-  filter?: ModelSubscriptionPrayerTimeFilterInput | null,
-  owner?: string | null,
-};
-
-export type OnUpdatePrayerTimeSubscription = {
-  onUpdatePrayerTime?:  {
-    __typename: "PrayerTime",
-    id: string,
-    fajr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    dhuhr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    asr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    maghrib:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    isha:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    jummah:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null >,
-    taraweeh?:  {
-      __typename: "SunnahPrayer",
-      start: string,
-      end?: string | null,
-    } | null,
-    eid?:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null > | null,
-    startDate: string,
-    timeZone: string,
-    createdByUserID: string,
-    createdByUser:  {
-      __typename: "User",
-      id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owner?: string | null,
-    },
-    updatedByUserID: string,
-    updatedByUser:  {
-      __typename: "User",
-      id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owner?: string | null,
-    },
-    mosqueID: string,
-    mosque:  {
-      __typename: "Mosque",
-      id: string,
-      name: string,
-      description: string,
-      images: Array< string >,
-      address: string,
-      latitude: number,
-      longitude: number,
-      hours?:  {
-        __typename: "Hours",
-      } | null,
-      phone?: string | null,
-      email?: string | null,
-      website?: string | null,
-      socialMedia?:  {
-        __typename: "SocialMedia",
-        facebook?: string | null,
-        instagram?: string | null,
-        twitter?: string | null,
-        youtube?: string | null,
-      } | null,
-      isVerified: boolean,
-      creatorID: string,
-      creator:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      organizationID?: string | null,
-      organization?:  {
-        __typename: "Organization",
-        id: string,
-        name: string,
-        description?: string | null,
-        domain?: string | null,
-        logo?: string | null,
-        phone?: string | null,
-        email?: string | null,
-        website?: string | null,
-        isVerified: boolean,
-        creatorID: string,
-        createdAt?: string | null,
-        updatedAt?: string | null,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null,
-      followers?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      announcements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      fundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owners?: Array< string | null > | null,
-      owner?: string | null,
-    },
-    createdAt: string,
-    updatedAt: string,
-    owners?: Array< string | null > | null,
-    owner?: string | null,
-  } | null,
-};
-
-export type OnDeletePrayerTimeSubscriptionVariables = {
-  filter?: ModelSubscriptionPrayerTimeFilterInput | null,
-  owner?: string | null,
-};
-
-export type OnDeletePrayerTimeSubscription = {
-  onDeletePrayerTime?:  {
-    __typename: "PrayerTime",
-    id: string,
-    fajr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    dhuhr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    asr:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    maghrib:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    isha:  {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    },
-    jummah:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null >,
-    taraweeh?:  {
-      __typename: "SunnahPrayer",
-      start: string,
-      end?: string | null,
-    } | null,
-    eid?:  Array< {
-      __typename: "FardPrayer",
-      athan: string,
-      iqamah: string,
-    } | null > | null,
-    startDate: string,
-    timeZone: string,
-    createdByUserID: string,
-    createdByUser:  {
-      __typename: "User",
-      id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owner?: string | null,
-    },
-    updatedByUserID: string,
-    updatedByUser:  {
-      __typename: "User",
-      id: string,
-      selfie?: string | null,
-      firstName: string,
-      lastName: string,
-      email: string,
-      phone?: string | null,
-      type: UserType,
-      status: UserStatus,
-      stripeCustomerId?: string | null,
-      isOnline?: boolean | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAnnouncements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      createdFundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdOrganizations?:  {
-        __typename: "ModelOrganizationConnection",
-        nextToken?: string | null,
-      } | null,
-      createdMosques?:  {
-        __typename: "ModelMosqueConnection",
-        nextToken?: string | null,
-      } | null,
-      donations?:  {
-        __typename: "ModelDonationConnection",
-        nextToken?: string | null,
-      } | null,
-      mosques?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      organizations?:  {
-        __typename: "ModelOrganizationMemberConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owner?: string | null,
-    },
-    mosqueID: string,
-    mosque:  {
-      __typename: "Mosque",
-      id: string,
-      name: string,
-      description: string,
-      images: Array< string >,
-      address: string,
-      latitude: number,
-      longitude: number,
-      hours?:  {
-        __typename: "Hours",
-      } | null,
-      phone?: string | null,
-      email?: string | null,
-      website?: string | null,
-      socialMedia?:  {
-        __typename: "SocialMedia",
-        facebook?: string | null,
-        instagram?: string | null,
-        twitter?: string | null,
-        youtube?: string | null,
-      } | null,
-      isVerified: boolean,
-      creatorID: string,
-      creator:  {
-        __typename: "User",
-        id: string,
-        selfie?: string | null,
-        firstName: string,
-        lastName: string,
-        email: string,
-        phone?: string | null,
-        type: UserType,
-        status: UserStatus,
-        stripeCustomerId?: string | null,
-        isOnline?: boolean | null,
-        createdAt: string,
-        updatedAt: string,
-        owner?: string | null,
-      },
-      organizationID?: string | null,
-      organization?:  {
-        __typename: "Organization",
-        id: string,
-        name: string,
-        description?: string | null,
-        domain?: string | null,
-        logo?: string | null,
-        phone?: string | null,
-        email?: string | null,
-        website?: string | null,
-        isVerified: boolean,
-        creatorID: string,
-        createdAt?: string | null,
-        updatedAt?: string | null,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null,
-      followers?:  {
-        __typename: "ModelMosqueFollowerConnection",
-        nextToken?: string | null,
-      } | null,
-      announcements?:  {
-        __typename: "ModelAnnouncementConnection",
-        nextToken?: string | null,
-      } | null,
-      fundraisingCampaigns?:  {
-        __typename: "ModelFundraisingCampaignConnection",
-        nextToken?: string | null,
-      } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
-      bookmarks?:  {
-        __typename: "ModelBookmarkConnection",
-        nextToken?: string | null,
-      } | null,
-      likes?:  {
-        __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      comments?:  {
-        __typename: "ModelCommentConnection",
-        nextToken?: string | null,
-      } | null,
-      createdAt: string,
-      updatedAt: string,
-      owners?: Array< string | null > | null,
-      owner?: string | null,
-    },
     createdAt: string,
     updatedAt: string,
     owners?: Array< string | null > | null,
@@ -9461,7 +10870,61 @@ export type OnCreateMosqueSubscription = {
       twitter?: string | null,
       youtube?: string | null,
     } | null,
-    isVerified: boolean,
+    prayerTimes?:  {
+      __typename: "PrayerTimes",
+      timeZone: string,
+      fajr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      thuhr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      asr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      maghrib?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      isha?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      jummah?:  Array< {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } > | null,
+      tahajjud?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      taraweeh?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      eidAlAdha?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+      eidAlFitr?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+    } | null,
+    isVerified?: boolean | null,
     creatorID: string,
     creator:  {
       __typename: "User",
@@ -9491,10 +10954,6 @@ export type OnCreateMosqueSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -9517,10 +10976,6 @@ export type OnCreateMosqueSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -9613,23 +11068,6 @@ export type OnCreateMosqueSubscription = {
         goalDate: string,
         currency: string,
         creatorID: string,
-        mosqueID: string,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null >,
-      nextToken?: string | null,
-    } | null,
-    prayerTimes?:  {
-      __typename: "ModelPrayerTimeConnection",
-      items:  Array< {
-        __typename: "PrayerTime",
-        id: string,
-        startDate: string,
-        timeZone: string,
-        createdByUserID: string,
-        updatedByUserID: string,
         mosqueID: string,
         createdAt: string,
         updatedAt: string,
@@ -9745,7 +11183,61 @@ export type OnUpdateMosqueSubscription = {
       twitter?: string | null,
       youtube?: string | null,
     } | null,
-    isVerified: boolean,
+    prayerTimes?:  {
+      __typename: "PrayerTimes",
+      timeZone: string,
+      fajr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      thuhr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      asr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      maghrib?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      isha?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      jummah?:  Array< {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } > | null,
+      tahajjud?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      taraweeh?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      eidAlAdha?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+      eidAlFitr?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+    } | null,
+    isVerified?: boolean | null,
     creatorID: string,
     creator:  {
       __typename: "User",
@@ -9775,10 +11267,6 @@ export type OnUpdateMosqueSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -9801,10 +11289,6 @@ export type OnUpdateMosqueSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -9897,23 +11381,6 @@ export type OnUpdateMosqueSubscription = {
         goalDate: string,
         currency: string,
         creatorID: string,
-        mosqueID: string,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null >,
-      nextToken?: string | null,
-    } | null,
-    prayerTimes?:  {
-      __typename: "ModelPrayerTimeConnection",
-      items:  Array< {
-        __typename: "PrayerTime",
-        id: string,
-        startDate: string,
-        timeZone: string,
-        createdByUserID: string,
-        updatedByUserID: string,
         mosqueID: string,
         createdAt: string,
         updatedAt: string,
@@ -10029,7 +11496,61 @@ export type OnDeleteMosqueSubscription = {
       twitter?: string | null,
       youtube?: string | null,
     } | null,
-    isVerified: boolean,
+    prayerTimes?:  {
+      __typename: "PrayerTimes",
+      timeZone: string,
+      fajr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      thuhr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      asr?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      maghrib?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      isha?:  {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } | null,
+      jummah?:  Array< {
+        __typename: "FardPrayer",
+        athan: string,
+        iqamahAfter: number,
+      } > | null,
+      tahajjud?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      taraweeh?:  {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } | null,
+      eidAlAdha?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+      eidAlFitr?:  Array< {
+        __typename: "SunnahPrayer",
+        start: string,
+        end?: string | null,
+      } > | null,
+    } | null,
+    isVerified?: boolean | null,
     creatorID: string,
     creator:  {
       __typename: "User",
@@ -10059,10 +11580,6 @@ export type OnDeleteMosqueSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -10085,10 +11602,6 @@ export type OnDeleteMosqueSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -10181,23 +11694,6 @@ export type OnDeleteMosqueSubscription = {
         goalDate: string,
         currency: string,
         creatorID: string,
-        mosqueID: string,
-        createdAt: string,
-        updatedAt: string,
-        owners?: Array< string | null > | null,
-        owner?: string | null,
-      } | null >,
-      nextToken?: string | null,
-    } | null,
-    prayerTimes?:  {
-      __typename: "ModelPrayerTimeConnection",
-      items:  Array< {
-        __typename: "PrayerTime",
-        id: string,
-        startDate: string,
-        timeZone: string,
-        createdByUserID: string,
-        updatedByUserID: string,
         mosqueID: string,
         createdAt: string,
         updatedAt: string,
@@ -10303,10 +11799,6 @@ export type OnCreateOrganizationSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -10329,10 +11821,6 @@ export type OnCreateOrganizationSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -10368,7 +11856,7 @@ export type OnCreateOrganizationSubscription = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -10431,10 +11919,6 @@ export type OnUpdateOrganizationSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -10457,10 +11941,6 @@ export type OnUpdateOrganizationSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -10496,7 +11976,7 @@ export type OnUpdateOrganizationSubscription = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -10559,10 +12039,6 @@ export type OnDeleteOrganizationSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -10585,10 +12061,6 @@ export type OnDeleteOrganizationSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -10624,7 +12096,7 @@ export type OnDeleteOrganizationSubscription = {
         phone?: string | null,
         email?: string | null,
         website?: string | null,
-        isVerified: boolean,
+        isVerified?: boolean | null,
         creatorID: string,
         organizationID?: string | null,
         createdAt: string,
@@ -10675,7 +12147,11 @@ export type OnCreateMosqueFollowerSubscription = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -10723,10 +12199,6 @@ export type OnCreateMosqueFollowerSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
         nextToken?: string | null,
@@ -10772,10 +12244,6 @@ export type OnCreateMosqueFollowerSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -10798,10 +12266,6 @@ export type OnCreateMosqueFollowerSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -10849,7 +12313,11 @@ export type OnUpdateMosqueFollowerSubscription = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -10897,10 +12365,6 @@ export type OnUpdateMosqueFollowerSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
         nextToken?: string | null,
@@ -10946,10 +12410,6 @@ export type OnUpdateMosqueFollowerSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -10972,10 +12432,6 @@ export type OnUpdateMosqueFollowerSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,
@@ -11023,7 +12479,11 @@ export type OnDeleteMosqueFollowerSubscription = {
         twitter?: string | null,
         youtube?: string | null,
       } | null,
-      isVerified: boolean,
+      prayerTimes?:  {
+        __typename: "PrayerTimes",
+        timeZone: string,
+      } | null,
+      isVerified?: boolean | null,
       creatorID: string,
       creator:  {
         __typename: "User",
@@ -11071,10 +12531,6 @@ export type OnDeleteMosqueFollowerSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      prayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       bookmarks?:  {
         __typename: "ModelBookmarkConnection",
         nextToken?: string | null,
@@ -11120,10 +12576,6 @@ export type OnDeleteMosqueFollowerSubscription = {
         __typename: "ModelFundraisingCampaignConnection",
         nextToken?: string | null,
       } | null,
-      createdPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
-        nextToken?: string | null,
-      } | null,
       createdOrganizations?:  {
         __typename: "ModelOrganizationConnection",
         nextToken?: string | null,
@@ -11146,10 +12598,6 @@ export type OnDeleteMosqueFollowerSubscription = {
       } | null,
       likes?:  {
         __typename: "ModelLikeConnection",
-        nextToken?: string | null,
-      } | null,
-      updatedPrayerTimes?:  {
-        __typename: "ModelPrayerTimeConnection",
         nextToken?: string | null,
       } | null,
       createdAt: string,

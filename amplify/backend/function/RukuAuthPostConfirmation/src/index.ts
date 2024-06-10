@@ -9,7 +9,7 @@ export const handler = async (event: Event) => {
 
 		return event
 	} catch (error) {
-		console.error("---------- ERROR: ", error)
+		console.error("---------- ERROR: ", JSON.stringify(error, null, 2))
 		console.error("---------- EVENT: ", JSON.stringify(event, null, 2))
 
 		return sanitizeException(error)

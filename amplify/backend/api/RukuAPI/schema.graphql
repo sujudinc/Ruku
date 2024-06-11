@@ -227,6 +227,7 @@ type Mosque
   )
   creator: User! @belongsTo(fields: ["creatorID"]) @auth(
     rules: [
+      { allow: owner, ownerField: "owners", operations: [create, read]}
       { allow: private, operations: [read] }
       { allow: public, operations: [read] }
     ]

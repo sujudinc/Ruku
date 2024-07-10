@@ -1,4 +1,4 @@
-import { Event } from "./event"
+import type { Event } from "./event"
 
 type ResolverContext = {
 	userid: string
@@ -14,7 +14,6 @@ type Response = {
 }
 
 export const handler = (event: Event): Response => {
-	console.log(`EVENT: ${JSON.stringify(event)}`)
 	const {
 		authorizationToken,
 		requestContext: { apiId, accountId },
@@ -32,8 +31,6 @@ export const handler = (event: Event): Response => {
 		],
 		ttlOverride: 300,
 	}
-
-	console.log(`RESPONSE: ${JSON.stringify(response, null, 2)}`)
 
 	return response
 }

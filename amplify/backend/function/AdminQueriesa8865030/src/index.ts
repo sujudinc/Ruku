@@ -11,13 +11,12 @@
  * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
  * and limitations under the License.
  */
-import { APIGatewayProxyEvent, Context } from "aws-lambda"
+import type { APIGatewayProxyEvent, Context } from "aws-lambda"
 import awsServerlessExpress from "aws-serverless-express"
 import app from "./app"
 
 const server = awsServerlessExpress.createServer(app)
 
 export const handler = (event: APIGatewayProxyEvent, context: Context) => {
-	console.log(`EVENT: ${JSON.stringify(event)}`)
 	awsServerlessExpress.proxy(server, event, context)
 }

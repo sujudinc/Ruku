@@ -1,8 +1,13 @@
-import { Event } from "./event"
-import { verificationLink } from "./modules"
+import type { CustomMessageTriggerEvent } from "aws-lambda"
 
-export const handler = async (event: Event) => {
-	await Promise.all([verificationLink(event)])
+import CustomMessageStrategy from "./trigger-sources"
 
-	return event
+export const handler = async (event: CustomMessageTriggerEvent) => {
+	try {
+		return new CustomMessageStrategy().build(event).sendEmail()
+	} catch (error) {
+		console.error('-------- ERROR: ', error, JSON.stringify(event, null, 2))
+		
+		throw error
+	}
 }

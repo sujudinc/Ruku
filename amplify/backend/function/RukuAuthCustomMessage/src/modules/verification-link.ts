@@ -1,5 +1,5 @@
 import authCustomMessage from "../emails/email"
-import { Event } from "../event"
+import type { Event } from "../event"
 
 export default async (event: Event) => {
 	switch (event.triggerSource) {
@@ -9,8 +9,8 @@ export default async (event: Event) => {
 		// 	return adminCreateUserMessage(event)
 		case "CustomMessage_ResendCode": //When user requests the code again.
 			return _signUpMessage(event)
-		// case "CustomMessage_ForgotPassword": //Forgot password request initiated by user
-		// 	return forgotPassword(event)
+		case "CustomMessage_ForgotPassword": //Forgot password request initiated by user
+			return _forgotPassword(event)
 		// case "CustomMessage_UpdateUserAttribute": //Whenever the user attributes are updated
 		// 	return updateUserAttributeMessage(event)
 		// case "CustomMessage_VerifyUserAttribute": //Verify mobile number/email
@@ -29,8 +29,8 @@ const _signUpMessage = (event: Event) => {
 		request: { codeParameter },
 		callerContext: { clientId },
 	} = event
-	const redirectUrl = `${process.env.REDIRECTURL!}/?username=${userName}`
-	const resourcePrefix = process.env.RESOURCENAME!.split("CustomMessage")[0]
+	const redirectUrl = `${process.env.REDIRECTURL as string}/?username=${userName}`
+	const resourcePrefix = (process.env.RESOURCENAME as string).split("CustomMessage")[0]
 	const hyphenRegions = [
 		"us-east-1",
 		"us-west-1",
@@ -38,6 +38,7 @@ const _signUpMessage = (event: Event) => {
 		"ap-southeast-1",
 		"ap-southeast-2",
 		"ap-northeast-1",
+		"ca-central-1",
 		"eu-west-1",
 		"sa-east-1",
 	]
@@ -55,7 +56,7 @@ const _signUpMessage = (event: Event) => {
 	const message = `${process.env.EMAILMESSAGE} \n ${url}`
 
 	event.response.smsMessage = message
-	event.response.emailSubject = process.env.EMAILSUBJECT!
+	event.response.emailSubject = process.env.EMAILSUBJECT as string
 	event.response.emailMessage = authCustomMessage({
 		heading: "🔒 Confirm your email",
 		body: `Please copy the code: ${codeParameter}, or click the button below to confirm your email address.`,
@@ -65,5 +66,10 @@ const _signUpMessage = (event: Event) => {
 			"If you didn't request this code, you can safely ignore this email.",
 	})
 
+	return event
+}
+
+const _forgotPassword = (event: Event) => {
+	
 	return event
 }

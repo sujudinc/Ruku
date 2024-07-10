@@ -7,7 +7,7 @@
     "awsSdkVersion": "aws-sdk-unknown-unknown",
     "clientId": "4dhanlfjf4bb1e9mf5q4e0ipcm"
   },
-  "triggerSource": "CustomMessage_SignUp",
+  "triggerSource": "CustomMessage_ForgotPassword",
   "request": {
     "userAttributes": {
       "cognito:user_status": "CONFIRMED",
@@ -17,7 +17,8 @@
       "email_verified": "true",
       "family_name": "Mohamed",
       "given_name": "Mohamed",
-      "sub": "fd8bed41-06ae-43fb-ad5d-e145b94b0a65"
+      "sub": "fd8bed41-06ae-43fb-ad5d-e145b94b0a65",
+      "locale": "en"
     },
     "codeParameter": "{####}",
     "linkParameter": "{##Click Here##}",

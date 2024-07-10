@@ -13,9 +13,10 @@ import type { CustomMessageBuilder, Strategy } from "../types"
 export default class CustomMessageStrategy
 	implements Strategy<CustomMessageTriggerEvent, CustomMessageTriggerEvent>
 {
-	build(
+	fromEvent(
 		param: CustomMessageTriggerEvent,
 	): CustomMessageBuilder<CustomMessageTriggerEvent> {
+		console.log("triggerSource: ", param.triggerSource)
 		switch (param.triggerSource) {
 			case "CustomMessage_AdminCreateUser":
 				return new AdminCreateUserCustomMessage(param)

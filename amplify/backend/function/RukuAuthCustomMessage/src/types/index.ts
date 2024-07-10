@@ -11,5 +11,5 @@ export type CustomMessageBuilder<Event> = {
 }
 
 export type Strategy<Param, Event> = {
-	build(param: Param): CustomMessageBuilder<Event>
+	fromEvent(param: Param): CustomMessageBuilder<Event>
 }

@@ -19,10 +19,10 @@ export default class ForgotPasswordCustomMessage
 			code: event.request.codeParameter,
 		})
 
-		event.response = response
-
 		if (response) {
-			throw new Error("Hello World")
+			event.response = response
+		} else {
+			throw new Error("User doesn't have a locale attribute")
 		}
 
 		return event

@@ -14,7 +14,7 @@ export default class UpdateUserAttributeCustomMessage
 		const { event } = this
 
 		const response = this.response({
-			locale: event.request.userAttributes.locale as Locale,
+			locale: event.request.userAttributes.locale as Locale || "en",
 			name: event.request.userAttributes.name,
 			code: event.request.codeParameter,
 		})

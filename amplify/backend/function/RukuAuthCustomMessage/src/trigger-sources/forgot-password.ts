@@ -21,6 +21,10 @@ export default class ForgotPasswordCustomMessage
 
 		event.response = response
 
+		if (response) {
+			throw new Error("Hello World")
+		}
+
 		return event
 	}
 

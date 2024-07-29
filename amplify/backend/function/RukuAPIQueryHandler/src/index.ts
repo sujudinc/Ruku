@@ -1,5 +1,5 @@
 export const handler = async (event: Event): Promise<any> => {
-    console.info(`EVENT: ${JSON.stringify(event)}`);
+    console.info(`EVENT: `, JSON.stringify(event, null, 2));
 
     return {
         statusCode: 200,

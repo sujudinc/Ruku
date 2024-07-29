@@ -1,3 +1,7 @@
+type Query {
+  echo(message: String!): String! @function(name: "RukuAPIQueryHandler-${env}")
+}
+
 # ------------------------------------------------------------------------------------- MODELS
 
 type Announcement

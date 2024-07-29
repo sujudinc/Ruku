@@ -1,6 +1,6 @@
-type Query @aws_api_key {
-  echo(message: String!): String! @function(name: "RukuAPIQueryHandler-${env}")
-}
+# type Query @aws_api_key {
+#   echo(message: String!): String! @function(name: "RukuAPIQueryHandler-${env}")
+# }
 
 # ------------------------------------------------------------------------------------- MODELS
 

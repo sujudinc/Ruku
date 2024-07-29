@@ -1,5 +1,9 @@
 # this is an auto generated file. This will be overwritten
 
+query Echo($message: String!) {
+  echo(message: $message)
+}
+
 query GetAnnouncement($id: ID!) {
   getAnnouncement(id: $id) {
     id

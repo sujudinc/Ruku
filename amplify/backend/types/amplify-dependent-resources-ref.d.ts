@@ -47,6 +47,13 @@ export type AmplifyDependentResourcesAttributes = {
       "Name": "string",
       "Region": "string"
     },
+    "RukuAPIQueryHandler": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "RukuAuthCustomMessage": {
       "Arn": "string",
       "LambdaExecutionRole": "string",

@@ -312,6 +312,22 @@
         }
       ]
     },
+    "AMPLIFY_function_RukuAPIQueryHandler_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAPIQueryHandler"
+        }
+      ]
+    },
+    "AMPLIFY_function_RukuAPIQueryHandler_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "RukuAPIQueryHandler"
+        }
+      ]
+    },
     "AMPLIFY_function_RukuAuthCustomMessage_EMAILMESSAGE": {
       "usedBy": [
         {

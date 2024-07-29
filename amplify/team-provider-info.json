@@ -61,7 +61,8 @@
         "rukuCommonLayerTs": {
           "deploymentBucketName": "amplify-ruku-dev-192339-deployment",
           "s3Key": "amplify-builds/rukuCommonLayerTs-LambdaLayerVersion551dd903-build.zip"
-        }
+        },
+        "RukuAPIQueryHandler": {}
       },
       "api": {
         "AdminQueries": {},

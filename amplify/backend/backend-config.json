@@ -196,6 +196,20 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "RukuAPIQueryHandler": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "rukuCommonLayerTs"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "RukuAuthCustomMessage": {
       "build": true,
       "providerPlugin": "awscloudformation",
